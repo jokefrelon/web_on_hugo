@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='Phicomm N1 刷 OpenWrt 做旁路由'><title>Phicomm N1 刷 OpenWrt 做旁路由</title>
+
+<link rel='canonical' href='https://jokeme.top/p/phicomm_n1_openwrt/'>
+
+<link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='Phicomm N1 刷 OpenWrt 做旁路由'>
+<meta property='og:description' content='Phicomm N1 刷 OpenWrt 做旁路由'>
+<meta property='og:url' content='https://jokeme.top/p/phicomm_n1_openwrt/'>
+<meta property='og:site_name' content='JokemeBlog'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Phicomm_N1' /><meta property='article:published_time' content='2021-01-28T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2021-01-28T00:00:00&#43;00:00'/><meta property='og:image' content='https://cn.bing.com/th?id=OHR.TwinsDenning_EN-CN2137499137_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4' />
+<meta name="twitter:title" content="Phicomm N1 刷 OpenWrt 做旁路由">
+<meta name="twitter:description" content="Phicomm N1 刷 OpenWrt 做旁路由"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://cn.bing.com/th?id=OHR.TwinsDenning_EN-CN2137499137_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4' />
+    <link rel="shortcut icon" href="/bk3.ico" />
+
+    </head>
+    <body class="">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.body.dataset.scheme = 'dark';
+        } else {
+            document.body.dataset.scheme = 'light';
+        }
+    })();
+</script><div class="container main-container flex on-phone--column extended article-page with-toolbar">
+            <aside class="sidebar left-sidebar sticky">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header class="site-info">
+        
+            <figure class="site-avatar">
+                
+                    
+                    
+                    
+                        
+                        <img src="/author_hud0a2a235bd9bca1ace56b5f54e36a460_15093_300x0_resize_q75_box.jpg" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+
+                
+                    <span class="emoji">🥰</span>
+                
+            </figure>
+        
+        <h1 class="site-name"><a href="https://jokeme.top">JokemeBlog</a></h1>
+        <h2 class="site-description">人生没有白走的路,每一步都算数。</h2>
+    </header>
+
+    <ol class="menu" id="main-menu">
+        
+        
+        
+
+        <li >
+            <a href='/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>Home</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/about/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>About</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/archives/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/search/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+
+        
+            <li id="dark-mode-toggle">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <span>暗色模式</span>
+            </li>
+        
+    </ol>
+</aside>
+
+            <main class="main full-width">
+    <div id="article-toolbar">
+        <a href="https://jokeme.top" class="back-home">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="15 6 9 12 15 18" />
+</svg>
+
+
+
+            <span>Back</span>
+        </a>
+    </div>
+
+    <article class="has-image main-article">
+    <header class="article-header">
+        <div class="article-image">
+            <a href="/p/phicomm_n1_openwrt/">
+                
+                    <img src="https://cn.bing.com/th?id=OHR.TwinsDenning_EN-CN2137499137_UHD.jpg&amp;pid=hp&amp;w=1080&amp;h=720&amp;rs=1&amp;c=4" loading="lazy" alt="Featured image of post Phicomm N1 刷 OpenWrt 做旁路由" />
+                
+            </a>
+        </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/openwrt/" >
+                OpenWrt
+            </a>
+        
+    </header>
+    
+
+    <h2 class="article-title">
+        <a href="/p/phicomm_n1_openwrt/">Phicomm N1 刷 OpenWrt 做旁路由</a>
+    </h2>
+
+    
+    <h3 class="article-subtitle">
+        Phicomm N1 刷 OpenWrt 做旁路由
+    </h3>
+    <footer class="article-time">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+        <time class="article-time--published">Jan 28, 2021</time>
+    </footer></div>
+</header>
+
+    <section class="article-content">
+    <p>众所周知啊！N1 这个产品呢比较的全能，可以刷<strong>armbian</strong>、<strong>Openwrt</strong>、<strong>Android 电视盒子</strong>甚至<strong>windows</strong>也都不在话下。</p>
+<p>在去年也是以低价入手了一个盒子，但是一直就没有机会捯饬，因为我个人还有一个 x86 架构的低功耗小主机用于个人服务器使用，并且也是在 Docker 里面部署了一个 Openwrt 做旁路由来方便自己上墙，其实我个人是比较喜欢这种旁路由的方式的。因为连上局域网以后必须要手动指定网关才可以上墙，直接 DHCP 分配的用户没有任何影响，这样就不会对没有需求的用户产生影响。</p>
+<p>这里说一下我的设备，我的 N1 买回来就是刷好的电视盒子系统，所以就没有降级的步骤了，但是降级工具包都包含在了 N1 工具包里面了可以自行百度如何降级，其实都非常简单，输入一个 IP 地址回车就可以了。</p>
+<p>我个人是准备把 Openwrt 刷入自带的 emmc 里面的，这样可以省很多事，而且运行速度比在 U 盘里面有天然优势。</p>
+<h2 id="1环境准备">1.环境准备</h2>
+<p>斐讯 N1</p>
+<p>适配 N1 的 OpenWrt 镜像</p>
+<p><a class="link" href="https://www.lanzous.com/ia9fgdi"  target="_blank" rel="noopener"
+    >N1工具包</a>（非必须）</p>
+<p>U 盘一个（选好一点的 U 盘，可以上 USB3.0）</p>
+<p>Etcher / rufus （写盘工具）</p>
+<hr>
+<p>在这里给大家推荐就几个 N1 的 Openwrt 镜像</p>
+<p>GitHub：<a class="link" href="https://github.com/tuanqing/mknop"  target="_blank" rel="noopener"
+    >tuanqing</a>的固件</p>
+<p>GitHub：<a class="link" href="https://github.com/IvanSolis1989/OpenWrt-DIY"  target="_blank" rel="noopener"
+    >IvanSolis1989</a>的固件</p>
+<p>恩山大佬：<a class="link" href="https://www.right.com.cn/forum/forum.php?mod=viewthread&amp;tid=981406&amp;extra=page%3D1%26filter%3Dtypeid%26typeid%3D21"  target="_blank" rel="noopener"
+    >flippy</a>的固件</p>
+<p>有一点需要注意，上面两个 GitHub 的固件都是没有无线网的，只有 flippy 的固件才有 WI-FI，自己看着选吧！</p>
+<h2 id="2刻录镜像">2.刻录镜像</h2>
+<p>从上面任意的一个镜像里选一个下载然后使用刻录工具来把镜像刻录进 U 盘里，这一步基本上不会出现什么问题。注意 U 盘里面的数据记得备份，写盘会把 U 盘里面的数据全部抹除。</p>
+<h2 id="3引导-openwrt-启动">3.引导 OpenWrt 启动</h2>
+<p>这一步需要先把 N1 启动连接好网线，插上刚刚刻录好的 U 盘，打开 N1 的 adb，然后可以去路由器管理界面查看 N1 盒子的 IP 地址，然后利用工具包里面的批处理脚本（N1 盒子进入刷机模式。bat）来引导 N1 从 Android 电视盒子重启到 Openwrt 中。基本上都是一键操作非常简单。</p>
+<h2 id="4把-openwrt-写入-emmc">4.把 OpenWrt 写入 emmc</h2>
+<p>进过上面的步骤后，不意外的话你就已经在 OpenWrt 的命令行里面了，然后运行下面的命令</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell"><span class="nb">cd</span> ~
+./install <span class="c1">#然后按下Tab，具体脚本名我已经忘记了，但是运行这个准没错</span>
+</code></pre></div><p>然后就是脚本自动运行了，然后需要重启一下就可以了，这样 OpenWrt 就写入了我们的 emmc 了</p>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">iptables -t nat -I POSTROUTING -o eth0 -j MASQUERADE
+</code></pre></div><p>据说要在防火墙规则里面加上上面这句，但是我没有加使用起来也没有啥感觉，可能是我家 100m 的宽带限制了吧</p>
+<p>顺带说一下 OpenWrt 换源
+~~
+sed -i &rsquo;s/downloads.openwrt.org/mirrors.ustc.edu.cn/openwrt/g' /etc/opkg/distfeeds.conf
+~~</p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/phicomm_n1/">Phicomm_N1</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3&#43;Aro6EYUG4&#43;cU&#43;KJWu/X"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js"integrity="sha384-g7c&#43;Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI&#43;sEnkvrMWph2EDg4"crossorigin="anonymous"
+                defer="true"
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC&#43;Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa"crossorigin="anonymous"
+                defer="true"
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+        renderMathInElement(document.querySelector(`.article-content`), {
+            delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "$", right: "$", display: false },
+                { left: "\\(", right: "\\)", display: false },
+                { left: "\\[", right: "\\]", display: true }
+            ]
+        });})
+</script>
+    
+</article>
+
+    <aside class="related-contents--wrapper">
+    
+    
+        <h2 class="section-title">相关文章</h2>
+        <div class="related-contents">
+            <div class="flex article-list--tile">
+                
+                    
+<article class="has-image">
+    <a href="/p/openwrt_install_zsh/">
+        
+        
+            <div class="article-image">
+                
+                    <img src="https://cn.bing.com/th?id=OHR.DalmatianPelicans_EN-CN7342550146_UHD.jpg&amp;pid=hp&amp;w=1080&amp;h=720&amp;rs=1&amp;c=4" loading="lazy" data-key="openwrt_install_zsh" data-hash="https://cn.bing.com/th?id=OHR.DalmatianPelicans_EN-CN7342550146_UHD.jpg&amp;pid=hp&amp;w=1080&amp;h=720&amp;rs=1&amp;c=4"/>
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">记录一次OpenWrt安装zsh</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="has-image">
+    <a href="/p/run_openwrt_in_docker/">
+        
+        
+            <div class="article-image">
+                
+                    <img src="https://cn.bing.com/th?id=OHR.RedRobin_EN-CN8071349218_UHD.jpg&amp;pid=hp&amp;w=1080&amp;h=720&amp;rs=1&amp;c=4" loading="lazy" data-key="run_openwrt_in_docker" data-hash="https://cn.bing.com/th?id=OHR.RedRobin_EN-CN8071349218_UHD.jpg&amp;pid=hp&amp;w=1080&amp;h=720&amp;rs=1&amp;c=4"/>
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Docker 中运行 OpenWrt</h2>
+        </div>
+    </a>
+</article>
+                
+            </div>
+        </div>
+    
+</aside>
+
+
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2019 - 
+        
+        2021 JokemeBlog
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="2.3.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer="true"
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer="true"
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css"integrity="sha256-c0uckgykQ9v5k&#43;IqViZOZKc47Jn7KQil4/MP3ySA3F8="crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css"integrity="sha256-SBLU4vv6CA6lHsZ1XyTdhyjJxCjPif/TRkjnsyGAGnE="crossorigin="anonymous"
+            >
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js"integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g="crossorigin="anonymous"
+                defer="false"
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

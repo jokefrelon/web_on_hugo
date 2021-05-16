@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>macOS on JokemeBlog</title>
+    <link>https://jokeme.top/categories/macos/</link>
+    <description>Recent content in macOS on JokemeBlog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 22 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://jokeme.top/categories/macos/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>macOS设置brew安装的软件自启动</title>
+      <link>https://jokeme.top/p/macos_brew_installed_app_auto_start_at_boot/</link>
+      <pubDate>Mon, 22 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://jokeme.top/p/macos_brew_installed_app_auto_start_at_boot/</guid>
+      <description>1. Home-brew 简介 先介绍一下本篇文章的主角：Home-brew，它是一款macOS的软件包管理器，当然也同样适用于Linux（不会真的有人 Linux 服务器用 brew 吧？）。
+它的官网上有关于 brew 非常详细的文档，大家可以自己去看看。介绍了以后就到了我们的安装环节了！
+2. 安装 Brew 安装 brew 非常的简单，就需要一条命令就可以了，当然大家 99% 会遇到网络问题，安装过程中建议最好用 v 要不然缓慢的到超时的网络会让你年轻漂亮有活力的 ?！
+/bin/bash -c &amp;#34;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)&amp;#34; 3. brew 换源 平时我们执行 brew 命令安装软件的时候，跟以下 3 个仓库地址有关：
+ brew.git homebrew-core.git homebrew-bottles  通过以下操作将这 3 个仓库地址全部替换为 Alibaba 提供的地址
+1. 替换 / 还原 brew.git 仓库地址 # 替换成阿里巴巴的 brew.git 仓库地址: cd &amp;quot;$(brew --repo)&amp;quot; git remote set-url origin https://mirrors.aliyun.com/homebrew/brew.git #======================================================= # 还原为官方提供的 brew.git 仓库地址 cd &amp;quot;$(brew --repo)&amp;quot; git remote set-url origin https://github.</description>
+    </item>
+    
+  </channel>
+</rss>

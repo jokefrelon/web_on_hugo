@@ -1,0 +1,1199 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='clang 学习笔记,虽然大部分都是简单的基础知识,但是还是要做个笔记。我承认这个笔记是我从网上抄作业的'><title>clang 学习笔记</title>
+
+<link rel='canonical' href='https://jokeme.top/p/clang_note/'>
+
+<link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='clang 学习笔记'>
+<meta property='og:description' content='clang 学习笔记,虽然大部分都是简单的基础知识,但是还是要做个笔记。我承认这个笔记是我从网上抄作业的'>
+<meta property='og:url' content='https://jokeme.top/p/clang_note/'>
+<meta property='og:site_name' content='JokemeBlog'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Note' /><meta property='article:published_time' content='2020-08-31T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2020-08-31T00:00:00&#43;00:00'/><meta property='og:image' content='https://cn.bing.com/th?id=OHR.AABday_EN-CN1797262692_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4' />
+<meta name="twitter:title" content="clang 学习笔记">
+<meta name="twitter:description" content="clang 学习笔记,虽然大部分都是简单的基础知识,但是还是要做个笔记。我承认这个笔记是我从网上抄作业的"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://cn.bing.com/th?id=OHR.AABday_EN-CN1797262692_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4' />
+    <link rel="shortcut icon" href="/bk3.ico" />
+
+    </head>
+    <body class="">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.body.dataset.scheme = 'dark';
+        } else {
+            document.body.dataset.scheme = 'light';
+        }
+    })();
+</script><div class="container main-container flex on-phone--column extended article-page with-toolbar">
+            <aside class="sidebar left-sidebar sticky">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header class="site-info">
+        
+            <figure class="site-avatar">
+                
+                    
+                    
+                    
+                        
+                        <img src="/author_hud0a2a235bd9bca1ace56b5f54e36a460_15093_300x0_resize_q75_box.jpg" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+
+                
+                    <span class="emoji">🥰</span>
+                
+            </figure>
+        
+        <h1 class="site-name"><a href="https://jokeme.top">JokemeBlog</a></h1>
+        <h2 class="site-description">人生没有白走的路,每一步都算数。</h2>
+    </header>
+
+    <ol class="menu" id="main-menu">
+        
+        
+        
+
+        <li >
+            <a href='/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>Home</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/about/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>About</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/archives/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/search/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+
+        
+            <li id="dark-mode-toggle">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <span>暗色模式</span>
+            </li>
+        
+    </ol>
+</aside>
+
+            <main class="main full-width">
+    <div id="article-toolbar">
+        <a href="https://jokeme.top" class="back-home">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="15 6 9 12 15 18" />
+</svg>
+
+
+
+            <span>Back</span>
+        </a>
+    </div>
+
+    <article class="has-image main-article">
+    <header class="article-header">
+        <div class="article-image">
+            <a href="/p/clang_note/">
+                
+                    <img src="https://cn.bing.com/th?id=OHR.AABday_EN-CN1797262692_UHD.jpg&amp;pid=hp&amp;w=1080&amp;h=720&amp;rs=1&amp;c=4" loading="lazy" alt="Featured image of post clang 学习笔记" />
+                
+            </a>
+        </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/clang/" >
+                Clang
+            </a>
+        
+    </header>
+    
+
+    <h2 class="article-title">
+        <a href="/p/clang_note/">clang 学习笔记</a>
+    </h2>
+
+    
+    <h3 class="article-subtitle">
+        clang 学习笔记,虽然大部分都是简单的基础知识,但是还是要做个笔记。我承认这个笔记是我从网上抄作业的
+    </h3>
+    <footer class="article-time">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+        <time class="article-time--published">Aug 31, 2020</time>
+    </footer></div>
+</header>
+
+    <section class="article-content">
+    <h1 id="clang-学习笔记">clang 学习笔记</h1>
+<h2 id="1什么是-c">1.什么是 c</h2>
+<p>C 语言是一种通用的高级语言，最初是由丹尼斯·里奇在贝尔实验室为开发 UNIX 操作系统而设计的。C 语言最开始是于 1972 年在 DEC PDP-11 计算机上被首次实现。</p>
+<p>在 1978 年，布莱恩·柯林汉（Brian Kernighan）和丹尼斯·里奇（Dennis Ritchie）制作了 C 的第一个公开可用的描述，现在被称为 K&amp;R 标准。</p>
+<p>UNIX 操作系统，C 编译器，和几乎所有的 UNIX 应用程序都是用 C 语言编写的。由于各种原因，C 语言现在已经成为一种广泛使用的专业语言。</p>
+<ul>
+<li>易于学习。</li>
+<li>结构化语言。</li>
+<li>它产生高效率的程序。</li>
+<li>它可以处理底层的活动。</li>
+<li>它可以在多种计算机平台上编译。</li>
+</ul>
+<h3 id="11-关于-c">1.1 关于 C</h3>
+<ul>
+<li>C 语言是为了编写 UNIX 操作系统而被发明的。</li>
+<li>C 语言是以 B 语言为基础的，B 语言大概是在 1970 年被引进的。</li>
+<li>C 语言标准是于 1988 年由美国国家标准协会（ANSI，全称 American National Standard Institute）制定的。</li>
+<li>截至 1973 年，UNIX 操作系统完全使用 C 语言编写。</li>
+<li>目前，C 语言是最广泛使用的系统程序设计语言。</li>
+<li>大多数先进的软件都是使用 C 语言实现的。</li>
+<li>当今最流行的 Linux 操作系统和 RDBMS（Relational Database Management System：关系数据库管理系统） MySQL 都是使用 C 语言编写的。</li>
+</ul>
+<h3 id="12-为什么要使用-c">1.2 为什么要使用 C？</h3>
+<p>C 语言最初是用于系统开发工作，特别是组成操作系统的程序。由于 C 语言所产生的代码运行速度与汇编语言编写的代码运行速度几乎一样，所以采用 C 语言作为系统开发语言。下面列举几个使用 C 的实例：</p>
+<ul>
+<li>操作系统</li>
+<li>语言编译器</li>
+<li>汇编器</li>
+<li>文本编辑器</li>
+<li>打印机</li>
+<li>网络驱动器</li>
+<li>现代程序</li>
+<li>数据库</li>
+<li>语言解释器</li>
+<li>实体工具</li>
+</ul>
+<h3 id="13-c-程序">1.3 C 程序</h3>
+<p>一个 C 语言程序，可以是 3 行，也可以是数百万行，它可以写在一个或多个扩展名为 <strong>&quot;.c&quot;</strong> 的文本文件中，例如，<em>hello.c</em>。您可以使用  <strong>&ldquo;sublime text3&rdquo;</strong>、<strong>&ldquo;vim&rdquo;</strong>、<strong>&ldquo;vscode&rdquo;</strong> 或任何其他文本编辑器来编写您的 C 语言程序。</p>
+<p>下面看一个<strong>c</strong>语言入门实例</p>
+<div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp">
+</span><span class="cp"></span> 
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="cm">/* 我的第一个 C 程序 */</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&#34;Hello, World! </span><span class="se">\n</span><span class="s">&#34;</span><span class="p">);</span>
+ 
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div><ul>
+<li>所有的 C 语言程序都需要包含 <strong>main()</strong> 函数。 代码从 <strong>main()</strong> 函数开始执行。</li>
+<li><strong>/* &hellip; */</strong> 用于注释说明。</li>
+<li><strong>printf()</strong> 用于格式化输出到屏幕。<strong>printf()</strong> 函数在 <strong>&ldquo;stdio.h&rdquo;</strong> 头文件中声明。</li>
+<li><strong>stdio.h</strong> 是一个头文件 (标准输入输出头文件) , <strong>#include</strong> 是一个预处理命令，用来引入头文件。 当编译器遇到 <strong>printf()</strong> 函数时，如果没有找到 <strong>stdio.h</strong> 头文件，会发生编译错误。</li>
+<li><strong>return 0;</strong> 语句用于表示退出程序。</li>
+</ul>
+<h2 id="2-配置-c-环境">2. 配置 c 环境</h2>
+<h3 id="21-linux">2.1 Linux</h3>
+<p>一般 Linux 自带 <strong>gcc</strong> , 终端输入 <code>gcc -v</code> 即可查看当前版本</p>
+<p>(本教程以<strong>Linux</strong>环境为基础)</p>
+<h3 id="22-macos">2.2 macOS</h3>
+<p>安装<strong>xcode</strong> , 一劳永逸，并且可以减少你不少的麻烦，也可以自己安装，推荐使用<strong>brew</strong>包管理器来安装</p>
+<h3 id="23-windows">2.3 Windows</h3>
+<p>为了在 Windows 上安装 GCC，您需要安装 MinGW。为了安装 MinGW，请访问 MinGW 的主页 <a class="link" href="http://www.mingw.org/"  target="_blank" rel="noopener"
+    >www.mingw.org</a>，进入 MinGW 下载页面，下载最新版本的 MinGW 安装程序，命名格式为 MinGW- <!-- raw HTML omitted --> .exe。</p>
+<p>当安装 MinGW 时，您至少要安装 gcc-core、gcc-g++、binutils 和 MinGW runtime，但是一般情况下都会安装更多其他的项。</p>
+<p>添加您安装的 MinGW 的 bin 子目录到您的 <strong>PATH</strong> 环境变量中，这样您就可以在命令行中通过简单的名称来指定这些工具。</p>
+<p>当完成安装时，您可以从 Windows 命令行上运行 gcc、g++、ar、ranlib、dlltool 和其他一些 GNU 工具</p>
+<h2 id="3-clang-程序结构">3. clang 程序结构</h2>
+<div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp">
+</span><span class="cp"></span> 
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+   <span class="cm">/* 我的第一个 C 程序 */</span>
+   <span class="n">printf</span><span class="p">(</span><span class="s">&#34;Hello, World! </span><span class="se">\n</span><span class="s">&#34;</span><span class="p">);</span>
+   
+   <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div><p>接下来我们讲解一下上面这段程序：</p>
+<ol>
+<li>程序的第一行 *#include * 是预处理器指令，告诉 C 编译器在实际编译之前要包含 stdio.h 文件。</li>
+<li>下一行 <em>int main()</em> 是主函数，程序从这里开始执行。</li>
+<li>下一行 /<em>&hellip;</em>/ 将会被编译器忽略，这里放置程序的注释内容。它们被称为程序的注释。</li>
+<li>下一行 <em>printf(&hellip;)</em> 是 C 中另一个可用的函数，会在屏幕上显示消息 &ldquo;Hello, World!&quot;。</li>
+<li>下一行 <strong>return 0;</strong> 终止 main() 函数，并返回值 0。</li>
+</ol>
+<p>想要执行<strong>c</strong>程序，只需要简单的编译即可运行</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">$ gcc hello.c -c hello
+$ ./hello
+Hello, World!
+</code></pre></div><h2 id="4-clang-关键字">4. clang 关键字</h2>
+<p>下表列出了 C 中的保留字。这些保留字不能作为常量名、变量名或其他标识符名称。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">关键字</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">auto</td>
+<td style="text-align:left">声明自动变量</td>
+</tr>
+<tr>
+<td style="text-align:left">break</td>
+<td style="text-align:left">跳出当前循环</td>
+</tr>
+<tr>
+<td style="text-align:left">case</td>
+<td style="text-align:left">开关语句分支</td>
+</tr>
+<tr>
+<td style="text-align:left">char</td>
+<td style="text-align:left">声明字符型变量或函数返回值类型</td>
+</tr>
+<tr>
+<td style="text-align:left">const</td>
+<td style="text-align:left">定义常量，如果一个变量被 const 修饰，那么它的值就不能再被改变</td>
+</tr>
+<tr>
+<td style="text-align:left">continue</td>
+<td style="text-align:left">结束当前循环，开始下一轮循环</td>
+</tr>
+<tr>
+<td style="text-align:left">default</td>
+<td style="text-align:left">开关语句中的&quot;其它&quot;分支</td>
+</tr>
+<tr>
+<td style="text-align:left">do</td>
+<td style="text-align:left">循环语句的循环体</td>
+</tr>
+<tr>
+<td style="text-align:left">double</td>
+<td style="text-align:left">声明双精度浮点型变量或函数返回值类型</td>
+</tr>
+<tr>
+<td style="text-align:left">else</td>
+<td style="text-align:left">条件语句否定分支（与 if 连用）</td>
+</tr>
+<tr>
+<td style="text-align:left">enum</td>
+<td style="text-align:left">声明枚举类型</td>
+</tr>
+<tr>
+<td style="text-align:left">extern</td>
+<td style="text-align:left">声明变量或函数是在其它文件或本文件的其他位置定义</td>
+</tr>
+<tr>
+<td style="text-align:left">float</td>
+<td style="text-align:left">声明浮点型变量或函数返回值类型</td>
+</tr>
+<tr>
+<td style="text-align:left">for</td>
+<td style="text-align:left">一种循环语句</td>
+</tr>
+<tr>
+<td style="text-align:left">goto</td>
+<td style="text-align:left">无条件跳转语句</td>
+</tr>
+<tr>
+<td style="text-align:left">if</td>
+<td style="text-align:left">条件语句</td>
+</tr>
+<tr>
+<td style="text-align:left">int</td>
+<td style="text-align:left">声明整型变量或函数</td>
+</tr>
+<tr>
+<td style="text-align:left">long</td>
+<td style="text-align:left">声明长整型变量或函数返回值类型</td>
+</tr>
+<tr>
+<td style="text-align:left">register</td>
+<td style="text-align:left">声明寄存器变量</td>
+</tr>
+<tr>
+<td style="text-align:left">return</td>
+<td style="text-align:left">子程序返回语句（可以带参数，也可不带参数）</td>
+</tr>
+<tr>
+<td style="text-align:left">short</td>
+<td style="text-align:left">声明短整型变量或函数</td>
+</tr>
+<tr>
+<td style="text-align:left">signed</td>
+<td style="text-align:left">声明有符号类型变量或函数</td>
+</tr>
+<tr>
+<td style="text-align:left">sizeof</td>
+<td style="text-align:left">计算数据类型或变量长度（即所占字节数）</td>
+</tr>
+<tr>
+<td style="text-align:left">static</td>
+<td style="text-align:left">声明静态变量</td>
+</tr>
+<tr>
+<td style="text-align:left">struct</td>
+<td style="text-align:left">声明结构体类型</td>
+</tr>
+<tr>
+<td style="text-align:left">switch</td>
+<td style="text-align:left">用于开关语句</td>
+</tr>
+<tr>
+<td style="text-align:left">typedef</td>
+<td style="text-align:left">用以给数据类型取别名</td>
+</tr>
+<tr>
+<td style="text-align:left">unsigned</td>
+<td style="text-align:left">声明无符号类型变量或函数</td>
+</tr>
+<tr>
+<td style="text-align:left">union</td>
+<td style="text-align:left">声明共用体类型</td>
+</tr>
+<tr>
+<td style="text-align:left">void</td>
+<td style="text-align:left">声明函数无返回值或无参数，声明无类型指针</td>
+</tr>
+<tr>
+<td style="text-align:left">volatile</td>
+<td style="text-align:left">说明变量在程序执行中可被隐含地改变</td>
+</tr>
+<tr>
+<td style="text-align:left">while</td>
+<td style="text-align:left">循环语句的循环条件</td>
+</tr>
+</tbody>
+</table>
+<h3 id="41-c99-新增关键字">4.1 C99 新增关键字</h3>
+<table>
+<thead>
+<tr>
+<th><code>_Bool</code></th>
+<th><code>_Complex</code></th>
+<th><code>_Imaginary</code></th>
+<th><code>inline</code></th>
+<th><code>restrict</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="42-c11-新增关键字">4.2 C11 新增关键字</h3>
+<table>
+<thead>
+<tr>
+<th><code>_Alignas</code></th>
+<th><code>_Alignof</code></th>
+<th><code>_Atomic</code></th>
+<th><code>_Generic</code></th>
+<th><code>_Noreturn</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>_Static_assert</code></td>
+<td><code>_Thread_local</code></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>看看就可以了，一般我们也不会傻 x 到用这些来命名变量</p>
+<h2 id="5-c-数据类型">5. C 数据类型</h2>
+<p>C 中的类型可分为以下几种：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">序号</th>
+<th style="text-align:left">类型与描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">1</td>
+<td style="text-align:left"><strong>基本类型：</strong> 它们是算术类型，包括两种类型：整数类型和浮点类型。</td>
+</tr>
+<tr>
+<td style="text-align:left">2</td>
+<td style="text-align:left"><strong>枚举类型：</strong> 它们也是算术类型，被用来定义在程序中只能赋予其一定的离散整数值的变量。</td>
+</tr>
+<tr>
+<td style="text-align:left">3</td>
+<td style="text-align:left"><strong>void 类型：</strong> 类型说明符 <em>void</em> 表明没有可用的值。</td>
+</tr>
+<tr>
+<td style="text-align:left">4</td>
+<td style="text-align:left"><strong>派生类型：</strong> 它们包括：指针类型、数组类型、结构类型、共用体类型和函数类型。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="51-整数类型">5.1 整数类型</h3>
+<p>下表列出了关于标准整数类型的存储大小和值范围的细节：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">类型</th>
+<th style="text-align:left">存储大小</th>
+<th style="text-align:left">值范围</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">char</td>
+<td style="text-align:left">1 字节</td>
+<td style="text-align:left">-128 到 127 或 0 到 255</td>
+</tr>
+<tr>
+<td style="text-align:left">unsigned char</td>
+<td style="text-align:left">1 字节</td>
+<td style="text-align:left">0 到 255</td>
+</tr>
+<tr>
+<td style="text-align:left">signed char</td>
+<td style="text-align:left">1 字节</td>
+<td style="text-align:left">-128 到 127</td>
+</tr>
+<tr>
+<td style="text-align:left">int</td>
+<td style="text-align:left">2 或 4 字节</td>
+<td style="text-align:left">-32,768 到 32,767 或 -2,147,483,648 到 2,147,483,647</td>
+</tr>
+<tr>
+<td style="text-align:left">unsigned int</td>
+<td style="text-align:left">2 或 4 字节</td>
+<td style="text-align:left">0 到 65,535 或 0 到 4,294,967,295</td>
+</tr>
+<tr>
+<td style="text-align:left">short</td>
+<td style="text-align:left">2 字节</td>
+<td style="text-align:left">-32,768 到 32,767</td>
+</tr>
+<tr>
+<td style="text-align:left">unsigned short</td>
+<td style="text-align:left">2 字节</td>
+<td style="text-align:left">0 到 65,535</td>
+</tr>
+<tr>
+<td style="text-align:left">long</td>
+<td style="text-align:left">4 字节</td>
+<td style="text-align:left">-2,147,483,648 到 2,147,483,647</td>
+</tr>
+<tr>
+<td style="text-align:left">unsigned long</td>
+<td style="text-align:left">4 字节</td>
+<td style="text-align:left">0 到 4,294,967,295</td>
+</tr>
+</tbody>
+</table>
+<p>注意，各种类型的存储大小与系统位数有关，但目前通用的以 64 位系统为主。</p>
+<p>以下列出了 32 位系统与 64 位系统的存储大小的差别（windows 相同）：</p>
+<p><img src="https://www.runoob.com/wp-content/uploads/2014/09/32-64.jpg" alt="pic"  /></p>
+<p>为了得到某个类型或某个变量在特定平台上的准确大小，您可以使用 <strong>sizeof</strong> 运算符。表达式 <em>sizeof(type)</em> 得到对象或类型的存储字节大小。下面的实例演示了获取 int 类型的大小：</p>
+<div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp">
+</span><span class="cp">#include</span> <span class="cpf">&lt;limits.h&gt;</span><span class="cp">
+</span><span class="cp"></span> 
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+   <span class="n">printf</span><span class="p">(</span><span class="s">&#34;int 存储大小 : %lu </span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="p">));</span>
+   
+   <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">int 存储大小 : <span class="m">4</span> 
+</code></pre></div><h3 id="52-浮点类型">5.2 浮点类型</h3>
+<p>下表列出了关于标准浮点类型的存储大小、值范围和精度的细节：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">类型</th>
+<th style="text-align:left">存储大小</th>
+<th style="text-align:left">值范围</th>
+<th style="text-align:left">精度</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">float</td>
+<td style="text-align:left">4 字节</td>
+<td style="text-align:left">1.2E-38 到 3.4E+38</td>
+<td style="text-align:left">6 位小数</td>
+</tr>
+<tr>
+<td style="text-align:left">double</td>
+<td style="text-align:left">8 字节</td>
+<td style="text-align:left">2.3E-308 到 1.7E+308</td>
+<td style="text-align:left">15 位小数</td>
+</tr>
+<tr>
+<td style="text-align:left">long double</td>
+<td style="text-align:left">16 字节</td>
+<td style="text-align:left">3.4E-4932 到 1.1E+4932</td>
+<td style="text-align:left">19 位小数</td>
+</tr>
+</tbody>
+</table>
+<h3 id="53-void-类型">5.3 void 类型</h3>
+<p>void 类型指定没有可用的值。它通常用于以下三种情况下：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">序号</th>
+<th style="text-align:left">类型与描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">1</td>
+<td style="text-align:left"><strong>函数返回为空</strong> C 中有各种函数都不返回值，或者您可以说它们返回空。不返回值的函数的返回类型为空。例如 <strong>void exit (int status);</strong></td>
+</tr>
+<tr>
+<td style="text-align:left">2</td>
+<td style="text-align:left"><strong>函数参数为空</strong> C 中有各种函数不接受任何参数。不带参数的函数可以接受一个 void。例如 <strong>int rand(void);</strong></td>
+</tr>
+<tr>
+<td style="text-align:left">3</td>
+<td style="text-align:left"><strong>指针指向 void</strong> 类型为 void * 的指针代表对象的地址，而不是类型。例如，内存分配函数 <strong>void*malloc( size_t size );</strong> 返回指向 void 的指针，可以转换为任何数据类型。</td>
+</tr>
+</tbody>
+</table>
+<p>如果现在您还是无法完全理解 void 类型，不用太担心，在后续的章节中我们将会详细讲解这些概念。</p>
+<h3 id="note">Note</h3>
+<blockquote>
+<p>常用基本数据类型占用空间（64 位机器为例）</p>
+<ul>
+<li>char ： 1 个字节</li>
+<li>int ：4 个字节</li>
+<li>float：4 个字节</li>
+<li>double：8 个字节</li>
+</ul>
+<p>基本类型书写</p>
+<p><strong>整数</strong></p>
+<ul>
+<li>a，默认为 10 进制 ，10 ，20。</li>
+<li>b，以 0 开头为 8 进制，045，021。</li>
+<li>c.，以 0b 开头为 2 进制，0b11101101。</li>
+<li>d，以 0x 开头为 16 进制，0x21458adf。</li>
+</ul>
+<p><strong>小数</strong></p>
+<p>单精度常量：2.3f 。</p>
+<p>双精度常量：2.3，默认为双精度。</p>
+<p><strong>字符型常量</strong></p>
+<p>用英文单引号括起来，只保存一个字符&rsquo;a'、&lsquo;b&rsquo; 、'*' ，还有转义字符 &lsquo;\n&rsquo; 、'\t'。</p>
+<p><strong>字符串常量</strong></p>
+<p>用英文的双引号引起来 可以保存多个字符：&ldquo;abc&rdquo;。</p>
+<hr>
+<p>1、数据类型转换：C 语言中如果一个表达式中含有不同类型的常量和变量，在计算时，会将它们自动转换为同一种类型；在 C 语言中也可以对数据类型进行强制转换；</p>
+<p>2、自动转换规则：</p>
+<ul>
+<li>a）浮点数赋给整型，该浮点数小数被舍去；</li>
+<li>b）整数赋给浮点型，数值不变，但是被存储到相应的浮点型变量中；</li>
+</ul>
+<p>3、强制类型转换形式： <strong>(类型说明符)(表达式)</strong></p>
+<p>实例程序：</p>
+<div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="cp">#include</span><span class="cpf">&lt;stdio.h&gt;</span><span class="cp">
+</span><span class="cp"></span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+   <span class="kt">float</span> <span class="n">f</span><span class="p">,</span><span class="n">x</span><span class="o">=</span><span class="mf">3.6</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="mf">5.2</span><span class="p">;</span>
+   <span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">;</span>
+   <span class="n">a</span><span class="o">=</span><span class="n">x</span><span class="o">+</span><span class="n">y</span><span class="p">;</span>
+   <span class="n">b</span><span class="o">=</span><span class="p">(</span><span class="kt">int</span><span class="p">)(</span><span class="n">x</span><span class="o">+</span><span class="n">y</span><span class="p">);</span>
+   <span class="n">f</span><span class="o">=</span><span class="mi">10</span><span class="o">/</span><span class="n">i</span><span class="p">;</span>
+   <span class="n">printf</span><span class="p">(</span><span class="s">&#34;a=%d,b=%d,f=%f,x=%f</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">f</span><span class="p">,</span><span class="n">x</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div><p>例中先计算 x+y 值为 8.8，然后赋值给 a，因为 a 为整型，所以自取整数部分 8，a=8;</p>
+<p>接下来 b 把 x+y 强制转换为整型;</p>
+<p>最后 10/i 是两个整数相除，结果仍为整数 2，把 2 赋给浮点数 f;</p>
+<p>x 为浮点型直接输出。</p>
+</blockquote>
+<h2 id="6-clang-变量">6. clang 变量</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">类型</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">char</td>
+<td style="text-align:left">通常是一个字节（八位）。这是一个整数类型。</td>
+</tr>
+<tr>
+<td style="text-align:left">int</td>
+<td style="text-align:left">对机器而言，整数的最自然的大小。</td>
+</tr>
+<tr>
+<td style="text-align:left">float</td>
+<td style="text-align:left">单精度浮点值。单精度是这样的格式，1 位符号，8 位指数，23 位小数。<img src="https://www.runoob.com/wp-content/uploads/2014/09/v2-749cc641eb4d5dafd085e8c23f8826aa_hd.png" alt="img"  /></td>
+</tr>
+<tr>
+<td style="text-align:left">double</td>
+<td style="text-align:left">双精度浮点值。双精度是 1 位符号，11 位指数，52 位小数。<img src="https://www.runoob.com/wp-content/uploads/2014/09/v2-48240f0e1e0dd33ec89100cbe2d30707_hd.png" alt="img"  /></td>
+</tr>
+<tr>
+<td style="text-align:left">void</td>
+<td style="text-align:left">表示类型的缺失。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="61-c-中的变量声明">6.1 C 中的变量声明</h3>
+<p>变量的声明有两种情况：</p>
+<ul>
+<li>1、一种是需要建立存储空间的。例如：int a 在声明的时候就已经建立了存储空间。</li>
+<li>2、另一种是不需要建立存储空间的，通过使用 extern 关键字声明变量名而不定义它。 例如：extern int a 其中变量 a 可以在别的文件中定义的。</li>
+<li>除非有<a class="link" href="#point1" >extern</a>关键字，否则都是变量的定义。</li>
+</ul>
+<div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="k">extern</span> <span class="kt">int</span> <span class="n">i</span><span class="p">;</span> <span class="c1">//声明，不是定义
+</span><span class="c1"></span><span class="kt">int</span> <span class="n">i</span><span class="p">;</span> <span class="c1">//声明，也是定义
+</span></code></pre></div><h3 id="62-代码实例">6.2 代码实例：</h3>
+<div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp">
+</span><span class="cp"></span> 
+<span class="c1">// 函数外定义变量 x 和 y
+</span><span class="c1"></span><span class="kt">int</span> <span class="n">x</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">y</span><span class="p">;</span>
+<span class="kt">int</span> <span class="nf">addtwonum</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="c1">// 函数内声明变量 x 和 y 为外部变量
+</span><span class="c1"></span>    <span class="k">extern</span> <span class="kt">int</span> <span class="n">x</span><span class="p">;</span>
+    <span class="k">extern</span> <span class="kt">int</span> <span class="n">y</span><span class="p">;</span>
+    <span class="c1">// 给外部变量（全局变量）x 和 y 赋值
+</span><span class="c1"></span>    <span class="n">x</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+    <span class="k">return</span> <span class="n">x</span><span class="o">+</span><span class="n">y</span><span class="p">;</span>
+<span class="p">}</span>
+ 
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">result</span><span class="p">;</span>
+    <span class="c1">// 调用函数 addtwonum
+</span><span class="c1"></span>    <span class="n">result</span> <span class="o">=</span> <span class="n">addtwonum</span><span class="p">();</span>
+    
+    <span class="n">printf</span><span class="p">(</span><span class="s">&#34;result 为: %d&#34;</span><span class="p">,</span><span class="n">result</span><span class="p">);</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div><p>如果我们将**addtwonum()**独立为一个文件呢？试试看！</p>
+<div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp">
+</span><span class="cp"></span><span class="cm">/*外部变量声明*/</span>
+<span class="k">extern</span> <span class="kt">int</span> <span class="n">x</span> <span class="p">;</span>
+<span class="k">extern</span> <span class="kt">int</span> <span class="n">y</span> <span class="p">;</span>
+<span class="kt">int</span> <span class="nf">addtwonum</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="n">x</span><span class="o">+</span><span class="n">y</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp">
+</span><span class="cp"></span>  
+<span class="cm">/*定义两个全局变量*/</span>
+<span class="kt">int</span> <span class="n">x</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">y</span><span class="o">=</span><span class="mi">2</span><span class="p">;</span>
+<span class="kt">int</span> <span class="nf">addtwonum</span><span class="p">();</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">result</span><span class="p">;</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">addtwonum</span><span class="p">();</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&#34;result 为: %d</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span><span class="n">result</span><span class="p">);</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div><p>如果需要在一个源文件中引用另外一个源文件中定义的变量，我们只需在引用的文件中将变量加上 extern 关键字的声明即可。</p>
+<h2 id="7-常量">7. 常量</h2>
+<h3 id="71-整数常量">7.1 整数常量</h3>
+<p>整数常量可以是十进制、八进制或十六进制的常量。前缀指定基数：0x 或 0X 表示十六进制，0 表示八进制，不带前缀则默认表示十进制。</p>
+<p>整数常量也可以带一个后缀，后缀是 U 和 L 的组合，U 表示无符号整数（unsigned），L 表示长整数（long）。后缀可以是大写，也可以是小写，U 和 L 的顺序任意。</p>
+<p>以下是各种类型的整数常量的实例：</p>
+<pre><code>85         /* 十进制 */
+0213       /* 八进制 */
+0x4b       /* 十六进制 */
+30         /* 整数 */
+30u        /* 无符号整数 */
+30l        /* 长整数 */
+30ul       /* 无符号长整数 */
+</code></pre><h3 id="72-浮点常量">7.2 浮点常量</h3>
+<p>浮点常量由整数部分、小数点、小数部分和指数部分组成。您可以使用小数形式或者指数形式来表示浮点常量。</p>
+<p>当使用小数形式表示时，必须包含整数部分、小数部分，或同时包含两者。当使用指数形式表示时， 必须包含小数点、指数，或同时包含两者。带符号的指数是用 e 或 E 引入的。</p>
+<p>下面列举几个浮点常量的实例：</p>
+<pre><code>3.14159       /* 合法的 */
+314159E-5L    /* 合法的 */
+510E          /* 非法的：不完整的指数 */
+210f          /* 非法的：没有小数或指数 */
+.e55          /* 非法的：缺少整数或分数 */
+</code></pre><h3 id="73-字符常量">7.3 字符常量</h3>
+<p>字符常量是括在单引号中，例如，&lsquo;x&rsquo; 可以存储在 <strong>char</strong> 类型的简单变量中。</p>
+<p>字符常量可以是一个普通的字符（例如 &lsquo;x&rsquo;）、一个转义序列（例如 &lsquo;\t&rsquo;），或一个通用的字符（例如 &lsquo;\u02C0&rsquo;）。</p>
+<p>在 C 中，有一些特定的字符，当它们前面有反斜杠时，它们就具有特殊的含义，被用来表示如换行符（\n）或制表符（\t）等。下表列出了一些这样的转义序列码：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">转义序列</th>
+<th style="text-align:left">含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">\|\ 字符</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:left">'</td>
+<td style="text-align:left">' 字符</td>
+</tr>
+<tr>
+<td style="text-align:left">&quot;</td>
+<td style="text-align:left">&quot; 字符</td>
+</tr>
+<tr>
+<td style="text-align:left">?</td>
+<td style="text-align:left">? 字符</td>
+</tr>
+<tr>
+<td style="text-align:left">\a</td>
+<td style="text-align:left">警报铃声</td>
+</tr>
+<tr>
+<td style="text-align:left">\b</td>
+<td style="text-align:left">退格键</td>
+</tr>
+<tr>
+<td style="text-align:left">\f</td>
+<td style="text-align:left">换页符</td>
+</tr>
+<tr>
+<td style="text-align:left">\n</td>
+<td style="text-align:left">换行符</td>
+</tr>
+<tr>
+<td style="text-align:left">\r</td>
+<td style="text-align:left">回车</td>
+</tr>
+<tr>
+<td style="text-align:left">\t</td>
+<td style="text-align:left">水平制表符</td>
+</tr>
+<tr>
+<td style="text-align:left">\v</td>
+<td style="text-align:left">垂直制表符</td>
+</tr>
+<tr>
+<td style="text-align:left">\ooo</td>
+<td style="text-align:left">一到三位的八进制数</td>
+</tr>
+<tr>
+<td style="text-align:left">\xhh . . .</td>
+<td style="text-align:left">一个或多个数字的十六进制数</td>
+</tr>
+</tbody>
+</table>
+<p>下面的实例显示了一些转义序列字符：</p>
+<h3 id="74-字符串常量">7.4 字符串常量</h3>
+<p>字符串字面值或常量是括在双引号 &quot;&rdquo; 中的。一个字符串包含类似于字符常量的字符：普通的字符、转义序列和通用的字符。</p>
+<p>您可以使用空格做分隔符，把一个很长的字符串常量进行分行。</p>
+<p>下面的实例显示了一些字符串常量。下面这三种形式所显示的字符串是相同的。</p>
+<pre><code>&quot;hello, dear&quot;
+
+&quot;hello, \
+
+dear&quot;
+
+&quot;hello, &quot; &quot;d&quot; &quot;ear&quot;
+</code></pre><h3 id="75-定义常量">7.5 定义常量</h3>
+<p>在 C 中，有两种简单的定义常量的方式：</p>
+<ol>
+<li>使用 <strong>#define</strong> 预处理器。</li>
+<li>使用 <strong>const</strong> 关键字。</li>
+</ol>
+<h4 id="751-define-预处理器">7.5.1 #define 预处理器</h4>
+<p>下面是使用 #define 预处理器定义常量的形式：</p>
+<pre><code>#define identifier value
+</code></pre><div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp">
+</span><span class="cp"></span> 
+<span class="cp">#define LENGTH 10   
+</span><span class="cp">#define WIDTH  5
+</span><span class="cp">#define NEWLINE &#39;\n&#39;
+</span><span class="cp"></span> 
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+   <span class="kt">int</span> <span class="n">area</span><span class="o">=</span> <span class="n">LENGTH</span> <span class="o">*</span> <span class="n">WIDTH</span><span class="p">;</span>
+  
+   <span class="n">printf</span><span class="p">(</span><span class="s">&#34;value of area : %d&#34;</span><span class="p">,</span> <span class="n">area</span><span class="p">);</span>
+   <span class="n">printf</span><span class="p">(</span><span class="s">&#34;%c&#34;</span><span class="p">,</span> <span class="n">NEWLINE</span><span class="p">);</span>
+ 
+   <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">value of area : <span class="m">50</span>
+</code></pre></div><h4 id="752-const-关键字">7.5.2 const 关键字</h4>
+<p>您可以使用 <strong>const</strong> 前缀声明指定类型的常量，如下所示：</p>
+<pre><code>const type variable = value;
+</code></pre><div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp">
+</span><span class="cp"></span> 
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+   <span class="k">const</span> <span class="kt">int</span>  <span class="n">LENGTH</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+   <span class="k">const</span> <span class="kt">int</span>  <span class="n">WIDTH</span>  <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+   <span class="k">const</span> <span class="kt">char</span> <span class="n">NEWLINE</span> <span class="o">=</span> <span class="sc">&#39;\n&#39;</span><span class="p">;</span>
+   <span class="kt">int</span> <span class="n">area</span> <span class="o">=</span> <span class="n">LENGTH</span> <span class="o">*</span> <span class="n">WIDTH</span><span class="p">;</span>  
+   
+   <span class="n">printf</span><span class="p">(</span><span class="s">&#34;value of area : %d&#34;</span><span class="p">,</span> <span class="n">area</span><span class="p">);</span>
+   <span class="n">printf</span><span class="p">(</span><span class="s">&#34;%c&#34;</span><span class="p">,</span> <span class="n">NEWLINE</span><span class="p">);</span>
+ 
+   <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">value of area : <span class="m">50</span>
+</code></pre></div><h2 id="8-c-存储类">8. C 存储类</h2>
+<p>存储类定义 C 程序中变量/函数的范围（可见性）和生命周期。这些说明符放置在它们所修饰的类型之前。下面列出 C 程序中可用的存储类：</p>
+<ul>
+<li>auto</li>
+<li>register</li>
+<li>static</li>
+<li>extern</li>
+</ul>
+<h3 id="81-auto-存储类">8.1 auto 存储类</h3>
+<p><strong>auto</strong> 存储类是所有局部变量默认的存储类。</p>
+<pre><code>{
+   int mount;
+   auto int month;
+}
+</code></pre><p>上面的实例定义了两个带有相同存储类的变量，auto 只能用在函数内，即 auto 只能修饰局部变量。</p>
+<h3 id="82-register-存储类">8.2 register 存储类</h3>
+<p><strong>register</strong> 存储类用于定义存储在寄存器中而不是 RAM 中的局部变量。这意味着变量的最大尺寸等于寄存器的大小（通常是一个词），且不能对它应用一元的 &lsquo;&amp;&rsquo; 运算符（因为它没有内存位置）。</p>
+<pre><code>{
+   register int  miles;
+}
+</code></pre><p>寄存器只用于需要快速访问的变量，比如计数器。还应注意的是，定义 &lsquo;register&rsquo; 并不意味着变量将被存储在寄存器中，它意味着变量可能存储在寄存器中，这取决于硬件和实现的限制。</p>
+<h3 id="83-static-存储类">8.3 static 存储类</h3>
+<p><strong>static</strong> 存储类指示编译器在程序的生命周期内保持局部变量的存在，而不需要在每次它进入和离开作用域时进行创建和销毁。因此，使用 static 修饰局部变量可以在函数调用之间保持局部变量的值。</p>
+<p>static 修饰符也可以应用于全局变量。当 static 修饰全局变量时，会使变量的作用域限制在声明它的文件内。</p>
+<p>全局声明的一个 static 变量或方法可以被任何函数或方法调用，只要这些方法出现在跟 static 变量或方法同一个文件中。</p>
+<p>以下实例演示了 static 修饰全局变量和局部变量的应用：</p>
+<div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp">
+</span><span class="cp"></span>
+<span class="k">static</span> <span class="kt">int</span> <span class="n">count</span><span class="o">=</span><span class="mi">10</span><span class="p">;</span>        <span class="cm">/* 全局变量 - static 是默认的 */</span>
+ 
+<span class="kt">void</span> <span class="nf">func1</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="cm">/* &#39;thingy&#39; 是 &#39;func1&#39; 的局部变量 - 只初始化一次
+</span><span class="cm"> * 每次调用函数 &#39;func1&#39; &#39;thingy&#39; 值不会被重置。
+</span><span class="cm"> */</span>                
+  <span class="k">static</span> <span class="kt">int</span> <span class="n">thingy</span><span class="o">=</span><span class="mi">5</span><span class="p">;</span>
+  <span class="n">thingy</span><span class="o">++</span><span class="p">;</span>
+  <span class="n">printf</span><span class="p">(</span><span class="s">&#34; thingy 为 %d ， count 为 %d</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="n">thingy</span><span class="p">,</span> <span class="n">count</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+  <span class="k">while</span> <span class="p">(</span><span class="n">count</span><span class="o">--</span><span class="p">)</span> <span class="p">{</span>
+      <span class="n">func1</span><span class="p">();</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div><pre><code> thingy 为 6 ， count 为 9
+ thingy 为 7 ， count 为 8
+ thingy 为 8 ， count 为 7
+ thingy 为 9 ， count 为 6
+ thingy 为 10 ， count 为 5
+ thingy 为 11 ， count 为 4
+ thingy 为 12 ， count 为 3
+ thingy 为 13 ， count 为 2
+ thingy 为 14 ， count 为 1
+ thingy 为 15 ， count 为 0
+</code></pre><p><strong>可以看出加了 static 后，局部变量就变成了类似全局变量了，但是仅仅是定义了这个存储类的对象可以访问</strong></p>
+<h3 id="84-span-idpoint1-extern-span-存储类">8.4 <!-- raw HTML omitted --> extern <!-- raw HTML omitted --> 存储类</h3>
+<p><strong>extern</strong> 存储类用于提供一个全局变量的引用，全局变量对所有的程序文件都是可见的。当您使用 <strong>extern</strong> 时，对于无法初始化的变量，会把变量名指向一个之前定义过的存储位置。</p>
+<p>当您有多个文件且定义了一个可以在其他文件中使用的全局变量或函数时，可以在其他文件中使用 <em>extern</em> 来得到已定义的变量或函数的引用。可以这么理解，<em>extern</em> 是用来在另一个文件中声明一个全局变量或函数。</p>
+<p>extern 修饰符通常用于当有两个或多个文件共享相同的全局变量或函数的时候，如下所示：</p>
+<p><strong>第一个文件：main.c</strong></p>
+<div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp">
+</span><span class="cp"></span> 
+<span class="kt">int</span> <span class="n">count</span> <span class="p">;</span>
+<span class="k">extern</span> <span class="kt">void</span> <span class="nf">write_extern</span><span class="p">();</span>
+ 
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+   <span class="n">count</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+   <span class="n">write_extern</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div><p><strong>第二个文件：support.c</strong></p>
+<div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp">
+</span><span class="cp"></span> 
+<span class="k">extern</span> <span class="kt">int</span> <span class="n">count</span><span class="p">;</span>
+ 
+<span class="kt">void</span> <span class="nf">write_extern</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+   <span class="n">printf</span><span class="p">(</span><span class="s">&#34;count is %d</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="n">count</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div><p>在这里，第二个文件中的 <em>extern</em> 关键字用于声明已经在第一个文件 main.c 中定义的 <em>count</em>。现在 ，编译这两个文件，如下所示：</p>
+<pre><code> $ gcc main.c support.c
+</code></pre><p>这会产生 <strong>a.out</strong> 可执行程序，当程序被执行时，它会产生下列结果：</p>
+<pre><code>count is 5
+</code></pre>
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/note/">Note</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3&#43;Aro6EYUG4&#43;cU&#43;KJWu/X"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js"integrity="sha384-g7c&#43;Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI&#43;sEnkvrMWph2EDg4"crossorigin="anonymous"
+                defer="true"
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC&#43;Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa"crossorigin="anonymous"
+                defer="true"
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+        renderMathInElement(document.querySelector(`.article-content`), {
+            delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "$", right: "$", display: false },
+                { left: "\\(", right: "\\)", display: false },
+                { left: "\\[", right: "\\]", display: true }
+            ]
+        });})
+</script>
+    
+</article>
+
+    <aside class="related-contents--wrapper">
+    
+    
+</aside>
+
+
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2019 - 
+        
+        2021 JokemeBlog
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="2.3.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer="true"
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer="true"
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css"integrity="sha256-c0uckgykQ9v5k&#43;IqViZOZKc47Jn7KQil4/MP3ySA3F8="crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css"integrity="sha256-SBLU4vv6CA6lHsZ1XyTdhyjJxCjPif/TRkjnsyGAGnE="crossorigin="anonymous"
+            >
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js"integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g="crossorigin="anonymous"
+                defer="false"
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

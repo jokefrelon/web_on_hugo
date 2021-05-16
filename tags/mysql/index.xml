@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Mysql on JokemeBlog</title>
+    <link>https://jokeme.top/tags/mysql/</link>
+    <description>Recent content in Mysql on JokemeBlog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 28 Jul 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://jokeme.top/tags/mysql/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>解决一个Ubuntu 18 安装MySQL 5.7不能远程登录的问题</title>
+      <link>https://jokeme.top/p/mysql_login_problem/</link>
+      <pubDate>Tue, 28 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jokeme.top/p/mysql_login_problem/</guid>
+      <description>解决一个Ubuntu 18 安装MySQL 5.7不能远程登录的问题 首先编辑 /etc/mysql/mysql.conf.d/mysqld.cnf 配置文件：
+nano /etc/mysql/mysql.conf.d/mysqld.cnf 注释掉
+bind-address = 127.0.0.1 #如果没有就跳过 还有就是要给root 设置一个密码，允许他远程登录
+use mysql; SELECT user,host FROM user; update user set host=&amp;quot;%&amp;quot; where user=&amp;quot;root&amp;quot; update user set authentication_string=PASSWORD(&amp;quot;UrPasswd&amp;quot;)where user=&amp;quot;root&amp;quot;; flush privileges; 如果MySQL5.7 这样还不能远程登录上，咱见面持刀互a，如果你比我猛，当我没有说！
+你以为这就完了吗？？哪有这么简单，你还需要下面这条命令
+update user set plugin=&#39;mysql_native_password&#39;; #放在上面 use mysql； 后面执行 很多人都是忽略了这条命令，导致一直无法远程登录上MySQL* 必要的话可以重启一下MySQL哦！</description>
+    </item>
+    
+  </channel>
+</rss>

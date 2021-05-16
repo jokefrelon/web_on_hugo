@@ -1,0 +1,653 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>JokemeBlog</title>
+        <link>https://jokeme.top/</link>
+        <description>Recent content on JokemeBlog</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>en-us</language>
+        <lastBuildDate>Sun, 16 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://jokeme.top/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>从solo迁移到hugo</title>
+        <link>https://jokeme.top/p/%E4%BB%8Esolo%E8%BF%81%E7%A7%BB%E5%88%B0hugo/</link>
+        <pubDate>Sun, 16 May 2021 00:00:00 +0000</pubDate>
+        
+        <guid>https://jokeme.top/p/%E4%BB%8Esolo%E8%BF%81%E7%A7%BB%E5%88%B0hugo/</guid>
+        <description>&lt;img src="https://cn.bing.com/th?id=OHR.Wakodahatchee_EN-CN9780170147_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post 从solo迁移到hugo" /&gt;博客迁移 最近我把我的个人博客从solo迁移到了hugo项目上了。
+不是solo不够优秀而是solo不符合我的需求了，我总结了以下几点
+ 可定制化程度太低，千篇一律，单调枯燥，乏味。 登录需要用社区账号，不确定因素太大。 经常更新导致的版本不兼容。  我也想过给自己偷个懒使用Bolo作为solo的替代品，但是还是不符合我的预期。虽然不需要社区账号登陆，但是他和solo太相似了，以至于我感觉我换了个寂寞。
+1. 初识Hugo 在我有了迁移博客到其他平台的念想时我就一直在物色新的平台，然后我突然间就在GitHub上看到了hugo。
+一款golang写的软件，可以直接用markdown来更新文章，而且主题贼多，数据啥的也都是放自己手里。卧槽，我不就是我想找的吗！
+2. Hugo部署 其实上面扯了些没用的，到这里才是我的技术博客开始记录的地方。
+2.1 下载hugo压缩包 wget https://github.com/gohugoio/hugo/releases/download/v0.83.1/hugo_extended_0.83.1_Linux-64bit.tar.gz -O hugo.tar.gz 首先，Github找到hugo的最新版，并且是extended版本的，否者我们后续是无法自行修改scss的，我一开始就因为这点，整整折腾了一个晚上都无法修改主题为我喜欢的样式。Google了良久才发现这个问题。
+2.2 解压hugo 这一步是很容易的
+tar -zxvf hugo.tar.gz 然后你可以把没有用的LIENCE和README.md删除了。只留一个hugo的二进制可执行文件。
+并且要把这个二进制文件放在环境变量里面。
+mv hugo /usr/local/bin #我个人是推荐放这里的，你要是喜欢放别的地方也是可以的 3. 配置hugo 这里我建议你先看看hugo的quick_start，虽然看了和没有看一样，但是这也是一种学习的过程吧。
+hugo new site site_name 到这里你的网站就建立完成了。是不是很惊愕！你甚至连如何运行网站都不了解。
+没事，咱们慢慢来！
+先下载一个好看的Theme，当然不下载也可以，但是你没有主题的网站是真的丑呀。
+cd site_name wget https://github.com/CaiJimmy/hugo-theme-stack/archive/refs/tags/v2.3.0.zip -O themes/v2.3.0.zip cd themes unzip v2.3.0.zip mv hugo-theme-stack-2.3.0 hugo-theme-stack rm v2.3.0.zip 接下来就是配置文件了
+baseurl:http://example.com#根据你自己改languageCode:en-ustheme:hugo-theme-stackpaginate:20title:Blog#根据你自己改# Change it to your Disqus shortname before using#disqusShortname: hugo-theme-stack# GA Tracking ID#googleAnalytics:# Theme i18n support# Available values: en, fr, id, ja, ko, pt-br, zh-cn, es, deDefaultContentLanguage:zh-cnpermalinks:post:/p/:slug/page:/:slug/params:mainSections:- postfeaturedImageField:imagerssFullContent:truefavicon:/bk3.</description>
+        </item>
+        <item>
+        <title>Dockerfile编写</title>
+        <link>https://jokeme.top/p/dockerfile/</link>
+        <pubDate>Tue, 13 Apr 2021 00:00:00 +0000</pubDate>
+        
+        <guid>https://jokeme.top/p/dockerfile/</guid>
+        <description>&lt;img src="https://cn.bing.com/th?id=OHR.PadarIsland_EN-CN9304851314_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post Dockerfile编写" /&gt;今天也是摸鱼的一天没怎么看书,一直在玩Linux。并且在无意间看到了我之前下载的 DirectoryLister，就想着在Docker里面部署玩一下。
+一开始我是没有想写Dockerfile的，直接在开了一个Ubuntu容器整的，但是想了想，以后想用肯定不方便，这个容器我随时随地都有可以废了它。所以就从网上看了看Dockerfile怎么写，开整！
+首先我并不想介绍Dockerfile怎么样去写，网上的教程一大把，自己看就可以了 我是参考菜鸟教程的教程。
+Dockerfile无非就是一个自动化的过程，至少在我看来就是这样的，可能我刚接触了解不深吧。但是按照这个思路是绝对可以写出来Dockerfile的，因为我自己就是例子🌰。
+来看看我的build
+7168 ◯ : docker build -t flt:v1.0 . ... ... Removing intermediate container 8fe78ec98a65 ---&amp;gt; da56585b17c1 Step 4/4 : CMD [&amp;quot;/root/np.sh&amp;quot;] ---&amp;gt; Running in 23bd36103ddd Removing intermediate container 23bd36103ddd ---&amp;gt; 114c7dec7e2f Successfully built 114c7dec7e2f Successfully tagged flt:v1.0 1. 选择基础镜像 因为Dockerfile是基于一些底层的镜像制作的，所以在这里我选择的是 ubuntu:20.04
+因为我平时就是在Ubuntu环境使用的比较多,你要是使用CentOS更顺手你也可以选择使用Redhat系的基础镜像。
+这里无可争议，过。
+FROM ubuntu:20.04 2. 配置环境变量 其实我这里也没有啥环境变量，我也不知道啥东西要设置为环境变量，就把DirectoryLister的版本号设置为环境变量了，方便以后升级。哈哈哈哈，比较菜只能想到这东西了。
+ENV DL_VERSION 3.7.7 3. 自动化运行命令 这里也没有啥好说的，有点Linux基础就可以，就是这个写法很操蛋！要不停的 &amp;amp;&amp;amp; &amp;hellip; &amp;hellip; \，至于为什么要这样呢，我查了一下，说是一个RUN就是一层，你要是写太多RUN就会套太多层，非常的臃肿。这些暂时也不是我需要考虑的，别人怎么写，我就怎么写。
+这里我遇到了一个自动化安装软件时，需要用户手动输入参数的问题，平时咱手动输入参数可以，但是这自动化的时候可不能这样呀，废了老大劲网上找到了解决办法，就是利用 debconf 提前配置好参数，详细解决办法见Ubuntu问答 。
+这里我特喵的还是要喷一喷CSDN，妈的一篇帖子万人抄，也不管对不对，往自己的的账号里面薅就对了。妈的好几页都是垃圾文章，浪费我的时间。</description>
+        </item>
+        <item>
+        <title>ffmpeg设置请求头</title>
+        <link>https://jokeme.top/p/ffmpeg_user_agent/</link>
+        <pubDate>Tue, 23 Mar 2021 00:00:00 +0000</pubDate>
+        
+        <guid>https://jokeme.top/p/ffmpeg_user_agent/</guid>
+        <description>&lt;img src="https://cn.bing.com/th?id=OHR.Comma_EN-CN6081365526_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post ffmpeg设置请求头" /&gt;ffmpeg是一款非常强大的工具,它可以在命令行下对视频类文件进行多种操作,之前我也介绍过ffmpeg,戳这里
+在使用过程中我们经常可以遇到使用ffmpeg无法下载文件的情况,那这是为什么呢？
+其实有时候,服务端会对我们客户端的请求进行检验,其中最简单的就是检查请求头：User-Agent ，如果你连请求头都没,那你肯定就暴露了你不是正常的用户，你既然不是正常的用户，那那服务器那边就会拒绝你的访问请求，所以就导致了你被403。
+既然这样那咱们简单设置一下请求头就可以了：
+ffmpeg -user_agent &amp;quot;User-Agent: AppleCoreMedia/1.0.0.18C66 (iPhone; U; CPU OS 14_3 like Mac OS X; zh_cn)&amp;quot; -i https://www.baidu.com/xxx.mp4\?id\=2399977 -c copy str4.mp4 当你设置了请求头以后你还别高兴太早了！因为服务器那边既然开启了检测，就不会通过这麽简单的方法来拦截非正常用户的访问。一般来说还有各种headers
+这时我们就需要通过抓包来获得具体的请求头里的参数了，下面我就简单的介绍一下具体的参数该如何写。注意 $&#39;\r\n&#39;这是一种换行的写法。
+ffmpeg -user_agent &amp;quot;User-Agent: AppleCoreMedia/1.0.0.18C66 (iPhone; U; CPU OS 14_3 like Mac OS X; zh_cn)&amp;quot; -headers &amp;quot;Authorization: fudkmnso-... ...9-0sdf-0ea&amp;quot;$&#39;\r\n&#39;&amp;quot;Xplay-session-ID:9885998&amp;quot; -i https://www.baidu.com/xxx.mp4\?id\=2399977 -c copy str4.mp4 </description>
+        </item>
+        <item>
+        <title>Nginx目录美化</title>
+        <link>https://jokeme.top/p/nginx_beautify/</link>
+        <pubDate>Tue, 23 Mar 2021 00:00:00 +0000</pubDate>
+        
+        <guid>https://jokeme.top/p/nginx_beautify/</guid>
+        <description>&lt;img src="https://cn.bing.com/th?id=OHR.WWDLions_EN-CN5288663061_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post Nginx目录美化" /&gt;Nginx目录美化 我们大家都知道啊! nginx是一个高性能的Web服务器,用于分享文件也是一个非常不错的选择,但是由于Nginx默认的目录太丑了, 都不好意思拿出手。这就有了本篇文章。
+先来说一下我的环境: Ubuntu 20.04.1 ，Nginx 1.18
+1. 添加Index.html至主机根目录 nano index.html 内容如下
+&amp;lt;!-- autoindex.html 21.02, see https://phus.lu --&amp;gt; &amp;lt;script&amp;gt; !function(){ var website_title = &#39;&#39; var datetime_format = &#39;%Y-%b-%d %H:%M&#39; var show_readme_md = true var enable_footer_js = true var max_name_length = 20 var dom = { element: null, get: function (o) { var obj = Object.create(this) obj.element = (typeof o == &amp;quot;object&amp;quot;) ? o : document.createElement(o) return obj }, add: function (o) { var obj = dom.</description>
+        </item>
+        <item>
+        <title>记录最近捯饬Linux的收获</title>
+        <link>https://jokeme.top/p/linux_reward/</link>
+        <pubDate>Sun, 21 Mar 2021 00:00:00 +0000</pubDate>
+        
+        <guid>https://jokeme.top/p/linux_reward/</guid>
+        <description>&lt;img src="https://cn.bing.com/th?id=OHR.BlueTitDaffs_EN-CN2615365443_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post 记录最近捯饬Linux的收获" /&gt;记录最近捯饬Linux的收获 虽然最近在准备专升本考试吧，但是也没有认真的复习，最近还是天天玩Linux，在这里记录一下。
+1. Windows Terminal设置 如果你关注IT圈的话，你一定知道微软在Github开源了新的Terminal，并且这是一个颜值高,用着爽的全新版本,支持Unicode。这些都是后话，我要说的是WSL和Terminal相关的设置。因为Terminal打开WSL默认的路径是该用户的在Windows下的家目录，而此时你就需要修改setting.json对应位置添加以下配置：&amp;quot;startingDirectory&amp;quot;: &amp;quot;//wsl$/Ubuntu-18.04/home/frelon&amp;quot;
+如果你还没有用过Windows Terminal那你可以先看看这个Windows Terminal的简介
+2. aria2下载 众所周知，aria2是一款非常好用的一款下载工具，并且它开源，体积小，运行效率高等。什么？你没有听说过？那你总听说过Motrix吧！什么你还没有听说过？那你一定知道PanDown吧？没错这款伟大的软件就是基于aria2。
+aria2本身只是命令行工具，所以我们可以在命令行里安装它。
+sudo apt install aira2 如果你只是简简单单的下载文件，那curl 和 wget aira2是没有啥大的区别的。额说到这里哈，就不得不说今天是curl的23岁生日，curl是 March 20. 1998 年发布的。没错！确实是23年前的今天！因为时差的原因，那边还是20号，咱们这边已经21号了，不是我记错了。
+然后我就根据我个人的使用习惯给alias一下了，因为我不喜欢这种字母和数组夹杂的命令，遇到了都会给重命名一下方便以后自己敲命令。
+alias ac=&amp;quot;aria2c&amp;quot; 首先既然是下载工具，那我为什么要用aria2？
+我们先来看看aria2支持啥协议
+URI, MAGNET, TORRENT_FILE, METALINK_FILE
+传统的http，https，ftp，磁力。bt种子，metalink。你就说它强大不强大吧，可以在这么小体量的情况下，做这么多事情。现在你知道为什么这么多人夸赞它了吧。
+现在我们来说说看Windows这边的下载巨头：迅雷。
+为什么我们都瞧不起迅雷？
+因为迅雷是白眼狼，喝BT的血起家，把自己养肥了。到最后迅雷却不反哺BT下载的生态圈。就这一点就足够可耻的了。
+3. 获取CPU温度 echo `echo &amp;quot;scale=2; $(cat /sys/class/thermal/thermal_zone2/temp)/1000&amp;quot; | bc` °C 用Ubuntu 20的小伙伴可以直接用这条命令查看cpu温度，Ubuntu18我还没有试过，别的系统我就不得而知了。
+4. awk 、sed awk 是一个文本处理命令，常用的就是查找文本内部的字符。
+默认情况下awk是用空格来分割，
+awk &#39;{print $1}&#39; 如果你想用特定的字符串分割,可以用 -F来指定。
+awk -F/ &#39;{print $1}&#39;  sed它同样也是文本处理，用来替换文本的，最常用到的可能就是在刚安装完系统后换软件源的时候。用国内的url来替换国外的url
+sed -i &#39;s/xxx/yyy/g&#39; filename 这个就是把文件内部的xxx替换为yyy。如果需要在文件行首添加字符，就可以sed -i &#39;s/^/yyy/g&#39; filename，有行首肯定是有行尾，那行尾把 ^换成$就可以了。</description>
+        </item>
+        <item>
+        <title>Ubuntu 20.04.2 配置 vsftpd 的脑坑</title>
+        <link>https://jokeme.top/p/linux_vsftpd/</link>
+        <pubDate>Mon, 01 Mar 2021 00:00:00 +0000</pubDate>
+        
+        <guid>https://jokeme.top/p/linux_vsftpd/</guid>
+        <description>&lt;img src="https://cn.bing.com/th?id=OHR.VolcanoLlaima_EN-CN5183277848_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post Ubuntu 20.04.2 配置 vsftpd 的脑坑" /&gt;Ubuntu 20.04.2 配置 vsftpd 的脑坑 今天是 2020-03-01 02:13:13，刚结束了我在我哥饭店帮忙的欢乐时光，刚下班回来的我就准备掏出我的大宝贝好好的爽一爽，毕竟大半个月都没有咋用我的电脑了。因为之前刚换的Ubuntu20还有好多东西没有配置好，我就想着今天晚上把 ftp 整一下，然后就遇到了我特别尴尬的一幕，记录一下。
+安装 VsFtpd sudo apt install vsftpd 这一步毫无争议，没啥可说。略
+配置文件 sudo cp /etc/vsftpd.conf /etc/vsftpd.conf.bk sudo nano /etc/vsftpd.conf listen=NO listen_ipv6=YES anonymous_enable=NO local_enable=YES write_enable=YES allow_writeable_chroot=YES local_root=/home/frelon dirmessage_enable=YES use_localtime=YES xferlog_enable=YES connect_from_port_20=YES ascii_upload_enable=YES ascii_download_enable=YES ls_recurse_enable=YES secure_chroot_dir=/var/run/vsftpd/empty pam_service_name=vsftpd rsa_cert_file=/etc/ssl/certs/ssl-cert-snakeoil.pem rsa_private_key_file=/etc/ssl/private/ssl-cert-snakeoil.key ssl_enable=NO utf8_filesystem=YES 一样是毫无争议，按照自己喜欢的配置来。
+重启 vsftpd sudo systemctl restart vsftpd 我就特喵的在这一步出现了问题了。因为我平时使用samba比较多，在 Windows 下面映射一下就可以把局域网的 samba 当本地硬盘使，所以我就莫名其妙的输入了 sudo systemctl restart smbd ,我就本能的，条件反射的输入了 smbd，然后我就用我的用户名登陆 ftp，一下子给我整的不自信了，咋回事？这 ftp 咋还不能用呢，卧槽？ftp 出问题啦？我就改了半天的配置文件。甚至允许匿名登陆都特喵的不能用，当时就心态炸了。然后又检查了好几遍配置文件，还把防火墙给关了也于事无用
+我当时甚至怀疑系统出问题啦，还把服务器给重启了一遍（重启的时候我偏偏手贱，把配置文件还原了）,还不能登陆，我就接着改配置文件 ，接着重启 smbd，然后我打算放弃了，觉得这 ftp 是不是出现了 bug。我本来打算去洗澡的，但是心里面又有一点不甘，用手机接着来，当我又一次打算重启 smbd 的时候我突然发现了问题，我特喵的用的是 ftp，我老在这重启 samba 干啥？？？这就像你抓鲁迅关我周树人什么事一样的感觉。我就突然觉得挺对不起我的 samba 的，逮着它就是一顿重启，阿哈哈哈。</description>
+        </item>
+        <item>
+        <title>macOS设置brew安装的软件自启动</title>
+        <link>https://jokeme.top/p/macos_brew_installed_app_auto_start_at_boot/</link>
+        <pubDate>Mon, 22 Feb 2021 00:00:00 +0000</pubDate>
+        
+        <guid>https://jokeme.top/p/macos_brew_installed_app_auto_start_at_boot/</guid>
+        <description>&lt;img src="https://cn.bing.com/th?id=OHR.TurfHouse_EN-CN2756398853_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post macOS设置brew安装的软件自启动" /&gt;1. Home-brew 简介 先介绍一下本篇文章的主角：Home-brew，它是一款macOS的软件包管理器，当然也同样适用于Linux（不会真的有人 Linux 服务器用 brew 吧？）。
+它的官网上有关于 brew 非常详细的文档，大家可以自己去看看。介绍了以后就到了我们的安装环节了！
+2. 安装 Brew 安装 brew 非常的简单，就需要一条命令就可以了，当然大家 99% 会遇到网络问题，安装过程中建议最好用 v 要不然缓慢的到超时的网络会让你年轻漂亮有活力的 ?！
+/bin/bash -c &amp;#34;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)&amp;#34; 3. brew 换源 平时我们执行 brew 命令安装软件的时候，跟以下 3 个仓库地址有关：
+ brew.git homebrew-core.git homebrew-bottles  通过以下操作将这 3 个仓库地址全部替换为 Alibaba 提供的地址
+1. 替换 / 还原 brew.git 仓库地址 # 替换成阿里巴巴的 brew.git 仓库地址: cd &amp;quot;$(brew --repo)&amp;quot; git remote set-url origin https://mirrors.aliyun.com/homebrew/brew.git #======================================================= # 还原为官方提供的 brew.git 仓库地址 cd &amp;quot;$(brew --repo)&amp;quot; git remote set-url origin https://github.</description>
+        </item>
+        <item>
+        <title>Phicomm N1 刷 OpenWrt 做旁路由</title>
+        <link>https://jokeme.top/p/phicomm_n1_openwrt/</link>
+        <pubDate>Thu, 28 Jan 2021 00:00:00 +0000</pubDate>
+        
+        <guid>https://jokeme.top/p/phicomm_n1_openwrt/</guid>
+        <description>&lt;img src="https://cn.bing.com/th?id=OHR.TwinsDenning_EN-CN2137499137_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post Phicomm N1 刷 OpenWrt 做旁路由" /&gt;众所周知啊！N1 这个产品呢比较的全能，可以刷armbian、Openwrt、Android 电视盒子甚至windows也都不在话下。
+在去年也是以低价入手了一个盒子，但是一直就没有机会捯饬，因为我个人还有一个 x86 架构的低功耗小主机用于个人服务器使用，并且也是在 Docker 里面部署了一个 Openwrt 做旁路由来方便自己上墙，其实我个人是比较喜欢这种旁路由的方式的。因为连上局域网以后必须要手动指定网关才可以上墙，直接 DHCP 分配的用户没有任何影响，这样就不会对没有需求的用户产生影响。
+这里说一下我的设备，我的 N1 买回来就是刷好的电视盒子系统，所以就没有降级的步骤了，但是降级工具包都包含在了 N1 工具包里面了可以自行百度如何降级，其实都非常简单，输入一个 IP 地址回车就可以了。
+我个人是准备把 Openwrt 刷入自带的 emmc 里面的，这样可以省很多事，而且运行速度比在 U 盘里面有天然优势。
+1.环境准备 斐讯 N1
+适配 N1 的 OpenWrt 镜像
+N1工具包（非必须）
+U 盘一个（选好一点的 U 盘，可以上 USB3.0）
+Etcher / rufus （写盘工具）
+ 在这里给大家推荐就几个 N1 的 Openwrt 镜像
+GitHub：tuanqing的固件
+GitHub：IvanSolis1989的固件
+恩山大佬：flippy的固件
+有一点需要注意，上面两个 GitHub 的固件都是没有无线网的，只有 flippy 的固件才有 WI-FI，自己看着选吧！
+2.刻录镜像 从上面任意的一个镜像里选一个下载然后使用刻录工具来把镜像刻录进 U 盘里，这一步基本上不会出现什么问题。注意 U 盘里面的数据记得备份，写盘会把 U 盘里面的数据全部抹除。
+3.引导 OpenWrt 启动 这一步需要先把 N1 启动连接好网线，插上刚刚刻录好的 U 盘，打开 N1 的 adb，然后可以去路由器管理界面查看 N1 盒子的 IP 地址，然后利用工具包里面的批处理脚本（N1 盒子进入刷机模式。bat）来引导 N1 从 Android 电视盒子重启到 Openwrt 中。基本上都是一键操作非常简单。</description>
+        </item>
+        <item>
+        <title>数学思想</title>
+        <link>https://jokeme.top/p/math_thought/</link>
+        <pubDate>Sun, 06 Dec 2020 00:00:00 +0000</pubDate>
+        
+        <guid>https://jokeme.top/p/math_thought/</guid>
+        <description>&lt;img src="https://cn.bing.com/th?id=OHR.JinliStreet_EN-CN2006370773_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post 数学思想" /&gt;数学思想  先声明一下！我是数学菜鸡！以下内容是我个人总结在学习数学中的一些重要的数学思想，写的不好！望海涵！!!
+ 1. 无中生一 这个是我最先总结出来的了， 所谓无中生一就是我们在做题目时常常会遇到一些写着写着就没办法写下去的题目，也不是写错了，但就是卡在了这里想了半天也没有想出来可以用什么公式来解决问题！ 这个时候我们就需要重新审视一下题目了， 我们真的应该这样写吗？看例题
+$$ 求 f(x)=ln( \sqrt{1+x^2} +x) 的奇偶性 $$
+$$ f(-x) = ln(\sqrt{1+(-x)^2}-x) $$
+$$ f(-x) = ln(\sqrt{1+x^2}-x) $$
+$$ f(-x)=ln[(\sqrt{1+x^2}-x)*\frac{\sqrt{x^2+1}+x}{\sqrt{x^2+1}+x}] $$
+$$ 因为后面的\frac{\sqrt{x^2+1}+x}{\sqrt{x^2+1}+x}为一,对整个结果没有影响可得 $$
+$$ f(-x)=ln\frac {(\sqrt{x^2+1}+x)*(\sqrt{1+x^2}-x)} {\sqrt{x^2+1}+x} $$
+$$ f(-x)=ln(\frac{1}{\sqrt{x^2+1}+x})=ln(\sqrt{x^2+1}+x)^{-1}=-ln(\sqrt{x^2+1}+x) $$
+文章持续更新 ing❤️</description>
+        </item>
+        <item>
+        <title>Ubuntu &amp;&amp; Docker 使用建议</title>
+        <link>https://jokeme.top/p/ubuntu_docker_tips/</link>
+        <pubDate>Sun, 15 Nov 2020 00:00:00 +0000</pubDate>
+        
+        <guid>https://jokeme.top/p/ubuntu_docker_tips/</guid>
+        <description>&lt;img src="https://cn.bing.com/th?id=OHR.Trevi_EN-CN2352584327_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post Ubuntu &amp;&amp; Docker 使用建议" /&gt;Ubuntu一直是我喜欢用的Linux发行版本,界面简洁,上手简单,用户广泛
+在Ubuntu中使用docker时,一直就有两个问题困扰着我
+1. Ubuntu pull 镜像速度太缓慢 这个问题百度一搜一大把,但是作为个人学习 类型的博客,还是记录一下的好?
+1.1 Aliyun 镜像加速大法 打开aliyun的docker加速登陆页面,虽然操作略微繁琐,但是我个人觉得这是速度最快的也是最稳定的
+然后找到 容器镜像服务 &amp;gt; 镜像加速器 根据提升来操作就可以啦
+其中Docker 1.10.0版本以上的直接就可以在  /etc/docker/daemon.json文件里加上你的专属加速链接
+sudo systemctl daemon-reload sudo systemctl restart docker 少侠记得重启加载一下配置文件
+2. Docker 网桥IP和实际物理IP冲突 虽然这个问题大家不一定会遇到,因为我们使用的大部分的路由器都是192开头的,docker的网桥IP则是选择172开头的,但是在学校,公司等场所就很容易出现冲突,而且一旦出现冲突你还不一定会想到问题出现在Docker网桥IP的问题上,所以当我遇到了这个问题我也是半天才反应过来要修改docker网桥IP,下面看操作 !
+一样 ! 编辑上面的/etc/docker/daemon.json文件,
+{ &amp;#34;registry-mirrors&amp;#34;: [&amp;#34;https://xxxxxxxxxxxx.mirror.aliyuncs.com&amp;#34;], &amp;#34;bip&amp;#34;:&amp;#34;192.168.66.1/24&amp;#34; #换成你想要修改的ip网段 } 需要注意的是这个文件是json,保存的时候检查一下是否是json格式的
+sudo systemctl daemon-reload sudo systemctl restart docker 少侠记得重启加载一下配置文件</description>
+        </item>
+        <item>
+        <title>记录一次OpenWrt安装zsh</title>
+        <link>https://jokeme.top/p/openwrt_install_zsh/</link>
+        <pubDate>Wed, 07 Oct 2020 00:00:00 +0000</pubDate>
+        
+        <guid>https://jokeme.top/p/openwrt_install_zsh/</guid>
+        <description>&lt;img src="https://cn.bing.com/th?id=OHR.DalmatianPelicans_EN-CN7342550146_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post 记录一次OpenWrt安装zsh" /&gt;众所周知啊，OpenWrt 是一个非常优秀的路由器 OS,但是因为是为路由器优化的，所以我们在使用的时候就会遇到各种各样的问题，就比如安装 ohmyzsh
+因为网络问题，咱可以直接去GitHub看源码，顺便 Ctrl C / V
+1.安装依赖 opkg update opkg install zsh git git-http ca-certificates curl sh -c &amp;quot;$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)&amp;quot; #如果你Timeout了,不要慌!去Github下载源码,手动安装吧 ./install.sh 2.没了 开始造作啦！?
+如果你内存空间不够安装 zsh,那你可以看看飞尘@IT草的文章,最小化安装zsh后,仅占用不到的1m空间</description>
+        </item>
+        <item>
+        <title>CentOS 7 磁盘扩容</title>
+        <link>https://jokeme.top/p/disk_expansion/</link>
+        <pubDate>Fri, 25 Sep 2020 00:00:00 +0000</pubDate>
+        
+        <guid>https://jokeme.top/p/disk_expansion/</guid>
+        <description>&lt;img src="https://cn.bing.com/th?id=OHR.LeMorneBrabant_EN-CN8130983751_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post CentOS 7 磁盘扩容" /&gt;CentOS 7 磁盘扩容 假设已经添加了磁盘,到了需要在系统里操作的步骤
+对新增加的硬盘进行分区 fidsk -l fdisk /dev/sda (根据实际情况选择) n	(新增加一个分区) p	(区类型选择为主分区) 回车	(分区号) 回车　（起始扇区） 回车　（结束扇区） t 上面的分区号 8e 将分区“Linux”的类型更改为“Linux LVM” w 保存 reboot 对新增加的硬盘格式化 mkfs.ext4 /dev/sda3 添加新LVM到已有的LVM组，实现扩容 lvm　进入lvm管理 lvm&amp;gt; pvcreate /dev/sda3 这是初始化刚才的分区，必须的 lvm&amp;gt;vgextend centos /dev/sda3 将初始化过的分区加入到虚拟卷组vg_dc01 lvm&amp;gt;lvextend -L +100G /dev/mapper/centos-root　扩展已有卷的容量（注意容量大小） lvm&amp;gt;pvdisplay　查看卷容量，这时你会看到一个很大的卷了 lvm&amp;gt;quit　以上只是卷扩容了，下面是文件系统的真正扩容，输入以下命令：
+resize2fs /dev/mapper/centos-root resize2fs: Bad magic number in super-block 当尝试打开 /dev/mapper/centos-root 时
+报错：当尝试打开 /dev/mapper/centos-root 时 找不到有效的文件系统超级块
+因为我的centos7的某些分区用的是xfs的文件系统（使用df -T查看即可知道）
+将resize2fs替换为xfs_growfs，重新执行一遍即可，如下：
+xfs_growfs /dev/mapper/centos-root 步骤记录 [root@last ~]# fdisk /dev/sda Welcome to fdisk (util-linux 2.</description>
+        </item>
+        <item>
+        <title>OpenStack 常用命令</title>
+        <link>https://jokeme.top/p/openstack_command/</link>
+        <pubDate>Fri, 25 Sep 2020 00:00:00 +0000</pubDate>
+        
+        <guid>https://jokeme.top/p/openstack_command/</guid>
+        <description>&lt;img src="https://cn.bing.com/th?id=OHR.Porto_EN-CN2330328060_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post OpenStack 常用命令" /&gt;OpenStack 常用命令 1. MySQL showvariableslike&amp;#34;storage_engine&amp;#34;;//查询默认存储引擎InnoDBshowvariableslike&amp;#34;have%&amp;#34;;//查询支持的存储引擎2. Keyston source /etc/keystone/admin-openrc.sh openstack user create --domain demo --password password testuser //--domain为所属域 --password为密码 testuser是用户名 [root@controller ~]# openstack user list //查看用户列表 +----------------------------------+----------+ | ID | Name | +----------------------------------+----------+ | 1877ca2b73b04380af77a5cd3d057734 | demo | | 21a0b28505a140b9b54ca5a20542746c | glance | | 65e4fa15c643474d99f0b7950b5328bb | neutron | | 710f538564124ecd9fdcfaef40792e84 | admin | | 7caa95a15cb54d789d69e511c8214cb8 | nova | | cce5f695864940a0a32eab0d2015528c | testuser | +----------------------------------+----------+ [root@controller ~]# openstack endpoint list //endpoint列表 +---------------+-----------+--------------+--------------+---------+-----------+------------------+ | ID | Region | Service Name | Service Type | Enabled | Interface | URL | +---------------+-----------+--------------+--------------+---------+-----------+------------------+ | 1f7824e81d9f4 | RegionOne | neutron | network | True | internal | http://controlle | | f04b595b97a0a | | | | | | r:9696 | | e78f46 | | | | | | | | 399280c404a54 | RegionOne | glance | image | True | public | http://controlle | | a1bb314531c2b | | | | | | r:9292 | | 880ca1 | | | | | | | | .</description>
+        </item>
+        <item>
+        <title>clang 学习笔记</title>
+        <link>https://jokeme.top/p/clang_note/</link>
+        <pubDate>Mon, 31 Aug 2020 00:00:00 +0000</pubDate>
+        
+        <guid>https://jokeme.top/p/clang_note/</guid>
+        <description>&lt;img src="https://cn.bing.com/th?id=OHR.AABday_EN-CN1797262692_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post clang 学习笔记" /&gt;clang 学习笔记 1.什么是 c C 语言是一种通用的高级语言，最初是由丹尼斯·里奇在贝尔实验室为开发 UNIX 操作系统而设计的。C 语言最开始是于 1972 年在 DEC PDP-11 计算机上被首次实现。
+在 1978 年，布莱恩·柯林汉（Brian Kernighan）和丹尼斯·里奇（Dennis Ritchie）制作了 C 的第一个公开可用的描述，现在被称为 K&amp;amp;R 标准。
+UNIX 操作系统，C 编译器，和几乎所有的 UNIX 应用程序都是用 C 语言编写的。由于各种原因，C 语言现在已经成为一种广泛使用的专业语言。
+ 易于学习。 结构化语言。 它产生高效率的程序。 它可以处理底层的活动。 它可以在多种计算机平台上编译。  1.1 关于 C  C 语言是为了编写 UNIX 操作系统而被发明的。 C 语言是以 B 语言为基础的，B 语言大概是在 1970 年被引进的。 C 语言标准是于 1988 年由美国国家标准协会（ANSI，全称 American National Standard Institute）制定的。 截至 1973 年，UNIX 操作系统完全使用 C 语言编写。 目前，C 语言是最广泛使用的系统程序设计语言。 大多数先进的软件都是使用 C 语言实现的。 当今最流行的 Linux 操作系统和 RDBMS（Relational Database Management System：关系数据库管理系统） MySQL 都是使用 C 语言编写的。  1.</description>
+        </item>
+        <item>
+        <title>解决一个Ubuntu 18 安装MySQL 5.7不能远程登录的问题</title>
+        <link>https://jokeme.top/p/mysql_login_problem/</link>
+        <pubDate>Tue, 28 Jul 2020 00:00:00 +0000</pubDate>
+        
+        <guid>https://jokeme.top/p/mysql_login_problem/</guid>
+        <description>&lt;img src="https://cn.bing.com/th?id=OHR.BluebirdsEastern_EN-CN2662548051_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post 解决一个Ubuntu 18 安装MySQL 5.7不能远程登录的问题" /&gt;解决一个Ubuntu 18 安装MySQL 5.7不能远程登录的问题 首先编辑 /etc/mysql/mysql.conf.d/mysqld.cnf 配置文件：
+nano /etc/mysql/mysql.conf.d/mysqld.cnf 注释掉
+bind-address = 127.0.0.1 #如果没有就跳过 还有就是要给root 设置一个密码，允许他远程登录
+use mysql; SELECT user,host FROM user; update user set host=&amp;quot;%&amp;quot; where user=&amp;quot;root&amp;quot; update user set authentication_string=PASSWORD(&amp;quot;UrPasswd&amp;quot;)where user=&amp;quot;root&amp;quot;; flush privileges; 如果MySQL5.7 这样还不能远程登录上，咱见面持刀互a，如果你比我猛，当我没有说！
+你以为这就完了吗？？哪有这么简单，你还需要下面这条命令
+update user set plugin=&#39;mysql_native_password&#39;; #放在上面 use mysql； 后面执行 很多人都是忽略了这条命令，导致一直无法远程登录上MySQL* 必要的话可以重启一下MySQL哦！</description>
+        </item>
+        <item>
+        <title>笔记本坏了，这几天不能敲代码了</title>
+        <link>https://jokeme.top/p/my_laptop_do_not_work/</link>
+        <pubDate>Mon, 27 Jul 2020 00:00:00 +0000</pubDate>
+        
+        <guid>https://jokeme.top/p/my_laptop_do_not_work/</guid>
+        <description>&lt;img src="https://cn.bing.com/th?id=OHR.PeritoMorenoArgentina_EN-CN8965492888_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post 笔记本坏了，这几天不能敲代码了" /&gt;笔记本坏了，这几天不能写代码了 &amp;lt;2020-07-27 14:25&amp;gt; 今天吃完饭以后，发现笔记本无法唤醒了。我还觉得是电池没有电了，可是插上电源依然不能开机，我慌了，八成是笔记本坏了。
+笔记本坏了那也不能影响我写bug呀，我就找了个老的台式机装上了Ubuntu 18。
+太难受了，换了一个 Ubuntu 系统的老电脑，卡的怀疑人生，还没有好的中文输入法，明天就去修电脑去，希望小米的授权维修店不会坑我吧
+······························································
+&amp;lt;2020-07-28 01:21&amp;gt;
+好了，?早点洗洗睡觉了
+······························································
+&amp;lt;2020-07-28 17:56&amp;gt;
+现在刚刚修完电脑回来，话说小米的售后还是可以的，只是客服有点坑，给我说要发票，要三包卡
+结果我去了小米授权维修点，检查了一下电脑状况，主板出问题了，查了一下保修日期还有一天，也没有给我拖时间，当场发顺丰了，还说大概三天就可以维修好，我不是吹捧小米哈，我是 果粉 就觉得小米这个牌子也确实是还可以的。
+等过几天看看返厂修的怎么样，不行我再喷，哈哈哈
+&amp;hellip;&amp;hellip;&amp;hellip;&amp;hellip;&amp;hellip;&amp;hellip;&amp;hellip;&amp;hellip;&amp;hellip;&amp;hellip;&amp;hellip;&amp;hellip;&amp;hellip;&amp;hellip;&amp;hellip;&amp;hellip;&amp;hellip;&amp;hellip;&amp;hellip;&amp;hellip;&amp;hellip;
+&amp;lt;2020-09-25 20:52&amp;gt;
+忘记了写后续了，今天来补一下后续 ?
+大概是 5 天后，我的笔记本被修好寄回，快递员大早上的给我打电话，那个时候我还在睡着觉，然后快递员打不通我的电话，就打我室友的。我室友叫我下去拿快递。妈的，我刚到楼下就看到这个狗屁快递员，直接把我的快递 ?从 2 米多高的铁门外丢进来了，然后当场潇洒离去，卧槽，我都看呆了，那个是我的电脑！没错吧？快递员敢这么随便的扔进来？?
+然后我就拿快递回去拆开，检查了一下电脑 ?,好在小米那边泡沫纸裹的多，电脑没有啥事！那我就开个机吧！
+然后就挺惨不忍睹的，换了主板以后，各种卡，开机以后至少还要卡个 30s 这样才能反应过来，一开始我就想凑合着用吧，反正不要钱的，还要啥自行车呢 ?‍♂️ . 但是我还是找了随电脑寄过来的专属售后吐槽，加了微信以后，我就说着各种我遇到的问题，一开始他还理我，后来直接鸟都不鸟我，心里一万个 mmp
+大概是五天后吧，我他们电脑又坏了，莫名其妙的自己坏的，我发誓真的就是一顿饭的功夫&amp;hellip; &amp;hellip;就是这么突然！我又找我的专属客服哔哔！依旧是不理我，我也就自认倒霉了，打算发工资了重新换一下笔记本
+然后又是两天后！我闲着无聊搁哪看我收到的垃圾短信，啊哈哈哈，无意间看到了小米给我发的售后服务评价，我就点进去链接，一顿妈卖批的骂，什么垃圾小米，什么垃圾售后，才几天又坏了，反正就是各种怼。
+大概是一天以后，小米客服打电话给我了，和我大概了解了一下情况后，让我再次返厂，再给我维修一下(实际上是给我换了一块主板)
+然后又是几天的折腾，电脑又给我修好啦，这次终于靠谱了，虽然也有一点卡顿，但是打完驱动，满血复活！New Bee ! 还给我报销了邮费
+好了，今天算是完结了！
+&amp;hellip;&amp;hellip;&amp;hellip;&amp;hellip;&amp;hellip;&amp;hellip;&amp;hellip;&amp;hellip;&amp;hellip;&amp;hellip;&amp;hellip;&amp;hellip;&amp;hellip;&amp;hellip;&amp;hellip;&amp;hellip;&amp;hellip;&amp;hellip;&amp;hellip;&amp;hellip;&amp;hellip;</description>
+        </item>
+        <item>
+        <title>关于 Maven 下载插件缓慢的问题</title>
+        <link>https://jokeme.top/p/download_maven_plugin_faster/</link>
+        <pubDate>Thu, 23 Jul 2020 00:00:00 +0000</pubDate>
+        
+        <guid>https://jokeme.top/p/download_maven_plugin_faster/</guid>
+        <description>&lt;img src="https://cn.bing.com/th?id=OHR.PurpleFlowers_EN-CN8622188560_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post 关于 Maven 下载插件缓慢的问题" /&gt;关于 Maven 下载插件缓慢的问题 众所周知,咱们大天朝由于各种原因,只能活在局域网里面.这可能对那些不深度使用网络的人来说不痛不痒,但是你要是搞开发,搞运维,那才是各种烦呢
+就拿 maven来说,我™下载一个几kb得依赖都要好几个小时,甚至还要看运气
+网上也给了各种各样得解决方案特指 CSDN,但是我去尝试后,他妈的怎么弄都不行!!!我就搞不明白了,有些作者特指那种只会复制粘贴别人文章的,连别人文章的有效性都不去验证一下,就直接拿过来当作自己的了,太恶心了??
+好嘞废话不多说了,还是说 maven 吧 以前阿里源还是 http ,所以用网上的方法还是有效的,但是当阿里把 http 升级为https 后,原来的方法就失效了
+ idea编辑器:忽略ssl的配置,Maven -&amp;gt; Runner -&amp;gt; VM Options添加  -Dmaven.wagon.http.ssl.insecure=true -Dmaven.wagon.http.ssl.allowall=true -Dmaven.wagon.http.ssl.ignore.validity.dates=true Eclipse操作大致同上,忽略 ssl即可
+另外想屏蔽CSDN得话可以用 Tampermonkey 脚本来屏蔽一下 p.s. 需要先安装 Tampermonkey 再安装 百度搜索结果屏蔽csdn博客
+文章转自博客园作者:lisongyu 原文链接:关于maven使用阿里源无法生效问题</description>
+        </item>
+        <item>
+        <title>VS code 快捷键大全</title>
+        <link>https://jokeme.top/p/code_hot_key/</link>
+        <pubDate>Fri, 17 Jul 2020 00:00:00 +0000</pubDate>
+        
+        <guid>https://jokeme.top/p/code_hot_key/</guid>
+        <description>&lt;img src="https://cn.bing.com/th?id=OHR.VerzascaValley_EN-CN0835346354_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post VS code 快捷键大全" /&gt;VS code 快捷键大全 General Ctrl+Shift+P, F1 Show Command Palette
+Ctrl+P Quick Open, Go to File…
+Ctrl+Shift+N New window/instance
+Ctrl+Shift+W Close window/instance
+Ctrl+, User Settings
+Ctrl+K Ctrl+S Keyboard Shortcuts
+Basic editing Ctrl+X Cut line (empty selection)
+Ctrl+C Copy line (empty selection)
+Alt+ ↑ / ↓ Move line up/down
+Shift+Alt + ↓ / ↑ Copy line up/down
+Ctrl+Shift+K Delete line
+Ctrl+Enter Insert line below
+Ctrl+Shift+Enter Insert line above
+Ctrl+Shift+\ Jump to matching bracket</description>
+        </item>
+        <item>
+        <title>简单解释 NAT</title>
+        <link>https://jokeme.top/p/learn_nat/</link>
+        <pubDate>Wed, 15 Jul 2020 00:00:00 +0000</pubDate>
+        
+        <guid>https://jokeme.top/p/learn_nat/</guid>
+        <description>&lt;img src="https://cn.bing.com/th?id=OHR.OceanHeart_EN-CN3106304306_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post 简单解释 NAT" /&gt;简单解释 NAT[转自知乎] NAT 大家应该十分熟悉了，它分为几种。一种就叫做 NAT，它只对 IP 地址进行转换；另一种叫做 NAPT（Network Address/Port Translation），它可以对整个会话的端点（由 IP 地址和端口号组成）做转换，这是一种更加常见的 NAT 变种。
+当然了，NAPT 也分为许多种，我们这里就不深入探讨了，大家如果有兴趣可以查阅相关的文献。
+下面就简单介绍一下 NAT 的工作原理：
+首先，NAT A 网下的设备 1（192.168.1.101）想与某公网 IP 通讯，设备 1 将包发给 NAT A，然后 NAT A 对源 IP 进行转换发给 NAT B（中间可能还会经过多重 NAT）。
+这样做的目的是，NAT B 并不知晓 NAT A 下的各个设备，他只能与 NAT A 本身通讯，因此发送给 NAT B 的包源 IP 必须是 NAT A 的公网 IP，不然 NAT B 没有办法进行回复。
+接下来 NAT B 将回复包再发回 NAT A，此时就是 NAT 发挥作用的时候了，NAT A 现在要做的就是将包再分发回之前的设备，如何确定要发给谁呢？NAT 中记录了一张表，之前 192.168.1.101 通过 2333 端口与 42.</description>
+        </item>
+        <item>
+        <title>两小时 Git 入门</title>
+        <link>https://jokeme.top/p/learn_git/</link>
+        <pubDate>Tue, 14 Jul 2020 00:00:00 +0000</pubDate>
+        
+        <guid>https://jokeme.top/p/learn_git/</guid>
+        <description>&lt;img src="https://cn.bing.com/th?id=OHR.YearoftheOx_EN-CN2506406791_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post 两小时 Git 入门" /&gt;两小时 Git 入门 1.建立 Git 仓库 $ git init 2.把文件添加到仓库 $ git add + filename 3.把文件提交到仓库 $ git commit -m &amp;quot;wrote a readme file&amp;quot; 4.查看提交结果/对比工作区和文件和仓库文件的不同之处 $ git status 5.比对并列出文件和仓库文件的不同之处 $ git diff #如果git status告诉你有文件被修改过，用git diff可以查看修改内容。 6.Git 查看历史记录 $ git log/git log --pretty=oneline(查看精简版) 7.退回曾经的某个版本 7.1 退回最新版 $ git reset --hard + (对应的append GPL的commit id) $ git reset --hard HEAD^ 用 HEAD 表示当前版本，上一个版本就是 HEAD^，上上一个版本就是 HEAD^^，当然往上 100 个版本写 100 个 ^ 比较容易数不过来，所以写成 HEAD~100</description>
+        </item>
+        <item>
+        <title>在微软官网下载 Windows10 ISO 安装包</title>
+        <link>https://jokeme.top/p/download_windows10_iso/</link>
+        <pubDate>Tue, 14 Jul 2020 00:00:00 +0000</pubDate>
+        
+        <guid>https://jokeme.top/p/download_windows10_iso/</guid>
+        <description>&lt;img src="https://cn.bing.com/th?id=OHR.PenitentSnow_EN-CN4445586340_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post 在微软官网下载 Windows10 ISO 安装包" /&gt;教大家如何在微软官网下载 Windows10 ISO 安装包  进入 Windows10 下载页面 CTRL+SHIFT+I 后再 CTRL+SHIFT+M再接一个 CTRL+R  你就可以看到让你选择 Windows 版本,个人建议不要选家庭中文版 然后一路下来也没有啥难点了,他就会为你创建一个24H内有效的链接,记得尽快下载系统哦
+就这了</description>
+        </item>
+        <item>
+        <title>收集整理一些我不经常使用,但是使用时又找不到的网站链接</title>
+        <link>https://jokeme.top/p/some_links/</link>
+        <pubDate>Fri, 03 Jul 2020 00:00:00 +0000</pubDate>
+        
+        <guid>https://jokeme.top/p/some_links/</guid>
+        <description>&lt;img src="https://cn.bing.com/th?id=OHR.CentralCaliBlossoms_EN-CN6052185805_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post 收集整理一些我不经常使用,但是使用时又找不到的网站链接" /&gt;所有排名不分先后，我是看到一个收录一个
+ Pandorabox 固件官网 Shields.io ascii Windows 10下载 Iconfont 蓝奏云 RM bg 小米路由器 3 刷机 MiUi / Router OS Windows 10 激活 渐变色 css 腾讯软件管家网页版 Electron文档 MSDN 中科大软件源生成 zsh编程指南 MFI查询 新MFI查询 TrafficMonitor Snipaste截图工具 CTF Aliyun Springboot Initialize JDK下载 马可菠萝macos xclientmacos macwk 网页设计导航  </description>
+        </item>
+        <item>
+        <title>Python 爬虫抓取m3u8播放源</title>
+        <link>https://jokeme.top/p/python_spider_download_m3u8/</link>
+        <pubDate>Wed, 01 Jul 2020 00:00:00 +0000</pubDate>
+        
+        <guid>https://jokeme.top/p/python_spider_download_m3u8/</guid>
+        <description>&lt;img src="https://cn.bing.com/th?id=OHR.Parrotfish_EN-CN1212515803_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post Python 爬虫抓取m3u8播放源" /&gt;Python 爬虫抓取播放源(m3u8) 今天没有事的时候在捯饬 dotPlayer [IOS 平台 APP/￥ 收费] 时发现这个东西是个宝贝呀！可以看 m3u8 格式的视频，这都不是重点，重点是使用起来非常舒服，虽然直接复制 m3u8 链接到 Safari 也可以播放，但是 dotPlayer 还可以有封面和标题！这两者体验可谓是天差地别(我没有收钱哈！我是真的觉得好用，希望 dotplayer 的作者看到了打一下广告费！)
+具体可以看
+简书作者： NickXXXXXXXX 给出的图片简介
+GitHub 上的 help_zh.md 给出的使用简介
+这都不是我们需要关注の重点，重点是这款 app 是用来播放 m3u8 流の
+播放视频很简单，可是这 m3u8 文件从哪里来呢？??
+ 去 Telegram 加入组群 dotPlayer ,群里经常会分享相关的订阅 自己动手丰衣足食  这次用的爬虫和上一次一模一样，只是我优化了一下过程，就随便讲讲吧
+ #coding=utf-8 import requests from lxml import etree import time import datetime import re ​ def makeUrl(Num): # Num为html的页数 allinks=[] for link in range(1,Num+1): link=&amp;quot;https://www.xxxx.com/xzy{}&amp;quot;.format(link) allinks.append(link) return allinks ​ def getRealUrl(fakeUrl): webPage = requests.</description>
+        </item>
+        <item>
+        <title>利用 Python 爬虫获取 bing.com 每天的高清壁纸</title>
+        <link>https://jokeme.top/p/python_spider_download_bing_wallpaper/</link>
+        <pubDate>Sun, 14 Jun 2020 00:00:00 +0000</pubDate>
+        
+        <guid>https://jokeme.top/p/python_spider_download_bing_wallpaper/</guid>
+        <description>&lt;img src="https://cn.bing.com/th?id=OHR.TheWave_EN-CN9165010424_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post 利用 Python 爬虫获取 bing.com 每天的高清壁纸" /&gt;利用 Python 爬虫获取 bing.com 每天的高清壁纸 众所周知，必应是主力做壁纸の搜索引擎！
+每天都更新搜索页面的背景图片，这些图片也的的确确很好看，那我们要是 ♥心动了，想保存欣赏欣赏怎么办呐？
+方法一：直接开发者模式拿图片 这个方法应该是最简单的了， ctrl+ shift+i
+... ... &amp;lt;tbody&amp;gt; &amp;lt;tr&amp;gt; &amp;lt;td id=&amp;#34;hp_cellCenter&amp;#34; ... ...&amp;gt; &amp;lt;div id=&amp;#34;hp_container&amp;#34; ... ...&amp;gt; &amp;lt;div id=&amp;#34;bgDiv&amp;#34; ... ...&amp;gt; &amp;lt;div id=&amp;#34;bgImgProgLoad&amp;#34; data-ultra-definition-src=&amp;#34;/th?id=OHR.WildflowersBC_EN-CN3359054435_UHD.jpg&amp;amp;rf=LaDigue_UHD.jpg&amp;amp;pid=hp&amp;amp;w=1920&amp;amp;h=1080&amp;amp;rs=1&amp;amp;c=4&amp;#34; data-explicit-bing-load=&amp;#34;false&amp;#34; data-dynamic-size=&amp;#34;true&amp;#34;&amp;gt; &amp;lt;/div&amp;gt; ... ...	这个链接 ?就在 &amp;lt;div id=&amp;quot;bgImgProgLoad&amp;quot; の标签里面，复制 data-ultra-definition-src 所对应的值，再在前面补上 cn.bing.com 就可以啦
+不过这种方法下载的图片是被压缩以后的图片，大小也就几百 kb,而如果我们想要下载原图的话，就需要把链接 ?里面第一个 .jpg 后面的字符全给干掉，最终的的 URL 应该是： https://cn.bing.com/th?id=OHR.WildflowersBC_EN-CN3359054435_UHD.jpg
+方法二：python 爬虫 没有什么好说の,都是最简单的 python 命令，
+运行环境： Linux
+Python 版本： Python3
+pip 依赖库： requests,lxml
+基本上大部分的 Linux 都会预装 Python3 ,所以就从安装 pip 开始了</description>
+        </item>
+        <item>
+        <title>CentOS编译安装Nano</title>
+        <link>https://jokeme.top/p/compile_nano/</link>
+        <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
+        
+        <guid>https://jokeme.top/p/compile_nano/</guid>
+        <description>&lt;img src="https://cn.bing.com/th?id=OHR.IceWalking_EN-CN6785374690_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post CentOS编译安装Nano" /&gt;CentOS编译安装Nano 众所周知,因为 CentOS 非常的稳定,所以导致 CentOS の YUM 源里面的软件非常的老旧 就拿 Nano 来说, 官方已经到了 4.0版本, 而 CentOS 这边还在2.0徘徊,这就非常的难受了.所以咱就手动编译安装!
+1. 安装准备 sudo su cd yum -y install gcc ncurses-devel wget wget https://www.nano-editor.org/dist/v4/nano-4.6.tar.gz tar zxvf nano-4.6.tar.gz cd nano-4.6 2. 准备编译 ./configure make &amp;amp;&amp;amp; make install 3. 复制文件 cp src/nano /usr/bin cp doc/sample.nanorc /root/.nanorc 常用插件也给安排上
+echo &#39;include &amp;quot;/usr/local/share/nano/*.nanorc&amp;quot;&#39; &amp;gt;&amp;gt; /root/.nanorc #用于高亮显示 echo &#39;set nowrap&#39; &amp;gt;&amp;gt; /root/.nanorc #关闭自动换行 echo &#39;set linenumbers&#39; &amp;gt;&amp;gt; /root/.nanorc #打开行号显示 本文参考: Hiwbb.com</description>
+        </item>
+        <item>
+        <title>Linux 常用的小技巧</title>
+        <link>https://jokeme.top/p/linux_skill/</link>
+        <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
+        
+        <guid>https://jokeme.top/p/linux_skill/</guid>
+        <description>&lt;img src="https://cn.bing.com/th?id=OHR.MountSefton_EN-CN4284831269_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post Linux 常用的小技巧" /&gt;Linux 常用的小技巧 1 .apt-get remove vsftpd &amp;ndash;purge 删除所有配置，下次安装的时候会重新生成配置文件
+2 .编辑器 nano 快捷键 ALT+Shift+3	显示行号 CTRL+SHIFT+_	快速跳到某行
+3 .如果不经常使用 Linux の桌面，但是又不希望桌面吃内存，可以试试看 sudo init 3 4 .echo 颜色输出 echo -e &amp;ldquo;\033[背景颜色；文字颜色 m 字符串\033[0m&amp;rdquo;
+可以选择的编码如下所示(这些颜色是 ANSI 标准颜色)： 40 设置黑色背景 41 设置红色背景 42 设置绿色背景 43 设置黄色背景 44 设置蓝色背景 45 设置紫色背景 46 设置青色背景 47 设置白色(灰色)背景 49 设置缺省黑色背景
+前景颜色是背景颜色减去 10
+5 .zsh 美化 在 GitHub 上有一个 oh-my-zsh の项目，相信我，用上这个 zsh 以后，你会离不开它的，安装脚本附上
+sh -c &amp;#34;$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)&amp;#34; sh -c &amp;#34;$(wget -O- https://raw.</description>
+        </item>
+        <item>
+        <title> Frp 内网穿透</title>
+        <link>https://jokeme.top/p/frp_penetrate/</link>
+        <pubDate>Mon, 08 Jun 2020 00:00:00 +0000</pubDate>
+        
+        <guid>https://jokeme.top/p/frp_penetrate/</guid>
+        <description>&lt;img src="https://cn.bing.com/th?id=OHR.SuperbOwl_EN-CN4550239476_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post  Frp 内网穿透" /&gt;Frp 内网穿透 自打搞一个软路由，我就玩的可带劲了，什么 Linux , Docker , Java 各种技术都被逼提升了很多。 闲话不多说，直接说重点了
+1. 准备工作：  frp-server &amp;amp; frp-client 可以在 GitHub 里下载 域名(需要备案) 有公网 IP の服务器一台  2. 配置 server 端 我是用的是 amd64 架构的，如果和我一样的话可以按我的命令来
+wget https://github.com/fatedier/frp/releases/download/v0.33.0/frp_0.33.0_linux_amd64.tar.gz tar -zxvf frp_0.33.0_linux_amd64.tar.gz mv frp_0.33.0_linux_amd64.tar.gz frp #为了接下来方便一点 cd frp rm frpc* #删除不必要的配置,也可以不删 nano frps.ini [common] bind_port = 7000  #对外提供服务的端口 dashboard_port = 7500 #访问控制板的端口 token = 123456 #token,相对于一个简单的验证 vhost_http_port = 80 #http服务在服务器的代理端口 可以根据自己的喜好设定这些配置
+3. 配置 client 端 wget https://github.</description>
+        </item>
+        <item>
+        <title>SpringBoot学习笔记(1)</title>
+        <link>https://jokeme.top/p/springboot_note_1/</link>
+        <pubDate>Fri, 29 May 2020 00:00:00 +0000</pubDate>
+        
+        <guid>https://jokeme.top/p/springboot_note_1/</guid>
+        <description>&lt;img src="https://cn.bing.com/th?id=OHR.VosgesBioReserve_EN-CN8863541867_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post SpringBoot学习笔记(1)" /&gt;Spring学习 提醒⏰:在开始之前,我们需要配置以下基本环境(还有文件的编码方式也要注意)
+  File &amp;raquo;&amp;gt; Project Structcture(CTRL+ALT+Shift+S) &amp;raquo;&amp;gt; Project &amp;raquo;&amp;gt; Project SDK:
+  File &amp;raquo;&amp;gt; Project Structcture(CTRL+ALT+Shift+S) &amp;raquo;&amp;gt; Project &amp;raquo;&amp;gt; Project language level
+  File &amp;raquo;&amp;gt; Project Structcture(CTRL+ALT+Shift+S) &amp;raquo;&amp;gt; Modules &amp;raquo;&amp;gt; Sources &amp;raquo;&amp;gt; Languages level
+  File &amp;raquo;&amp;gt; Settings(CTRL+ALT+S) &amp;raquo;&amp;gt; Build,Execution,Deployment &amp;raquo;&amp;gt; Compiler &amp;raquo;&amp;gt; Java Compiler &amp;raquo;&amp;gt; Project bytecode version
+  File &amp;raquo;&amp;gt; Settings(CTRL+ALT+S) &amp;raquo;&amp;gt; Build,Execution,Deployment &amp;raquo;&amp;gt; Compiler &amp;raquo;&amp;gt; Java Compiler &amp;raquo;&amp;gt;Per-module bytecode version
+  1.</description>
+        </item>
+        <item>
+        <title> Ubuntu 使用 netplan 配置 WIFI</title>
+        <link>https://jokeme.top/p/netplan_wifi/</link>
+        <pubDate>Wed, 06 May 2020 00:00:00 +0000</pubDate>
+        
+        <guid>https://jokeme.top/p/netplan_wifi/</guid>
+        <description>&lt;img src="https://cn.bing.com/th?id=OHR.MountNemrut_EN-CN8469644685_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post  Ubuntu 使用 netplan 配置 WIFI" /&gt;Ubuntu 使用 netplan 配置 WIFI 在折腾 Ubuntu 的时候，我突然发现 Ubuntu 有好几套网络管理方案，但是在安装了图形化界面以后，只有Network Manager &amp;amp; Systemd-networkd 之一生效，
+那像我这种爱折腾的人，肯定是不满足被束缚啊，为什么不能用命令行来连接 ? WiFi 呢？
+1 .查看网卡名字 $ ~ iw dev phy#0 Interface wlx200db035fad3 ifindex 3 wdev 0x1 addr 20:0d:b0:35:fa:d3 ssid Tenda_277D40 type managed txpower 12.00 dBm 2 .打开无线网卡 $ ~ sudo ip lin set wlx200db035fad3 up 3 . 搜索 WiFi 信号 $ ~ sudo iw dev wlx200db035fad3 scan BSS **:**:**:**:**:**(on wlx200db035fad3) -- associated TSF: 1588670071330336 usec (18387d, 09:14:31) freq: 2437 beacon interval: 100 TUs capability: ESS Privacy ShortSlotTime (0x0411) signal: -80.</description>
+        </item>
+        <item>
+        <title>Ubuntu 安装 **FFMPEG** 下载 m3u8 格式的视频</title>
+        <link>https://jokeme.top/p/ffmpeg_download_m3u8/</link>
+        <pubDate>Wed, 15 Apr 2020 00:00:00 +0000</pubDate>
+        
+        <guid>https://jokeme.top/p/ffmpeg_download_m3u8/</guid>
+        <description>&lt;img src="https://cn.bing.com/th?id=OHR.RainbowMarmot_EN-CN8037758700_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post Ubuntu 安装 **FFMPEG** 下载 m3u8 格式的视频" /&gt;Ubuntu 安装 FFMPEG 下载 m3u8 格式的视频 最近想下载一个某音视频，但是我能看不能下载，这不是扯吗？于是不能忍的我就打算盘盘这个视频
+1 . 准备环境：Ubuntu 18.04 , FFMPEG 本着万物皆可 Linux の初心，我就不想用 Windows 了。
+首先安装 FFMPEG
+sudo apt -y install ffmpeg 2 . 抓包短视频的 m3u8 地址 iOS 端，我是使用的 Thor 这个 app,比较好用，应用商店搜索就有
+然后得到真实的地址：
+http://XXX.com/xxx/xxx.m3u8 3 . 使用 FFMPEG 进行下载 ffmpeg -i http://XXX.com/xxx/xxx.m3u8 -c copy xxx.mp4 然后就需要慢慢等待下载完成就可以了，真的是特别特别的简单</description>
+        </item>
+        <item>
+        <title>安装 Linux 系统(Ubuntu)经验总结</title>
+        <link>https://jokeme.top/p/ubuntu_install_faq/</link>
+        <pubDate>Tue, 31 Mar 2020 00:00:00 +0000</pubDate>
+        
+        <guid>https://jokeme.top/p/ubuntu_install_faq/</guid>
+        <description>&lt;img src="https://cn.bing.com/th?id=OHR.ToledoIldefonso_EN-CN9964509063_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post 安装 Linux 系统(Ubuntu)经验总结" /&gt;安装 Linux 系统(Ubuntu)经验总结 进来将近两三个星期的装系统经历，让我异常痛苦，先是 Bay Trail 主板的一些坑，然后是显卡驱动，然后又是一堆莫名其妙的问题&amp;hellip;&amp;hellip;
+1. Bay Trail 主板的先天问题 在 这系列主板上安装 Windows 可能没有什么感觉，但是安装 Linux 异常的难，会造成啥啥啥内核错误，导致卡慢
+需要在引导的后面 加上一句
+intel_idle.max_cstate=1 2. 显卡驱动问题 在安装 Linux 时，常常会遇到没有对应显卡驱动的问题，这时候就要在引导的时候加上
+nomodeset 3. 开机卡紫屏问题 这个问题原因可能各不一样，网上一大推，不赘述
+4.开机卡只有鼠标和壁纸 说实话这个问题最好解决了，鼠标键盘都可以正常使用，ctrl + alt + t 打开 terminal,把 gnome 删掉即可，如果喜欢用图形界面还可以在重启以后在安装回来</description>
+        </item>
+        <item>
+        <title>Docker 中运行 OpenWrt</title>
+        <link>https://jokeme.top/p/run_openwrt_in_docker/</link>
+        <pubDate>Fri, 20 Mar 2020 00:00:00 +0000</pubDate>
+        
+        <guid>https://jokeme.top/p/run_openwrt_in_docker/</guid>
+        <description>&lt;img src="https://cn.bing.com/th?id=OHR.RedRobin_EN-CN8071349218_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post Docker 中运行 OpenWrt" /&gt;Docker 中运行 OpenWrt 前几天解决了小主机 Ubuntu 系统的引导问题以后。便开始折腾 OpenWrt 了，在 GitHub 上找到了 L 大 的 Lede 源码，需要自己编译。
+关于如何编译我也不说了，L 大 在 Readme 里面说的清清楚楚的，没有难度，就是需要有耐心和良好的网络环境，编译过程会很慢(建议扶梯子，我没有用梯子，整整编译了两天才完成！? ? ?) 也可以用我编译好的 x86_64 的固件(集成有ssr,v2ray,adblock plus,samba,vsftpd等常用插件)
+对于编译出来的文件我来介紹一下：
+   openwrt-x86-64-rootfs-squashfs.img OpenWrt for Docker の img     openwrt-x86-64-combined-squashfs.vmdk 虚拟机文件，丢进 VMware 里面使用   openwrt-x86-64-combined-squashfs.img 我们编译的固件，刻录到 u 盘上来安装    我一开始也不知道这些镜像应该选哪一个刻录，然后爬各种论坛终于被我发现了这几个文件的用法了
+好！环境已经没有问题，安装包也有了，那就先在 Docker 里面试试看这个 OpenWrt 怎么样吧
+1 导入 OpenWrt 的镜像 cd ~/lede/bin/targets/x86/64 mkdir -p ~/opt mount -o loop openwrt-x86-64-rootfs-squashfs.</description>
+        </item>
+        <item>
+        <title>Bay Trail主板安装Linux的坑</title>
+        <link>https://jokeme.top/p/install_linux_on_bay_trail/</link>
+        <pubDate>Mon, 16 Mar 2020 00:00:00 +0000</pubDate>
+        
+        <guid>https://jokeme.top/p/install_linux_on_bay_trail/</guid>
+        <description>&lt;img src="https://cn.bing.com/th?id=OHR.ArcticWolf_EN-CN8268127090_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post Bay Trail主板安装Linux的坑" /&gt;Bay Trail 主板安装 Linux 的坑 最近搞了一个 N2920 的低功耗小主机，本来打算搞软路由，但是家里网速不行，就打算先刷个 Linux 玩玩，于是我就被这个问题烦了将近半个月！
+一开始我打算安装一个 CentOS 7 玩玩，当我下载完系统刻录完开始安装的时候发现 CentOS 7 的 installer 异常的卡顿，而且耗时也非常的多，差不多需要将近半个小时才可以到图形界面的安装(我这个小主机是有固态的，这个速度肯定有很大的问题),而且好不容易到了图形界面的安装环节，还经常卡死！刚开始 我还以为可能是这个 ISO 镜像有问题，又换了一个 CentOS 8 的镜像。
+刻录&amp;ndash;安装&amp;ndash;等待&amp;ndash;卡死
+Again
+开机&amp;ndash;安装&amp;ndash;等待&amp;ndash;卡死
+? ? ?我真的是&amp;hellip;&amp;hellip;一点办法都没有
+这结果属实有点意外呀，怎么 CentOS 8 也是这个鸟样？
+我不甘，又换了一个 Ubuntu 18
+刻录&amp;ndash;安装&amp;ndash;等待&amp;ndash;卡死
+卧槽，这是什么问题换系统 都不行，应该就不是软件的问题了吧，我就从主板开始动刀，会不会是因为主板的 BIOS 太老了，本来打算去更新一下 BIOS 结果，这是一个不知名的小板，不知道从哪里搞到 BIOS 文件，就放弃了！
+然后去百度 为什么电脑安装 Linux 卡顿
+众所周知，百度相当垃圾，大部分都是答非所问，要不然就是 CSDN,简书 的水贴，都没有用 :(
+然后我又找隔壁 二狗子 意念扶梯子，用 Google 搜一下
+然后我就在国外某个被大陆 404 的的技术论坛上找到了一点线索 ? ? ?
+贴子网址： askubuntu
+反正他们大概说的是 Bay Trail 主板上安装 Linux 出现的各种异常，刚刚好我的主板也是，出现的问题也和他们的很相似</description>
+        </item>
+        <item>
+        <title>Java 注解的简单学习</title>
+        <link>https://jokeme.top/p/java_annotation/</link>
+        <pubDate>Sat, 15 Feb 2020 00:00:00 +0000</pubDate>
+        
+        <guid>https://jokeme.top/p/java_annotation/</guid>
+        <description>&lt;img src="https://cn.bing.com/th?id=OHR.HeartAustralia_EN-CN7705551345_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post Java 注解的简单学习" /&gt;Java 注解（Annotation） Java 注解其实并不难，从名字上你都知道注解是帮助 Java 代码执行的，它的形式跟接口很类似，不过前面多了一个 @ 符号
+1 Java 元注解   @Retention
+Retention 保留期，决定注解的生命时常，取值如下
+     SOURCE 只在源码阶段保留     CLASS 只被保留到编译进行的时候   RUNTIME 注解可以保留到程序运行的时候    eg：该注解被保留到运行时
+@Retention(RetentionPolicy.RUNTIME) public @interface Annotation { } 它的作用是能够将注解中的元素包含到 Javadoc 中去
+Target 指定了注解运用的地方
+   ANNOTATION_TYPE 给一个注解进行注解     CONSTRUCTOR 给构造方法进行注解   FIELD 给属性进行注解   LOCAL_VARIABLE 给局部变量进行注解   METHOD 给方法进行注解   PACKAGE 给包进行注解   PARAMETER 给方法内的参数进行注解   TYPE 给一个类型进行注解，比如类、接口    一个类被 @Inherited 注解过的注解进行注解的话，如果它的子类没有被任何注解应用的话，那么这个子类就继承了该类的注解。</description>
+        </item>
+        <item>
+        <title>Java通过jdbc操作MySQL数据库</title>
+        <link>https://jokeme.top/p/java_jdbc/</link>
+        <pubDate>Sat, 01 Feb 2020 00:00:00 +0000</pubDate>
+        
+        <guid>https://jokeme.top/p/java_jdbc/</guid>
+        <description>&lt;img src="https://cn.bing.com/th?id=OHR.Taormina_EN-CN8042812380_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post Java通过jdbc操作MySQL数据库" /&gt;Java JDBC 操作 MySQL 1 . Maven 导包 &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;mysql&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;mysql-connector-java&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;5.1.48&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt; &amp;lt;groupId&amp;gt;org.junit.jupiter&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;junit-jupiter&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;RELEASE&amp;lt;/version&amp;gt; &amp;lt;scope&amp;gt;compile&amp;lt;/scope&amp;gt; &amp;lt;/dependency&amp;gt; 填在 pom 文件里面即可，无难度
+2 . 用代码连接数据库 import java.io.*; import java.sql.*; import java.util.ArrayList; import java.util.HashMap; import java.util.List; import java.util.Map; public class Fre{ public static final String driver = &amp;#34;com.mysql.jdbc.Driver&amp;#34;; public static final String uri = &amp;#34;jdbc:mysql://127.0.0.1:3306/solo&amp;#34;; public static final String user = &amp;#34;root&amp;#34;; public static final String passcode = &amp;#34;123456&amp;#34;; final String sqlScript = &amp;#34;select * from b3_solo_article&amp;#34;; Connection connection= null; public ResultSet StartCollection() throws SQLException { try{ Class.</description>
+        </item>
+        <item>
+        <title>vim的常用操作快捷键</title>
+        <link>https://jokeme.top/p/vim_hot_key/</link>
+        <pubDate>Sat, 01 Feb 2020 00:00:00 +0000</pubDate>
+        
+        <guid>https://jokeme.top/p/vim_hot_key/</guid>
+        <description>&lt;img src="https://cn.bing.com/th?id=OHR.ChurchRock_EN-CN7171111056_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post vim的常用操作快捷键" /&gt;(1) 按两下 gg，定位光标到第一行。
+(2) 按住 Shift+v，进入可视化编辑的列编辑模式。
+(3) Shift+g，选中整个代码。
+(4) 按下等号 =，格式化所有代码。
+(5) 新年快乐🎉</description>
+        </item>
+        <item>
+        <title>学习nginx代理相关的笔记</title>
+        <link>https://jokeme.top/p/nginx_proxy/</link>
+        <pubDate>Sat, 11 Jan 2020 00:00:00 +0000</pubDate>
+        
+        <guid>https://jokeme.top/p/nginx_proxy/</guid>
+        <description>&lt;img src="https://cn.bing.com/th?id=OHR.Molas_EN-CN3740095364_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post 学习nginx代理相关的笔记" /&gt;nginx 反向代理 nginx 一直都是我们比较常用的工具，它不仅功能强悍，而且性能也非常好 ?,一直深受开发者的喜爱
+并且我们经常用 nginx 反代来做负载均衡，那么 nginx の反代原理我也就不说了，咱就说咋操作吧
+我把我的网站的 nginx 配置给拷贝了下来
+server { listen 443 ssl; server_name www.jokeme.top; add_header Strict-Transport-Security &amp;#34;max-age=31536000; includeSubDomains;preload&amp;#34; always; ssl_certificate /ssl/3355633_www.jokeme.top.pem; ssl_certificate_key /ssl/3355633_www.jokeme.top.key; ssl_session_timeout 5m; ssl_protocols TLSv1 TLSv1.1 TLSv1.2; ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:HIGH:!aNULL:!MD5:!RC4:!DHE; ssl_prefer_server_ciphers on; location / { root /usr/share/nginx/html; index index.html index.htm; proxy_pass http://www.jokeme.top:8080; } error_page 500 502 503 504 /50x.html; location = /50x.html { root /usr/share/nginx/html; } } server{ listen 80; server_name localhost; rewrite ^(.</description>
+        </item>
+        <item>
+        <title>微信小程序遇见的坑</title>
+        <link>https://jokeme.top/p/wechat_little_program/</link>
+        <pubDate>Fri, 10 Jan 2020 00:00:00 +0000</pubDate>
+        
+        <guid>https://jokeme.top/p/wechat_little_program/</guid>
+        <description>&lt;img src="https://cn.bing.com/th?id=OHR.ChuDangYa_EN-CN3555284407_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post 微信小程序遇见的坑" /&gt;微信小程序遇到的坑 微信小程序其实很简单，和 HTML 差不多，但是又加入了微信的很多特色，我也是本着写着玩的心态写了几天的小程序，发现有很多坑哦，和 HTML还是有点差距的
+1 文本超出隐藏并加… 其实在 HTML 里面这段代码很简单，只要在父元素里面定义
+overflow:hidden; text-overflow: ellipsis; white-space: nowrap; 但是微信小程序就邪了门了，在电脑上看的好好的，可到了真机预览就失效了，
+而且还只是 iOS 平台出现问题，Android 并没有问题，这就见鬼了吗！!同样的代码，还能有不同疗效的？??
+1.1 Answer : 然后百度，得答案：子元素还必须是 text 元素才会生效，这是因为 iOS 的 Safari 浏览器的特立独行吧，
+还有的说需要设置一下宽度就可以解决，反正这个方法我没有试，懒得试
+2 background-attachment:fixed 这个属性是用来设置背景图的，但是还是在 iOS 这里出现了问题，反观 Android 那边一切都很正常 ?
+本来固定背景图片就是一个常用的功能，但是 iOS 这边就是死活不兼容这个属性，一开始我这样写，出错了我还以为是我自己の问题，在哪里倒腾了大半天，无果，百度发现这是一个很普遍的现象，那些大神解决问题的方式倒也很直接，不用这个属性，自己在写一个 view 放在最下面一层
+2.1 Answer : position:fixed; top:0; left:0; width:100%; height:100%; background:url(&amp;#39;http://172.17.150.251:8080/pic/bk7.jpg&amp;#39;) no-repeat #000; background-size:cover; z-index:-1; 3 wx : for &amp;lt;view class=&amp;#34;acf&amp;#34; wx:for=&amp;#34;{{heloi}}&amp;#34; wx:key=&amp;#34;index&amp;#34;&amp;gt; &amp;lt;view class=&amp;#34;bhk&amp;#34; data-arturl=&amp;#34;{{item.article}}&amp;#34; bindtap=&amp;#34;showNextPage&amp;#34;&amp;gt; &amp;lt;div class=&amp;#34;guli&amp;#34;&amp;gt;&amp;lt;text class=&amp;#34;intro&amp;#34;&amp;gt;{{item.</description>
+        </item>
+        <item>
+        <title>Python_spider</title>
+        <link>https://jokeme.top/p/python_spider/</link>
+        <pubDate>Tue, 31 Dec 2019 00:00:00 +0000</pubDate>
+        
+        <guid>https://jokeme.top/p/python_spider/</guid>
+        <description>&lt;img src="https://cn.bing.com/th?id=OHR.BolivianSummer_EN-CN6022233005_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post Python_spider" /&gt;Python 爬虫 用python写爬虫其实是比较简单的，主要还是靠第三方的库，常用的有 requests &amp;amp; urllib 至于解析 HTML,我目前使用的是 xpath ,了解了基本操作，咱就试试看吧
+代码附上
+# coding:utf-8 import json import requests from lxml import etree def getWebUrl(uri): webPage = requests.get(url = uri, headers={&amp;#34;User-Agent&amp;#34;:&amp;#34;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36&amp;#34;} ) we = webPage.text ssr = etree.HTML(we) Links = ssr.xpath(&amp;#34;//div/table/tbody/tr/td/p/a/@href&amp;#34;) Str = &amp;#34;http://172.17.150.251&amp;#34; Allinks = [] for se in Links: link = Str+se Allinks.append(link) dicName = {} dicName = {uri:Allinks} return dicName def getInfo(uri): webPage = requests.</description>
+        </item>
+        <item>
+        <title>Java IO简单操作文件</title>
+        <link>https://jokeme.top/p/java_io/</link>
+        <pubDate>Sat, 28 Dec 2019 00:00:00 +0000</pubDate>
+        
+        <guid>https://jokeme.top/p/java_io/</guid>
+        <description>&lt;img src="https://cn.bing.com/th?id=OHR.FichtelbergWinter_EN-CN7709514197_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post Java IO简单操作文件" /&gt;Java-IO Java Input-Output 主要是用于文件的存储和读取，相关操作一般都会放在 Java.io 包中
+1 File 类 file 类的方法是我们操作文件必不可少的，是必须要学习的类
+1.1 使用示例： package Java_IO; import java.io.File; import java.io.IOException; public class fileClass { public static void main(String[] args) throws IOException { File se = new File(&amp;#34;D:\\Frelon.txt&amp;#34;); File we = new File(&amp;#34;D:\\&amp;#34;,&amp;#34;sda.py&amp;#34;); System.out.println(se+&amp;#34;~~~~&amp;#34;+we); File dir = new File(&amp;#34;D:\\KW&amp;#34;+File.separator); File sdCard = new File (dir,&amp;#34;a.java&amp;#34;); if(sdCard.createNewFile()) { System.out.println(&amp;#34;Create File Successfully ! &amp;#34;+sdCard); }else { System.out.println(&amp;#34;Filed!&amp;#34;); } } } 1.2 File类常见方法 1.2.1 获取文件路径 package Java_IO; import java.</description>
+        </item>
+        <item>
+        <title>Java中的collections的map</title>
+        <link>https://jokeme.top/p/collection_map/</link>
+        <pubDate>Sat, 28 Dec 2019 00:00:00 +0000</pubDate>
+        
+        <guid>https://jokeme.top/p/collection_map/</guid>
+        <description>&lt;img src="https://cn.bing.com/th?id=OHR.BloodyBrook_EN-CN9582612899_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post Java中的collections的map" /&gt;Collection-Map Map--|双列集合,一次存一对键值对,必须保证唯一性 --|HashMap:哈希表,不同步,允许空的Key,Value --|TreeMap:二叉树,线程不同步,可以对Map集合的键?排序 --|Hashtable:哈希表,线程同步效率低下,不允许空的Key,Value 1. Map 集合共性功能    添加 V put(K,V) / putAll(Map&amp;lt;K,V&amp;gt; map)     删除 V remove(K) / void clear()   判断 Boolean containsKey / Value()   获取 V get(K) / int size()    注意：如果对同一个键多次存储会出现值被覆盖的现象
+2 Map 集合取出键值对方法 2.1 迭代器取出法 package sourceCode; import java.util.HashMap; import java.util.Iterator; import java.util.Map; import java.util.Set; public class collMap { public static void main(String[] args) { Map&amp;lt;Integer,String&amp;gt; se = new HashMap&amp;lt;Integer,String&amp;gt;(); se.</description>
+        </item>
+        <item>
+        <title>简单的Java泛型学习</title>
+        <link>https://jokeme.top/p/java_generics/</link>
+        <pubDate>Sat, 28 Dec 2019 00:00:00 +0000</pubDate>
+        
+        <guid>https://jokeme.top/p/java_generics/</guid>
+        <description>&lt;img src="https://cn.bing.com/th?id=OHR.ChateauBeynac_EN-CN7541724153_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post 简单的Java泛型学习" /&gt;泛型 1 泛型特性 百度得如下解释：
+泛型是程序设计语言的一种特性,允许程序员在强类型程序设计语言中编写代码时定义一些可变部分，那些部分在使用前必须作出指明。各种程序设计语言和其编译器、运行环境对泛型的支持均不一样。将类型参数化以达到代码复用提高软件开发工作效率的一种数据类型。泛型类是引用类型，是堆对象，主要是引入了类型参数这个概念。 2. 举个栗子 ? ? List Li = new ArrayList(); Li.add(&amp;#34;sdn&amp;#34;); Li.add(90); for (Object se :Li){ System.out.println(se); } java.lang.ClassCastException: java.lang.Integer cannot be cast to java.lang.String 典型的类型转换异常，Integer不能被转换成String
+正确的写法如下：
+List&amp;lt;String&amp;gt; Li = new ArrayList&amp;lt;String&amp;gt;(); 3. 泛型的使用 泛型有三种使用方式，分别为：泛型类、泛型接口、泛型方法
+3.1 泛型类 泛型类型用于类的定义中，被称为泛型类。通过泛型可以完成对一组类的操作对外开放相同的接口。最典型的就是各种容器类，如：List、Set、Map。
+一个最普通的泛型类：
+public class examples&amp;lt;Human&amp;gt;{ private Human key; public examples(Human key) { this.key = key; } public Human getKey(){ return key; } } 注意事项
+泛型的类型参数只能是类类型，不能是简单类型。
+不能对确切的泛型类型使用instanceOf操作，编译时会出错。
+3.2 泛型接口 泛型接口与泛型类的定义及使用基本相同</description>
+        </item>
+        <item>
+        <title>Java时间类api</title>
+        <link>https://jokeme.top/p/java_api_of_time/</link>
+        <pubDate>Sun, 22 Dec 2019 00:00:00 +0000</pubDate>
+        
+        <guid>https://jokeme.top/p/java_api_of_time/</guid>
+        <description>&lt;img src="https://cn.bing.com/th?id=OHR.BrightonSnow_EN-CN7201070198_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post Java时间类api" /&gt;时间类 API 在日常学习生活中，我们经常遇到时间相关的问题，现在虽然 Date 类已经不是主流了，但任然有许多方法要学习
+1.1DateFormat 1.1.1 使用示例 package APICourceCode; import java.text.DateFormat; import java.util.Date; public class dateAPI { public static void main(String[] args) { Date date = new Date(); DateFormat ses = DateFormat.getDateTimeInstance(DateFormat.FULL, DateFormat.FULL); String sesa = ses.format(date); System.out.println(sesa); } } 其常见的Style如下
+FULL:2019年12月16日 星期一 下午06时38分17秒 CST LONG:2019年12月16日 下午06时39分20秒 MEDIUM:2019-12-16 18:39:41 (默认方式) SHORT:19-12-16 下午6:40 如果需要自定义的格式，就需要按照下面的表格自定义，自定义以后，系统自带的Style将不生效
+   字母 意义     y 年   M 月份   w 年份中的周数   W 月份中的周数   d 月份中的天数   D 年份中的天数   F 月份中的星期   E 星期中的天数   a am/pm 表示上下午   H 一天中的小时数(0-23)   h am/pm 中的一天小时数(1-12)   m 小时中的分钟数   s 分钟中的秒数   S 毫秒数   z PST;GMT 时区    package APICourceCode; import java.</description>
+        </item>
+        <item>
+        <title>Java collection </title>
+        <link>https://jokeme.top/p/java_collection/</link>
+        <pubDate>Fri, 20 Dec 2019 00:00:00 +0000</pubDate>
+        
+        <guid>https://jokeme.top/p/java_collection/</guid>
+        <description>&lt;img src="https://cn.bing.com/th?id=OHR.GentooLeap_EN-CN7598340092_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post Java collection " /&gt;collection集合 collection--| |--list:有序,有索引,允许重复元素 |--set:不允许重复元素,元素存取无序 1.共性功能 a.添加
+Boolean add (Obj obj);//添加单个对象 Boolean addAll (Collection c);//添加一组的collection的对象 b.删除
+void clear();//清空collection内所有对象/元素 Boolean remove (Object o);//删除collection里面某个对象 Boolean removeAll (Collection c);//删除一组的collection c.获取长度
+int size(); d.判断
+Boolean isEmpty(); Boolean contains(Object o); Boolean containsAll(Collection c) e.集合转数组
+toArray(); toArray([]); f.迭代器
+Iterator iterator(); 2. List集合 2.1 list集合的具体子类 List---- |-- Vector:数组数据结构,长度可变,线程同步&amp;lt;多线程安全&amp;gt;,但是速度比较慢(现在已经不常用-被ArrayList替代),长度按数组长度的100%延长 |-- ArrayList:数组结构,长度可变,线程不同步&amp;lt;多线程不安全&amp;gt;.查,速度快,增 删 改速度慢,长度按数组长度的50%延长 |-- LinkedList:链表结构,线程不同步&amp;lt;多线程不安全&amp;gt;,增,删,改,速度快,查 速度慢 2.2 迭代器使用注意 Exception in thread &amp;quot;main&amp;quot; java.util.ConcurrentModificationException at java.util.ArrayList$Itr.checkForComodification(Unknown Source) at java.util.ArrayList$Itr.next(Unknown Source) 遇到这种在使用迭代器时还修改迭代器内元素的时候，JVM会报错，这时候就需要用ListIterator</description>
+        </item>
+        <item>
+        <title>Java的equals和contains的一些区别</title>
+        <link>https://jokeme.top/p/java_equals_and_contains/</link>
+        <pubDate>Fri, 20 Dec 2019 00:00:00 +0000</pubDate>
+        
+        <guid>https://jokeme.top/p/java_equals_and_contains/</guid>
+        <description>&lt;img src="https://cn.bing.com/th?id=OHR.Calakmul_EN-CN9963471796_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post Java的equals和contains的一些区别" /&gt;equals() &amp;amp;&amp;amp; contains() Java 中常见的比较有equals和hashcode
+今天在学习的时候就遇到了一个头疼的问题(菜鸟级的我有大大疑问)
+在比较两个对象内的元素时，无论是使用equals还是hashcode都始终得不到我想要的结果。遂百度，记此文
+那么这两种方法到底有什么区别呢？
+equals()方法是根类 Object 的默认方法，查看 Object 中 equals()的默认实现：
+public boolean equals(Object obj) { return (this == obj); } ✅ 可以看出没有重写过的 equals()方法和 == 是一样的，都是比较两个对象引用指向的内存地址是否一样判断两个对象是否相等。
+也就是说，基本上每次都要Overwrite这个方法
+hashCode是JDK根据对象的地址或者字符串或者数字计算该对象的哈希码值的方法。
+hashcode 和 equals 两者必须同时重写。
+注意在类中，有一些 equals 方法 OverWrite 时必须要传入 Object 类型
+public boolean equals (person obj){ return (this == obj); }	❌ //这样写就是错误的,equals()方法不允许传入非 Object 类 </description>
+        </item>
+        
+    </channel>
+</rss>

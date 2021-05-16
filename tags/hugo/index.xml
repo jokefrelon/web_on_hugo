@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>hugo on JokemeBlog</title>
+    <link>https://jokeme.top/tags/hugo/</link>
+    <description>Recent content in hugo on JokemeBlog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 16 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://jokeme.top/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>从solo迁移到hugo</title>
+      <link>https://jokeme.top/p/%E4%BB%8Esolo%E8%BF%81%E7%A7%BB%E5%88%B0hugo/</link>
+      <pubDate>Sun, 16 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://jokeme.top/p/%E4%BB%8Esolo%E8%BF%81%E7%A7%BB%E5%88%B0hugo/</guid>
+      <description>博客迁移 最近我把我的个人博客从solo迁移到了hugo项目上了。
+不是solo不够优秀而是solo不符合我的需求了，我总结了以下几点
+ 可定制化程度太低，千篇一律，单调枯燥，乏味。 登录需要用社区账号，不确定因素太大。 经常更新导致的版本不兼容。  我也想过给自己偷个懒使用Bolo作为solo的替代品，但是还是不符合我的预期。虽然不需要社区账号登陆，但是他和solo太相似了，以至于我感觉我换了个寂寞。
+1. 初识Hugo 在我有了迁移博客到其他平台的念想时我就一直在物色新的平台，然后我突然间就在GitHub上看到了hugo。
+一款golang写的软件，可以直接用markdown来更新文章，而且主题贼多，数据啥的也都是放自己手里。卧槽，我不就是我想找的吗！
+2. Hugo部署 其实上面扯了些没用的，到这里才是我的技术博客开始记录的地方。
+2.1 下载hugo压缩包 wget https://github.com/gohugoio/hugo/releases/download/v0.83.1/hugo_extended_0.83.1_Linux-64bit.tar.gz -O hugo.tar.gz 首先，Github找到hugo的最新版，并且是extended版本的，否者我们后续是无法自行修改scss的，我一开始就因为这点，整整折腾了一个晚上都无法修改主题为我喜欢的样式。Google了良久才发现这个问题。
+2.2 解压hugo 这一步是很容易的
+tar -zxvf hugo.tar.gz 然后你可以把没有用的LIENCE和README.md删除了。只留一个hugo的二进制可执行文件。
+并且要把这个二进制文件放在环境变量里面。
+mv hugo /usr/local/bin #我个人是推荐放这里的，你要是喜欢放别的地方也是可以的 3. 配置hugo 这里我建议你先看看hugo的quick_start，虽然看了和没有看一样，但是这也是一种学习的过程吧。
+hugo new site site_name 到这里你的网站就建立完成了。是不是很惊愕！你甚至连如何运行网站都不了解。
+没事，咱们慢慢来！
+先下载一个好看的Theme，当然不下载也可以，但是你没有主题的网站是真的丑呀。
+cd site_name wget https://github.com/CaiJimmy/hugo-theme-stack/archive/refs/tags/v2.3.0.zip -O themes/v2.3.0.zip cd themes unzip v2.3.0.zip mv hugo-theme-stack-2.3.0 hugo-theme-stack rm v2.3.0.zip 接下来就是配置文件了
+baseurl:http://example.com#根据你自己改languageCode:en-ustheme:hugo-theme-stackpaginate:20title:Blog#根据你自己改# Change it to your Disqus shortname before using#disqusShortname: hugo-theme-stack# GA Tracking ID#googleAnalytics:# Theme i18n support# Available values: en, fr, id, ja, ko, pt-br, zh-cn, es, deDefaultContentLanguage:zh-cnpermalinks:post:/p/:slug/page:/:slug/params:mainSections:- postfeaturedImageField:imagerssFullContent:truefavicon:/bk3.</description>
+    </item>
+    
+  </channel>
+</rss>

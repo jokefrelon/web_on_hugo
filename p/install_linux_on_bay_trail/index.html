@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='记录一次我在Intel Bay Trail板子上安装系统的坑,恕我直言,这块板是真的垃圾'><title>Bay Trail主板安装Linux的坑</title>
+
+<link rel='canonical' href='https://jokeme.top/p/install_linux_on_bay_trail/'>
+
+<link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='Bay Trail主板安装Linux的坑'>
+<meta property='og:description' content='记录一次我在Intel Bay Trail板子上安装系统的坑,恕我直言,这块板是真的垃圾'>
+<meta property='og:url' content='https://jokeme.top/p/install_linux_on_bay_trail/'>
+<meta property='og:site_name' content='JokemeBlog'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Bay_Trail' /><meta property='article:published_time' content='2020-03-16T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2020-03-16T00:00:00&#43;00:00'/><meta property='og:image' content='https://cn.bing.com/th?id=OHR.ArcticWolf_EN-CN8268127090_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4' />
+<meta name="twitter:title" content="Bay Trail主板安装Linux的坑">
+<meta name="twitter:description" content="记录一次我在Intel Bay Trail板子上安装系统的坑,恕我直言,这块板是真的垃圾"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://cn.bing.com/th?id=OHR.ArcticWolf_EN-CN8268127090_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4' />
+    <link rel="shortcut icon" href="/bk3.ico" />
+
+    </head>
+    <body class="">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.body.dataset.scheme = 'dark';
+        } else {
+            document.body.dataset.scheme = 'light';
+        }
+    })();
+</script><div class="container main-container flex on-phone--column extended article-page with-toolbar">
+            <aside class="sidebar left-sidebar sticky">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header class="site-info">
+        
+            <figure class="site-avatar">
+                
+                    
+                    
+                    
+                        
+                        <img src="/author_hud0a2a235bd9bca1ace56b5f54e36a460_15093_300x0_resize_q75_box.jpg" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+
+                
+                    <span class="emoji">🥰</span>
+                
+            </figure>
+        
+        <h1 class="site-name"><a href="https://jokeme.top">JokemeBlog</a></h1>
+        <h2 class="site-description">人生没有白走的路,每一步都算数。</h2>
+    </header>
+
+    <ol class="menu" id="main-menu">
+        
+        
+        
+
+        <li >
+            <a href='/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>Home</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/about/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>About</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/archives/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/search/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+
+        
+            <li id="dark-mode-toggle">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <span>暗色模式</span>
+            </li>
+        
+    </ol>
+</aside>
+
+            <main class="main full-width">
+    <div id="article-toolbar">
+        <a href="https://jokeme.top" class="back-home">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="15 6 9 12 15 18" />
+</svg>
+
+
+
+            <span>Back</span>
+        </a>
+    </div>
+
+    <article class="has-image main-article">
+    <header class="article-header">
+        <div class="article-image">
+            <a href="/p/install_linux_on_bay_trail/">
+                
+                    <img src="https://cn.bing.com/th?id=OHR.ArcticWolf_EN-CN8268127090_UHD.jpg&amp;pid=hp&amp;w=1080&amp;h=720&amp;rs=1&amp;c=4" loading="lazy" alt="Featured image of post Bay Trail主板安装Linux的坑" />
+                
+            </a>
+        </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/intel/" >
+                Intel
+            </a>
+        
+            <a href="/categories/linux/" >
+                Linux
+            </a>
+        
+    </header>
+    
+
+    <h2 class="article-title">
+        <a href="/p/install_linux_on_bay_trail/">Bay Trail主板安装Linux的坑</a>
+    </h2>
+
+    
+    <h3 class="article-subtitle">
+        记录一次我在Intel Bay Trail板子上安装系统的坑,恕我直言,这块板是真的垃圾
+    </h3>
+    <footer class="article-time">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+        <time class="article-time--published">Mar 16, 2020</time>
+    </footer></div>
+</header>
+
+    <section class="article-content">
+    <h1 id="bay-trail-主板安装-linux-的坑">Bay Trail 主板安装 Linux 的坑</h1>
+<p>最近搞了一个 <strong>N2920</strong> 的低功耗小主机，本来打算搞软路由，但是家里网速不行，就打算先刷个 <strong>Linux</strong> 玩玩，于是我就被这个问题烦了将近半个月！</p>
+<p>一开始我打算安装一个 <strong>CentOS 7</strong> 玩玩，当我下载完系统刻录完开始安装的时候发现 <strong>CentOS 7</strong> 的 installer 异常的卡顿，而且耗时也非常的多，差不多需要将近半个小时才可以到图形界面的安装(我这个小主机是有固态的，这个速度肯定有很大的问题),而且好不容易到了图形界面的安装环节，还经常卡死！刚开始 我还以为可能是这个 ISO 镜像有问题，又换了一个 <strong>CentOS 8</strong> 的镜像。</p>
+<p>刻录&ndash;安装&ndash;等待&ndash;卡死</p>
+<p>Again</p>
+<p>开机&ndash;安装&ndash;等待&ndash;卡死</p>
+<p>? ? ?我真的是&hellip;&hellip;一点办法都没有</p>
+<p>这结果属实有点意外呀，怎么 <strong>CentOS 8</strong> 也是这个鸟样？</p>
+<p>我不甘，又换了一个 <strong>Ubuntu 18</strong></p>
+<p>刻录&ndash;安装&ndash;等待&ndash;卡死</p>
+<p>卧槽，这是什么问题换系统 都不行，应该就不是软件的问题了吧，我就从主板开始动刀，会不会是因为主板的 <strong>BIOS</strong> 太老了，本来打算去更新一下 <strong>BIOS</strong> 结果，这是一个不知名的小板，不知道从哪里搞到 <strong>BIOS</strong> 文件，就放弃了！</p>
+<p>然后去百度 <em>为什么电脑安装 Linux 卡顿</em></p>
+<p>众所周知，百度相当垃圾，大部分都是答非所问，要不然就是 <del>CSDN,简书</del> 的水贴，都没有用 <strong>:(</strong></p>
+<p>然后我又找隔壁 二狗子 意念扶梯子，用 Google 搜一下</p>
+<p>然后我就在国外某个被大陆 404 的的技术论坛上找到了一点线索 ? ? ?</p>
+<p>贴子网址： <a class="link" href="https://askubuntu.com/questions/803640/system-freezes-completely-with-intel-bay-trail"  target="_blank" rel="noopener"
+    >askubuntu</a></p>
+<p>反正他们大概说的是 <strong>Bay Trail</strong> 主板上安装 Linux 出现的各种异常，刚刚好我的主板也是，出现的问题也和他们的很相似</p>
+<p>在这里截取一些解决方法：</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell"><span class="c1">#Your processor is affected by the c-state bug</span>
+
+<span class="c1">#This causes total freezes when the CPU tries to enter an unsupported sleep state. It&#39;s a problem for many Bay Trail devices especially with newer (4.*) kernels.</span>
+
+<span class="c1">#Affected processors AFAIK:</span>
+
+<span class="c1">#Atom Z3735F (Asus X205TA, Acer Aspire Switch 10, Lenovo MIIX 3 1030)</span>
+<span class="c1">#Atom Z3735G</span>
+<span class="c1">#Celeron J1900 (Asus ET2325IUK, shuttle XS35V4)</span>
+<span class="c1">#Celeron N2940 (Acer Aspire ES1-711, Chromebook)</span>
+<span class="c1">#Celeron N2840 (Acer Aspire ES1-311)</span>
+<span class="c1">#Celeron N2930 (Jetway JBC311U93, Zotac Nano CI320)</span>
+<span class="c1">#Pentium N3520</span>
+<span class="c1">#Pentium N3530 (Acer V3-111P)</span>
+<span class="c1">#Pentium N3540 (Dell Inspiron 15 3000, Lenovo G50, ASUS X550MJ)</span>
+<span class="c1">#(please (suggest an) edit to add your own device if affected)</span>
+
+<span class="c1">#Complete list of Bay Trail processors may be found here</span>
+
+<span class="c1">#There is a simple workaround for this until it gets properly fixed upstream.</span>
+
+<span class="c1">#You just need to pass a kernel boot parameter and the random freezing stops completely. The parameter may increase battery consumption slightly, but it will give you a usable system.</span>
+
+<span class="c1">#You do this by editing the configuration file for GRUB:</span>
+
+<span class="c1">#Boot Ubuntu and open a terminal by pressing Ctrl+Alt+T then type</span>
+
+sudo nano /etc/default/grub
+<span class="c1">#Find the line that starts GRUB_CMDLINE_LINUX_DEFAULT=</span>
+
+<span class="c1">#This needs to be changed to include intel_idle.max_cstate=1</span>
+
+<span class="c1">#So after your edit it reads something like</span>
+
+<span class="nv">GRUB_CMDLINE_LINUX_DEFAULT</span><span class="o">=</span><span class="s2">&#34;quiet splash intel_idle.max_cstate=1&#34;</span>
+<span class="c1">#quiet and splash are default parameters for Ubuntu Desktop - no need to change them, or any other pre-existing parameters</span>
+
+<span class="c1">#Now save the file by pressing ctrl+o then enter and exit by pressing ctrl+x</span>
+
+<span class="c1">#Now run</span>
+
+sudo update-grub
+<span class="c1">#Then reboot.</span>
+
+<span class="c1">#What to do if you don&#39;t have enough time to do this before the system hangs</span>
+
+<span class="c1">#No problem. As explained on the help page I linked to earlier, you can add the parameter to GRUB before booting. Note that this only passes the parameter for the current boot, so you still have to edit /etc/default/grub once you have booted to make the change permanent.</span>
+
+<span class="c1">#You need to get to the GRUB menu. If you are dual booting this will appear anyway, if not you have to press and hold (or tap) shift after pressing the power button to turn on.</span>
+
+<span class="c1">#When you get to this screen select Advanced Options for Ubuntu. You can move the cursor to a different kernel, or leave it in place to edit options for the default. Instead of pressing enter, press e and you will go into edit mode, looking vaguely like this.</span>
+
+<span class="c1">#Move the cursor down to where it says quiet splash, put a space after splash and carefully type intel_idle.max_cstate=1 making sure there is a space after it as well.</span>
+</code></pre></div><p>反正大概意思就是这种主板有残疾，在引导的时候会导致一些问题，需要加上这些参数就可以了</p>
+<p>至此，这个烦了我将近半个月的问题没有了，就在引导的时候加了几个参数，鼠标正常了，键盘也可以用了，也不会卡顿了</p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/bay_trail/">Bay_Trail</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3&#43;Aro6EYUG4&#43;cU&#43;KJWu/X"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js"integrity="sha384-g7c&#43;Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI&#43;sEnkvrMWph2EDg4"crossorigin="anonymous"
+                defer="true"
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC&#43;Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa"crossorigin="anonymous"
+                defer="true"
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+        renderMathInElement(document.querySelector(`.article-content`), {
+            delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "$", right: "$", display: false },
+                { left: "\\(", right: "\\)", display: false },
+                { left: "\\[", right: "\\]", display: true }
+            ]
+        });})
+</script>
+    
+</article>
+
+    <aside class="related-contents--wrapper">
+    
+    
+        <h2 class="section-title">相关文章</h2>
+        <div class="related-contents">
+            <div class="flex article-list--tile">
+                
+                    
+<article class="has-image">
+    <a href="/p/%E4%BB%8Esolo%E8%BF%81%E7%A7%BB%E5%88%B0hugo/">
+        
+        
+            <div class="article-image">
+                
+                    <img src="https://cn.bing.com/th?id=OHR.Wakodahatchee_EN-CN9780170147_UHD.jpg&amp;pid=hp&amp;w=1080&amp;h=720&amp;rs=1&amp;c=4" loading="lazy" data-key="" data-hash="https://cn.bing.com/th?id=OHR.Wakodahatchee_EN-CN9780170147_UHD.jpg&amp;pid=hp&amp;w=1080&amp;h=720&amp;rs=1&amp;c=4"/>
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">从solo迁移到hugo</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="has-image">
+    <a href="/p/dockerfile/">
+        
+        
+            <div class="article-image">
+                
+                    <img src="https://cn.bing.com/th?id=OHR.PadarIsland_EN-CN9304851314_UHD.jpg&amp;pid=hp&amp;w=1080&amp;h=720&amp;rs=1&amp;c=4" loading="lazy" data-key="dockerfile" data-hash="https://cn.bing.com/th?id=OHR.PadarIsland_EN-CN9304851314_UHD.jpg&amp;pid=hp&amp;w=1080&amp;h=720&amp;rs=1&amp;c=4"/>
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Dockerfile编写</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="has-image">
+    <a href="/p/ffmpeg_user_agent/">
+        
+        
+            <div class="article-image">
+                
+                    <img src="https://cn.bing.com/th?id=OHR.Comma_EN-CN6081365526_UHD.jpg&amp;pid=hp&amp;w=1080&amp;h=720&amp;rs=1&amp;c=4" loading="lazy" data-key="ffmpeg_user_agent" data-hash="https://cn.bing.com/th?id=OHR.Comma_EN-CN6081365526_UHD.jpg&amp;pid=hp&amp;w=1080&amp;h=720&amp;rs=1&amp;c=4"/>
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">ffmpeg设置请求头</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="has-image">
+    <a href="/p/linux_reward/">
+        
+        
+            <div class="article-image">
+                
+                    <img src="https://cn.bing.com/th?id=OHR.BlueTitDaffs_EN-CN2615365443_UHD.jpg&amp;pid=hp&amp;w=1080&amp;h=720&amp;rs=1&amp;c=4" loading="lazy" data-key="linux_reward" data-hash="https://cn.bing.com/th?id=OHR.BlueTitDaffs_EN-CN2615365443_UHD.jpg&amp;pid=hp&amp;w=1080&amp;h=720&amp;rs=1&amp;c=4"/>
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">记录最近捯饬Linux的收获</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="has-image">
+    <a href="/p/linux_vsftpd/">
+        
+        
+            <div class="article-image">
+                
+                    <img src="https://cn.bing.com/th?id=OHR.VolcanoLlaima_EN-CN5183277848_UHD.jpg&amp;pid=hp&amp;w=1080&amp;h=720&amp;rs=1&amp;c=4" loading="lazy" data-key="linux_vsftpd" data-hash="https://cn.bing.com/th?id=OHR.VolcanoLlaima_EN-CN5183277848_UHD.jpg&amp;pid=hp&amp;w=1080&amp;h=720&amp;rs=1&amp;c=4"/>
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Ubuntu 20.04.2 配置 vsftpd 的脑坑</h2>
+        </div>
+    </a>
+</article>
+                
+            </div>
+        </div>
+    
+</aside>
+
+
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2019 - 
+        
+        2021 JokemeBlog
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="2.3.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer="true"
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer="true"
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css"integrity="sha256-c0uckgykQ9v5k&#43;IqViZOZKc47Jn7KQil4/MP3ySA3F8="crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css"integrity="sha256-SBLU4vv6CA6lHsZ1XyTdhyjJxCjPif/TRkjnsyGAGnE="crossorigin="anonymous"
+            >
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js"integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g="crossorigin="anonymous"
+                defer="false"
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

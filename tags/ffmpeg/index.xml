@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ffmpeg on JokemeBlog</title>
+    <link>https://jokeme.top/tags/ffmpeg/</link>
+    <description>Recent content in ffmpeg on JokemeBlog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 23 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://jokeme.top/tags/ffmpeg/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ffmpeg设置请求头</title>
+      <link>https://jokeme.top/p/ffmpeg_user_agent/</link>
+      <pubDate>Tue, 23 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://jokeme.top/p/ffmpeg_user_agent/</guid>
+      <description>ffmpeg是一款非常强大的工具,它可以在命令行下对视频类文件进行多种操作,之前我也介绍过ffmpeg,戳这里
+在使用过程中我们经常可以遇到使用ffmpeg无法下载文件的情况,那这是为什么呢？
+其实有时候,服务端会对我们客户端的请求进行检验,其中最简单的就是检查请求头：User-Agent ，如果你连请求头都没,那你肯定就暴露了你不是正常的用户，你既然不是正常的用户，那那服务器那边就会拒绝你的访问请求，所以就导致了你被403。
+既然这样那咱们简单设置一下请求头就可以了：
+ffmpeg -user_agent &amp;quot;User-Agent: AppleCoreMedia/1.0.0.18C66 (iPhone; U; CPU OS 14_3 like Mac OS X; zh_cn)&amp;quot; -i https://www.baidu.com/xxx.mp4\?id\=2399977 -c copy str4.mp4 当你设置了请求头以后你还别高兴太早了！因为服务器那边既然开启了检测，就不会通过这麽简单的方法来拦截非正常用户的访问。一般来说还有各种headers
+这时我们就需要通过抓包来获得具体的请求头里的参数了，下面我就简单的介绍一下具体的参数该如何写。注意 $&#39;\r\n&#39;这是一种换行的写法。
+ffmpeg -user_agent &amp;quot;User-Agent: AppleCoreMedia/1.0.0.18C66 (iPhone; U; CPU OS 14_3 like Mac OS X; zh_cn)&amp;quot; -headers &amp;quot;Authorization: fudkmnso-... ...9-0sdf-0ea&amp;quot;$&#39;\r\n&#39;&amp;quot;Xplay-session-ID:9885998&amp;quot; -i https://www.baidu.com/xxx.mp4\?id\=2399977 -c copy str4.mp4 </description>
+    </item>
+    
+    <item>
+      <title>Ubuntu 安装 **FFMPEG** 下载 m3u8 格式的视频</title>
+      <link>https://jokeme.top/p/ffmpeg_download_m3u8/</link>
+      <pubDate>Wed, 15 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jokeme.top/p/ffmpeg_download_m3u8/</guid>
+      <description>Ubuntu 安装 FFMPEG 下载 m3u8 格式的视频 最近想下载一个某音视频，但是我能看不能下载，这不是扯吗？于是不能忍的我就打算盘盘这个视频
+1 . 准备环境：Ubuntu 18.04 , FFMPEG 本着万物皆可 Linux の初心，我就不想用 Windows 了。
+首先安装 FFMPEG
+sudo apt -y install ffmpeg 2 . 抓包短视频的 m3u8 地址 iOS 端，我是使用的 Thor 这个 app,比较好用，应用商店搜索就有
+然后得到真实的地址：
+http://XXX.com/xxx/xxx.m3u8 3 . 使用 FFMPEG 进行下载 ffmpeg -i http://XXX.com/xxx/xxx.m3u8 -c copy xxx.mp4 然后就需要慢慢等待下载完成就可以了，真的是特别特别的简单</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>netplan on JokemeBlog</title>
+    <link>https://jokeme.top/tags/netplan/</link>
+    <description>Recent content in netplan on JokemeBlog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 06 May 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://jokeme.top/tags/netplan/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title> Ubuntu 使用 netplan 配置 WIFI</title>
+      <link>https://jokeme.top/p/netplan_wifi/</link>
+      <pubDate>Wed, 06 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jokeme.top/p/netplan_wifi/</guid>
+      <description>Ubuntu 使用 netplan 配置 WIFI 在折腾 Ubuntu 的时候，我突然发现 Ubuntu 有好几套网络管理方案，但是在安装了图形化界面以后，只有Network Manager &amp;amp; Systemd-networkd 之一生效，
+那像我这种爱折腾的人，肯定是不满足被束缚啊，为什么不能用命令行来连接 ? WiFi 呢？
+1 .查看网卡名字 $ ~ iw dev phy#0 Interface wlx200db035fad3 ifindex 3 wdev 0x1 addr 20:0d:b0:35:fa:d3 ssid Tenda_277D40 type managed txpower 12.00 dBm 2 .打开无线网卡 $ ~ sudo ip lin set wlx200db035fad3 up 3 . 搜索 WiFi 信号 $ ~ sudo iw dev wlx200db035fad3 scan BSS **:**:**:**:**:**(on wlx200db035fad3) -- associated TSF: 1588670071330336 usec (18387d, 09:14:31) freq: 2437 beacon interval: 100 TUs capability: ESS Privacy ShortSlotTime (0x0411) signal: -80.</description>
+    </item>
+    
+  </channel>
+</rss>

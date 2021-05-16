@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>openstack on JokemeBlog</title>
+    <link>https://jokeme.top/tags/openstack/</link>
+    <description>Recent content in openstack on JokemeBlog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 25 Sep 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://jokeme.top/tags/openstack/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>OpenStack 常用命令</title>
+      <link>https://jokeme.top/p/openstack_command/</link>
+      <pubDate>Fri, 25 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jokeme.top/p/openstack_command/</guid>
+      <description>OpenStack 常用命令 1. MySQL showvariableslike&amp;#34;storage_engine&amp;#34;;//查询默认存储引擎InnoDBshowvariableslike&amp;#34;have%&amp;#34;;//查询支持的存储引擎2. Keyston source /etc/keystone/admin-openrc.sh openstack user create --domain demo --password password testuser //--domain为所属域 --password为密码 testuser是用户名 [root@controller ~]# openstack user list //查看用户列表 +----------------------------------+----------+ | ID | Name | +----------------------------------+----------+ | 1877ca2b73b04380af77a5cd3d057734 | demo | | 21a0b28505a140b9b54ca5a20542746c | glance | | 65e4fa15c643474d99f0b7950b5328bb | neutron | | 710f538564124ecd9fdcfaef40792e84 | admin | | 7caa95a15cb54d789d69e511c8214cb8 | nova | | cce5f695864940a0a32eab0d2015528c | testuser | +----------------------------------+----------+ [root@controller ~]# openstack endpoint list //endpoint列表 +---------------+-----------+--------------+--------------+---------+-----------+------------------+ | ID | Region | Service Name | Service Type | Enabled | Interface | URL | +---------------+-----------+--------------+--------------+---------+-----------+------------------+ | 1f7824e81d9f4 | RegionOne | neutron | network | True | internal | http://controlle | | f04b595b97a0a | | | | | | r:9696 | | e78f46 | | | | | | | | 399280c404a54 | RegionOne | glance | image | True | public | http://controlle | | a1bb314531c2b | | | | | | r:9292 | | 880ca1 | | | | | | | | .</description>
+    </item>
+    
+  </channel>
+</rss>

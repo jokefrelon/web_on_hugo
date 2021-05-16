@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>FAQ on JokemeBlog</title>
+    <link>https://jokeme.top/tags/faq/</link>
+    <description>Recent content in FAQ on JokemeBlog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 31 Mar 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://jokeme.top/tags/faq/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>安装 Linux 系统(Ubuntu)经验总结</title>
+      <link>https://jokeme.top/p/ubuntu_install_faq/</link>
+      <pubDate>Tue, 31 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jokeme.top/p/ubuntu_install_faq/</guid>
+      <description>安装 Linux 系统(Ubuntu)经验总结 进来将近两三个星期的装系统经历，让我异常痛苦，先是 Bay Trail 主板的一些坑，然后是显卡驱动，然后又是一堆莫名其妙的问题&amp;hellip;&amp;hellip;
+1. Bay Trail 主板的先天问题 在 这系列主板上安装 Windows 可能没有什么感觉，但是安装 Linux 异常的难，会造成啥啥啥内核错误，导致卡慢
+需要在引导的后面 加上一句
+intel_idle.max_cstate=1 2. 显卡驱动问题 在安装 Linux 时，常常会遇到没有对应显卡驱动的问题，这时候就要在引导的时候加上
+nomodeset 3. 开机卡紫屏问题 这个问题原因可能各不一样，网上一大推，不赘述
+4.开机卡只有鼠标和壁纸 说实话这个问题最好解决了，鼠标键盘都可以正常使用，ctrl + alt + t 打开 terminal,把 gnome 删掉即可，如果喜欢用图形界面还可以在重启以后在安装回来</description>
+    </item>
+    
+  </channel>
+</rss>

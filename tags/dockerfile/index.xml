@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>dockerfile on JokemeBlog</title>
+    <link>https://jokeme.top/tags/dockerfile/</link>
+    <description>Recent content in dockerfile on JokemeBlog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 13 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://jokeme.top/tags/dockerfile/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Dockerfile编写</title>
+      <link>https://jokeme.top/p/dockerfile/</link>
+      <pubDate>Tue, 13 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://jokeme.top/p/dockerfile/</guid>
+      <description>今天也是摸鱼的一天没怎么看书,一直在玩Linux。并且在无意间看到了我之前下载的 DirectoryLister，就想着在Docker里面部署玩一下。
+一开始我是没有想写Dockerfile的，直接在开了一个Ubuntu容器整的，但是想了想，以后想用肯定不方便，这个容器我随时随地都有可以废了它。所以就从网上看了看Dockerfile怎么写，开整！
+首先我并不想介绍Dockerfile怎么样去写，网上的教程一大把，自己看就可以了 我是参考菜鸟教程的教程。
+Dockerfile无非就是一个自动化的过程，至少在我看来就是这样的，可能我刚接触了解不深吧。但是按照这个思路是绝对可以写出来Dockerfile的，因为我自己就是例子🌰。
+来看看我的build
+7168 ◯ : docker build -t flt:v1.0 . ... ... Removing intermediate container 8fe78ec98a65 ---&amp;gt; da56585b17c1 Step 4/4 : CMD [&amp;quot;/root/np.sh&amp;quot;] ---&amp;gt; Running in 23bd36103ddd Removing intermediate container 23bd36103ddd ---&amp;gt; 114c7dec7e2f Successfully built 114c7dec7e2f Successfully tagged flt:v1.0 1. 选择基础镜像 因为Dockerfile是基于一些底层的镜像制作的，所以在这里我选择的是 ubuntu:20.04
+因为我平时就是在Ubuntu环境使用的比较多,你要是使用CentOS更顺手你也可以选择使用Redhat系的基础镜像。
+这里无可争议，过。
+FROM ubuntu:20.04 2. 配置环境变量 其实我这里也没有啥环境变量，我也不知道啥东西要设置为环境变量，就把DirectoryLister的版本号设置为环境变量了，方便以后升级。哈哈哈哈，比较菜只能想到这东西了。
+ENV DL_VERSION 3.7.7 3. 自动化运行命令 这里也没有啥好说的，有点Linux基础就可以，就是这个写法很操蛋！要不停的 &amp;amp;&amp;amp; &amp;hellip; &amp;hellip; \，至于为什么要这样呢，我查了一下，说是一个RUN就是一层，你要是写太多RUN就会套太多层，非常的臃肿。这些暂时也不是我需要考虑的，别人怎么写，我就怎么写。
+这里我遇到了一个自动化安装软件时，需要用户手动输入参数的问题，平时咱手动输入参数可以，但是这自动化的时候可不能这样呀，废了老大劲网上找到了解决办法，就是利用 debconf 提前配置好参数，详细解决办法见Ubuntu问答 。
+这里我特喵的还是要喷一喷CSDN，妈的一篇帖子万人抄，也不管对不对，往自己的的账号里面薅就对了。妈的好几页都是垃圾文章，浪费我的时间。</description>
+    </item>
+    
+  </channel>
+</rss>

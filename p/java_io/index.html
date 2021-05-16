@@ -1,0 +1,1219 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='Java Input-Output是Java自带的工具类，用于各种IO操作'><title>Java IO简单操作文件</title>
+
+<link rel='canonical' href='https://jokeme.top/p/java_io/'>
+
+<link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='Java IO简单操作文件'>
+<meta property='og:description' content='Java Input-Output是Java自带的工具类，用于各种IO操作'>
+<meta property='og:url' content='https://jokeme.top/p/java_io/'>
+<meta property='og:site_name' content='JokemeBlog'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Java_IO' /><meta property='article:published_time' content='2019-12-28T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2019-12-28T00:00:00&#43;00:00'/><meta property='og:image' content='https://cn.bing.com/th?id=OHR.FichtelbergWinter_EN-CN7709514197_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4' />
+<meta name="twitter:title" content="Java IO简单操作文件">
+<meta name="twitter:description" content="Java Input-Output是Java自带的工具类，用于各种IO操作"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://cn.bing.com/th?id=OHR.FichtelbergWinter_EN-CN7709514197_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4' />
+    <link rel="shortcut icon" href="/bk3.ico" />
+
+    </head>
+    <body class="">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.body.dataset.scheme = 'dark';
+        } else {
+            document.body.dataset.scheme = 'light';
+        }
+    })();
+</script><div class="container main-container flex on-phone--column extended article-page with-toolbar">
+            <aside class="sidebar left-sidebar sticky">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header class="site-info">
+        
+            <figure class="site-avatar">
+                
+                    
+                    
+                    
+                        
+                        <img src="/author_hud0a2a235bd9bca1ace56b5f54e36a460_15093_300x0_resize_q75_box.jpg" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+
+                
+                    <span class="emoji">🥰</span>
+                
+            </figure>
+        
+        <h1 class="site-name"><a href="https://jokeme.top">JokemeBlog</a></h1>
+        <h2 class="site-description">人生没有白走的路,每一步都算数。</h2>
+    </header>
+
+    <ol class="menu" id="main-menu">
+        
+        
+        
+
+        <li >
+            <a href='/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>Home</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/about/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>About</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/archives/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/search/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+
+        
+            <li id="dark-mode-toggle">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <span>暗色模式</span>
+            </li>
+        
+    </ol>
+</aside>
+
+            <main class="main full-width">
+    <div id="article-toolbar">
+        <a href="https://jokeme.top" class="back-home">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="15 6 9 12 15 18" />
+</svg>
+
+
+
+            <span>Back</span>
+        </a>
+    </div>
+
+    <article class="has-image main-article">
+    <header class="article-header">
+        <div class="article-image">
+            <a href="/p/java_io/">
+                
+                    <img src="https://cn.bing.com/th?id=OHR.FichtelbergWinter_EN-CN7709514197_UHD.jpg&amp;pid=hp&amp;w=1080&amp;h=720&amp;rs=1&amp;c=4" loading="lazy" alt="Featured image of post Java IO简单操作文件" />
+                
+            </a>
+        </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/java/" >
+                Java
+            </a>
+        
+    </header>
+    
+
+    <h2 class="article-title">
+        <a href="/p/java_io/">Java IO简单操作文件</a>
+    </h2>
+
+    
+    <h3 class="article-subtitle">
+        Java Input-Output是Java自带的工具类，用于各种IO操作
+    </h3>
+    <footer class="article-time">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+        <time class="article-time--published">Dec 28, 2019</time>
+    </footer></div>
+</header>
+
+    <section class="article-content">
+    <h1 id="java-io">Java-IO</h1>
+<p>Java Input-Output 主要是用于文件的存储和读取，相关操作一般都会放在 Java.io 包中</p>
+<h2 id="1-file-类">1 File 类</h2>
+<p>file 类的方法是我们操作文件必不可少的，是必须要学习的类</p>
+<h3 id="11-使用示例">1.1 使用示例：</h3>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="nn">Java_IO</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">java.io.File</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.io.IOException</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">fileClass</span> <span class="o">{</span>
+	<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">IOException</span> <span class="o">{</span>
+		
+		<span class="n">File</span> <span class="n">se</span> <span class="o">=</span> <span class="k">new</span> <span class="n">File</span><span class="o">(</span><span class="s">&#34;D:\\Frelon.txt&#34;</span><span class="o">);</span>
+		<span class="n">File</span> <span class="n">we</span> <span class="o">=</span> <span class="k">new</span> <span class="n">File</span><span class="o">(</span><span class="s">&#34;D:\\&#34;</span><span class="o">,</span><span class="s">&#34;sda.py&#34;</span><span class="o">);</span>
+		<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">se</span><span class="o">+</span><span class="s">&#34;~~~~&#34;</span><span class="o">+</span><span class="n">we</span><span class="o">);</span>
+		
+		<span class="n">File</span> <span class="n">dir</span> <span class="o">=</span> <span class="k">new</span> <span class="n">File</span><span class="o">(</span><span class="s">&#34;D:\\KW&#34;</span><span class="o">+</span><span class="n">File</span><span class="o">.</span><span class="na">separator</span><span class="o">);</span>
+		<span class="n">File</span> <span class="n">sdCard</span> <span class="o">=</span> <span class="k">new</span> <span class="n">File</span> <span class="o">(</span><span class="n">dir</span><span class="o">,</span><span class="s">&#34;a.java&#34;</span><span class="o">);</span>
+		<span class="k">if</span><span class="o">(</span><span class="n">sdCard</span><span class="o">.</span><span class="na">createNewFile</span><span class="o">())</span> <span class="o">{</span>
+			<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Create File Successfully ! &#34;</span><span class="o">+</span><span class="n">sdCard</span><span class="o">);</span>
+		<span class="o">}</span><span class="k">else</span> <span class="o">{</span>
+			<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Filed!&#34;</span><span class="o">);</span>
+		<span class="o">}</span>
+	<span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div><h3 id="12-file类常见方法">1.2 <strong>File</strong>类常见方法</h3>
+<h4 id="121-获取文件路径">1.2.1 获取文件路径</h4>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="nn">Java_IO</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">java.io.File</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">filePath</span> <span class="o">{</span>
+	<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+		<span class="n">File</span> <span class="n">file</span> <span class="o">=</span> <span class="k">new</span> <span class="n">File</span><span class="o">(</span><span class="s">&#34;a.sh&#34;</span><span class="o">);</span>
+		<span class="n">String</span> <span class="n">str</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="na">getAbsolutePath</span><span class="o">();</span>
+		<span class="n">String</span> <span class="n">str1</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="na">getPath</span><span class="o">();</span>
+		<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">str</span><span class="o">+</span><span class="s">&#34;~~~~~&#34;</span><span class="o">+</span><span class="n">str1</span><span class="o">);</span>
+	<span class="o">}</span>
+<span class="o">}</span>
+<span class="err">​</span><span class="o">~~~~~~~~~~~~~~~~~~</span>
+<span class="nl">D:</span><span class="err">\</span><span class="n">github</span><span class="err">\</span><span class="n">Hadoop_build</span><span class="err">\</span><span class="n">JavaLearn</span><span class="err">\</span><span class="n">a</span><span class="o">.</span><span class="na">sh</span><span class="o">~~~~~</span><span class="n">a</span><span class="o">.</span><span class="na">sh</span>
+</code></pre></div><p>getPath()只是获取相对路径 &lt; 程序在哪运行，路径就是那里 &gt;</p>
+<p>getAbsolutePath()表示获取绝对路径</p>
+<h4 id="122-获取文件修改时间">1.2.2 获取文件修改时间</h4>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="nn">Java_IO</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">java.io.File</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.text.DateFormat</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.Date</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">filePath</span> <span class="o">{</span>
+	<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+		<span class="n">File</span> <span class="n">file</span> <span class="o">=</span> <span class="k">new</span> <span class="n">File</span><span class="o">(</span><span class="s">&#34;.classpath&#34;</span><span class="o">);</span>
+		<span class="n">Long</span> <span class="n">lon</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="na">lastModified</span><span class="o">();</span>
+		<span class="n">Date</span> <span class="n">date</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Date</span><span class="o">(</span><span class="n">lon</span><span class="o">);</span>
+		<span class="n">String</span> <span class="n">mod_time</span> <span class="o">=</span> <span class="n">DateFormat</span><span class="o">.</span><span class="na">getDateTimeInstance</span><span class="o">(</span><span class="n">DateFormat</span><span class="o">.</span><span class="na">LONG</span><span class="o">,</span><span class="n">DateFormat</span><span class="o">.</span><span class="na">LONG</span><span class="o">).</span><span class="na">format</span><span class="o">(</span><span class="n">date</span><span class="o">);</span>
+		<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">lon</span><span class="o">+</span><span class="s">&#34; &gt;&gt;&gt;&gt;&gt; &#34;</span><span class="o">+</span><span class="n">mod_time</span><span class="o">);</span>
+	<span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div><pre><code class="language-log" data-lang="log">1575876750643 &gt;&gt;&gt;&gt;&gt; 2019年12月9日 下午03时32分30秒
+</code></pre><p>该方法并不困难，稍稍有难度的是如何把获取到的 <strong>Long</strong> 类型的数字转化为具体的时间</p>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="n">Date</span> <span class="n">date</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Date</span><span class="o">(</span><span class="n">1575876750643l</span><span class="o">);</span>
+<span class="n">DateFormat</span> <span class="n">time</span> <span class="o">=</span> <span class="n">DateFormat</span><span class="o">.</span><span class="na">getDateTimeInstance</span><span class="o">(</span><span class="n">DateFormat</span><span class="o">.</span><span class="na">LONG</span><span class="o">,</span> <span class="n">DateFormat</span><span class="o">.</span><span class="na">LONG</span><span class="o">);</span>
+<span class="n">String</span> <span class="n">str</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="n">date</span><span class="o">);</span>
+<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">str</span><span class="o">);</span>
+</code></pre></div><h4 id="123-常见操作">1.2.3 常见操作</h4>
+<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java"><span class="kt">boolean</span> <span class="n">boof</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="na">createNewFile</span><span class="o">();</span>     
+<span class="kt">boolean</span> <span class="n">boo</span>  <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="na">canExecute</span><span class="o">();</span>        
+<span class="kt">boolean</span> <span class="n">booa</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="na">canRead</span><span class="o">();</span>           
+<span class="kt">boolean</span> <span class="n">bood</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="na">canWrite</span><span class="o">();</span>          
+<span class="kt">boolean</span> <span class="n">booh</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="na">exists</span><span class="o">();</span>            
+<span class="kt">boolean</span> <span class="n">booj</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="na">isAbsolute</span><span class="o">();</span>        
+<span class="kt">boolean</span> <span class="n">book</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="na">isDirectory</span><span class="o">();</span>       
+<span class="kt">boolean</span> <span class="n">bool</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="na">isFile</span><span class="o">();</span>            
+<span class="kt">boolean</span> <span class="n">booz</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="na">isHidden</span><span class="o">();</span>          
+</code></pre></div><p>认识即可，没有难度</p>
+<h4 id="124-获取文件夹内容">1.2.4 获取文件夹内容</h4>
+<p>当操作文件夹时，肯定要知道这个文件夹里面有什么东西，我们才好操作，常用的方法有两种 <strong>list()</strong> , <strong>listFile()</strong> 但是建议用后者，因为<strong>list()</strong> 有的它也有，他有的方法**list()**没有</p>
+<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java"><span class="kn">package</span> <span class="nn">Java_IO</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">java.io.File</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">visitFile</span> <span class="o">{</span>
+	<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+		<span class="n">File</span> <span class="n">alean</span> <span class="o">=</span> <span class="k">new</span> <span class="n">File</span><span class="o">(</span><span class="s">&#34;c:\\&#34;</span><span class="o">);</span>
+		<span class="k">if</span> <span class="o">(</span><span class="n">alean</span><span class="o">.</span><span class="na">exists</span><span class="o">())</span> <span class="o">{</span>
+			<span class="n">String</span><span class="o">[]</span> <span class="n">dd</span> <span class="o">=</span> <span class="n">alean</span><span class="o">.</span><span class="na">list</span><span class="o">();</span>
+			<span class="k">for</span> <span class="o">(</span><span class="n">String</span> <span class="n">ss</span> <span class="o">:</span> <span class="n">dd</span><span class="o">)</span> <span class="o">{</span>
+				<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">ss</span><span class="o">);</span>
+			<span class="o">}</span>
+<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;~~~~~~~~~~~~~~~~~~~~~~&#34;</span><span class="o">);</span>
+			<span class="n">File</span><span class="o">[]</span> <span class="n">fo</span> <span class="o">=</span> <span class="n">alean</span><span class="o">.</span><span class="na">listFiles</span><span class="o">();</span>
+			<span class="k">for</span> <span class="o">(</span><span class="n">File</span> <span class="n">fs</span> <span class="o">:</span> <span class="n">fo</span><span class="o">)</span> <span class="o">{</span>
+				<span class="k">if</span><span class="o">(</span><span class="n">fs</span><span class="o">.</span><span class="na">getName</span><span class="o">().</span><span class="na">contains</span><span class="o">(</span><span class="s">&#34;Logs&#34;</span><span class="o">))</span> <span class="o">{</span>
+					<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">fs</span><span class="o">+</span><span class="s">&#34; ~~~ &#34;</span><span class="o">+</span><span class="n">fs</span><span class="o">.</span><span class="na">getName</span><span class="o">());</span>
+				<span class="o">}</span>
+			<span class="o">}</span>
+<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;~~~~~~~~~~~~~~~~~~~~~~&#34;</span><span class="o">);</span>
+			<span class="n">Long</span> <span class="n">sis</span> <span class="o">=</span> <span class="n">alean</span><span class="o">.</span><span class="na">getFreeSpace</span><span class="o">();</span>
+			<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">alean</span> <span class="o">+</span> <span class="s">&#34; &#34;</span> <span class="o">+</span> <span class="n">sis</span> <span class="o">/</span> <span class="n">Math</span><span class="o">.</span><span class="na">pow</span><span class="o">(</span><span class="n">1024</span><span class="o">,</span> <span class="n">3</span><span class="o">)</span> <span class="o">+</span> <span class="s">&#34;Gb&#34;</span> <span class="o">+</span> <span class="s">&#34; free!&#34;</span><span class="o">);</span>
+		<span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+			<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;No this file&#34;</span><span class="o">);</span>
+		<span class="o">}</span>
+	<span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div><h4 id="125-文件过滤器">1.2.5 文件过滤器</h4>
+<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java"><span class="n">File</span><span class="o">[]</span> <span class="n">str1</span>  <span class="o">=</span>  <span class="n">dir</span><span class="o">.</span><span class="na">listFiles</span><span class="o">(</span><span class="k">new</span> <span class="n">fileFilterByName</span><span class="o">());</span>
+<span class="k">for</span> <span class="o">(</span><span class="n">File</span> <span class="n">strr</span> <span class="o">:</span> <span class="n">str1</span><span class="o">)</span> <span class="o">{</span>
+	<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">strr</span><span class="o">);</span>
+<span class="o">}</span>
+<span class="err">​</span><span class="o">~~~~</span>
+<span class="kn">package</span> <span class="nn">Java_IO</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">java.io.File</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.io.FileFilter</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">fileFilterByName</span> <span class="kd">implements</span> <span class="n">FileFilter</span> <span class="o">{</span>
+	<span class="nd">@Override</span>
+	<span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">accept</span><span class="o">(</span><span class="n">File</span> <span class="n">arg0</span><span class="o">)</span> <span class="o">{</span>
+		<span class="k">return</span> <span class="n">arg0</span><span class="o">.</span><span class="na">isDirectory</span><span class="o">();</span>
+	<span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div><p>它可以过滤出该 ?内的 ?,还可以过滤出 ?内的 ?,只需要把 <strong>fileFilterByName</strong> の <strong>accept()</strong> 方法改一下即可</p>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">accept</span><span class="o">(</span><span class="n">File</span> <span class="n">arg0</span><span class="o">)</span> <span class="o">{</span>
+	<span class="k">return</span> <span class="n">arg0</span><span class="o">.</span><span class="na">isDirectory</span><span class="o">();</span>
+<span class="c1">//	return arg0.isFile();
+</span><span class="c1">//  return arg0.isFile();
+</span><span class="c1">//  return arg0.getName().endSWith(&#34;.java&#34;)
+</span><span class="c1"></span><span class="o">}</span>
+</code></pre></div><h5 id="1251-文件名过滤器">1.2.5.1 文件名过滤器</h5>
+<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java"><span class="kn">package</span> <span class="nn">Java_IO</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">java.io.File</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.io.FilenameFilter</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">filterByName</span> <span class="kd">implements</span> <span class="n">FilenameFilter</span> <span class="o">{</span>
+	<span class="kd">private</span> <span class="n">String</span> <span class="n">se</span><span class="o">=</span><span class="s">&#34;&#34;</span><span class="o">;</span>
+	
+	<span class="kd">public</span> <span class="nf">filterByName</span><span class="o">(</span><span class="n">String</span> <span class="n">se</span><span class="o">)</span> <span class="o">{</span>
+		<span class="kd">super</span><span class="o">();</span>
+		<span class="k">this</span><span class="o">.</span><span class="na">se</span> <span class="o">=</span> <span class="n">se</span><span class="o">;</span>
+	<span class="o">}</span>
+	<span class="kd">public</span> <span class="nf">filterByName</span><span class="o">()</span> <span class="o">{</span>
+		<span class="kd">super</span><span class="o">();</span>
+	<span class="o">}</span>
+	
+	<span class="nd">@Override</span>
+	<span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">accept</span><span class="o">(</span><span class="n">File</span> <span class="n">arg0</span><span class="o">,</span> <span class="n">String</span> <span class="n">arg1</span><span class="o">)</span> <span class="o">{</span>
+		
+		<span class="k">return</span> <span class="n">arg1</span><span class="o">.</span><span class="na">endsWith</span><span class="o">(</span><span class="n">se</span><span class="o">);</span>
+	<span class="o">}</span>
+
+<span class="o">}</span>
+<span class="err">​</span><span class="o">~~~~~~~~~~~~~~~~~~~~~~</span>
+<span class="kn">package</span> <span class="nn">Java_IO</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">java.io.File</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">FileFilter</span> <span class="o">{</span>
+	<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+		<span class="n">File</span> <span class="n">file</span> <span class="o">=</span> <span class="k">new</span> <span class="n">File</span><span class="o">(</span><span class="s">&#34;D:\\hadoop-2.8.5&#34;</span><span class="o">);</span>
+		<span class="n">String</span><span class="o">[]</span> <span class="n">str</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="na">list</span><span class="o">(</span><span class="k">new</span> <span class="n">filterByName</span><span class="o">(</span><span class="s">&#34;.txt&#34;</span><span class="o">));</span>
+		<span class="k">for</span> <span class="o">(</span><span class="n">String</span> <span class="n">name</span> <span class="o">:</span> <span class="n">str</span><span class="o">)</span> <span class="o">{</span>
+			<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">name</span><span class="o">);</span>
+		<span class="o">}</span>
+	<span class="o">}</span>
+<span class="o">}</span>
+
+</code></pre></div><p>这种过滤器不常用，因为需要一个过滤器实现<strong>FileNameFilter</strong>, 实际 coding 我们可以使用<strong>FileFilter</strong> 替代，它不仅仅可以过滤文件夹 ?还可以过滤文件 ?</p>
+<h3 id="13-递归-获取-内的内容">1.3 递归 获取 ?内的内容</h3>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="nn">Java_IO</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">java.io.File</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.io.IOException</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.nio.file.NoSuchFileException</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">getAllFiles</span> <span class="o">{</span>
+
+	<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">IOException</span> <span class="o">{</span>
+		<span class="n">File</span> <span class="n">dir</span> <span class="o">=</span> <span class="k">new</span> <span class="n">File</span><span class="o">(</span><span class="s">&#34;D:\\github&#34;</span><span class="o">);</span>
+		<span class="n">getAllFile</span><span class="o">(</span><span class="n">dir</span><span class="o">);</span>
+	<span class="o">}</span>
+
+	<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">getAllFile</span><span class="o">(</span><span class="n">File</span> <span class="n">se</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">IOException</span> <span class="o">{</span>
+		<span class="n">File</span><span class="o">[]</span> <span class="n">dir1</span> <span class="o">=</span> <span class="n">se</span><span class="o">.</span><span class="na">listFiles</span><span class="o">();</span>
+		<span class="k">if</span><span class="o">(!</span><span class="n">se</span><span class="o">.</span><span class="na">exists</span><span class="o">())</span> <span class="o">{</span>
+			<span class="k">throw</span> <span class="k">new</span> <span class="n">NoSuchFileException</span><span class="o">(</span><span class="s">&#34;No such Path&#34;</span><span class="o">);</span>
+		<span class="o">}</span>
+		<span class="k">for</span> <span class="o">(</span><span class="n">File</span> <span class="n">der</span> <span class="o">:</span> <span class="n">dir1</span><span class="o">)</span> <span class="o">{</span>
+			<span class="k">if</span> <span class="o">(</span><span class="n">der</span><span class="o">.</span><span class="na">isDirectory</span><span class="o">())</span> <span class="o">{</span>
+				<span class="n">getAllFile</span><span class="o">(</span><span class="n">der</span><span class="o">);</span>
+			<span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+				<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Visited &#34;</span> <span class="o">+</span> <span class="n">der</span><span class="o">);</span>
+			<span class="o">}</span>
+		<span class="o">}</span>
+	<span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div><p>什么是递归？</p>
+<p>其实 递归就是在方法内部调用该方法，该方法不断地进栈，在使用递归时，一定要有判断条件，否则一直递归下去会导致内存溢出</p>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kt">void</span> <span class="nf">met</span><span class="o">(){</span>
+	<span class="kt">void</span> <span class="nf">show</span><span class="o">();</span>
+<span class="o">}</span>
+
+<span class="kd">public</span> <span class="kt">void</span> <span class="nf">show</span><span class="o">(){</span>
+	<span class="kt">void</span> <span class="nf">met</span><span class="o">();</span>
+<span class="o">}</span>
+</code></pre></div><p>这就是一种递归，但是它是错误 ❌的递归，两个方法相互调用会导致栈内存溢出，</p>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kt">void</span> <span class="nf">show</span><span class="o">(){</span>
+	<span class="kt">void</span> <span class="nf">show</span><span class="o">();</span>
+<span class="o">}</span>
+</code></pre></div><p>这也是一种错误 ❌的递归，方法内部无线调用自己 ✌会导致栈内存溢出</p>
+<h4 id="131-使用递归删除-">1.3.1 使用递归删除 ?</h4>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="nn">Java_IO</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">java.io.File</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.nio.file.NoSuchFileException</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">deleteFiles</span> <span class="o">{</span>
+	<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">NoSuchFileException</span> <span class="o">{</span>
+		<span class="n">File</span> <span class="n">dir</span> <span class="o">=</span> <span class="k">new</span> <span class="n">File</span><span class="o">(</span><span class="s">&#34;D:\\KWS&#34;</span><span class="o">);</span>
+		<span class="n">removeFiles</span><span class="o">(</span><span class="n">dir</span><span class="o">);</span>
+	<span class="o">}</span>
+	<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">removeFiles</span><span class="o">(</span><span class="n">File</span> <span class="n">se</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">NoSuchFileException</span> <span class="o">{</span>
+		<span class="n">File</span> <span class="o">[]</span> <span class="n">wow</span> <span class="o">=</span> <span class="n">se</span><span class="o">.</span><span class="na">listFiles</span><span class="o">();</span>
+		<span class="k">for</span><span class="o">(</span><span class="n">File</span> <span class="n">wo</span> <span class="o">:</span> <span class="n">wow</span><span class="o">)</span> <span class="o">{</span>
+			<span class="k">if</span><span class="o">(!</span><span class="n">wo</span><span class="o">.</span><span class="na">exists</span><span class="o">())</span> <span class="o">{</span>
+				<span class="k">throw</span> <span class="k">new</span> <span class="n">NoSuchFileException</span><span class="o">(</span><span class="kc">null</span><span class="o">);</span>
+			<span class="o">}</span>
+			<span class="k">if</span><span class="o">(</span><span class="n">wo</span><span class="o">.</span><span class="na">isDirectory</span><span class="o">())</span> <span class="o">{</span>
+				<span class="n">removeFiles</span><span class="o">(</span><span class="n">wo</span><span class="o">);</span>
+			<span class="o">}</span><span class="k">else</span> <span class="o">{</span>
+				<span class="n">Boolean</span> <span class="n">esc</span> <span class="o">=</span> <span class="n">wo</span><span class="o">.</span><span class="na">delete</span><span class="o">();</span>
+				<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;delete the file &#34;</span><span class="o">+</span><span class="n">wo</span><span class="o">+</span><span class="s">&#34; &#34;</span><span class="o">+</span><span class="n">esc</span><span class="o">);</span>
+			<span class="o">}</span>
+		<span class="o">}</span>
+		<span class="n">Boolean</span> <span class="n">esc</span> <span class="o">=</span> <span class="n">se</span><span class="o">.</span><span class="na">delete</span><span class="o">();</span>
+		<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;delete the file &#34;</span><span class="o">+</span><span class="n">se</span><span class="o">+</span><span class="s">&#34; &#34;</span><span class="o">+</span><span class="n">esc</span><span class="o">);</span>
+	<span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div><p>递归删除很简单，只是需要注意，这个删除是不经过回收站的，会被直接删除，不可找回</p>
+<p>还有就是需要判断该 ?有没有权限访问，要不然会报 <strong>java.lang.NullPointerException</strong> 异常，甚至还需要我们自己来抛一些 <strong>IO</strong> 异常</p>
+<h3 id="14-前三-part-测试">1.4 前三 part 测试</h3>
+<p>需求：</p>
+<pre><code>获取某个?内所有文件的集合
+获取该?内某个?内的.txt文件,并存储到集合中打印?出来
+</code></pre><div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="nn">Java_IO</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">java.io.File</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.io.FilenameFilter</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.ArrayList</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.List</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">IO_Test1</span> <span class="o">{</span>
+	<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+		<span class="n">File</span> <span class="n">dir</span> <span class="o">=</span> <span class="k">new</span> <span class="n">File</span><span class="o">(</span><span class="s">&#34;c:\\tempfile&#34;</span><span class="o">);</span>
+
+		<span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">list</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;();</span>
+
+		<span class="n">fileFilterByName</span> <span class="n">filter</span> <span class="o">=</span> <span class="k">new</span> <span class="n">fileFilterByName</span><span class="o">(</span><span class="s">&#34;.txt&#34;</span><span class="o">);</span>
+
+		<span class="n">getFile</span><span class="o">(</span><span class="n">dir</span><span class="o">,</span> <span class="n">filter</span><span class="o">,</span> <span class="n">list</span><span class="o">);</span>
+
+		<span class="k">for</span> <span class="o">(</span><span class="n">String</span> <span class="n">ser</span> <span class="o">:</span> <span class="n">list</span><span class="o">)</span> <span class="o">{</span>
+			<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">ser</span><span class="o">);</span>
+		<span class="o">}</span>
+	<span class="o">}</span>
+
+	<span class="kd">private</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">getFile</span><span class="o">(</span><span class="n">File</span> <span class="n">file</span><span class="o">,</span> <span class="n">fileFilterByName</span> <span class="n">filter</span><span class="o">,</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">list</span><span class="o">)</span> <span class="o">{</span>
+		<span class="n">File</span><span class="o">[]</span> <span class="n">fileName</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="na">listFiles</span><span class="o">();</span>
+		<span class="k">for</span> <span class="o">(</span><span class="n">File</span> <span class="n">se</span> <span class="o">:</span> <span class="n">fileName</span><span class="o">)</span> <span class="o">{</span>
+			<span class="k">if</span> <span class="o">(</span><span class="n">se</span><span class="o">.</span><span class="na">isDirectory</span><span class="o">())</span> <span class="o">{</span>
+				<span class="n">getFile</span><span class="o">(</span><span class="n">se</span><span class="o">,</span> <span class="n">filter</span><span class="o">,</span> <span class="n">list</span><span class="o">);</span>
+			<span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+				<span class="k">if</span> <span class="o">(</span><span class="n">filter</span><span class="o">.</span><span class="na">accept</span><span class="o">(</span><span class="n">se</span><span class="o">))</span> <span class="o">{</span>
+					<span class="n">list</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">se</span><span class="o">.</span><span class="na">getPath</span><span class="o">());</span>
+				<span class="o">}</span>
+			<span class="o">}</span>
+		<span class="o">}</span>
+	<span class="o">}</span>
+<span class="o">}</span>
+<span class="err">​</span><span class="o">~~~~~~~~~~~~~~~~~~~~</span>
+<span class="kn">package</span> <span class="nn">Java_IO</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">java.io.File</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.io.FileFilter</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">fileFilterByName</span> <span class="kd">implements</span> <span class="n">FileFilter</span> <span class="o">{</span>
+	<span class="kd">private</span> <span class="n">String</span> <span class="n">str</span><span class="o">;</span>
+    
+	<span class="kd">public</span> <span class="nf">fileFilterByName</span><span class="o">(</span><span class="n">String</span> <span class="n">str</span><span class="o">)</span> <span class="o">{</span>
+		<span class="kd">super</span><span class="o">();</span>
+		<span class="k">this</span><span class="o">.</span><span class="na">str</span> <span class="o">=</span> <span class="n">str</span><span class="o">;</span>
+	<span class="o">}</span>
+    
+	<span class="kd">public</span> <span class="nf">fileFilterByName</span><span class="o">()</span> <span class="o">{</span>
+		<span class="kd">super</span><span class="o">();</span>
+	<span class="o">}</span>
+	
+	
+	<span class="nd">@Override</span>
+	<span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">accept</span><span class="o">(</span><span class="n">File</span> <span class="n">arg0</span><span class="o">)</span> <span class="o">{</span>
+		<span class="k">return</span> <span class="n">arg0</span><span class="o">.</span><span class="na">getName</span><span class="o">().</span><span class="na">endsWith</span><span class="o">(</span><span class="k">this</span><span class="o">.</span><span class="na">str</span><span class="o">);</span>
+	<span class="o">}</span>
+
+<span class="o">}</span>
+</code></pre></div><p>给自己点个赞 ?,我真厉害?</p>
+<h2 id="2-fileoutputstream-向-内写入内容">2 FileOutputStream 向 ?内写入内容</h2>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="nn">Java_IO</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">java.io.File</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.io.FileOutputStream</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.io.IOException</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">writeIntoFile</span> <span class="o">{</span>
+	<span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">Line_separator</span> <span class="o">=</span> <span class="n">System</span><span class="o">.</span><span class="na">getProperty</span><span class="o">(</span><span class="s">&#34;line.separator&#34;</span><span class="o">);</span>
+
+	<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">IOException</span> <span class="o">{</span>
+		<span class="n">File</span> <span class="n">dir</span> <span class="o">=</span> <span class="k">new</span> <span class="n">File</span><span class="o">(</span><span class="s">&#34;c:\\tempfile&#34;</span><span class="o">);</span>
+		<span class="k">if</span><span class="o">(!</span><span class="n">dir</span><span class="o">.</span><span class="na">exists</span><span class="o">())</span> <span class="o">{</span>
+			<span class="n">dir</span><span class="o">.</span><span class="na">mkdir</span><span class="o">();</span>
+		<span class="o">}</span>
+		<span class="n">String</span> <span class="n">str</span> <span class="o">=</span><span class="s">&#34;i Love Java&#34;</span><span class="o">;</span>
+		<span class="n">FileOutputStream</span> <span class="n">fops</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+		<span class="k">try</span> <span class="o">{</span>
+			<span class="n">fops</span> <span class="o">=</span> <span class="k">new</span> <span class="n">FileOutputStream</span><span class="o">(</span><span class="s">&#34;c:\\tempfile\\fops.java&#34;</span><span class="o">,</span><span class="kc">true</span><span class="o">);</span>
+			<span class="n">String</span> <span class="n">ssr</span> <span class="o">=</span> <span class="n">Line_separator</span><span class="o">+</span><span class="s">&#34;Hello World&#34;</span><span class="o">+</span><span class="n">Line_separator</span><span class="o">;</span>
+			<span class="n">fops</span><span class="o">.</span><span class="na">write</span><span class="o">(</span><span class="n">ssr</span><span class="o">.</span><span class="na">getBytes</span><span class="o">());</span>
+			<span class="n">fops</span><span class="o">.</span><span class="na">write</span><span class="o">(</span><span class="n">str</span><span class="o">.</span><span class="na">getBytes</span><span class="o">());</span>
+			<span class="n">fops</span><span class="o">.</span><span class="na">write</span><span class="o">(</span><span class="n">ssr</span><span class="o">.</span><span class="na">getBytes</span><span class="o">());</span>
+			<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;写入成功&#34;</span><span class="o">);</span>
+		<span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">IOException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+			<span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+		<span class="o">}</span> <span class="k">finally</span> <span class="o">{</span>
+			<span class="k">if</span><span class="o">(</span><span class="n">fops</span><span class="o">!=</span><span class="kc">null</span><span class="o">)</span> <span class="o">{}</span>
+			<span class="n">fops</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+		<span class="o">}</span>
+	<span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div><p>写入内容很容易，只需要调用一下<strong>write()<strong>方法即可，但是难点就是处理各种</strong>Exception</strong> ,我们需要考虑到各种各样的异常</p>
+<p>比如 FileNotFoundException,,,NullPointerException 等等等， 因为一旦出现了这些问题我们的代码可能就占用了相关的系统资源，但是程序执行失败后，我们并没有释放该资源，如此循环往复就会导致系统的卡慢，甚至死机重启，这里我们经常使用<strong>try catch finally</strong> 方法来解决，需要执行的代码放在<strong>try</strong> 里面，在<strong>finally</strong> 里面放 <strong>close()<strong>方法，保证我们的代码在申请完资源以后，无论是否报错，都可以被释放掉，还有一点就是如果我们使用</strong>try catch finally</strong> 那我们一定不能在<strong>try</strong>里面 <strong>new</strong> 对象，因为到时候<strong>finally</strong> 关闭资源时会<strong>找不到对象</strong> ?的</p>
+<p>还有<strong>write()</strong> 方法是会覆盖掉文件内部的内容的，如果我们需要在当前内容上继续添加内容，那就需要在创建对象时加一个<strong>true</strong> 表示续写该文件，代码如下</p>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="n">FileOutputStream</span> <span class="n">fops</span> <span class="o">=</span> <span class="k">new</span> <span class="n">FileOutputStream</span><span class="o">(</span><span class="s">&#34;c:\\tempfile\\fops.java&#34;</span><span class="o">,</span><span class="kc">true</span><span class="o">);</span>
+</code></pre></div><h2 id="3-fileinputstream-读取-内容">3 FileInputStream 读取 ?内容</h2>
+<p>FileInputStream 类和 FileOutputStream 类有许多的共同点，都需要传一个 File 类的对象(new 对象时要保证 Path✔无误，要不然很容易造成空指针异常) 还有就是在使用完资源以后要及时释放掉资源，还有要注意的是异常の处理，如果没有处理好异常也会导致我们无法释放掉资源，导致程序占用过多的系统资源，使系统卡慢</p>
+<h3 id="31-read-入门级读取">3.1❌ read() 入门级读取</h3>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="nn">Java_IO</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">java.io.File</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.io.FileInputStream</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.io.IOException</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">readFile</span> <span class="o">{</span>
+	<span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kt">int</span> <span class="n">LIMSize</span> <span class="o">=</span> <span class="n">8192</span><span class="o">;</span>
+
+	<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">IOException</span> <span class="o">{</span>
+		<span class="n">File</span> <span class="n">dir</span> <span class="o">=</span> <span class="k">new</span> <span class="n">File</span><span class="o">(</span><span class="s">&#34;c:\\tempfile\\fops.java&#34;</span><span class="o">);</span>
+
+		<span class="n">FileInputStream</span> <span class="n">fipts</span> <span class="o">=</span> <span class="k">new</span> <span class="n">FileInputStream</span><span class="o">(</span><span class="n">dir</span><span class="o">);</span>
+
+		<span class="kt">int</span> <span class="n">byt</span><span class="o">;</span>
+		<span class="k">while</span> <span class="o">((</span><span class="n">byt</span> <span class="o">=</span> <span class="n">fipts</span><span class="o">.</span><span class="na">read</span><span class="o">())</span> <span class="o">!=</span> <span class="o">-</span><span class="n">1</span><span class="o">)</span> <span class="o">{</span>
+			<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">byt</span><span class="o">);</span>
+		<span class="o">}</span>
+
+		<span class="n">fipts</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+	<span class="o">}</span>
+<span class="o">}</span>        
+</code></pre></div><p>日常开发中，基本上用不上 PASS ❌</p>
+<h3 id="32-read-初级读取">3.2❌ read() 初级读取</h3>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="nn">Java_IO</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">java.io.File</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.io.FileInputStream</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.io.IOException</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">readFile</span> <span class="o">{</span>
+	<span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kt">int</span> <span class="n">LIMSize</span> <span class="o">=</span> <span class="n">8192</span><span class="o">;</span>
+
+	<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">IOException</span> <span class="o">{</span>
+		<span class="n">File</span> <span class="n">dir</span> <span class="o">=</span> <span class="k">new</span> <span class="n">File</span><span class="o">(</span><span class="s">&#34;c:\\tempfile\\fops.java&#34;</span><span class="o">);</span>
+		<span class="kt">byte</span><span class="o">[]</span> <span class="n">buf</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">byte</span><span class="o">[</span><span class="n">2</span><span class="o">];</span>
+
+		<span class="n">FileInputStream</span> <span class="n">fip</span> <span class="o">=</span> <span class="k">new</span> <span class="n">FileInputStream</span><span class="o">(</span><span class="n">dir</span><span class="o">);</span>
+
+		<span class="kt">int</span> <span class="n">len</span> <span class="o">=</span> <span class="n">fip</span><span class="o">.</span><span class="na">read</span><span class="o">(</span><span class="n">buf</span><span class="o">);</span>
+		<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">len</span> <span class="o">+</span> <span class="s">&#34;~~~&#34;</span> <span class="o">+</span> <span class="k">new</span> <span class="n">String</span><span class="o">(</span><span class="n">buf</span><span class="o">));</span>
+
+		<span class="n">fip</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+	<span class="o">}</span>
+<span class="o">}</span>            
+</code></pre></div><p>日常开发中，基本上用不上 PASS ❌</p>
+<h3 id="33--read-进阶级读取">3.3 ✔ read() 进阶级读取</h3>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="nn">Java_IO</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">java.io.File</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.io.FileInputStream</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.io.IOException</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">readFile</span> <span class="o">{</span>
+	<span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kt">int</span> <span class="n">LIMSize</span> <span class="o">=</span> <span class="n">8192</span><span class="o">;</span>
+
+	<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">IOException</span> <span class="o">{</span>
+		<span class="n">File</span> <span class="n">dir</span> <span class="o">=</span> <span class="k">new</span> <span class="n">File</span><span class="o">(</span><span class="s">&#34;c:\\tempfile\\fops.java&#34;</span><span class="o">);</span>
+				<span class="n">FileInputStream</span> <span class="n">fips</span> <span class="o">=</span> <span class="k">new</span> <span class="n">FileInputStream</span><span class="o">(</span><span class="n">dir</span><span class="o">);</span>
+		<span class="kt">byte</span><span class="o">[]</span> <span class="n">by</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">byte</span><span class="o">[</span><span class="n">LIMSize</span><span class="o">];</span>
+
+		<span class="kt">int</span> <span class="n">length</span> <span class="o">=</span> <span class="n">0</span><span class="o">;</span>
+
+		<span class="k">while</span> <span class="o">((</span><span class="n">length</span> <span class="o">=</span> <span class="n">fips</span><span class="o">.</span><span class="na">read</span><span class="o">(</span><span class="n">by</span><span class="o">))</span> <span class="o">!=</span> <span class="o">-</span><span class="n">1</span><span class="o">)</span> <span class="o">{</span>
+			<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="k">new</span> <span class="n">String</span><span class="o">(</span><span class="n">by</span><span class="o">,</span> <span class="n">0</span><span class="o">,</span> <span class="n">length</span><span class="o">));</span>
+		<span class="o">}</span>
+		<span class="n">fips</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+
+	<span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div><p>日常开发中可以使用，✔建议根据需要改变缓冲区的大小，一般建议设置成 :8192</p>
+<h3 id="34--read高级读取">3.4 ✔ read()高级读取</h3>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="nn">Java_IO</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">java.io.File</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.io.FileInputStream</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.io.IOException</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">readFileAdvantage</span> <span class="o">{</span>
+	<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">IOException</span> <span class="o">{</span>
+		<span class="n">File</span> <span class="n">dir</span> <span class="o">=</span> <span class="k">new</span> <span class="n">File</span><span class="o">(</span><span class="s">&#34;c:\\tempfile\\fops.java&#34;</span><span class="o">);</span>
+		<span class="n">FileInputStream</span> <span class="n">fips</span> <span class="o">=</span> <span class="k">new</span> <span class="n">FileInputStream</span><span class="o">(</span><span class="n">dir</span><span class="o">);</span>
+		<span class="kt">byte</span> <span class="o">[]</span> <span class="n">byt</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">byte</span> <span class="o">[</span><span class="n">fips</span><span class="o">.</span><span class="na">available</span><span class="o">()];</span>
+		<span class="n">fips</span><span class="o">.</span><span class="na">read</span><span class="o">(</span><span class="n">byt</span><span class="o">);</span>
+		<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="k">new</span> <span class="n">String</span><span class="o">(</span><span class="n">byt</span><span class="o">));</span>
+		<span class="n">fips</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+	<span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div><p>✔这种是我比较喜欢的一种方法，简洁好用，也不用考虑缓冲区大小 ?,而且一般 File 对象没有问题也就不会出错啊(相对于前面几个),这是重点 ✔,圈起来！下次会考！!!</p>
+<p>但是！!但是！!但是！ 这种方法只是比较适合处理比较小的文件，如果处理好几个 G 的文件，当场挂..所以呢，还是 进阶 和 高级 一起用</p>
+<h2 id="4-fileoutputstream-和-fileinputstream-一起读写文件">4 FileOutputStream 和 FileInputStream 一起读写文件</h2>
+<h3 id="41-低级写法">4.1 低级写法</h3>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="nn">Java_IO</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">java.io.File</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.io.FileInputStream</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.io.FileOutputStream</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.io.IOException</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">IO_CopyFile</span> <span class="o">{</span>
+
+	<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">IOException</span> <span class="o">{</span>
+		<span class="n">File</span> <span class="n">dir</span> <span class="o">=</span> <span class="k">new</span> <span class="n">File</span><span class="o">(</span><span class="s">&#34;C:\\tempfile\\fops.java&#34;</span><span class="o">);</span>
+		<span class="n">FileInputStream</span> <span class="n">fis</span> <span class="o">=</span> <span class="k">new</span> <span class="n">FileInputStream</span><span class="o">(</span><span class="n">dir</span><span class="o">);</span>
+
+		<span class="n">File</span> <span class="n">dir1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">File</span><span class="o">(</span><span class="s">&#34;C:\\tempfile\\fops.txt&#34;</span><span class="o">);</span>
+		<span class="n">FileOutputStream</span> <span class="n">fos</span> <span class="o">=</span> <span class="k">new</span> <span class="n">FileOutputStream</span><span class="o">(</span><span class="n">dir1</span><span class="o">);</span>
+		<span class="kt">int</span> <span class="n">len</span> <span class="o">=</span> <span class="n">0</span><span class="o">;</span>
+		<span class="k">while</span> <span class="o">((</span><span class="n">len</span> <span class="o">=</span> <span class="n">fis</span><span class="o">.</span><span class="na">read</span><span class="o">())</span> <span class="o">!=</span> <span class="o">-</span><span class="n">1</span><span class="o">)</span> <span class="o">{</span>
+			<span class="n">fos</span><span class="o">.</span><span class="na">write</span><span class="o">(</span><span class="n">len</span><span class="o">);</span>
+		<span class="o">}</span>
+		<span class="n">fis</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+		<span class="n">fos</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+	<span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div><p>不推荐这种写法，因为效率比较低，读取一个写入一个，太浪费时间</p>
+<h3 id="42-高级写法">4.2 高级写法</h3>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="nn">Java_IO</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">java.io.File</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.io.FileInputStream</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.io.FileOutputStream</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.io.IOException</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">APICourceCode.dateAPI</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">copyFileByBuf</span> <span class="o">{</span>
+	<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">IOException</span> <span class="o">{</span>
+		<span class="n">dateAPI</span> <span class="n">date</span> <span class="o">=</span> <span class="k">new</span> <span class="n">dateAPI</span><span class="o">();</span>
+		<span class="n">date</span><span class="o">.</span><span class="na">getDate</span><span class="o">();</span>
+		<span class="n">File</span> <span class="n">dir</span> <span class="o">=</span> <span class="k">new</span> <span class="n">File</span><span class="o">(</span><span class="s">&#34;d:\\tempfile\\idea.exe&#34;</span><span class="o">);</span>
+		<span class="n">FileOutputStream</span> <span class="n">fos</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+		<span class="n">FileInputStream</span> <span class="n">fis</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+		<span class="k">try</span> <span class="o">{</span>
+			<span class="n">fis</span> <span class="o">=</span> <span class="k">new</span> <span class="n">FileInputStream</span><span class="o">(</span><span class="n">dir</span><span class="o">);</span>
+			<span class="n">fos</span> <span class="o">=</span> <span class="k">new</span> <span class="n">FileOutputStream</span><span class="o">(</span><span class="s">&#34;d:\\tempfile\\idea.wilu&#34;</span><span class="o">);</span>
+
+			<span class="kt">byte</span><span class="o">[]</span> <span class="n">buf</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">byte</span><span class="o">[</span><span class="n">10240</span><span class="o">];</span>
+
+			<span class="kt">int</span> <span class="n">len</span> <span class="o">=</span> <span class="n">0</span><span class="o">;</span>
+			<span class="k">while</span> <span class="o">((</span><span class="n">len</span> <span class="o">=</span> <span class="n">fis</span><span class="o">.</span><span class="na">read</span><span class="o">(</span><span class="n">buf</span><span class="o">))</span> <span class="o">!=</span> <span class="o">-</span><span class="n">1</span><span class="o">)</span> <span class="o">{</span>
+				<span class="n">fos</span><span class="o">.</span><span class="na">write</span><span class="o">(</span><span class="n">buf</span><span class="o">,</span> <span class="n">0</span><span class="o">,</span> <span class="n">len</span><span class="o">);</span>
+			<span class="o">}</span>
+		<span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">IOException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+			<span class="k">throw</span> <span class="k">new</span> <span class="n">IOException</span><span class="o">();</span>
+		<span class="o">}</span> <span class="k">finally</span> <span class="o">{</span>
+			<span class="n">fis</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+			<span class="n">fos</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+			<span class="n">date</span><span class="o">.</span><span class="na">getDate</span><span class="o">();</span>
+			<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Copy Over&#34;</span><span class="o">);</span>
+		<span class="o">}</span>
+
+	<span class="o">}</span>
+<span class="o">}</span>
+
+</code></pre></div><p>我无聊就试了试，这个<strong>byte</strong> 数组の长度对<strong>IO</strong> の性能影响有多大，就把长度从 10,102,1024,2048,4096,8192,10240 都试了个遍，得出以下答案：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">时间\byte 长度</th>
+<th style="text-align:center">10</th>
+<th style="text-align:center">102</th>
+<th style="text-align:center">1024</th>
+<th style="text-align:center">2048</th>
+<th style="text-align:center">4096</th>
+<th style="text-align:center">8192</th>
+<th style="text-align:center">10240</th>
+<th style="text-align:center">20480</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Start</td>
+<td style="text-align:center">19:38:27</td>
+<td style="text-align:center">19:53:42</td>
+<td style="text-align:center">19:54:52</td>
+<td style="text-align:center">19:55:50</td>
+<td style="text-align:center">19:56:25</td>
+<td style="text-align:center">19:57:05</td>
+<td style="text-align:center">19:57:40</td>
+<td style="text-align:center">19:58:16</td>
+</tr>
+<tr>
+<td style="text-align:center">Stop</td>
+<td style="text-align:center">19:44:33</td>
+<td style="text-align:center">19:54:19</td>
+<td style="text-align:center">19:54:57</td>
+<td style="text-align:center">19:55:54</td>
+<td style="text-align:center">19:56:28</td>
+<td style="text-align:center">19:57:08</td>
+<td style="text-align:center">19:57:42</td>
+<td style="text-align:center">19:58:18</td>
+</tr>
+<tr>
+<td style="text-align:center">time</td>
+<td style="text-align:center">366s</td>
+<td style="text-align:center">37s</td>
+<td style="text-align:center">5s</td>
+<td style="text-align:center">4s</td>
+<td style="text-align:center">3s</td>
+<td style="text-align:center">3s</td>
+<td style="text-align:center">2s</td>
+<td style="text-align:center">2s</td>
+</tr>
+</tbody>
+</table>
+<p>测试所使用的文件大小为： 584935KB 大约是 571MB</p>
+<p>可以看出 byte 数组的长度也是越大越好的，只要你内存足够大，磁盘性能足够强，理论上是可以做到一秒内复制任何文件的，可是！! 科技日益发达的今天电脑内存和磁盘还依然是一个瓶颈，有待我们突破啊，So 为了适应各种大小的文件，还是选择大小为<strong>8192</strong> 或者<strong>10240</strong> 也是可以的</p>
+<h2 id="5-buffer-缓冲区">5 Buffer 缓冲区</h2>
+<p>buffer 原理就是调用一片内存，作为缓冲区，然后再为 FileInput/OutputStream 使用，原理和上面的相似</p>
+<h3 id="51-使用示例">5.1 使用示例</h3>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="nn">Java_IO</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">java.io.BufferedInputStream</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.io.BufferedOutputStream</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.io.File</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.io.FileInputStream</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.io.FileOutputStream</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.io.IOException</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">buffer</span> <span class="o">{</span>
+	<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">IOException</span> <span class="o">{</span>
+				<span class="n">copyfile</span><span class="o">();</span>
+	<span class="o">}</span>
+	<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">copyfile</span><span class="o">()</span> <span class="kd">throws</span> <span class="n">IOException</span> <span class="o">{</span>
+		<span class="n">File</span> <span class="n">dir</span>  <span class="o">=</span> <span class="k">new</span> <span class="n">File</span><span class="o">(</span><span class="s">&#34;d:\\LinuxSoftware_VariedOS\\Python-3.8.0.tgz&#34;</span><span class="o">);</span>
+		
+		<span class="n">FileInputStream</span> <span class="n">pis</span> <span class="o">=</span> <span class="k">new</span> <span class="n">FileInputStream</span><span class="o">(</span><span class="n">dir</span><span class="o">);</span>
+		<span class="n">FileOutputStream</span> <span class="n">pos</span> <span class="o">=</span> <span class="k">new</span> <span class="n">FileOutputStream</span><span class="o">(</span><span class="s">&#34;d:\\tempfile\\Python.wilu&#34;</span><span class="o">);</span>
+		
+		<span class="n">BufferedInputStream</span> <span class="n">bufpis</span> <span class="o">=</span> <span class="k">new</span> <span class="n">BufferedInputStream</span><span class="o">(</span><span class="n">pis</span><span class="o">);</span>
+		<span class="n">BufferedOutputStream</span> <span class="n">bufpos</span> <span class="o">=</span> <span class="k">new</span> <span class="n">BufferedOutputStream</span><span class="o">(</span><span class="n">pos</span><span class="o">);</span>
+		
+		<span class="kt">byte</span> <span class="o">[]</span> <span class="n">buf</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">byte</span><span class="o">[</span><span class="n">8192</span><span class="o">];</span>
+		<span class="kt">int</span> <span class="n">len</span> <span class="o">=</span> <span class="n">0</span><span class="o">;</span>
+		<span class="k">while</span><span class="o">((</span><span class="n">len</span><span class="o">=</span><span class="n">bufpis</span><span class="o">.</span><span class="na">read</span><span class="o">(</span><span class="n">buf</span><span class="o">))!=-</span><span class="n">1</span><span class="o">)</span> <span class="o">{</span>
+			<span class="n">bufpos</span><span class="o">.</span><span class="na">write</span><span class="o">(</span><span class="n">buf</span><span class="o">,</span><span class="n">0</span><span class="o">,</span><span class="n">len</span><span class="o">);</span>
+		<span class="o">}</span>
+		<span class="n">bufpis</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+		<span class="n">bufpos</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+		<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Copy over&#34;</span><span class="o">);</span>
+	<span class="o">}</span>  
+<span class="o">}</span>
+</code></pre></div><h2 id="6-字符读写">6 字符读写</h2>
+<h3 id="61-使用-io-stream-readerwriter">6.1 使用 I/O-Stream-Reader/Writer</h3>
+<p>由于中文一个字符占两字节，所以我们不能像读写英文那样，直接操作数据了，</p>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="nn">Java_IO</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">java.io.FileInputStream</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.io.FileOutputStream</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.io.IOException</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.io.InputStreamReader</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.io.OutputStreamWriter</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">StreamReader</span> <span class="o">{</span>
+	<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">IOException</span> <span class="o">{</span>
+		<span class="n">FileInputStream</span> <span class="n">fis</span> <span class="o">=</span> <span class="k">new</span> <span class="n">FileInputStream</span><span class="o">(</span><span class="s">&#34;D:\\tempfile\\fpos.java&#34;</span><span class="o">);</span>
+		<span class="n">FileOutputStream</span> <span class="n">fos</span> <span class="o">=</span> <span class="k">new</span> <span class="n">FileOutputStream</span><span class="o">(</span><span class="s">&#34;D:\\tempfile\\pofs.c&#34;</span><span class="o">,</span><span class="kc">true</span><span class="o">);</span>
+		
+		<span class="n">InputStreamReader</span> <span class="n">isr</span> <span class="o">=</span> <span class="k">new</span> <span class="n">InputStreamReader</span><span class="o">(</span><span class="n">fis</span><span class="o">);</span>
+		<span class="n">OutputStreamWriter</span> <span class="n">osw</span> <span class="o">=</span> <span class="k">new</span> <span class="n">OutputStreamWriter</span><span class="o">(</span><span class="n">fos</span><span class="o">,</span><span class="s">&#34;utf-8&#34;</span><span class="o">);</span>
+		
+		<span class="kt">int</span> <span class="n">in</span> <span class="o">;</span>
+		<span class="k">while</span><span class="o">((</span><span class="n">in</span> <span class="o">=</span> <span class="n">isr</span><span class="o">.</span><span class="na">read</span><span class="o">())</span> <span class="o">!=</span> <span class="o">-</span><span class="n">1</span><span class="o">)</span> <span class="o">{</span>
+			<span class="n">osw</span><span class="o">.</span><span class="na">write</span><span class="o">(</span><span class="n">in</span><span class="o">);</span>
+		<span class="o">}</span>
+		
+		<span class="n">isr</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+		<span class="n">osw</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+		<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Copy over&#34;</span><span class="o">);</span>
+	<span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div><p>中文处理时比较的麻烦，因为各种电脑支持的编码可能不一样，就导致乱码问题，这时候我们在<strong>new</strong> 对象的时候就需要指定我们所需要的编码方式，今天就因为编码就倒腾了半天的时间 ⏰</p>
+<p>所以为了保险起见，在创建 <strong>FileOutputStream</strong> 的时候还是加上 <strong>UTF-8</strong> 好一点</p>
+<h3 id="62-filereaderfilewriter-类">6.2 FileReader/FileWriter 类</h3>
+<p><strong>FileReader/FileWriter</strong> 其实就是简化了<strong>FileOutputStream</strong> ＆ <strong>FileOutputStream</strong> の 使用过程，但是缺点( •̀ ω •́ )y 非常明显，就是不支持设置编码方式，默认的是 <strong>ISO-8859-1 or US-ASCII</strong> ,非常容易导致乱码 ~%?…,# *&lsquo;☆&amp;℃ $︿★?</p>
+<p>处理乱码也不难，就是不用这个类 ?</p>
+<p>way 1</p>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="n">BufferedWriter</span> <span class="n">writer</span> <span class="o">=</span> <span class="k">new</span> <span class="n">BufferedWriter</span> <span class="o">(</span><span class="k">new</span> <span class="n">OutputStreamWriter</span> <span class="o">(</span><span class="k">new</span> <span class="n">FileOutputStream</span> <span class="o">(</span><span class="n">filePath</span><span class="o">,</span><span class="kc">true</span><span class="o">),</span><span class="s">&#34;UTF-8&#34;</span><span class="o">));</span>
+</code></pre></div><p>虽然这也是一种解决办法吧，但是如果一点要用的话那就只能用下面这种方法了</p>
+<p>way 2</p>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="n">Writer</span> <span class="n">writer</span> <span class="o">=</span> <span class="k">new</span> <span class="n">BufferedWriter</span><span class="o">(</span><span class="k">new</span> <span class="n">OutputStreamWriter</span><span class="o">(</span><span class="k">new</span> <span class="n">FileOutputStream</span> <span class="o">(</span><span class="s">&#34;String&#34;</span><span class="o">),</span> <span class="s">&#34;UTF-8&#34;</span><span class="o">));</span>
+</code></pre></div><p>让<strong>FileWriter</strong> 继承 <strong>Write</strong> の 编码方式，不过也不好用</p>
+<h4 id="621-filereader---filewrite-初级写法">6.2.1 FileReader /  FileWrite 初级写法</h4>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="nn">Java_IO</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">java.io.FileOutputStream</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.io.FileReader</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.io.FileWriter</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.io.IOException</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.io.OutputStreamWriter</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">fileWriter</span> <span class="o">{</span>
+	<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">IOException</span> <span class="o">{</span>
+		<span class="n">FileOutputStream</span> <span class="n">fos</span> <span class="o">=</span> <span class="k">new</span> <span class="n">FileOutputStream</span><span class="o">(</span><span class="s">&#34;D:\\tempfile\\pofs.c&#34;</span><span class="o">);</span>
+		<span class="n">OutputStreamWriter</span> <span class="n">osw</span> <span class="o">=</span> <span class="k">new</span> <span class="n">OutputStreamWriter</span><span class="o">(</span><span class="n">fos</span><span class="o">,</span><span class="s">&#34;UTF-8&#34;</span><span class="o">);</span>
+		
+		<span class="n">FileReader</span> <span class="n">fr</span> <span class="o">=</span> <span class="k">new</span> <span class="n">FileReader</span><span class="o">(</span><span class="s">&#34;D:\\tempfile\\fpos.java&#34;</span><span class="o">);</span>
+		<span class="n">FileWriter</span> <span class="n">fw</span> <span class="o">=</span> <span class="k">new</span> <span class="n">FileWriter</span><span class="o">(</span><span class="s">&#34;D:\\tempfile\\pofs.c&#34;</span><span class="o">);</span>
+		
+		<span class="kt">int</span> <span class="n">in</span><span class="o">;</span>
+		<span class="k">while</span><span class="o">((</span><span class="n">in</span><span class="o">=</span><span class="n">fr</span><span class="o">.</span><span class="na">read</span><span class="o">())!=-</span><span class="n">1</span><span class="o">)</span> <span class="o">{</span>
+			<span class="n">fw</span><span class="o">.</span><span class="na">write</span><span class="o">((</span><span class="kt">char</span><span class="o">)</span><span class="n">in</span><span class="o">);</span>
+		<span class="o">}</span>
+		<span class="n">fr</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+		<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">fw</span><span class="o">.</span><span class="na">getEncoding</span><span class="o">());</span>
+		<span class="n">fw</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+		<span class="n">osw</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+		<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Copy over&#34;</span><span class="o">);</span>
+	<span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div><h4 id="622-filereader---filewrite-高级写法">6.2.2 FileReader /  FileWrite 高级写法</h4>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="nn">Java_IO</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">java.io.FileReader</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.io.FileWriter</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.io.IOException</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">IO_SimplifyChinese</span> <span class="o">{</span>
+	<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">IOException</span> <span class="o">{</span>
+		<span class="n">copyChineseChar</span><span class="o">();</span>
+	<span class="o">}</span>
+	<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">copyChineseChar</span><span class="o">()</span> <span class="kd">throws</span> <span class="n">IOException</span> <span class="o">{</span>
+		<span class="n">FileReader</span> <span class="n">fr</span> <span class="o">=</span> <span class="k">new</span> <span class="n">FileReader</span><span class="o">(</span><span class="s">&#34;D:\\LinuxSoftware_VariedOS\\jdk-8u231-linux-x64.tar.gz&#34;</span><span class="o">);</span>
+		<span class="n">FileWriter</span> <span class="n">fw</span> <span class="o">=</span> <span class="k">new</span> <span class="n">FileWriter</span><span class="o">(</span><span class="s">&#34;D:\\tempfile\\jdk8.wuli&#34;</span><span class="o">);</span>
+		
+		<span class="kt">char</span> <span class="o">[]</span> <span class="n">chara</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">char</span><span class="o">[</span><span class="n">2048</span><span class="o">];</span>
+		<span class="kt">int</span> <span class="n">len</span> <span class="o">;</span>
+		<span class="k">while</span> <span class="o">((</span><span class="n">len</span><span class="o">=</span><span class="n">fr</span><span class="o">.</span><span class="na">read</span><span class="o">(</span><span class="n">chara</span><span class="o">))!=</span> <span class="o">-</span><span class="n">1</span><span class="o">)</span> <span class="o">{</span>
+			<span class="n">fw</span><span class="o">.</span><span class="na">write</span><span class="o">(</span><span class="n">chara</span><span class="o">,</span><span class="n">0</span><span class="o">,</span><span class="n">len</span><span class="o">);</span>
+		<span class="o">}</span>
+		<span class="n">fr</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+		<span class="n">fw</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+		<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;copy over&#34;</span><span class="o">);</span>
+	<span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div><h3 id="63-bufferedreader--bufferedwriter">6.3 BufferedReader / BufferedWriter</h3>
+<p>主要是利用缓冲区来提高读写效率，也没有啥难处，会用就可以了</p>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="nn">Java_IO</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">java.io.BufferedReader</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.io.BufferedWriter</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.io.FileReader</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.io.FileWriter</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.io.IOException</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Buffered_IO</span> <span class="o">{</span>
+	<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">IOException</span> <span class="o">{</span>
+		<span class="n">buff</span><span class="o">();</span>
+	<span class="o">}</span>
+	<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">buff</span><span class="o">()</span> <span class="kd">throws</span> <span class="n">IOException</span> <span class="o">{</span>
+		<span class="n">FileReader</span> <span class="n">fr</span> <span class="o">=</span> <span class="k">new</span> <span class="n">FileReader</span><span class="o">(</span><span class="s">&#34;D:\\tempfile\\fos.java&#34;</span><span class="o">);</span>
+		<span class="n">BufferedReader</span> <span class="n">br</span> <span class="o">=</span> <span class="k">new</span> <span class="n">BufferedReader</span><span class="o">(</span><span class="n">fr</span><span class="o">);</span>
+		
+		<span class="n">FileWriter</span> <span class="n">fw</span> <span class="o">=</span> <span class="k">new</span> <span class="n">FileWriter</span><span class="o">(</span><span class="s">&#34;D:\\tempfile\\copyed_fos.wuli&#34;</span><span class="o">);</span>
+		<span class="n">BufferedWriter</span> <span class="n">bw</span> <span class="o">=</span> <span class="k">new</span> <span class="n">BufferedWriter</span><span class="o">(</span><span class="n">fw</span><span class="o">);</span>
+		
+		<span class="kt">char</span> <span class="o">[]</span> <span class="n">chara</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">char</span><span class="o">[</span><span class="n">2048</span><span class="o">];</span>
+		
+		<span class="kt">int</span> <span class="n">in</span> <span class="o">;</span>
+		<span class="k">while</span><span class="o">((</span><span class="n">in</span><span class="o">=</span><span class="n">fr</span><span class="o">.</span><span class="na">read</span><span class="o">(</span><span class="n">chara</span><span class="o">))!=</span> <span class="o">-</span><span class="n">1</span><span class="o">)</span> <span class="o">{</span>
+			<span class="n">bw</span><span class="o">.</span><span class="na">write</span><span class="o">(</span><span class="n">chara</span><span class="o">,</span><span class="n">0</span><span class="o">,</span><span class="n">in</span><span class="o">);</span>
+		<span class="o">}</span>
+		<span class="n">br</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+		<span class="n">bw</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+		<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Copy over&#34;</span><span class="o">);</span>
+	<span class="o">}</span>
+<span class="o">}</span>
+
+</code></pre></div><h2 id="final写在最后">Final	写在最后：</h2>
+<p>在经过学习后，我发现字节流和字符流都用于复制文件，但字符流的出现主要是为了解决与字符相关的问题，所以不适合复制文件(编码原因),字符流复制文件时可能会出现莫名其妙的问题导致复制后的文件破损无法使用，但字节流就不存在这种问题所以得出</p>
+<pre><code class="language-properties" data-lang="properties">复制文件时使用字节流:复制文本文件时使用字符流
+</code></pre>
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/java_io/">Java_IO</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3&#43;Aro6EYUG4&#43;cU&#43;KJWu/X"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js"integrity="sha384-g7c&#43;Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI&#43;sEnkvrMWph2EDg4"crossorigin="anonymous"
+                defer="true"
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC&#43;Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa"crossorigin="anonymous"
+                defer="true"
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+        renderMathInElement(document.querySelector(`.article-content`), {
+            delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "$", right: "$", display: false },
+                { left: "\\(", right: "\\)", display: false },
+                { left: "\\[", right: "\\]", display: true }
+            ]
+        });})
+</script>
+    
+</article>
+
+    <aside class="related-contents--wrapper">
+    
+    
+        <h2 class="section-title">相关文章</h2>
+        <div class="related-contents">
+            <div class="flex article-list--tile">
+                
+                    
+<article class="has-image">
+    <a href="/p/download_maven_plugin_faster/">
+        
+        
+            <div class="article-image">
+                
+                    <img src="https://cn.bing.com/th?id=OHR.PurpleFlowers_EN-CN8622188560_UHD.jpg&amp;pid=hp&amp;w=1080&amp;h=720&amp;rs=1&amp;c=4" loading="lazy" data-key="download_maven_plugin_faster" data-hash="https://cn.bing.com/th?id=OHR.PurpleFlowers_EN-CN8622188560_UHD.jpg&amp;pid=hp&amp;w=1080&amp;h=720&amp;rs=1&amp;c=4"/>
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">关于 Maven 下载插件缓慢的问题</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="has-image">
+    <a href="/p/springboot_note_1/">
+        
+        
+            <div class="article-image">
+                
+                    <img src="https://cn.bing.com/th?id=OHR.VosgesBioReserve_EN-CN8863541867_UHD.jpg&amp;pid=hp&amp;w=1080&amp;h=720&amp;rs=1&amp;c=4" loading="lazy" data-key="springboot_note_1" data-hash="https://cn.bing.com/th?id=OHR.VosgesBioReserve_EN-CN8863541867_UHD.jpg&amp;pid=hp&amp;w=1080&amp;h=720&amp;rs=1&amp;c=4"/>
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">SpringBoot学习笔记(1)</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="has-image">
+    <a href="/p/java_annotation/">
+        
+        
+            <div class="article-image">
+                
+                    <img src="https://cn.bing.com/th?id=OHR.HeartAustralia_EN-CN7705551345_UHD.jpg&amp;pid=hp&amp;w=1080&amp;h=720&amp;rs=1&amp;c=4" loading="lazy" data-key="java_annotation" data-hash="https://cn.bing.com/th?id=OHR.HeartAustralia_EN-CN7705551345_UHD.jpg&amp;pid=hp&amp;w=1080&amp;h=720&amp;rs=1&amp;c=4"/>
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Java 注解的简单学习</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="has-image">
+    <a href="/p/java_jdbc/">
+        
+        
+            <div class="article-image">
+                
+                    <img src="https://cn.bing.com/th?id=OHR.Taormina_EN-CN8042812380_UHD.jpg&amp;pid=hp&amp;w=1080&amp;h=720&amp;rs=1&amp;c=4" loading="lazy" data-key="java_jdbc" data-hash="https://cn.bing.com/th?id=OHR.Taormina_EN-CN8042812380_UHD.jpg&amp;pid=hp&amp;w=1080&amp;h=720&amp;rs=1&amp;c=4"/>
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Java通过jdbc操作MySQL数据库</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="has-image">
+    <a href="/p/collection_map/">
+        
+        
+            <div class="article-image">
+                
+                    <img src="https://cn.bing.com/th?id=OHR.BloodyBrook_EN-CN9582612899_UHD.jpg&amp;pid=hp&amp;w=1080&amp;h=720&amp;rs=1&amp;c=4" loading="lazy" data-key="collection_map" data-hash="https://cn.bing.com/th?id=OHR.BloodyBrook_EN-CN9582612899_UHD.jpg&amp;pid=hp&amp;w=1080&amp;h=720&amp;rs=1&amp;c=4"/>
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Java中的collections的map</h2>
+        </div>
+    </a>
+</article>
+                
+            </div>
+        </div>
+    
+</aside>
+
+
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2019 - 
+        
+        2021 JokemeBlog
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="2.3.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer="true"
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer="true"
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css"integrity="sha256-c0uckgykQ9v5k&#43;IqViZOZKc47Jn7KQil4/MP3ySA3F8="crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css"integrity="sha256-SBLU4vv6CA6lHsZ1XyTdhyjJxCjPif/TRkjnsyGAGnE="crossorigin="anonymous"
+            >
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js"integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g="crossorigin="anonymous"
+                defer="false"
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

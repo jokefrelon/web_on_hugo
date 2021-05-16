@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='在Docker中运行OpenWrt,教程可能有问题,但是大概的过程是这样的'><title>Docker 中运行 OpenWrt</title>
+
+<link rel='canonical' href='https://jokeme.top/p/run_openwrt_in_docker/'>
+
+<link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='Docker 中运行 OpenWrt'>
+<meta property='og:description' content='在Docker中运行OpenWrt,教程可能有问题,但是大概的过程是这样的'>
+<meta property='og:url' content='https://jokeme.top/p/run_openwrt_in_docker/'>
+<meta property='og:site_name' content='JokemeBlog'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2020-03-20T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2020-03-20T00:00:00&#43;00:00'/><meta property='og:image' content='https://cn.bing.com/th?id=OHR.RedRobin_EN-CN8071349218_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4' />
+<meta name="twitter:title" content="Docker 中运行 OpenWrt">
+<meta name="twitter:description" content="在Docker中运行OpenWrt,教程可能有问题,但是大概的过程是这样的"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://cn.bing.com/th?id=OHR.RedRobin_EN-CN8071349218_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4' />
+    <link rel="shortcut icon" href="/bk3.ico" />
+
+    </head>
+    <body class="">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.body.dataset.scheme = 'dark';
+        } else {
+            document.body.dataset.scheme = 'light';
+        }
+    })();
+</script><div class="container main-container flex on-phone--column extended article-page with-toolbar">
+            <aside class="sidebar left-sidebar sticky">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header class="site-info">
+        
+            <figure class="site-avatar">
+                
+                    
+                    
+                    
+                        
+                        <img src="/author_hud0a2a235bd9bca1ace56b5f54e36a460_15093_300x0_resize_q75_box.jpg" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+
+                
+                    <span class="emoji">🥰</span>
+                
+            </figure>
+        
+        <h1 class="site-name"><a href="https://jokeme.top">JokemeBlog</a></h1>
+        <h2 class="site-description">人生没有白走的路,每一步都算数。</h2>
+    </header>
+
+    <ol class="menu" id="main-menu">
+        
+        
+        
+
+        <li >
+            <a href='/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>Home</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/about/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>About</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/archives/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/search/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+
+        
+            <li id="dark-mode-toggle">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <span>暗色模式</span>
+            </li>
+        
+    </ol>
+</aside>
+
+            <main class="main full-width">
+    <div id="article-toolbar">
+        <a href="https://jokeme.top" class="back-home">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="15 6 9 12 15 18" />
+</svg>
+
+
+
+            <span>Back</span>
+        </a>
+    </div>
+
+    <article class="has-image main-article">
+    <header class="article-header">
+        <div class="article-image">
+            <a href="/p/run_openwrt_in_docker/">
+                
+                    <img src="https://cn.bing.com/th?id=OHR.RedRobin_EN-CN8071349218_UHD.jpg&amp;pid=hp&amp;w=1080&amp;h=720&amp;rs=1&amp;c=4" loading="lazy" alt="Featured image of post Docker 中运行 OpenWrt" />
+                
+            </a>
+        </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/docker/" >
+                Docker
+            </a>
+        
+            <a href="/categories/openwrt/" >
+                OpenWrt
+            </a>
+        
+    </header>
+    
+
+    <h2 class="article-title">
+        <a href="/p/run_openwrt_in_docker/">Docker 中运行 OpenWrt</a>
+    </h2>
+
+    
+    <h3 class="article-subtitle">
+        在Docker中运行OpenWrt,教程可能有问题,但是大概的过程是这样的
+    </h3>
+    <footer class="article-time">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+        <time class="article-time--published">Mar 20, 2020</time>
+    </footer></div>
+</header>
+
+    <section class="article-content">
+    <h1 id="docker--中运行--openwrt">Docker  中运行  OpenWrt</h1>
+<p>前几天解决了小主机 <strong>Ubuntu</strong> 系统的引导问题以后。便开始折腾 <strong>OpenWrt</strong> 了，在 <strong>GitHub</strong> 上找到了 <strong>L 大</strong> 的 <strong><a class="link" href="https://github.com/coolsnowwolf/lede"  target="_blank" rel="noopener"
+    >Lede</a></strong> 源码，需要自己编译。</p>
+<p>关于如何编译我也不说了，<strong>L 大</strong> 在 Readme 里面说的清清楚楚的，没有难度，就是需要有耐心和良好的网络环境，编译过程会很慢(建议扶梯子，我没有用梯子，整整编译了两天才完成！? ? ?) 也可以用我编译好的 <strong><a class="link" href="https://github.com/jokefrelon/linux-series/releases"  target="_blank" rel="noopener"
+    >x86_64</a></strong> 的固件(集成有<strong>ssr,v2ray,adblock plus,samba,vsftpd</strong>等常用插件)</p>
+<p>对于编译出来的文件我来介紹一下：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><strong>openwrt-x86-64-rootfs-squashfs.img</strong></th>
+<th style="text-align:center">OpenWrt for Docker の img</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><strong>openwrt-x86-64-combined-squashfs.vmdk</strong></td>
+<td style="text-align:center"><strong>虚拟机文件，丢进 VMware 里面使用</strong></td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>openwrt-x86-64-combined-squashfs.img</strong></td>
+<td style="text-align:center"><strong>我们编译的固件，刻录到 u 盘上来安装</strong></td>
+</tr>
+</tbody>
+</table>
+<p>我一开始也不知道这些镜像应该选哪一个刻录，然后爬各种论坛终于被我发现了这几个文件的用法了</p>
+<p>好！环境已经没有问题，安装包也有了，那就先在 <strong>Docker</strong> 里面试试看这个 <strong>OpenWrt</strong> 怎么样吧</p>
+<h2 id="1-导入-openwrt-的镜像">1 导入 OpenWrt 的镜像</h2>
+<pre><code>cd ~/lede/bin/targets/x86/64
+mkdir -p ~/opt
+mount -o loop openwrt-x86-64-rootfs-squashfs.img ~/opt
+tar -cvzf ~/Openwrt.tar.gz ~/opt/* 
+docker import ~/OpenWrt.tar.gz OpenWrt
+</code></pre><h2 id="2-docker-创建网络">2 Docker 创建网络</h2>
+<pre><code>docker network create -d macvlan --subnet=192.168.100.0/24 --gateway=192.168.100.1 -o parent=enp2s0 fet
+</code></pre><p>这个 IP 地址需要根据你的实际 IP 更改，网卡也一样，不能照抄</p>
+<h2 id="3-docker-运行容器">3 Docker 运行容器</h2>
+<pre><code>docker run -d --name lede --network fet --privileged OpeenWrt /sbin/init
+</code></pre><p>在这里我一开始参考 <strong><a class="link" href="https://openwrt.org/zh/docs/guide-user/virtualization/docker_openwrt_image"  target="_blank" rel="noopener"
+    >OpenWrt 官方文档</a></strong>,结果一直报错，我一开始以为是他给的例子 ?里面系统太老，我就换成 19.10,依旧报错，然后在网上瞎转悠的时候看到了一篇来自 <a class="link" href="https://mlapp.cn/376.html"  target="_blank" rel="noopener"
+    ><strong>美丽应用</strong></a> 的文章，虽然，他是在 <strong>树莓派</strong> 当中安装 <strong>OpenWrt</strong> 但是过程大多一样 (感谢 <strong>美丽应用</strong> ?)</p>
+<p>到这时，我们可以</p>
+<pre><code>docker ps
+[sudo] frelon 的密码：
+CONTAINER ID	IMAGE		COMMAND		CREATED		STATUS		PORTS		NAMES
+4fe146d86277	OpenWrt		&quot;/sbin/init&quot; 2 hours ago  Up 2 hours			  lede
+</code></pre><p>看一下我们的容器是否在正常运行，如果还在运行，那就说明容器没有问题可以进行下一步了</p>
+<h2 id="4-进入-openwrt-容器内进一步配置">4 进入 OpenWrt 容器内，进一步配置</h2>
+<pre><code>docker exec -it lede /bin/ash
+</code></pre><p>这里要注意的是 <strong>/bin/ash</strong> 而不是 <strong>/bin/bash</strong></p>
+<h3 id="41-配置网络">4.1 配置网络</h3>
+<h4 id="411-查看一下-ip">4.1.1 查看一下 <strong>IP</strong></h4>
+<pre><code>/ # ip a
+1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+25: eth0@if2: &lt;BROADCAST,MULTICAST&gt; mtu 1500 qdisc noqueue state DOWN group default
+    link/ether 02:42:c0:a8:64:02 brd ff:ff:ff:ff:ff:ff link-netnsid 0
+</code></pre><p>稍等片刻</p>
+<pre><code>/ # ip a
+1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host
+       valid_lft forever preferred_lft forever
+4: br-lan: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc noqueue state UP group default qlen 1000
+    link/ether 02:42:c0:a8:64:02 brd ff:ff:ff:ff:ff:ff
+    inet 192.168.1.1/24 brd 192.168.1.255 scope global br-lan
+       valid_lft forever preferred_lft forever
+25: eth0@if2: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc noqueue master br-lan state UP group default                                                                  link/ether 02:42:c0:a8:64:02 brd ff:ff:ff:ff:ff:ff link-netnsid 0
+
+</code></pre><h4 id="412-简易修改防火墙规则">4.1.2 简易修改防火墙规则</h4>
+<pre><code>opkg update
+opkg install nano
+nano /etc/config/firewall
+</code></pre><p>找到 <strong>config zone</strong> 重点是把 <strong>option input/output/forward</strong> の <strong>REJRECT</strong> 改为 <strong>ACCEPT</strong></p>
+<pre><code>config zone
+        opion name 'wan'
+        list network 'wan'
+        list network 'wan6'
+        option input 'ACCEPT'
+        option output 'ACCEPT'
+        option forward 'ACCEPT'
+        option masq '1'
+        option mtu_fix '1'
+</code></pre><p>然后重启一下</p>
+<pre><code>/etc/init.d/firewall restart
+</code></pre><p>正常情况会报一堆错，无视即可</p>
+<h4 id="413-修改网口">4.1.3 修改网口</h4>
+<pre><code>nano /etc/config/network
+</code></pre><p>可以看到 <strong>interface lan</strong> 使用的是 <strong>eth0</strong></p>
+<p>然后又添加了一个网络进该容器，并分配给 <strong>interface wan</strong> 充当 <strong>eth1</strong></p>
+<pre><code>config interface 'lan'
+        option type 'bridge'
+        option ifname 'eth0'
+        option proto 'static'
+        option ipaddr '192.168.1.1'
+        option netmask '255.255.255.0'
+        option ip6assign '60'
+        option gateway '192.168.100.105'
+
+config interface 'wan'
+        option ifname 'eth1'
+        option proto 'dhcp'
+</code></pre><p>看着修改就可以了</p>
+<pre><code>/etc/init.d/network restart
+</code></pre><h3 id="42-网页登录">4.2 网页登录</h3>
+<p>查看容器分配的 ip,在网页中打开，正常情况下是可以打开的，</p>
+<p>输入默认密码 ?<strong>password</strong>  就可以看到 <strong>OpenWrt</strong> の 状态信息</p>
+<h3 id="43-再添加一个网口到-openwrt-容器">4.3 再添加一个网口到 OpenWrt 容器</h3>
+<pre><code>docker network connect bridge OpenWrt
+docker exec -it OpenWrt /etc/init.d/network restart
+</code></pre><p>由于前面已经把 <strong>eth1</strong> 写入到配置信息里面，我们现在只需要重启一下网络即可，至此 <strong>OpenWrt</strong> の基本配置已经完成</p>
+<p>如果需要配置 <strong>OpenWrt</strong> 旁路网关，建议参考上文提到的 <a class="link" href="https://mlapp.cn/376.html"  target="_blank" rel="noopener"
+    >美丽应用</a></p>
+<h3 id="ps补充一下">ps:补充一下</h3>
+<p>在实际使用中我发现，经常 <strong>opkg update</strong> 失败 但是网络却是没有任何问题，网关也可以  <strong>ping</strong> 通，然后就发现了 <strong>OpenWrt for Docker</strong> 的一个小 Bug</p>
+<p>每一次重启(有时候退出容器)就会重置 <strong>/etc/resolv.conf</strong> ,而这个文件就是我们的 DNS 文件！所以我们在使用域名 の时候就会出现失败</p>
+<p>我也试过在  <strong>/etc/config/network</strong> 里面设置  <strong>DNS</strong>,也同样会被重置，我不知道这是为什么，只能在每次重启以后写个脚本，设置一下<strong>DNS</strong></p>
+<p><strong>本文参考资料来源：</strong></p>
+<ol>
+<li>Lean · coolsnowwolf/lede - GitHub : <a href="https://github.com/coolsnowwolf/lede">https://github.com/coolsnowwolf/lede</a></li>
+<li>OpenWrt 官方帮助文档 :  <a href="https://openwrt.org/zh/docs/guide-user/virtualization/docker_openwrt_image">https://openwrt.org/zh/docs/guide-user/virtualization/docker_openwrt_image</a></li>
+<li>美丽应用 :  <a href="https://mlapp.cn/376.html">https://mlapp.cn/376.html</a></li>
+</ol>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3&#43;Aro6EYUG4&#43;cU&#43;KJWu/X"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js"integrity="sha384-g7c&#43;Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI&#43;sEnkvrMWph2EDg4"crossorigin="anonymous"
+                defer="true"
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC&#43;Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa"crossorigin="anonymous"
+                defer="true"
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+        renderMathInElement(document.querySelector(`.article-content`), {
+            delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "$", right: "$", display: false },
+                { left: "\\(", right: "\\)", display: false },
+                { left: "\\[", right: "\\]", display: true }
+            ]
+        });})
+</script>
+    
+</article>
+
+    <aside class="related-contents--wrapper">
+    
+    
+        <h2 class="section-title">相关文章</h2>
+        <div class="related-contents">
+            <div class="flex article-list--tile">
+                
+                    
+<article class="has-image">
+    <a href="/p/dockerfile/">
+        
+        
+            <div class="article-image">
+                
+                    <img src="https://cn.bing.com/th?id=OHR.PadarIsland_EN-CN9304851314_UHD.jpg&amp;pid=hp&amp;w=1080&amp;h=720&amp;rs=1&amp;c=4" loading="lazy" data-key="dockerfile" data-hash="https://cn.bing.com/th?id=OHR.PadarIsland_EN-CN9304851314_UHD.jpg&amp;pid=hp&amp;w=1080&amp;h=720&amp;rs=1&amp;c=4"/>
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Dockerfile编写</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="has-image">
+    <a href="/p/phicomm_n1_openwrt/">
+        
+        
+            <div class="article-image">
+                
+                    <img src="https://cn.bing.com/th?id=OHR.TwinsDenning_EN-CN2137499137_UHD.jpg&amp;pid=hp&amp;w=1080&amp;h=720&amp;rs=1&amp;c=4" loading="lazy" data-key="phicomm_n1_openwrt" data-hash="https://cn.bing.com/th?id=OHR.TwinsDenning_EN-CN2137499137_UHD.jpg&amp;pid=hp&amp;w=1080&amp;h=720&amp;rs=1&amp;c=4"/>
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Phicomm N1 刷 OpenWrt 做旁路由</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="has-image">
+    <a href="/p/ubuntu_docker_tips/">
+        
+        
+            <div class="article-image">
+                
+                    <img src="https://cn.bing.com/th?id=OHR.Trevi_EN-CN2352584327_UHD.jpg&amp;pid=hp&amp;w=1080&amp;h=720&amp;rs=1&amp;c=4" loading="lazy" data-key="Ubuntu_docker_tips" data-hash="https://cn.bing.com/th?id=OHR.Trevi_EN-CN2352584327_UHD.jpg&amp;pid=hp&amp;w=1080&amp;h=720&amp;rs=1&amp;c=4"/>
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Ubuntu &amp;&amp; Docker 使用建议</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="has-image">
+    <a href="/p/openwrt_install_zsh/">
+        
+        
+            <div class="article-image">
+                
+                    <img src="https://cn.bing.com/th?id=OHR.DalmatianPelicans_EN-CN7342550146_UHD.jpg&amp;pid=hp&amp;w=1080&amp;h=720&amp;rs=1&amp;c=4" loading="lazy" data-key="openwrt_install_zsh" data-hash="https://cn.bing.com/th?id=OHR.DalmatianPelicans_EN-CN7342550146_UHD.jpg&amp;pid=hp&amp;w=1080&amp;h=720&amp;rs=1&amp;c=4"/>
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">记录一次OpenWrt安装zsh</h2>
+        </div>
+    </a>
+</article>
+                
+            </div>
+        </div>
+    
+</aside>
+
+
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2019 - 
+        
+        2021 JokemeBlog
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="2.3.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer="true"
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer="true"
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css"integrity="sha256-c0uckgykQ9v5k&#43;IqViZOZKc47Jn7KQil4/MP3ySA3F8="crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css"integrity="sha256-SBLU4vv6CA6lHsZ1XyTdhyjJxCjPif/TRkjnsyGAGnE="crossorigin="anonymous"
+            >
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js"integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g="crossorigin="anonymous"
+                defer="false"
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

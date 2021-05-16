@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content=' Ubuntu 使用 netplan 配置 WIFI'><title> Ubuntu 使用 netplan 配置 WIFI</title>
+
+<link rel='canonical' href='https://jokeme.top/p/netplan_wifi/'>
+
+<link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content=' Ubuntu 使用 netplan 配置 WIFI'>
+<meta property='og:description' content=' Ubuntu 使用 netplan 配置 WIFI'>
+<meta property='og:url' content='https://jokeme.top/p/netplan_wifi/'>
+<meta property='og:site_name' content='JokemeBlog'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='netplan' /><meta property='article:published_time' content='2020-05-06T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2020-05-06T00:00:00&#43;00:00'/><meta property='og:image' content='https://cn.bing.com/th?id=OHR.MountNemrut_EN-CN8469644685_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4' />
+<meta name="twitter:title" content=" Ubuntu 使用 netplan 配置 WIFI">
+<meta name="twitter:description" content=" Ubuntu 使用 netplan 配置 WIFI"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://cn.bing.com/th?id=OHR.MountNemrut_EN-CN8469644685_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4' />
+    <link rel="shortcut icon" href="/bk3.ico" />
+
+    </head>
+    <body class="">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.body.dataset.scheme = 'dark';
+        } else {
+            document.body.dataset.scheme = 'light';
+        }
+    })();
+</script><div class="container main-container flex on-phone--column extended article-page with-toolbar">
+            <aside class="sidebar left-sidebar sticky">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header class="site-info">
+        
+            <figure class="site-avatar">
+                
+                    
+                    
+                    
+                        
+                        <img src="/author_hud0a2a235bd9bca1ace56b5f54e36a460_15093_300x0_resize_q75_box.jpg" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+
+                
+                    <span class="emoji">🥰</span>
+                
+            </figure>
+        
+        <h1 class="site-name"><a href="https://jokeme.top">JokemeBlog</a></h1>
+        <h2 class="site-description">人生没有白走的路,每一步都算数。</h2>
+    </header>
+
+    <ol class="menu" id="main-menu">
+        
+        
+        
+
+        <li >
+            <a href='/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>Home</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/about/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>About</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/archives/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/search/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+
+        
+            <li id="dark-mode-toggle">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <span>暗色模式</span>
+            </li>
+        
+    </ol>
+</aside>
+
+            <main class="main full-width">
+    <div id="article-toolbar">
+        <a href="https://jokeme.top" class="back-home">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="15 6 9 12 15 18" />
+</svg>
+
+
+
+            <span>Back</span>
+        </a>
+    </div>
+
+    <article class="has-image main-article">
+    <header class="article-header">
+        <div class="article-image">
+            <a href="/p/netplan_wifi/">
+                
+                    <img src="https://cn.bing.com/th?id=OHR.MountNemrut_EN-CN8469644685_UHD.jpg&amp;pid=hp&amp;w=1080&amp;h=720&amp;rs=1&amp;c=4" loading="lazy" alt="Featured image of post  Ubuntu 使用 netplan 配置 WIFI" />
+                
+            </a>
+        </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/linux/" >
+                Linux
+            </a>
+        
+    </header>
+    
+
+    <h2 class="article-title">
+        <a href="/p/netplan_wifi/"> Ubuntu 使用 netplan 配置 WIFI</a>
+    </h2>
+
+    
+    <h3 class="article-subtitle">
+         Ubuntu 使用 netplan 配置 WIFI
+    </h3>
+    <footer class="article-time">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+        <time class="article-time--published">May 06, 2020</time>
+    </footer></div>
+</header>
+
+    <section class="article-content">
+    <h1 id="ubuntu-使用-netplan-配置-wifi">Ubuntu 使用 netplan 配置 WIFI</h1>
+<p>在折腾 Ubuntu 的时候，我突然发现 Ubuntu 有好几套网络管理方案，但是在安装了图形化界面以后，只有<strong>Network Manager &amp; Systemd-networkd</strong> 之一生效，</p>
+<p>那像我这种爱折腾的人，肯定是不满足被束缚啊，为什么不能用命令行来连接 ? WiFi 呢？</p>
+<h2 id="1-查看网卡名字">1 .查看网卡名字</h2>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">$ ~ iw dev
+phy#0
+        Interface wlx200db035fad3
+                ifindex <span class="m">3</span>
+                wdev 0x1
+                addr 20:0d:b0:35:fa:d3
+                ssid Tenda_277D40
+                <span class="nb">type</span> managed
+                txpower 12.00 dBm
+</code></pre></div><h2 id="2-打开无线网卡">2 .打开无线网卡</h2>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">$ ~ sudo ip lin <span class="nb">set</span> wlx200db035fad3 up
+</code></pre></div><h2 id="3--搜索-wifi-信号">3 . 搜索 WiFi 信号</h2>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">$ ~ sudo iw dev wlx200db035fad3 scan
+BSS **:**:**:**:**:**<span class="o">(</span>on wlx200db035fad3<span class="o">)</span> -- associated
+        TSF: <span class="m">1588670071330336</span> usec <span class="o">(</span>18387d, 09:14:31<span class="o">)</span>
+        freq: <span class="m">2437</span>
+        beacon interval: <span class="m">100</span> TUs
+        capability: ESS Privacy ShortSlotTime <span class="o">(</span>0x0411<span class="o">)</span>
+        signal: -80.00 dBm
+        last seen: <span class="m">0</span> ms ago
+        SSID: Tenda_277D40
+        Supported rates: 1.0* 2.0* 5.5 11.0 18.0 24.0 36.0 54.0
+        DS Parameter set: channel <span class="m">6</span>
+        ERP: &lt;no flags&gt;
+        ERP D4.0: &lt;no flags&gt;
+        Extended supported rates: 6.0 9.0 12.0 48.0
+        HT capabilities:
+                Capabilities: 0x18fc
+                        HT20
+                        SM Power Save disabled
+                        RX Greenfield
+                        RX HT20 SGI
+                        RX HT40 SGI
+                        TX STBC
+                        No RX STBC
+                        Max AMSDU length: <span class="m">7935</span> bytes
+                        DSSS/CCK HT40
+                Maximum RX AMPDU length <span class="m">65535</span> bytes <span class="o">(</span>exponent: 0x003<span class="o">)</span>
+                Minimum RX AMPDU <span class="nb">time</span> spacing: <span class="m">8</span> usec <span class="o">(</span>0x06<span class="o">)</span>
+                HT RX MCS rate indexes supported: 0-15, <span class="m">32</span>
+                HT TX MCS rate indexes are undefined
+        HT operation:
+                 * primary channel: <span class="m">6</span>
+                 * secondary channel offset: no secondary
+                 * STA channel width: <span class="m">20</span> MHz
+                 * RIFS: <span class="m">1</span>
+                 * HT protection: no
+                 * non-GF present: <span class="m">0</span>
+                 * OBSS non-GF present: <span class="m">0</span>
+                 * dual beacon: <span class="m">0</span>
+                 * dual CTS protection: <span class="m">0</span>
+                 * STBC beacon: <span class="m">0</span>
+                 * L-SIG TXOP Prot: <span class="m">0</span>
+                 * PCO active: <span class="m">0</span>
+                 * PCO phase: <span class="m">0</span>
+        WPA:     * Version: <span class="m">1</span>
+                 * Group cipher: CCMP
+                 * Pairwise ciphers: CCMP
+                 * Authentication suites: PSK
+                 * Capabilities: 16-PTKSA-RC 1-GTKSA-RC <span class="o">(</span>0x000c<span class="o">)</span>
+        WMM:     * Parameter version <span class="m">1</span>
+                 * BE: CW 15-1023, AIFSN <span class="m">3</span>
+                 * BK: CW 15-1023, AIFSN <span class="m">7</span>
+                 * VI: CW 7-15, AIFSN 2, TXOP <span class="m">3008</span> usec
+                 * VO: CW 3-7, AIFSN 2, TXOP <span class="m">1504</span> usec
+</code></pre></div><p>我个人认为这一步纯属装 13! 我连接 ? WiFi,我肯定知道这个 WiFi の名字啊，那密码我肯定也知道啊，那还扫描个锤锤 ?啊？</p>
+<h2 id="4-配置-wifi">4 .配置 WiFi</h2>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">$ ~ sudo nano  /etc/netplan/01-network-manager-all.yaml
+</code></pre></div><p>这个文件名大家理论上都是不一样的，但是配置文件都在这个 <strong>/etc/netplan/</strong> 里面</p>
+<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">network</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="m">2</span><span class="w">
+</span><span class="w">  </span><span class="nt">renderer</span><span class="p">:</span><span class="w"> </span><span class="l">networkd</span><span class="w">
+</span><span class="w">  </span><span class="nt">wifis</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="nt">wlx200db035fad3</span><span class="p">:</span><span class="w">
+</span><span class="w">      </span><span class="nt">dhcp4</span><span class="p">:</span><span class="w"> </span><span class="kc">yes</span><span class="w">
+</span><span class="w">      </span><span class="nt">dhcp6</span><span class="p">:</span><span class="w"> </span><span class="kc">no</span><span class="w">
+</span><span class="w">      </span><span class="nt">access-points</span><span class="p">:</span><span class="w">
+</span><span class="w">        </span><span class="nt">Tenda_277D40</span><span class="p">:</span><span class="w">
+</span><span class="w">          </span><span class="nt">password</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;password&#34;</span><span class="w">
+</span></code></pre></div><p>这个配置文件是 <strong>YAML</strong> 使用的时候需要注意缩进，这样一番操作以后就可以</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">$ ~ sudo netplan generate //检查语法错误的
+$ ~ sudo netplan apply
+</code></pre></div><p>可以参考下面的文章,写的很规范 : <strong><a class="link" href="https://itsfoss.com/connect-wifi-terminal-ubuntu/"  target="_blank" rel="noopener"
+    >connect-wifi-terminal-ubuntu</a></strong></p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/netplan/">netplan</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3&#43;Aro6EYUG4&#43;cU&#43;KJWu/X"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js"integrity="sha384-g7c&#43;Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI&#43;sEnkvrMWph2EDg4"crossorigin="anonymous"
+                defer="true"
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC&#43;Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa"crossorigin="anonymous"
+                defer="true"
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+        renderMathInElement(document.querySelector(`.article-content`), {
+            delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "$", right: "$", display: false },
+                { left: "\\(", right: "\\)", display: false },
+                { left: "\\[", right: "\\]", display: true }
+            ]
+        });})
+</script>
+    
+</article>
+
+    <aside class="related-contents--wrapper">
+    
+    
+        <h2 class="section-title">相关文章</h2>
+        <div class="related-contents">
+            <div class="flex article-list--tile">
+                
+                    
+<article class="has-image">
+    <a href="/p/%E4%BB%8Esolo%E8%BF%81%E7%A7%BB%E5%88%B0hugo/">
+        
+        
+            <div class="article-image">
+                
+                    <img src="https://cn.bing.com/th?id=OHR.Wakodahatchee_EN-CN9780170147_UHD.jpg&amp;pid=hp&amp;w=1080&amp;h=720&amp;rs=1&amp;c=4" loading="lazy" data-key="" data-hash="https://cn.bing.com/th?id=OHR.Wakodahatchee_EN-CN9780170147_UHD.jpg&amp;pid=hp&amp;w=1080&amp;h=720&amp;rs=1&amp;c=4"/>
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">从solo迁移到hugo</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="has-image">
+    <a href="/p/dockerfile/">
+        
+        
+            <div class="article-image">
+                
+                    <img src="https://cn.bing.com/th?id=OHR.PadarIsland_EN-CN9304851314_UHD.jpg&amp;pid=hp&amp;w=1080&amp;h=720&amp;rs=1&amp;c=4" loading="lazy" data-key="dockerfile" data-hash="https://cn.bing.com/th?id=OHR.PadarIsland_EN-CN9304851314_UHD.jpg&amp;pid=hp&amp;w=1080&amp;h=720&amp;rs=1&amp;c=4"/>
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Dockerfile编写</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="has-image">
+    <a href="/p/ffmpeg_user_agent/">
+        
+        
+            <div class="article-image">
+                
+                    <img src="https://cn.bing.com/th?id=OHR.Comma_EN-CN6081365526_UHD.jpg&amp;pid=hp&amp;w=1080&amp;h=720&amp;rs=1&amp;c=4" loading="lazy" data-key="ffmpeg_user_agent" data-hash="https://cn.bing.com/th?id=OHR.Comma_EN-CN6081365526_UHD.jpg&amp;pid=hp&amp;w=1080&amp;h=720&amp;rs=1&amp;c=4"/>
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">ffmpeg设置请求头</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="has-image">
+    <a href="/p/linux_reward/">
+        
+        
+            <div class="article-image">
+                
+                    <img src="https://cn.bing.com/th?id=OHR.BlueTitDaffs_EN-CN2615365443_UHD.jpg&amp;pid=hp&amp;w=1080&amp;h=720&amp;rs=1&amp;c=4" loading="lazy" data-key="linux_reward" data-hash="https://cn.bing.com/th?id=OHR.BlueTitDaffs_EN-CN2615365443_UHD.jpg&amp;pid=hp&amp;w=1080&amp;h=720&amp;rs=1&amp;c=4"/>
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">记录最近捯饬Linux的收获</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="has-image">
+    <a href="/p/linux_vsftpd/">
+        
+        
+            <div class="article-image">
+                
+                    <img src="https://cn.bing.com/th?id=OHR.VolcanoLlaima_EN-CN5183277848_UHD.jpg&amp;pid=hp&amp;w=1080&amp;h=720&amp;rs=1&amp;c=4" loading="lazy" data-key="linux_vsftpd" data-hash="https://cn.bing.com/th?id=OHR.VolcanoLlaima_EN-CN5183277848_UHD.jpg&amp;pid=hp&amp;w=1080&amp;h=720&amp;rs=1&amp;c=4"/>
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Ubuntu 20.04.2 配置 vsftpd 的脑坑</h2>
+        </div>
+    </a>
+</article>
+                
+            </div>
+        </div>
+    
+</aside>
+
+
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2019 - 
+        
+        2021 JokemeBlog
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="2.3.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer="true"
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer="true"
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css"integrity="sha256-c0uckgykQ9v5k&#43;IqViZOZKc47Jn7KQil4/MP3ySA3F8="crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css"integrity="sha256-SBLU4vv6CA6lHsZ1XyTdhyjJxCjPif/TRkjnsyGAGnE="crossorigin="anonymous"
+            >
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js"integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g="crossorigin="anonymous"
+                defer="false"
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

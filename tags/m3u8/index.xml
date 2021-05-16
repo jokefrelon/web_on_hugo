@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>m3u8 on JokemeBlog</title>
+    <link>https://jokeme.top/tags/m3u8/</link>
+    <description>Recent content in m3u8 on JokemeBlog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 01 Jul 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://jokeme.top/tags/m3u8/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Python 爬虫抓取m3u8播放源</title>
+      <link>https://jokeme.top/p/python_spider_download_m3u8/</link>
+      <pubDate>Wed, 01 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jokeme.top/p/python_spider_download_m3u8/</guid>
+      <description>Python 爬虫抓取播放源(m3u8) 今天没有事的时候在捯饬 dotPlayer [IOS 平台 APP/￥ 收费] 时发现这个东西是个宝贝呀！可以看 m3u8 格式的视频，这都不是重点，重点是使用起来非常舒服，虽然直接复制 m3u8 链接到 Safari 也可以播放，但是 dotPlayer 还可以有封面和标题！这两者体验可谓是天差地别(我没有收钱哈！我是真的觉得好用，希望 dotplayer 的作者看到了打一下广告费！)
+具体可以看
+简书作者： NickXXXXXXXX 给出的图片简介
+GitHub 上的 help_zh.md 给出的使用简介
+这都不是我们需要关注の重点，重点是这款 app 是用来播放 m3u8 流の
+播放视频很简单，可是这 m3u8 文件从哪里来呢？??
+ 去 Telegram 加入组群 dotPlayer ,群里经常会分享相关的订阅 自己动手丰衣足食  这次用的爬虫和上一次一模一样，只是我优化了一下过程，就随便讲讲吧
+ #coding=utf-8 import requests from lxml import etree import time import datetime import re ​ def makeUrl(Num): # Num为html的页数 allinks=[] for link in range(1,Num+1): link=&amp;quot;https://www.xxxx.com/xzy{}&amp;quot;.format(link) allinks.append(link) return allinks ​ def getRealUrl(fakeUrl): webPage = requests.</description>
+    </item>
+    
+    <item>
+      <title>Ubuntu 安装 **FFMPEG** 下载 m3u8 格式的视频</title>
+      <link>https://jokeme.top/p/ffmpeg_download_m3u8/</link>
+      <pubDate>Wed, 15 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jokeme.top/p/ffmpeg_download_m3u8/</guid>
+      <description>Ubuntu 安装 FFMPEG 下载 m3u8 格式的视频 最近想下载一个某音视频，但是我能看不能下载，这不是扯吗？于是不能忍的我就打算盘盘这个视频
+1 . 准备环境：Ubuntu 18.04 , FFMPEG 本着万物皆可 Linux の初心，我就不想用 Windows 了。
+首先安装 FFMPEG
+sudo apt -y install ffmpeg 2 . 抓包短视频的 m3u8 地址 iOS 端，我是使用的 Thor 这个 app,比较好用，应用商店搜索就有
+然后得到真实的地址：
+http://XXX.com/xxx/xxx.m3u8 3 . 使用 FFMPEG 进行下载 ffmpeg -i http://XXX.com/xxx/xxx.m3u8 -c copy xxx.mp4 然后就需要慢慢等待下载完成就可以了，真的是特别特别的简单</description>
+    </item>
+    
+  </channel>
+</rss>

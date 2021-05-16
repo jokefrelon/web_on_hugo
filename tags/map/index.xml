@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>map on JokemeBlog</title>
+    <link>https://jokeme.top/tags/map/</link>
+    <description>Recent content in map on JokemeBlog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 28 Dec 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://jokeme.top/tags/map/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Java中的collections的map</title>
+      <link>https://jokeme.top/p/collection_map/</link>
+      <pubDate>Sat, 28 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jokeme.top/p/collection_map/</guid>
+      <description>Collection-Map Map--|双列集合,一次存一对键值对,必须保证唯一性 --|HashMap:哈希表,不同步,允许空的Key,Value --|TreeMap:二叉树,线程不同步,可以对Map集合的键?排序 --|Hashtable:哈希表,线程同步效率低下,不允许空的Key,Value 1. Map 集合共性功能    添加 V put(K,V) / putAll(Map&amp;lt;K,V&amp;gt; map)     删除 V remove(K) / void clear()   判断 Boolean containsKey / Value()   获取 V get(K) / int size()    注意：如果对同一个键多次存储会出现值被覆盖的现象
+2 Map 集合取出键值对方法 2.1 迭代器取出法 package sourceCode; import java.util.HashMap; import java.util.Iterator; import java.util.Map; import java.util.Set; public class collMap { public static void main(String[] args) { Map&amp;lt;Integer,String&amp;gt; se = new HashMap&amp;lt;Integer,String&amp;gt;(); se.</description>
+    </item>
+    
+  </channel>
+</rss>

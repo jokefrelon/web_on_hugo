@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='简单的python爬虫'><title>Python_spider</title>
+
+<link rel='canonical' href='https://jokeme.top/p/python_spider/'>
+
+<link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='Python_spider'>
+<meta property='og:description' content='简单的python爬虫'>
+<meta property='og:url' content='https://jokeme.top/p/python_spider/'>
+<meta property='og:site_name' content='JokemeBlog'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='爬虫' /><meta property='article:published_time' content='2019-12-31T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2019-12-31T00:00:00&#43;00:00'/><meta property='og:image' content='https://cn.bing.com/th?id=OHR.BolivianSummer_EN-CN6022233005_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4' />
+<meta name="twitter:title" content="Python_spider">
+<meta name="twitter:description" content="简单的python爬虫"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://cn.bing.com/th?id=OHR.BolivianSummer_EN-CN6022233005_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4' />
+    <link rel="shortcut icon" href="/bk3.ico" />
+
+    </head>
+    <body class="">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.body.dataset.scheme = 'dark';
+        } else {
+            document.body.dataset.scheme = 'light';
+        }
+    })();
+</script><div class="container main-container flex on-phone--column extended article-page with-toolbar">
+            <aside class="sidebar left-sidebar sticky">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header class="site-info">
+        
+            <figure class="site-avatar">
+                
+                    
+                    
+                    
+                        
+                        <img src="/author_hud0a2a235bd9bca1ace56b5f54e36a460_15093_300x0_resize_q75_box.jpg" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+
+                
+                    <span class="emoji">🥰</span>
+                
+            </figure>
+        
+        <h1 class="site-name"><a href="https://jokeme.top">JokemeBlog</a></h1>
+        <h2 class="site-description">人生没有白走的路,每一步都算数。</h2>
+    </header>
+
+    <ol class="menu" id="main-menu">
+        
+        
+        
+
+        <li >
+            <a href='/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>Home</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/about/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>About</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/archives/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/search/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+
+        
+            <li id="dark-mode-toggle">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <span>暗色模式</span>
+            </li>
+        
+    </ol>
+</aside>
+
+            <main class="main full-width">
+    <div id="article-toolbar">
+        <a href="https://jokeme.top" class="back-home">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="15 6 9 12 15 18" />
+</svg>
+
+
+
+            <span>Back</span>
+        </a>
+    </div>
+
+    <article class="has-image main-article">
+    <header class="article-header">
+        <div class="article-image">
+            <a href="/p/python_spider/">
+                
+                    <img src="https://cn.bing.com/th?id=OHR.BolivianSummer_EN-CN6022233005_UHD.jpg&amp;pid=hp&amp;w=1080&amp;h=720&amp;rs=1&amp;c=4" loading="lazy" alt="Featured image of post Python_spider" />
+                
+            </a>
+        </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/python/" >
+                Python
+            </a>
+        
+    </header>
+    
+
+    <h2 class="article-title">
+        <a href="/p/python_spider/">Python_spider</a>
+    </h2>
+
+    
+    <h3 class="article-subtitle">
+        简单的python爬虫
+    </h3>
+    <footer class="article-time">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+        <time class="article-time--published">Dec 31, 2019</time>
+    </footer></div>
+</header>
+
+    <section class="article-content">
+    <h1 id="python-爬虫">Python 爬虫</h1>
+<p>用<strong>python</strong>写爬虫其实是比较简单的，主要还是靠第三方的库，常用的有 <strong>requests &amp; urllib</strong> 至于解析 HTML,我目前使用的是 <strong>xpath</strong> ,了解了基本操作，咱就试试看吧</p>
+<p>代码附上</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># coding:utf-8</span>
+<span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">from</span> <span class="nn">lxml</span> <span class="kn">import</span> <span class="n">etree</span>
+
+<span class="k">def</span> <span class="nf">getWebUrl</span><span class="p">(</span><span class="n">uri</span><span class="p">):</span>
+	<span class="n">webPage</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span> <span class="o">=</span> <span class="n">uri</span><span class="p">,</span>
+		<span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s2">&#34;User-Agent&#34;</span><span class="p">:</span><span class="s2">&#34;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36&#34;</span><span class="p">}</span>
+		<span class="p">)</span>
+
+	<span class="n">we</span> <span class="o">=</span> <span class="n">webPage</span><span class="o">.</span><span class="n">text</span>
+	<span class="n">ssr</span> <span class="o">=</span> <span class="n">etree</span><span class="o">.</span><span class="n">HTML</span><span class="p">(</span><span class="n">we</span><span class="p">)</span>
+	
+	<span class="n">Links</span> <span class="o">=</span> <span class="n">ssr</span><span class="o">.</span><span class="n">xpath</span><span class="p">(</span><span class="s2">&#34;//div/table/tbody/tr/td/p/a/@href&#34;</span><span class="p">)</span>
+
+	<span class="n">Str</span> <span class="o">=</span> <span class="s2">&#34;http://172.17.150.251&#34;</span>
+	<span class="n">Allinks</span> <span class="o">=</span> <span class="p">[]</span>
+
+	<span class="k">for</span>  <span class="n">se</span>  <span class="ow">in</span> <span class="n">Links</span><span class="p">:</span>
+		<span class="n">link</span> <span class="o">=</span> <span class="n">Str</span><span class="o">+</span><span class="n">se</span>
+		<span class="n">Allinks</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">link</span><span class="p">)</span>
+	
+	<span class="n">dicName</span> <span class="o">=</span> <span class="p">{}</span>
+	<span class="n">dicName</span> <span class="o">=</span> <span class="p">{</span><span class="n">uri</span><span class="p">:</span><span class="n">Allinks</span><span class="p">}</span>
+	<span class="k">return</span> <span class="n">dicName</span>
+
+<span class="k">def</span> <span class="nf">getInfo</span><span class="p">(</span><span class="n">uri</span><span class="p">):</span>
+	<span class="n">webPage</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span> <span class="o">=</span> <span class="n">uri</span><span class="p">,</span>
+		<span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s2">&#34;User-Agent&#34;</span><span class="p">:</span><span class="s2">&#34;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36&#34;</span><span class="p">}</span>
+		<span class="p">)</span>
+	<span class="n">page</span> <span class="o">=</span> <span class="n">webPage</span><span class="o">.</span><span class="n">text</span>
+	<span class="n">pageinfo</span> <span class="o">=</span> <span class="n">etree</span><span class="o">.</span><span class="n">HTML</span><span class="p">(</span><span class="n">page</span><span class="p">)</span>
+
+	<span class="n">info</span> <span class="o">=</span> <span class="n">pageinfo</span><span class="o">.</span><span class="n">xpath</span><span class="p">(</span><span class="s2">&#34;//div/span[@class=&#39;sp4&#39;]/text()&#34;</span><span class="p">)</span>
+	<span class="n">notNesInfo</span> <span class="o">=</span> <span class="n">pageinfo</span><span class="o">.</span><span class="n">xpath</span><span class="p">(</span><span class="s2">&#34;//div/span[@class=&#39;sp2&#39;]/text()&#34;</span><span class="p">)</span>
+	<span class="n">salaryInfo</span> <span class="o">=</span> <span class="n">pageinfo</span><span class="o">.</span><span class="n">xpath</span><span class="p">(</span><span class="s2">&#34;//div[@class=&#39;cn&#39;]/strong/text()&#34;</span><span class="p">)</span>
+	<span class="n">job</span> <span class="o">=</span> <span class="n">pageinfo</span><span class="o">.</span><span class="n">xpath</span><span class="p">(</span><span class="s2">&#34;//p[position()=1]/span[@class=&#39;el&#39;]/text()&#34;</span><span class="p">)</span>
+	<span class="n">city</span> <span class="o">=</span> <span class="n">pageinfo</span><span class="o">.</span><span class="n">xpath</span><span class="p">(</span><span class="s2">&#34;//span[@class=&#39;lname&#39;]/text()&#34;</span><span class="p">)</span>
+
+	<span class="k">if</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">notNesInfo</span><span class="p">)</span><span class="o">!=</span><span class="mi">0</span><span class="p">):</span>
+		<span class="k">for</span> <span class="n">er</span> <span class="ow">in</span> <span class="n">notNesInfo</span><span class="p">:</span>
+			<span class="n">info</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">er</span><span class="p">)</span>
+
+	<span class="n">information</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&#34;info&#34;</span><span class="p">:</span><span class="n">info</span><span class="p">,</span><span class="s1">&#39;salaryInfo&#39;</span><span class="p">:</span><span class="n">salaryInfo</span><span class="p">,</span><span class="s1">&#39;job&#39;</span><span class="p">:</span><span class="n">job</span><span class="p">,</span><span class="s1">&#39;city&#39;</span><span class="p">:</span><span class="n">city</span><span class="p">}</span>
+
+	<span class="k">return</span> <span class="n">information</span>
+
+
+<span class="c1"># ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span>
+<span class="n">we</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="n">fun</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="n">tot</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">wilu</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">41</span><span class="p">):</span>
+	<span class="n">strin</span> <span class="o">=</span> <span class="s2">&#34;http://172.17.150.251/xueqing-web/course/index/{}&#34;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+	<span class="n">tot</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">strin</span><span class="p">)</span>
+	<span class="n">we</span> <span class="o">=</span> <span class="n">getWebUrl</span><span class="p">(</span><span class="n">strin</span><span class="p">)</span>
+	<span class="n">fun</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">we</span><span class="p">)</span>
+	<span class="n">we</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">osx</span> <span class="ow">in</span> <span class="n">tot</span><span class="p">:</span>
+	<span class="n">wilu</span>  <span class="o">=</span> <span class="n">fun</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">osx</span><span class="p">)</span>
+	<span class="k">for</span> <span class="n">xs</span> <span class="ow">in</span> <span class="n">wilu</span><span class="p">:</span>
+		<span class="n">ufo</span> <span class="o">=</span> <span class="p">{}</span>
+		<span class="n">ufo</span> <span class="o">=</span> <span class="n">getInfo</span><span class="p">(</span><span class="n">xs</span><span class="p">)</span>
+		<span class="n">fuc</span> <span class="o">=</span><span class="p">{</span><span class="n">xs</span><span class="p">:</span><span class="n">ufo</span><span class="p">}</span>
+		<span class="n">we</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">fuc</span><span class="p">)</span>
+
+<span class="n">wei</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">we</span><span class="p">,</span><span class="n">indent</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">ensure_ascii</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&#34;wuli.json&#34;</span><span class="p">,</span><span class="s1">&#39;w&#39;</span><span class="p">,</span><span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+	<span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">wei</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&#34;?&#34;</span><span class="p">)</span>
+</code></pre></div><p>因为我是真的又菜又爱玩，所以才写的这么烂的代码 ?,以后还是要慢慢提升啊</p>
+<p>我爬取的是 51job 网站，可是如果爬虫大规模爬取，网站就会封 IP,所以我就把页面抓下来，放到本地，开一个 Web 服务器，慢慢调试代码代码 ?‍♂️</p>
+<p>最基本的两个库，<strong>requests &amp; lxml</strong>  <strong>simplejson</strong> 不是必要的，我只是为了把爬取到的数据保存到本地查看才出此下策，实在是菜的无奈 ?才这样干了，其实我也是懒得配置数据库了</p>
+<h3 id="代码解释">代码解释</h3>
+<p><strong>getWebUrl()</strong> 是拿取网站一共有多少页并且获取该页面下的求职信息详情页面链接，再传递给下一个函数处理我给写死了</p>
+<p><strong>getInfo()</strong> 处理<strong>geWebUrl()</strong> 传递过来的详情页面链接，并爬取数据返回我需要的求职信息</p>
+<p>还有需要注意的是 JSON 格式化<strong>dict</strong>Chinese 时，非常容易乱码，所以在 dumps()方法里，我没有用 ascii,这也算是一个小坑吧，一开始的时候
+我保存数据，不管用啥方法都乱码，心态都炸了，<strong># coding:utf-8</strong>也用了，就是不奏效</p>
+<h3 id="爬取到的信息节选">爬取到的信息节选</h3>
+<div class="highlight"><pre class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
+ <span class="nt">&#34;http://172.17.150.251/xueqing-web/51job/72396849.html&#34;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&#34;info&#34;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="s2">&#34;3-4年经验&#34;</span><span class="p">,</span>
+            <span class="s2">&#34;本科&#34;</span><span class="p">,</span>
+            <span class="s2">&#34;招1人&#34;</span><span class="p">,</span>
+            <span class="s2">&#34;02-08发布&#34;</span><span class="p">,</span>
+            <span class="s2">&#34;英语良好&#34;</span><span class="p">,</span>
+            <span class="s2">&#34;计算机科学与技术 自动化&#34;</span>
+        <span class="p">],</span>
+        <span class="nt">&#34;salaryInfo&#34;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="s2">&#34;15-28万/年&#34;</span>
+        <span class="p">],</span>
+        <span class="nt">&#34;job&#34;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="s2">&#34;软件工程师&#34;</span><span class="p">,</span>
+            <span class="s2">&#34;算法工程师&#34;</span>
+        <span class="p">],</span>
+        <span class="nt">&#34;city&#34;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="s2">&#34;广州&#34;</span>
+        <span class="p">]</span>
+    <span class="p">},</span>
+    <span class="nt">&#34;http://172.17.150.251/xueqing-web/51job/98287424.html&#34;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&#34;info&#34;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="s2">&#34;5-7年经验&#34;</span><span class="p">,</span>
+            <span class="s2">&#34;大专&#34;</span><span class="p">,</span>
+            <span class="s2">&#34;招若干人&#34;</span><span class="p">,</span>
+            <span class="s2">&#34;02-08发布&#34;</span>
+        <span class="p">],</span>
+        <span class="nt">&#34;salaryInfo&#34;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="s2">&#34;1-2万/月&#34;</span>
+        <span class="p">],</span>
+        <span class="nt">&#34;job&#34;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="s2">&#34;销售经理&#34;</span>
+        <span class="p">],</span>
+        <span class="nt">&#34;city&#34;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="s2">&#34;北京&#34;</span>
+        <span class="p">]</span>
+    <span class="p">},</span>
+    <span class="nt">&#34;http://172.17.150.251/xueqing-web/51job/98370374.html&#34;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&#34;info&#34;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="s2">&#34;5-7年经验&#34;</span><span class="p">,</span>
+            <span class="s2">&#34;本科&#34;</span><span class="p">,</span>
+            <span class="s2">&#34;招2人&#34;</span><span class="p">,</span>
+            <span class="s2">&#34;02-08发布&#34;</span>
+        <span class="p">],</span>
+        <span class="nt">&#34;salaryInfo&#34;</span><span class="p">:</span> <span class="p">[],</span>
+        <span class="nt">&#34;job&#34;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="s2">&#34;高级软件工程师&#34;</span><span class="p">,</span>
+            <span class="s2">&#34;网站运营经理/主管&#34;</span>
+        <span class="p">],</span>
+        <span class="nt">&#34;city&#34;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="s2">&#34;深圳&#34;</span>
+        <span class="p">]</span>
+    <span class="p">},</span>
+    <span class="nt">&#34;http://172.17.150.251/xueqing-web/51job/97846012.html&#34;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&#34;info&#34;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="s2">&#34;无工作经验&#34;</span><span class="p">,</span>
+            <span class="s2">&#34;本科&#34;</span><span class="p">,</span>
+            <span class="s2">&#34;招若干人&#34;</span><span class="p">,</span>
+            <span class="s2">&#34;02-08发布&#34;</span><span class="p">,</span>
+            <span class="s2">&#34;英语熟练&#34;</span><span class="p">,</span>
+            <span class="s2">&#34;计算机科学与技术 计算机网络&#34;</span>
+        <span class="p">],</span>
+        <span class="nt">&#34;salaryInfo&#34;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="s2">&#34;10-15万/年&#34;</span>
+        <span class="p">],</span>
+        <span class="nt">&#34;job&#34;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="s2">&#34;系统工程师&#34;</span><span class="p">,</span>
+            <span class="s2">&#34;系统架构设计师&#34;</span>
+        <span class="p">],</span>
+        <span class="nt">&#34;city&#34;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="s2">&#34;北京-昌平区&#34;</span>
+        <span class="p">]</span>
+    <span class="p">},</span>
+    <span class="nt">&#34;http://172.17.150.251/xueqing-web/51job/96612644.html&#34;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&#34;info&#34;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="s2">&#34;无工作经验&#34;</span><span class="p">,</span>
+            <span class="s2">&#34;招若干人&#34;</span><span class="p">,</span>
+            <span class="s2">&#34;02-08发布&#34;</span>
+        <span class="p">],</span>
+        <span class="nt">&#34;salaryInfo&#34;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="s2">&#34;1-2万/月&#34;</span>
+        <span class="p">],</span>
+        <span class="nt">&#34;job&#34;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="s2">&#34;信息技术经理/主管&#34;</span>
+        <span class="p">],</span>
+        <span class="nt">&#34;city&#34;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="s2">&#34;北京-西城区&#34;</span>
+        <span class="p">]</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/%E7%88%AC%E8%99%AB/">爬虫</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3&#43;Aro6EYUG4&#43;cU&#43;KJWu/X"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js"integrity="sha384-g7c&#43;Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI&#43;sEnkvrMWph2EDg4"crossorigin="anonymous"
+                defer="true"
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC&#43;Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa"crossorigin="anonymous"
+                defer="true"
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+        renderMathInElement(document.querySelector(`.article-content`), {
+            delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "$", right: "$", display: false },
+                { left: "\\(", right: "\\)", display: false },
+                { left: "\\[", right: "\\]", display: true }
+            ]
+        });})
+</script>
+    
+</article>
+
+    <aside class="related-contents--wrapper">
+    
+    
+        <h2 class="section-title">相关文章</h2>
+        <div class="related-contents">
+            <div class="flex article-list--tile">
+                
+                    
+<article class="has-image">
+    <a href="/p/python_spider_download_m3u8/">
+        
+        
+            <div class="article-image">
+                
+                    <img src="https://cn.bing.com/th?id=OHR.Parrotfish_EN-CN1212515803_UHD.jpg&amp;pid=hp&amp;w=1080&amp;h=720&amp;rs=1&amp;c=4" loading="lazy" data-key="python_spider_download_m3u8" data-hash="https://cn.bing.com/th?id=OHR.Parrotfish_EN-CN1212515803_UHD.jpg&amp;pid=hp&amp;w=1080&amp;h=720&amp;rs=1&amp;c=4"/>
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Python 爬虫抓取m3u8播放源</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="has-image">
+    <a href="/p/python_spider_download_bing_wallpaper/">
+        
+        
+            <div class="article-image">
+                
+                    <img src="https://cn.bing.com/th?id=OHR.TheWave_EN-CN9165010424_UHD.jpg&amp;pid=hp&amp;w=1080&amp;h=720&amp;rs=1&amp;c=4" loading="lazy" data-key="python_spider_download_Bing_wallpaper" data-hash="https://cn.bing.com/th?id=OHR.TheWave_EN-CN9165010424_UHD.jpg&amp;pid=hp&amp;w=1080&amp;h=720&amp;rs=1&amp;c=4"/>
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">利用 Python 爬虫获取 bing.com 每天的高清壁纸</h2>
+        </div>
+    </a>
+</article>
+                
+            </div>
+        </div>
+    
+</aside>
+
+
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2019 - 
+        
+        2021 JokemeBlog
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="2.3.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer="true"
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer="true"
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css"integrity="sha256-c0uckgykQ9v5k&#43;IqViZOZKc47Jn7KQil4/MP3ySA3F8="crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css"integrity="sha256-SBLU4vv6CA6lHsZ1XyTdhyjJxCjPif/TRkjnsyGAGnE="crossorigin="anonymous"
+            >
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js"integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g="crossorigin="anonymous"
+                defer="false"
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

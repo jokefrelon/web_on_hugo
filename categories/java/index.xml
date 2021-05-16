@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Java on JokemeBlog</title>
+    <link>https://jokeme.top/categories/java/</link>
+    <description>Recent content in Java on JokemeBlog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 23 Jul 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://jokeme.top/categories/java/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>关于 Maven 下载插件缓慢的问题</title>
+      <link>https://jokeme.top/p/download_maven_plugin_faster/</link>
+      <pubDate>Thu, 23 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jokeme.top/p/download_maven_plugin_faster/</guid>
+      <description>关于 Maven 下载插件缓慢的问题 众所周知,咱们大天朝由于各种原因,只能活在局域网里面.这可能对那些不深度使用网络的人来说不痛不痒,但是你要是搞开发,搞运维,那才是各种烦呢
+就拿 maven来说,我™下载一个几kb得依赖都要好几个小时,甚至还要看运气
+网上也给了各种各样得解决方案特指 CSDN,但是我去尝试后,他妈的怎么弄都不行!!!我就搞不明白了,有些作者特指那种只会复制粘贴别人文章的,连别人文章的有效性都不去验证一下,就直接拿过来当作自己的了,太恶心了??
+好嘞废话不多说了,还是说 maven 吧 以前阿里源还是 http ,所以用网上的方法还是有效的,但是当阿里把 http 升级为https 后,原来的方法就失效了
+ idea编辑器:忽略ssl的配置,Maven -&amp;gt; Runner -&amp;gt; VM Options添加  -Dmaven.wagon.http.ssl.insecure=true -Dmaven.wagon.http.ssl.allowall=true -Dmaven.wagon.http.ssl.ignore.validity.dates=true Eclipse操作大致同上,忽略 ssl即可
+另外想屏蔽CSDN得话可以用 Tampermonkey 脚本来屏蔽一下 p.s. 需要先安装 Tampermonkey 再安装 百度搜索结果屏蔽csdn博客
+文章转自博客园作者:lisongyu 原文链接:关于maven使用阿里源无法生效问题</description>
+    </item>
+    
+    <item>
+      <title>SpringBoot学习笔记(1)</title>
+      <link>https://jokeme.top/p/springboot_note_1/</link>
+      <pubDate>Fri, 29 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jokeme.top/p/springboot_note_1/</guid>
+      <description>Spring学习 提醒⏰:在开始之前,我们需要配置以下基本环境(还有文件的编码方式也要注意)
+  File &amp;raquo;&amp;gt; Project Structcture(CTRL+ALT+Shift+S) &amp;raquo;&amp;gt; Project &amp;raquo;&amp;gt; Project SDK:
+  File &amp;raquo;&amp;gt; Project Structcture(CTRL+ALT+Shift+S) &amp;raquo;&amp;gt; Project &amp;raquo;&amp;gt; Project language level
+  File &amp;raquo;&amp;gt; Project Structcture(CTRL+ALT+Shift+S) &amp;raquo;&amp;gt; Modules &amp;raquo;&amp;gt; Sources &amp;raquo;&amp;gt; Languages level
+  File &amp;raquo;&amp;gt; Settings(CTRL+ALT+S) &amp;raquo;&amp;gt; Build,Execution,Deployment &amp;raquo;&amp;gt; Compiler &amp;raquo;&amp;gt; Java Compiler &amp;raquo;&amp;gt; Project bytecode version
+  File &amp;raquo;&amp;gt; Settings(CTRL+ALT+S) &amp;raquo;&amp;gt; Build,Execution,Deployment &amp;raquo;&amp;gt; Compiler &amp;raquo;&amp;gt; Java Compiler &amp;raquo;&amp;gt;Per-module bytecode version
+  1.</description>
+    </item>
+    
+    <item>
+      <title>Java 注解的简单学习</title>
+      <link>https://jokeme.top/p/java_annotation/</link>
+      <pubDate>Sat, 15 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jokeme.top/p/java_annotation/</guid>
+      <description>Java 注解（Annotation） Java 注解其实并不难，从名字上你都知道注解是帮助 Java 代码执行的，它的形式跟接口很类似，不过前面多了一个 @ 符号
+1 Java 元注解   @Retention
+Retention 保留期，决定注解的生命时常，取值如下
+     SOURCE 只在源码阶段保留     CLASS 只被保留到编译进行的时候   RUNTIME 注解可以保留到程序运行的时候    eg：该注解被保留到运行时
+@Retention(RetentionPolicy.RUNTIME) public @interface Annotation { } 它的作用是能够将注解中的元素包含到 Javadoc 中去
+Target 指定了注解运用的地方
+   ANNOTATION_TYPE 给一个注解进行注解     CONSTRUCTOR 给构造方法进行注解   FIELD 给属性进行注解   LOCAL_VARIABLE 给局部变量进行注解   METHOD 给方法进行注解   PACKAGE 给包进行注解   PARAMETER 给方法内的参数进行注解   TYPE 给一个类型进行注解，比如类、接口    一个类被 @Inherited 注解过的注解进行注解的话，如果它的子类没有被任何注解应用的话，那么这个子类就继承了该类的注解。</description>
+    </item>
+    
+    <item>
+      <title>Java通过jdbc操作MySQL数据库</title>
+      <link>https://jokeme.top/p/java_jdbc/</link>
+      <pubDate>Sat, 01 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jokeme.top/p/java_jdbc/</guid>
+      <description>Java JDBC 操作 MySQL 1 . Maven 导包 &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;mysql&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;mysql-connector-java&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;5.1.48&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt; &amp;lt;groupId&amp;gt;org.junit.jupiter&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;junit-jupiter&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;RELEASE&amp;lt;/version&amp;gt; &amp;lt;scope&amp;gt;compile&amp;lt;/scope&amp;gt; &amp;lt;/dependency&amp;gt; 填在 pom 文件里面即可，无难度
+2 . 用代码连接数据库 import java.io.*; import java.sql.*; import java.util.ArrayList; import java.util.HashMap; import java.util.List; import java.util.Map; public class Fre{ public static final String driver = &amp;#34;com.mysql.jdbc.Driver&amp;#34;; public static final String uri = &amp;#34;jdbc:mysql://127.0.0.1:3306/solo&amp;#34;; public static final String user = &amp;#34;root&amp;#34;; public static final String passcode = &amp;#34;123456&amp;#34;; final String sqlScript = &amp;#34;select * from b3_solo_article&amp;#34;; Connection connection= null; public ResultSet StartCollection() throws SQLException { try{ Class.</description>
+    </item>
+    
+    <item>
+      <title>Java IO简单操作文件</title>
+      <link>https://jokeme.top/p/java_io/</link>
+      <pubDate>Sat, 28 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jokeme.top/p/java_io/</guid>
+      <description>Java-IO Java Input-Output 主要是用于文件的存储和读取，相关操作一般都会放在 Java.io 包中
+1 File 类 file 类的方法是我们操作文件必不可少的，是必须要学习的类
+1.1 使用示例： package Java_IO; import java.io.File; import java.io.IOException; public class fileClass { public static void main(String[] args) throws IOException { File se = new File(&amp;#34;D:\\Frelon.txt&amp;#34;); File we = new File(&amp;#34;D:\\&amp;#34;,&amp;#34;sda.py&amp;#34;); System.out.println(se+&amp;#34;~~~~&amp;#34;+we); File dir = new File(&amp;#34;D:\\KW&amp;#34;+File.separator); File sdCard = new File (dir,&amp;#34;a.java&amp;#34;); if(sdCard.createNewFile()) { System.out.println(&amp;#34;Create File Successfully ! &amp;#34;+sdCard); }else { System.out.println(&amp;#34;Filed!&amp;#34;); } } } 1.2 File类常见方法 1.2.1 获取文件路径 package Java_IO; import java.</description>
+    </item>
+    
+    <item>
+      <title>Java中的collections的map</title>
+      <link>https://jokeme.top/p/collection_map/</link>
+      <pubDate>Sat, 28 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jokeme.top/p/collection_map/</guid>
+      <description>Collection-Map Map--|双列集合,一次存一对键值对,必须保证唯一性 --|HashMap:哈希表,不同步,允许空的Key,Value --|TreeMap:二叉树,线程不同步,可以对Map集合的键?排序 --|Hashtable:哈希表,线程同步效率低下,不允许空的Key,Value 1. Map 集合共性功能    添加 V put(K,V) / putAll(Map&amp;lt;K,V&amp;gt; map)     删除 V remove(K) / void clear()   判断 Boolean containsKey / Value()   获取 V get(K) / int size()    注意：如果对同一个键多次存储会出现值被覆盖的现象
+2 Map 集合取出键值对方法 2.1 迭代器取出法 package sourceCode; import java.util.HashMap; import java.util.Iterator; import java.util.Map; import java.util.Set; public class collMap { public static void main(String[] args) { Map&amp;lt;Integer,String&amp;gt; se = new HashMap&amp;lt;Integer,String&amp;gt;(); se.</description>
+    </item>
+    
+    <item>
+      <title>简单的Java泛型学习</title>
+      <link>https://jokeme.top/p/java_generics/</link>
+      <pubDate>Sat, 28 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jokeme.top/p/java_generics/</guid>
+      <description>泛型 1 泛型特性 百度得如下解释：
+泛型是程序设计语言的一种特性,允许程序员在强类型程序设计语言中编写代码时定义一些可变部分，那些部分在使用前必须作出指明。各种程序设计语言和其编译器、运行环境对泛型的支持均不一样。将类型参数化以达到代码复用提高软件开发工作效率的一种数据类型。泛型类是引用类型，是堆对象，主要是引入了类型参数这个概念。 2. 举个栗子 ? ? List Li = new ArrayList(); Li.add(&amp;#34;sdn&amp;#34;); Li.add(90); for (Object se :Li){ System.out.println(se); } java.lang.ClassCastException: java.lang.Integer cannot be cast to java.lang.String 典型的类型转换异常，Integer不能被转换成String
+正确的写法如下：
+List&amp;lt;String&amp;gt; Li = new ArrayList&amp;lt;String&amp;gt;(); 3. 泛型的使用 泛型有三种使用方式，分别为：泛型类、泛型接口、泛型方法
+3.1 泛型类 泛型类型用于类的定义中，被称为泛型类。通过泛型可以完成对一组类的操作对外开放相同的接口。最典型的就是各种容器类，如：List、Set、Map。
+一个最普通的泛型类：
+public class examples&amp;lt;Human&amp;gt;{ private Human key; public examples(Human key) { this.key = key; } public Human getKey(){ return key; } } 注意事项
+泛型的类型参数只能是类类型，不能是简单类型。
+不能对确切的泛型类型使用instanceOf操作，编译时会出错。
+3.2 泛型接口 泛型接口与泛型类的定义及使用基本相同</description>
+    </item>
+    
+    <item>
+      <title>Java时间类api</title>
+      <link>https://jokeme.top/p/java_api_of_time/</link>
+      <pubDate>Sun, 22 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jokeme.top/p/java_api_of_time/</guid>
+      <description>时间类 API 在日常学习生活中，我们经常遇到时间相关的问题，现在虽然 Date 类已经不是主流了，但任然有许多方法要学习
+1.1DateFormat 1.1.1 使用示例 package APICourceCode; import java.text.DateFormat; import java.util.Date; public class dateAPI { public static void main(String[] args) { Date date = new Date(); DateFormat ses = DateFormat.getDateTimeInstance(DateFormat.FULL, DateFormat.FULL); String sesa = ses.format(date); System.out.println(sesa); } } 其常见的Style如下
+FULL:2019年12月16日 星期一 下午06时38分17秒 CST LONG:2019年12月16日 下午06时39分20秒 MEDIUM:2019-12-16 18:39:41 (默认方式) SHORT:19-12-16 下午6:40 如果需要自定义的格式，就需要按照下面的表格自定义，自定义以后，系统自带的Style将不生效
+   字母 意义     y 年   M 月份   w 年份中的周数   W 月份中的周数   d 月份中的天数   D 年份中的天数   F 月份中的星期   E 星期中的天数   a am/pm 表示上下午   H 一天中的小时数(0-23)   h am/pm 中的一天小时数(1-12)   m 小时中的分钟数   s 分钟中的秒数   S 毫秒数   z PST;GMT 时区    package APICourceCode; import java.</description>
+    </item>
+    
+    <item>
+      <title>Java collection </title>
+      <link>https://jokeme.top/p/java_collection/</link>
+      <pubDate>Fri, 20 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jokeme.top/p/java_collection/</guid>
+      <description>collection集合 collection--| |--list:有序,有索引,允许重复元素 |--set:不允许重复元素,元素存取无序 1.共性功能 a.添加
+Boolean add (Obj obj);//添加单个对象 Boolean addAll (Collection c);//添加一组的collection的对象 b.删除
+void clear();//清空collection内所有对象/元素 Boolean remove (Object o);//删除collection里面某个对象 Boolean removeAll (Collection c);//删除一组的collection c.获取长度
+int size(); d.判断
+Boolean isEmpty(); Boolean contains(Object o); Boolean containsAll(Collection c) e.集合转数组
+toArray(); toArray([]); f.迭代器
+Iterator iterator(); 2. List集合 2.1 list集合的具体子类 List---- |-- Vector:数组数据结构,长度可变,线程同步&amp;lt;多线程安全&amp;gt;,但是速度比较慢(现在已经不常用-被ArrayList替代),长度按数组长度的100%延长 |-- ArrayList:数组结构,长度可变,线程不同步&amp;lt;多线程不安全&amp;gt;.查,速度快,增 删 改速度慢,长度按数组长度的50%延长 |-- LinkedList:链表结构,线程不同步&amp;lt;多线程不安全&amp;gt;,增,删,改,速度快,查 速度慢 2.2 迭代器使用注意 Exception in thread &amp;quot;main&amp;quot; java.util.ConcurrentModificationException at java.util.ArrayList$Itr.checkForComodification(Unknown Source) at java.util.ArrayList$Itr.next(Unknown Source) 遇到这种在使用迭代器时还修改迭代器内元素的时候，JVM会报错，这时候就需要用ListIterator</description>
+    </item>
+    
+    <item>
+      <title>Java的equals和contains的一些区别</title>
+      <link>https://jokeme.top/p/java_equals_and_contains/</link>
+      <pubDate>Fri, 20 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jokeme.top/p/java_equals_and_contains/</guid>
+      <description>equals() &amp;amp;&amp;amp; contains() Java 中常见的比较有equals和hashcode
+今天在学习的时候就遇到了一个头疼的问题(菜鸟级的我有大大疑问)
+在比较两个对象内的元素时，无论是使用equals还是hashcode都始终得不到我想要的结果。遂百度，记此文
+那么这两种方法到底有什么区别呢？
+equals()方法是根类 Object 的默认方法，查看 Object 中 equals()的默认实现：
+public boolean equals(Object obj) { return (this == obj); } ✅ 可以看出没有重写过的 equals()方法和 == 是一样的，都是比较两个对象引用指向的内存地址是否一样判断两个对象是否相等。
+也就是说，基本上每次都要Overwrite这个方法
+hashCode是JDK根据对象的地址或者字符串或者数字计算该对象的哈希码值的方法。
+hashcode 和 equals 两者必须同时重写。
+注意在类中，有一些 equals 方法 OverWrite 时必须要传入 Object 类型
+public boolean equals (person obj){ return (this == obj); }	❌ //这样写就是错误的,equals()方法不允许传入非 Object 类 </description>
+    </item>
+    
+  </channel>
+</rss>

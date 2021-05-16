@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>collection on JokemeBlog</title>
+    <link>https://jokeme.top/tags/collection/</link>
+    <description>Recent content in collection on JokemeBlog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 20 Dec 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://jokeme.top/tags/collection/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Java collection </title>
+      <link>https://jokeme.top/p/java_collection/</link>
+      <pubDate>Fri, 20 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jokeme.top/p/java_collection/</guid>
+      <description>collection集合 collection--| |--list:有序,有索引,允许重复元素 |--set:不允许重复元素,元素存取无序 1.共性功能 a.添加
+Boolean add (Obj obj);//添加单个对象 Boolean addAll (Collection c);//添加一组的collection的对象 b.删除
+void clear();//清空collection内所有对象/元素 Boolean remove (Object o);//删除collection里面某个对象 Boolean removeAll (Collection c);//删除一组的collection c.获取长度
+int size(); d.判断
+Boolean isEmpty(); Boolean contains(Object o); Boolean containsAll(Collection c) e.集合转数组
+toArray(); toArray([]); f.迭代器
+Iterator iterator(); 2. List集合 2.1 list集合的具体子类 List---- |-- Vector:数组数据结构,长度可变,线程同步&amp;lt;多线程安全&amp;gt;,但是速度比较慢(现在已经不常用-被ArrayList替代),长度按数组长度的100%延长 |-- ArrayList:数组结构,长度可变,线程不同步&amp;lt;多线程不安全&amp;gt;.查,速度快,增 删 改速度慢,长度按数组长度的50%延长 |-- LinkedList:链表结构,线程不同步&amp;lt;多线程不安全&amp;gt;,增,删,改,速度快,查 速度慢 2.2 迭代器使用注意 Exception in thread &amp;quot;main&amp;quot; java.util.ConcurrentModificationException at java.util.ArrayList$Itr.checkForComodification(Unknown Source) at java.util.ArrayList$Itr.next(Unknown Source) 遇到这种在使用迭代器时还修改迭代器内元素的时候，JVM会报错，这时候就需要用ListIterator</description>
+    </item>
+    
+  </channel>
+</rss>

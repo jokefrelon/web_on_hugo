@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>JDBC on JokemeBlog</title>
+    <link>https://jokeme.top/tags/jdbc/</link>
+    <description>Recent content in JDBC on JokemeBlog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 01 Feb 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://jokeme.top/tags/jdbc/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Java通过jdbc操作MySQL数据库</title>
+      <link>https://jokeme.top/p/java_jdbc/</link>
+      <pubDate>Sat, 01 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jokeme.top/p/java_jdbc/</guid>
+      <description>Java JDBC 操作 MySQL 1 . Maven 导包 &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;mysql&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;mysql-connector-java&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;5.1.48&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt; &amp;lt;groupId&amp;gt;org.junit.jupiter&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;junit-jupiter&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;RELEASE&amp;lt;/version&amp;gt; &amp;lt;scope&amp;gt;compile&amp;lt;/scope&amp;gt; &amp;lt;/dependency&amp;gt; 填在 pom 文件里面即可，无难度
+2 . 用代码连接数据库 import java.io.*; import java.sql.*; import java.util.ArrayList; import java.util.HashMap; import java.util.List; import java.util.Map; public class Fre{ public static final String driver = &amp;#34;com.mysql.jdbc.Driver&amp;#34;; public static final String uri = &amp;#34;jdbc:mysql://127.0.0.1:3306/solo&amp;#34;; public static final String user = &amp;#34;root&amp;#34;; public static final String passcode = &amp;#34;123456&amp;#34;; final String sqlScript = &amp;#34;select * from b3_solo_article&amp;#34;; Connection connection= null; public ResultSet StartCollection() throws SQLException { try{ Class.</description>
+    </item>
+    
+  </channel>
+</rss>

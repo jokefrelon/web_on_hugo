@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='OpenStack 常用命令'><title>OpenStack 常用命令</title>
+
+<link rel='canonical' href='https://jokeme.top/p/openstack_command/'>
+
+<link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='OpenStack 常用命令'>
+<meta property='og:description' content='OpenStack 常用命令'>
+<meta property='og:url' content='https://jokeme.top/p/openstack_command/'>
+<meta property='og:site_name' content='JokemeBlog'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='openstack' /><meta property='article:published_time' content='2020-09-25T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2020-09-25T00:00:00&#43;00:00'/><meta property='og:image' content='https://cn.bing.com/th?id=OHR.Porto_EN-CN2330328060_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4' />
+<meta name="twitter:title" content="OpenStack 常用命令">
+<meta name="twitter:description" content="OpenStack 常用命令"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://cn.bing.com/th?id=OHR.Porto_EN-CN2330328060_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4' />
+    <link rel="shortcut icon" href="/bk3.ico" />
+
+    </head>
+    <body class="">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.body.dataset.scheme = 'dark';
+        } else {
+            document.body.dataset.scheme = 'light';
+        }
+    })();
+</script><div class="container main-container flex on-phone--column extended article-page with-toolbar">
+            <aside class="sidebar left-sidebar sticky">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header class="site-info">
+        
+            <figure class="site-avatar">
+                
+                    
+                    
+                    
+                        
+                        <img src="/author_hud0a2a235bd9bca1ace56b5f54e36a460_15093_300x0_resize_q75_box.jpg" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+
+                
+                    <span class="emoji">🥰</span>
+                
+            </figure>
+        
+        <h1 class="site-name"><a href="https://jokeme.top">JokemeBlog</a></h1>
+        <h2 class="site-description">人生没有白走的路,每一步都算数。</h2>
+    </header>
+
+    <ol class="menu" id="main-menu">
+        
+        
+        
+
+        <li >
+            <a href='/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>Home</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/about/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>About</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/archives/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/search/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+
+        
+            <li id="dark-mode-toggle">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <span>暗色模式</span>
+            </li>
+        
+    </ol>
+</aside>
+
+            <main class="main full-width">
+    <div id="article-toolbar">
+        <a href="https://jokeme.top" class="back-home">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="15 6 9 12 15 18" />
+</svg>
+
+
+
+            <span>Back</span>
+        </a>
+    </div>
+
+    <article class="has-image main-article">
+    <header class="article-header">
+        <div class="article-image">
+            <a href="/p/openstack_command/">
+                
+                    <img src="https://cn.bing.com/th?id=OHR.Porto_EN-CN2330328060_UHD.jpg&amp;pid=hp&amp;w=1080&amp;h=720&amp;rs=1&amp;c=4" loading="lazy" alt="Featured image of post OpenStack 常用命令" />
+                
+            </a>
+        </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/linux/" >
+                Linux
+            </a>
+        
+    </header>
+    
+
+    <h2 class="article-title">
+        <a href="/p/openstack_command/">OpenStack 常用命令</a>
+    </h2>
+
+    
+    <h3 class="article-subtitle">
+        OpenStack 常用命令
+    </h3>
+    <footer class="article-time">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+        <time class="article-time--published">Sep 25, 2020</time>
+    </footer></div>
+</header>
+
+    <section class="article-content">
+    <h1 id="openstack-常用命令">OpenStack 常用命令</h1>
+<h2 id="1-mysql">1. MySQL</h2>
+<div class="highlight"><pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="k">show</span><span class="w"> </span><span class="n">variables</span><span class="w"> </span><span class="k">like</span><span class="w"> </span><span class="s2">&#34;storage_engine&#34;</span><span class="p">;</span><span class="w">	</span><span class="o">//</span><span class="err">查询默认存储引擎</span><span class="n">InnoDB</span><span class="w">
+</span><span class="w"></span><span class="k">show</span><span class="w"> </span><span class="n">variables</span><span class="w"> </span><span class="k">like</span><span class="w"> </span><span class="s2">&#34;have%&#34;</span><span class="p">;</span><span class="w">	</span><span class="o">//</span><span class="err">查询支持的存储引擎</span><span class="w">
+</span></code></pre></div><h2 id="2-keyston">2. Keyston</h2>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell"><span class="nb">source</span> /etc/keystone/admin-openrc.sh
+
+openstack user create --domain demo --password password testuser 
+//--domain为所属域 --password为密码 testuser是用户名
+
+<span class="o">[</span>root@controller ~<span class="o">]</span><span class="c1"># openstack user list</span>
+//查看用户列表
++----------------------------------+----------+
+<span class="p">|</span> ID                               <span class="p">|</span> Name     <span class="p">|</span>
++----------------------------------+----------+
+<span class="p">|</span> 1877ca2b73b04380af77a5cd3d057734 <span class="p">|</span> demo     <span class="p">|</span>
+<span class="p">|</span> 21a0b28505a140b9b54ca5a20542746c <span class="p">|</span> glance   <span class="p">|</span>
+<span class="p">|</span> 65e4fa15c643474d99f0b7950b5328bb <span class="p">|</span> neutron  <span class="p">|</span>
+<span class="p">|</span> 710f538564124ecd9fdcfaef40792e84 <span class="p">|</span> admin    <span class="p">|</span>
+<span class="p">|</span> 7caa95a15cb54d789d69e511c8214cb8 <span class="p">|</span> nova     <span class="p">|</span>
+<span class="p">|</span> cce5f695864940a0a32eab0d2015528c <span class="p">|</span> testuser <span class="p">|</span>
++----------------------------------+----------+
+
+<span class="o">[</span>root@controller ~<span class="o">]</span><span class="c1"># openstack endpoint list</span>
+//endpoint列表
++---------------+-----------+--------------+--------------+---------+-----------+------------------+
+<span class="p">|</span> ID            <span class="p">|</span> Region    <span class="p">|</span> Service Name <span class="p">|</span> Service Type <span class="p">|</span> Enabled <span class="p">|</span> Interface <span class="p">|</span> URL              <span class="p">|</span>
++---------------+-----------+--------------+--------------+---------+-----------+------------------+
+<span class="p">|</span> 1f7824e81d9f4 <span class="p">|</span> RegionOne <span class="p">|</span> neutron      <span class="p">|</span> network      <span class="p">|</span> True    <span class="p">|</span> internal  <span class="p">|</span> http://controlle <span class="p">|</span>
+<span class="p">|</span> f04b595b97a0a <span class="p">|</span>           <span class="p">|</span>              <span class="p">|</span>              <span class="p">|</span>         <span class="p">|</span>           <span class="p">|</span> r:9696           <span class="p">|</span>
+<span class="p">|</span> e78f46        <span class="p">|</span>           <span class="p">|</span>              <span class="p">|</span>              <span class="p">|</span>         <span class="p">|</span>           <span class="p">|</span>                  <span class="p">|</span>
+<span class="p">|</span> 399280c404a54 <span class="p">|</span> RegionOne <span class="p">|</span> glance       <span class="p">|</span> image        <span class="p">|</span> True    <span class="p">|</span> public    <span class="p">|</span> http://controlle <span class="p">|</span>
+<span class="p">|</span> a1bb314531c2b <span class="p">|</span>           <span class="p">|</span>              <span class="p">|</span>              <span class="p">|</span>         <span class="p">|</span>           <span class="p">|</span> r:9292           <span class="p">|</span>
+<span class="p">|</span> 880ca1        <span class="p">|</span>           <span class="p">|</span>              <span class="p">|</span>              <span class="p">|</span>         <span class="p">|</span>           <span class="p">|</span>                  <span class="p">|</span>
+<span class="p">|</span>   . ... ... ... ... ... ... ... ... ... ... ... 略 ... ... ... ... ... ... ... ... ... ... ... . <span class="p">|</span>
+<span class="p">|</span> fcb27923a6674 <span class="p">|</span> RegionOne <span class="p">|</span> neutron      <span class="p">|</span> network      <span class="p">|</span> True    <span class="p">|</span> public    <span class="p">|</span> http://controlle <span class="p">|</span>
+<span class="p">|</span> 064a5f6d6ddd6 <span class="p">|</span>           <span class="p">|</span>              <span class="p">|</span>              <span class="p">|</span>         <span class="p">|</span>           <span class="p">|</span> r:9696           <span class="p">|</span>
+<span class="p">|</span> 90fa54        <span class="p">|</span>           <span class="p">|</span>              <span class="p">|</span>              <span class="p">|</span>         <span class="p">|</span>           <span class="p">|</span>                  <span class="p">|</span>
++---------------+-----------+--------------+--------------+---------+-----------+------------------+
+
+<span class="o">[</span>root@controller ~<span class="o">]</span><span class="c1"># openstack role list</span>
+//查询OpenStack的角色列表
++----------------------------------+-------+
+<span class="p">|</span> ID                               <span class="p">|</span> Name  <span class="p">|</span>
++----------------------------------+-------+
+<span class="p">|</span> 2a818016714e4f828d96e05475a67208 <span class="p">|</span> user  <span class="p">|</span>
+<span class="p">|</span> a38871259df34ea39884b9019cea926b <span class="p">|</span> admin <span class="p">|</span>
++----------------------------------+-------+
+
+<span class="o">[</span>root@controller ~<span class="o">]</span><span class="c1"># openstack service list</span>
+//查看keystone 服务
++----------------------------------+----------+----------+
+<span class="p">|</span> ID                               <span class="p">|</span> Name     <span class="p">|</span> Type     <span class="p">|</span>
++----------------------------------+----------+----------+
+<span class="p">|</span> 40d9e5252f5f4967bc336542e6faab23 <span class="p">|</span> glance   <span class="p">|</span> image    <span class="p">|</span>
+<span class="p">|</span> 442e7454d7244037b7fdd05a96440dec <span class="p">|</span> keystone <span class="p">|</span> identity <span class="p">|</span>
+<span class="p">|</span> 6a95c79cc01147029bf79b5dfa3304f5 <span class="p">|</span> neutron  <span class="p">|</span> network  <span class="p">|</span>
+<span class="p">|</span> 8a78c7d6a9af432f89ae9a4d185b29d5 <span class="p">|</span> nova     <span class="p">|</span> compute  <span class="p">|</span>
+<span class="p">|</span> d821457f69fa4838ba42074652649548 <span class="p">|</span> neutron  <span class="p">|</span> network  <span class="p">|</span>
++----------------------------------+----------+----------+
+
+<span class="o">[</span>root@controller ~<span class="o">]</span><span class="c1"># openstack project list</span>
+//查看keystone租户
++----------------------------------+---------+
+<span class="p">|</span> ID                               <span class="p">|</span> Name    <span class="p">|</span>
++----------------------------------+---------+
+<span class="p">|</span> 00fa84b7a654447886421978253a2829 <span class="p">|</span> demo    <span class="p">|</span>
+<span class="p">|</span> 869f732ec387457ba9cfdcb424cc8ea2 <span class="p">|</span> admin   <span class="p">|</span>
+<span class="p">|</span> b421cbca4234472a94de962c634b5bb9 <span class="p">|</span> service <span class="p">|</span>
++----------------------------------+---------+
+
+<span class="o">[</span>root@controller ~<span class="o">]</span><span class="c1"># openstack project show demo</span>
+//查看租户情况,show 后面加上上面查询到的用户 name
++-------------+----------------------------------+
+<span class="p">|</span> Field       <span class="p">|</span> Value                            <span class="p">|</span>
++-------------+----------------------------------+
+<span class="p">|</span> description <span class="p">|</span> Demo Project                     <span class="p">|</span>
+<span class="p">|</span> domain_id   <span class="p">|</span> ad5088bf450145819f9338635ebfb7a6 <span class="p">|</span>
+<span class="p">|</span> enabled     <span class="p">|</span> True                             <span class="p">|</span>
+<span class="p">|</span> id          <span class="p">|</span> 00fa84b7a654447886421978253a2829 <span class="p">|</span>
+<span class="p">|</span> is_domain   <span class="p">|</span> False                            <span class="p">|</span>
+<span class="p">|</span> name        <span class="p">|</span> demo                             <span class="p">|</span>
+<span class="p">|</span> parent_id   <span class="p">|</span> ad5088bf450145819f9338635ebfb7a6 <span class="p">|</span>
++-------------+----------------------------------+
+
+<span class="o">[</span>root@controller ~<span class="o">]</span><span class="c1"># openstack domain create --description &#34;PPX_PiXiaoMei_Only&#34; NeiHanDuanZi_TV</span>
+//创建域
+//--description <span class="s2">&#34;PPX_PiXiaoMei_Only&#34;</span> 不是必须的, 下同
++-------------+----------------------------------+
+<span class="p">|</span> Field       <span class="p">|</span> Value                            <span class="p">|</span>
++-------------+----------------------------------+
+<span class="p">|</span> description <span class="p">|</span> PPX_PiXiaoMei_Only               <span class="p">|</span>
+<span class="p">|</span> enabled     <span class="p">|</span> True                             <span class="p">|</span>
+<span class="p">|</span> id          <span class="p">|</span> 57581f0aa311416c88c9fdb36688a46e <span class="p">|</span>
+<span class="p">|</span> name        <span class="p">|</span> NeiHanDuanZi_TV                  <span class="p">|</span>
++-------------+----------------------------------+
+
+<span class="o">[</span>root@controller ~<span class="o">]</span><span class="c1"># openstack project create --domain NeiHanDuanZi_TV --description &#34;PDL&#34; PXM</span>
+//创建项目（租户）
++-------------+----------------------------------+
+<span class="p">|</span> Field       <span class="p">|</span> Value                            <span class="p">|</span>
++-------------+----------------------------------+
+<span class="p">|</span> description <span class="p">|</span> PDL                              <span class="p">|</span>
+<span class="p">|</span> domain_id   <span class="p">|</span> 57581f0aa311416c88c9fdb36688a46e <span class="p">|</span>
+<span class="p">|</span> enabled     <span class="p">|</span> True                             <span class="p">|</span>
+<span class="p">|</span> id          <span class="p">|</span> 4b6c52f02496465ebc70447b740a043c <span class="p">|</span>
+<span class="p">|</span> is_domain   <span class="p">|</span> False                            <span class="p">|</span>
+<span class="p">|</span> name        <span class="p">|</span> PXM                              <span class="p">|</span>
+<span class="p">|</span> parent_id   <span class="p">|</span> 57581f0aa311416c88c9fdb36688a46e <span class="p">|</span>
++-------------+----------------------------------+
+
+<span class="o">[</span>root@controller ~<span class="o">]</span><span class="c1"># openstack user create --domain NeiHanDuanZi_TV --password-prompt frelon</span>
+//创建用户
+User Password:
+Repeat User Password:
++-----------+----------------------------------+
+<span class="p">|</span> Field     <span class="p">|</span> Value                            <span class="p">|</span>
++-----------+----------------------------------+
+<span class="p">|</span> domain_id <span class="p">|</span> 57581f0aa311416c88c9fdb36688a46e <span class="p">|</span>
+<span class="p">|</span> enabled   <span class="p">|</span> True                             <span class="p">|</span>
+<span class="p">|</span> id        <span class="p">|</span> 5ac456db906a43e8a8427ae7f3a5334a <span class="p">|</span>
+<span class="p">|</span> name      <span class="p">|</span> frelon                           <span class="p">|</span>
++-----------+----------------------------------+
+
+
+<span class="o">[</span>root@controller ~<span class="o">]</span><span class="c1"># openstack role create oiL</span>
+//创建角色
++-----------+----------------------------------+
+<span class="p">|</span> Field     <span class="p">|</span> Value                            <span class="p">|</span>
++-----------+----------------------------------+
+<span class="p">|</span> domain_id <span class="p">|</span> None                             <span class="p">|</span>
+<span class="p">|</span> id        <span class="p">|</span> 893a47b1b1ce4f558858418da04c86e4 <span class="p">|</span>
+<span class="p">|</span> name      <span class="p">|</span> oiL                              <span class="p">|</span>
++-----------+----------------------------------+
+
+openstack role add  --project PXM --user frelon oiL
+//为某项目中的某用户指定角色
+</code></pre></div><blockquote>
+<p><code>Tenant</code>也叫<code>project</code>,译为<code>租户</code> , 所有的资源(包括但不限于<code>CPU</code>,<code>Memory</code>,<code>Disk</code>等)都属于<code>Tenant</code> , <code>User</code> 本生并没有任何调度资源的权力,只有把 <code>User</code>加入<code>Tenant</code>后,用户才有资源的调度权限,<code>Tenant</code>就相当于一个 <strong>用户组</strong>,只不过在<code>OpenStack</code>这里被强化了,用户必须加入一个或多个<strong>用户组</strong>才可以调度资源</p>
+</blockquote>
+<blockquote>
+<p><code>Role</code>主要是解决用户登陆后的权限问题,即用户登录以后可以干什么,有没有权利操作资源等等,简而言之就是<strong>鉴权</strong>,一个用户必须有一个或多个<code>Role</code>才有权力执行相应操作. <code>Role</code>是全局的,所有<code>Domain</code>里的<code>Group</code>,<code>User</code></p>
+</blockquote>
+<blockquote>
+<p><code>Group</code>是用来配合<code>Role</code>来使用的,给<code>Group</code>加上相应的权限,再把用户加入<code>Group</code>该用户就可以获得<code>Group</code>所有的权限了,这样就方便了<code>Role</code>的分配</p>
+</blockquote>
+<blockquote>
+<p><code>Domain</code> 常常表示一个客户/合作伙伴,并且 <code>project</code>,<code>Group</code>,<code>User</code>在同一个<code>Domain</code>里面不可以重复</p>
+</blockquote>
+<h2 id="3-glance">3. glance</h2>
+<pre><code>glance image-create --name &quot;testone&quot; --disk-format &quot;qcow2&quot; --container-format bare --progress &lt; /root/CentOS_6.5_x86_64_XD.qcow2
+//上传镜像 并 用--name 命名为 &quot;testone&quot;
+
+openstack image set testone --name examimage 
+//修改已上传的镜像名称
+
+openstack image list 
+//列出已上传的镜像列表
+</code></pre><h2 id="4-nova">4. nova</h2>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">nova usage-list 
+//查询资源使用情况
+</code></pre></div><h2 id="5-neutron">5. neutron</h2>
+<pre><code> neutron router-list
+ //列出当前存在的网络/路由器
+ 
+ neutron router-show + id/name
+ 
+ [root@controller ~]#  neutron router-list
++--------------------------------------+------+-----------------------+-------------+-------+
+| id                                   | name | external_gateway_info | distributed | ha    |
++--------------------------------------+------+-----------------------+-------------+-------+
+| bb46e65a-ad51-4c13-b1c6-51c845dcfb52 | cvn  | null                  | False       | False |
++--------------------------------------+------+-----------------------+-------------+-------+
+[root@controller ~]#  neutron router-show bb46e65a-ad51-4c13-b1c6-51c845dcfb52
++-------------------------+--------------------------------------+
+| Field                   | Value                                |
++-------------------------+--------------------------------------+
+| admin_state_up          | True                                 |
+| availability_zone_hints |                                      |
+| availability_zones      | nova                                 |
+| description             |                                      |
+| distributed             | False                                |
+| external_gateway_info   |                                      |
+| ha                      | False                                |
+| id                      | bb46e65a-ad51-4c13-b1c6-51c845dcfb52 |
+| name                    | cvn                                  |
+| routes                  |                                      |
+| status                  | ACTIVE                               |
+| tenant_id               | 869f732ec387457ba9cfdcb424cc8ea2     |
++-------------------------+--------------------------------------+
+
+
+</code></pre><h2 id="6-trove">6. trove</h2>
+<h2 id="7-openstack命令大全">7. OpenStack命令大全</h2>
+<pre><code>access token create                        project create
+acl delete                                 project delete
+acl get                                    project list
+acl submit                                 project set
+acl user add                               project show
+acl user remove                            ptr record list
+aggregate add host                         ptr record set
+aggregate create                           ptr record show
+aggregate delete                           ptr record unset
+aggregate list                             quota set
+aggregate remove host                      quota show
+aggregate set                              recordset create
+aggregate show                             recordset delete
+availability zone list                     recordset list
+backup create                              recordset set
+backup delete                              recordset show
+backup list                                region create
+backup restore                             region delete
+backup show                                region list
+ca get                                     region set
+ca list                                    region show
+catalog list                               request token authorize
+catalog show                               request token create
+command list                               role add
+complete                                   role assignment list
+compute agent create                       role create
+compute agent delete                       role delete
+compute agent list                         role list
+compute agent set                          role remove
+compute service delete                     role set
+compute service list                       role show
+compute service set                        router create
+configuration show                         router delete
+console log show                           router list
+console url show                           router set
+consumer create                            router show
+consumer delete                            secret container create
+consumer list                              secret container delete
+consumer set                               secret container get
+consumer show                              secret container list
+container create                           secret delete
+container delete                           secret get
+container list                             secret list
+container save                             secret order create
+container set                              secret order delete
+container show                             secret order get
+container unset                            secret order list
+credential create                          secret store
+credential delete                          secret update
+credential list                            security group create
+credential set                             security group delete
+credential show                            security group list
+dataprocessing cluster create              security group rule create
+dataprocessing cluster delete              security group rule delete
+dataprocessing cluster list                security group rule list
+dataprocessing cluster scale               security group rule show
+dataprocessing cluster show                security group set
+dataprocessing cluster template create     security group show
+dataprocessing cluster template delete     server add security group
+dataprocessing cluster template list       server add volume
+dataprocessing cluster template show       server create
+dataprocessing cluster template update     server delete
+dataprocessing cluster update              server dump create
+dataprocessing cluster verification        server image create
+dataprocessing data source create          server list
+dataprocessing data source delete          server lock
+dataprocessing data source list            server migrate
+dataprocessing data source show            server pause
+dataprocessing data source update          server reboot
+dataprocessing image list                  server rebuild
+dataprocessing image register              server remove security group
+dataprocessing image show                  server remove volume
+dataprocessing image tags add              server rescue
+dataprocessing image tags remove           server resize
+dataprocessing image tags set              server resume
+dataprocessing image unregister            server set
+dataprocessing job binary create           server shelve
+dataprocessing job binary delete           server show
+dataprocessing job binary download         server ssh
+dataprocessing job binary list             server start
+dataprocessing job binary show             server stop
+dataprocessing job binary update           server suspend
+dataprocessing job delete                  server unlock
+dataprocessing job execute                 server unpause
+dataprocessing job list                    server unrescue
+dataprocessing job show                    server unset
+dataprocessing job template create         server unshelve
+dataprocessing job template delete         service create
+dataprocessing job template list           service delete
+dataprocessing job template show           service list
+dataprocessing job template update         service provider create
+dataprocessing job type configs get        service provider delete
+dataprocessing job type list               service provider list
+dataprocessing job update                  service provider set
+dataprocessing node group template create  service provider show
+dataprocessing node group template delete  service set
+dataprocessing node group template list    service show
+dataprocessing node group template show    snapshot create
+dataprocessing node group template update  snapshot delete
+dataprocessing plugin configs get          snapshot list
+dataprocessing plugin list                 snapshot set
+dataprocessing plugin show                 snapshot show
+domain create                              snapshot unset
+domain delete                              software config create
+domain list                                software config delete
+domain set                                 software config list
+domain show                                software config show
+ec2 credentials create                     software deployment create
+ec2 credentials delete                     software deployment delete
+ec2 credentials list                       software deployment list
+ec2 credentials show                       software deployment metadata show
+endpoint create                            software deployment output show
+endpoint delete                            software deployment show
+endpoint list                              stack abandon
+endpoint set                               stack adopt
+endpoint show                              stack cancel
+extension list                             stack check
+federation domain list                     stack create
+federation project list                    stack delete
+federation protocol create                 stack event list
+federation protocol delete                 stack event show
+federation protocol list                   stack hook clear
+federation protocol set                    stack hook poll
+federation protocol show                   stack list
+flavor create                              stack output list
+flavor delete                              stack output show
+flavor list                                stack resource list
+flavor set                                 stack resource mark unhealthy
+flavor show                                stack resource metadata
+flavor unset                               stack resource show
+group add user                             stack resource signal
+group contains user                        stack resume
+group create                               stack show
+group delete                               stack snapshot create
+group list                                 stack snapshot delete
+group remove user                          stack snapshot list
+group set                                  stack snapshot restore
+group show                                 stack snapshot show
+help                                       stack suspend
+host list                                  stack template show
+host show                                  stack update
+hypervisor list                            subnet delete
+hypervisor show                            subnet list
+hypervisor stats show                      subnet pool delete
+identity provider create                   subnet pool list
+identity provider delete                   subnet pool show
+identity provider list                     subnet show
+identity provider set                      tld create
+identity provider show                     tld delete
+image add project                          tld list
+image create                               tld set
+image delete                               tld show
+image list                                 token issue
+image remove project                       token revoke
+image save                                 trust create
+image set                                  trust delete
+image show                                 trust list
+ip fixed add                               trust show
+ip fixed remove                            usage list
+ip floating add                            usage show
+ip floating create                         user create
+ip floating delete                         user delete
+ip floating list                           user list
+ip floating pool list                      user password set
+ip floating remove                         user set
+ip floating show                           user show
+keypair create                             volume create
+keypair delete                             volume delete
+keypair list                               volume list
+keypair show                               volume qos associate
+limits show                                volume qos create
+mapping create                             volume qos delete
+mapping delete                             volume qos disassociate
+mapping list                               volume qos list
+mapping set                                volume qos set
+mapping show                               volume qos show
+module list                                volume qos unset
+network create                             volume set
+network delete                             volume show
+network list                               volume type create
+network set                                volume type delete
+network show                               volume type list
+object create                              volume type set
+object delete                              volume type show
+object list                                volume type unset
+object save                                volume unset
+object set                                 zone abandon
+object show                                zone axfr
+object store account set                   zone blacklist create
+object store account show                  zone blacklist delete
+object store account unset                 zone blacklist list
+object unset                               zone blacklist set
+orchestration build info                   zone blacklist show
+orchestration resource type list           zone create
+orchestration resource type show           zone delete
+orchestration service list                 zone list
+orchestration template function list       zone set
+orchestration template version list        zone show
+policy create                              zone transfer accept request
+policy delete                              zone transfer accept show
+policy list                                zone transfer request create
+policy set                                 zone transfer request delete
+policy show                                zone transfer request list
+port delete                                zone transfer request set
+port show                                  zone transfer request show
+</code></pre>
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/openstack/">openstack</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3&#43;Aro6EYUG4&#43;cU&#43;KJWu/X"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js"integrity="sha384-g7c&#43;Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI&#43;sEnkvrMWph2EDg4"crossorigin="anonymous"
+                defer="true"
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC&#43;Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa"crossorigin="anonymous"
+                defer="true"
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+        renderMathInElement(document.querySelector(`.article-content`), {
+            delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "$", right: "$", display: false },
+                { left: "\\(", right: "\\)", display: false },
+                { left: "\\[", right: "\\]", display: true }
+            ]
+        });})
+</script>
+    
+</article>
+
+    <aside class="related-contents--wrapper">
+    
+    
+        <h2 class="section-title">相关文章</h2>
+        <div class="related-contents">
+            <div class="flex article-list--tile">
+                
+                    
+<article class="has-image">
+    <a href="/p/%E4%BB%8Esolo%E8%BF%81%E7%A7%BB%E5%88%B0hugo/">
+        
+        
+            <div class="article-image">
+                
+                    <img src="https://cn.bing.com/th?id=OHR.Wakodahatchee_EN-CN9780170147_UHD.jpg&amp;pid=hp&amp;w=1080&amp;h=720&amp;rs=1&amp;c=4" loading="lazy" data-key="" data-hash="https://cn.bing.com/th?id=OHR.Wakodahatchee_EN-CN9780170147_UHD.jpg&amp;pid=hp&amp;w=1080&amp;h=720&amp;rs=1&amp;c=4"/>
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">从solo迁移到hugo</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="has-image">
+    <a href="/p/dockerfile/">
+        
+        
+            <div class="article-image">
+                
+                    <img src="https://cn.bing.com/th?id=OHR.PadarIsland_EN-CN9304851314_UHD.jpg&amp;pid=hp&amp;w=1080&amp;h=720&amp;rs=1&amp;c=4" loading="lazy" data-key="dockerfile" data-hash="https://cn.bing.com/th?id=OHR.PadarIsland_EN-CN9304851314_UHD.jpg&amp;pid=hp&amp;w=1080&amp;h=720&amp;rs=1&amp;c=4"/>
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Dockerfile编写</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="has-image">
+    <a href="/p/ffmpeg_user_agent/">
+        
+        
+            <div class="article-image">
+                
+                    <img src="https://cn.bing.com/th?id=OHR.Comma_EN-CN6081365526_UHD.jpg&amp;pid=hp&amp;w=1080&amp;h=720&amp;rs=1&amp;c=4" loading="lazy" data-key="ffmpeg_user_agent" data-hash="https://cn.bing.com/th?id=OHR.Comma_EN-CN6081365526_UHD.jpg&amp;pid=hp&amp;w=1080&amp;h=720&amp;rs=1&amp;c=4"/>
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">ffmpeg设置请求头</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="has-image">
+    <a href="/p/linux_reward/">
+        
+        
+            <div class="article-image">
+                
+                    <img src="https://cn.bing.com/th?id=OHR.BlueTitDaffs_EN-CN2615365443_UHD.jpg&amp;pid=hp&amp;w=1080&amp;h=720&amp;rs=1&amp;c=4" loading="lazy" data-key="linux_reward" data-hash="https://cn.bing.com/th?id=OHR.BlueTitDaffs_EN-CN2615365443_UHD.jpg&amp;pid=hp&amp;w=1080&amp;h=720&amp;rs=1&amp;c=4"/>
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">记录最近捯饬Linux的收获</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="has-image">
+    <a href="/p/linux_vsftpd/">
+        
+        
+            <div class="article-image">
+                
+                    <img src="https://cn.bing.com/th?id=OHR.VolcanoLlaima_EN-CN5183277848_UHD.jpg&amp;pid=hp&amp;w=1080&amp;h=720&amp;rs=1&amp;c=4" loading="lazy" data-key="linux_vsftpd" data-hash="https://cn.bing.com/th?id=OHR.VolcanoLlaima_EN-CN5183277848_UHD.jpg&amp;pid=hp&amp;w=1080&amp;h=720&amp;rs=1&amp;c=4"/>
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Ubuntu 20.04.2 配置 vsftpd 的脑坑</h2>
+        </div>
+    </a>
+</article>
+                
+            </div>
+        </div>
+    
+</aside>
+
+
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2019 - 
+        
+        2021 JokemeBlog
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="2.3.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer="true"
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer="true"
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css"integrity="sha256-c0uckgykQ9v5k&#43;IqViZOZKc47Jn7KQil4/MP3ySA3F8="crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css"integrity="sha256-SBLU4vv6CA6lHsZ1XyTdhyjJxCjPif/TRkjnsyGAGnE="crossorigin="anonymous"
+            >
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js"integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g="crossorigin="anonymous"
+                defer="false"
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

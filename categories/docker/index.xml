@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Docker on JokemeBlog</title>
+    <link>https://jokeme.top/categories/docker/</link>
+    <description>Recent content in Docker on JokemeBlog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 13 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://jokeme.top/categories/docker/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Dockerfile编写</title>
+      <link>https://jokeme.top/p/dockerfile/</link>
+      <pubDate>Tue, 13 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://jokeme.top/p/dockerfile/</guid>
+      <description>今天也是摸鱼的一天没怎么看书,一直在玩Linux。并且在无意间看到了我之前下载的 DirectoryLister，就想着在Docker里面部署玩一下。
+一开始我是没有想写Dockerfile的，直接在开了一个Ubuntu容器整的，但是想了想，以后想用肯定不方便，这个容器我随时随地都有可以废了它。所以就从网上看了看Dockerfile怎么写，开整！
+首先我并不想介绍Dockerfile怎么样去写，网上的教程一大把，自己看就可以了 我是参考菜鸟教程的教程。
+Dockerfile无非就是一个自动化的过程，至少在我看来就是这样的，可能我刚接触了解不深吧。但是按照这个思路是绝对可以写出来Dockerfile的，因为我自己就是例子🌰。
+来看看我的build
+7168 ◯ : docker build -t flt:v1.0 . ... ... Removing intermediate container 8fe78ec98a65 ---&amp;gt; da56585b17c1 Step 4/4 : CMD [&amp;quot;/root/np.sh&amp;quot;] ---&amp;gt; Running in 23bd36103ddd Removing intermediate container 23bd36103ddd ---&amp;gt; 114c7dec7e2f Successfully built 114c7dec7e2f Successfully tagged flt:v1.0 1. 选择基础镜像 因为Dockerfile是基于一些底层的镜像制作的，所以在这里我选择的是 ubuntu:20.04
+因为我平时就是在Ubuntu环境使用的比较多,你要是使用CentOS更顺手你也可以选择使用Redhat系的基础镜像。
+这里无可争议，过。
+FROM ubuntu:20.04 2. 配置环境变量 其实我这里也没有啥环境变量，我也不知道啥东西要设置为环境变量，就把DirectoryLister的版本号设置为环境变量了，方便以后升级。哈哈哈哈，比较菜只能想到这东西了。
+ENV DL_VERSION 3.7.7 3. 自动化运行命令 这里也没有啥好说的，有点Linux基础就可以，就是这个写法很操蛋！要不停的 &amp;amp;&amp;amp; &amp;hellip; &amp;hellip; \，至于为什么要这样呢，我查了一下，说是一个RUN就是一层，你要是写太多RUN就会套太多层，非常的臃肿。这些暂时也不是我需要考虑的，别人怎么写，我就怎么写。
+这里我遇到了一个自动化安装软件时，需要用户手动输入参数的问题，平时咱手动输入参数可以，但是这自动化的时候可不能这样呀，废了老大劲网上找到了解决办法，就是利用 debconf 提前配置好参数，详细解决办法见Ubuntu问答 。
+这里我特喵的还是要喷一喷CSDN，妈的一篇帖子万人抄，也不管对不对，往自己的的账号里面薅就对了。妈的好几页都是垃圾文章，浪费我的时间。</description>
+    </item>
+    
+    <item>
+      <title>Ubuntu &amp;&amp; Docker 使用建议</title>
+      <link>https://jokeme.top/p/ubuntu_docker_tips/</link>
+      <pubDate>Sun, 15 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jokeme.top/p/ubuntu_docker_tips/</guid>
+      <description>Ubuntu一直是我喜欢用的Linux发行版本,界面简洁,上手简单,用户广泛
+在Ubuntu中使用docker时,一直就有两个问题困扰着我
+1. Ubuntu pull 镜像速度太缓慢 这个问题百度一搜一大把,但是作为个人学习 类型的博客,还是记录一下的好?
+1.1 Aliyun 镜像加速大法 打开aliyun的docker加速登陆页面,虽然操作略微繁琐,但是我个人觉得这是速度最快的也是最稳定的
+然后找到 容器镜像服务 &amp;gt; 镜像加速器 根据提升来操作就可以啦
+其中Docker 1.10.0版本以上的直接就可以在  /etc/docker/daemon.json文件里加上你的专属加速链接
+sudo systemctl daemon-reload sudo systemctl restart docker 少侠记得重启加载一下配置文件
+2. Docker 网桥IP和实际物理IP冲突 虽然这个问题大家不一定会遇到,因为我们使用的大部分的路由器都是192开头的,docker的网桥IP则是选择172开头的,但是在学校,公司等场所就很容易出现冲突,而且一旦出现冲突你还不一定会想到问题出现在Docker网桥IP的问题上,所以当我遇到了这个问题我也是半天才反应过来要修改docker网桥IP,下面看操作 !
+一样 ! 编辑上面的/etc/docker/daemon.json文件,
+{ &amp;#34;registry-mirrors&amp;#34;: [&amp;#34;https://xxxxxxxxxxxx.mirror.aliyuncs.com&amp;#34;], &amp;#34;bip&amp;#34;:&amp;#34;192.168.66.1/24&amp;#34; #换成你想要修改的ip网段 } 需要注意的是这个文件是json,保存的时候检查一下是否是json格式的
+sudo systemctl daemon-reload sudo systemctl restart docker 少侠记得重启加载一下配置文件</description>
+    </item>
+    
+    <item>
+      <title>Docker 中运行 OpenWrt</title>
+      <link>https://jokeme.top/p/run_openwrt_in_docker/</link>
+      <pubDate>Fri, 20 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jokeme.top/p/run_openwrt_in_docker/</guid>
+      <description>Docker 中运行 OpenWrt 前几天解决了小主机 Ubuntu 系统的引导问题以后。便开始折腾 OpenWrt 了，在 GitHub 上找到了 L 大 的 Lede 源码，需要自己编译。
+关于如何编译我也不说了，L 大 在 Readme 里面说的清清楚楚的，没有难度，就是需要有耐心和良好的网络环境，编译过程会很慢(建议扶梯子，我没有用梯子，整整编译了两天才完成！? ? ?) 也可以用我编译好的 x86_64 的固件(集成有ssr,v2ray,adblock plus,samba,vsftpd等常用插件)
+对于编译出来的文件我来介紹一下：
+   openwrt-x86-64-rootfs-squashfs.img OpenWrt for Docker の img     openwrt-x86-64-combined-squashfs.vmdk 虚拟机文件，丢进 VMware 里面使用   openwrt-x86-64-combined-squashfs.img 我们编译的固件，刻录到 u 盘上来安装    我一开始也不知道这些镜像应该选哪一个刻录，然后爬各种论坛终于被我发现了这几个文件的用法了
+好！环境已经没有问题，安装包也有了，那就先在 Docker 里面试试看这个 OpenWrt 怎么样吧
+1 导入 OpenWrt 的镜像 cd ~/lede/bin/targets/x86/64 mkdir -p ~/opt mount -o loop openwrt-x86-64-rootfs-squashfs.</description>
+    </item>
+    
+  </channel>
+</rss>

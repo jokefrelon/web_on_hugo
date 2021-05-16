@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>annotation on JokemeBlog</title>
+    <link>https://jokeme.top/tags/annotation/</link>
+    <description>Recent content in annotation on JokemeBlog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 15 Feb 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://jokeme.top/tags/annotation/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Java 注解的简单学习</title>
+      <link>https://jokeme.top/p/java_annotation/</link>
+      <pubDate>Sat, 15 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jokeme.top/p/java_annotation/</guid>
+      <description>Java 注解（Annotation） Java 注解其实并不难，从名字上你都知道注解是帮助 Java 代码执行的，它的形式跟接口很类似，不过前面多了一个 @ 符号
+1 Java 元注解   @Retention
+Retention 保留期，决定注解的生命时常，取值如下
+     SOURCE 只在源码阶段保留     CLASS 只被保留到编译进行的时候   RUNTIME 注解可以保留到程序运行的时候    eg：该注解被保留到运行时
+@Retention(RetentionPolicy.RUNTIME) public @interface Annotation { } 它的作用是能够将注解中的元素包含到 Javadoc 中去
+Target 指定了注解运用的地方
+   ANNOTATION_TYPE 给一个注解进行注解     CONSTRUCTOR 给构造方法进行注解   FIELD 给属性进行注解   LOCAL_VARIABLE 给局部变量进行注解   METHOD 给方法进行注解   PACKAGE 给包进行注解   PARAMETER 给方法内的参数进行注解   TYPE 给一个类型进行注解，比如类、接口    一个类被 @Inherited 注解过的注解进行注解的话，如果它的子类没有被任何注解应用的话，那么这个子类就继承了该类的注解。</description>
+    </item>
+    
+  </channel>
+</rss>

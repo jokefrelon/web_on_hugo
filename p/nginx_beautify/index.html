@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='Nginx目录美化'><title>Nginx目录美化</title>
+
+<link rel='canonical' href='https://jokeme.top/p/nginx_beautify/'>
+
+<link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='Nginx目录美化'>
+<meta property='og:description' content='Nginx目录美化'>
+<meta property='og:url' content='https://jokeme.top/p/nginx_beautify/'>
+<meta property='og:site_name' content='JokemeBlog'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2021-03-23T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2021-03-23T00:00:00&#43;00:00'/><meta property='og:image' content='https://cn.bing.com/th?id=OHR.WWDLions_EN-CN5288663061_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4' />
+<meta name="twitter:title" content="Nginx目录美化">
+<meta name="twitter:description" content="Nginx目录美化"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://cn.bing.com/th?id=OHR.WWDLions_EN-CN5288663061_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4' />
+    <link rel="shortcut icon" href="/bk3.ico" />
+
+    </head>
+    <body class="">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.body.dataset.scheme = 'dark';
+        } else {
+            document.body.dataset.scheme = 'light';
+        }
+    })();
+</script><div class="container main-container flex on-phone--column extended article-page with-toolbar">
+            <aside class="sidebar left-sidebar sticky">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header class="site-info">
+        
+            <figure class="site-avatar">
+                
+                    
+                    
+                    
+                        
+                        <img src="/author_hud0a2a235bd9bca1ace56b5f54e36a460_15093_300x0_resize_q75_box.jpg" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+
+                
+                    <span class="emoji">🥰</span>
+                
+            </figure>
+        
+        <h1 class="site-name"><a href="https://jokeme.top">JokemeBlog</a></h1>
+        <h2 class="site-description">人生没有白走的路,每一步都算数。</h2>
+    </header>
+
+    <ol class="menu" id="main-menu">
+        
+        
+        
+
+        <li >
+            <a href='/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>Home</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/about/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>About</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/archives/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/search/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+
+        
+            <li id="dark-mode-toggle">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <span>暗色模式</span>
+            </li>
+        
+    </ol>
+</aside>
+
+            <main class="main full-width">
+    <div id="article-toolbar">
+        <a href="https://jokeme.top" class="back-home">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="15 6 9 12 15 18" />
+</svg>
+
+
+
+            <span>Back</span>
+        </a>
+    </div>
+
+    <article class="has-image main-article">
+    <header class="article-header">
+        <div class="article-image">
+            <a href="/p/nginx_beautify/">
+                
+                    <img src="https://cn.bing.com/th?id=OHR.WWDLions_EN-CN5288663061_UHD.jpg&amp;pid=hp&amp;w=1080&amp;h=720&amp;rs=1&amp;c=4" loading="lazy" alt="Featured image of post Nginx目录美化" />
+                
+            </a>
+        </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/nginx/" >
+                Nginx
+            </a>
+        
+    </header>
+    
+
+    <h2 class="article-title">
+        <a href="/p/nginx_beautify/">Nginx目录美化</a>
+    </h2>
+
+    
+    <h3 class="article-subtitle">
+        Nginx目录美化
+    </h3>
+    <footer class="article-time">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+        <time class="article-time--published">Mar 23, 2021</time>
+    </footer></div>
+</header>
+
+    <section class="article-content">
+    <h1 id="nginx目录美化">Nginx目录美化</h1>
+<p>我们大家都知道啊! nginx是一个高性能的Web服务器,用于分享文件也是一个非常不错的选择,但是由于Nginx默认的目录太丑了, 都不好意思拿出手。这就有了本篇文章。</p>
+<p>先来说一下我的环境: <code>Ubuntu 20.04.1</code> ，<code>Nginx 1.18</code></p>
+<h2 id="1-添加indexhtml至主机根目录">1. 添加Index.html至主机根目录</h2>
+<pre><code>nano index.html
+</code></pre><p>内容如下</p>
+<pre><code>&lt;!-- autoindex.html 21.02, see https://phus.lu --&gt;
+&lt;script&gt;
+!function(){
+	var website_title = ''
+	var datetime_format = '%Y-%b-%d %H:%M'
+	var show_readme_md = true
+	var enable_footer_js = true
+	var max_name_length = 20
+
+	var dom = {
+		element: null,
+		get: function (o) {
+			var obj = Object.create(this)
+			obj.element = (typeof o == &quot;object&quot;) ? o : document.createElement(o)
+			return obj
+		},
+		add: function (o) {
+			var obj = dom.get(o)
+			this.element.appendChild(obj.element)
+			return obj
+		},
+		text: function (t) {
+			this.element.appendChild(document.createTextNode(t))
+			return this
+		},
+		html: function (s) {
+			this.element.innerHTML = s
+			return this
+		},
+		attr: function (k, v) {
+			this.element.setAttribute(k, v)
+			return this
+		}
+	}
+
+	head = dom.get(document.head)
+	head.add('meta').attr('charset', 'utf-8')
+	head.add('meta').attr('name', 'viewport').attr('content', 'width=device-width,initial-scale=1')
+
+	if (!document.title) {
+		document.write([&quot;&lt;div class=\&quot;container\&quot;&gt;&quot;,
+		&quot;&lt;h3&gt;nginx.conf&lt;/h3&gt;&quot;,
+		&quot;&lt;textarea rows=8 cols=50&gt;&quot;,
+		&quot;# download autoindex.html to /wwwroot/&quot;,
+		&quot;location ~ ^(.*)/$ {&quot;,
+		&quot;    charset utf-8;&quot;,
+		&quot;    autoindex on;&quot;,
+		&quot;    autoindex_localtime on;&quot;,
+		&quot;    autoindex_exact_size off;&quot;,
+		&quot;    add_after_body /autoindex.html;&quot;,
+		&quot;}&quot;,
+		&quot;&lt;/textarea&gt;&quot;,
+		&quot;&lt;/div&gt;&quot;].join(&quot;\n&quot;))
+		return
+	}
+
+	var bodylines = document.body.innerHTML.split('\n')
+	document.body.innerHTML = ''
+
+	var titlehtml = document.title.replace(/\/$/, '').split('/').slice(1).reduce(function(acc, v, i, a) {
+		return acc + '&lt;a href=&quot;/' + a.slice(0, i+1).join('/') + '/&quot;&gt;' + v + '&lt;/a&gt;/'
+	}, '&lt;a href=&quot;/&quot;&gt;Index&lt;/a&gt; of /')
+	if (website_title) {
+		document.title = website_title + ' - ' + document.title
+	}
+	head.add('meta').attr('name', 'description').attr('content', document.title)
+
+	div = dom.get('div').attr('class', 'container')
+	div.add('table').add('tbody').add('tr').add('th').html(titlehtml)
+	tbody = div.add('table').attr('class', 'table-hover').add('tbody')
+
+	names = ['Name', 'Date', 'Size']
+	thead = tbody.add('tr')
+	for (i = 0; i &lt; names.length; i++)
+		thead.add('td').add('a').attr('href', 'javascript:sortby('+i+')').attr('class', 'octicon arrow-up').text(names[i]);
+
+	var insert = function(filename, datetime, size) {
+		if (/\/$/.test(filename)) {
+			css = 'file-directory'
+			size = ''
+		} else if (/\.(zip|7z|bz2|gz|tar|tgz|tbz2|xz|cab)$/.test(filename)) {
+			css = 'file-zip'
+		} else if (/\.(py|js|php|pl|rb|sh|bash|lua|sql|go|rs|java|c|h|cpp|cxx|hpp|css|html|)$/.test(filename)) {
+			css = 'file-code'
+		} else if (/\.(jpg|png|bmp|gif|ico|webp)$/.test(filename)) {
+			css = 'file-media'
+		} else if (/\.(flv|mp4|mkv|avi|mkv|vp9|m3u8)$/.test(filename)) {
+			css = 'device-camera-video'
+		} else {
+			css = 'file'
+		}
+
+		displayname = decodeURIComponent(filename.replace(/\/$/, ''))
+		if (displayname.length &gt; max_name_length)
+			displayname = displayname.substring(0, max_name_length-3) + '..&gt;';
+
+		if (!isNaN(Date.parse(datetime))) {
+			d = new Date(datetime)
+			pad = function (s) {return s &lt; 10 ? '0' + s : s}
+			mon = function (m) {return ['01','02','03','04','05','06','07','08','09','10','11','12'][m]}
+			datetime = datetime_format
+					.replace('%Y', d.getFullYear())
+					.replace('%m', pad(d.getMonth()+1))
+					.replace('%d', pad(d.getDate()))
+					.replace('%H', pad(d.getHours()))
+					.replace('%M', pad(d.getMinutes()))
+					.replace('%S', pad(d.getSeconds()))
+					.replace('%b', mon(d.getMonth()))
+		}
+
+		tr = tbody.add('tr')
+		tr.add('td').add('a').attr('class', 'octicon ' + css).attr('href', filename).text(displayname)
+		tr.add('td').text(datetime)
+		tr.add('td').text(size)
+	}
+
+	var readme = '', footer = ''
+	insert('../', '', '-')
+	for (var i in bodylines) {
+		if (m = /\s*&lt;a href=&quot;(.+?)&quot;&gt;(.+?)&lt;\/a&gt;\s+(\S+)\s+(\S+)\s+(\S+)\s*/.exec(bodylines[i])) {
+			filename = m[1]
+			datetime = m[3] + ' ' + m[4]
+			size = m[5]
+			insert(filename, datetime, size)
+			switch (filename.toLowerCase()) {
+			case 'readme.md':
+				readme = filename
+				break
+			case 'footer.js':
+				footer = filename
+				break
+			}
+		}
+	}
+
+	document.body.appendChild(div.element)
+
+	if (show_readme_md &amp;&amp; readme !== '') {
+		tbody = div.add('table').add('tbody');
+		tbody.add('tr').add('th').attr('class', 'octicon octicon-book').text(readme)
+		tbody.add('tr').add('td').add('div').attr('id', 'readme').attr('class', 'markdown-body')
+		xhr = new XMLHttpRequest()
+		xhr.open('GET', location.pathname.replace(/[^/]+$/, '')+readme, true)
+		xhr.onload = function() {
+			if (xhr.status &lt; 200 &amp;&amp; xhr.status &gt;= 400)
+				return
+			wait = function (name, callback) {
+				var interval = 10; // ms
+				window.setTimeout(function() {
+					if (window[name]) {
+						callback(window[name])
+					} else {
+						window.setTimeout(arguments.callee, interval)
+					}
+				}, interval)
+			}
+			wait('marked', function() {
+				document.getElementById(&quot;readme&quot;).innerHTML = marked(xhr.responseText)
+			})
+		}
+		xhr.send()
+
+		div.add('script').attr('src', 'https://cdn.staticfile.org/marked/0.7.0/marked.min.js')
+		div.add('link').attr('rel', 'stylesheet').attr('href', 'https://cdn.staticfile.org/github-markdown-css/3.0.1/github-markdown.min.css')
+	}
+
+	if (enable_footer_js &amp;&amp; footer !== '') {
+		div.add('script').attr('src', footer)
+	}
+}()
+
+function sortby(index) {
+	rows = document.getElementsByClassName('table-hover')[0].rows
+	link = rows[0].getElementsByTagName('a')[index]
+	arrow = link.className == 'octicon arrow-down' ? 1 : -1
+	link.className = 'octicon arrow-' + (arrow == 1 ? 'up' : 'down');
+	[].slice.call(rows).slice(2).map(function (e, i) {
+		type = e.getElementsByTagName('a')[0].className == 'octicon file-directory' ? 0 : 1
+		text = e.getElementsByTagName('td')[index].innerText
+		if (index === 0) {
+			value = text
+		} else if (index === 1) {
+			value = new Date(text).getTime()
+		} else if (index === 2) {
+			m = {'G':1024*1024*1024, 'M':1024*1024, 'K':1024}
+			value = parseInt(text || 0) * (m[text[text.search(/[KMG]B?$/)]] || 1)
+		}
+		return {type: type, value: value, index: i, html: e.innerHTML}
+	}).sort(function (a, b) {
+		if (a.type != b.type)
+			return a.type - b.type
+		if (a.value != b.value)
+			return a.value &lt; b.value ? -arrow : arrow
+		return a.index &lt; b.index ? -arrow : arrow
+	}).forEach(function (e, i) {
+		rows[2+i].innerHTML = e.html
+	})
+}
+&lt;/script&gt;
+
+&lt;style&gt;
+body {
+	margin: 0;
+	font-family: &quot;ubuntu&quot;, &quot;Tahoma&quot;, &quot;Microsoft YaHei&quot;, Arial, Serif;
+}
+.container {
+	padding-right: 15px;
+	padding-left: 15px;
+	margin-right: auto;
+	margin-left: auto;
+}
+@media (min-width: 768px) {
+	.container {
+		max-width: 750px;
+	}
+}
+@media (min-width: 992px) {
+	.container {
+		max-width: 970px;
+	}
+}
+@media (min-width: 1200px) {
+	.container {
+		max-width: 1170px;
+	}
+}
+table {
+	width: 100%;
+	margin-bottom: 20px;
+	border: 1px solid #ddd;
+	border-collapse: collapse;
+}
+table th {
+	font-size: 14px;
+}
+table tr {
+	border: 1px solid #ddd;
+}
+table tr:nth-child(odd) {
+	background: #dfdfdf
+}
+table th, table td {
+	border: 1px solid #ddd;
+	line-height: 25px;
+    width:auto;
+	text-align: left;
+}
+a {
+	color: #369;
+	text-decoration: none;
+}
+a:hover, a:focus {
+	color: #2a6496;
+	text-decoration: underline;
+}
+table.table-hover &gt; tbody &gt; tr:hover &gt; td,
+table.table-hover &gt; tbody &gt; tr:hover &gt; th {
+	background-color: #f5f5f5;
+}
+.markdown-body {
+	float: left;
+	font-family: &quot;ubuntu&quot;, &quot;Tahoma&quot;, &quot;Microsoft YaHei&quot;, Arial, Serif;
+}
+/* octicons */
+.octicon {
+	background-position: center left;
+	background-repeat: no-repeat;
+	padding-left: 25px;
+}
+.file {
+	background-image: url(&quot;data:image/png;base64,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&quot;);
+	background-repeat: no-repeat;
+	background-size: 20px 20px;
+}
+.file-directory {
+	background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAYAAADDPmHLAAAFWklEQVR4Xu2ZS2icZRiFzztJ01yMpFYTTU0Fo9GQaVIxShW84i1Jc1Ek4Mp0VxDdKbpSwUVFBLt0VQpu6qK2XqDaagVF0aJIOlWqCKVFoa02wbTNkHHmF4Wu1PzTzvtl5sx3up3O+c/7nIc/pTHoT9QELOrrdTwkQOQSSAAJEDmByM/XG0ACRE4g8vP1BpAAkROI/Hy9ASRA5AQiP19vAAkQOYHIz9cbQAJETiDy8/UGkACRE4j8fL0BJEDkBCI/X28ACRA5gcjPv6g3QLJ3cAKl4vWAddQktwzOIbEjmFv4xLYcy9dkxxorVZYAye6hPmSKbwK4t8b6/1+dBSR42R7NvU7St2o1yxNgb3YRCZqr1vJSH5zBuE3k3r/Ur8fwvVQBkneyL8HwIimM92wqN0HafUVqpwuwZ2AHYDMr0ibEQxoyt9r47LchoushswwBsgeJfvb/exPDczaZe60exgpxQwQC2D6bPDwSAl49ZNa/AEABQK9N5U7Uw2DeN8QgAGDJjE0e2ekNrx7y4hBgTf9J9D/5Qz0MtuwNCU4jwT50nd9pNl0s5944BGi6HLjlWSCzqhwm/H/HMI9SstWuHt+Vdky6AO8OH0IpP5wWVPOf928BOm6q+ZqOBRMsNV5pPY+cWS4zXYAP7/8Fi6e6HYtVJ6r7LuC6seo8u1pPNXvBOse2VSbAgdHzOHu8pVo3uD23rRsYfMYtjiRov3VtfqgyAT4eXcTCcb7fA/zX1RueAi7rIdnOoabhU+vcfJ8EuEBg/Qiw7h4HsiQRrgI0JUBrAjSXgAwJgNhqNrQDrUNA+53Aqk7ATQAca0Z7KTac3PeunQbab3f4EXDwwTzaTqzmphFp+55XPrNrHr+7sn8DfL6pgKb5xkgRcp/d8fBP1re9rzIBvhwsoWEp9f8LuEnVafuW3t9swwdXVSbAV9kS7E8JwOhI07XztvHAGgnAOJ5HZwngQZE4QwIQj+dRXQJ4UCTOkADE43lUlwAeFIkzJADxeB7VJYAHReIMFwG+3lgE8vr9H6MHLgJ8s6mAon4XwLg/JADlbH6lJYAfS8okCUA5m19pCeDHkjJJAlDO5ldaAvixpEySAJSz+ZWWAH4sKZMkAOVsfqUlgB9LyiQJQDmbX2kJ4MeSMkkCUM7mV1oC+LGkTJIAlLP5lZYAfiwpkyQA5Wx+pSWAH0vKJAlAOZtfaQngx5IySQJQzuZXWgL4saRMkgCUs/mVlgB+LCmTJADlbH6lJYAfS8okCUA5m19pCeDHkjJJAlDO5ldaAvixpEySAJSz+ZWWAH4sKZMkAOVsfqUlgB9LyiQJQDmbX2kJ4MeSMkkCUM7mV1oC+LGkTJIAlLP5lZYAfiwpkyQA5Wx+pSWAH0vKJAlAOZtfaQngx5IySQJQzuZXWgL4saRMkgCUs/mVlgB+LCmTJADlbH6lJYAfS8okCUA5m19pCeDHkjLJR4A7CijONVICiL306vVzNvTRFcthsDRGyeHHfsfi98uGpGXo8yoRaBs+agNv3VyZAD8+vQPz+2eqdIIeWwmBtVPPW++2VysS4O8vJ7NjZ5H/ua2SLvruChNoHfrVsrvWpT019UfAPwKcevsGnN69B+e+G0gL1Oc1QKD9ti/Q+MSI3Tj6R1qbsgS4EJKcfKMLZ2a3olToSQvW51Ug0NByFMUHttvA9FK5T78oAcoN1d/jISABeLYK0lQCBMHKEyoBeLYK0lQCBMHKEyoBeLYK0lQCBMHKEyoBeLYK0lQCBMHKEyoBeLYK0lQCBMHKEyoBeLYK0lQCBMHKEyoBeLYK0lQCBMHKEyoBeLYK0lQCBMHKE/oXjq52n+wTU1kAAAAASUVORK5CYII=&quot;);
+	background-repeat: no-repeat;
+	background-size: 20px 20px;
+}
+.file-zip {
+	background-image: url(&quot;data:image/png;base64,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&quot;);
+	background-repeat: no-repeat;
+	background-size: 20px 20px;
+}
+.file-code {
+	background-image: url(&quot;data:image/png;base64,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&quot;);
+	background-repeat: no-repeat;
+	background-size: 20px 20px;
+}
+.file-media {
+	background-image: url(&quot;data:image/png;base64,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&quot;);
+	background-repeat: no-repeat;
+	background-size: 20px 20px;
+}
+.device-camera-video {
+	background: url(&quot;data:image/png;base64,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&quot;);
+	background-repeat: no-repeat;
+	background-size: 20px 20px;
+}
+.octicon-book {
+	padding-left: 20px;
+	background-image: url(&quot;data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3E%3Cpath d='M3,5 L7,5 L7,6 L3,6 L3,5 L3,5 Z M3,8 L7,8 L7,7 L3,7 L3,8 L3,8 Z M3,10 L7,10 L7,9 L3,9 L3,10 L3,10 Z M14,5 L10,5 L10,6 L14,6 L14,5 L14,5 Z M14,7 L10,7 L10,8 L14,8 L14,7 L14,7 Z M14,9 L10,9 L10,10 L14,10 L14,9 L14,9 Z M16,3 L16,12 C16,12.55 15.55,13 15,13 L9.5,13 L8.5,14 L7.5,13 L2,13 C1.45,13 1,12.55 1,12 L1,3 C1,2.45 1.45,2 2,2 L7.5,2 L8.5,3 L9.5,2 L15,2 C15.55,2 16,2.45 16,3 L16,3 Z M8,3.5 L7.5,3 L2,3 L2,12 L8,12 L8,3.5 L8,3.5 Z M15,3 L9.5,3 L9,3.5 L9,12 L15,12 L15,3 L15,3 Z' /%3E%3C/svg%3E&quot;);
+}
+.arrow-down {
+	font-weight: bold;
+	text-decoration: none !important;
+	background-image: url(&quot;data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='16' viewBox='0 0 10 16'%3E%3Cpolygon id='Shape' points='7 7 7 3 3 3 3 7 0 7 5 13 10 7'%3E%3C/polygon%3E%3C/svg%3E&quot;);
+}
+.arrow-up {
+	font-weight: bold;
+	text-decoration: none !important;
+	background-image: url(&quot;data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='16' viewBox='0 0 10 16'%3E%3Cpolygon id='Shape' points='5 3 0 9 3 9 3 13 7 13 7 9 10 9'%3E%3C/polygon%3E%3C/svg%3E&quot;);
+}
+&lt;/style&gt;
+</code></pre><h2 id="2-编辑nginx里的主机配置">2. 编辑Nginx里的主机配置</h2>
+<p>nginx 配置如下</p>
+<pre><code>location ~ ^(.*)/$ {
+    charset utf-8;
+    autoindex on;
+    autoindex_localtime on;
+    autoindex_exact_size off;
+    add_after_body /autoindex.html;
+}
+</code></pre><h2 id="3-重启nginx">3. 重启Nginx</h2>
+<p>这个时候你就会发现默认的目录已经变好看了一丢丢，当然你可以基于这些代码继续更改。直到你满意为止。</p>
+<p>本文参考 ：<a class="link" href="https://www.91yunbbs.com/discussion/441/autoindex-html"  target="_blank" rel="noopener"
+    > <strong>91yun论坛</strong></a> 	侵联删</p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3&#43;Aro6EYUG4&#43;cU&#43;KJWu/X"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js"integrity="sha384-g7c&#43;Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI&#43;sEnkvrMWph2EDg4"crossorigin="anonymous"
+                defer="true"
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC&#43;Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa"crossorigin="anonymous"
+                defer="true"
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+        renderMathInElement(document.querySelector(`.article-content`), {
+            delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "$", right: "$", display: false },
+                { left: "\\(", right: "\\)", display: false },
+                { left: "\\[", right: "\\]", display: true }
+            ]
+        });})
+</script>
+    
+</article>
+
+    <aside class="related-contents--wrapper">
+    
+    
+        <h2 class="section-title">相关文章</h2>
+        <div class="related-contents">
+            <div class="flex article-list--tile">
+                
+                    
+<article class="has-image">
+    <a href="/p/nginx_proxy/">
+        
+        
+            <div class="article-image">
+                
+                    <img src="https://cn.bing.com/th?id=OHR.Molas_EN-CN3740095364_UHD.jpg&amp;pid=hp&amp;w=1080&amp;h=720&amp;rs=1&amp;c=4" loading="lazy" data-key="nginx_proxy" data-hash="https://cn.bing.com/th?id=OHR.Molas_EN-CN3740095364_UHD.jpg&amp;pid=hp&amp;w=1080&amp;h=720&amp;rs=1&amp;c=4"/>
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">学习nginx代理相关的笔记</h2>
+        </div>
+    </a>
+</article>
+                
+            </div>
+        </div>
+    
+</aside>
+
+
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2019 - 
+        
+        2021 JokemeBlog
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="2.3.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer="true"
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer="true"
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css"integrity="sha256-c0uckgykQ9v5k&#43;IqViZOZKc47Jn7KQil4/MP3ySA3F8="crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css"integrity="sha256-SBLU4vv6CA6lHsZ1XyTdhyjJxCjPif/TRkjnsyGAGnE="crossorigin="anonymous"
+            >
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js"integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g="crossorigin="anonymous"
+                defer="false"
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

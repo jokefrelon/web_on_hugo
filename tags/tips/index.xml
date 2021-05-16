@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tips on JokemeBlog</title>
+    <link>https://jokeme.top/tags/tips/</link>
+    <description>Recent content in Tips on JokemeBlog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 15 Nov 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://jokeme.top/tags/tips/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Ubuntu &amp;&amp; Docker 使用建议</title>
+      <link>https://jokeme.top/p/ubuntu_docker_tips/</link>
+      <pubDate>Sun, 15 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jokeme.top/p/ubuntu_docker_tips/</guid>
+      <description>Ubuntu一直是我喜欢用的Linux发行版本,界面简洁,上手简单,用户广泛
+在Ubuntu中使用docker时,一直就有两个问题困扰着我
+1. Ubuntu pull 镜像速度太缓慢 这个问题百度一搜一大把,但是作为个人学习 类型的博客,还是记录一下的好?
+1.1 Aliyun 镜像加速大法 打开aliyun的docker加速登陆页面,虽然操作略微繁琐,但是我个人觉得这是速度最快的也是最稳定的
+然后找到 容器镜像服务 &amp;gt; 镜像加速器 根据提升来操作就可以啦
+其中Docker 1.10.0版本以上的直接就可以在  /etc/docker/daemon.json文件里加上你的专属加速链接
+sudo systemctl daemon-reload sudo systemctl restart docker 少侠记得重启加载一下配置文件
+2. Docker 网桥IP和实际物理IP冲突 虽然这个问题大家不一定会遇到,因为我们使用的大部分的路由器都是192开头的,docker的网桥IP则是选择172开头的,但是在学校,公司等场所就很容易出现冲突,而且一旦出现冲突你还不一定会想到问题出现在Docker网桥IP的问题上,所以当我遇到了这个问题我也是半天才反应过来要修改docker网桥IP,下面看操作 !
+一样 ! 编辑上面的/etc/docker/daemon.json文件,
+{ &amp;#34;registry-mirrors&amp;#34;: [&amp;#34;https://xxxxxxxxxxxx.mirror.aliyuncs.com&amp;#34;], &amp;#34;bip&amp;#34;:&amp;#34;192.168.66.1/24&amp;#34; #换成你想要修改的ip网段 } 需要注意的是这个文件是json,保存的时候检查一下是否是json格式的
+sudo systemctl daemon-reload sudo systemctl restart docker 少侠记得重启加载一下配置文件</description>
+    </item>
+    
+  </channel>
+</rss>

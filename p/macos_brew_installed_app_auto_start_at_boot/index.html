@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='macOS设置brew安装的软件自启动'><title>macOS设置brew安装的软件自启动</title>
+
+<link rel='canonical' href='https://jokeme.top/p/macos_brew_installed_app_auto_start_at_boot/'>
+
+<link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='macOS设置brew安装的软件自启动'>
+<meta property='og:description' content='macOS设置brew安装的软件自启动'>
+<meta property='og:url' content='https://jokeme.top/p/macos_brew_installed_app_auto_start_at_boot/'>
+<meta property='og:site_name' content='JokemeBlog'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='brew' /><meta property='article:published_time' content='2021-02-22T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2021-02-22T00:00:00&#43;00:00'/><meta property='og:image' content='https://cn.bing.com/th?id=OHR.TurfHouse_EN-CN2756398853_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4' />
+<meta name="twitter:title" content="macOS设置brew安装的软件自启动">
+<meta name="twitter:description" content="macOS设置brew安装的软件自启动"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://cn.bing.com/th?id=OHR.TurfHouse_EN-CN2756398853_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4' />
+    <link rel="shortcut icon" href="/bk3.ico" />
+
+    </head>
+    <body class="">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.body.dataset.scheme = 'dark';
+        } else {
+            document.body.dataset.scheme = 'light';
+        }
+    })();
+</script><div class="container main-container flex on-phone--column extended article-page with-toolbar">
+            <aside class="sidebar left-sidebar sticky">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header class="site-info">
+        
+            <figure class="site-avatar">
+                
+                    
+                    
+                    
+                        
+                        <img src="/author_hud0a2a235bd9bca1ace56b5f54e36a460_15093_300x0_resize_q75_box.jpg" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+
+                
+                    <span class="emoji">🥰</span>
+                
+            </figure>
+        
+        <h1 class="site-name"><a href="https://jokeme.top">JokemeBlog</a></h1>
+        <h2 class="site-description">人生没有白走的路,每一步都算数。</h2>
+    </header>
+
+    <ol class="menu" id="main-menu">
+        
+        
+        
+
+        <li >
+            <a href='/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>Home</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/about/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>About</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/archives/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/search/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+
+        
+            <li id="dark-mode-toggle">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <span>暗色模式</span>
+            </li>
+        
+    </ol>
+</aside>
+
+            <main class="main full-width">
+    <div id="article-toolbar">
+        <a href="https://jokeme.top" class="back-home">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="15 6 9 12 15 18" />
+</svg>
+
+
+
+            <span>Back</span>
+        </a>
+    </div>
+
+    <article class="has-image main-article">
+    <header class="article-header">
+        <div class="article-image">
+            <a href="/p/macos_brew_installed_app_auto_start_at_boot/">
+                
+                    <img src="https://cn.bing.com/th?id=OHR.TurfHouse_EN-CN2756398853_UHD.jpg&amp;pid=hp&amp;w=1080&amp;h=720&amp;rs=1&amp;c=4" loading="lazy" alt="Featured image of post macOS设置brew安装的软件自启动" />
+                
+            </a>
+        </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/macos/" >
+                macOS
+            </a>
+        
+    </header>
+    
+
+    <h2 class="article-title">
+        <a href="/p/macos_brew_installed_app_auto_start_at_boot/">macOS设置brew安装的软件自启动</a>
+    </h2>
+
+    
+    <h3 class="article-subtitle">
+        macOS设置brew安装的软件自启动
+    </h3>
+    <footer class="article-time">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+        <time class="article-time--published">Feb 22, 2021</time>
+    </footer></div>
+</header>
+
+    <section class="article-content">
+    <h2 id="1-home-brew-简介">1. Home-brew 简介</h2>
+<p>先介绍一下本篇文章的主角：<strong><a class="link" href="https://brew.sh/"  target="_blank" rel="noopener"
+    >Home-brew</a></strong>，它是一款<strong>macOS</strong>的软件包管理器，当然也同样适用于<strong>Linux</strong>（不会真的有人 Linux 服务器用 brew 吧？）。</p>
+<p>它的官网上有关于 brew 非常详细的文档，大家可以自己去看看。介绍了以后就到了我们的安装环节了！</p>
+<h2 id="2-安装-brew">2. 安装 Brew</h2>
+<p>安装 brew 非常的简单，就需要一条命令就可以了，当然大家 99% 会遇到网络问题，安装过程中建议最好用 v 要不然缓慢的到超时的网络会让你年轻漂亮有活力的 ?！</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">/bin/bash -c <span class="s2">&#34;</span><span class="k">$(</span>curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh<span class="k">)</span><span class="s2">&#34;</span>
+</code></pre></div><h2 id="3-brew-换源">3. brew 换源</h2>
+<p>平时我们执行 brew 命令安装软件的时候，跟以下 3 个仓库地址有关：</p>
+<ol>
+<li>brew.git</li>
+<li>homebrew-core.git</li>
+<li>homebrew-bottles</li>
+</ol>
+<p>通过以下操作将这 3 个仓库地址全部替换为 Alibaba 提供的地址</p>
+<h3 id="1-替换--还原-brewgit-仓库地址">1. 替换 / 还原 brew.git 仓库地址</h3>
+<pre><code># 替换成阿里巴巴的 brew.git 仓库地址:
+cd &quot;$(brew --repo)&quot;
+git remote set-url origin https://mirrors.aliyun.com/homebrew/brew.git
+#=======================================================
+# 还原为官方提供的 brew.git 仓库地址
+cd &quot;$(brew --repo)&quot;
+git remote set-url origin https://github.com/Homebrew/brew.git
+</code></pre><h3 id="2-替换--还原-homebrew-coregit-仓库地址">2. 替换 / 还原 homebrew-core.git 仓库地址</h3>
+<pre><code># 替换成阿里巴巴的 homebrew-core.git 仓库地址:
+cd &quot;$(brew --repo)/Library/Taps/homebrew/homebrew-core&quot;
+git remote set-url origin https://mirrors.aliyun.com/homebrew/homebrew-core.git
+#=======================================================
+# 还原为官方提供的 homebrew-core.git 仓库地址
+cd &quot;$(brew --repo)/Library/Taps/homebrew/homebrew-core&quot;
+git remote set-url origin https://github.com/Homebrew/homebrew-core.git
+</code></pre><h3 id="3-替换--还原-homebrew-bottles-访问地址">3. 替换 / 还原 homebrew-bottles 访问地址</h3>
+<p>这个步骤跟你的 macOS 系统使用的 shell 版本有关系</p>
+<p>所以，先来查看当前使用的 shell 版本</p>
+<pre><code>echo $SHELL
+# 如果你的输出结果是 /bin/zsh，参考?的 zsh 终端操作方式
+# 如果你的输出结果是 /bin/bash，参考?的 bash 终端操作方式
+</code></pre><h4 id="31-zsh-终端操作方式">3.1 zsh 终端操作方式</h4>
+<pre><code># 替换成阿里巴巴的 homebrew-bottles 访问地址:
+echo 'export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.aliyun.com/homebrew/homebrew-bottles' &gt;&gt; ~/.zshrc
+source ~/.zshrc
+#=======================================================
+# 还原为官方提供的 homebrew-bottles 访问地址
+vi ~/.zshrc
+# 然后，删除 HOMEBREW_BOTTLE_DOMAIN 这一行配置
+source ~/.zshrc
+</code></pre><h4 id="32-bash-终端操作方式">3.2 bash 终端操作方式</h4>
+<pre><code># 替换 homebrew-bottles 访问 URL:
+echo 'export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.aliyun.com/homebrew/homebrew-bottles' &gt;&gt; ~/.bash_profile
+source ~/.bash_profile
+#=======================================================
+# 还原为官方提供的 homebrew-bottles 访问地址
+vi ~/.bash_profile
+# 然后，删除 HOMEBREW_BOTTLE_DOMAIN 这一行配置
+source ~/.bash_profile
+</code></pre><h2 id="4-安装软件">4. 安装软件</h2>
+<p>当我们已经配置好国内源时，我们就可以正式使用 brew 来安装一些软件了</p>
+<p>eg：</p>
+<pre><code>JokerMBP L-🌵-轩-🍂-X ~ 
+812 ◯ : brew install nginx                                                ⏎ [~]
+==&gt; Downloading https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles/bottles/ng
+==&gt; Downloading from https://d29vzk4ow07wi7.cloudfront.net/9deda8734db308f21e3c8
+######################################################################## 100.0%
+==&gt; Pouring nginx-1.19.5.big_sur.bottle.tar.gz
+==&gt; Caveats
+Docroot is: /usr/local/var/www
+
+The default port has been set in /usr/local/etc/nginx/nginx.conf to 8080 so that
+nginx can run without sudo.
+
+nginx will load all files in /usr/local/etc/nginx/servers/.
+
+To have launchd start nginx now and restart at login:
+  brew services start nginx
+Or, if you don't want/need a background service you can just run:
+  nginx
+==&gt; Summary
+🍺  /usr/local/Cellar/nginx/1.19.5: 25 files, 2.2MB
+==&gt; `brew cleanup` has not been run in 30 days, running now...
+Pruned 0 symbolic links and 1 directories from /usr/local
+</code></pre><p>可以看到在安装完成后 brew 给了我们很多有用的信息</p>
+<p>我先来总结一下：</p>
+<p>1：<strong>Docroot is: /usr/local/var/www</strong></p>
+<p>默认文档位置在 <strong>/usr/local/var/www</strong></p>
+<p>2：<strong>The default port has been set in /usr/local/etc/nginx/nginx.conf to 8080</strong></p>
+<p>你丫的没有用<strong>sudo</strong>安装，我只能把默认端口给设置为 8080，你丫要是想改默认端口就要修改 <strong>/usr/local/etc/nginx/nginx.conf</strong>里的配置</p>
+<p>3：<strong>To have launchd start nginx now and restart at login: brew services start nginx</strong></p>
+<p>你小子要想让 nginx 开机自启动就要运行： <code>brew services start nginx</code></p>
+<p>4：<strong>if you don&rsquo;t want/need a background service you can just run: nginx</strong></p>
+<p>你小子 <del>要死</del> 要是想让 nginx 不开机自启动，直接运行命令： <code>nginx</code> 就可以了。</p>
+<p>就这一小段话，如果你没有注意，或者直接忽略了，那你可能在以后的使用过程中就会遇到很多的麻烦事！而且百度还可能找不到问题的答案！所以我就建议大家在安装完软件以后留意一下这个<strong>Tips</strong>。</p>
+<h2 id="5-设置软件开机自启">5. 设置软件开机自启</h2>
+<p>既然 brew 可以设置开机自启动那这篇文章还有啥意义？</p>
+<p>其实只是想让大家了解 macOS 开机自启的原理而已</p>
+<p>现在大家应该都知道了 brew 安装软件的具体位置了，没错就是在 <code>/usr/local/Cellar</code> 文件夹下面，比如说我安装的 nginx 就在 <code>/usr/local/Cellar/nginx/</code> 下面。我们不妨看看文件夹里面有啥：</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">JokerMBP L-?-轩-?-X /usr/local/Cellar/nginx 
+<span class="m">978</span> ◯ : ls 1.19.5                                                                                                                                                                                                                       total <span class="m">640</span>
+-rw-r--r--  <span class="m">1</span> frelon  staff   300K <span class="m">11</span> <span class="m">24</span> 23:06 CHANGES
+-rw-r--r--  <span class="m">1</span> frelon  staff   791B  <span class="m">2</span> <span class="m">22</span> 20:09 INSTALL_RECEIPT.json
+-rw-r--r--  <span class="m">1</span> frelon  staff   1.4K <span class="m">11</span> <span class="m">24</span> 23:06 LICENSE
+-rw-r--r--  <span class="m">1</span> frelon  staff    49B <span class="m">11</span> <span class="m">24</span> 23:06 README
+drwxr-xr-x  <span class="m">3</span> frelon  staff    96B <span class="m">11</span> <span class="m">24</span> 23:06 bin
+-rw-r--r--  <span class="m">1</span> frelon  staff   571B  <span class="m">2</span> <span class="m">22</span> 20:09 homebrew.mxcl.nginx.plist
+lrwxr-xr-x  <span class="m">1</span> frelon  staff    16B  <span class="m">2</span> <span class="m">22</span> 20:09 html -&gt; ../../../var/www
+drwxr-xr-x  <span class="m">4</span> frelon  staff   128B <span class="m">11</span> <span class="m">24</span> 23:06 share
+</code></pre></div><p>可以看到啊，哪里有一个显眼的 ==.plist== 结尾的文件，此时此刻我相信大家心里面肯定有答案了，开机自启动肯定和这个文件有着千丝万缕的关系。大家不要急哈，一步一步来！先把这个文件软连接到 <code>/Library/LaunchAgents/</code> 目录下，然后就可以执行</p>
+<pre><code>launchctl load /Library/LaunchAgents/homebrew.mxcl.xxx.plist
+</code></pre><p>此时此刻这个软件就可以开机自启了！要知道有一些小众软件并不能通过 brew 安装，我们只能手动编译安装，这个时候如果我们想要使它开机自启动怎么办？没有了 brew 是不是突然就不知所措了！其实这个 ==.plist== 文件我们自己也是可以手动编写的，我们再通过上面的步骤是不是就可以很容易的就让一个自己编译的软件开机自启动了。</p>
+<p>本文参考博客园用户：<a class="link" href="https://www.cnblogs.com/wuygblog/"  target="_blank" rel="noopener"
+    >wygbbb</a> &amp; <a class="link" href="https://www.cnblogs.com/tulintao/"  target="_blank" rel="noopener"
+    >tulintao</a> 的文章而写，侵联删。</p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/brew/">brew</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3&#43;Aro6EYUG4&#43;cU&#43;KJWu/X"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js"integrity="sha384-g7c&#43;Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI&#43;sEnkvrMWph2EDg4"crossorigin="anonymous"
+                defer="true"
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC&#43;Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa"crossorigin="anonymous"
+                defer="true"
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+        renderMathInElement(document.querySelector(`.article-content`), {
+            delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "$", right: "$", display: false },
+                { left: "\\(", right: "\\)", display: false },
+                { left: "\\[", right: "\\]", display: true }
+            ]
+        });})
+</script>
+    
+</article>
+
+    <aside class="related-contents--wrapper">
+    
+    
+</aside>
+
+
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2019 - 
+        
+        2021 JokemeBlog
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="2.3.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer="true"
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer="true"
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css"integrity="sha256-c0uckgykQ9v5k&#43;IqViZOZKc47Jn7KQil4/MP3ySA3F8="crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css"integrity="sha256-SBLU4vv6CA6lHsZ1XyTdhyjJxCjPif/TRkjnsyGAGnE="crossorigin="anonymous"
+            >
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js"integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g="crossorigin="anonymous"
+                defer="false"
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

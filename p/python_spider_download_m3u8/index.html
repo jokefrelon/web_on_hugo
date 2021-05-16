@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='Python 爬虫抓取m3u8播放源'><title>Python 爬虫抓取m3u8播放源</title>
+
+<link rel='canonical' href='https://jokeme.top/p/python_spider_download_m3u8/'>
+
+<link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='Python 爬虫抓取m3u8播放源'>
+<meta property='og:description' content='Python 爬虫抓取m3u8播放源'>
+<meta property='og:url' content='https://jokeme.top/p/python_spider_download_m3u8/'>
+<meta property='og:site_name' content='JokemeBlog'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='spider' /><meta property='article:tag' content='m3u8' /><meta property='article:published_time' content='2020-07-01T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2020-07-01T00:00:00&#43;00:00'/><meta property='og:image' content='https://cn.bing.com/th?id=OHR.Parrotfish_EN-CN1212515803_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4' />
+<meta name="twitter:title" content="Python 爬虫抓取m3u8播放源">
+<meta name="twitter:description" content="Python 爬虫抓取m3u8播放源"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://cn.bing.com/th?id=OHR.Parrotfish_EN-CN1212515803_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4' />
+    <link rel="shortcut icon" href="/bk3.ico" />
+
+    </head>
+    <body class="">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.body.dataset.scheme = 'dark';
+        } else {
+            document.body.dataset.scheme = 'light';
+        }
+    })();
+</script><div class="container main-container flex on-phone--column extended article-page with-toolbar">
+            <aside class="sidebar left-sidebar sticky">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header class="site-info">
+        
+            <figure class="site-avatar">
+                
+                    
+                    
+                    
+                        
+                        <img src="/author_hud0a2a235bd9bca1ace56b5f54e36a460_15093_300x0_resize_q75_box.jpg" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+
+                
+                    <span class="emoji">🥰</span>
+                
+            </figure>
+        
+        <h1 class="site-name"><a href="https://jokeme.top">JokemeBlog</a></h1>
+        <h2 class="site-description">人生没有白走的路,每一步都算数。</h2>
+    </header>
+
+    <ol class="menu" id="main-menu">
+        
+        
+        
+
+        <li >
+            <a href='/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>Home</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/about/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>About</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/archives/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/search/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+
+        
+            <li id="dark-mode-toggle">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <span>暗色模式</span>
+            </li>
+        
+    </ol>
+</aside>
+
+            <main class="main full-width">
+    <div id="article-toolbar">
+        <a href="https://jokeme.top" class="back-home">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="15 6 9 12 15 18" />
+</svg>
+
+
+
+            <span>Back</span>
+        </a>
+    </div>
+
+    <article class="has-image main-article">
+    <header class="article-header">
+        <div class="article-image">
+            <a href="/p/python_spider_download_m3u8/">
+                
+                    <img src="https://cn.bing.com/th?id=OHR.Parrotfish_EN-CN1212515803_UHD.jpg&amp;pid=hp&amp;w=1080&amp;h=720&amp;rs=1&amp;c=4" loading="lazy" alt="Featured image of post Python 爬虫抓取m3u8播放源" />
+                
+            </a>
+        </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/python/" >
+                Python
+            </a>
+        
+    </header>
+    
+
+    <h2 class="article-title">
+        <a href="/p/python_spider_download_m3u8/">Python 爬虫抓取m3u8播放源</a>
+    </h2>
+
+    
+    <h3 class="article-subtitle">
+        Python 爬虫抓取m3u8播放源
+    </h3>
+    <footer class="article-time">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+        <time class="article-time--published">Jul 01, 2020</time>
+    </footer></div>
+</header>
+
+    <section class="article-content">
+    <h1 id="python-爬虫抓取播放源m3u8">Python 爬虫抓取播放源(m3u8)</h1>
+<p>今天没有事的时候在捯饬 <a class="link" href="https://apps.apple.com/cn/app/id1455092592"  target="_blank" rel="noopener"
+    >dotPlayer</a> [IOS 平台 APP/￥ 收费] 时发现这个东西是个宝贝呀！可以看 m3u8 格式的视频，这都不是重点，重点是使用起来非常舒服，虽然直接复制 m3u8 链接到 Safari 也可以播放，但是 <strong>dotPlayer</strong> 还可以有封面和标题！这两者体验可谓是天差地别(我没有收钱哈！我是真的觉得好用，希望 dotplayer 的作者看到了打一下广告费！)</p>
+<p>具体可以看</p>
+<p>简书作者： <a class="link" href="https://www.jianshu.com/u/cac586f07bd4"  target="_blank" rel="noopener"
+    >NickXXXXXXXX</a> 给出的图片简介</p>
+<p>GitHub 上的 <a class="link" href="https://github.com/frozenthrone/dotplayer/blob/master/help_zh.md"  target="_blank" rel="noopener"
+    >help_zh.md</a> 给出的使用简介</p>
+<p>这都不是我们需要关注の重点，重点是<strong>这款 app 是用来播放 m3u8 流の</strong></p>
+<p>播放视频很简单，可是这 <strong>m3u8</strong> 文件从哪里来呢？??</p>
+<ol>
+<li>去 <code>Telegram</code> 加入组群 <a class="link" href="https://t.me/dotplayer"  target="_blank" rel="noopener"
+    >dotPlayer</a> ,群里经常会分享相关的订阅</li>
+<li>自己动手丰衣足食</li>
+</ol>
+<p>这次用的爬虫和上一次一模一样，只是我优化了一下过程，就随便讲讲吧</p>
+<pre><code> #coding=utf-8  
+ import requests  
+ from lxml import etree  
+ import time  
+ import datetime  
+ import re  
+ ​  
+ def makeUrl(Num):  
+  # Num为html的页数  
+  allinks=[]  
+  for link in range(1,Num+1):  
+  link=&quot;https://www.xxxx.com/xzy{}&quot;.format(link)  
+  allinks.append(link)  
+  return allinks  
+ ​  
+ def getRealUrl(fakeUrl):  
+  webPage = requests.get(  
+  url=fakeUrl,  
+  headers={&quot;User-Agent&quot;: &quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36&quot;}  
+  )  
+  indexPage=webPage.text  
+  indexHtml=etree.HTML(indexPage)  
+  nextPageUrl=indexHtml.xpath(&quot;//div[@id='posts']/div[@class='post grid']/h3/a/@href&quot;)  
+  picurls=indexHtml.xpath(&quot;//div[@class='img']/a/img/@data-src&quot;)  
+  Set = []  
+  Set.append(nextPageUrl)  
+  Set.append(picurls)  
+  return Set  
+ ​  
+ def ownSource(realUrl):  
+  webPagess = requests.get(  
+  url=realUrl,  
+  headers={&quot;User-Agent&quot;: &quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36&quot;}  
+  )  
+  indexPagess=webPagess.text  
+  indexHtmlss=etree.HTML(indexPagess)  
+  title=indexHtmlss.xpath(&quot;//header/h1/text()&quot;)  
+  source=indexHtmlss.xpath(&quot;//div[@class='article-content']/div/@data-item&quot;)  
+  finalUrl = []  
+  finalUrl.append(title)  
+  finalUrl.append(source)  
+  return finalUrl  
+ ​  
+ Derailed = makeUrl(110)  
+ for iPhoneSE in Derailed:  
+     
+  ceo = getRealUrl(iPhoneSE)  
+  qq = ceo[0]  
+  a=0  
+  for SourceUrl in qq:  
+  helloWorld = ownSource(SourceUrl)  
+     
+  MUlink=helloWorld[1][0]  
+  realMULinks=MUlink.split('&quot;')  
+  realMULink=realMULinks[5].replace(&quot;\\&quot;,&quot;&quot;)  
+  title=helloWorld[0][0].replace(&quot; &quot;,&quot;&quot;)  
+  thePicUrl = ceo[1][a]  
+ ​  
+  p=re.compile(r&quot;[-,$()#+&amp;*' ]&quot;)  
+  lastTitle=re.sub(p,&quot;&quot;,title)  
+     
+  str ='{\n'+'&quot;name&quot;:&quot;'+lastTitle+'&quot;,\n'+'&quot;logo&quot;:&quot;'+thePicUrl+'&quot;,\n'+'&quot;url&quot;:&quot;'+realMULink+'&quot;\n'+'},\n'  
+  with open (&quot;weicha8.json&quot;,&quot;a+&quot;,encoding='utf-8') as f:  
+  f.write(str)  
+  a+=1  
+  print(str)  
+  print(a)  
+  print(datetime.datetime.now())  
+  time.sleep(1)
+</code></pre><p>整体分为三个部分：</p>
+<pre><code> def makeUrl(Num):  
+ def getRealUrl(fakeUrl):  
+ def ownSource(realUrl):
+</code></pre><h3 id="1-def-makeurlnum">1. def makeUrl(Num):</h3>
+<p>该函数，接收一个 <code>int</code> 类型的参数， <strong>return</strong> 一个 <code>字符串列表</code></p>
+<p>这部分就是分析页面链接？的规则，在本地生成 <strong>URL</strong> ,并返回给下一个函数处理， 爬虫能在本地干的就经量在本地完成，不过度占用服务器的资源，不给站长添堵！ 这也是为了自己好？?? 俗话说的好：爬虫学的好！ &hellip; &hellip;</p>
+<h3 id="2-def-getrealurlfakeurl">2. def getRealUrl(fakeUrl):</h3>
+<p>该函数，接收一个 <code>字符串列表</code>  <strong>return</strong> 一个 <code>嵌套列表</code></p>
+<p>这部分就是接收到上面生成の <strong>URL</strong> ,访问并分析网页结构。拿到视频的 <strong>封面</strong>  <strong>真实播放页</strong> の URL,并且返回给下一个函数来执行</p>
+<h3 id="3-def-ownsourcerealurl">3. def ownSource(realUrl):</h3>
+<p>该函数，接收一个 <code>嵌套列表</code>  <strong>return</strong> 一个 <code>嵌套列表</code></p>
+<p>这部分也很简单，接收上面来的链接，一个一个的访问，拿到 <strong>标题</strong>  <strong>播放 URL</strong> ,然后返回一个 <code>嵌套列表</code></p>
+<h3 id="4-编写代码">4. 编写代码</h3>
+<p>函数已经写好了，我们自己调用即可，需要注意循环嵌套的时候不能犯迷糊就可以，最后处理一下所得到の数据，写入本地 JSON 文件就可以了</p>
+<p>虽然我爬虫很菜，但是我在一点点的学习！一起加油吧！!!</p>
+<p>最新代码在 <a class="link" href="https://github.com/jokefrelon/python/blob/master/getM3u8.py"  target="_blank" rel="noopener"
+    >Github</a> 上，这篇文章，以后就不更新了</p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/spider/">spider</a>
+        
+            <a href="/tags/m3u8/">m3u8</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3&#43;Aro6EYUG4&#43;cU&#43;KJWu/X"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js"integrity="sha384-g7c&#43;Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI&#43;sEnkvrMWph2EDg4"crossorigin="anonymous"
+                defer="true"
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC&#43;Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa"crossorigin="anonymous"
+                defer="true"
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+        renderMathInElement(document.querySelector(`.article-content`), {
+            delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "$", right: "$", display: false },
+                { left: "\\(", right: "\\)", display: false },
+                { left: "\\[", right: "\\]", display: true }
+            ]
+        });})
+</script>
+    
+</article>
+
+    <aside class="related-contents--wrapper">
+    
+    
+        <h2 class="section-title">相关文章</h2>
+        <div class="related-contents">
+            <div class="flex article-list--tile">
+                
+                    
+<article class="has-image">
+    <a href="/p/python_spider_download_bing_wallpaper/">
+        
+        
+            <div class="article-image">
+                
+                    <img src="https://cn.bing.com/th?id=OHR.TheWave_EN-CN9165010424_UHD.jpg&amp;pid=hp&amp;w=1080&amp;h=720&amp;rs=1&amp;c=4" loading="lazy" data-key="python_spider_download_Bing_wallpaper" data-hash="https://cn.bing.com/th?id=OHR.TheWave_EN-CN9165010424_UHD.jpg&amp;pid=hp&amp;w=1080&amp;h=720&amp;rs=1&amp;c=4"/>
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">利用 Python 爬虫获取 bing.com 每天的高清壁纸</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="has-image">
+    <a href="/p/python_spider/">
+        
+        
+            <div class="article-image">
+                
+                    <img src="https://cn.bing.com/th?id=OHR.BolivianSummer_EN-CN6022233005_UHD.jpg&amp;pid=hp&amp;w=1080&amp;h=720&amp;rs=1&amp;c=4" loading="lazy" data-key="python_spider" data-hash="https://cn.bing.com/th?id=OHR.BolivianSummer_EN-CN6022233005_UHD.jpg&amp;pid=hp&amp;w=1080&amp;h=720&amp;rs=1&amp;c=4"/>
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Python_spider</h2>
+        </div>
+    </a>
+</article>
+                
+            </div>
+        </div>
+    
+</aside>
+
+
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2019 - 
+        
+        2021 JokemeBlog
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="2.3.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer="true"
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer="true"
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css"integrity="sha256-c0uckgykQ9v5k&#43;IqViZOZKc47Jn7KQil4/MP3ySA3F8="crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css"integrity="sha256-SBLU4vv6CA6lHsZ1XyTdhyjJxCjPif/TRkjnsyGAGnE="crossorigin="anonymous"
+            >
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js"integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g="crossorigin="anonymous"
+                defer="false"
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

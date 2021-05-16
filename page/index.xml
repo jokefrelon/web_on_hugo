@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Pages on JokemeBlog</title>
+    <link>https://jokeme.top/page/</link>
+    <description>Recent content in Pages on JokemeBlog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 20 Dec 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://jokeme.top/page/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>About</title>
+      <link>https://jokeme.top/about/</link>
+      <pubDate>Fri, 20 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jokeme.top/about/</guid>
+      <description>  👋 Hi, I’m frelon
+  🎓21-year-old college student.
+  👀 I’m interested in linux and anything about code.
+  📫 How to reach me : jokerlee@gmail.com
+  🐥 实际上我是一个菜鸡,对于code还只处于最最最入门的级别,没有写过啥特别牛皮的代码.
+  🍚 我是一个干饭人!如果贵公司愿意收了我,我一定拼尽全力为贵公司写bug写代码
+  </description>
+    </item>
+    
+    <item>
+      <title>Archives</title>
+      <link>https://jokeme.top/archives/</link>
+      <pubDate>Tue, 28 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jokeme.top/archives/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Search</title>
+      <link>https://jokeme.top/search/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jokeme.top/search/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

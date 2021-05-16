@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>vsftpd on JokemeBlog</title>
+    <link>https://jokeme.top/tags/vsftpd/</link>
+    <description>Recent content in vsftpd on JokemeBlog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 01 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://jokeme.top/tags/vsftpd/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Ubuntu 20.04.2 配置 vsftpd 的脑坑</title>
+      <link>https://jokeme.top/p/linux_vsftpd/</link>
+      <pubDate>Mon, 01 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://jokeme.top/p/linux_vsftpd/</guid>
+      <description>Ubuntu 20.04.2 配置 vsftpd 的脑坑 今天是 2020-03-01 02:13:13，刚结束了我在我哥饭店帮忙的欢乐时光，刚下班回来的我就准备掏出我的大宝贝好好的爽一爽，毕竟大半个月都没有咋用我的电脑了。因为之前刚换的Ubuntu20还有好多东西没有配置好，我就想着今天晚上把 ftp 整一下，然后就遇到了我特别尴尬的一幕，记录一下。
+安装 VsFtpd sudo apt install vsftpd 这一步毫无争议，没啥可说。略
+配置文件 sudo cp /etc/vsftpd.conf /etc/vsftpd.conf.bk sudo nano /etc/vsftpd.conf listen=NO listen_ipv6=YES anonymous_enable=NO local_enable=YES write_enable=YES allow_writeable_chroot=YES local_root=/home/frelon dirmessage_enable=YES use_localtime=YES xferlog_enable=YES connect_from_port_20=YES ascii_upload_enable=YES ascii_download_enable=YES ls_recurse_enable=YES secure_chroot_dir=/var/run/vsftpd/empty pam_service_name=vsftpd rsa_cert_file=/etc/ssl/certs/ssl-cert-snakeoil.pem rsa_private_key_file=/etc/ssl/private/ssl-cert-snakeoil.key ssl_enable=NO utf8_filesystem=YES 一样是毫无争议，按照自己喜欢的配置来。
+重启 vsftpd sudo systemctl restart vsftpd 我就特喵的在这一步出现了问题了。因为我平时使用samba比较多，在 Windows 下面映射一下就可以把局域网的 samba 当本地硬盘使，所以我就莫名其妙的输入了 sudo systemctl restart smbd ,我就本能的，条件反射的输入了 smbd，然后我就用我的用户名登陆 ftp，一下子给我整的不自信了，咋回事？这 ftp 咋还不能用呢，卧槽？ftp 出问题啦？我就改了半天的配置文件。甚至允许匿名登陆都特喵的不能用，当时就心态炸了。然后又检查了好几遍配置文件，还把防火墙给关了也于事无用
+我当时甚至怀疑系统出问题啦，还把服务器给重启了一遍（重启的时候我偏偏手贱，把配置文件还原了）,还不能登陆，我就接着改配置文件 ，接着重启 smbd，然后我打算放弃了，觉得这 ftp 是不是出现了 bug。我本来打算去洗澡的，但是心里面又有一点不甘，用手机接着来，当我又一次打算重启 smbd 的时候我突然发现了问题，我特喵的用的是 ftp，我老在这重启 samba 干啥？？？这就像你抓鲁迅关我周树人什么事一样的感觉。我就突然觉得挺对不起我的 samba 的，逮着它就是一顿重启，阿哈哈哈。</description>
+    </item>
+    
+  </channel>
+</rss>

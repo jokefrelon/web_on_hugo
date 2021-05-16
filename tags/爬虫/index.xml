@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>爬虫 on JokemeBlog</title>
+    <link>https://jokeme.top/tags/%E7%88%AC%E8%99%AB/</link>
+    <description>Recent content in 爬虫 on JokemeBlog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 31 Dec 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://jokeme.top/tags/%E7%88%AC%E8%99%AB/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Python_spider</title>
+      <link>https://jokeme.top/p/python_spider/</link>
+      <pubDate>Tue, 31 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jokeme.top/p/python_spider/</guid>
+      <description>Python 爬虫 用python写爬虫其实是比较简单的，主要还是靠第三方的库，常用的有 requests &amp;amp; urllib 至于解析 HTML,我目前使用的是 xpath ,了解了基本操作，咱就试试看吧
+代码附上
+# coding:utf-8 import json import requests from lxml import etree def getWebUrl(uri): webPage = requests.get(url = uri, headers={&amp;#34;User-Agent&amp;#34;:&amp;#34;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36&amp;#34;} ) we = webPage.text ssr = etree.HTML(we) Links = ssr.xpath(&amp;#34;//div/table/tbody/tr/td/p/a/@href&amp;#34;) Str = &amp;#34;http://172.17.150.251&amp;#34; Allinks = [] for se in Links: link = Str+se Allinks.append(link) dicName = {} dicName = {uri:Allinks} return dicName def getInfo(uri): webPage = requests.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='利用 Python 爬虫获取 bing.com 每天的高清壁纸'><title>利用 Python 爬虫获取 bing.com 每天的高清壁纸</title>
+
+<link rel='canonical' href='https://jokeme.top/p/python_spider_download_bing_wallpaper/'>
+
+<link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='利用 Python 爬虫获取 bing.com 每天的高清壁纸'>
+<meta property='og:description' content='利用 Python 爬虫获取 bing.com 每天的高清壁纸'>
+<meta property='og:url' content='https://jokeme.top/p/python_spider_download_bing_wallpaper/'>
+<meta property='og:site_name' content='JokemeBlog'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='spider' /><meta property='article:published_time' content='2020-06-14T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2020-06-14T00:00:00&#43;00:00'/><meta property='og:image' content='https://cn.bing.com/th?id=OHR.TheWave_EN-CN9165010424_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4' />
+<meta name="twitter:title" content="利用 Python 爬虫获取 bing.com 每天的高清壁纸">
+<meta name="twitter:description" content="利用 Python 爬虫获取 bing.com 每天的高清壁纸"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://cn.bing.com/th?id=OHR.TheWave_EN-CN9165010424_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4' />
+    <link rel="shortcut icon" href="/bk3.ico" />
+
+    </head>
+    <body class="">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.body.dataset.scheme = 'dark';
+        } else {
+            document.body.dataset.scheme = 'light';
+        }
+    })();
+</script><div class="container main-container flex on-phone--column extended article-page with-toolbar">
+            <aside class="sidebar left-sidebar sticky">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header class="site-info">
+        
+            <figure class="site-avatar">
+                
+                    
+                    
+                    
+                        
+                        <img src="/author_hud0a2a235bd9bca1ace56b5f54e36a460_15093_300x0_resize_q75_box.jpg" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+
+                
+                    <span class="emoji">🥰</span>
+                
+            </figure>
+        
+        <h1 class="site-name"><a href="https://jokeme.top">JokemeBlog</a></h1>
+        <h2 class="site-description">人生没有白走的路,每一步都算数。</h2>
+    </header>
+
+    <ol class="menu" id="main-menu">
+        
+        
+        
+
+        <li >
+            <a href='/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>Home</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/about/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>About</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/archives/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/search/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+
+        
+            <li id="dark-mode-toggle">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <span>暗色模式</span>
+            </li>
+        
+    </ol>
+</aside>
+
+            <main class="main full-width">
+    <div id="article-toolbar">
+        <a href="https://jokeme.top" class="back-home">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="15 6 9 12 15 18" />
+</svg>
+
+
+
+            <span>Back</span>
+        </a>
+    </div>
+
+    <article class="has-image main-article">
+    <header class="article-header">
+        <div class="article-image">
+            <a href="/p/python_spider_download_bing_wallpaper/">
+                
+                    <img src="https://cn.bing.com/th?id=OHR.TheWave_EN-CN9165010424_UHD.jpg&amp;pid=hp&amp;w=1080&amp;h=720&amp;rs=1&amp;c=4" loading="lazy" alt="Featured image of post 利用 Python 爬虫获取 bing.com 每天的高清壁纸" />
+                
+            </a>
+        </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/python/" >
+                Python
+            </a>
+        
+    </header>
+    
+
+    <h2 class="article-title">
+        <a href="/p/python_spider_download_bing_wallpaper/">利用 Python 爬虫获取 bing.com 每天的高清壁纸</a>
+    </h2>
+
+    
+    <h3 class="article-subtitle">
+        利用 Python 爬虫获取 bing.com 每天的高清壁纸
+    </h3>
+    <footer class="article-time">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+        <time class="article-time--published">Jun 14, 2020</time>
+    </footer></div>
+</header>
+
+    <section class="article-content">
+    <h1 id="利用-python-爬虫获取-bingcom-每天的高清壁纸">利用 Python 爬虫获取 bing.com 每天的高清壁纸</h1>
+<p>众所周知，必应是主力做壁纸の搜索引擎！</p>
+<p>每天都更新搜索页面的背景图片，这些图片也的的确确很好看，那我们要是 ♥心动了，想保存欣赏欣赏怎么办呐？</p>
+<h2 id="方法一直接开发者模式拿图片">方法一：直接开发者模式拿图片</h2>
+<p>这个方法应该是最简单的了， <code>ctrl+ shift+i</code></p>
+<div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html">... ...
+<span class="p">&lt;</span><span class="nt">tbody</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">td</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;hp_cellCenter&#34;</span> <span class="err">...</span> <span class="err">...</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;hp_container&#34;</span> <span class="err">...</span> <span class="err">...</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;bgDiv&#34;</span> <span class="err">...</span> <span class="err">...</span><span class="p">&gt;</span>
+          <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;bgImgProgLoad&#34;</span> <span class="na">data-ultra-definition-src</span><span class="o">=</span><span class="s">&#34;/th?id=OHR.WildflowersBC_EN-CN3359054435_UHD.jpg&amp;rf=LaDigue_UHD.jpg&amp;pid=hp&amp;w=1920&amp;h=1080&amp;rs=1&amp;c=4&#34;</span> <span class="na">data-explicit-bing-load</span><span class="o">=</span><span class="s">&#34;false&#34;</span> <span class="na">data-dynamic-size</span><span class="o">=</span><span class="s">&#34;true&#34;</span><span class="p">&gt;</span>
+            <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+... ...		
+</code></pre></div><p>这个链接 ?就在 <code>&lt;div id=&quot;bgImgProgLoad&quot;</code> の标签里面，复制 <code>data-ultra-definition-src</code> 所对应的值，再在前面补上 <code>cn.bing.com</code> 就可以啦</p>
+<p>不过这种方法下载的图片是被压缩以后的图片，大小也就几百 kb,而如果我们想要下载原图的话，就需要把链接 ?里面第一个 <code>.jpg</code> 后面的字符全给干掉，最终的的 <strong>URL</strong> 应该是： <code>https://cn.bing.com/th?id=OHR.WildflowersBC_EN-CN3359054435_UHD.jpg</code></p>
+<h2 id="方法二python-爬虫">方法二：python 爬虫</h2>
+<p>没有什么好说の,都是最简单的 python 命令，</p>
+<p>运行环境： <code>Linux</code></p>
+<p>Python 版本： <code>Python3</code></p>
+<p>pip 依赖库： <code>requests,lxml</code></p>
+<p>基本上大部分的 <strong>Linux</strong> 都会预装 <strong>Python3</strong> ,所以就从安装 <strong>pip</strong> 开始了</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">sudo apt install python3-pip
+pip3 install lxml
+pip3 install requests
+mkdir -p ~/Bing_pic/pic/
+<span class="nb">cd</span> Bing_pic
+nano xxx.py					<span class="c1">#名字就根据你自己的喜好来吧,把下面的代码粘进去就可以啦</span>
+python3 xxx.py				<span class="c1">#如果没有报错,大功告成啦</span>
+ls pic/						<span class="c1">#看一下下载的壁纸</span>
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1">#coding=utf-8</span>
+<span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">from</span> <span class="nn">lxml</span> <span class="kn">import</span> <span class="n">etree</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="n">webPage</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span> <span class="o">=</span> <span class="s2">&#34;https://cn.bing.com/?FORM=BEHPTB&amp;ensearch=1&#34;</span><span class="p">,</span>
+        <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s2">&#34;User-Agent&#34;</span><span class="p">:</span><span class="s2">&#34;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36&#34;</span><span class="p">}</span>
+        <span class="p">)</span>
+<span class="n">we</span> <span class="o">=</span> <span class="n">webPage</span><span class="o">.</span><span class="n">text</span>
+<span class="n">ssr</span> <span class="o">=</span> <span class="n">etree</span><span class="o">.</span><span class="n">HTML</span><span class="p">(</span><span class="n">we</span><span class="p">)</span>
+<span class="n">Links</span> <span class="o">=</span> <span class="n">ssr</span><span class="o">.</span><span class="n">xpath</span><span class="p">(</span><span class="s2">&#34;//div/div[@id=&#39;bgDiv&#39;]/div/@data-ultra-definition-src&#34;</span><span class="p">)</span>
+<span class="n">Desc</span><span class="o">=</span><span class="n">ssr</span><span class="o">.</span><span class="n">xpath</span><span class="p">(</span><span class="s2">&#34;//a/div/h2/text()&#34;</span><span class="p">)</span>
+
+<span class="n">Str</span><span class="o">=</span><span class="s2">&#34;https://cn.bing.com&#34;</span>
+<span class="n">desc</span><span class="o">=</span><span class="s2">&#34;&#34;</span>
+<span class="n">re</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">sein</span> <span class="ow">in</span> <span class="n">Desc</span><span class="p">:</span>
+        <span class="n">desc</span><span class="o">=</span><span class="n">sein</span>
+<span class="k">print</span><span class="p">(</span><span class="n">desc</span><span class="p">)</span>
+
+<span class="k">for</span>  <span class="n">se</span>  <span class="ow">in</span> <span class="n">Links</span><span class="p">:</span>
+        <span class="n">Str</span> <span class="o">=</span> <span class="n">Str</span><span class="o">+</span><span class="n">se</span>
+        <span class="n">re</span> <span class="o">=</span> <span class="n">Str</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&#34;&amp;&#34;</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">Str</span><span class="o">=</span><span class="n">re</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="k">print</span><span class="p">(</span><span class="n">Str</span><span class="p">)</span>
+
+<span class="n">picfile</span><span class="o">=</span><span class="s2">&#34;/home/jokeme/pic/&#34;</span><span class="o">+</span><span class="n">desc</span><span class="o">+</span><span class="s2">&#34;.jpg&#34;</span>
+<span class="c1">#这里需要根据实际情况修改</span>
+
+<span class="n">picture</span><span class="o">=</span><span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">Str</span><span class="p">)</span>
+<span class="k">with</span> <span class="nb">open</span> <span class="p">(</span><span class="n">picfile</span><span class="p">,</span><span class="s2">&#34;wb+&#34;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">picture</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&#34;Get The Picture of Bing Successfully! &#34;</span><span class="o">+</span><span class="s2">&#34;The Picture in </span><span class="se">\&#34;</span><span class="s2">&#34;</span><span class="o">+</span><span class="n">picfile</span><span class="o">+</span><span class="s2">&#34;</span><span class="se">\&#34;</span><span class="s2">&#34;</span><span class="p">)</span>
+</code></pre></div><p>如果你想每天都自动执行这段代码的话，就可以用 <code>crontab</code> 来定时执行</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">crontab -e
+<span class="m">30</span> <span class="m">0</span> * * * python3 ~/Bing_pic/Bing_spider.py &gt;&gt; ~/Bing_pic/Bing_spider_log.txt
+</code></pre></div><p>这样的话，每天凌晨 12:30 就会自动执行该命令啦</p>
+<p>使用须知：这个脚本爬取的是 <strong>Bing</strong> 国际版的图片，所以当天中午 15:00 以后爬取的图片和第二天中午 15:00 之前爬取的图片一致，也就是第一天会出现这种情况，以后都没有问题的</p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/spider/">spider</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3&#43;Aro6EYUG4&#43;cU&#43;KJWu/X"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js"integrity="sha384-g7c&#43;Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI&#43;sEnkvrMWph2EDg4"crossorigin="anonymous"
+                defer="true"
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC&#43;Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa"crossorigin="anonymous"
+                defer="true"
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+        renderMathInElement(document.querySelector(`.article-content`), {
+            delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "$", right: "$", display: false },
+                { left: "\\(", right: "\\)", display: false },
+                { left: "\\[", right: "\\]", display: true }
+            ]
+        });})
+</script>
+    
+</article>
+
+    <aside class="related-contents--wrapper">
+    
+    
+        <h2 class="section-title">相关文章</h2>
+        <div class="related-contents">
+            <div class="flex article-list--tile">
+                
+                    
+<article class="has-image">
+    <a href="/p/python_spider_download_m3u8/">
+        
+        
+            <div class="article-image">
+                
+                    <img src="https://cn.bing.com/th?id=OHR.Parrotfish_EN-CN1212515803_UHD.jpg&amp;pid=hp&amp;w=1080&amp;h=720&amp;rs=1&amp;c=4" loading="lazy" data-key="python_spider_download_m3u8" data-hash="https://cn.bing.com/th?id=OHR.Parrotfish_EN-CN1212515803_UHD.jpg&amp;pid=hp&amp;w=1080&amp;h=720&amp;rs=1&amp;c=4"/>
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Python 爬虫抓取m3u8播放源</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="has-image">
+    <a href="/p/python_spider/">
+        
+        
+            <div class="article-image">
+                
+                    <img src="https://cn.bing.com/th?id=OHR.BolivianSummer_EN-CN6022233005_UHD.jpg&amp;pid=hp&amp;w=1080&amp;h=720&amp;rs=1&amp;c=4" loading="lazy" data-key="python_spider" data-hash="https://cn.bing.com/th?id=OHR.BolivianSummer_EN-CN6022233005_UHD.jpg&amp;pid=hp&amp;w=1080&amp;h=720&amp;rs=1&amp;c=4"/>
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Python_spider</h2>
+        </div>
+    </a>
+</article>
+                
+            </div>
+        </div>
+    
+</aside>
+
+
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2019 - 
+        
+        2021 JokemeBlog
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="2.3.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer="true"
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer="true"
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css"integrity="sha256-c0uckgykQ9v5k&#43;IqViZOZKc47Jn7KQil4/MP3ySA3F8="crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css"integrity="sha256-SBLU4vv6CA6lHsZ1XyTdhyjJxCjPif/TRkjnsyGAGnE="crossorigin="anonymous"
+            >
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js"integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g="crossorigin="anonymous"
+                defer="false"
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

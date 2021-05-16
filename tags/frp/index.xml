@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>frp on JokemeBlog</title>
+    <link>https://jokeme.top/tags/frp/</link>
+    <description>Recent content in frp on JokemeBlog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 08 Jun 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://jokeme.top/tags/frp/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title> Frp 内网穿透</title>
+      <link>https://jokeme.top/p/frp_penetrate/</link>
+      <pubDate>Mon, 08 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jokeme.top/p/frp_penetrate/</guid>
+      <description>Frp 内网穿透 自打搞一个软路由，我就玩的可带劲了，什么 Linux , Docker , Java 各种技术都被逼提升了很多。 闲话不多说，直接说重点了
+1. 准备工作：  frp-server &amp;amp; frp-client 可以在 GitHub 里下载 域名(需要备案) 有公网 IP の服务器一台  2. 配置 server 端 我是用的是 amd64 架构的，如果和我一样的话可以按我的命令来
+wget https://github.com/fatedier/frp/releases/download/v0.33.0/frp_0.33.0_linux_amd64.tar.gz tar -zxvf frp_0.33.0_linux_amd64.tar.gz mv frp_0.33.0_linux_amd64.tar.gz frp #为了接下来方便一点 cd frp rm frpc* #删除不必要的配置,也可以不删 nano frps.ini [common] bind_port = 7000  #对外提供服务的端口 dashboard_port = 7500 #访问控制板的端口 token = 123456 #token,相对于一个简单的验证 vhost_http_port = 80 #http服务在服务器的代理端口 可以根据自己的喜好设定这些配置
+3. 配置 client 端 wget https://github.</description>
+    </item>
+    
+  </channel>
+</rss>

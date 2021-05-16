@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>NAT on JokemeBlog</title>
+    <link>https://jokeme.top/tags/nat/</link>
+    <description>Recent content in NAT on JokemeBlog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 15 Jul 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://jokeme.top/tags/nat/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>简单解释 NAT</title>
+      <link>https://jokeme.top/p/learn_nat/</link>
+      <pubDate>Wed, 15 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jokeme.top/p/learn_nat/</guid>
+      <description>简单解释 NAT[转自知乎] NAT 大家应该十分熟悉了，它分为几种。一种就叫做 NAT，它只对 IP 地址进行转换；另一种叫做 NAPT（Network Address/Port Translation），它可以对整个会话的端点（由 IP 地址和端口号组成）做转换，这是一种更加常见的 NAT 变种。
+当然了，NAPT 也分为许多种，我们这里就不深入探讨了，大家如果有兴趣可以查阅相关的文献。
+下面就简单介绍一下 NAT 的工作原理：
+首先，NAT A 网下的设备 1（192.168.1.101）想与某公网 IP 通讯，设备 1 将包发给 NAT A，然后 NAT A 对源 IP 进行转换发给 NAT B（中间可能还会经过多重 NAT）。
+这样做的目的是，NAT B 并不知晓 NAT A 下的各个设备，他只能与 NAT A 本身通讯，因此发送给 NAT B 的包源 IP 必须是 NAT A 的公网 IP，不然 NAT B 没有办法进行回复。
+接下来 NAT B 将回复包再发回 NAT A，此时就是 NAT 发挥作用的时候了，NAT A 现在要做的就是将包再分发回之前的设备，如何确定要发给谁呢？NAT 中记录了一张表，之前 192.168.1.101 通过 2333 端口与 42.</description>
+    </item>
+    
+  </channel>
+</rss>
