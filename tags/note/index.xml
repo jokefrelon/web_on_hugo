@@ -6,7 +6,26 @@
     <description>Recent content in Note on JokemeBlog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 21 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://jokeme.top/tags/note/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 18 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://jokeme.top/tags/note/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Clang学习笔记</title>
+      <link>https://jokeme.top/p/clang_note2/</link>
+      <pubDate>Tue, 18 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://jokeme.top/p/clang_note2/</guid>
+      <description>ClangLearn Clang 定义符号常量 在宏中定义符号常量非常简单,格式如下
+#define KEYWORD &amp;#34;String&amp;#34; eg:white_check_mark:下面这句废话!啥也没有干就是替换了一句话.
+#include &amp;lt;stdio.h&amp;gt;#define FRELON &amp;#34;Written By Frelon O(∩_∩)O&amp;#34; int main() { printf(&amp;#34;%s\n&amp;#34;, FRELON); return 0; } Thinking:电脑💻为什么知道字符串常量在哪里该结束呢?万一把后面的代码也 读取为字符串常量了呢?
+其实==Clang==会自动在字符串常量结尾加上一个转义字符\0来表示读取结束.
+Clang 数据类型 graph LR a[数据类型]--&amp;gt;b[基本类型] a[数据类型]--&amp;gt;c[指针类型] a[数据类型]--&amp;gt;e[空白类型] a[数据类型]--&amp;gt;d[构造类型] b--&amp;gt;f(整数类型:int) b--&amp;gt;g(浮点类型:float,double) b--&amp;gt;h(字符类型:char) b--&amp;gt;i(布尔类型:_Bool) d--&amp;gt;j(枚举类型) d--&amp;gt;k(数组类型) d--&amp;gt;l(结构类型) d--&amp;gt;m(联合类型) signed和unsigned的区别
+一般情况下,signed都表示有正负号的区别。而unsigned表示没有负数,只有正数。
+==1Byte=8bit==
+Byte==比特
+Clang字符串 声明字符串:char name[number];
+字符串赋值:name[0]=&amp;lsquo;F&amp;rsquo;;
+char Gage[10]; Gage[0] = &amp;#39;J&amp;#39;; Gage[1] = &amp;#39;a&amp;#39;; Gage[2] = &amp;#39;v&amp;#39;; Gage[3] = &amp;#39;a&amp;#39;; Gage[4] = &amp;#39;N&amp;#39;; Gage[5] = &amp;#39;o&amp;#39;; Gage[6] = &amp;#39;.</description>
+    </item>
+    
     <item>
       <title>记录最近捯饬Linux的收获</title>
       <link>https://jokeme.top/p/linux_reward/</link>
