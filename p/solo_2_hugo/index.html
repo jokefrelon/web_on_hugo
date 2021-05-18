@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='简单介绍为什么要从Solo迁移到hugo,以及迁移过程'><title>从solo迁移到hugo</title>
+
+<link rel='canonical' href='https://jokeme.top/p/solo_2_hugo/'>
+
+<link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='从solo迁移到hugo'>
+<meta property='og:description' content='简单介绍为什么要从Solo迁移到hugo,以及迁移过程'>
+<meta property='og:url' content='https://jokeme.top/p/solo_2_hugo/'>
+<meta property='og:site_name' content='JokemeBlog'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='hugo' /><meta property='article:published_time' content='2021-05-16T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2021-05-16T00:00:00&#43;00:00'/><meta property='og:image' content='https://cn.bing.com/th?id=OHR.Wakodahatchee_EN-CN9780170147_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4' />
+<meta name="twitter:title" content="从solo迁移到hugo">
+<meta name="twitter:description" content="简单介绍为什么要从Solo迁移到hugo,以及迁移过程"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://cn.bing.com/th?id=OHR.Wakodahatchee_EN-CN9780170147_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4' />
+    <link rel="shortcut icon" href="/bk3.ico" />
+
+    </head>
+    <body class="">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.body.dataset.scheme = 'dark';
+        } else {
+            document.body.dataset.scheme = 'light';
+        }
+    })();
+</script><div class="container main-container flex on-phone--column extended article-page with-toolbar">
+            <aside class="sidebar left-sidebar sticky">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header class="site-info">
+        
+            <figure class="site-avatar">
+                
+                    
+                    
+                    
+                        
+                        <img src="/author_hud0a2a235bd9bca1ace56b5f54e36a460_15093_300x0_resize_q75_box.jpg" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+
+                
+                    <span class="emoji">🥰</span>
+                
+            </figure>
+        
+        <h1 class="site-name"><a href="https://jokeme.top">JokemeBlog</a></h1>
+        <h2 class="site-description">人生没有白走的路,每一步都算数。</h2>
+    </header>
+
+    <ol class="menu" id="main-menu">
+        
+        
+        
+
+        <li >
+            <a href='/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>Home</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/about/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>About</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/archives/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/search/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+
+        
+            <li id="dark-mode-toggle">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <span>暗色模式</span>
+            </li>
+        
+    </ol>
+</aside>
+
+            <main class="main full-width">
+    <div id="article-toolbar">
+        <a href="https://jokeme.top" class="back-home">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="15 6 9 12 15 18" />
+</svg>
+
+
+
+            <span>Back</span>
+        </a>
+    </div>
+
+    <article class="has-image main-article">
+    <header class="article-header">
+        <div class="article-image">
+            <a href="/p/solo_2_hugo/">
+                
+                    <img src="https://cn.bing.com/th?id=OHR.Wakodahatchee_EN-CN9780170147_UHD.jpg&amp;pid=hp&amp;w=1080&amp;h=720&amp;rs=1&amp;c=4" loading="lazy" alt="Featured image of post 从solo迁移到hugo" />
+                
+            </a>
+        </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/linux/" >
+                Linux
+            </a>
+        
+    </header>
+    
+
+    <h2 class="article-title">
+        <a href="/p/solo_2_hugo/">从solo迁移到hugo</a>
+    </h2>
+
+    
+    <h3 class="article-subtitle">
+        简单介绍为什么要从Solo迁移到hugo,以及迁移过程
+    </h3>
+    <footer class="article-time">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+        <time class="article-time--published">May 16, 2021</time>
+    </footer></div>
+</header>
+
+    <section class="article-content">
+    <h1 id="博客迁移">博客迁移</h1>
+<p>最近我把我的个人博客从<a class="link" href="https://github.com/88250/solo"  target="_blank" rel="noopener"
+    >solo</a>迁移到了<a class="link" href="https://github.com/gohugoio/hugo"  target="_blank" rel="noopener"
+    >hugo</a>项目上了。</p>
+<p>不是solo不够优秀而是solo不符合我的需求了，我总结了以下几点</p>
+<ol>
+<li>可定制化程度太低，千篇一律，单调枯燥，乏味。</li>
+<li>登录需要用社区账号，不确定因素太大。</li>
+<li>经常更新导致的版本不兼容。</li>
+</ol>
+<p>我也想过给自己偷个懒使用Bolo作为solo的替代品，但是还是不符合我的预期。虽然不需要社区账号登陆，但是他和solo太相似了，以至于我感觉我换了个寂寞。</p>
+<h2 id="1-初识hugo">1. 初识Hugo</h2>
+<p>在我有了迁移博客到其他平台的念想时我就一直在物色新的平台，然后我突然间就在GitHub上看到了hugo。</p>
+<p>一款golang写的软件，可以直接用<strong>markdown</strong>来更新文章，而且主题贼多，数据啥的也都是放自己手里。卧槽，我不就是我想找的吗！</p>
+<h2 id="2-hugo部署">2. Hugo部署</h2>
+<p>其实上面扯了些没用的，到这里才是我的技术博客开始记录的地方。</p>
+<h3 id="21-下载hugo压缩包">2.1 下载hugo压缩包</h3>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">wget https://github.com/gohugoio/hugo/releases/download/v0.83.1/hugo_extended_0.83.1_Linux-64bit.tar.gz -O hugo.tar.gz
+</code></pre></div><p>首先，Github找到<a class="link" href="https://github.com/gohugoio/hugo/releases/download/v0.83.1/hugo_extended_0.83.1_Linux-64bit.tar.gz"  target="_blank" rel="noopener"
+    >hugo</a>的最新版，并且是<strong>extended</strong>版本的，否者我们后续是无法自行修改<strong>scss</strong>的，我一开始就因为这点，整整折腾了一个晚上都无法修改主题为我喜欢的样式。Google了良久才发现这个问题。</p>
+<h3 id="22-解压hugo">2.2 解压hugo</h3>
+<p>这一步是很容易的</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">tar -zxvf hugo.tar.gz
+</code></pre></div><p>然后你可以把没有用的<strong>LIENCE</strong>和<strong>README.md</strong>删除了。只留一个<strong>hugo</strong>的二进制可执行文件。</p>
+<p>并且要把这个二进制文件放在环境变量里面。</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">mv hugo /usr/local/bin
+<span class="c1">#我个人是推荐放这里的，你要是喜欢放别的地方也是可以的</span>
+</code></pre></div><h2 id="3-配置hugo">3. 配置hugo</h2>
+<p>这里我建议你先看看hugo的<a class="link" href="https://gohugo.io/getting-started/"  target="_blank" rel="noopener"
+    ><strong>quick_start</strong></a>，虽然看了和没有看一样，但是这也是一种学习的过程吧。</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">hugo new site site_name
+</code></pre></div><p>到这里你的网站就建立完成了。是不是很惊愕！你甚至连如何运行网站都不了解。</p>
+<p>没事，咱们慢慢来！</p>
+<p>先下载一个好看的<a class="link" href="https://github.com/CaiJimmy/hugo-theme-stack"  target="_blank" rel="noopener"
+    >Theme</a>，当然不下载也可以，但是你没有主题的网站是真的丑呀。</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell"><span class="nb">cd</span> site_name
+wget https://github.com/CaiJimmy/hugo-theme-stack/archive/refs/tags/v2.3.0.zip -O themes/v2.3.0.zip
+<span class="nb">cd</span> themes
+unzip v2.3.0.zip
+mv hugo-theme-stack-2.3.0 hugo-theme-stack
+rm v2.3.0.zip
+</code></pre></div><p>接下来就是配置文件了</p>
+<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">baseurl</span><span class="p">:</span><span class="w"> </span><span class="l">http://example.com</span><span class="w">
+</span><span class="w"></span><span class="c">#根据你自己改</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="nt">languageCode</span><span class="p">:</span><span class="w"> </span><span class="l">en-us</span><span class="w">
+</span><span class="w"></span><span class="nt">theme</span><span class="p">:</span><span class="w"> </span><span class="l">hugo-theme-stack</span><span class="w">
+</span><span class="w"></span><span class="nt">paginate</span><span class="p">:</span><span class="w"> </span><span class="m">20</span><span class="w">
+</span><span class="w"></span><span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="l">Blog</span><span class="w">
+</span><span class="w"></span><span class="c">#根据你自己改</span><span class="w">
+</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="c"># Change it to your Disqus shortname before using</span><span class="w">
+</span><span class="w"></span><span class="c">#disqusShortname: hugo-theme-stack</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="c"># GA Tracking ID</span><span class="w">
+</span><span class="w"></span><span class="c">#googleAnalytics:</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="c"># Theme i18n support</span><span class="w">
+</span><span class="w"></span><span class="c"># Available values: en, fr, id, ja, ko, pt-br, zh-cn, es, de</span><span class="w">
+</span><span class="w"></span><span class="nt">DefaultContentLanguage</span><span class="p">:</span><span class="w"> </span><span class="l">zh-cn</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="nt">permalinks</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="nt">post</span><span class="p">:</span><span class="w"> </span><span class="l">/p/:slug/</span><span class="w">
+</span><span class="w">    </span><span class="nt">page</span><span class="p">:</span><span class="w"> </span><span class="l">/:slug/</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="nt">params</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="nt">mainSections</span><span class="p">:</span><span class="w">
+</span><span class="w">        </span>- <span class="l">post</span><span class="w">
+</span><span class="w">    </span><span class="nt">featuredImageField</span><span class="p">:</span><span class="w"> </span><span class="l">image</span><span class="w">
+</span><span class="w">    </span><span class="nt">rssFullContent</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span><span class="w">    </span><span class="nt">favicon</span><span class="p">:</span><span class="w"> </span><span class="l">/bk3.png</span><span class="w">
+</span><span class="w"></span><span class="c">#根据你自己改</span><span class="w">
+</span><span class="w">
+</span><span class="w">    </span><span class="nt">footer</span><span class="p">:</span><span class="w">
+</span><span class="w">        </span><span class="nt">since</span><span class="p">:</span><span class="w"> </span><span class="m">2019</span><span class="w">
+</span><span class="w">        </span><span class="nt">customText</span><span class="p">:</span><span class="w">
+</span><span class="w">
+</span><span class="w">    </span><span class="nt">dateFormat</span><span class="p">:</span><span class="w">
+</span><span class="w">        </span><span class="nt">published</span><span class="p">:</span><span class="w"> </span><span class="l">Jan 02, 2006</span><span class="w">
+</span><span class="w">        </span><span class="nt">lastUpdated</span><span class="p">:</span><span class="w"> </span><span class="l">Jan 02, 2006 15:04 MST</span><span class="w">
+</span><span class="w">
+</span><span class="w">    </span><span class="nt">sidebar</span><span class="p">:</span><span class="w">
+</span><span class="w">        </span><span class="nt">emoji</span><span class="p">:</span><span class="w"> </span><span class="l">🥰</span><span class="w">
+</span><span class="w">        </span><span class="nt">subtitle</span><span class="p">:</span><span class="w"> </span><span class="l">人生没有白走的路,每一步都算数。</span><span class="w">
+</span><span class="w">        </span><span class="nt">avatar</span><span class="p">:</span><span class="w">
+</span><span class="w">            </span><span class="nt">local</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span><span class="w">            </span><span class="nt">src</span><span class="p">:</span><span class="w"> </span><span class="l">author.jpg</span><span class="w">
+</span><span class="w"></span><span class="c">#根据你自己改</span><span class="w">
+</span><span class="w">
+</span><span class="w">    </span><span class="nt">article</span><span class="p">:</span><span class="w">
+</span><span class="w">        </span><span class="nt">math</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span><span class="w">        </span><span class="nt">license</span><span class="p">:</span><span class="w">
+</span><span class="w">            </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span><span class="w">            </span><span class="nt">default</span><span class="p">:</span><span class="w"> </span><span class="l">Licensed under CC BY-NC-SA 4.0</span><span class="w">
+</span><span class="w">
+</span><span class="w">    </span><span class="nt">comments</span><span class="p">:</span><span class="w">
+</span><span class="w">        </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+</span><span class="w">        </span><span class="nt">provider</span><span class="p">:</span><span class="w"> </span><span class="l">disqus</span><span class="w">
+</span><span class="w"></span><span class="c">#根据你自己改</span><span class="w">
+</span><span class="w">
+</span><span class="w">        </span><span class="nt">utterances</span><span class="p">:</span><span class="w">
+</span><span class="w">            </span><span class="nt">repo</span><span class="p">:</span><span class="w">
+</span><span class="w">            </span><span class="nt">issueTerm</span><span class="p">:</span><span class="w"> </span><span class="l">pathname</span><span class="w">
+</span><span class="w">            </span><span class="nt">label</span><span class="p">:</span><span class="w">
+</span><span class="w">
+</span><span class="w">        </span><span class="nt">remark42</span><span class="p">:</span><span class="w">
+</span><span class="w">            </span><span class="nt">host</span><span class="p">:</span><span class="w">
+</span><span class="w">            </span><span class="nt">site</span><span class="p">:</span><span class="w">
+</span><span class="w">            </span><span class="nt">locale</span><span class="p">:</span><span class="w">
+</span><span class="w">
+</span><span class="w">    </span><span class="nt">widgets</span><span class="p">:</span><span class="w">
+</span><span class="w">        </span><span class="nt">enabled</span><span class="p">:</span><span class="w">
+</span><span class="w">            </span>- <span class="l">search</span><span class="w">
+</span><span class="w">            </span>- <span class="l">archives</span><span class="w">
+</span><span class="w">            </span>- <span class="l">tag-cloud</span><span class="w">
+</span><span class="w">
+</span><span class="w">        </span><span class="nt">archives</span><span class="p">:</span><span class="w">
+</span><span class="w">            </span><span class="nt">limit</span><span class="p">:</span><span class="w"> </span><span class="m">20</span><span class="w">
+</span><span class="w">
+</span><span class="w">        </span><span class="nt">tagCloud</span><span class="p">:</span><span class="w">
+</span><span class="w">            </span><span class="nt">limit</span><span class="p">:</span><span class="w"> </span><span class="m">30</span><span class="w">
+</span><span class="w">
+</span><span class="w">    </span><span class="nt">opengraph</span><span class="p">:</span><span class="w">
+</span><span class="w">        </span><span class="nt">twitter</span><span class="p">:</span><span class="w">
+</span><span class="w">            </span><span class="c"># Your Twitter username</span><span class="w">
+</span><span class="w">            </span><span class="nt">site</span><span class="p">:</span><span class="w">
+</span><span class="w">
+</span><span class="w">            </span><span class="c"># Available values: summary, summary_large_image</span><span class="w">
+</span><span class="w">            </span><span class="nt">card</span><span class="p">:</span><span class="w"> </span><span class="l">summary_large_image</span><span class="w">
+</span><span class="w">
+</span><span class="w">    </span><span class="nt">defaultImage</span><span class="p">:</span><span class="w">
+</span><span class="w">        </span><span class="nt">opengraph</span><span class="p">:</span><span class="w">
+</span><span class="w">            </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+</span><span class="w">            </span><span class="nt">local</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+</span><span class="w">            </span><span class="nt">src</span><span class="p">:</span><span class="w">
+</span><span class="w">
+</span><span class="w">    </span><span class="nt">colorScheme</span><span class="p">:</span><span class="w">
+</span><span class="w">        </span><span class="c"># Display toggle</span><span class="w">
+</span><span class="w">        </span><span class="nt">toggle</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span><span class="w">
+</span><span class="w">        </span><span class="c"># Available values: auto, light, dark</span><span class="w">
+</span><span class="w">        </span><span class="nt">default</span><span class="p">:</span><span class="w"> </span><span class="l">auto</span><span class="w">
+</span><span class="w">
+</span><span class="w">    </span><span class="nt">imageProcessing</span><span class="p">:</span><span class="w">
+</span><span class="w">        </span><span class="nt">cover</span><span class="p">:</span><span class="w">
+</span><span class="w">            </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span><span class="w">        </span><span class="nt">content</span><span class="p">:</span><span class="w">
+</span><span class="w">            </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="c">### Custom menu</span><span class="w">
+</span><span class="w"></span><span class="c">### See https://docs.stack.jimmycai.com/configuration/custom-menu</span><span class="w">
+</span><span class="w"></span><span class="c">### To remove about, archive and search page menu item, remove `menu` field from their FrontMatter</span><span class="w">
+</span><span class="w"></span><span class="nt">menu</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="nt">main</span><span class="p">:</span><span class="w">
+</span><span class="w">        </span>- <span class="nt">identifier</span><span class="p">:</span><span class="w"> </span><span class="l">home</span><span class="w">
+</span><span class="w">          </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Home</span><span class="w">
+</span><span class="w">          </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l">/</span><span class="w">
+</span><span class="w">          </span><span class="nt">weight</span><span class="p">:</span><span class="w"> </span>-<span class="m">100</span><span class="w">
+</span><span class="w">          </span><span class="nt">pre</span><span class="p">:</span><span class="w"> </span><span class="l">home</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="nt">related</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="nt">includeNewer</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span><span class="w">    </span><span class="nt">threshold</span><span class="p">:</span><span class="w"> </span><span class="m">60</span><span class="w">
+</span><span class="w">    </span><span class="nt">toLower</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+</span><span class="w">    </span><span class="nt">indices</span><span class="p">:</span><span class="w">
+</span><span class="w">        </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">tags</span><span class="w">
+</span><span class="w">          </span><span class="nt">weight</span><span class="p">:</span><span class="w"> </span><span class="m">100</span><span class="w">
+</span><span class="w">
+</span><span class="w">        </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">categories</span><span class="w">
+</span><span class="w">          </span><span class="nt">weight</span><span class="p">:</span><span class="w"> </span><span class="m">200</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="nt">markup</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="nt">highlight</span><span class="p">:</span><span class="w">
+</span><span class="w">        </span><span class="nt">noClasses</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+</span><span class="w"></span><span class="nt">ignoreErrors</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;error-remote-getjson&#34;</span><span class="w">
+</span></code></pre></div><p>然后这样还是不能运行滴！</p>
+<h2 id="4-调整主题">4. 调整主题</h2>
+<p>我们可以先看看这个主题的作者给的<a class="link" href="https://docs.stack.jimmycai.com/v/zh-cn/"  target="_blank" rel="noopener"
+    >文档</a></p>
+<p>基本上就是照着来一遍</p>
+<p>步骤很多，还很麻烦，这里我就直接写了个<a class="link" href="https://github.com/jokefrelon/hugo_docker"  target="_blank" rel="noopener"
+    >Dockerfile</a>，按照README的教程来，你一定可以用docker快速搭建起一个hugo环境。</p>
+<p>虽然主题不一定是你想要的类型，但是可以简化你用hugo搭建网站的步骤还能节省时间。如果喜欢的话，希望star、fork、watch。</p>
+<h2 id="5-运行hugo">5. 运行hugo</h2>
+<p>如果你是使用Dockerfile来构建镜像运行的话，你就不用看下面的教程了</p>
+<p>如果你还是想自己动手丰衣足食的话，那你就按照我Dockerfile里面的shell一步一步来操作也是可以在你的服务器上成功运行起来基于hugo的网站的，你可以使用以下命令来运行网站，因为hugo默认只监听127.0.0.1，所以需要单独设置以下hugo监听任何网卡。</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell"> hugo server -p <span class="m">1313</span> --bind <span class="s2">&#34;0.0.0.0&#34;</span> 
+</code></pre></div>
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/hugo/">hugo</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3&#43;Aro6EYUG4&#43;cU&#43;KJWu/X"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js"integrity="sha384-g7c&#43;Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI&#43;sEnkvrMWph2EDg4"crossorigin="anonymous"
+                defer="true"
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC&#43;Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa"crossorigin="anonymous"
+                defer="true"
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+        renderMathInElement(document.querySelector(`.article-content`), {
+            delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "$", right: "$", display: false },
+                { left: "\\(", right: "\\)", display: false },
+                { left: "\\[", right: "\\]", display: true }
+            ]
+        });})
+</script>
+    
+</article>
+
+    <aside class="related-contents--wrapper">
+    
+    
+        <h2 class="section-title">相关文章</h2>
+        <div class="related-contents">
+            <div class="flex article-list--tile">
+                
+                    
+<article class="has-image">
+    <a href="/p/dockerfile/">
+        
+        
+            <div class="article-image">
+                
+                    <img src="https://cn.bing.com/th?id=OHR.PadarIsland_EN-CN9304851314_UHD.jpg&amp;pid=hp&amp;w=1080&amp;h=720&amp;rs=1&amp;c=4" loading="lazy" data-key="dockerfile" data-hash="https://cn.bing.com/th?id=OHR.PadarIsland_EN-CN9304851314_UHD.jpg&amp;pid=hp&amp;w=1080&amp;h=720&amp;rs=1&amp;c=4"/>
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Dockerfile编写</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="has-image">
+    <a href="/p/ffmpeg_user_agent/">
+        
+        
+            <div class="article-image">
+                
+                    <img src="https://cn.bing.com/th?id=OHR.Comma_EN-CN6081365526_UHD.jpg&amp;pid=hp&amp;w=1080&amp;h=720&amp;rs=1&amp;c=4" loading="lazy" data-key="ffmpeg_user_agent" data-hash="https://cn.bing.com/th?id=OHR.Comma_EN-CN6081365526_UHD.jpg&amp;pid=hp&amp;w=1080&amp;h=720&amp;rs=1&amp;c=4"/>
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">ffmpeg设置请求头</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="has-image">
+    <a href="/p/linux_reward/">
+        
+        
+            <div class="article-image">
+                
+                    <img src="https://cn.bing.com/th?id=OHR.BlueTitDaffs_EN-CN2615365443_UHD.jpg&amp;pid=hp&amp;w=1080&amp;h=720&amp;rs=1&amp;c=4" loading="lazy" data-key="linux_reward" data-hash="https://cn.bing.com/th?id=OHR.BlueTitDaffs_EN-CN2615365443_UHD.jpg&amp;pid=hp&amp;w=1080&amp;h=720&amp;rs=1&amp;c=4"/>
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">记录最近捯饬Linux的收获</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="has-image">
+    <a href="/p/linux_vsftpd/">
+        
+        
+            <div class="article-image">
+                
+                    <img src="https://cn.bing.com/th?id=OHR.VolcanoLlaima_EN-CN5183277848_UHD.jpg&amp;pid=hp&amp;w=1080&amp;h=720&amp;rs=1&amp;c=4" loading="lazy" data-key="linux_vsftpd" data-hash="https://cn.bing.com/th?id=OHR.VolcanoLlaima_EN-CN5183277848_UHD.jpg&amp;pid=hp&amp;w=1080&amp;h=720&amp;rs=1&amp;c=4"/>
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Ubuntu 20.04.2 配置 vsftpd 的脑坑</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="has-image">
+    <a href="/p/ubuntu_docker_tips/">
+        
+        
+            <div class="article-image">
+                
+                    <img src="https://cn.bing.com/th?id=OHR.Trevi_EN-CN2352584327_UHD.jpg&amp;pid=hp&amp;w=1080&amp;h=720&amp;rs=1&amp;c=4" loading="lazy" data-key="Ubuntu_docker_tips" data-hash="https://cn.bing.com/th?id=OHR.Trevi_EN-CN2352584327_UHD.jpg&amp;pid=hp&amp;w=1080&amp;h=720&amp;rs=1&amp;c=4"/>
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Ubuntu &amp;&amp; Docker 使用建议</h2>
+        </div>
+    </a>
+</article>
+                
+            </div>
+        </div>
+    
+</aside>
+
+
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2019 - 
+        
+        2021 JokemeBlog
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="2.3.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer="true"
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer="true"
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css"integrity="sha256-c0uckgykQ9v5k&#43;IqViZOZKc47Jn7KQil4/MP3ySA3F8="crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css"integrity="sha256-SBLU4vv6CA6lHsZ1XyTdhyjJxCjPif/TRkjnsyGAGnE="crossorigin="anonymous"
+            >
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js"integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g="crossorigin="anonymous"
+                defer="false"
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>
