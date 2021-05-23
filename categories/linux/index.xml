@@ -6,7 +6,24 @@
     <description>Recent content in Linux on JokemeBlog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 16 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://jokeme.top/categories/linux/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 23 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://jokeme.top/categories/linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>一个有意思的shell变量问题</title>
+      <link>https://jokeme.top/p/funny_space_in_shell_script/</link>
+      <pubDate>Sun, 23 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://jokeme.top/p/funny_space_in_shell_script/</guid>
+      <description>一个有意思的shell变量问题 今天在上班时遇到了一个批量解压zip的需求，由于几十个压缩包的名称一样，chrome下载下来以后就自动给加了编号。并且解压后的文件名也是一样的，只不过里面的文件不一样。
+虽然在Windows下有批量解压缩工具，但是我没有安装。我电脑上只有7zip。既然是批量处理文件，那我就想到了用shell来做这件事。
+首先！我遇到的问题就是！文件名里面有空格，类似**&amp;ldquo;abc xyz.zip&amp;rdquo;**一个文件名被shell捕获成变量以后，在for循环里面会被错误的解析成两个不同的变量，这就导致了代码逻辑上没有问题。你不亲自调试一下，就不知道为什么会报错。
+为此我百度了良久，找到了以下两种解决方案
+1. 解决方案一：修改IFS 我百思不得其解，为什么这么多一毛一样的文章都推荐使用IFS，而且只修改了IFS，而且用完还没有给修改回来。这不是给自己挖坑吗
+IFS的默认值为空白字符（换行符、制表符或者空格）。如果你手动的修改它为别的字符，那后续的代码也就会以该字符为定界符。只能说是简单粗暴，贼鸡儿好用！
+2. 解决方案二：修改文件名 一开始我看到这种方案还很疑惑！我尼玛要是有那修改文件名的功夫我还写代码干啥，哈哈哈哈。然后我看了一下思路，嗯！还是有点道理的。原文见脚本之家。
+大概思路我就放在下面的代码里面讲解吧！
+allzip=`ls | grep zip | sed &amp;#39;s/ (/(/g&amp;#39;`	#先用sed把&amp;#39; (&amp;#39;替换成&amp;#39;(&amp;#39;保存到list里面 echo $allzip	#echo一下,让自己放心一店 for zip in $allzip do filen=`echo $zip | sed &amp;#39;s/(/ (/g&amp;#39;`	#把存起来的没有空格的变量还原成真正的有空格的文件名 mv &amp;#34;$filen&amp;#34; $zip	#拿到了真正的文件名,为了后续方便,直接把有空格的文件修改为没有空格的 unzip $zip	#顺带给它解压一下 done 好了就是这么的简单，也不用修改什么IFS。虽然有一丢丢的绕，但是也是非常容易理解的。你们也看出来了我个人是偏向于第二种方案的，因为修改IFS万一你忘记给改回去，那你下面还有字符串类分割的操作就会度过一段非常蛋疼的调试时光。</description>
+    </item>
+    
     <item>
       <title>从solo迁移到hugo</title>
       <link>https://jokeme.top/p/solo_2_hugo/</link>
