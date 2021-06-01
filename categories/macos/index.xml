@@ -6,7 +6,29 @@
     <description>Recent content in macOS on JokemeBlog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 22 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://jokeme.top/categories/macos/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 01 Jun 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://jokeme.top/categories/macos/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hackintosh Laptop 常见快捷键</title>
+      <link>https://jokeme.top/p/hackintosh_laptop_hotkey/</link>
+      <pubDate>Tue, 01 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://jokeme.top/p/hackintosh_laptop_hotkey/</guid>
+      <description>Hackintosh Laptop 常见快捷键 一般来说可以macOS和Windows对应键位参考下面的对照表即可
+   macOS Windows     Command win   Option alt   Control ctrl    所有的通用快捷键加粗标记
+1. 系统快捷键: 强制退出：win + alt + esc
+ 对标Windows的任务管理器，但是简化到了只有强制退出功能
+ 切换桌面：ctrl + ◀︎ / ►
+切换任务：win + tab
+打开finder：win + t
+连接samba：win + k
+2. 常见通用快捷键： 全选：win + a
+复制字符：win + c
+保存：win + s
+粘贴字符：win + v
+剪切字符：win + x
+撤销操作：win + z</description>
+    </item>
+    
     <item>
       <title>macOS设置brew安装的软件自启动</title>
       <link>https://jokeme.top/p/macos_brew_installed_app_auto_start_at_boot/</link>
