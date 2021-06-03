@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Xpath on JokemeBlog</title>
+    <link>https://jokeme.top/tags/xpath/</link>
+    <description>Recent content in Xpath on JokemeBlog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 01 Jul 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://jokeme.top/tags/xpath/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Python 爬虫抓取m3u8播放源</title>
+      <link>https://jokeme.top/p/python_spider_download_m3u8/</link>
+      <pubDate>Wed, 01 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jokeme.top/p/python_spider_download_m3u8/</guid>
+      <description>Python 爬虫抓取播放源(m3u8) 今天没有事的时候在捯饬 dotPlayer [IOS 平台 APP/￥ 收费] 时发现这个东西是个宝贝呀！可以看 m3u8 格式的视频，这都不是重点，重点是使用起来非常舒服，虽然直接复制 m3u8 链接到 Safari 也可以播放，但是 dotPlayer 还可以有封面和标题！这两者体验可谓是天差地别(我没有收钱哈！我是真的觉得好用，希望 dotplayer 的作者看到了打一下广告费！)
+具体可以看
+简书作者： NickXXXXXXXX 给出的图片简介
+GitHub 上的 help_zh.md 给出的使用简介
+这都不是我们需要关注の重点，重点是这款 app 是用来播放 m3u8 流の
+播放视频很简单，可是这 m3u8 文件从哪里来呢？??
+ 去 Telegram 加入组群 dotPlayer ,群里经常会分享相关的订阅 自己动手丰衣足食  这次用的爬虫和上一次一模一样，只是我优化了一下过程，就随便讲讲吧
+ #coding=utf-8 import requests from lxml import etree import time import datetime import re ​ def makeUrl(Num): # Num为html的页数 allinks=[] for link in range(1,Num+1): link=&amp;quot;https://www.xxxx.com/xzy{}&amp;quot;.format(link) allinks.append(link) return allinks ​ def getRealUrl(fakeUrl): webPage = requests.</description>
+    </item>
+    
+    <item>
+      <title>利用 Python 爬虫获取 bing.com 每天的高清壁纸</title>
+      <link>https://jokeme.top/p/python_spider_download_bing_wallpaper/</link>
+      <pubDate>Sun, 14 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jokeme.top/p/python_spider_download_bing_wallpaper/</guid>
+      <description>利用 Python 爬虫获取 bing.com 每天的高清壁纸 众所周知，必应是主力做壁纸の搜索引擎！
+每天都更新搜索页面的背景图片，这些图片也的的确确很好看，那我们要是 ♥心动了，想保存欣赏欣赏怎么办呐？
+方法一：直接开发者模式拿图片 这个方法应该是最简单的了， ctrl+ shift+i
+... ... &amp;lt;tbody&amp;gt; &amp;lt;tr&amp;gt; &amp;lt;td id=&amp;#34;hp_cellCenter&amp;#34; ... ...&amp;gt; &amp;lt;div id=&amp;#34;hp_container&amp;#34; ... ...&amp;gt; &amp;lt;div id=&amp;#34;bgDiv&amp;#34; ... ...&amp;gt; &amp;lt;div id=&amp;#34;bgImgProgLoad&amp;#34; data-ultra-definition-src=&amp;#34;/th?id=OHR.WildflowersBC_EN-CN3359054435_UHD.jpg&amp;amp;rf=LaDigue_UHD.jpg&amp;amp;pid=hp&amp;amp;w=1920&amp;amp;h=1080&amp;amp;rs=1&amp;amp;c=4&amp;#34; data-explicit-bing-load=&amp;#34;false&amp;#34; data-dynamic-size=&amp;#34;true&amp;#34;&amp;gt; &amp;lt;/div&amp;gt; ... ...	这个链接 ?就在 &amp;lt;div id=&amp;quot;bgImgProgLoad&amp;quot; の标签里面，复制 data-ultra-definition-src 所对应的值，再在前面补上 cn.bing.com 就可以啦
+不过这种方法下载的图片是被压缩以后的图片，大小也就几百 kb,而如果我们想要下载原图的话，就需要把链接 ?里面第一个 .jpg 后面的字符全给干掉，最终的的 URL 应该是： https://cn.bing.com/th?id=OHR.WildflowersBC_EN-CN3359054435_UHD.jpg
+方法二：python 爬虫 没有什么好说の,都是最简单的 python 命令，
+运行环境： Linux
+Python 版本： Python3
+pip 依赖库： requests,lxml
+基本上大部分的 Linux 都会预装 Python3 ,所以就从安装 pip 开始了</description>
+    </item>
+    
+    <item>
+      <title>Python_spider</title>
+      <link>https://jokeme.top/p/python_spider/</link>
+      <pubDate>Tue, 31 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jokeme.top/p/python_spider/</guid>
+      <description>Python 爬虫 用python写爬虫其实是比较简单的，主要还是靠第三方的库，常用的有 requests &amp;amp; urllib 至于解析 HTML,我目前使用的是 xpath ,了解了基本操作，咱就试试看吧
+代码附上
+# coding:utf-8 import json import requests from lxml import etree def getWebUrl(uri): webPage = requests.get(url = uri, headers={&amp;#34;User-Agent&amp;#34;:&amp;#34;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36&amp;#34;} ) we = webPage.text ssr = etree.HTML(we) Links = ssr.xpath(&amp;#34;//div/table/tbody/tr/td/p/a/@href&amp;#34;) Str = &amp;#34;http://172.17.150.251&amp;#34; Allinks = [] for se in Links: link = Str+se Allinks.append(link) dicName = {} dicName = {uri:Allinks} return dicName def getInfo(uri): webPage = requests.</description>
+    </item>
+    
+  </channel>
+</rss>

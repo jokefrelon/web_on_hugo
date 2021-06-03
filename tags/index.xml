@@ -6,18 +6,45 @@
     <description>Recent content in Tags on JokemeBlog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 01 Jun 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://jokeme.top/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 03 Jun 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://jokeme.top/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>SpringBoot</title>
+      <link>https://jokeme.top/tags/springboot/</link>
+      <pubDate>Thu, 03 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://jokeme.top/tags/springboot/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Hotkey</title>
+      <link>https://jokeme.top/tags/hotkey/</link>
+      <pubDate>Tue, 01 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://jokeme.top/tags/hotkey/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Shell</title>
+      <link>https://jokeme.top/tags/shell/</link>
+      <pubDate>Sun, 23 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://jokeme.top/tags/shell/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>Note</title>
       <link>https://jokeme.top/tags/note/</link>
-      <pubDate>Tue, 01 Jun 2021 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 18 May 2021 00:00:00 +0000</pubDate>
       
       <guid>https://jokeme.top/tags/note/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>hugo</title>
+      <title>Hugo</title>
       <link>https://jokeme.top/tags/hugo/</link>
       <pubDate>Sun, 16 May 2021 00:00:00 +0000</pubDate>
       
@@ -35,7 +62,7 @@
     </item>
     
     <item>
-      <title>ffmpeg</title>
+      <title>Ffmpeg</title>
       <link>https://jokeme.top/tags/ffmpeg/</link>
       <pubDate>Tue, 23 Mar 2021 00:00:00 +0000</pubDate>
       
@@ -44,7 +71,25 @@
     </item>
     
     <item>
-      <title>vsftpd</title>
+      <title>Nginx</title>
+      <link>https://jokeme.top/tags/nginx/</link>
+      <pubDate>Tue, 23 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://jokeme.top/tags/nginx/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Aria2</title>
+      <link>https://jokeme.top/tags/aria2/</link>
+      <pubDate>Sun, 21 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://jokeme.top/tags/aria2/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Vsftpd</title>
       <link>https://jokeme.top/tags/vsftpd/</link>
       <pubDate>Mon, 01 Mar 2021 00:00:00 +0000</pubDate>
       
@@ -53,7 +98,7 @@
     </item>
     
     <item>
-      <title>brew</title>
+      <title>Brew</title>
       <link>https://jokeme.top/tags/brew/</link>
       <pubDate>Mon, 22 Feb 2021 00:00:00 +0000</pubDate>
       
@@ -80,7 +125,7 @@
     </item>
     
     <item>
-      <title>zsh</title>
+      <title>Zsh</title>
       <link>https://jokeme.top/tags/zsh/</link>
       <pubDate>Wed, 07 Oct 2020 00:00:00 +0000</pubDate>
       
@@ -89,7 +134,7 @@
     </item>
     
     <item>
-      <title>openstack</title>
+      <title>Openstack</title>
       <link>https://jokeme.top/tags/openstack/</link>
       <pubDate>Fri, 25 Sep 2020 00:00:00 +0000</pubDate>
       
@@ -116,16 +161,7 @@
     </item>
     
     <item>
-      <title>VS_Code</title>
-      <link>https://jokeme.top/tags/vs_code/</link>
-      <pubDate>Fri, 17 Jul 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://jokeme.top/tags/vs_code/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>NAT</title>
+      <title>Nat</title>
       <link>https://jokeme.top/tags/nat/</link>
       <pubDate>Wed, 15 Jul 2020 00:00:00 +0000</pubDate>
       
@@ -152,7 +188,7 @@
     </item>
     
     <item>
-      <title>links</title>
+      <title>Links</title>
       <link>https://jokeme.top/tags/links/</link>
       <pubDate>Fri, 03 Jul 2020 00:00:00 +0000</pubDate>
       
@@ -170,16 +206,25 @@
     </item>
     
     <item>
-      <title>spider</title>
-      <link>https://jokeme.top/tags/spider/</link>
+      <title>Xpath</title>
+      <link>https://jokeme.top/tags/xpath/</link>
       <pubDate>Wed, 01 Jul 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://jokeme.top/tags/spider/</guid>
+      <guid>https://jokeme.top/tags/xpath/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>nano</title>
+      <title>Color</title>
+      <link>https://jokeme.top/tags/color/</link>
+      <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jokeme.top/tags/color/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Nano</title>
       <link>https://jokeme.top/tags/nano/</link>
       <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
       
@@ -188,7 +233,7 @@
     </item>
     
     <item>
-      <title>frp</title>
+      <title>Frp</title>
       <link>https://jokeme.top/tags/frp/</link>
       <pubDate>Mon, 08 Jun 2020 00:00:00 +0000</pubDate>
       
@@ -197,16 +242,7 @@
     </item>
     
     <item>
-      <title>SpringBoot</title>
-      <link>https://jokeme.top/tags/springboot/</link>
-      <pubDate>Fri, 29 May 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://jokeme.top/tags/springboot/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>netplan</title>
+      <title>Netplan</title>
       <link>https://jokeme.top/tags/netplan/</link>
       <pubDate>Wed, 06 May 2020 00:00:00 +0000</pubDate>
       
@@ -215,29 +251,11 @@
     </item>
     
     <item>
-      <title>FAQ</title>
-      <link>https://jokeme.top/tags/faq/</link>
-      <pubDate>Tue, 31 Mar 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://jokeme.top/tags/faq/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Bay_Trail</title>
-      <link>https://jokeme.top/tags/bay_trail/</link>
-      <pubDate>Mon, 16 Mar 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://jokeme.top/tags/bay_trail/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>annotation</title>
-      <link>https://jokeme.top/tags/annotation/</link>
+      <title>Java_API</title>
+      <link>https://jokeme.top/tags/java_api/</link>
       <pubDate>Sat, 15 Feb 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://jokeme.top/tags/annotation/</guid>
+      <guid>https://jokeme.top/tags/java_api/</guid>
       <description></description>
     </item>
     
@@ -251,7 +269,7 @@
     </item>
     
     <item>
-      <title>vim</title>
+      <title>Vim</title>
       <link>https://jokeme.top/tags/vim/</link>
       <pubDate>Sat, 01 Feb 2020 00:00:00 +0000</pubDate>
       
@@ -260,92 +278,29 @@
     </item>
     
     <item>
-      <title>nginx_proxy</title>
-      <link>https://jokeme.top/tags/nginx_proxy/</link>
-      <pubDate>Sat, 11 Jan 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://jokeme.top/tags/nginx_proxy/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>little_program</title>
-      <link>https://jokeme.top/tags/little_program/</link>
+      <title>Css</title>
+      <link>https://jokeme.top/tags/css/</link>
       <pubDate>Fri, 10 Jan 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://jokeme.top/tags/little_program/</guid>
+      <guid>https://jokeme.top/tags/css/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>爬虫</title>
-      <link>https://jokeme.top/tags/%E7%88%AC%E8%99%AB/</link>
-      <pubDate>Tue, 31 Dec 2019 00:00:00 +0000</pubDate>
+      <title>Html</title>
+      <link>https://jokeme.top/tags/html/</link>
+      <pubDate>Fri, 10 Jan 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://jokeme.top/tags/%E7%88%AC%E8%99%AB/</guid>
+      <guid>https://jokeme.top/tags/html/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Java_IO</title>
-      <link>https://jokeme.top/tags/java_io/</link>
-      <pubDate>Sat, 28 Dec 2019 00:00:00 +0000</pubDate>
+      <title>Js</title>
+      <link>https://jokeme.top/tags/js/</link>
+      <pubDate>Fri, 10 Jan 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://jokeme.top/tags/java_io/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>map</title>
-      <link>https://jokeme.top/tags/map/</link>
-      <pubDate>Sat, 28 Dec 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://jokeme.top/tags/map/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>泛型</title>
-      <link>https://jokeme.top/tags/%E6%B3%9B%E5%9E%8B/</link>
-      <pubDate>Sat, 28 Dec 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://jokeme.top/tags/%E6%B3%9B%E5%9E%8B/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>api_time</title>
-      <link>https://jokeme.top/tags/api_time/</link>
-      <pubDate>Sun, 22 Dec 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://jokeme.top/tags/api_time/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>collection</title>
-      <link>https://jokeme.top/tags/collection/</link>
-      <pubDate>Fri, 20 Dec 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://jokeme.top/tags/collection/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>contains</title>
-      <link>https://jokeme.top/tags/contains/</link>
-      <pubDate>Fri, 20 Dec 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://jokeme.top/tags/contains/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>equals</title>
-      <link>https://jokeme.top/tags/equals/</link>
-      <pubDate>Fri, 20 Dec 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://jokeme.top/tags/equals/</guid>
+      <guid>https://jokeme.top/tags/js/</guid>
       <description></description>
     </item>
     

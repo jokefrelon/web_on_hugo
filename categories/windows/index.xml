@@ -6,7 +6,38 @@
     <description>Recent content in Windows on JokemeBlog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 17 Jul 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://jokeme.top/categories/windows/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 27 Jul 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://jokeme.top/categories/windows/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>笔记本坏了，这几天不能敲代码了</title>
+      <link>https://jokeme.top/p/my_laptop_do_not_work/</link>
+      <pubDate>Mon, 27 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jokeme.top/p/my_laptop_do_not_work/</guid>
+      <description>笔记本坏了，这几天不能写代码了 &amp;lt;2020-07-27 14:25&amp;gt; 今天吃完饭以后，发现笔记本无法唤醒了。我还觉得是电池没有电了，可是插上电源依然不能开机，我慌了，八成是笔记本坏了。
+笔记本坏了那也不能影响我写bug呀，我就找了个老的台式机装上了Ubuntu 18。
+太难受了，换了一个 Ubuntu 系统的老电脑，卡的怀疑人生，还没有好的中文输入法，明天就去修电脑去，希望小米的授权维修店不会坑我吧
+······························································
+&amp;lt;2020-07-28 01:21&amp;gt;
+好了，?早点洗洗睡觉了
+······························································
+&amp;lt;2020-07-28 17:56&amp;gt;
+现在刚刚修完电脑回来，话说小米的售后还是可以的，只是客服有点坑，给我说要发票，要三包卡
+结果我去了小米授权维修点，检查了一下电脑状况，主板出问题了，查了一下保修日期还有一天，也没有给我拖时间，当场发顺丰了，还说大概三天就可以维修好，我不是吹捧小米哈，我是 果粉 就觉得小米这个牌子也确实是还可以的。
+等过几天看看返厂修的怎么样，不行我再喷，哈哈哈
+&amp;hellip;&amp;hellip;&amp;hellip;&amp;hellip;&amp;hellip;&amp;hellip;&amp;hellip;&amp;hellip;&amp;hellip;&amp;hellip;&amp;hellip;&amp;hellip;&amp;hellip;&amp;hellip;&amp;hellip;&amp;hellip;&amp;hellip;&amp;hellip;&amp;hellip;&amp;hellip;&amp;hellip;
+&amp;lt;2020-09-25 20:52&amp;gt;
+忘记了写后续了，今天来补一下后续 ?
+大概是 5 天后，我的笔记本被修好寄回，快递员大早上的给我打电话，那个时候我还在睡着觉，然后快递员打不通我的电话，就打我室友的。我室友叫我下去拿快递。妈的，我刚到楼下就看到这个狗屁快递员，直接把我的快递 ?从 2 米多高的铁门外丢进来了，然后当场潇洒离去，卧槽，我都看呆了，那个是我的电脑！没错吧？快递员敢这么随便的扔进来？?
+然后我就拿快递回去拆开，检查了一下电脑 ?,好在小米那边泡沫纸裹的多，电脑没有啥事！那我就开个机吧！
+然后就挺惨不忍睹的，换了主板以后，各种卡，开机以后至少还要卡个 30s 这样才能反应过来，一开始我就想凑合着用吧，反正不要钱的，还要啥自行车呢 ?‍♂️ . 但是我还是找了随电脑寄过来的专属售后吐槽，加了微信以后，我就说着各种我遇到的问题，一开始他还理我，后来直接鸟都不鸟我，心里一万个 mmp
+大概是五天后吧，我他们电脑又坏了，莫名其妙的自己坏的，我发誓真的就是一顿饭的功夫&amp;hellip; &amp;hellip;就是这么突然！我又找我的专属客服哔哔！依旧是不理我，我也就自认倒霉了，打算发工资了重新换一下笔记本
+然后又是两天后！我闲着无聊搁哪看我收到的垃圾短信，啊哈哈哈，无意间看到了小米给我发的售后服务评价，我就点进去链接，一顿妈卖批的骂，什么垃圾小米，什么垃圾售后，才几天又坏了，反正就是各种怼。
+大概是一天以后，小米客服打电话给我了，和我大概了解了一下情况后，让我再次返厂，再给我维修一下(实际上是给我换了一块主板)
+然后又是几天的折腾，电脑又给我修好啦，这次终于靠谱了，虽然也有一点卡顿，但是打完驱动，满血复活！New Bee ! 还给我报销了邮费
+好了，今天算是完结了！
+&amp;hellip;&amp;hellip;&amp;hellip;&amp;hellip;&amp;hellip;&amp;hellip;&amp;hellip;&amp;hellip;&amp;hellip;&amp;hellip;&amp;hellip;&amp;hellip;&amp;hellip;&amp;hellip;&amp;hellip;&amp;hellip;&amp;hellip;&amp;hellip;&amp;hellip;&amp;hellip;&amp;hellip;</description>
+    </item>
+    
     <item>
       <title>VS code 快捷键大全</title>
       <link>https://jokeme.top/p/code_hot_key/</link>

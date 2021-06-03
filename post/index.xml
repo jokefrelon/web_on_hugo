@@ -6,7 +6,22 @@
     <description>Recent content in Posts on JokemeBlog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 01 Jun 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://jokeme.top/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 03 Jun 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://jokeme.top/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Spring IOC DI 学习</title>
+      <link>https://jokeme.top/p/spring_ioc_di/</link>
+      <pubDate>Thu, 03 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://jokeme.top/p/spring_ioc_di/</guid>
+      <description>Spring IOC DI 学习 最近在海底捞上班搞运维，但是我也没有放下我的Java开发学习，今天下班早点，我就又开始学习Springboot啦
+因为去年写的wh项目太拉胯啦，有好多东西都是一知半解，只是知道某一个方法应该怎么用，但是为什么要这么使用，其中的道理我还是不太明白，虽然之前我也是写过两篇Springboot开发中的知识，但是现在显而易见，我已经把他们给忘记啦。所以现在再拉出来鞭尸一遍巩固学习的知识。
+1. IOC简介 ioc [Inversion of Control] 控制反转，具体的官话我也说不出来，反正我个人的理解就是：
+ 不需要我这个小垃圾来管理Java bean啦，我不需要亲自的new对象了，这些事情都交给Springboot来做。总的来说就是我解放了。
+ 2. IOC是什么用？ 众所周知，Springboot是注解式开发，那么IOC肯定是配合着注解来使用的。
+假如，现在我有一个项目，里面有一个pojo package，里面有一个unix类如下：
+package top.jokeme.funny.pojo; import org.springframework.stereotype.Component; @Component public class unix { private Integer year; private String name; private Boolean unix; @Override public String toString() {return &amp;#34;unix{&amp;#34; +&amp;#34;year=&amp;#34; + year +&amp;#34;, name=&amp;#39;&amp;#34; + name + &amp;#39;\&amp;#39;&amp;#39; +&amp;#34;, unix=&amp;#34; + unix +&amp;#39;}&amp;#39;; } public Integer getYear() {return year;} public void setYear(Integer year) {this.</description>
+    </item>
+    
     <item>
       <title>Hackintosh Laptop 常见快捷键</title>
       <link>https://jokeme.top/p/hackintosh_laptop_hotkey/</link>

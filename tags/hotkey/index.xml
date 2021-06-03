@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Hotkey on JokemeBlog</title>
+    <link>https://jokeme.top/tags/hotkey/</link>
+    <description>Recent content in Hotkey on JokemeBlog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 01 Jun 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://jokeme.top/tags/hotkey/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hackintosh Laptop 常见快捷键</title>
+      <link>https://jokeme.top/p/hackintosh_laptop_hotkey/</link>
+      <pubDate>Tue, 01 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://jokeme.top/p/hackintosh_laptop_hotkey/</guid>
+      <description>Hackintosh Laptop 常见快捷键 一般来说可以macOS和Windows对应键位参考下面的对照表即可
+   macOS Windows     Command win   Option alt   Control ctrl    所有的通用快捷键加粗标记
+1. 系统快捷键: 强制退出：win + alt + esc
+ 对标Windows的任务管理器，但是简化到了只有强制退出功能
+ 切换桌面：ctrl + ◀︎ / ▶︎
+切换任务：win + tab
+打开finder：win + t
+连接samba：win + k
+2. 常见通用快捷键： 全选：win + a
+复制字符：win + c
+保存：win + s
+粘贴字符：win + v
+剪切字符：win + x
+撤销操作：win + z</description>
+    </item>
+    
+    <item>
+      <title>VS code 快捷键大全</title>
+      <link>https://jokeme.top/p/code_hot_key/</link>
+      <pubDate>Fri, 17 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jokeme.top/p/code_hot_key/</guid>
+      <description>VS code 快捷键大全 General Ctrl+Shift+P, F1 Show Command Palette
+Ctrl+P Quick Open, Go to File…
+Ctrl+Shift+N New window/instance
+Ctrl+Shift+W Close window/instance
+Ctrl+, User Settings
+Ctrl+K Ctrl+S Keyboard Shortcuts
+Basic editing Ctrl+X Cut line (empty selection)
+Ctrl+C Copy line (empty selection)
+Alt+ ↑ / ↓ Move line up/down
+Shift+Alt + ↓ / ↑ Copy line up/down
+Ctrl+Shift+K Delete line
+Ctrl+Enter Insert line below
+Ctrl+Shift+Enter Insert line above
+Ctrl+Shift+\ Jump to matching bracket</description>
+    </item>
+    
+    <item>
+      <title>vim的常用操作快捷键</title>
+      <link>https://jokeme.top/p/vim_hot_key/</link>
+      <pubDate>Sat, 01 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jokeme.top/p/vim_hot_key/</guid>
+      <description>(1) 按两下 gg，定位光标到第一行。
+(2) 按住 Shift+v，进入可视化编辑的列编辑模式。
+(3) Shift+g，选中整个代码。
+(4) 按下等号 =，格式化所有代码。
+(5) 新年快乐🎉</description>
+    </item>
+    
+  </channel>
+</rss>

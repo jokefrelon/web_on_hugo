@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Aria2 on JokemeBlog</title>
+    <link>https://jokeme.top/tags/aria2/</link>
+    <description>Recent content in Aria2 on JokemeBlog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 21 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://jokeme.top/tags/aria2/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>记录最近捯饬Linux的收获</title>
+      <link>https://jokeme.top/p/linux_reward/</link>
+      <pubDate>Sun, 21 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://jokeme.top/p/linux_reward/</guid>
+      <description>记录最近捯饬Linux的收获 虽然最近在准备专升本考试吧，但是也没有认真的复习，最近还是天天玩Linux，在这里记录一下。
+1. Windows Terminal设置 如果你关注IT圈的话，你一定知道微软在Github开源了新的Terminal，并且这是一个颜值高,用着爽的全新版本,支持Unicode。这些都是后话，我要说的是WSL和Terminal相关的设置。因为Terminal打开WSL默认的路径是该用户的在Windows下的家目录，而此时你就需要修改setting.json对应位置添加以下配置：&amp;quot;startingDirectory&amp;quot;: &amp;quot;//wsl$/Ubuntu-18.04/home/frelon&amp;quot;
+如果你还没有用过Windows Terminal那你可以先看看这个Windows Terminal的简介
+2. aria2下载 众所周知，aria2是一款非常好用的一款下载工具，并且它开源，体积小，运行效率高等。什么？你没有听说过？那你总听说过Motrix吧！什么你还没有听说过？那你一定知道PanDown吧？没错这款伟大的软件就是基于aria2。
+aria2本身只是命令行工具，所以我们可以在命令行里安装它。
+sudo apt install aira2 如果你只是简简单单的下载文件，那curl 和 wget aira2是没有啥大的区别的。额说到这里哈，就不得不说今天是curl的23岁生日，curl是 March 20. 1998 年发布的。没错！确实是23年前的今天！因为时差的原因，那边还是20号，咱们这边已经21号了，不是我记错了。
+然后我就根据我个人的使用习惯给alias一下了，因为我不喜欢这种字母和数组夹杂的命令，遇到了都会给重命名一下方便以后自己敲命令。
+alias ac=&amp;quot;aria2c&amp;quot; 首先既然是下载工具，那我为什么要用aria2？
+我们先来看看aria2支持啥协议
+URI, MAGNET, TORRENT_FILE, METALINK_FILE
+传统的http，https，ftp，磁力。bt种子，metalink。你就说它强大不强大吧，可以在这么小体量的情况下，做这么多事情。现在你知道为什么这么多人夸赞它了吧。
+现在我们来说说看Windows这边的下载巨头：迅雷。
+为什么我们都瞧不起迅雷？
+因为迅雷是白眼狼，喝BT的血起家，把自己养肥了。到最后迅雷却不反哺BT下载的生态圈。就这一点就足够可耻的了。
+3. 获取CPU温度 echo `echo &amp;quot;scale=2; $(cat /sys/class/thermal/thermal_zone2/temp)/1000&amp;quot; | bc` °C 用Ubuntu 20的小伙伴可以直接用这条命令查看cpu温度，Ubuntu18我还没有试过，别的系统我就不得而知了。
+4. awk 、sed awk 是一个文本处理命令，常用的就是查找文本内部的字符。
+默认情况下awk是用空格来分割，
+awk &#39;{print $1}&#39; 如果你想用特定的字符串分割,可以用 -F来指定。
+awk -F/ &#39;{print $1}&#39;  sed它同样也是文本处理，用来替换文本的，最常用到的可能就是在刚安装完系统后换软件源的时候。用国内的url来替换国外的url
+sed -i &#39;s/xxx/yyy/g&#39; filename 这个就是把文件内部的xxx替换为yyy。如果需要在文件行首添加字符，就可以sed -i &#39;s/^/yyy/g&#39; filename，有行首肯定是有行尾，那行尾把 ^换成$就可以了。</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -6,46 +6,7 @@
     <description>Recent content in Note on JokemeBlog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 01 Jun 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://jokeme.top/tags/note/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Hackintosh Laptop 常见快捷键</title>
-      <link>https://jokeme.top/p/hackintosh_laptop_hotkey/</link>
-      <pubDate>Tue, 01 Jun 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://jokeme.top/p/hackintosh_laptop_hotkey/</guid>
-      <description>Hackintosh Laptop 常见快捷键 一般来说可以macOS和Windows对应键位参考下面的对照表即可
-   macOS Windows     Command win   Option alt   Control ctrl    所有的通用快捷键加粗标记
-1. 系统快捷键: 强制退出：win + alt + esc
- 对标Windows的任务管理器，但是简化到了只有强制退出功能
- 切换桌面：ctrl + ◀︎ / ▶︎
-切换任务：win + tab
-打开finder：win + t
-连接samba：win + k
-2. 常见通用快捷键： 全选：win + a
-复制字符：win + c
-保存：win + s
-粘贴字符：win + v
-剪切字符：win + x
-撤销操作：win + z</description>
-    </item>
-    
-    <item>
-      <title>一个有意思的shell变量问题</title>
-      <link>https://jokeme.top/p/funny_space_in_shell_script/</link>
-      <pubDate>Sun, 23 May 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://jokeme.top/p/funny_space_in_shell_script/</guid>
-      <description>一个有意思的shell变量问题 今天在上班时遇到了一个批量解压zip的需求，由于几十个压缩包的名称一样，chrome下载下来以后就自动给加了编号。并且解压后的文件名也是一样的，只不过里面的文件不一样。
-虽然在Windows下有批量解压缩工具，但是我没有安装。我电脑上只有7zip。既然是批量处理文件，那我就想到了用shell来做这件事。
-首先！我遇到的问题就是！文件名里面有空格，类似**&amp;ldquo;abc xyz.zip&amp;rdquo;**一个文件名被shell捕获成变量以后，在for循环里面会被错误的解析成两个不同的变量，这就导致了代码逻辑上没有问题。你不亲自调试一下，就不知道为什么会报错。
-为此我百度了良久，找到了以下两种解决方案
-1. 解决方案一：修改IFS 我百思不得其解，为什么这么多一毛一样的文章都推荐使用IFS，而且只修改了IFS，而且用完还没有给修改回来。这不是给自己挖坑吗
-IFS的默认值为空白字符（换行符、制表符或者空格）。如果你手动的修改它为别的字符，那后续的代码也就会以该字符为定界符。只能说是简单粗暴，贼鸡儿好用！
-2. 解决方案二：修改文件名 一开始我看到这种方案还很疑惑！我尼玛要是有那修改文件名的功夫我还写代码干啥，哈哈哈哈。然后我看了一下思路，嗯！还是有点道理的。原文见脚本之家。
-大概思路我就放在下面的代码里面讲解吧！
-allzip=`ls | grep zip | sed &amp;#39;s/ (/(/g&amp;#39;`	#先用sed把&amp;#39; (&amp;#39;替换成&amp;#39;(&amp;#39;保存到list里面 echo $allzip	#echo一下,让自己放心一店 for zip in $allzip do filen=`echo $zip | sed &amp;#39;s/(/ (/g&amp;#39;`	#把存起来的没有空格的变量还原成真正的有空格的文件名 mv &amp;#34;$filen&amp;#34; $zip	#拿到了真正的文件名,为了后续方便,直接把有空格的文件修改为没有空格的 unzip $zip	#顺带给它解压一下 done 好了就是这么的简单，也不用修改什么IFS。虽然有一丢丢的绕，但是也是非常容易理解的。你们也看出来了我个人是偏向于第二种方案的，因为修改IFS万一你忘记给改回去，那你下面还有字符串类分割的操作就会度过一段非常蛋疼的调试时光。</description>
-    </item>
-    
+    <lastBuildDate>Tue, 18 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://jokeme.top/tags/note/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Clang学习笔记</title>
       <link>https://jokeme.top/p/clang_note2/</link>
@@ -167,6 +128,20 @@ UNIX 操作系统，C 编译器，和几乎所有的 UNIX 应用程序都是用 
 然后又是几天的折腾，电脑又给我修好啦，这次终于靠谱了，虽然也有一点卡顿，但是打完驱动，满血复活！New Bee ! 还给我报销了邮费
 好了，今天算是完结了！
 &amp;hellip;&amp;hellip;&amp;hellip;&amp;hellip;&amp;hellip;&amp;hellip;&amp;hellip;&amp;hellip;&amp;hellip;&amp;hellip;&amp;hellip;&amp;hellip;&amp;hellip;&amp;hellip;&amp;hellip;&amp;hellip;&amp;hellip;&amp;hellip;&amp;hellip;&amp;hellip;&amp;hellip;</description>
+    </item>
+    
+    <item>
+      <title>安装 Linux 系统(Ubuntu)经验总结</title>
+      <link>https://jokeme.top/p/ubuntu_install_faq/</link>
+      <pubDate>Tue, 31 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jokeme.top/p/ubuntu_install_faq/</guid>
+      <description>安装 Linux 系统(Ubuntu)经验总结 进来将近两三个星期的装系统经历，让我异常痛苦，先是 Bay Trail 主板的一些坑，然后是显卡驱动，然后又是一堆莫名其妙的问题&amp;hellip;&amp;hellip;
+1. Bay Trail 主板的先天问题 在 这系列主板上安装 Windows 可能没有什么感觉，但是安装 Linux 异常的难，会造成啥啥啥内核错误，导致卡慢
+需要在引导的后面 加上一句
+intel_idle.max_cstate=1 2. 显卡驱动问题 在安装 Linux 时，常常会遇到没有对应显卡驱动的问题，这时候就要在引导的时候加上
+nomodeset 3. 开机卡紫屏问题 这个问题原因可能各不一样，网上一大推，不赘述
+4.开机卡只有鼠标和壁纸 说实话这个问题最好解决了，鼠标键盘都可以正常使用，ctrl + alt + t 打开 terminal,把 gnome 删掉即可，如果喜欢用图形界面还可以在重启以后在安装回来</description>
     </item>
     
   </channel>

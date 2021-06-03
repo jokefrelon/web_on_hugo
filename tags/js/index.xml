@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Js on JokemeBlog</title>
+    <link>https://jokeme.top/tags/js/</link>
+    <description>Recent content in Js on JokemeBlog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 10 Jan 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://jokeme.top/tags/js/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>微信小程序遇见的坑</title>
+      <link>https://jokeme.top/p/wechat_little_program/</link>
+      <pubDate>Fri, 10 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jokeme.top/p/wechat_little_program/</guid>
+      <description>微信小程序遇到的坑 微信小程序其实很简单，和 HTML 差不多，但是又加入了微信的很多特色，我也是本着写着玩的心态写了几天的小程序，发现有很多坑哦，和 HTML还是有点差距的
+1 文本超出隐藏并加… 其实在 HTML 里面这段代码很简单，只要在父元素里面定义
+overflow:hidden; text-overflow: ellipsis; white-space: nowrap; 但是微信小程序就邪了门了，在电脑上看的好好的，可到了真机预览就失效了，
+而且还只是 iOS 平台出现问题，Android 并没有问题，这就见鬼了吗！!同样的代码，还能有不同疗效的？??
+1.1 Answer : 然后百度，得答案：子元素还必须是 text 元素才会生效，这是因为 iOS 的 Safari 浏览器的特立独行吧，
+还有的说需要设置一下宽度就可以解决，反正这个方法我没有试，懒得试
+2 background-attachment:fixed 这个属性是用来设置背景图的，但是还是在 iOS 这里出现了问题，反观 Android 那边一切都很正常 ?
+本来固定背景图片就是一个常用的功能，但是 iOS 这边就是死活不兼容这个属性，一开始我这样写，出错了我还以为是我自己の问题，在哪里倒腾了大半天，无果，百度发现这是一个很普遍的现象，那些大神解决问题的方式倒也很直接，不用这个属性，自己在写一个 view 放在最下面一层
+2.1 Answer : position:fixed; top:0; left:0; width:100%; height:100%; background:url(&amp;#39;http://172.17.150.251:8080/pic/bk7.jpg&amp;#39;) no-repeat #000; background-size:cover; z-index:-1; 3 wx : for &amp;lt;view class=&amp;#34;acf&amp;#34; wx:for=&amp;#34;{{heloi}}&amp;#34; wx:key=&amp;#34;index&amp;#34;&amp;gt; &amp;lt;view class=&amp;#34;bhk&amp;#34; data-arturl=&amp;#34;{{item.article}}&amp;#34; bindtap=&amp;#34;showNextPage&amp;#34;&amp;gt; &amp;lt;div class=&amp;#34;guli&amp;#34;&amp;gt;&amp;lt;text class=&amp;#34;intro&amp;#34;&amp;gt;{{item.</description>
+    </item>
+    
+  </channel>
+</rss>
