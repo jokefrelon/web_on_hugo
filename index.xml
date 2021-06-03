@@ -16,7 +16,7 @@
    macOS Windows     Command win   Option alt   Control ctrl    所有的通用快捷键加粗标记
 1. 系统快捷键: 强制退出：win + alt + esc
  对标Windows的任务管理器，但是简化到了只有强制退出功能
- 切换桌面：ctrl + ◀︎ / ►
+ 切换桌面：ctrl + ◀︎ / ▶︎
 切换任务：win + tab
 打开finder：win + t
 连接samba：win + k
