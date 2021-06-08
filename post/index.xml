@@ -6,7 +6,17 @@
     <description>Recent content in Posts on JokemeBlog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 03 Jun 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://jokeme.top/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 08 Jun 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://jokeme.top/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>定时备份hugo帖子</title>
+      <link>https://jokeme.top/p/backup_hugo_posts/</link>
+      <pubDate>Tue, 08 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://jokeme.top/p/backup_hugo_posts/</guid>
+      <description>定时备份hugo帖子 今天出差,在高铁上实在是太无聊,信号也不怎么好,我就写了个每天晚上备份Hugo文章的脚本
+#!/bin/bash datee=`date +%Y-%m-%d` bn=`docker ps | egrep hugo` if [[ -n $bn ]] then mkdir ~/udisk/bkhugo/$datee docker cp hugo:/root/pblog/content ~/udisk/bkhugo/$datee/ #记得换成你自己的路径 echo -e &amp;#34;\033[49;32mBackup posts successfully\033[0m&amp;#34; else echo -e &amp;#34;\033[49;31mService hugo is not running\033[0m&amp;#34; fi 也没有啥好说的,都是一些简单的命令组合而成,然后再利用crontab每天00:00执行</description>
+    </item>
+    
     <item>
       <title>Spring IOC DI 学习</title>
       <link>https://jokeme.top/p/spring_ioc_di/</link>
