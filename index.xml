@@ -6,7 +6,24 @@
         <description>Recent content on JokemeBlog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Tue, 08 Jun 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://jokeme.top/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Thu, 17 Jun 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://jokeme.top/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>监控狗东商品价格并利用bark推送价格到手机上</title>
+        <link>https://jokeme.top/p/bark_jd_price/</link>
+        <pubDate>Thu, 17 Jun 2021 00:00:00 +0000</pubDate>
+        
+        <guid>https://jokeme.top/p/bark_jd_price/</guid>
+        <description>&lt;img src="https://cn.bing.com/th?id=OHR.LyonAstronomical_EN-CN6225991486_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post 监控狗东商品价格并利用bark推送价格到手机上" /&gt;监控狗东商品价格并利用bark推送价格到手机上 众所周知啊，狗东上面商品的价格经常在变动，有时候你在最贵的时候买下来了，那你就是冤大头了。除非你急着用。
+先来说一下我的思路吧！
+我一开始是想着在我的服务器上监控商品价格，然后每十分钟对比一下价格，再利用邮件来推送给我自己。这个想法是挺好的，奈何我利用postfix来relay邮件时我的outlook账号死活登陆不了，换qq邮箱，发邮件吧，妈的直接吞邮件。
+既然邮件都不可以，我就想着用公众号吧，直接推送到我的微信，然后登陆我尘封好几年的公众号，嗯！用不了。
+然后我就直接放弃了！好了文章结束！
+哈哈哈哈，开玩笑的，然后我又想到了 bark ，开源免费的推送，还可以自己搭建自己的推送服务端！兄弟们！把安全好用打在公屏上！！！
+好了！不废话了！
+1. 监控狗东商品价格 其实这一部分很简单，调用API就可以了，别问我什么API，自己找吧！下面就是我找到的获取价格的API
+https://pe.3.cn/prices/mgets?skuids=商品ID 2. 编写shell脚本查询价格 写shell脚本那不就是右手就行了嘛！都用不到左手！😄
+#!/bin/bash price=`curl https://pe.3.cn/prices/mgets\?skuids\=2066790 2&amp;gt;/dev/null | awk -F\&amp;#34; &amp;#39;{print $4}&amp;#39; | awk -F\. &amp;#39;{print $1}&amp;#39;` dates=`date +&amp;#34;%Y-%m-%d_%H:%M:%S&amp;#34;` nslo=`tail -n 1 ~/price.log | awk &amp;#39;{print $2}&amp;#39;` printf &amp;#34;%s %s\n&amp;#34; $dates $price &amp;gt;&amp;gt; ~/price.log if [[ $price -eq $nslo ]] then echo &amp;#34;$dates狗东居然还不降价！&amp;#34; curl -k &amp;#34;https://api.jokeme.top/xyzxyzxyzxyzxyzxyz/当前价格$price/狗东居然还不降价?group=bark&amp;#34; elif [[ $price -gt $nslo ]] then echo &amp;#34;狗东居然涨价？&amp;#34; curl -k &amp;#34;https://api.</description>
+        </item>
+        <item>
         <title>定时备份hugo帖子</title>
         <link>https://jokeme.top/p/backup_hugo_posts/</link>
         <pubDate>Tue, 08 Jun 2021 00:00:00 +0000</pubDate>
