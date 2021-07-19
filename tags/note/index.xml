@@ -6,7 +6,19 @@
     <description>Recent content in Note on JokemeBlog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 18 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://jokeme.top/tags/note/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 19 Jul 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://jokeme.top/tags/note/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Windows 10 输入法多了ENG解决方案</title>
+      <link>https://jokeme.top/p/kill_windows_eng/</link>
+      <pubDate>Mon, 19 Jul 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://jokeme.top/p/kill_windows_eng/</guid>
+      <description>Windows 10 输入法多了ENG解决方案 ​	最近突然发现了一个算是 Windows10 的Bug，就是在远程桌面的时候会莫名其妙的多了一个ENG输入法，让原本用着 巨硬输入法 的我们不太适应，而且在断开远程连接后，这个ENG会一直留在电脑上，就非常蛋疼。下面就跟着我来操作操作吧！
+​	首先出了问题，你肯定会在设置里面找输入法啥啥啥设置，但是呢，你很快就会发现，啥也找不到，原来的微软输入法也没有问题，并且也没有多出来的输入法，这就奇了他妈的怪了。我明明啥都是没有问题的，这个多出来的ENG输入法哪里来的呢？
+​	一开始我也很疑惑，然后百度了大半天，都是广告，不忍直视。这里再来骂一遍百度垃圾。然后只能自己摸索呀！我看了这个ENG输入法属于 Englisg(美国) ，我直接好家伙，我输入法明明是 中文(简体，中国) ，这个多出来的ENG输入法居然是一个我没有安装过的语言带来的，这就离谱呀。
+​	找到了问题在这个多出来的输入法以后，我就想尽办法去把这个ENG输入法删掉，可是怎么都删不掉它。而且设置里面也没有英文输入法。我一气之下就下载了这个 Englisg(美国) 语言，安装完了后会自动开启ENG输入法，这次我直接删 Englisg(美国)语言，好家伙，烦了我好长时间的ENG输入法终于是滚出我的电脑了。</description>
+    </item>
+    
     <item>
       <title>Clang学习笔记</title>
       <link>https://jokeme.top/p/clang_note2/</link>
