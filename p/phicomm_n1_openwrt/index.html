@@ -259,11 +259,9 @@
 </code></pre></div><p>然后就是脚本自动运行了，然后需要重启一下就可以了，这样 OpenWrt 就写入了我们的 emmc 了</p>
 <div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">iptables -t nat -I POSTROUTING -o eth0 -j MASQUERADE
 </code></pre></div><p>据说要在防火墙规则里面加上上面这句，但是我没有加使用起来也没有啥感觉，可能是我家 100m 的宽带限制了吧</p>
-<p>顺带说一下 OpenWrt 换源
-~~
-sed -i &rsquo;s/downloads.openwrt.org/mirrors.ustc.edu.cn/openwrt/g' /etc/opkg/distfeeds.conf
-~~</p>
-
+<p>顺带说一下 OpenWrt 换源</p>
+<pre><code>sed -i 's/downloads.openwrt.org/mirrors.ustc.edu.cn\/openwrt/g' /etc/opkg/distfeeds.conf
+</code></pre>
 </section>
 
 
