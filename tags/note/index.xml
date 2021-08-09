@@ -6,11 +6,11 @@
     <description>Recent content in Note on JokemeBlog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 09 Aug 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://jokeme.top/tags/note/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 09 Aug 2021 13:12:19 +0800</lastBuildDate><atom:link href="https://jokeme.top/tags/note/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Aria2 神器的进阶用法</title>
       <link>https://jokeme.top/p/aria2_conf/</link>
-      <pubDate>Mon, 09 Aug 2021 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 09 Aug 2021 13:12:19 +0800</pubDate>
       
       <guid>https://jokeme.top/p/aria2_conf/</guid>
       <description>aria2 配置 众所周知哈 aria2 是一款非常强大的下载工具呐，但是我之前一直都只会他的最最最简单的用法一直不会那种进阶玩法，所以我就去官网找了找 aria2 的参数具体怎么用，还有 RPC 用法

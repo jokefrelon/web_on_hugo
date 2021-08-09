@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>AriaNG on JokemeBlog</title>
+    <link>https://jokeme.top/tags/ariang/</link>
+    <description>Recent content in AriaNG on JokemeBlog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 09 Aug 2021 18:33:21 +0800</lastBuildDate><atom:link href="https://jokeme.top/tags/ariang/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Aria2下载器配置WebUI界面</title>
+      <link>https://jokeme.top/p/ariang_webui/</link>
+      <pubDate>Mon, 09 Aug 2021 18:33:21 +0800</pubDate>
+      
+      <guid>https://jokeme.top/p/ariang_webui/</guid>
+      <description>Aria2下载器配置WebUI界面 aria2是一款非常非常Nice的下载器，之前我也介绍过 记录最近捯饬Linux的收获，上一次大概介绍了一下命令行里面的操作，这一次咱们来说说WebUI上的操作。
+1. 准备环境 首先去Github下载一下AriaNG 当然你可以选择别的WebUI其实大概步骤都差不多。
+wget https://github.com/mayswind/AriaNg/releases/download/1.2.2/AriaNg-1.2.2.zip 下载完成以后咱们去、/var/www/html里面创建一个文件夹
+sudo mkdir /var/www/html/ariaweb 接着咱们把下载下来的文件移动到创建的文件夹里面顺便解压一下
+mv AriaNg-1.2.2.zip /var/www/html/ariaweb cd /var/www/html/ariaweb unzip AriaNg-1.2.2.zip 不知道你们哪里有没有安装 Nginx，如果没有安装的话，安装一下，会用到nginx，如果你愿意也可以用apache2，tomcat等，这里我就以nginx演示了。
+sudo apt-get install nginx 接着是需要安装一下我们今天的主角：aria2
+sudo apt-get install aria2 #aria2 is already the newest version (1.35.0-1build1). 目前 Ubuntu20.04最新的是1.35.0，GitHub最新版本也是1.35.0
+2. 修改配置文件 2.1 aria2.conf 首先就是aria2的配置文件，默认是读取：~/.aria2/aria2.conf，当然我们需要手动创建一下文件的
+mkdir ~/.aria2 touch ~/.aria2/aria2.conf touch ~/.aria2/aria2.session 然后我们就需要把自己的配置文件加上去了
+#http download continue=true max-connection-per-server=5 max-tries=10 retry-wait=600 #bt download bt-max-open-files=1000 bt-request-peer-speed-limit=40K bt-tracker=[udp://93.158.213.92:1337/announce,http://93.158.213.92:1337/announce,udp://207.241.226.111:6969/announce] enable-dht=true enable-peer-exchange=true dht-file-path=/home/user/.cache/aria2/dht.dat max-upload-limit=300K #RPC setting enable-rpc=true rpc-allow-origin-all=true rpc-listen-all=true rpc-secret=llll #Other setting disable-ipv6=true file-allocation=falloc save-session=/home/user/.</description>
+    </item>
+    
+  </channel>
+</rss>
