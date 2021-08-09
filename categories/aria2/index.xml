@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>aria2 on JokemeBlog</title>
+    <link>https://jokeme.top/categories/aria2/</link>
+    <description>Recent content in aria2 on JokemeBlog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 09 Aug 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://jokeme.top/categories/aria2/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Aria2 神器的进阶用法</title>
+      <link>https://jokeme.top/p/aria2_conf/</link>
+      <pubDate>Mon, 09 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://jokeme.top/p/aria2_conf/</guid>
+      <description>aria2 配置 众所周知哈 aria2 是一款非常强大的下载工具呐，但是我之前一直都只会他的最最最简单的用法一直不会那种进阶玩法，所以我就去官网找了找 aria2 的参数具体怎么用，还有 RPC 用法
+基本参数 -d,--dir = 存储下载文件的目录。 -i,--input-file = 下载中列出的 URI FILE。您可以通过将多个 URI 放在由TAB字符分隔的一行中来为单个实体指定多个源 。 -l,--log = 日志文件的文件名。如果`-`指定，则将日志写入 `stdout`. 如果指定了空字符串(&amp;quot;&amp;quot;)，或者省略了此选项，则根本不会将日志写入磁盘。 -j,--max-concurrent-downloads = 为每个队列项设置最大并行下载数。默认：`5` -V,--check-integrity [true|false] 通过验证片段散列或整个文件的散列来检查文件完整性。此选项仅在 BitTorrent、带校验和的 Metalink 下载或带`--checksum`选项的HTTP(S)/FTP 下载中有效 。默认： `false` -c,--continue [true|false] 继续下载部分下载的文件。使用此选项可恢复由 Web 浏览器或其他从头开始按顺序下载文件的程序启动的下载。目前此选项仅适用于 HTTP(S)/FTP 下载。 -h,--help[=|] 帮助信息按标签分类。标签以 `#`. 例如，键入`--help=#http`以获取标记为 的选项的用法`#http`。如果给出了非标记词，则打印名称包含该词的选项的用法。可用值：`#basic`, `#advanced`, `#http`, `#https`, `#ftp`, `#metalink`, `#bittorrent`, `#cookie`, `#hook`, `#file`, `#rpc`, `#checksum`, `#experimental`, `#deprecated`, `#help`,`#all` 默认值：`#basic` HTTP/FTP/SFTP 选项 --all-proxy = 为所有协议使用代理服务器。要覆盖先前定义的代理，请使用“”。您还可以覆盖此设置并使用`--http-proxy`、`--https-proxy`和`--ftp-proxy`选项为特定协议指定代理服务器。 --all-proxy-passwd = 为`--all-proxy`选项设置密码。 --all-proxy-user = 为`--all-proxy`选项设置用户。 --checksum == 设置校验和。TYPE 是哈希类型。 --connect-timeout = 以秒为单位设置连接超时以建立到 HTTP/FTP/代理服务器的连接。建立连接后，此选项无效，而是使用选项`--timeout`。默认：`60` --dry-run [true|false] 如果`true`给出，aria2 只检查远程文件是否可用，不下载数据。此选项对 HTTP/FTP 下载有影响。如果`true`指定，则取消 BitTorrent 下载。默认：`false` --lowest-speed-limit``=` 如果下载速度低于或等于此值（每秒字节数），则关闭连接。 `0`意味着 aria2 没有最低速度限制。您可以附加`K`或`M`(1K = 1024, 1M = 1024K)。此选项不影响 BitTorrent 下载。默认：`0` -x,--max-connection-per-server = 每次下载到一台服务器的最大连接数。默认：`1` --max-file-not-found = 如果 aria2 NUM 次从远程 HTTP/FTP 服务器收到“文件未找到”状态而没有获得一个字节，则强制下载失败。指定`0`禁用此选项。此选项仅在使用 HTTP/FTP 服务器时有效。重试次数计入`--max-tries`，因此也应进行配置。默认： `0` -m,--max-tries = 设置尝试次数。`0`意味着无限。可以设置重试等待时间`--retry-wait`，默认：`5` -k,--min-split-size = aria2 不会拆分小于 2*SIZE 的字节范围。例如，让我们考虑下载 20MiB 文件。如果 SIZE 为 10M，aria2 可以将文件分成 2 个范围 [0-10MiB) 和 [10MiB-20MiB) 并使用 2 个源下载它`--split`当然，如果&amp;gt;= 2）。如果 SIZE 为 15M，由于 2*15M &amp;gt; 20MiB，aria2 不会拆分文件并使用 1 个源下载。您可以附加`K`或`M`,可能的值：`1M`-`1024M`默认值：`20M` --netrc-path = 指定 netrc 文件的路径。默认：`$(HOME)/.</description>
+    </item>
+    
+  </channel>
+</rss>
