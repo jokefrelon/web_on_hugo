@@ -6,11 +6,11 @@
     <description>Recent content in Git on JokemeBlog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 14 Jul 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://jokeme.top/tags/git/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 14 Jul 2020 21:04:27 +0000</lastBuildDate><atom:link href="https://jokeme.top/tags/git/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>两小时 Git 入门</title>
       <link>https://jokeme.top/p/learn_git/</link>
-      <pubDate>Tue, 14 Jul 2020 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 14 Jul 2020 21:04:27 +0000</pubDate>
       
       <guid>https://jokeme.top/p/learn_git/</guid>
       <description>两小时 Git 入门 1.建立 Git 仓库 $ git init 2.把文件添加到仓库 $ git add + filename 3.把文件提交到仓库 $ git commit -m &amp;quot;wrote a readme file&amp;quot; 4.查看提交结果/对比工作区和文件和仓库文件的不同之处 $ git status 5.比对并列出文件和仓库文件的不同之处 $ git diff #如果git status告诉你有文件被修改过，用git diff可以查看修改内容。 6.Git 查看历史记录 $ git log/git log --pretty=oneline(查看精简版) 7.退回曾经的某个版本 7.1 退回最新版 $ git reset --hard + (对应的append GPL的commit id) $ git reset --hard HEAD^ 用 HEAD 表示当前版本，上一个版本就是 HEAD^，上上一个版本就是 HEAD^^，当然往上 100 个版本写 100 个 ^ 比较容易数不过来，所以写成 HEAD~100</description>

@@ -9,14 +9,17 @@
 <meta property='og:description' content='Java Input-Output是Java自带的工具类，用于各种IO操作'>
 <meta property='og:url' content='https://jokeme.top/p/java_io/'>
 <meta property='og:site_name' content='JokemeBlog'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Java_API' /><meta property='article:published_time' content='2019-12-28T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2019-12-28T00:00:00&#43;00:00'/><meta property='og:image' content='https://cn.bing.com/th?id=OHR.FichtelbergWinter_EN-CN7709514197_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4' />
-<meta name="twitter:site" content="FrelonTroung"><meta name="twitter:title" content="Java IO简单操作文件">
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Java_API' /><meta property='article:published_time' content='2019-12-28T21:33:56&#43;00:00'/><meta property='article:modified_time' content='2019-12-28T21:33:56&#43;00:00'/><meta property='og:image' content='https://cn.bing.com/th?id=OHR.FichtelbergWinter_EN-CN7709514197_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4' />
+<meta name="twitter:site" content="@FrelonTroung">
+    <meta name="twitter:creator" content="@FrelonTroung"><meta name="twitter:title" content="Java IO简单操作文件">
 <meta name="twitter:description" content="Java Input-Output是Java自带的工具类，用于各种IO操作"><meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content='https://cn.bing.com/th?id=OHR.FichtelbergWinter_EN-CN7709514197_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4' />
     <link rel="shortcut icon" href="/bk3.ico" />
 
     </head>
-    <body class="">
+    <body class="
+    article-page has-toc
+">
     <script>
         (function() {
             const colorSchemeKey = 'StackColorScheme';
@@ -33,157 +36,32 @@
         if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
             
 
-            document.body.dataset.scheme = 'dark';
+            document.documentElement.dataset.scheme = 'dark';
         } else {
-            document.body.dataset.scheme = 'light';
+            document.documentElement.dataset.scheme = 'light';
         }
     })();
-</script><div class="container main-container flex on-phone--column extended article-page with-toolbar">
-            <aside class="sidebar left-sidebar sticky">
-    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
-        <span class="hamburger-box">
-            <span class="hamburger-inner"></span>
-        </span>
-    </button>
-
-    <header class="site-info">
-        
-            <figure class="site-avatar">
-                
-                    
-                    
-                    
-                        
-                        <img src="/author_hue3a07bfbdd4fc62fd921ca2090947f2f_15076_300x0_resize_q75_box.jpg" width="300"
-                            height="300" class="site-logo" loading="lazy" alt="Avatar">
-                    
-                
-
-                
-                    <span class="emoji">🥰</span>
-                
-            </figure>
-        
-        <h1 class="site-name"><a href="https://jokeme.top">JokemeBlog</a></h1>
-        <h2 class="site-description">人生没有白走的路,每一步都算数。</h2>
-    </header>
-
-    <ol class="menu" id="main-menu">
-        
-        
-        
-
-        <li >
-            <a href='/'>
-                
-                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <polyline points="5 12 3 12 12 3 21 12 19 12" />
-  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
-  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
-</svg>
-
-
-
-                
-                <span>Home</span>
-            </a>
-        </li>
-        
-        
-
-        <li >
-            <a href='/about/'>
-                
-                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <circle cx="12" cy="7" r="4" />
-  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
-</svg>
-
-
-
-                
-                <span>About</span>
-            </a>
-        </li>
-        
-        
-
-        <li >
-            <a href='/archives/'>
-                
-                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <rect x="3" y="4" width="18" height="4" rx="2" />
-  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
-  <line x1="10" y1="12" x2="14" y2="12" />
-</svg>
-
-
-
-                
-                <span>Archives</span>
-            </a>
-        </li>
-        
-        
-
-        <li >
-            <a href='/search/'>
-                
-                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <circle cx="10" cy="10" r="7" />
-  <line x1="21" y1="21" x2="15" y2="15" />
-</svg>
-
-
-
-                
-                <span>Search</span>
-            </a>
-        </li>
-        
-
-        
-            <li id="dark-mode-toggle">
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <circle cx="8" cy="12" r="2" />
-  <rect x="2" y="6" width="20" height="12" rx="6" />
-</svg>
-
-
-
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <circle cx="16" cy="12" r="2" />
-  <rect x="2" y="6" width="20" height="12" rx="6" />
-</svg>
-
-
-
-                <span>暗色模式</span>
-            </li>
-        
-    </ol>
-</aside>
-
-            <main class="main full-width">
-    <div id="article-toolbar">
-        <a href="https://jokeme.top" class="back-home">
-            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+</script>
+<div class="container main-container flex 
+    
+        extended
+    
+">
+    
+        <div id="article-toolbar">
+            <a href="https://jokeme.top" class="back-home">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z"/>
   <polyline points="15 6 9 12 15 18" />
 </svg>
 
 
 
-            <span>Back</span>
-        </a>
-    </div>
-
+                <span>返回</span>
+            </a>
+        </div>
+    
+<main class="main full-width">
     <article class="has-image main-article">
     <header class="article-header">
         <div class="article-image">
@@ -214,8 +92,28 @@
     <h3 class="article-subtitle">
         Java Input-Output是Java自带的工具类，用于各种IO操作
     </h3>
+    
+
+    
     <footer class="article-time">
-        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">2019-12-28 21:33:56 CST</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z"/>
   <circle cx="12" cy="12" r="9" />
   <polyline points="12 7 12 12 15 15" />
@@ -223,8 +121,14 @@
 
 
 
-        <time class="article-time--published">Dec 28, 2019</time>
-    </footer></div>
+                <time class="article-time--reading">
+                    阅读时长: 9 分钟
+                </time>
+            </div>
+        
+    </footer>
+    
+</div>
 </header>
 
     <section class="article-content">
@@ -973,16 +877,17 @@
     </section>
     </footer>
 
+
     
         <link 
                 rel="stylesheet" 
-                href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3&#43;Aro6EYUG4&#43;cU&#43;KJWu/X"crossorigin="anonymous"
+                href="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/katex.min.css"integrity="sha384-RZU/ijkSsFbcmivfdRBQDtwuwVqK7GMOw6IMvKyeWL2K5UAlyp6WonmB8m7Jd0Hn"crossorigin="anonymous"
             ><script 
-                src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js"integrity="sha384-g7c&#43;Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI&#43;sEnkvrMWph2EDg4"crossorigin="anonymous"
+                src="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/katex.min.js"integrity="sha384-pK1WpvzWVBQiP0/GjnvRxV4mOb0oxFuyRxJlk6vVw146n3egcN5C925NCP7a7BY8"crossorigin="anonymous"
                 defer="true"
                 >
             </script><script 
-                src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC&#43;Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa"crossorigin="anonymous"
+                src="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/contrib/auto-render.min.js"integrity="sha384-vZTG03m&#43;2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl"crossorigin="anonymous"
                 defer="true"
                 >
             </script><script>
@@ -1026,24 +931,6 @@
                 
                     
 <article class="has-image">
-    <a href="/p/collection_map/">
-        
-        
-            <div class="article-image">
-                
-                    <img src="https://cn.bing.com/th?id=OHR.BloodyBrook_EN-CN9582612899_UHD.jpg&amp;pid=hp&amp;w=1080&amp;h=720&amp;rs=1&amp;c=4" loading="lazy" data-key="collection_map" data-hash="https://cn.bing.com/th?id=OHR.BloodyBrook_EN-CN9582612899_UHD.jpg&amp;pid=hp&amp;w=1080&amp;h=720&amp;rs=1&amp;c=4"/>
-                
-            </div>
-        
-
-        <div class="article-details">
-            <h2 class="article-title">Java中的collections的map</h2>
-        </div>
-    </a>
-</article>
-                
-                    
-<article class="has-image">
     <a href="/p/java_generics/">
         
         
@@ -1056,6 +943,24 @@
 
         <div class="article-details">
             <h2 class="article-title">简单的Java泛型学习</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="has-image">
+    <a href="/p/collection_map/">
+        
+        
+            <div class="article-image">
+                
+                    <img src="https://cn.bing.com/th?id=OHR.BloodyBrook_EN-CN9582612899_UHD.jpg&amp;pid=hp&amp;w=1080&amp;h=720&amp;rs=1&amp;c=4" loading="lazy" data-key="collection_map" data-hash="https://cn.bing.com/th?id=OHR.BloodyBrook_EN-CN9582612899_UHD.jpg&amp;pid=hp&amp;w=1080&amp;h=720&amp;rs=1&amp;c=4"/>
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Java中的collections的map</h2>
         </div>
     </a>
 </article>
@@ -1101,8 +1006,8 @@
     
 </aside>
 
-
-    
+     
+     
         
     
 
@@ -1117,9 +1022,12 @@
     
     <section class="powerby">
         Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
-        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="2.3.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.1.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
     </section>
 </footer>
+
+
+    
 <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
 
     
@@ -1196,7 +1104,88 @@
                 rel="stylesheet" 
                 href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css"integrity="sha256-SBLU4vv6CA6lHsZ1XyTdhyjJxCjPif/TRkjnsyGAGnE="crossorigin="anonymous"
             >
+
             </main>
+    
+        <aside class="sidebar right-sidebar sticky">
+            <section class="widget archives">
+                <div class="widget-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+                </div>
+                <h2 class="widget-title section-title">目录</h2>
+                
+                <div class="widget--toc">
+                    <nav id="TableOfContents">
+  <ol>
+    <li><a href="#1-file-类">1 File 类</a>
+      <ol>
+        <li><a href="#11-使用示例">1.1 使用示例：</a></li>
+        <li><a href="#12-file类常见方法">1.2 <strong>File</strong>类常见方法</a>
+          <ol>
+            <li><a href="#121-获取文件路径">1.2.1 获取文件路径</a></li>
+            <li><a href="#122-获取文件修改时间">1.2.2 获取文件修改时间</a></li>
+            <li><a href="#123-常见操作">1.2.3 常见操作</a></li>
+            <li><a href="#124-获取文件夹内容">1.2.4 获取文件夹内容</a></li>
+            <li><a href="#125-文件过滤器">1.2.5 文件过滤器</a></li>
+          </ol>
+        </li>
+        <li><a href="#13-递归-获取-内的内容">1.3 递归 获取 ?内的内容</a>
+          <ol>
+            <li><a href="#131-使用递归删除-">1.3.1 使用递归删除 ?</a></li>
+          </ol>
+        </li>
+        <li><a href="#14-前三-part-测试">1.4 前三 part 测试</a></li>
+      </ol>
+    </li>
+    <li><a href="#2-fileoutputstream-向-内写入内容">2 FileOutputStream 向 ?内写入内容</a></li>
+    <li><a href="#3-fileinputstream-读取-内容">3 FileInputStream 读取 ?内容</a>
+      <ol>
+        <li><a href="#31-read-入门级读取">3.1❌ read() 入门级读取</a></li>
+        <li><a href="#32-read-初级读取">3.2❌ read() 初级读取</a></li>
+        <li><a href="#33--read-进阶级读取">3.3 ✔ read() 进阶级读取</a></li>
+        <li><a href="#34--read高级读取">3.4 ✔ read()高级读取</a></li>
+      </ol>
+    </li>
+    <li><a href="#4-fileoutputstream-和-fileinputstream-一起读写文件">4 FileOutputStream 和 FileInputStream 一起读写文件</a>
+      <ol>
+        <li><a href="#41-低级写法">4.1 低级写法</a></li>
+        <li><a href="#42-高级写法">4.2 高级写法</a></li>
+      </ol>
+    </li>
+    <li><a href="#5-buffer-缓冲区">5 Buffer 缓冲区</a>
+      <ol>
+        <li><a href="#51-使用示例">5.1 使用示例</a></li>
+      </ol>
+    </li>
+    <li><a href="#6-字符读写">6 字符读写</a>
+      <ol>
+        <li><a href="#61-使用-io-stream-readerwriter">6.1 使用 I/O-Stream-Reader/Writer</a></li>
+        <li><a href="#62-filereaderfilewriter-类">6.2 FileReader/FileWriter 类</a>
+          <ol>
+            <li><a href="#621-filereader---filewrite-初级写法">6.2.1 FileReader /  FileWrite 初级写法</a></li>
+            <li><a href="#622-filereader---filewrite-高级写法">6.2.2 FileReader /  FileWrite 高级写法</a></li>
+          </ol>
+        </li>
+        <li><a href="#63-bufferedreader--bufferedwriter">6.3 BufferedReader / BufferedWriter</a></li>
+      </ol>
+    </li>
+    <li><a href="#final写在最后">Final	写在最后：</a></li>
+  </ol>
+</nav>
+                </div>
+            </section>
+        </aside>
+    
+
         </div>
         <script 
                 src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js"integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g="crossorigin="anonymous"

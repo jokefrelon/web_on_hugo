@@ -6,11 +6,11 @@
     <description>Recent content in Ffmpeg on JokemeBlog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 23 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://jokeme.top/tags/ffmpeg/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 23 Mar 2021 14:21:09 +0000</lastBuildDate><atom:link href="https://jokeme.top/tags/ffmpeg/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>ffmpeg设置请求头</title>
       <link>https://jokeme.top/p/ffmpeg_user_agent/</link>
-      <pubDate>Tue, 23 Mar 2021 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 23 Mar 2021 14:21:09 +0000</pubDate>
       
       <guid>https://jokeme.top/p/ffmpeg_user_agent/</guid>
       <description>ffmpeg是一款非常强大的工具,它可以在命令行下对视频类文件进行多种操作,之前我也介绍过ffmpeg,戳这里
@@ -25,7 +25,7 @@ ffmpeg -user_agent &amp;quot;User-Agent: AppleCoreMedia/1.0.0.18C66 (iPhone; U; 
     <item>
       <title>Ubuntu 安装 **FFMPEG** 下载 m3u8 格式的视频</title>
       <link>https://jokeme.top/p/ffmpeg_download_m3u8/</link>
-      <pubDate>Wed, 15 Apr 2020 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 15 Apr 2020 23:39:23 +0000</pubDate>
       
       <guid>https://jokeme.top/p/ffmpeg_download_m3u8/</guid>
       <description>Ubuntu 安装 FFMPEG 下载 m3u8 格式的视频 最近想下载一个某音视频，但是我能看不能下载，这不是扯吗？于是不能忍的我就打算盘盘这个视频

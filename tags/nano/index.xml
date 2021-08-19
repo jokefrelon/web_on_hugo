@@ -6,11 +6,11 @@
     <description>Recent content in Nano on JokemeBlog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 10 Jun 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://jokeme.top/tags/nano/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 10 Jun 2020 13:58:18 +0000</lastBuildDate><atom:link href="https://jokeme.top/tags/nano/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>CentOS编译安装Nano</title>
       <link>https://jokeme.top/p/compile_nano/</link>
-      <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 10 Jun 2020 13:58:18 +0000</pubDate>
       
       <guid>https://jokeme.top/p/compile_nano/</guid>
       <description>CentOS编译安装Nano 众所周知,因为 CentOS 非常的稳定,所以导致 CentOS の YUM 源里面的软件非常的老旧 就拿 Nano 来说, 官方已经到了 4.0版本, 而 CentOS 这边还在2.0徘徊,这就非常的难受了.所以咱就手动编译安装!

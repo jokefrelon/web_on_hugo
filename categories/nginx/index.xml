@@ -6,11 +6,11 @@
     <description>Recent content in Nginx on JokemeBlog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 23 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://jokeme.top/categories/nginx/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 23 Mar 2021 21:33:56 +0000</lastBuildDate><atom:link href="https://jokeme.top/categories/nginx/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Nginx目录美化</title>
       <link>https://jokeme.top/p/nginx_beautify/</link>
-      <pubDate>Tue, 23 Mar 2021 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 23 Mar 2021 21:33:56 +0000</pubDate>
       
       <guid>https://jokeme.top/p/nginx_beautify/</guid>
       <description>Nginx目录美化 我们大家都知道啊! nginx是一个高性能的Web服务器,用于分享文件也是一个非常不错的选择,但是由于Nginx默认的目录太丑了, 都不好意思拿出手。这就有了本篇文章。
@@ -22,7 +22,7 @@
     <item>
       <title>学习nginx代理相关的笔记</title>
       <link>https://jokeme.top/p/nginx_proxy/</link>
-      <pubDate>Sat, 11 Jan 2020 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 11 Jan 2020 21:33:56 +0000</pubDate>
       
       <guid>https://jokeme.top/p/nginx_proxy/</guid>
       <description>nginx 反向代理 nginx 一直都是我们比较常用的工具，它不仅功能强悍，而且性能也非常好 ?,一直深受开发者的喜爱

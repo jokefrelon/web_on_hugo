@@ -6,11 +6,11 @@
     <description>Recent content in Nat on JokemeBlog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 15 Jul 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://jokeme.top/tags/nat/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 15 Jul 2020 22:53:18 +0000</lastBuildDate><atom:link href="https://jokeme.top/tags/nat/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>简单解释 NAT</title>
       <link>https://jokeme.top/p/learn_nat/</link>
-      <pubDate>Wed, 15 Jul 2020 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 15 Jul 2020 22:53:18 +0000</pubDate>
       
       <guid>https://jokeme.top/p/learn_nat/</guid>
       <description>简单解释 NAT[转自知乎] NAT 大家应该十分熟悉了，它分为几种。一种就叫做 NAT，它只对 IP 地址进行转换；另一种叫做 NAPT（Network Address/Port Translation），它可以对整个会话的端点（由 IP 地址和端口号组成）做转换，这是一种更加常见的 NAT 变种。

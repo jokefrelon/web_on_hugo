@@ -6,11 +6,11 @@
     <description>Recent content in Shell on JokemeBlog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 17 Jun 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://jokeme.top/tags/shell/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 17 Jun 2021 22:49:29 +0000</lastBuildDate><atom:link href="https://jokeme.top/tags/shell/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>监控狗东商品价格并利用bark推送价格到手机上</title>
       <link>https://jokeme.top/p/bark_jd_price/</link>
-      <pubDate>Thu, 17 Jun 2021 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 17 Jun 2021 22:49:29 +0000</pubDate>
       
       <guid>https://jokeme.top/p/bark_jd_price/</guid>
       <description>监控狗东商品价格并利用bark推送价格到手机上 众所周知啊，狗东上面商品的价格经常在变动，有时候你在最贵的时候买下来了，那你就是冤大头了。除非你急着用。
@@ -28,7 +28,7 @@ https://pe.3.cn/prices/mgets?skuids=商品ID 2. 编写shell脚本查询价格 �
     <item>
       <title>定时备份hugo帖子</title>
       <link>https://jokeme.top/p/backup_hugo_posts/</link>
-      <pubDate>Tue, 08 Jun 2021 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 08 Jun 2021 23:12:18 +0000</pubDate>
       
       <guid>https://jokeme.top/p/backup_hugo_posts/</guid>
       <description>定时备份hugo帖子 今天出差,在高铁上实在是太无聊,信号也不怎么好,我就写了个每天晚上备份Hugo文章的脚本
@@ -38,7 +38,7 @@ https://pe.3.cn/prices/mgets?skuids=商品ID 2. 编写shell脚本查询价格 �
     <item>
       <title>一个有意思的shell变量问题</title>
       <link>https://jokeme.top/p/funny_space_in_shell_script/</link>
-      <pubDate>Sun, 23 May 2021 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 23 May 2021 02:33:06 +0000</pubDate>
       
       <guid>https://jokeme.top/p/funny_space_in_shell_script/</guid>
       <description>一个有意思的shell变量问题 今天在上班时遇到了一个批量解压zip的需求，由于几十个压缩包的名称一样，chrome下载下来以后就自动给加了编号。并且解压后的文件名也是一样的，只不过里面的文件不一样。
@@ -55,7 +55,7 @@ allzip=`ls | grep zip | sed &amp;#39;s/ (/(/g&amp;#39;`	#先用sed把&amp;#39; (
     <item>
       <title>Nginx目录美化</title>
       <link>https://jokeme.top/p/nginx_beautify/</link>
-      <pubDate>Tue, 23 Mar 2021 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 23 Mar 2021 21:33:56 +0000</pubDate>
       
       <guid>https://jokeme.top/p/nginx_beautify/</guid>
       <description>Nginx目录美化 我们大家都知道啊! nginx是一个高性能的Web服务器,用于分享文件也是一个非常不错的选择,但是由于Nginx默认的目录太丑了, 都不好意思拿出手。这就有了本篇文章。
@@ -67,7 +67,7 @@ allzip=`ls | grep zip | sed &amp;#39;s/ (/(/g&amp;#39;`	#先用sed把&amp;#39; (
     <item>
       <title>记录最近捯饬Linux的收获</title>
       <link>https://jokeme.top/p/linux_reward/</link>
-      <pubDate>Sun, 21 Mar 2021 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 21 Mar 2021 01:25:43 +0000</pubDate>
       
       <guid>https://jokeme.top/p/linux_reward/</guid>
       <description>记录最近捯饬Linux的收获 虽然最近在准备专升本考试吧，但是也没有认真的复习，最近还是天天玩Linux，在这里记录一下。
@@ -95,7 +95,7 @@ sed -i &#39;s/xxx/yyy/g&#39; filename 这个就是把文件内部的xxx替换为
     <item>
       <title>Linux 常用的小技巧</title>
       <link>https://jokeme.top/p/linux_skill/</link>
-      <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 10 Jun 2020 20:48:55 +0000</pubDate>
       
       <guid>https://jokeme.top/p/linux_skill/</guid>
       <description>Linux 常用的小技巧 1 .apt-get remove vsftpd &amp;ndash;purge 删除所有配置，下次安装的时候会重新生成配置文件
@@ -110,7 +110,7 @@ sh -c &amp;#34;$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/ma
     <item>
       <title>Docker 中运行 OpenWrt</title>
       <link>https://jokeme.top/p/run_openwrt_in_docker/</link>
-      <pubDate>Fri, 20 Mar 2020 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 20 Mar 2020 21:33:56 +0000</pubDate>
       
       <guid>https://jokeme.top/p/run_openwrt_in_docker/</guid>
       <description>Docker 中运行 OpenWrt 前几天解决了小主机 Ubuntu 系统的引导问题以后。便开始折腾 OpenWrt 了，在 GitHub 上找到了 L 大 的 Lede 源码，需要自己编译。
@@ -124,7 +124,7 @@ sh -c &amp;#34;$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/ma
     <item>
       <title>Bay Trail主板安装Linux的坑</title>
       <link>https://jokeme.top/p/install_linux_on_bay_trail/</link>
-      <pubDate>Mon, 16 Mar 2020 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 16 Mar 2020 05:01:31 +0000</pubDate>
       
       <guid>https://jokeme.top/p/install_linux_on_bay_trail/</guid>
       <description>Bay Trail 主板安装 Linux 的坑 最近搞了一个 N2920 的低功耗小主机，本来打算搞软路由，但是家里网速不行，就打算先刷个 Linux 玩玩，于是我就被这个问题烦了将近半个月！
@@ -148,7 +148,7 @@ Again
     <item>
       <title>学习nginx代理相关的笔记</title>
       <link>https://jokeme.top/p/nginx_proxy/</link>
-      <pubDate>Sat, 11 Jan 2020 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 11 Jan 2020 21:33:56 +0000</pubDate>
       
       <guid>https://jokeme.top/p/nginx_proxy/</guid>
       <description>nginx 反向代理 nginx 一直都是我们比较常用的工具，它不仅功能强悍，而且性能也非常好 ?,一直深受开发者的喜爱

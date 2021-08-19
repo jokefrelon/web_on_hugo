@@ -6,11 +6,11 @@
     <description>Recent content in Hugo on JokemeBlog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 16 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://jokeme.top/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 16 May 2021 23:47:03 +0000</lastBuildDate><atom:link href="https://jokeme.top/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>从solo迁移到hugo</title>
       <link>https://jokeme.top/p/solo_2_hugo/</link>
-      <pubDate>Sun, 16 May 2021 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 16 May 2021 23:47:03 +0000</pubDate>
       
       <guid>https://jokeme.top/p/solo_2_hugo/</guid>
       <description>博客迁移 最近我把我的个人博客从solo迁移到了hugo项目上了。

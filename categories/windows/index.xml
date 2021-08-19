@@ -6,11 +6,11 @@
     <description>Recent content in Windows on JokemeBlog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 19 Jul 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://jokeme.top/categories/windows/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 19 Jul 2021 22:07:17 +0000</lastBuildDate><atom:link href="https://jokeme.top/categories/windows/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Windows 10 输入法多了ENG解决方案</title>
       <link>https://jokeme.top/p/kill_windows_eng/</link>
-      <pubDate>Mon, 19 Jul 2021 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 19 Jul 2021 22:07:17 +0000</pubDate>
       
       <guid>https://jokeme.top/p/kill_windows_eng/</guid>
       <description>Windows 10 输入法多了ENG解决方案 ​	最近突然发现了一个算是 Windows10 的Bug，就是在远程桌面的时候会莫名其妙的多了一个ENG输入法，让原本用着 巨硬输入法 的我们不太适应，而且在断开远程连接后，这个ENG会一直留在电脑上，就非常蛋疼。下面就跟着我来操作操作吧！
@@ -22,7 +22,7 @@
     <item>
       <title>笔记本坏了，这几天不能敲代码了</title>
       <link>https://jokeme.top/p/my_laptop_do_not_work/</link>
-      <pubDate>Mon, 27 Jul 2020 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 27 Jul 2020 02:18:50 +0000</pubDate>
       
       <guid>https://jokeme.top/p/my_laptop_do_not_work/</guid>
       <description>笔记本坏了，这几天不能写代码了 &amp;lt;2020-07-27 14:25&amp;gt; 今天吃完饭以后，发现笔记本无法唤醒了。我还觉得是电池没有电了，可是插上电源依然不能开机，我慌了，八成是笔记本坏了。
@@ -53,7 +53,7 @@
     <item>
       <title>VS code 快捷键大全</title>
       <link>https://jokeme.top/p/code_hot_key/</link>
-      <pubDate>Fri, 17 Jul 2020 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 17 Jul 2020 18:18:21 +0000</pubDate>
       
       <guid>https://jokeme.top/p/code_hot_key/</guid>
       <description>VS code 快捷键大全 General Ctrl+Shift+P, F1 Show Command Palette
@@ -75,7 +75,7 @@ Ctrl+Shift+\ Jump to matching bracket</description>
     <item>
       <title>在微软官网下载 Windows10 ISO 安装包</title>
       <link>https://jokeme.top/p/download_windows10_iso/</link>
-      <pubDate>Tue, 14 Jul 2020 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 14 Jul 2020 15:42:51 +0000</pubDate>
       
       <guid>https://jokeme.top/p/download_windows10_iso/</guid>
       <description>教大家如何在微软官网下载 Windows10 ISO 安装包  进入 Windows10 下载页面 CTRL+SHIFT+I 后再 CTRL+SHIFT+M再接一个 CTRL+R  你就可以看到让你选择 Windows 版本,个人建议不要选家庭中文版 然后一路下来也没有啥难点了,他就会为你创建一个24H内有效的链接,记得尽快下载系统哦

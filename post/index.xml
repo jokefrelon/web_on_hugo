@@ -6,11 +6,26 @@
     <description>Recent content in Posts on JokemeBlog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 09 Aug 2021 18:33:21 +0800</lastBuildDate><atom:link href="https://jokeme.top/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 19 Aug 2021 00:08:17 +0000</lastBuildDate><atom:link href="https://jokeme.top/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>在Typora里使用PicGo-Core自动上传图片</title>
+      <link>https://jokeme.top/p/picgo_with_typora/</link>
+      <pubDate>Thu, 19 Aug 2021 00:08:17 +0000</pubDate>
+      
+      <guid>https://jokeme.top/p/picgo_with_typora/</guid>
+      <description>以前写博客呢基本上都没有配过图片，因为没有找到适合的图床和顺手的工具，免费的图床要不然就是广告，要不然就是不能使用。但是现在不一样了，我不傻了，我变机灵了！我学会白嫖七牛云的Kodo了。
+好的首先进入正题，咱们今天的主角是 PicGo-Core 你也可以用app，但是我不太喜欢。首先选择 PicGo-Core 下载二进制包，如果你之前用过的话，直接点击下面的 打开配置文件
+这个时候你的配置文件里面应该啥都没有，就需要咱们用命令来自动生成一下配置文件了
+picgo use uploader 输入完命令以后因该是下面的样子，然后选择对应的选项，填入正确的数据即可。
+然后如果你不懂的话看一看大佬的文档就可以明白了 PicGo-Core
+然后AK和SK就是七牛云那边的密钥，bucket就是你的Kode名字，area就选择对应的地方即可，完整配置如下。整个过程下来没有啥难得地方，就是激活七牛云的账号比较麻烦。
+然后咱就可以试试看Typora在复制图片的时候会不会自动上传图片并把图片的本地链接替换成Kode外链。不出意外的话咱们就可以直接起飞了。祝好运吧。</description>
+    </item>
+    
     <item>
       <title>Aria2下载器配置WebUI界面</title>
       <link>https://jokeme.top/p/ariang_webui/</link>
-      <pubDate>Mon, 09 Aug 2021 18:33:21 +0800</pubDate>
+      <pubDate>Mon, 09 Aug 2021 18:33:21 +0000</pubDate>
       
       <guid>https://jokeme.top/p/ariang_webui/</guid>
       <description>Aria2下载器配置WebUI界面 aria2是一款非常非常Nice的下载器，之前我也介绍过 记录最近捯饬Linux的收获，上一次大概介绍了一下命令行里面的操作，这一次咱们来说说WebUI上的操作。
@@ -38,7 +53,7 @@ mkdir ~/.aria2 touch ~/.aria2/aria2.conf touch ~/.aria2/aria2.session 然后我�
     <item>
       <title>Windows 10 输入法多了ENG解决方案</title>
       <link>https://jokeme.top/p/kill_windows_eng/</link>
-      <pubDate>Mon, 19 Jul 2021 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 19 Jul 2021 22:07:17 +0000</pubDate>
       
       <guid>https://jokeme.top/p/kill_windows_eng/</guid>
       <description>Windows 10 输入法多了ENG解决方案 ​	最近突然发现了一个算是 Windows10 的Bug，就是在远程桌面的时候会莫名其妙的多了一个ENG输入法，让原本用着 巨硬输入法 的我们不太适应，而且在断开远程连接后，这个ENG会一直留在电脑上，就非常蛋疼。下面就跟着我来操作操作吧！
@@ -50,7 +65,7 @@ mkdir ~/.aria2 touch ~/.aria2/aria2.conf touch ~/.aria2/aria2.session 然后我�
     <item>
       <title>监控狗东商品价格并利用bark推送价格到手机上</title>
       <link>https://jokeme.top/p/bark_jd_price/</link>
-      <pubDate>Thu, 17 Jun 2021 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 17 Jun 2021 22:49:29 +0000</pubDate>
       
       <guid>https://jokeme.top/p/bark_jd_price/</guid>
       <description>监控狗东商品价格并利用bark推送价格到手机上 众所周知啊，狗东上面商品的价格经常在变动，有时候你在最贵的时候买下来了，那你就是冤大头了。除非你急着用。
@@ -68,7 +83,7 @@ https://pe.3.cn/prices/mgets?skuids=商品ID 2. 编写shell脚本查询价格 �
     <item>
       <title>定时备份hugo帖子</title>
       <link>https://jokeme.top/p/backup_hugo_posts/</link>
-      <pubDate>Tue, 08 Jun 2021 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 08 Jun 2021 23:12:18 +0000</pubDate>
       
       <guid>https://jokeme.top/p/backup_hugo_posts/</guid>
       <description>定时备份hugo帖子 今天出差,在高铁上实在是太无聊,信号也不怎么好,我就写了个每天晚上备份Hugo文章的脚本
@@ -78,7 +93,7 @@ https://pe.3.cn/prices/mgets?skuids=商品ID 2. 编写shell脚本查询价格 �
     <item>
       <title>Spring IOC DI 学习</title>
       <link>https://jokeme.top/p/spring_ioc_di/</link>
-      <pubDate>Thu, 03 Jun 2021 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 03 Jun 2021 17:27:33 +0000</pubDate>
       
       <guid>https://jokeme.top/p/spring_ioc_di/</guid>
       <description>Spring IOC DI 学习 最近在海底捞上班搞运维，但是我也没有放下我的Java开发学习，今天下班早点，我就又开始学习Springboot啦
@@ -93,7 +108,7 @@ package top.jokeme.funny.pojo; import org.springframework.stereotype.Component; 
     <item>
       <title>Hackintosh Laptop 常见快捷键</title>
       <link>https://jokeme.top/p/hackintosh_laptop_hotkey/</link>
-      <pubDate>Tue, 01 Jun 2021 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 01 Jun 2021 20:32:07 +0000</pubDate>
       
       <guid>https://jokeme.top/p/hackintosh_laptop_hotkey/</guid>
       <description>Hackintosh Laptop 常见快捷键 一般来说可以macOS和Windows对应键位参考下面的对照表即可
@@ -115,7 +130,7 @@ package top.jokeme.funny.pojo; import org.springframework.stereotype.Component; 
     <item>
       <title>一个有意思的shell变量问题</title>
       <link>https://jokeme.top/p/funny_space_in_shell_script/</link>
-      <pubDate>Sun, 23 May 2021 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 23 May 2021 02:33:06 +0000</pubDate>
       
       <guid>https://jokeme.top/p/funny_space_in_shell_script/</guid>
       <description>一个有意思的shell变量问题 今天在上班时遇到了一个批量解压zip的需求，由于几十个压缩包的名称一样，chrome下载下来以后就自动给加了编号。并且解压后的文件名也是一样的，只不过里面的文件不一样。
@@ -132,7 +147,7 @@ allzip=`ls | grep zip | sed &amp;#39;s/ (/(/g&amp;#39;`	#先用sed把&amp;#39; (
     <item>
       <title>Clang学习笔记</title>
       <link>https://jokeme.top/p/clang_note2/</link>
-      <pubDate>Tue, 18 May 2021 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 18 May 2021 11:26:19 +0000</pubDate>
       
       <guid>https://jokeme.top/p/clang_note2/</guid>
       <description>ClangLearn Clang 定义符号常量 在宏中定义符号常量非常简单,格式如下
@@ -151,7 +166,7 @@ char Gage[10]; Gage[0] = &amp;#39;J&amp;#39;; Gage[1] = &amp;#39;a&amp;#39;; Gag
     <item>
       <title>从solo迁移到hugo</title>
       <link>https://jokeme.top/p/solo_2_hugo/</link>
-      <pubDate>Sun, 16 May 2021 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 16 May 2021 23:47:03 +0000</pubDate>
       
       <guid>https://jokeme.top/p/solo_2_hugo/</guid>
       <description>博客迁移 最近我把我的个人博客从solo迁移到了hugo项目上了。
@@ -175,7 +190,7 @@ baseurl:http://example.com#根据你自己改languageCode:en-ustheme:hugo-theme-
     <item>
       <title>Dockerfile编写</title>
       <link>https://jokeme.top/p/dockerfile/</link>
-      <pubDate>Tue, 13 Apr 2021 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 13 Apr 2021 04:59:44 +0000</pubDate>
       
       <guid>https://jokeme.top/p/dockerfile/</guid>
       <description>今天也是摸鱼的一天没怎么看书,一直在玩Linux。并且在无意间看到了我之前下载的 DirectoryLister，就想着在Docker里面部署玩一下。
@@ -193,9 +208,21 @@ ENV DL_VERSION 3.7.7 3. 自动化运行命令 这里也没有啥好说的，有�
     </item>
     
     <item>
+      <title>Nginx目录美化</title>
+      <link>https://jokeme.top/p/nginx_beautify/</link>
+      <pubDate>Tue, 23 Mar 2021 21:33:56 +0000</pubDate>
+      
+      <guid>https://jokeme.top/p/nginx_beautify/</guid>
+      <description>Nginx目录美化 我们大家都知道啊! nginx是一个高性能的Web服务器,用于分享文件也是一个非常不错的选择,但是由于Nginx默认的目录太丑了, 都不好意思拿出手。这就有了本篇文章。
+先来说一下我的环境: Ubuntu 20.04.1 ，Nginx 1.18
+1. 添加Index.html至主机根目录 nano index.html 内容如下
+&amp;lt;!-- autoindex.html 21.02, see https://phus.lu --&amp;gt; &amp;lt;script&amp;gt; !function(){ var website_title = &#39;&#39; var datetime_format = &#39;%Y-%b-%d %H:%M&#39; var show_readme_md = true var enable_footer_js = true var max_name_length = 20 var dom = { element: null, get: function (o) { var obj = Object.create(this) obj.element = (typeof o == &amp;quot;object&amp;quot;) ? o : document.createElement(o) return obj }, add: function (o) { var obj = dom.</description>
+    </item>
+    
+    <item>
       <title>ffmpeg设置请求头</title>
       <link>https://jokeme.top/p/ffmpeg_user_agent/</link>
-      <pubDate>Tue, 23 Mar 2021 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 23 Mar 2021 14:21:09 +0000</pubDate>
       
       <guid>https://jokeme.top/p/ffmpeg_user_agent/</guid>
       <description>ffmpeg是一款非常强大的工具,它可以在命令行下对视频类文件进行多种操作,之前我也介绍过ffmpeg,戳这里
@@ -208,21 +235,9 @@ ffmpeg -user_agent &amp;quot;User-Agent: AppleCoreMedia/1.0.0.18C66 (iPhone; U; 
     </item>
     
     <item>
-      <title>Nginx目录美化</title>
-      <link>https://jokeme.top/p/nginx_beautify/</link>
-      <pubDate>Tue, 23 Mar 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://jokeme.top/p/nginx_beautify/</guid>
-      <description>Nginx目录美化 我们大家都知道啊! nginx是一个高性能的Web服务器,用于分享文件也是一个非常不错的选择,但是由于Nginx默认的目录太丑了, 都不好意思拿出手。这就有了本篇文章。
-先来说一下我的环境: Ubuntu 20.04.1 ，Nginx 1.18
-1. 添加Index.html至主机根目录 nano index.html 内容如下
-&amp;lt;!-- autoindex.html 21.02, see https://phus.lu --&amp;gt; &amp;lt;script&amp;gt; !function(){ var website_title = &#39;&#39; var datetime_format = &#39;%Y-%b-%d %H:%M&#39; var show_readme_md = true var enable_footer_js = true var max_name_length = 20 var dom = { element: null, get: function (o) { var obj = Object.create(this) obj.element = (typeof o == &amp;quot;object&amp;quot;) ? o : document.createElement(o) return obj }, add: function (o) { var obj = dom.</description>
-    </item>
-    
-    <item>
       <title>记录最近捯饬Linux的收获</title>
       <link>https://jokeme.top/p/linux_reward/</link>
-      <pubDate>Sun, 21 Mar 2021 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 21 Mar 2021 01:25:43 +0000</pubDate>
       
       <guid>https://jokeme.top/p/linux_reward/</guid>
       <description>记录最近捯饬Linux的收获 虽然最近在准备专升本考试吧，但是也没有认真的复习，最近还是天天玩Linux，在这里记录一下。
@@ -250,7 +265,7 @@ sed -i &#39;s/xxx/yyy/g&#39; filename 这个就是把文件内部的xxx替换为
     <item>
       <title>Ubuntu 20.04.2 配置 vsftpd 的脑坑</title>
       <link>https://jokeme.top/p/linux_vsftpd/</link>
-      <pubDate>Mon, 01 Mar 2021 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 01 Mar 2021 22:37:16 +0000</pubDate>
       
       <guid>https://jokeme.top/p/linux_vsftpd/</guid>
       <description>Ubuntu 20.04.2 配置 vsftpd 的脑坑 今天是 2020-03-01 02:13:13，刚结束了我在我哥饭店帮忙的欢乐时光，刚下班回来的我就准备掏出我的大宝贝好好的爽一爽，毕竟大半个月都没有咋用我的电脑了。因为之前刚换的Ubuntu20还有好多东西没有配置好，我就想着今天晚上把 ftp 整一下，然后就遇到了我特别尴尬的一幕，记录一下。
@@ -263,7 +278,7 @@ sed -i &#39;s/xxx/yyy/g&#39; filename 这个就是把文件内部的xxx替换为
     <item>
       <title>macOS设置brew安装的软件自启动</title>
       <link>https://jokeme.top/p/macos_brew_installed_app_auto_start_at_boot/</link>
-      <pubDate>Mon, 22 Feb 2021 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 22 Feb 2021 19:34:20 +0000</pubDate>
       
       <guid>https://jokeme.top/p/macos_brew_installed_app_auto_start_at_boot/</guid>
       <description>1. Home-brew 简介 先介绍一下本篇文章的主角：Home-brew，它是一款macOS的软件包管理器，当然也同样适用于Linux（不会真的有人 Linux 服务器用 brew 吧？）。
@@ -277,7 +292,7 @@ sed -i &#39;s/xxx/yyy/g&#39; filename 这个就是把文件内部的xxx替换为
     <item>
       <title>Phicomm N1 刷 OpenWrt 做旁路由</title>
       <link>https://jokeme.top/p/phicomm_n1_openwrt/</link>
-      <pubDate>Thu, 28 Jan 2021 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 28 Jan 2021 21:33:56 +0000</pubDate>
       
       <guid>https://jokeme.top/p/phicomm_n1_openwrt/</guid>
       <description>众所周知啊！N1 这个产品呢比较的全能，可以刷armbian、Openwrt、Android 电视盒子甚至windows也都不在话下。
@@ -301,7 +316,7 @@ GitHub：IvanSolis1989的固件
     <item>
       <title>数学思想</title>
       <link>https://jokeme.top/p/math_thought/</link>
-      <pubDate>Sun, 06 Dec 2020 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 06 Dec 2020 17:18:43 +0000</pubDate>
       
       <guid>https://jokeme.top/p/math_thought/</guid>
       <description>数学思想  先声明一下！我是数学菜鸡！以下内容是我个人总结在学习数学中的一些重要的数学思想，写的不好！望海涵！!!
@@ -319,7 +334,7 @@ $$ f(-x)=ln(\frac{1}{\sqrt{x^2+1}+x})=ln(\sqrt{x^2+1}+x)^{-1}=-ln(\sqrt{x^2+1}+x
     <item>
       <title>Ubuntu &amp;&amp; Docker 使用建议</title>
       <link>https://jokeme.top/p/ubuntu_docker_tips/</link>
-      <pubDate>Sun, 15 Nov 2020 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 15 Nov 2020 07:02:33 +0000</pubDate>
       
       <guid>https://jokeme.top/p/ubuntu_docker_tips/</guid>
       <description>Ubuntu一直是我喜欢用的Linux发行版本,界面简洁,上手简单,用户广泛
@@ -338,7 +353,7 @@ sudo systemctl daemon-reload sudo systemctl restart docker 少侠记得重启加
     <item>
       <title>记录一次OpenWrt安装zsh</title>
       <link>https://jokeme.top/p/openwrt_install_zsh/</link>
-      <pubDate>Wed, 07 Oct 2020 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 07 Oct 2020 21:33:56 +0000</pubDate>
       
       <guid>https://jokeme.top/p/openwrt_install_zsh/</guid>
       <description>众所周知啊，OpenWrt 是一个非常优秀的路由器 OS,但是因为是为路由器优化的，所以我们在使用的时候就会遇到各种各样的问题，就比如安装 ohmyzsh
@@ -348,9 +363,18 @@ sudo systemctl daemon-reload sudo systemctl restart docker 少侠记得重启加
     </item>
     
     <item>
+      <title>OpenStack 常用命令</title>
+      <link>https://jokeme.top/p/openstack_command/</link>
+      <pubDate>Fri, 25 Sep 2020 21:33:56 +0000</pubDate>
+      
+      <guid>https://jokeme.top/p/openstack_command/</guid>
+      <description>OpenStack 常用命令 1. MySQL showvariableslike&amp;#34;storage_engine&amp;#34;;//查询默认存储引擎InnoDBshowvariableslike&amp;#34;have%&amp;#34;;//查询支持的存储引擎2. Keyston source /etc/keystone/admin-openrc.sh openstack user create --domain demo --password password testuser //--domain为所属域 --password为密码 testuser是用户名 [root@controller ~]# openstack user list //查看用户列表 +----------------------------------+----------+ | ID | Name | +----------------------------------+----------+ | 1877ca2b73b04380af77a5cd3d057734 | demo | | 21a0b28505a140b9b54ca5a20542746c | glance | | 65e4fa15c643474d99f0b7950b5328bb | neutron | | 710f538564124ecd9fdcfaef40792e84 | admin | | 7caa95a15cb54d789d69e511c8214cb8 | nova | | cce5f695864940a0a32eab0d2015528c | testuser | +----------------------------------+----------+ [root@controller ~]# openstack endpoint list //endpoint列表 +---------------+-----------+--------------+--------------+---------+-----------+------------------+ | ID | Region | Service Name | Service Type | Enabled | Interface | URL | +---------------+-----------+--------------+--------------+---------+-----------+------------------+ | 1f7824e81d9f4 | RegionOne | neutron | network | True | internal | http://controlle | | f04b595b97a0a | | | | | | r:9696 | | e78f46 | | | | | | | | 399280c404a54 | RegionOne | glance | image | True | public | http://controlle | | a1bb314531c2b | | | | | | r:9292 | | 880ca1 | | | | | | | | .</description>
+    </item>
+    
+    <item>
       <title>CentOS 7 磁盘扩容</title>
       <link>https://jokeme.top/p/disk_expansion/</link>
-      <pubDate>Fri, 25 Sep 2020 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 25 Sep 2020 16:51:16 +0000</pubDate>
       
       <guid>https://jokeme.top/p/disk_expansion/</guid>
       <description>CentOS 7 磁盘扩容 假设已经添加了磁盘,到了需要在系统里操作的步骤
@@ -363,18 +387,9 @@ xfs_growfs /dev/mapper/centos-root 步骤记录 [root@last ~]# fdisk /dev/sda We
     </item>
     
     <item>
-      <title>OpenStack 常用命令</title>
-      <link>https://jokeme.top/p/openstack_command/</link>
-      <pubDate>Fri, 25 Sep 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://jokeme.top/p/openstack_command/</guid>
-      <description>OpenStack 常用命令 1. MySQL showvariableslike&amp;#34;storage_engine&amp;#34;;//查询默认存储引擎InnoDBshowvariableslike&amp;#34;have%&amp;#34;;//查询支持的存储引擎2. Keyston source /etc/keystone/admin-openrc.sh openstack user create --domain demo --password password testuser //--domain为所属域 --password为密码 testuser是用户名 [root@controller ~]# openstack user list //查看用户列表 +----------------------------------+----------+ | ID | Name | +----------------------------------+----------+ | 1877ca2b73b04380af77a5cd3d057734 | demo | | 21a0b28505a140b9b54ca5a20542746c | glance | | 65e4fa15c643474d99f0b7950b5328bb | neutron | | 710f538564124ecd9fdcfaef40792e84 | admin | | 7caa95a15cb54d789d69e511c8214cb8 | nova | | cce5f695864940a0a32eab0d2015528c | testuser | +----------------------------------+----------+ [root@controller ~]# openstack endpoint list //endpoint列表 +---------------+-----------+--------------+--------------+---------+-----------+------------------+ | ID | Region | Service Name | Service Type | Enabled | Interface | URL | +---------------+-----------+--------------+--------------+---------+-----------+------------------+ | 1f7824e81d9f4 | RegionOne | neutron | network | True | internal | http://controlle | | f04b595b97a0a | | | | | | r:9696 | | e78f46 | | | | | | | | 399280c404a54 | RegionOne | glance | image | True | public | http://controlle | | a1bb314531c2b | | | | | | r:9292 | | 880ca1 | | | | | | | | .</description>
-    </item>
-    
-    <item>
       <title>clang 学习笔记</title>
       <link>https://jokeme.top/p/clang_note/</link>
-      <pubDate>Mon, 31 Aug 2020 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 31 Aug 2020 04:21:02 +0000</pubDate>
       
       <guid>https://jokeme.top/p/clang_note/</guid>
       <description>clang 学习笔记 1.什么是 c C 语言是一种通用的高级语言，最初是由丹尼斯·里奇在贝尔实验室为开发 UNIX 操作系统而设计的。C 语言最开始是于 1972 年在 DEC PDP-11 计算机上被首次实现。
@@ -386,7 +401,7 @@ UNIX 操作系统，C 编译器，和几乎所有的 UNIX 应用程序都是用 
     <item>
       <title>解决一个Ubuntu 18 安装MySQL 5.7不能远程登录的问题</title>
       <link>https://jokeme.top/p/mysql_login_problem/</link>
-      <pubDate>Tue, 28 Jul 2020 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 28 Jul 2020 02:19:28 +0000</pubDate>
       
       <guid>https://jokeme.top/p/mysql_login_problem/</guid>
       <description>解决一个Ubuntu 18 安装MySQL 5.7不能远程登录的问题 首先编辑 /etc/mysql/mysql.conf.d/mysqld.cnf 配置文件：
@@ -400,7 +415,7 @@ update user set plugin=&#39;mysql_native_password&#39;; #放在上面 use mysql�
     <item>
       <title>笔记本坏了，这几天不能敲代码了</title>
       <link>https://jokeme.top/p/my_laptop_do_not_work/</link>
-      <pubDate>Mon, 27 Jul 2020 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 27 Jul 2020 02:18:50 +0000</pubDate>
       
       <guid>https://jokeme.top/p/my_laptop_do_not_work/</guid>
       <description>笔记本坏了，这几天不能写代码了 &amp;lt;2020-07-27 14:25&amp;gt; 今天吃完饭以后，发现笔记本无法唤醒了。我还觉得是电池没有电了，可是插上电源依然不能开机，我慌了，八成是笔记本坏了。
@@ -431,7 +446,7 @@ update user set plugin=&#39;mysql_native_password&#39;; #放在上面 use mysql�
     <item>
       <title>关于 Maven 下载插件缓慢的问题</title>
       <link>https://jokeme.top/p/download_maven_plugin_faster/</link>
-      <pubDate>Thu, 23 Jul 2020 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 23 Jul 2020 03:48:26 +0000</pubDate>
       
       <guid>https://jokeme.top/p/download_maven_plugin_faster/</guid>
       <description>关于 Maven 下载插件缓慢的问题 众所周知,咱们大天朝由于各种原因,只能活在局域网里面.这可能对那些不深度使用网络的人来说不痛不痒,但是你要是搞开发,搞运维,那才是各种烦呢
@@ -446,7 +461,7 @@ update user set plugin=&#39;mysql_native_password&#39;; #放在上面 use mysql�
     <item>
       <title>VS code 快捷键大全</title>
       <link>https://jokeme.top/p/code_hot_key/</link>
-      <pubDate>Fri, 17 Jul 2020 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 17 Jul 2020 18:18:21 +0000</pubDate>
       
       <guid>https://jokeme.top/p/code_hot_key/</guid>
       <description>VS code 快捷键大全 General Ctrl+Shift+P, F1 Show Command Palette
@@ -468,7 +483,7 @@ Ctrl+Shift+\ Jump to matching bracket</description>
     <item>
       <title>简单解释 NAT</title>
       <link>https://jokeme.top/p/learn_nat/</link>
-      <pubDate>Wed, 15 Jul 2020 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 15 Jul 2020 22:53:18 +0000</pubDate>
       
       <guid>https://jokeme.top/p/learn_nat/</guid>
       <description>简单解释 NAT[转自知乎] NAT 大家应该十分熟悉了，它分为几种。一种就叫做 NAT，它只对 IP 地址进行转换；另一种叫做 NAPT（Network Address/Port Translation），它可以对整个会话的端点（由 IP 地址和端口号组成）做转换，这是一种更加常见的 NAT 变种。
@@ -482,7 +497,7 @@ Ctrl+Shift+\ Jump to matching bracket</description>
     <item>
       <title>两小时 Git 入门</title>
       <link>https://jokeme.top/p/learn_git/</link>
-      <pubDate>Tue, 14 Jul 2020 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 14 Jul 2020 21:04:27 +0000</pubDate>
       
       <guid>https://jokeme.top/p/learn_git/</guid>
       <description>两小时 Git 入门 1.建立 Git 仓库 $ git init 2.把文件添加到仓库 $ git add + filename 3.把文件提交到仓库 $ git commit -m &amp;quot;wrote a readme file&amp;quot; 4.查看提交结果/对比工作区和文件和仓库文件的不同之处 $ git status 5.比对并列出文件和仓库文件的不同之处 $ git diff #如果git status告诉你有文件被修改过，用git diff可以查看修改内容。 6.Git 查看历史记录 $ git log/git log --pretty=oneline(查看精简版) 7.退回曾经的某个版本 7.1 退回最新版 $ git reset --hard + (对应的append GPL的commit id) $ git reset --hard HEAD^ 用 HEAD 表示当前版本，上一个版本就是 HEAD^，上上一个版本就是 HEAD^^，当然往上 100 个版本写 100 个 ^ 比较容易数不过来，所以写成 HEAD~100</description>
@@ -491,7 +506,7 @@ Ctrl+Shift+\ Jump to matching bracket</description>
     <item>
       <title>在微软官网下载 Windows10 ISO 安装包</title>
       <link>https://jokeme.top/p/download_windows10_iso/</link>
-      <pubDate>Tue, 14 Jul 2020 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 14 Jul 2020 15:42:51 +0000</pubDate>
       
       <guid>https://jokeme.top/p/download_windows10_iso/</guid>
       <description>教大家如何在微软官网下载 Windows10 ISO 安装包  进入 Windows10 下载页面 CTRL+SHIFT+I 后再 CTRL+SHIFT+M再接一个 CTRL+R  你就可以看到让你选择 Windows 版本,个人建议不要选家庭中文版 然后一路下来也没有啥难点了,他就会为你创建一个24H内有效的链接,记得尽快下载系统哦
@@ -501,17 +516,17 @@ Ctrl+Shift+\ Jump to matching bracket</description>
     <item>
       <title>收集整理一些我不经常使用,但是使用时又找不到的网站链接</title>
       <link>https://jokeme.top/p/some_links/</link>
-      <pubDate>Fri, 03 Jul 2020 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 03 Jul 2020 02:16:22 +0000</pubDate>
       
       <guid>https://jokeme.top/p/some_links/</guid>
       <description>所有排名不分先后，我是看到一个收录一个
- Pandorabox 固件官网 Shields.io ascii Windows 10下载 Iconfont 蓝奏云 RM bg 小米路由器 3 刷机 MiUi / Router OS Windows 10 激活 渐变色 css 腾讯软件管家网页版 Electron文档 MSDN 中科大软件源生成 zsh编程指南 MFI查询 新MFI查询 TrafficMonitor Snipaste截图工具 CTF Aliyun Springboot Initialize JDK下载 马可菠萝macos xclientmacos macwk 网页设计导航  </description>
+ Pandorabox 固件官网 Shields.io ascii Windows 10下载 Iconfont 蓝奏云 RM bg 小米路由器 3 刷机 MiUi / Router OS Windows 10 激活 渐变色 css 腾讯软件管家网页版 Electron文档 MSDN 中科大软件源生成 zsh编程指南 MFI查询 新MFI查询 TrafficMonitor Snipaste截图工具 CTF Aliyun Springboot Initialize JDK下载 马可菠萝macos xclientmacos macwk 网页设计导航 SpringBoot文档 octodex  </description>
     </item>
     
     <item>
       <title>Python 爬虫抓取m3u8播放源</title>
       <link>https://jokeme.top/p/python_spider_download_m3u8/</link>
-      <pubDate>Wed, 01 Jul 2020 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 01 Jul 2020 21:33:56 +0000</pubDate>
       
       <guid>https://jokeme.top/p/python_spider_download_m3u8/</guid>
       <description>Python 爬虫抓取播放源(m3u8) 今天没有事的时候在捯饬 dotPlayer [IOS 平台 APP/￥ 收费] 时发现这个东西是个宝贝呀！可以看 m3u8 格式的视频，这都不是重点，重点是使用起来非常舒服，虽然直接复制 m3u8 链接到 Safari 也可以播放，但是 dotPlayer 还可以有封面和标题！这两者体验可谓是天差地别(我没有收钱哈！我是真的觉得好用，希望 dotplayer 的作者看到了打一下广告费！)
@@ -527,7 +542,7 @@ GitHub 上的 help_zh.md 给出的使用简介
     <item>
       <title>利用 Python 爬虫获取 bing.com 每天的高清壁纸</title>
       <link>https://jokeme.top/p/python_spider_download_bing_wallpaper/</link>
-      <pubDate>Sun, 14 Jun 2020 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 14 Jun 2020 21:33:56 +0000</pubDate>
       
       <guid>https://jokeme.top/p/python_spider_download_bing_wallpaper/</guid>
       <description>利用 Python 爬虫获取 bing.com 每天的高清壁纸 众所周知，必应是主力做壁纸の搜索引擎！
@@ -543,20 +558,9 @@ pip 依赖库： requests,lxml
     </item>
     
     <item>
-      <title>CentOS编译安装Nano</title>
-      <link>https://jokeme.top/p/compile_nano/</link>
-      <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://jokeme.top/p/compile_nano/</guid>
-      <description>CentOS编译安装Nano 众所周知,因为 CentOS 非常的稳定,所以导致 CentOS の YUM 源里面的软件非常的老旧 就拿 Nano 来说, 官方已经到了 4.0版本, 而 CentOS 这边还在2.0徘徊,这就非常的难受了.所以咱就手动编译安装!
-1. 安装准备 sudo su cd yum -y install gcc ncurses-devel wget wget https://www.nano-editor.org/dist/v4/nano-4.6.tar.gz tar zxvf nano-4.6.tar.gz cd nano-4.6 2. 准备编译 ./configure make &amp;amp;&amp;amp; make install 3. 复制文件 cp src/nano /usr/bin cp doc/sample.nanorc /root/.nanorc 常用插件也给安排上
-echo &#39;include &amp;quot;/usr/local/share/nano/*.nanorc&amp;quot;&#39; &amp;gt;&amp;gt; /root/.nanorc #用于高亮显示 echo &#39;set nowrap&#39; &amp;gt;&amp;gt; /root/.nanorc #关闭自动换行 echo &#39;set linenumbers&#39; &amp;gt;&amp;gt; /root/.nanorc #打开行号显示 本文参考: Hiwbb.com</description>
-    </item>
-    
-    <item>
       <title>Linux 常用的小技巧</title>
       <link>https://jokeme.top/p/linux_skill/</link>
-      <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 10 Jun 2020 20:48:55 +0000</pubDate>
       
       <guid>https://jokeme.top/p/linux_skill/</guid>
       <description>Linux 常用的小技巧 1 .apt-get remove vsftpd &amp;ndash;purge 删除所有配置，下次安装的时候会重新生成配置文件
@@ -569,9 +573,20 @@ sh -c &amp;#34;$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/ma
     </item>
     
     <item>
+      <title>CentOS编译安装Nano</title>
+      <link>https://jokeme.top/p/compile_nano/</link>
+      <pubDate>Wed, 10 Jun 2020 13:58:18 +0000</pubDate>
+      
+      <guid>https://jokeme.top/p/compile_nano/</guid>
+      <description>CentOS编译安装Nano 众所周知,因为 CentOS 非常的稳定,所以导致 CentOS の YUM 源里面的软件非常的老旧 就拿 Nano 来说, 官方已经到了 4.0版本, 而 CentOS 这边还在2.0徘徊,这就非常的难受了.所以咱就手动编译安装!
+1. 安装准备 sudo su cd yum -y install gcc ncurses-devel wget wget https://www.nano-editor.org/dist/v4/nano-4.6.tar.gz tar zxvf nano-4.6.tar.gz cd nano-4.6 2. 准备编译 ./configure make &amp;amp;&amp;amp; make install 3. 复制文件 cp src/nano /usr/bin cp doc/sample.nanorc /root/.nanorc 常用插件也给安排上
+echo &#39;include &amp;quot;/usr/local/share/nano/*.nanorc&amp;quot;&#39; &amp;gt;&amp;gt; /root/.nanorc #用于高亮显示 echo &#39;set nowrap&#39; &amp;gt;&amp;gt; /root/.nanorc #关闭自动换行 echo &#39;set linenumbers&#39; &amp;gt;&amp;gt; /root/.nanorc #打开行号显示 本文参考: Hiwbb.com</description>
+    </item>
+    
+    <item>
       <title> Frp 内网穿透</title>
       <link>https://jokeme.top/p/frp_penetrate/</link>
-      <pubDate>Mon, 08 Jun 2020 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 08 Jun 2020 19:01:05 +0000</pubDate>
       
       <guid>https://jokeme.top/p/frp_penetrate/</guid>
       <description>Frp 内网穿透 自打搞一个软路由，我就玩的可带劲了，什么 Linux , Docker , Java 各种技术都被逼提升了很多。 闲话不多说，直接说重点了
@@ -583,7 +598,7 @@ wget https://github.com/fatedier/frp/releases/download/v0.33.0/frp_0.33.0_linux_
     <item>
       <title>SpringBoot学习笔记(1)</title>
       <link>https://jokeme.top/p/springboot_note_1/</link>
-      <pubDate>Fri, 29 May 2020 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 29 May 2020 17:27:33 +0000</pubDate>
       
       <guid>https://jokeme.top/p/springboot_note_1/</guid>
       <description>Spring学习 提醒⏰:在开始之前,我们需要配置以下基本环境(还有文件的编码方式也要注意)
@@ -598,7 +613,7 @@ wget https://github.com/fatedier/frp/releases/download/v0.33.0/frp_0.33.0_linux_
     <item>
       <title> Ubuntu 使用 netplan 配置 WIFI</title>
       <link>https://jokeme.top/p/netplan_wifi/</link>
-      <pubDate>Wed, 06 May 2020 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 06 May 2020 21:33:56 +0000</pubDate>
       
       <guid>https://jokeme.top/p/netplan_wifi/</guid>
       <description>Ubuntu 使用 netplan 配置 WIFI 在折腾 Ubuntu 的时候，我突然发现 Ubuntu 有好几套网络管理方案，但是在安装了图形化界面以后，只有Network Manager &amp;amp; Systemd-networkd 之一生效，
@@ -609,7 +624,7 @@ wget https://github.com/fatedier/frp/releases/download/v0.33.0/frp_0.33.0_linux_
     <item>
       <title>Ubuntu 安装 **FFMPEG** 下载 m3u8 格式的视频</title>
       <link>https://jokeme.top/p/ffmpeg_download_m3u8/</link>
-      <pubDate>Wed, 15 Apr 2020 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 15 Apr 2020 23:39:23 +0000</pubDate>
       
       <guid>https://jokeme.top/p/ffmpeg_download_m3u8/</guid>
       <description>Ubuntu 安装 FFMPEG 下载 m3u8 格式的视频 最近想下载一个某音视频，但是我能看不能下载，这不是扯吗？于是不能忍的我就打算盘盘这个视频
@@ -623,7 +638,7 @@ http://XXX.com/xxx/xxx.m3u8 3 . 使用 FFMPEG 进行下载 ffmpeg -i http://XXX.
     <item>
       <title>安装 Linux 系统(Ubuntu)经验总结</title>
       <link>https://jokeme.top/p/ubuntu_install_faq/</link>
-      <pubDate>Tue, 31 Mar 2020 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 31 Mar 2020 17:27:33 +0000</pubDate>
       
       <guid>https://jokeme.top/p/ubuntu_install_faq/</guid>
       <description>安装 Linux 系统(Ubuntu)经验总结 进来将近两三个星期的装系统经历，让我异常痛苦，先是 Bay Trail 主板的一些坑，然后是显卡驱动，然后又是一堆莫名其妙的问题&amp;hellip;&amp;hellip;
@@ -637,7 +652,7 @@ nomodeset 3. 开机卡紫屏问题 这个问题原因可能各不一样，网上
     <item>
       <title>Docker 中运行 OpenWrt</title>
       <link>https://jokeme.top/p/run_openwrt_in_docker/</link>
-      <pubDate>Fri, 20 Mar 2020 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 20 Mar 2020 21:33:56 +0000</pubDate>
       
       <guid>https://jokeme.top/p/run_openwrt_in_docker/</guid>
       <description>Docker 中运行 OpenWrt 前几天解决了小主机 Ubuntu 系统的引导问题以后。便开始折腾 OpenWrt 了，在 GitHub 上找到了 L 大 的 Lede 源码，需要自己编译。
@@ -651,7 +666,7 @@ nomodeset 3. 开机卡紫屏问题 这个问题原因可能各不一样，网上
     <item>
       <title>Bay Trail主板安装Linux的坑</title>
       <link>https://jokeme.top/p/install_linux_on_bay_trail/</link>
-      <pubDate>Mon, 16 Mar 2020 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 16 Mar 2020 05:01:31 +0000</pubDate>
       
       <guid>https://jokeme.top/p/install_linux_on_bay_trail/</guid>
       <description>Bay Trail 主板安装 Linux 的坑 最近搞了一个 N2920 的低功耗小主机，本来打算搞软路由，但是家里网速不行，就打算先刷个 Linux 玩玩，于是我就被这个问题烦了将近半个月！
@@ -675,7 +690,7 @@ Again
     <item>
       <title>Java 注解的简单学习</title>
       <link>https://jokeme.top/p/java_annotation/</link>
-      <pubDate>Sat, 15 Feb 2020 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 15 Feb 2020 21:33:56 +0000</pubDate>
       
       <guid>https://jokeme.top/p/java_annotation/</guid>
       <description>Java 注解（Annotation） Java 注解其实并不难，从名字上你都知道注解是帮助 Java 代码执行的，它的形式跟接口很类似，不过前面多了一个 @ 符号
@@ -690,7 +705,7 @@ Target 指定了注解运用的地方
     <item>
       <title>Java通过jdbc操作MySQL数据库</title>
       <link>https://jokeme.top/p/java_jdbc/</link>
-      <pubDate>Sat, 01 Feb 2020 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 01 Feb 2020 21:33:56 +0000</pubDate>
       
       <guid>https://jokeme.top/p/java_jdbc/</guid>
       <description>Java JDBC 操作 MySQL 1 . Maven 导包 &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;mysql&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;mysql-connector-java&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;5.1.48&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt; &amp;lt;groupId&amp;gt;org.junit.jupiter&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;junit-jupiter&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;RELEASE&amp;lt;/version&amp;gt; &amp;lt;scope&amp;gt;compile&amp;lt;/scope&amp;gt; &amp;lt;/dependency&amp;gt; 填在 pom 文件里面即可，无难度
@@ -700,7 +715,7 @@ Target 指定了注解运用的地方
     <item>
       <title>vim的常用操作快捷键</title>
       <link>https://jokeme.top/p/vim_hot_key/</link>
-      <pubDate>Sat, 01 Feb 2020 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 01 Feb 2020 17:27:33 +0000</pubDate>
       
       <guid>https://jokeme.top/p/vim_hot_key/</guid>
       <description>(1) 按两下 gg，定位光标到第一行。
@@ -713,7 +728,7 @@ Target 指定了注解运用的地方
     <item>
       <title>学习nginx代理相关的笔记</title>
       <link>https://jokeme.top/p/nginx_proxy/</link>
-      <pubDate>Sat, 11 Jan 2020 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 11 Jan 2020 21:33:56 +0000</pubDate>
       
       <guid>https://jokeme.top/p/nginx_proxy/</guid>
       <description>nginx 反向代理 nginx 一直都是我们比较常用的工具，它不仅功能强悍，而且性能也非常好 ?,一直深受开发者的喜爱
@@ -725,7 +740,7 @@ server { listen 443 ssl; server_name www.jokeme.top; add_header Strict-Transport
     <item>
       <title>微信小程序遇见的坑</title>
       <link>https://jokeme.top/p/wechat_little_program/</link>
-      <pubDate>Fri, 10 Jan 2020 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 10 Jan 2020 17:27:33 +0000</pubDate>
       
       <guid>https://jokeme.top/p/wechat_little_program/</guid>
       <description>微信小程序遇到的坑 微信小程序其实很简单，和 HTML 差不多，但是又加入了微信的很多特色，我也是本着写着玩的心态写了几天的小程序，发现有很多坑哦，和 HTML还是有点差距的
@@ -742,7 +757,7 @@ overflow:hidden; text-overflow: ellipsis; white-space: nowrap; 但是微信小�
     <item>
       <title>Python_spider</title>
       <link>https://jokeme.top/p/python_spider/</link>
-      <pubDate>Tue, 31 Dec 2019 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 31 Dec 2019 21:33:56 +0000</pubDate>
       
       <guid>https://jokeme.top/p/python_spider/</guid>
       <description>Python 爬虫 用python写爬虫其实是比较简单的，主要还是靠第三方的库，常用的有 requests &amp;amp; urllib 至于解析 HTML,我目前使用的是 xpath ,了解了基本操作，咱就试试看吧
@@ -753,7 +768,7 @@ overflow:hidden; text-overflow: ellipsis; white-space: nowrap; 但是微信小�
     <item>
       <title>Java IO简单操作文件</title>
       <link>https://jokeme.top/p/java_io/</link>
-      <pubDate>Sat, 28 Dec 2019 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 28 Dec 2019 21:33:56 +0000</pubDate>
       
       <guid>https://jokeme.top/p/java_io/</guid>
       <description>Java-IO Java Input-Output 主要是用于文件的存储和读取，相关操作一般都会放在 Java.io 包中
@@ -762,19 +777,9 @@ overflow:hidden; text-overflow: ellipsis; white-space: nowrap; 但是微信小�
     </item>
     
     <item>
-      <title>Java中的collections的map</title>
-      <link>https://jokeme.top/p/collection_map/</link>
-      <pubDate>Sat, 28 Dec 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://jokeme.top/p/collection_map/</guid>
-      <description>Collection-Map Map--|双列集合,一次存一对键值对,必须保证唯一性 --|HashMap:哈希表,不同步,允许空的Key,Value --|TreeMap:二叉树,线程不同步,可以对Map集合的键?排序 --|Hashtable:哈希表,线程同步效率低下,不允许空的Key,Value 1. Map 集合共性功能    添加 V put(K,V) / putAll(Map&amp;lt;K,V&amp;gt; map)     删除 V remove(K) / void clear()   判断 Boolean containsKey / Value()   获取 V get(K) / int size()    注意：如果对同一个键多次存储会出现值被覆盖的现象
-2 Map 集合取出键值对方法 2.1 迭代器取出法 package sourceCode; import java.util.HashMap; import java.util.Iterator; import java.util.Map; import java.util.Set; public class collMap { public static void main(String[] args) { Map&amp;lt;Integer,String&amp;gt; se = new HashMap&amp;lt;Integer,String&amp;gt;(); se.</description>
-    </item>
-    
-    <item>
       <title>简单的Java泛型学习</title>
       <link>https://jokeme.top/p/java_generics/</link>
-      <pubDate>Sat, 28 Dec 2019 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 28 Dec 2019 21:33:56 +0000</pubDate>
       
       <guid>https://jokeme.top/p/java_generics/</guid>
       <description>泛型 1 泛型特性 百度得如下解释：
@@ -790,9 +795,19 @@ public class examples&amp;lt;Human&amp;gt;{ private Human key; public examples(H
     </item>
     
     <item>
+      <title>Java中的collections的map</title>
+      <link>https://jokeme.top/p/collection_map/</link>
+      <pubDate>Sat, 28 Dec 2019 21:17:12 +0000</pubDate>
+      
+      <guid>https://jokeme.top/p/collection_map/</guid>
+      <description>Collection-Map Map--|双列集合,一次存一对键值对,必须保证唯一性 --|HashMap:哈希表,不同步,允许空的Key,Value --|TreeMap:二叉树,线程不同步,可以对Map集合的键?排序 --|Hashtable:哈希表,线程同步效率低下,不允许空的Key,Value 1. Map 集合共性功能    添加 V put(K,V) / putAll(Map&amp;lt;K,V&amp;gt; map)     删除 V remove(K) / void clear()   判断 Boolean containsKey / Value()   获取 V get(K) / int size()    注意：如果对同一个键多次存储会出现值被覆盖的现象
+2 Map 集合取出键值对方法 2.1 迭代器取出法 package sourceCode; import java.util.HashMap; import java.util.Iterator; import java.util.Map; import java.util.Set; public class collMap { public static void main(String[] args) { Map&amp;lt;Integer,String&amp;gt; se = new HashMap&amp;lt;Integer,String&amp;gt;(); se.</description>
+    </item>
+    
+    <item>
       <title>Java时间类api</title>
       <link>https://jokeme.top/p/java_api_of_time/</link>
-      <pubDate>Sun, 22 Dec 2019 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 22 Dec 2019 21:33:56 +0000</pubDate>
       
       <guid>https://jokeme.top/p/java_api_of_time/</guid>
       <description>时间类 API 在日常学习生活中，我们经常遇到时间相关的问题，现在虽然 Date 类已经不是主流了，但任然有许多方法要学习
@@ -804,7 +819,7 @@ FULL:2019年12月16日 星期一 下午06时38分17秒 CST LONG:2019年12月16�
     <item>
       <title>Java collection </title>
       <link>https://jokeme.top/p/java_collection/</link>
-      <pubDate>Fri, 20 Dec 2019 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 20 Dec 2019 21:33:56 +0000</pubDate>
       
       <guid>https://jokeme.top/p/java_collection/</guid>
       <description>collection集合 collection--| |--list:有序,有索引,允许重复元素 |--set:不允许重复元素,元素存取无序 1.共性功能 a.添加
@@ -819,7 +834,7 @@ Iterator iterator(); 2. List集合 2.1 list集合的具体子类 List---- |-- Ve
     <item>
       <title>Java的equals和contains的一些区别</title>
       <link>https://jokeme.top/p/java_equals_and_contains/</link>
-      <pubDate>Fri, 20 Dec 2019 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 20 Dec 2019 21:33:56 +0000</pubDate>
       
       <guid>https://jokeme.top/p/java_equals_and_contains/</guid>
       <description>equals() &amp;amp;&amp;amp; contains() Java 中常见的比较有equals和hashcode

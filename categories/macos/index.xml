@@ -6,11 +6,11 @@
     <description>Recent content in macOS on JokemeBlog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 01 Jun 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://jokeme.top/categories/macos/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 01 Jun 2021 20:32:07 +0000</lastBuildDate><atom:link href="https://jokeme.top/categories/macos/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Hackintosh Laptop 常见快捷键</title>
       <link>https://jokeme.top/p/hackintosh_laptop_hotkey/</link>
-      <pubDate>Tue, 01 Jun 2021 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 01 Jun 2021 20:32:07 +0000</pubDate>
       
       <guid>https://jokeme.top/p/hackintosh_laptop_hotkey/</guid>
       <description>Hackintosh Laptop 常见快捷键 一般来说可以macOS和Windows对应键位参考下面的对照表即可
@@ -32,7 +32,7 @@
     <item>
       <title>macOS设置brew安装的软件自启动</title>
       <link>https://jokeme.top/p/macos_brew_installed_app_auto_start_at_boot/</link>
-      <pubDate>Mon, 22 Feb 2021 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 22 Feb 2021 19:34:20 +0000</pubDate>
       
       <guid>https://jokeme.top/p/macos_brew_installed_app_auto_start_at_boot/</guid>
       <description>1. Home-brew 简介 先介绍一下本篇文章的主角：Home-brew，它是一款macOS的软件包管理器，当然也同样适用于Linux（不会真的有人 Linux 服务器用 brew 吧？）。

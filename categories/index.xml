@@ -6,11 +6,20 @@
     <description>Recent content in Categories on JokemeBlog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 09 Aug 2021 18:33:21 +0800</lastBuildDate><atom:link href="https://jokeme.top/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 19 Aug 2021 00:08:17 +0000</lastBuildDate><atom:link href="https://jokeme.top/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Typora</title>
+      <link>https://jokeme.top/categories/typora/</link>
+      <pubDate>Thu, 19 Aug 2021 00:08:17 +0000</pubDate>
+      
+      <guid>https://jokeme.top/categories/typora/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>aria2</title>
       <link>https://jokeme.top/categories/aria2/</link>
-      <pubDate>Mon, 09 Aug 2021 18:33:21 +0800</pubDate>
+      <pubDate>Mon, 09 Aug 2021 18:33:21 +0000</pubDate>
       
       <guid>https://jokeme.top/categories/aria2/</guid>
       <description></description>
@@ -19,7 +28,7 @@
     <item>
       <title>Windows</title>
       <link>https://jokeme.top/categories/windows/</link>
-      <pubDate>Mon, 19 Jul 2021 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 19 Jul 2021 22:07:17 +0000</pubDate>
       
       <guid>https://jokeme.top/categories/windows/</guid>
       <description></description>
@@ -28,7 +37,7 @@
     <item>
       <title>Linux</title>
       <link>https://jokeme.top/categories/linux/</link>
-      <pubDate>Thu, 17 Jun 2021 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 17 Jun 2021 22:49:29 +0000</pubDate>
       
       <guid>https://jokeme.top/categories/linux/</guid>
       <description></description>
@@ -37,7 +46,7 @@
     <item>
       <title>Java</title>
       <link>https://jokeme.top/categories/java/</link>
-      <pubDate>Thu, 03 Jun 2021 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 03 Jun 2021 17:27:33 +0000</pubDate>
       
       <guid>https://jokeme.top/categories/java/</guid>
       <description></description>
@@ -46,7 +55,7 @@
     <item>
       <title>macOS</title>
       <link>https://jokeme.top/categories/macos/</link>
-      <pubDate>Tue, 01 Jun 2021 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 01 Jun 2021 20:32:07 +0000</pubDate>
       
       <guid>https://jokeme.top/categories/macos/</guid>
       <description></description>
@@ -55,7 +64,7 @@
     <item>
       <title>Clang</title>
       <link>https://jokeme.top/categories/clang/</link>
-      <pubDate>Tue, 18 May 2021 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 18 May 2021 11:26:19 +0000</pubDate>
       
       <guid>https://jokeme.top/categories/clang/</guid>
       <description></description>
@@ -64,7 +73,7 @@
     <item>
       <title>Docker</title>
       <link>https://jokeme.top/categories/docker/</link>
-      <pubDate>Tue, 13 Apr 2021 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 13 Apr 2021 04:59:44 +0000</pubDate>
       
       <guid>https://jokeme.top/categories/docker/</guid>
       <description></description>
@@ -73,7 +82,7 @@
     <item>
       <title>Nginx</title>
       <link>https://jokeme.top/categories/nginx/</link>
-      <pubDate>Tue, 23 Mar 2021 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 23 Mar 2021 21:33:56 +0000</pubDate>
       
       <guid>https://jokeme.top/categories/nginx/</guid>
       <description></description>
@@ -82,7 +91,7 @@
     <item>
       <title>OpenWrt</title>
       <link>https://jokeme.top/categories/openwrt/</link>
-      <pubDate>Thu, 28 Jan 2021 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 28 Jan 2021 21:33:56 +0000</pubDate>
       
       <guid>https://jokeme.top/categories/openwrt/</guid>
       <description></description>
@@ -91,7 +100,7 @@
     <item>
       <title>Math</title>
       <link>https://jokeme.top/categories/math/</link>
-      <pubDate>Sun, 06 Dec 2020 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 06 Dec 2020 17:18:43 +0000</pubDate>
       
       <guid>https://jokeme.top/categories/math/</guid>
       <description></description>
@@ -100,7 +109,7 @@
     <item>
       <title>Links</title>
       <link>https://jokeme.top/categories/links/</link>
-      <pubDate>Fri, 03 Jul 2020 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 03 Jul 2020 02:16:22 +0000</pubDate>
       
       <guid>https://jokeme.top/categories/links/</guid>
       <description></description>
@@ -109,7 +118,7 @@
     <item>
       <title>Python</title>
       <link>https://jokeme.top/categories/python/</link>
-      <pubDate>Wed, 01 Jul 2020 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 01 Jul 2020 21:33:56 +0000</pubDate>
       
       <guid>https://jokeme.top/categories/python/</guid>
       <description></description>
@@ -118,7 +127,7 @@
     <item>
       <title>Intel</title>
       <link>https://jokeme.top/categories/intel/</link>
-      <pubDate>Mon, 16 Mar 2020 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 16 Mar 2020 05:01:31 +0000</pubDate>
       
       <guid>https://jokeme.top/categories/intel/</guid>
       <description></description>
@@ -127,7 +136,7 @@
     <item>
       <title>Wechat</title>
       <link>https://jokeme.top/categories/wechat/</link>
-      <pubDate>Fri, 10 Jan 2020 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 10 Jan 2020 17:27:33 +0000</pubDate>
       
       <guid>https://jokeme.top/categories/wechat/</guid>
       <description></description>

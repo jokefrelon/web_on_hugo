@@ -6,11 +6,11 @@
     <description>Recent content in AriaNG on JokemeBlog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 09 Aug 2021 18:33:21 +0800</lastBuildDate><atom:link href="https://jokeme.top/tags/ariang/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 09 Aug 2021 18:33:21 +0000</lastBuildDate><atom:link href="https://jokeme.top/tags/ariang/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Aria2下载器配置WebUI界面</title>
       <link>https://jokeme.top/p/ariang_webui/</link>
-      <pubDate>Mon, 09 Aug 2021 18:33:21 +0800</pubDate>
+      <pubDate>Mon, 09 Aug 2021 18:33:21 +0000</pubDate>
       
       <guid>https://jokeme.top/p/ariang_webui/</guid>
       <description>Aria2下载器配置WebUI界面 aria2是一款非常非常Nice的下载器，之前我也介绍过 记录最近捯饬Linux的收获，上一次大概介绍了一下命令行里面的操作，这一次咱们来说说WebUI上的操作。

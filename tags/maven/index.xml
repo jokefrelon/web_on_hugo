@@ -6,11 +6,11 @@
     <description>Recent content in Maven on JokemeBlog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 23 Jul 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://jokeme.top/tags/maven/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 23 Jul 2020 03:48:26 +0000</lastBuildDate><atom:link href="https://jokeme.top/tags/maven/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>关于 Maven 下载插件缓慢的问题</title>
       <link>https://jokeme.top/p/download_maven_plugin_faster/</link>
-      <pubDate>Thu, 23 Jul 2020 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 23 Jul 2020 03:48:26 +0000</pubDate>
       
       <guid>https://jokeme.top/p/download_maven_plugin_faster/</guid>
       <description>关于 Maven 下载插件缓慢的问题 众所周知,咱们大天朝由于各种原因,只能活在局域网里面.这可能对那些不深度使用网络的人来说不痛不痒,但是你要是搞开发,搞运维,那才是各种烦呢

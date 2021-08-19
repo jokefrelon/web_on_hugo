@@ -6,11 +6,11 @@
     <description>Recent content in Linux on JokemeBlog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 17 Jun 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://jokeme.top/categories/linux/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 17 Jun 2021 22:49:29 +0000</lastBuildDate><atom:link href="https://jokeme.top/categories/linux/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>监控狗东商品价格并利用bark推送价格到手机上</title>
       <link>https://jokeme.top/p/bark_jd_price/</link>
-      <pubDate>Thu, 17 Jun 2021 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 17 Jun 2021 22:49:29 +0000</pubDate>
       
       <guid>https://jokeme.top/p/bark_jd_price/</guid>
       <description>监控狗东商品价格并利用bark推送价格到手机上 众所周知啊，狗东上面商品的价格经常在变动，有时候你在最贵的时候买下来了，那你就是冤大头了。除非你急着用。
@@ -28,7 +28,7 @@ https://pe.3.cn/prices/mgets?skuids=商品ID 2. 编写shell脚本查询价格 �
     <item>
       <title>定时备份hugo帖子</title>
       <link>https://jokeme.top/p/backup_hugo_posts/</link>
-      <pubDate>Tue, 08 Jun 2021 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 08 Jun 2021 23:12:18 +0000</pubDate>
       
       <guid>https://jokeme.top/p/backup_hugo_posts/</guid>
       <description>定时备份hugo帖子 今天出差,在高铁上实在是太无聊,信号也不怎么好,我就写了个每天晚上备份Hugo文章的脚本
@@ -38,7 +38,7 @@ https://pe.3.cn/prices/mgets?skuids=商品ID 2. 编写shell脚本查询价格 �
     <item>
       <title>一个有意思的shell变量问题</title>
       <link>https://jokeme.top/p/funny_space_in_shell_script/</link>
-      <pubDate>Sun, 23 May 2021 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 23 May 2021 02:33:06 +0000</pubDate>
       
       <guid>https://jokeme.top/p/funny_space_in_shell_script/</guid>
       <description>一个有意思的shell变量问题 今天在上班时遇到了一个批量解压zip的需求，由于几十个压缩包的名称一样，chrome下载下来以后就自动给加了编号。并且解压后的文件名也是一样的，只不过里面的文件不一样。
@@ -55,7 +55,7 @@ allzip=`ls | grep zip | sed &amp;#39;s/ (/(/g&amp;#39;`	#先用sed把&amp;#39; (
     <item>
       <title>从solo迁移到hugo</title>
       <link>https://jokeme.top/p/solo_2_hugo/</link>
-      <pubDate>Sun, 16 May 2021 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 16 May 2021 23:47:03 +0000</pubDate>
       
       <guid>https://jokeme.top/p/solo_2_hugo/</guid>
       <description>博客迁移 最近我把我的个人博客从solo迁移到了hugo项目上了。
@@ -79,7 +79,7 @@ baseurl:http://example.com#根据你自己改languageCode:en-ustheme:hugo-theme-
     <item>
       <title>Dockerfile编写</title>
       <link>https://jokeme.top/p/dockerfile/</link>
-      <pubDate>Tue, 13 Apr 2021 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 13 Apr 2021 04:59:44 +0000</pubDate>
       
       <guid>https://jokeme.top/p/dockerfile/</guid>
       <description>今天也是摸鱼的一天没怎么看书,一直在玩Linux。并且在无意间看到了我之前下载的 DirectoryLister，就想着在Docker里面部署玩一下。
@@ -99,7 +99,7 @@ ENV DL_VERSION 3.7.7 3. 自动化运行命令 这里也没有啥好说的，有�
     <item>
       <title>ffmpeg设置请求头</title>
       <link>https://jokeme.top/p/ffmpeg_user_agent/</link>
-      <pubDate>Tue, 23 Mar 2021 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 23 Mar 2021 14:21:09 +0000</pubDate>
       
       <guid>https://jokeme.top/p/ffmpeg_user_agent/</guid>
       <description>ffmpeg是一款非常强大的工具,它可以在命令行下对视频类文件进行多种操作,之前我也介绍过ffmpeg,戳这里
@@ -114,7 +114,7 @@ ffmpeg -user_agent &amp;quot;User-Agent: AppleCoreMedia/1.0.0.18C66 (iPhone; U; 
     <item>
       <title>记录最近捯饬Linux的收获</title>
       <link>https://jokeme.top/p/linux_reward/</link>
-      <pubDate>Sun, 21 Mar 2021 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 21 Mar 2021 01:25:43 +0000</pubDate>
       
       <guid>https://jokeme.top/p/linux_reward/</guid>
       <description>记录最近捯饬Linux的收获 虽然最近在准备专升本考试吧，但是也没有认真的复习，最近还是天天玩Linux，在这里记录一下。
@@ -142,7 +142,7 @@ sed -i &#39;s/xxx/yyy/g&#39; filename 这个就是把文件内部的xxx替换为
     <item>
       <title>Ubuntu 20.04.2 配置 vsftpd 的脑坑</title>
       <link>https://jokeme.top/p/linux_vsftpd/</link>
-      <pubDate>Mon, 01 Mar 2021 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 01 Mar 2021 22:37:16 +0000</pubDate>
       
       <guid>https://jokeme.top/p/linux_vsftpd/</guid>
       <description>Ubuntu 20.04.2 配置 vsftpd 的脑坑 今天是 2020-03-01 02:13:13，刚结束了我在我哥饭店帮忙的欢乐时光，刚下班回来的我就准备掏出我的大宝贝好好的爽一爽，毕竟大半个月都没有咋用我的电脑了。因为之前刚换的Ubuntu20还有好多东西没有配置好，我就想着今天晚上把 ftp 整一下，然后就遇到了我特别尴尬的一幕，记录一下。
@@ -155,7 +155,7 @@ sed -i &#39;s/xxx/yyy/g&#39; filename 这个就是把文件内部的xxx替换为
     <item>
       <title>Ubuntu &amp;&amp; Docker 使用建议</title>
       <link>https://jokeme.top/p/ubuntu_docker_tips/</link>
-      <pubDate>Sun, 15 Nov 2020 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 15 Nov 2020 07:02:33 +0000</pubDate>
       
       <guid>https://jokeme.top/p/ubuntu_docker_tips/</guid>
       <description>Ubuntu一直是我喜欢用的Linux发行版本,界面简洁,上手简单,用户广泛
@@ -172,9 +172,18 @@ sudo systemctl daemon-reload sudo systemctl restart docker 少侠记得重启加
     </item>
     
     <item>
+      <title>OpenStack 常用命令</title>
+      <link>https://jokeme.top/p/openstack_command/</link>
+      <pubDate>Fri, 25 Sep 2020 21:33:56 +0000</pubDate>
+      
+      <guid>https://jokeme.top/p/openstack_command/</guid>
+      <description>OpenStack 常用命令 1. MySQL showvariableslike&amp;#34;storage_engine&amp;#34;;//查询默认存储引擎InnoDBshowvariableslike&amp;#34;have%&amp;#34;;//查询支持的存储引擎2. Keyston source /etc/keystone/admin-openrc.sh openstack user create --domain demo --password password testuser //--domain为所属域 --password为密码 testuser是用户名 [root@controller ~]# openstack user list //查看用户列表 +----------------------------------+----------+ | ID | Name | +----------------------------------+----------+ | 1877ca2b73b04380af77a5cd3d057734 | demo | | 21a0b28505a140b9b54ca5a20542746c | glance | | 65e4fa15c643474d99f0b7950b5328bb | neutron | | 710f538564124ecd9fdcfaef40792e84 | admin | | 7caa95a15cb54d789d69e511c8214cb8 | nova | | cce5f695864940a0a32eab0d2015528c | testuser | +----------------------------------+----------+ [root@controller ~]# openstack endpoint list //endpoint列表 +---------------+-----------+--------------+--------------+---------+-----------+------------------+ | ID | Region | Service Name | Service Type | Enabled | Interface | URL | +---------------+-----------+--------------+--------------+---------+-----------+------------------+ | 1f7824e81d9f4 | RegionOne | neutron | network | True | internal | http://controlle | | f04b595b97a0a | | | | | | r:9696 | | e78f46 | | | | | | | | 399280c404a54 | RegionOne | glance | image | True | public | http://controlle | | a1bb314531c2b | | | | | | r:9292 | | 880ca1 | | | | | | | | .</description>
+    </item>
+    
+    <item>
       <title>CentOS 7 磁盘扩容</title>
       <link>https://jokeme.top/p/disk_expansion/</link>
-      <pubDate>Fri, 25 Sep 2020 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 25 Sep 2020 16:51:16 +0000</pubDate>
       
       <guid>https://jokeme.top/p/disk_expansion/</guid>
       <description>CentOS 7 磁盘扩容 假设已经添加了磁盘,到了需要在系统里操作的步骤
@@ -187,18 +196,9 @@ xfs_growfs /dev/mapper/centos-root 步骤记录 [root@last ~]# fdisk /dev/sda We
     </item>
     
     <item>
-      <title>OpenStack 常用命令</title>
-      <link>https://jokeme.top/p/openstack_command/</link>
-      <pubDate>Fri, 25 Sep 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://jokeme.top/p/openstack_command/</guid>
-      <description>OpenStack 常用命令 1. MySQL showvariableslike&amp;#34;storage_engine&amp;#34;;//查询默认存储引擎InnoDBshowvariableslike&amp;#34;have%&amp;#34;;//查询支持的存储引擎2. Keyston source /etc/keystone/admin-openrc.sh openstack user create --domain demo --password password testuser //--domain为所属域 --password为密码 testuser是用户名 [root@controller ~]# openstack user list //查看用户列表 +----------------------------------+----------+ | ID | Name | +----------------------------------+----------+ | 1877ca2b73b04380af77a5cd3d057734 | demo | | 21a0b28505a140b9b54ca5a20542746c | glance | | 65e4fa15c643474d99f0b7950b5328bb | neutron | | 710f538564124ecd9fdcfaef40792e84 | admin | | 7caa95a15cb54d789d69e511c8214cb8 | nova | | cce5f695864940a0a32eab0d2015528c | testuser | +----------------------------------+----------+ [root@controller ~]# openstack endpoint list //endpoint列表 +---------------+-----------+--------------+--------------+---------+-----------+------------------+ | ID | Region | Service Name | Service Type | Enabled | Interface | URL | +---------------+-----------+--------------+--------------+---------+-----------+------------------+ | 1f7824e81d9f4 | RegionOne | neutron | network | True | internal | http://controlle | | f04b595b97a0a | | | | | | r:9696 | | e78f46 | | | | | | | | 399280c404a54 | RegionOne | glance | image | True | public | http://controlle | | a1bb314531c2b | | | | | | r:9292 | | 880ca1 | | | | | | | | .</description>
-    </item>
-    
-    <item>
       <title>解决一个Ubuntu 18 安装MySQL 5.7不能远程登录的问题</title>
       <link>https://jokeme.top/p/mysql_login_problem/</link>
-      <pubDate>Tue, 28 Jul 2020 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 28 Jul 2020 02:19:28 +0000</pubDate>
       
       <guid>https://jokeme.top/p/mysql_login_problem/</guid>
       <description>解决一个Ubuntu 18 安装MySQL 5.7不能远程登录的问题 首先编辑 /etc/mysql/mysql.conf.d/mysqld.cnf 配置文件：
@@ -212,7 +212,7 @@ update user set plugin=&#39;mysql_native_password&#39;; #放在上面 use mysql�
     <item>
       <title>简单解释 NAT</title>
       <link>https://jokeme.top/p/learn_nat/</link>
-      <pubDate>Wed, 15 Jul 2020 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 15 Jul 2020 22:53:18 +0000</pubDate>
       
       <guid>https://jokeme.top/p/learn_nat/</guid>
       <description>简单解释 NAT[转自知乎] NAT 大家应该十分熟悉了，它分为几种。一种就叫做 NAT，它只对 IP 地址进行转换；另一种叫做 NAPT（Network Address/Port Translation），它可以对整个会话的端点（由 IP 地址和端口号组成）做转换，这是一种更加常见的 NAT 变种。
@@ -226,27 +226,16 @@ update user set plugin=&#39;mysql_native_password&#39;; #放在上面 use mysql�
     <item>
       <title>两小时 Git 入门</title>
       <link>https://jokeme.top/p/learn_git/</link>
-      <pubDate>Tue, 14 Jul 2020 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 14 Jul 2020 21:04:27 +0000</pubDate>
       
       <guid>https://jokeme.top/p/learn_git/</guid>
       <description>两小时 Git 入门 1.建立 Git 仓库 $ git init 2.把文件添加到仓库 $ git add + filename 3.把文件提交到仓库 $ git commit -m &amp;quot;wrote a readme file&amp;quot; 4.查看提交结果/对比工作区和文件和仓库文件的不同之处 $ git status 5.比对并列出文件和仓库文件的不同之处 $ git diff #如果git status告诉你有文件被修改过，用git diff可以查看修改内容。 6.Git 查看历史记录 $ git log/git log --pretty=oneline(查看精简版) 7.退回曾经的某个版本 7.1 退回最新版 $ git reset --hard + (对应的append GPL的commit id) $ git reset --hard HEAD^ 用 HEAD 表示当前版本，上一个版本就是 HEAD^，上上一个版本就是 HEAD^^，当然往上 100 个版本写 100 个 ^ 比较容易数不过来，所以写成 HEAD~100</description>
     </item>
     
     <item>
-      <title>CentOS编译安装Nano</title>
-      <link>https://jokeme.top/p/compile_nano/</link>
-      <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://jokeme.top/p/compile_nano/</guid>
-      <description>CentOS编译安装Nano 众所周知,因为 CentOS 非常的稳定,所以导致 CentOS の YUM 源里面的软件非常的老旧 就拿 Nano 来说, 官方已经到了 4.0版本, 而 CentOS 这边还在2.0徘徊,这就非常的难受了.所以咱就手动编译安装!
-1. 安装准备 sudo su cd yum -y install gcc ncurses-devel wget wget https://www.nano-editor.org/dist/v4/nano-4.6.tar.gz tar zxvf nano-4.6.tar.gz cd nano-4.6 2. 准备编译 ./configure make &amp;amp;&amp;amp; make install 3. 复制文件 cp src/nano /usr/bin cp doc/sample.nanorc /root/.nanorc 常用插件也给安排上
-echo &#39;include &amp;quot;/usr/local/share/nano/*.nanorc&amp;quot;&#39; &amp;gt;&amp;gt; /root/.nanorc #用于高亮显示 echo &#39;set nowrap&#39; &amp;gt;&amp;gt; /root/.nanorc #关闭自动换行 echo &#39;set linenumbers&#39; &amp;gt;&amp;gt; /root/.nanorc #打开行号显示 本文参考: Hiwbb.com</description>
-    </item>
-    
-    <item>
       <title>Linux 常用的小技巧</title>
       <link>https://jokeme.top/p/linux_skill/</link>
-      <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 10 Jun 2020 20:48:55 +0000</pubDate>
       
       <guid>https://jokeme.top/p/linux_skill/</guid>
       <description>Linux 常用的小技巧 1 .apt-get remove vsftpd &amp;ndash;purge 删除所有配置，下次安装的时候会重新生成配置文件
@@ -259,9 +248,20 @@ sh -c &amp;#34;$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/ma
     </item>
     
     <item>
+      <title>CentOS编译安装Nano</title>
+      <link>https://jokeme.top/p/compile_nano/</link>
+      <pubDate>Wed, 10 Jun 2020 13:58:18 +0000</pubDate>
+      
+      <guid>https://jokeme.top/p/compile_nano/</guid>
+      <description>CentOS编译安装Nano 众所周知,因为 CentOS 非常的稳定,所以导致 CentOS の YUM 源里面的软件非常的老旧 就拿 Nano 来说, 官方已经到了 4.0版本, 而 CentOS 这边还在2.0徘徊,这就非常的难受了.所以咱就手动编译安装!
+1. 安装准备 sudo su cd yum -y install gcc ncurses-devel wget wget https://www.nano-editor.org/dist/v4/nano-4.6.tar.gz tar zxvf nano-4.6.tar.gz cd nano-4.6 2. 准备编译 ./configure make &amp;amp;&amp;amp; make install 3. 复制文件 cp src/nano /usr/bin cp doc/sample.nanorc /root/.nanorc 常用插件也给安排上
+echo &#39;include &amp;quot;/usr/local/share/nano/*.nanorc&amp;quot;&#39; &amp;gt;&amp;gt; /root/.nanorc #用于高亮显示 echo &#39;set nowrap&#39; &amp;gt;&amp;gt; /root/.nanorc #关闭自动换行 echo &#39;set linenumbers&#39; &amp;gt;&amp;gt; /root/.nanorc #打开行号显示 本文参考: Hiwbb.com</description>
+    </item>
+    
+    <item>
       <title> Frp 内网穿透</title>
       <link>https://jokeme.top/p/frp_penetrate/</link>
-      <pubDate>Mon, 08 Jun 2020 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 08 Jun 2020 19:01:05 +0000</pubDate>
       
       <guid>https://jokeme.top/p/frp_penetrate/</guid>
       <description>Frp 内网穿透 自打搞一个软路由，我就玩的可带劲了，什么 Linux , Docker , Java 各种技术都被逼提升了很多。 闲话不多说，直接说重点了
@@ -273,7 +273,7 @@ wget https://github.com/fatedier/frp/releases/download/v0.33.0/frp_0.33.0_linux_
     <item>
       <title> Ubuntu 使用 netplan 配置 WIFI</title>
       <link>https://jokeme.top/p/netplan_wifi/</link>
-      <pubDate>Wed, 06 May 2020 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 06 May 2020 21:33:56 +0000</pubDate>
       
       <guid>https://jokeme.top/p/netplan_wifi/</guid>
       <description>Ubuntu 使用 netplan 配置 WIFI 在折腾 Ubuntu 的时候，我突然发现 Ubuntu 有好几套网络管理方案，但是在安装了图形化界面以后，只有Network Manager &amp;amp; Systemd-networkd 之一生效，
@@ -284,7 +284,7 @@ wget https://github.com/fatedier/frp/releases/download/v0.33.0/frp_0.33.0_linux_
     <item>
       <title>Ubuntu 安装 **FFMPEG** 下载 m3u8 格式的视频</title>
       <link>https://jokeme.top/p/ffmpeg_download_m3u8/</link>
-      <pubDate>Wed, 15 Apr 2020 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 15 Apr 2020 23:39:23 +0000</pubDate>
       
       <guid>https://jokeme.top/p/ffmpeg_download_m3u8/</guid>
       <description>Ubuntu 安装 FFMPEG 下载 m3u8 格式的视频 最近想下载一个某音视频，但是我能看不能下载，这不是扯吗？于是不能忍的我就打算盘盘这个视频
@@ -298,7 +298,7 @@ http://XXX.com/xxx/xxx.m3u8 3 . 使用 FFMPEG 进行下载 ffmpeg -i http://XXX.
     <item>
       <title>安装 Linux 系统(Ubuntu)经验总结</title>
       <link>https://jokeme.top/p/ubuntu_install_faq/</link>
-      <pubDate>Tue, 31 Mar 2020 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 31 Mar 2020 17:27:33 +0000</pubDate>
       
       <guid>https://jokeme.top/p/ubuntu_install_faq/</guid>
       <description>安装 Linux 系统(Ubuntu)经验总结 进来将近两三个星期的装系统经历，让我异常痛苦，先是 Bay Trail 主板的一些坑，然后是显卡驱动，然后又是一堆莫名其妙的问题&amp;hellip;&amp;hellip;
@@ -312,7 +312,7 @@ nomodeset 3. 开机卡紫屏问题 这个问题原因可能各不一样，网上
     <item>
       <title>Bay Trail主板安装Linux的坑</title>
       <link>https://jokeme.top/p/install_linux_on_bay_trail/</link>
-      <pubDate>Mon, 16 Mar 2020 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 16 Mar 2020 05:01:31 +0000</pubDate>
       
       <guid>https://jokeme.top/p/install_linux_on_bay_trail/</guid>
       <description>Bay Trail 主板安装 Linux 的坑 最近搞了一个 N2920 的低功耗小主机，本来打算搞软路由，但是家里网速不行，就打算先刷个 Linux 玩玩，于是我就被这个问题烦了将近半个月！
@@ -336,7 +336,7 @@ Again
     <item>
       <title>vim的常用操作快捷键</title>
       <link>https://jokeme.top/p/vim_hot_key/</link>
-      <pubDate>Sat, 01 Feb 2020 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 01 Feb 2020 17:27:33 +0000</pubDate>
       
       <guid>https://jokeme.top/p/vim_hot_key/</guid>
       <description>(1) 按两下 gg，定位光标到第一行。

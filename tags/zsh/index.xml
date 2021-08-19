@@ -6,11 +6,11 @@
     <description>Recent content in Zsh on JokemeBlog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 07 Oct 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://jokeme.top/tags/zsh/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 07 Oct 2020 21:33:56 +0000</lastBuildDate><atom:link href="https://jokeme.top/tags/zsh/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>记录一次OpenWrt安装zsh</title>
       <link>https://jokeme.top/p/openwrt_install_zsh/</link>
-      <pubDate>Wed, 07 Oct 2020 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 07 Oct 2020 21:33:56 +0000</pubDate>
       
       <guid>https://jokeme.top/p/openwrt_install_zsh/</guid>
       <description>众所周知啊，OpenWrt 是一个非常优秀的路由器 OS,但是因为是为路由器优化的，所以我们在使用的时候就会遇到各种各样的问题，就比如安装 ohmyzsh
@@ -22,7 +22,7 @@
     <item>
       <title>Linux 常用的小技巧</title>
       <link>https://jokeme.top/p/linux_skill/</link>
-      <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 10 Jun 2020 20:48:55 +0000</pubDate>
       
       <guid>https://jokeme.top/p/linux_skill/</guid>
       <description>Linux 常用的小技巧 1 .apt-get remove vsftpd &amp;ndash;purge 删除所有配置，下次安装的时候会重新生成配置文件

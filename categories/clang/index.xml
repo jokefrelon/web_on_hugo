@@ -6,11 +6,11 @@
     <description>Recent content in Clang on JokemeBlog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 18 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://jokeme.top/categories/clang/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 18 May 2021 11:26:19 +0000</lastBuildDate><atom:link href="https://jokeme.top/categories/clang/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Clang学习笔记</title>
       <link>https://jokeme.top/p/clang_note2/</link>
-      <pubDate>Tue, 18 May 2021 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 18 May 2021 11:26:19 +0000</pubDate>
       
       <guid>https://jokeme.top/p/clang_note2/</guid>
       <description>ClangLearn Clang 定义符号常量 在宏中定义符号常量非常简单,格式如下
@@ -29,7 +29,7 @@ char Gage[10]; Gage[0] = &amp;#39;J&amp;#39;; Gage[1] = &amp;#39;a&amp;#39;; Gag
     <item>
       <title>clang 学习笔记</title>
       <link>https://jokeme.top/p/clang_note/</link>
-      <pubDate>Mon, 31 Aug 2020 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 31 Aug 2020 04:21:02 +0000</pubDate>
       
       <guid>https://jokeme.top/p/clang_note/</guid>
       <description>clang 学习笔记 1.什么是 c C 语言是一种通用的高级语言，最初是由丹尼斯·里奇在贝尔实验室为开发 UNIX 操作系统而设计的。C 语言最开始是于 1972 年在 DEC PDP-11 计算机上被首次实现。

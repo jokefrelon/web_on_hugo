@@ -6,11 +6,11 @@
     <description>Recent content in Xpath on JokemeBlog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 01 Jul 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://jokeme.top/tags/xpath/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 01 Jul 2020 21:33:56 +0000</lastBuildDate><atom:link href="https://jokeme.top/tags/xpath/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Python 爬虫抓取m3u8播放源</title>
       <link>https://jokeme.top/p/python_spider_download_m3u8/</link>
-      <pubDate>Wed, 01 Jul 2020 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 01 Jul 2020 21:33:56 +0000</pubDate>
       
       <guid>https://jokeme.top/p/python_spider_download_m3u8/</guid>
       <description>Python 爬虫抓取播放源(m3u8) 今天没有事的时候在捯饬 dotPlayer [IOS 平台 APP/￥ 收费] 时发现这个东西是个宝贝呀！可以看 m3u8 格式的视频，这都不是重点，重点是使用起来非常舒服，虽然直接复制 m3u8 链接到 Safari 也可以播放，但是 dotPlayer 还可以有封面和标题！这两者体验可谓是天差地别(我没有收钱哈！我是真的觉得好用，希望 dotplayer 的作者看到了打一下广告费！)
@@ -26,7 +26,7 @@ GitHub 上的 help_zh.md 给出的使用简介
     <item>
       <title>利用 Python 爬虫获取 bing.com 每天的高清壁纸</title>
       <link>https://jokeme.top/p/python_spider_download_bing_wallpaper/</link>
-      <pubDate>Sun, 14 Jun 2020 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 14 Jun 2020 21:33:56 +0000</pubDate>
       
       <guid>https://jokeme.top/p/python_spider_download_bing_wallpaper/</guid>
       <description>利用 Python 爬虫获取 bing.com 每天的高清壁纸 众所周知，必应是主力做壁纸の搜索引擎！
@@ -44,7 +44,7 @@ pip 依赖库： requests,lxml
     <item>
       <title>Python_spider</title>
       <link>https://jokeme.top/p/python_spider/</link>
-      <pubDate>Tue, 31 Dec 2019 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 31 Dec 2019 21:33:56 +0000</pubDate>
       
       <guid>https://jokeme.top/p/python_spider/</guid>
       <description>Python 爬虫 用python写爬虫其实是比较简单的，主要还是靠第三方的库，常用的有 requests &amp;amp; urllib 至于解析 HTML,我目前使用的是 xpath ,了解了基本操作，咱就试试看吧

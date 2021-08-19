@@ -6,11 +6,11 @@
     <description>Recent content in m3u8 on JokemeBlog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 01 Jul 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://jokeme.top/tags/m3u8/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 01 Jul 2020 21:33:56 +0000</lastBuildDate><atom:link href="https://jokeme.top/tags/m3u8/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Python 爬虫抓取m3u8播放源</title>
       <link>https://jokeme.top/p/python_spider_download_m3u8/</link>
-      <pubDate>Wed, 01 Jul 2020 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 01 Jul 2020 21:33:56 +0000</pubDate>
       
       <guid>https://jokeme.top/p/python_spider_download_m3u8/</guid>
       <description>Python 爬虫抓取播放源(m3u8) 今天没有事的时候在捯饬 dotPlayer [IOS 平台 APP/￥ 收费] 时发现这个东西是个宝贝呀！可以看 m3u8 格式的视频，这都不是重点，重点是使用起来非常舒服，虽然直接复制 m3u8 链接到 Safari 也可以播放，但是 dotPlayer 还可以有封面和标题！这两者体验可谓是天差地别(我没有收钱哈！我是真的觉得好用，希望 dotplayer 的作者看到了打一下广告费！)
@@ -26,7 +26,7 @@ GitHub 上的 help_zh.md 给出的使用简介
     <item>
       <title>Ubuntu 安装 **FFMPEG** 下载 m3u8 格式的视频</title>
       <link>https://jokeme.top/p/ffmpeg_download_m3u8/</link>
-      <pubDate>Wed, 15 Apr 2020 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 15 Apr 2020 23:39:23 +0000</pubDate>
       
       <guid>https://jokeme.top/p/ffmpeg_download_m3u8/</guid>
       <description>Ubuntu 安装 FFMPEG 下载 m3u8 格式的视频 最近想下载一个某音视频，但是我能看不能下载，这不是扯吗？于是不能忍的我就打算盘盘这个视频

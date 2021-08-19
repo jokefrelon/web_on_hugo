@@ -20,7 +20,7 @@
     <item>
       <title>Windows 10 输入法多了ENG解决方案</title>
       <link>https://jokeme.top/p/kill_windows_eng/</link>
-      <pubDate>Mon, 19 Jul 2021 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 19 Jul 2021 22:07:17 +0000</pubDate>
       
       <guid>https://jokeme.top/p/kill_windows_eng/</guid>
       <description>Windows 10 输入法多了ENG解决方案 ​	最近突然发现了一个算是 Windows10 的Bug，就是在远程桌面的时候会莫名其妙的多了一个ENG输入法，让原本用着 巨硬输入法 的我们不太适应，而且在断开远程连接后，这个ENG会一直留在电脑上，就非常蛋疼。下面就跟着我来操作操作吧！
@@ -32,7 +32,7 @@
     <item>
       <title>Clang学习笔记</title>
       <link>https://jokeme.top/p/clang_note2/</link>
-      <pubDate>Tue, 18 May 2021 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 18 May 2021 11:26:19 +0000</pubDate>
       
       <guid>https://jokeme.top/p/clang_note2/</guid>
       <description>ClangLearn Clang 定义符号常量 在宏中定义符号常量非常简单,格式如下
@@ -51,7 +51,7 @@ char Gage[10]; Gage[0] = &amp;#39;J&amp;#39;; Gage[1] = &amp;#39;a&amp;#39;; Gag
     <item>
       <title>记录最近捯饬Linux的收获</title>
       <link>https://jokeme.top/p/linux_reward/</link>
-      <pubDate>Sun, 21 Mar 2021 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 21 Mar 2021 01:25:43 +0000</pubDate>
       
       <guid>https://jokeme.top/p/linux_reward/</guid>
       <description>记录最近捯饬Linux的收获 虽然最近在准备专升本考试吧，但是也没有认真的复习，最近还是天天玩Linux，在这里记录一下。
@@ -79,7 +79,7 @@ sed -i &#39;s/xxx/yyy/g&#39; filename 这个就是把文件内部的xxx替换为
     <item>
       <title>数学思想</title>
       <link>https://jokeme.top/p/math_thought/</link>
-      <pubDate>Sun, 06 Dec 2020 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 06 Dec 2020 17:18:43 +0000</pubDate>
       
       <guid>https://jokeme.top/p/math_thought/</guid>
       <description>数学思想  先声明一下！我是数学菜鸡！以下内容是我个人总结在学习数学中的一些重要的数学思想，写的不好！望海涵！!!
@@ -97,7 +97,7 @@ $$ f(-x)=ln(\frac{1}{\sqrt{x^2+1}+x})=ln(\sqrt{x^2+1}+x)^{-1}=-ln(\sqrt{x^2+1}+x
     <item>
       <title>CentOS 7 磁盘扩容</title>
       <link>https://jokeme.top/p/disk_expansion/</link>
-      <pubDate>Fri, 25 Sep 2020 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 25 Sep 2020 16:51:16 +0000</pubDate>
       
       <guid>https://jokeme.top/p/disk_expansion/</guid>
       <description>CentOS 7 磁盘扩容 假设已经添加了磁盘,到了需要在系统里操作的步骤
@@ -112,7 +112,7 @@ xfs_growfs /dev/mapper/centos-root 步骤记录 [root@last ~]# fdisk /dev/sda We
     <item>
       <title>clang 学习笔记</title>
       <link>https://jokeme.top/p/clang_note/</link>
-      <pubDate>Mon, 31 Aug 2020 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 31 Aug 2020 04:21:02 +0000</pubDate>
       
       <guid>https://jokeme.top/p/clang_note/</guid>
       <description>clang 学习笔记 1.什么是 c C 语言是一种通用的高级语言，最初是由丹尼斯·里奇在贝尔实验室为开发 UNIX 操作系统而设计的。C 语言最开始是于 1972 年在 DEC PDP-11 计算机上被首次实现。
@@ -124,7 +124,7 @@ UNIX 操作系统，C 编译器，和几乎所有的 UNIX 应用程序都是用 
     <item>
       <title>笔记本坏了，这几天不能敲代码了</title>
       <link>https://jokeme.top/p/my_laptop_do_not_work/</link>
-      <pubDate>Mon, 27 Jul 2020 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 27 Jul 2020 02:18:50 +0000</pubDate>
       
       <guid>https://jokeme.top/p/my_laptop_do_not_work/</guid>
       <description>笔记本坏了，这几天不能写代码了 &amp;lt;2020-07-27 14:25&amp;gt; 今天吃完饭以后，发现笔记本无法唤醒了。我还觉得是电池没有电了，可是插上电源依然不能开机，我慌了，八成是笔记本坏了。
@@ -155,7 +155,7 @@ UNIX 操作系统，C 编译器，和几乎所有的 UNIX 应用程序都是用 
     <item>
       <title>安装 Linux 系统(Ubuntu)经验总结</title>
       <link>https://jokeme.top/p/ubuntu_install_faq/</link>
-      <pubDate>Tue, 31 Mar 2020 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 31 Mar 2020 17:27:33 +0000</pubDate>
       
       <guid>https://jokeme.top/p/ubuntu_install_faq/</guid>
       <description>安装 Linux 系统(Ubuntu)经验总结 进来将近两三个星期的装系统经历，让我异常痛苦，先是 Bay Trail 主板的一些坑，然后是显卡驱动，然后又是一堆莫名其妙的问题&amp;hellip;&amp;hellip;

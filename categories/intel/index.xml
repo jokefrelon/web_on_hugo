@@ -6,11 +6,11 @@
     <description>Recent content in Intel on JokemeBlog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 16 Mar 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://jokeme.top/categories/intel/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 16 Mar 2020 05:01:31 +0000</lastBuildDate><atom:link href="https://jokeme.top/categories/intel/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Bay Trail主板安装Linux的坑</title>
       <link>https://jokeme.top/p/install_linux_on_bay_trail/</link>
-      <pubDate>Mon, 16 Mar 2020 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 16 Mar 2020 05:01:31 +0000</pubDate>
       
       <guid>https://jokeme.top/p/install_linux_on_bay_trail/</guid>
       <description>Bay Trail 主板安装 Linux 的坑 最近搞了一个 N2920 的低功耗小主机，本来打算搞软路由，但是家里网速不行，就打算先刷个 Linux 玩玩，于是我就被这个问题烦了将近半个月！
