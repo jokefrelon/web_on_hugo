@@ -15,7 +15,7 @@
       <guid>https://jokeme.top/p/openwrt_install_zsh/</guid>
       <description>众所周知啊，OpenWrt 是一个非常优秀的路由器 OS,但是因为是为路由器优化的，所以我们在使用的时候就会遇到各种各样的问题，就比如安装 ohmyzsh
 因为网络问题，咱可以直接去GitHub看源码，顺便 Ctrl C / V
-1.安装依赖 opkg update opkg install zsh git git-http ca-certificates curl sh -c &amp;quot;$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)&amp;quot; #如果你Timeout了,不要慌!去Github下载源码,手动安装吧 ./install.sh 2.没了 开始造作啦！?
+1.安装依赖 opkg update opkg install zsh git git-http ca-certificates curl sh -c &amp;#34;$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)&amp;#34; #如果你Timeout了,不要慌!去Github下载源码,手动安装吧 ./install.sh 2.没了 开始造作啦！?
 如果你内存空间不够安装 zsh,那你可以看看飞尘@IT草的文章,最小化安装zsh后,仅占用不到的1m空间</description>
     </item>
     
@@ -27,10 +27,9 @@
       <guid>https://jokeme.top/p/linux_skill/</guid>
       <description>Linux 常用的小技巧 1 .apt-get remove vsftpd &amp;ndash;purge 删除所有配置，下次安装的时候会重新生成配置文件
 2 .编辑器 nano 快捷键 ALT+Shift+3	显示行号 CTRL+SHIFT+_	快速跳到某行
-3 .如果不经常使用 Linux の桌面，但是又不希望桌面吃内存，可以试试看 sudo init 3 4 .echo 颜色输出 echo -e &amp;ldquo;\033[背景颜色；文字颜色 m 字符串\033[0m&amp;rdquo;
-可以选择的编码如下所示(这些颜色是 ANSI 标准颜色)： 40 设置黑色背景 41 设置红色背景 42 设置绿色背景 43 设置黄色背景 44 设置蓝色背景 45 设置紫色背景 46 设置青色背景 47 设置白色(灰色)背景 49 设置缺省黑色背景
-前景颜色是背景颜色减去 10
-5 .zsh 美化 在 GitHub 上有一个 oh-my-zsh の项目，相信我，用上这个 zsh 以后，你会离不开它的，安装脚本附上
+3 .如果不经常使用 Linux の桌面，但是又不希望桌面吃内存，可以试试看 sudo init 3 4 .echo 颜色输出 echo -e &amp;quot;\033[背景颜色；文字颜色 m 字符串\033[0m&amp;quot;
+可以选择的编码如下所示(这些颜色是 ANSI 标准颜色)：
+40 设置黑色背景 41 设置红色背景 42 设置绿色背景 43 设置黄色背景 44 设置蓝色背景 45 设置紫色背景 46 设置青色背景 47 设置白色(灰色)背景 49 设置缺省黑色背景 前景颜色是背景颜色减去 10 5 .zsh 美化 在 GitHub 上有一个 oh-my-zsh の项目，相信我，用上这个 zsh 以后，你会离不开它的，安装脚本附上
 sh -c &amp;#34;$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)&amp;#34; sh -c &amp;#34;$(wget -O- https://raw.</description>
     </item>
     

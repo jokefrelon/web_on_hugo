@@ -135,11 +135,11 @@
     <h1 id="centos-7-磁盘扩容">CentOS 7 磁盘扩容</h1>
 <p>假设已经添加了磁盘,到了需要在系统里操作的步骤</p>
 <h2 id="对新增加的硬盘进行分区">对新增加的硬盘进行分区</h2>
-<pre><code>fidsk -l
-fdisk /dev/sda (根据实际情况选择)
-n	(新增加一个分区)
-p	(区类型选择为主分区)
-回车	(分区号)
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">fidsk -l
+fdisk /dev/sda <span class="o">(</span>根据实际情况选择<span class="o">)</span>
+n	<span class="o">(</span>新增加一个分区<span class="o">)</span>
+p	<span class="o">(</span>区类型选择为主分区<span class="o">)</span>
+回车	<span class="o">(</span>分区号<span class="o">)</span>
 回车　（起始扇区）
 回车　（结束扇区）
 t
@@ -147,225 +147,225 @@ t
 8e 将分区“Linux”的类型更改为“Linux LVM”
 w 保存
 reboot
-</code></pre><h2 id="对新增加的硬盘格式化">对新增加的硬盘格式化</h2>
-<pre><code>mkfs.ext4 /dev/sda3
-</code></pre><h2 id="添加新lvm到已有的lvm组实现扩容">添加新LVM到已有的LVM组，实现扩容</h2>
-<pre><code>lvm　　　　　　　　　　　　 进入lvm管理
+</code></pre></div><h2 id="对新增加的硬盘格式化">对新增加的硬盘格式化</h2>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">mkfs.ext4 /dev/sda3
+</code></pre></div><h2 id="添加新lvm到已有的lvm组实现扩容">添加新LVM到已有的LVM组，实现扩容</h2>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">lvm　　　　　　　　　　　　 进入lvm管理
 lvm&gt; pvcreate /dev/sda3 这是初始化刚才的分区，必须的
 lvm&gt;vgextend centos /dev/sda3 将初始化过的分区加入到虚拟卷组vg_dc01
 lvm&gt;lvextend -L +100G /dev/mapper/centos-root　　扩展已有卷的容量（注意容量大小）
 lvm&gt;pvdisplay　　　　　　　　　　　　　　 查看卷容量，这时你会看到一个很大的卷了
 lvm&gt;quit　
-</code></pre><p>以上只是卷扩容了，下面是文件系统的真正扩容，输入以下命令：</p>
-<pre><code>resize2fs /dev/mapper/centos-root
-</code></pre><p>resize2fs: Bad magic number in super-block 当尝试打开 /dev/mapper/centos-root 时</p>
+</code></pre></div><p>以上只是卷扩容了，下面是文件系统的真正扩容，输入以下命令：</p>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">resize2fs /dev/mapper/centos-root
+</code></pre></div><p>resize2fs: Bad magic number in super-block 当尝试打开 /dev/mapper/centos-root 时</p>
 <p>报错：当尝试打开 /dev/mapper/centos-root 时 找不到有效的文件系统超级块</p>
 <p>因为我的centos7的某些分区用的是xfs的文件系统（使用df -T查看即可知道）</p>
 <p>将<code>resize2fs</code>替换为<code>xfs_growfs</code>，重新执行一遍即可，如下：</p>
-<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell"> xfs_growfs /dev/mapper/centos-root
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh"> xfs_growfs /dev/mapper/centos-root
 </code></pre></div><h3 id="步骤记录">步骤记录</h3>
-<pre><code>[root@last ~]# fdisk /dev/sda
-Welcome to fdisk (util-linux 2.23.2).
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh"><span class="o">[</span>root@last ~<span class="o">]</span><span class="c1"># fdisk /dev/sda</span>
+Welcome to fdisk <span class="o">(</span>util-linux 2.23.2<span class="o">)</span>.
 
-Changes will remain in memory only, until you decide to write them.
+Changes will remain in memory only, <span class="k">until</span> you decide to write them.
 Be careful before using the write command.
 
 
-Command (m for help): p
+Command <span class="o">(</span>m <span class="k">for</span> <span class="nb">help</span><span class="o">)</span>: p
 
-Disk /dev/sda: 107.4 GB, 107374182400 bytes, 209715200 sectors
-Units = sectors of 1 * 512 = 512 bytes
-Sector size (logical/physical): 512 bytes / 512 bytes
-I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disk /dev/sda: 107.4 GB, <span class="m">107374182400</span> bytes, <span class="m">209715200</span> sectors
+<span class="nv">Units</span> <span class="o">=</span> sectors of <span class="m">1</span> * <span class="nv">512</span> <span class="o">=</span> <span class="m">512</span> bytes
+Sector size <span class="o">(</span>logical/physical<span class="o">)</span>: <span class="m">512</span> bytes / <span class="m">512</span> bytes
+I/O size <span class="o">(</span>minimum/optimal<span class="o">)</span>: <span class="m">512</span> bytes / <span class="m">512</span> bytes
 Disk label type: dos
 Disk identifier: 0x000ae200
 
    Device Boot      Start         End      Blocks   Id  System
-/dev/sda1   *        2048     2099199     1048576   83  Linux
-/dev/sda2         2099200    41943039    19921920   8e  Linux LVM
+/dev/sda1   *        <span class="m">2048</span>     <span class="m">2099199</span>     <span class="m">1048576</span>   <span class="m">83</span>  Linux
+/dev/sda2         <span class="m">2099200</span>    <span class="m">41943039</span>    <span class="m">19921920</span>   8e  Linux LVM
 
-Command (m for help): n
+Command <span class="o">(</span>m <span class="k">for</span> <span class="nb">help</span><span class="o">)</span>: n
 Partition type:
-   p   primary (2 primary, 0 extended, 2 free)
+   p   primary <span class="o">(</span><span class="m">2</span> primary, <span class="m">0</span> extended, <span class="m">2</span> free<span class="o">)</span>
    e   extended
-Select (default p):
+Select <span class="o">(</span>default p<span class="o">)</span>:
 Using default response p
-Partition number (3,4, default 3):
-First sector (41943040-209715199, default 41943040):
-Using default value 41943040
-Last sector, +sectors or +size{K,M,G} (41943040-209715199, default 209715199):
-Using default value 209715199
-Partition 3 of type Linux and of size 80 GiB is set
+Partition number <span class="o">(</span>3,4, default 3<span class="o">)</span>:
+First sector <span class="o">(</span>41943040-209715199, default 41943040<span class="o">)</span>:
+Using default value <span class="m">41943040</span>
+Last sector, +sectors or +size<span class="o">{</span>K,M,G<span class="o">}</span> <span class="o">(</span>41943040-209715199, default 209715199<span class="o">)</span>:
+Using default value <span class="m">209715199</span>
+Partition <span class="m">3</span> of <span class="nb">type</span> Linux and of size <span class="m">80</span> GiB is <span class="nb">set</span>
 
-Command (m for help): p
+Command <span class="o">(</span>m <span class="k">for</span> <span class="nb">help</span><span class="o">)</span>: p
 
-Disk /dev/sda: 107.4 GB, 107374182400 bytes, 209715200 sectors
-Units = sectors of 1 * 512 = 512 bytes
-Sector size (logical/physical): 512 bytes / 512 bytes
-I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disk /dev/sda: 107.4 GB, <span class="m">107374182400</span> bytes, <span class="m">209715200</span> sectors
+<span class="nv">Units</span> <span class="o">=</span> sectors of <span class="m">1</span> * <span class="nv">512</span> <span class="o">=</span> <span class="m">512</span> bytes
+Sector size <span class="o">(</span>logical/physical<span class="o">)</span>: <span class="m">512</span> bytes / <span class="m">512</span> bytes
+I/O size <span class="o">(</span>minimum/optimal<span class="o">)</span>: <span class="m">512</span> bytes / <span class="m">512</span> bytes
 Disk label type: dos
 Disk identifier: 0x000ae200
 
    Device Boot      Start         End      Blocks   Id  System
-/dev/sda1   *        2048     2099199     1048576   83  Linux
-/dev/sda2         2099200    41943039    19921920   8e  Linux LVM
-/dev/sda3        41943040   209715199    83886080   83  Linux
+/dev/sda1   *        <span class="m">2048</span>     <span class="m">2099199</span>     <span class="m">1048576</span>   <span class="m">83</span>  Linux
+/dev/sda2         <span class="m">2099200</span>    <span class="m">41943039</span>    <span class="m">19921920</span>   8e  Linux LVM
+/dev/sda3        <span class="m">41943040</span>   <span class="m">209715199</span>    <span class="m">83886080</span>   <span class="m">83</span>  Linux
 
-Command (m for help): t
-Partition number (1-3, default 3): 8e
-Partition number (1-3, default 3):
-Hex code (type L to list all codes): 8e
-Changed type of partition 'Linux' to 'Linux LVM'
+Command <span class="o">(</span>m <span class="k">for</span> <span class="nb">help</span><span class="o">)</span>: t
+Partition number <span class="o">(</span>1-3, default 3<span class="o">)</span>: 8e
+Partition number <span class="o">(</span>1-3, default 3<span class="o">)</span>:
+Hex code <span class="o">(</span><span class="nb">type</span> L to list all codes<span class="o">)</span>: 8e
+Changed <span class="nb">type</span> of partition <span class="s1">&#39;Linux&#39;</span> to <span class="s1">&#39;Linux LVM&#39;</span>
 
-Command (m for help): p
+Command <span class="o">(</span>m <span class="k">for</span> <span class="nb">help</span><span class="o">)</span>: p
 
-Disk /dev/sda: 107.4 GB, 107374182400 bytes, 209715200 sectors
-Units = sectors of 1 * 512 = 512 bytes
-Sector size (logical/physical): 512 bytes / 512 bytes
-I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disk /dev/sda: 107.4 GB, <span class="m">107374182400</span> bytes, <span class="m">209715200</span> sectors
+<span class="nv">Units</span> <span class="o">=</span> sectors of <span class="m">1</span> * <span class="nv">512</span> <span class="o">=</span> <span class="m">512</span> bytes
+Sector size <span class="o">(</span>logical/physical<span class="o">)</span>: <span class="m">512</span> bytes / <span class="m">512</span> bytes
+I/O size <span class="o">(</span>minimum/optimal<span class="o">)</span>: <span class="m">512</span> bytes / <span class="m">512</span> bytes
 Disk label type: dos
 Disk identifier: 0x000ae200
 
    Device Boot      Start         End      Blocks   Id  System
-/dev/sda1   *        2048     2099199     1048576   83  Linux
-/dev/sda2         2099200    41943039    19921920   8e  Linux LVM
-/dev/sda3        41943040   209715199    83886080   8e  Linux LVM
+/dev/sda1   *        <span class="m">2048</span>     <span class="m">2099199</span>     <span class="m">1048576</span>   <span class="m">83</span>  Linux
+/dev/sda2         <span class="m">2099200</span>    <span class="m">41943039</span>    <span class="m">19921920</span>   8e  Linux LVM
+/dev/sda3        <span class="m">41943040</span>   <span class="m">209715199</span>    <span class="m">83886080</span>   8e  Linux LVM
 
-Command (m for help): w
+Command <span class="o">(</span>m <span class="k">for</span> <span class="nb">help</span><span class="o">)</span>: w
 The partition table has been altered!
 
-Calling ioctl() to re-read partition table.
+Calling ioctl<span class="o">()</span> to re-read partition table.
 
 WARNING: Re-reading the partition table failed with error 16: Device or resource busy.
 The kernel still uses the old table. The new table will be used at
-the next reboot or after you run partprobe(8) or kpartx(8)
+the next reboot or after you run partprobe<span class="o">(</span>8<span class="o">)</span> or kpartx<span class="o">(</span>8<span class="o">)</span>
 Syncing disks.
-[root@last ~]#
-[root@last ~]# reboot
+<span class="o">[</span>root@last ~<span class="o">]</span><span class="c1">#</span>
+<span class="o">[</span>root@last ~<span class="o">]</span><span class="c1"># reboot</span>
 Connection to 192.168.50.130 closed by remote host.
 Connection to 192.168.50.130 closed.
 ➜  frelon
 ➜  frelon
 ➜  frelon ssh root@192.168.50.130
-Last login: Sat Sep 19 04:08:59 2020 from 192.168.50.1
-[root@last ~]# mkfs.ext4 /dev/sda3
-mke2fs 1.42.9 (28-Dec-2013)
-Filesystem label=
+Last login: Sat Sep <span class="m">19</span> 04:08:59 <span class="m">2020</span> from 192.168.50.1
+<span class="o">[</span>root@last ~<span class="o">]</span><span class="c1"># mkfs.ext4 /dev/sda3</span>
+mke2fs 1.42.9 <span class="o">(</span>28-Dec-2013<span class="o">)</span>
+Filesystem <span class="nv">label</span><span class="o">=</span>
 OS type: Linux
-Block size=4096 (log=2)
-Fragment size=4096 (log=2)
-Stride=0 blocks, Stripe width=0 blocks
-5242880 inodes, 20971520 blocks
-1048576 blocks (5.00%) reserved for the super user
-First data block=0
-Maximum filesystem blocks=2168455168
-640 block groups
-32768 blocks per group, 32768 fragments per group
-8192 inodes per group
+Block <span class="nv">size</span><span class="o">=</span><span class="m">4096</span> <span class="o">(</span><span class="nv">log</span><span class="o">=</span>2<span class="o">)</span>
+Fragment <span class="nv">size</span><span class="o">=</span><span class="m">4096</span> <span class="o">(</span><span class="nv">log</span><span class="o">=</span>2<span class="o">)</span>
+<span class="nv">Stride</span><span class="o">=</span><span class="m">0</span> blocks, Stripe <span class="nv">width</span><span class="o">=</span><span class="m">0</span> blocks
+<span class="m">5242880</span> inodes, <span class="m">20971520</span> blocks
+<span class="m">1048576</span> blocks <span class="o">(</span>5.00%<span class="o">)</span> reserved <span class="k">for</span> the super user
+First data <span class="nv">block</span><span class="o">=</span><span class="m">0</span>
+Maximum filesystem <span class="nv">blocks</span><span class="o">=</span><span class="m">2168455168</span>
+<span class="m">640</span> block groups
+<span class="m">32768</span> blocks per group, <span class="m">32768</span> fragments per group
+<span class="m">8192</span> inodes per group
 Superblock backups stored on blocks:
         32768, 98304, 163840, 229376, 294912, 819200, 884736, 1605632, 2654208,
-        4096000, 7962624, 11239424, 20480000
+        4096000, 7962624, 11239424, <span class="m">20480000</span>
 
-Allocating group tables: done
-Writing inode tables: done
-Creating journal (32768 blocks): done
-Writing superblocks and filesystem accounting information: done
+Allocating group tables: <span class="k">done</span>
+Writing inode tables: <span class="k">done</span>
+Creating journal <span class="o">(</span><span class="m">32768</span> blocks<span class="o">)</span>: <span class="k">done</span>
+Writing superblocks and filesystem accounting information: <span class="k">done</span>
 
-[root@last ~]#
-[root@last ~]#
-[root@last ~]# lvm
+<span class="o">[</span>root@last ~<span class="o">]</span><span class="c1">#</span>
+<span class="o">[</span>root@last ~<span class="o">]</span><span class="c1">#</span>
+<span class="o">[</span>root@last ~<span class="o">]</span><span class="c1"># lvm</span>
 lvm&gt; pvcreate /dev/sda3
-WARNING: ext4 signature detected on /dev/sda3 at offset 1080. Wipe it? [y/n]: y
+WARNING: ext4 signature detected on /dev/sda3 at offset 1080. Wipe it? <span class="o">[</span>y/n<span class="o">]</span>: y
   Wiping ext4 signature on /dev/sda3.
-  Physical volume &quot;/dev/sda3&quot; successfully created.
+  Physical volume <span class="s2">&#34;/dev/sda3&#34;</span> successfully created.
 lvm&gt;
 lvm&gt; vgextend centos /dev/sda3
-  Volume group &quot;centos&quot; successfully extended
+  Volume group <span class="s2">&#34;centos&#34;</span> successfully extended
 lvm&gt; lvextend -L +79G /dev/mapper/centos-root
-  Size of logical volume centos/root changed from &lt;17.00 GiB (4351 extents) to &lt;96.00 GiB (24575 extents).
+  Size of logical volume centos/root changed from &lt;17.00 GiB <span class="o">(</span><span class="m">4351</span> extents<span class="o">)</span> to &lt;96.00 GiB <span class="o">(</span><span class="m">24575</span> extents<span class="o">)</span>.
   Logical volume centos/root successfully resized.
 lvm&gt; quit
   Exiting.
-[root@last ~]# xfs_
+<span class="o">[</span>root@last ~<span class="o">]</span><span class="c1"># xfs_</span>
 xfs_admin      xfs_db         xfs_fsr        xfs_io         xfs_metadump   xfs_quota
 xfs_bmap       xfs_estimate   xfs_growfs     xfs_logprint   xfs_mkfile     xfs_repair
 xfs_copy       xfs_freeze     xfs_info       xfs_mdrestore  xfs_ncheck     xfs_rtcp
-[root@last ~]# xfs_
+<span class="o">[</span>root@last ~<span class="o">]</span><span class="c1"># xfs_</span>
 xfs_admin      xfs_db         xfs_fsr        xfs_io         xfs_metadump   xfs_quota
 xfs_bmap       xfs_estimate   xfs_growfs     xfs_logprint   xfs_mkfile     xfs_repair
 xfs_copy       xfs_freeze     xfs_info       xfs_mdrestore  xfs_ncheck     xfs_rtcp
-[root@last ~]# xfs_growfs /dev/mapper/c
+<span class="o">[</span>root@last ~<span class="o">]</span><span class="c1"># xfs_growfs /dev/mapper/c</span>
 centos-root  centos-swap  control
-[root@last ~]# xfs_growfs /dev/mapper/centos-root
-meta-data=/dev/mapper/centos-root isize=512    agcount=4, agsize=1113856 blks
-         =                       sectsz=512   attr=2, projid32bit=1
-         =                       crc=1        finobt=0 spinodes=0
-data     =                       bsize=4096   blocks=4455424, imaxpct=25
-         =                       sunit=0      swidth=0 blks
-naming   =version 2              bsize=4096   ascii-ci=0 ftype=1
-log      =internal               bsize=4096   blocks=2560, version=2
-         =                       sectsz=512   sunit=0 blks, lazy-count=1
-realtime =none                   extsz=4096   blocks=0, rtextents=0
-data blocks changed from 4455424 to 25164800
-[root@last ~]#
-[root@last ~]#
-[root@last ~]# df -h
+<span class="o">[</span>root@last ~<span class="o">]</span><span class="c1"># xfs_growfs /dev/mapper/centos-root</span>
+meta-data<span class="o">=</span>/dev/mapper/centos-root <span class="nv">isize</span><span class="o">=</span><span class="m">512</span>    <span class="nv">agcount</span><span class="o">=</span>4, <span class="nv">agsize</span><span class="o">=</span><span class="m">1113856</span> <span class="nv">blks</span>
+         <span class="o">=</span>                       <span class="nv">sectsz</span><span class="o">=</span><span class="m">512</span>   <span class="nv">attr</span><span class="o">=</span>2, <span class="nv">projid32bit</span><span class="o">=</span><span class="nv">1</span>
+         <span class="o">=</span>                       <span class="nv">crc</span><span class="o">=</span><span class="m">1</span>        <span class="nv">finobt</span><span class="o">=</span><span class="m">0</span> <span class="nv">spinodes</span><span class="o">=</span><span class="m">0</span>
+<span class="nv">data</span>     <span class="o">=</span>                       <span class="nv">bsize</span><span class="o">=</span><span class="m">4096</span>   <span class="nv">blocks</span><span class="o">=</span>4455424, <span class="nv">imaxpct</span><span class="o">=</span><span class="nv">25</span>
+         <span class="o">=</span>                       <span class="nv">sunit</span><span class="o">=</span><span class="m">0</span>      <span class="nv">swidth</span><span class="o">=</span><span class="m">0</span> blks
+<span class="nv">naming</span>   <span class="o">=</span>version <span class="m">2</span>              <span class="nv">bsize</span><span class="o">=</span><span class="m">4096</span>   ascii-ci<span class="o">=</span><span class="m">0</span> <span class="nv">ftype</span><span class="o">=</span><span class="m">1</span>
+<span class="nv">log</span>      <span class="o">=</span>internal               <span class="nv">bsize</span><span class="o">=</span><span class="m">4096</span>   <span class="nv">blocks</span><span class="o">=</span>2560, <span class="nv">version</span><span class="o">=</span><span class="nv">2</span>
+         <span class="o">=</span>                       <span class="nv">sectsz</span><span class="o">=</span><span class="m">512</span>   <span class="nv">sunit</span><span class="o">=</span><span class="m">0</span> blks, lazy-count<span class="o">=</span><span class="m">1</span>
+<span class="nv">realtime</span> <span class="o">=</span>none                   <span class="nv">extsz</span><span class="o">=</span><span class="m">4096</span>   <span class="nv">blocks</span><span class="o">=</span>0, <span class="nv">rtextents</span><span class="o">=</span><span class="m">0</span>
+data blocks changed from <span class="m">4455424</span> to <span class="m">25164800</span>
+<span class="o">[</span>root@last ~<span class="o">]</span><span class="c1">#</span>
+<span class="o">[</span>root@last ~<span class="o">]</span><span class="c1">#</span>
+<span class="o">[</span>root@last ~<span class="o">]</span><span class="c1"># df -h</span>
 Filesystem               Size  Used Avail Use% Mounted on
-devtmpfs                 898M     0  898M   0% /dev
-tmpfs                    910M     0  910M   0% /dev/shm
+devtmpfs                 898M     <span class="m">0</span>  898M   0% /dev
+tmpfs                    910M     <span class="m">0</span>  910M   0% /dev/shm
 tmpfs                    910M  9.5M  901M   2% /run
-tmpfs                    910M     0  910M   0% /sys/fs/cgroup
+tmpfs                    910M     <span class="m">0</span>  910M   0% /sys/fs/cgroup
 /dev/mapper/centos-root   96G  1.4G   95G   2% /
 /dev/sda1               1014M  150M  865M  15% /boot
-tmpfs                    182M     0  182M   0% /run/user/0
-</code></pre><hr>
+tmpfs                    182M     <span class="m">0</span>  182M   0% /run/user/0
+</code></pre></div><hr>
 <p>　由于在安装centos系统的时候，如果在安装时没有分配磁盘空间，选择的是默认分配的，在安装完成后，可以发现大容量磁盘往往分配在了home下面。</p>
 <p>如果要把home下面的磁盘空间分配到root磁盘下面。可以进行如下操作。</p>
 <h2 id="1查看centos的系统版本">1.查看CentOS的系统版本</h2>
-<pre><code>[root@controller ~]# cat /etc/redhat-release
-CentOS Linux release 7.2.1511 (Core)
-</code></pre><h2 id="2查看分区">2.查看分区</h2>
-<p>df -h (centos-home和centos-root每人的名字可能不一样)</p>
-<pre><code>[root@controller ~]# df -h
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh"><span class="o">[</span>root@controller ~<span class="o">]</span><span class="c1"># cat /etc/redhat-release</span>
+CentOS Linux release 7.2.1511 <span class="o">(</span>Core<span class="o">)</span>
+</code></pre></div><h2 id="2查看分区">2.查看分区</h2>
+<p><code>df -h</code> (centos-home和centos-root每人的名字可能不一样)</p>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh"><span class="o">[</span>root@controller ~<span class="o">]</span><span class="c1"># df -h</span>
 Filesystem      Size  Used Avail Use% Mounted on
 /dev/sda3        50G  8.5G   42G  17% /
-devtmpfs        1.9G     0  1.9G   0% /dev
-tmpfs           1.9G     0  1.9G   0% /dev/shm
+devtmpfs        1.9G     <span class="m">0</span>  1.9G   0% /dev
+tmpfs           1.9G     <span class="m">0</span>  1.9G   0% /dev/shm
 tmpfs           1.9G  8.7M  1.9G   1% /run
-tmpfs           1.9G     0  1.9G   0% /sys/fs/cgroup
+tmpfs           1.9G     <span class="m">0</span>  1.9G   0% /sys/fs/cgroup
 /dev/sda6        20G   33M   20G   1% /home
 /dev/sda5        26G  804M   26G   4% /var
 /dev/sda2       2.0G  125M  1.9G   7% /boot
-/dev/loop0      4.1G  4.1G     0 100% /mnt/centos
-/dev/loop1      2.7G  2.7G     0 100% /mnt/xiandi
-tmpfs           378M     0  378M   0% /run/user/0
-</code></pre><h2 id="3备份home分区文件">3.备份home分区文件</h2>
-<pre><code>[root@controller ~]# tar cvzf /mnt/home.tar /home/
-tar: Removing leading `/' from member names
+/dev/loop0      4.1G  4.1G     <span class="m">0</span> 100% /mnt/centos
+/dev/loop1      2.7G  2.7G     <span class="m">0</span> 100% /mnt/xiandi
+tmpfs           378M     <span class="m">0</span>  378M   0% /run/user/0
+</code></pre></div><h2 id="3备份home分区文件">3.备份home分区文件</h2>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh"><span class="o">[</span>root@controller ~<span class="o">]</span><span class="c1"># tar cvzf /mnt/home.tar /home/</span>
+tar: Removing leading <span class="sb">`</span>/<span class="err">&#39;</span> from member names
 /home/
 /home/frelon/
-</code></pre><h2 id="4卸载home如果无法卸载先终止使用home文件系统的进程">4.卸载/home，如果无法卸载，先终止使用/home文件系统的进程</h2>
-<pre><code>[root@controller ~]# umount /home （卸载）
-</code></pre><p>如果卸载时，发现/home在使用中，所以先终止。</p>
-<pre><code>[root@controller ~]# fuser -km /home/（终止）
-</code></pre><p>再次卸载，没有报错，表示成功。</p>
-<pre><code>[root@controller ~]# umount /home （卸载）
-</code></pre><h2 id="5删除home所在的lv">5.删除/home所在的lv</h2>
-<pre><code>lvremove /dev/mapper/centos-home
-</code></pre><h2 id="6扩展root所在的lv">6.扩展/root所在的lv</h2>
-<pre><code>lvextend -L +100G /dev/mapper/centos-root
+</code></pre></div><h2 id="4卸载home如果无法卸载先终止使用home文件系统的进程">4.卸载/home，如果无法卸载，先终止使用/home文件系统的进程</h2>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh"><span class="o">[</span>root@controller ~<span class="o">]</span><span class="c1"># umount /home （卸载）</span>
+</code></pre></div><p>如果卸载时，发现/home在使用中，所以先终止。</p>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh"><span class="o">[</span>root@controller ~<span class="o">]</span><span class="c1"># fuser -km /home/（终止）</span>
+</code></pre></div><p>再次卸载，没有报错，表示成功。</p>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh"><span class="o">[</span>root@controller ~<span class="o">]</span><span class="c1"># umount /home （卸载）</span>
+</code></pre></div><h2 id="5删除home所在的lv">5.删除/home所在的lv</h2>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">lvremove /dev/mapper/centos-home
+</code></pre></div><h2 id="6扩展root所在的lv">6.扩展/root所在的lv</h2>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">lvextend -L +100G /dev/mapper/centos-root
 
-</code></pre><h2 id="7扩展root文件系统">7.扩展/root文件系统</h2>
-<pre><code>xfs_growfs /dev/mapper/centos-root
-</code></pre><h2 id="8重新创建home-lv-创建时计算好剩余的磁盘容量建议比剩余小1g左右">8.重新创建home lv （创建时计算好剩余的磁盘容量，建议比剩余小1G左右）</h2>
-<pre><code>lvcreate -L 41G -n /dev/mapper/centos-home 
-</code></pre><h2 id="9创建文件系统">9.创建文件系统</h2>
-<pre><code>mkfs.xfs /dev/mapper/centos-home
-</code></pre><h2 id="10挂载home">10.挂载home</h2>
-<pre><code>mount /dev/mapper/centos-home
-</code></pre><h2 id="11home文件恢复">11.home文件恢复</h2>
-<pre><code>tar xvf /tmp/home.tar -C /home/
-</code></pre><h2 id="12再次使用df--h查看系统磁盘大小">12.再次使用df -h查看系统磁盘大小</h2>
+</code></pre></div><h2 id="7扩展root文件系统">7.扩展/root文件系统</h2>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">xfs_growfs /dev/mapper/centos-root
+</code></pre></div><h2 id="8重新创建home-lv-创建时计算好剩余的磁盘容量建议比剩余小1g左右">8.重新创建home lv （创建时计算好剩余的磁盘容量，建议比剩余小1G左右）</h2>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">lvcreate -L 41G -n /dev/mapper/centos-home 
+</code></pre></div><h2 id="9创建文件系统">9.创建文件系统</h2>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">mkfs.xfs /dev/mapper/centos-home
+</code></pre></div><h2 id="10挂载home">10.挂载home</h2>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">mount /dev/mapper/centos-home
+</code></pre></div><h2 id="11home文件恢复">11.home文件恢复</h2>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">tar xvf /tmp/home.tar -C /home/
+</code></pre></div><h2 id="12再次使用df--h查看系统磁盘大小">12.再次使用df -h查看系统磁盘大小</h2>
 <p>可以看到home下面100G的磁盘容量已经转移到root下面了，至此，转移任务结束。此为在CentOS7.2系统下测试使用的，在CentOS6版本下还没测试过。</p>
 <p>声明 : 文章来自互联网(实在是找不到原作者链接出处了),<strong>侵联删</strong></p>
 

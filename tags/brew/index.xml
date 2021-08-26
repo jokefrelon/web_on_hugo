@@ -18,7 +18,7 @@
 2. 安装 Brew 安装 brew 非常的简单，就需要一条命令就可以了，当然大家 99% 会遇到网络问题，安装过程中建议最好用 v 要不然缓慢的到超时的网络会让你年轻漂亮有活力的 ?！
 /bin/bash -c &amp;#34;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)&amp;#34; 3. brew 换源 平时我们执行 brew 命令安装软件的时候，跟以下 3 个仓库地址有关：
  brew.git homebrew-core.git homebrew-bottles  通过以下操作将这 3 个仓库地址全部替换为 Alibaba 提供的地址
-1. 替换 / 还原 brew.git 仓库地址 # 替换成阿里巴巴的 brew.git 仓库地址: cd &amp;quot;$(brew --repo)&amp;quot; git remote set-url origin https://mirrors.aliyun.com/homebrew/brew.git #======================================================= # 还原为官方提供的 brew.git 仓库地址 cd &amp;quot;$(brew --repo)&amp;quot; git remote set-url origin https://github.</description>
+1. 替换 / 还原 brew.git 仓库地址 # 替换成阿里巴巴的 brew.git 仓库地址: cd &amp;#34;$(brew --repo)&amp;#34; git remote set-url origin https://mirrors.aliyun.com/homebrew/brew.git #======================================================= # 还原为官方提供的 brew.git 仓库地址 cd &amp;#34;$(brew --repo)&amp;#34; git remote set-url origin https://github.</description>
     </item>
     
   </channel>

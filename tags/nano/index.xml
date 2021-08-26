@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Nano on JokemeBlog</title>
+    <title>nano on JokemeBlog</title>
     <link>https://jokeme.top/tags/nano/</link>
-    <description>Recent content in Nano on JokemeBlog</description>
+    <description>Recent content in nano on JokemeBlog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 10 Jun 2020 13:58:18 +0000</lastBuildDate><atom:link href="https://jokeme.top/tags/nano/index.xml" rel="self" type="application/rss+xml" />
@@ -15,7 +15,7 @@
       <guid>https://jokeme.top/p/compile_nano/</guid>
       <description>CentOS编译安装Nano 众所周知,因为 CentOS 非常的稳定,所以导致 CentOS の YUM 源里面的软件非常的老旧 就拿 Nano 来说, 官方已经到了 4.0版本, 而 CentOS 这边还在2.0徘徊,这就非常的难受了.所以咱就手动编译安装!
 1. 安装准备 sudo su cd yum -y install gcc ncurses-devel wget wget https://www.nano-editor.org/dist/v4/nano-4.6.tar.gz tar zxvf nano-4.6.tar.gz cd nano-4.6 2. 准备编译 ./configure make &amp;amp;&amp;amp; make install 3. 复制文件 cp src/nano /usr/bin cp doc/sample.nanorc /root/.nanorc 常用插件也给安排上
-echo &#39;include &amp;quot;/usr/local/share/nano/*.nanorc&amp;quot;&#39; &amp;gt;&amp;gt; /root/.nanorc #用于高亮显示 echo &#39;set nowrap&#39; &amp;gt;&amp;gt; /root/.nanorc #关闭自动换行 echo &#39;set linenumbers&#39; &amp;gt;&amp;gt; /root/.nanorc #打开行号显示 本文参考: Hiwbb.com</description>
+echo &amp;#39;include &amp;#34;/usr/local/share/nano/*.nanorc&amp;#34;&amp;#39; &amp;gt;&amp;gt; /root/.nanorc #用于高亮显示 echo &amp;#39;set nowrap&amp;#39; &amp;gt;&amp;gt; /root/.nanorc #关闭自动换行 echo &amp;#39;set linenumbers&amp;#39; &amp;gt;&amp;gt; /root/.nanorc #打开行号显示 本文参考: Hiwbb.com</description>
     </item>
     
   </channel>

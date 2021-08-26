@@ -146,7 +146,7 @@
     >脚本之家</a>。</p>
 <p>大概思路我就放在下面的代码里面讲解吧！</p>
 <div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell"><span class="nv">allzip</span><span class="o">=</span><span class="sb">`</span>ls <span class="p">|</span> grep zip <span class="p">|</span> sed <span class="s1">&#39;s/ (/(/g&#39;</span><span class="sb">`</span>	<span class="c1">#先用sed把&#39; (&#39;替换成&#39;(&#39;保存到list里面</span>
-<span class="nb">echo</span> <span class="nv">$allzip</span>	<span class="c1">#echo一下,让自己放心一店</span>
+<span class="nb">echo</span> <span class="nv">$allzip</span>	<span class="c1">#echo一下,让自己放心一点</span>
 <span class="k">for</span> zip in <span class="nv">$allzip</span>
 <span class="k">do</span>
      <span class="nv">filen</span><span class="o">=</span><span class="sb">`</span><span class="nb">echo</span> <span class="nv">$zip</span> <span class="p">|</span> sed <span class="s1">&#39;s/(/ (/g&#39;</span><span class="sb">`</span>	<span class="c1">#把存起来的没有空格的变量还原成真正的有空格的文件名</span>

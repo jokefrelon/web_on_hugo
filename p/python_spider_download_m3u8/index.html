@@ -148,76 +148,76 @@
 <li>自己动手丰衣足食</li>
 </ol>
 <p>这次用的爬虫和上一次一模一样，只是我优化了一下过程，就随便讲讲吧</p>
-<pre><code> #coding=utf-8  
- import requests  
- from lxml import etree  
- import time  
- import datetime  
- import re  
- ​  
- def makeUrl(Num):  
-  # Num为html的页数  
-  allinks=[]  
-  for link in range(1,Num+1):  
-  link=&quot;https://www.xxxx.com/xzy{}&quot;.format(link)  
-  allinks.append(link)  
-  return allinks  
- ​  
- def getRealUrl(fakeUrl):  
-  webPage = requests.get(  
-  url=fakeUrl,  
-  headers={&quot;User-Agent&quot;: &quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36&quot;}  
-  )  
-  indexPage=webPage.text  
-  indexHtml=etree.HTML(indexPage)  
-  nextPageUrl=indexHtml.xpath(&quot;//div[@id='posts']/div[@class='post grid']/h3/a/@href&quot;)  
-  picurls=indexHtml.xpath(&quot;//div[@class='img']/a/img/@data-src&quot;)  
-  Set = []  
-  Set.append(nextPageUrl)  
-  Set.append(picurls)  
-  return Set  
- ​  
- def ownSource(realUrl):  
-  webPagess = requests.get(  
-  url=realUrl,  
-  headers={&quot;User-Agent&quot;: &quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36&quot;}  
-  )  
-  indexPagess=webPagess.text  
-  indexHtmlss=etree.HTML(indexPagess)  
-  title=indexHtmlss.xpath(&quot;//header/h1/text()&quot;)  
-  source=indexHtmlss.xpath(&quot;//div[@class='article-content']/div/@data-item&quot;)  
-  finalUrl = []  
-  finalUrl.append(title)  
-  finalUrl.append(source)  
-  return finalUrl  
- ​  
- Derailed = makeUrl(110)  
- for iPhoneSE in Derailed:  
+<div class="highlight"><pre class="chroma"><code class="language-python3" data-lang="python3"> <span class="c1">#coding=utf-8  </span>
+ <span class="kn">import</span> <span class="nn">requests</span>  
+ <span class="kn">from</span> <span class="nn">lxml</span> <span class="k">import</span> <span class="n">etree</span>  
+ <span class="kn">import</span> <span class="nn">time</span>  
+ <span class="kn">import</span> <span class="nn">datetime</span>  
+ <span class="kn">import</span> <span class="nn">re</span>  
+ <span class="err">​</span>  
+ <span class="k">def</span> <span class="nf">makeUrl</span><span class="p">(</span><span class="n">Num</span><span class="p">):</span>  
+  <span class="c1"># Num为html的页数  </span>
+  <span class="n">allinks</span><span class="o">=</span><span class="p">[]</span>  
+  <span class="k">for</span> <span class="n">link</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">Num</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>  
+  <span class="n">link</span><span class="o">=</span><span class="s2">&#34;https://www.xxxx.com/xzy</span><span class="si">{}</span><span class="s2">&#34;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">link</span><span class="p">)</span>  
+  <span class="n">allinks</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">link</span><span class="p">)</span>  
+  <span class="k">return</span> <span class="n">allinks</span>  
+ <span class="err">​</span>  
+ <span class="k">def</span> <span class="nf">getRealUrl</span><span class="p">(</span><span class="n">fakeUrl</span><span class="p">):</span>  
+  <span class="n">webPage</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>  
+  <span class="n">url</span><span class="o">=</span><span class="n">fakeUrl</span><span class="p">,</span>  
+  <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s2">&#34;User-Agent&#34;</span><span class="p">:</span> <span class="s2">&#34;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36&#34;</span><span class="p">}</span>  
+  <span class="p">)</span>  
+  <span class="n">indexPage</span><span class="o">=</span><span class="n">webPage</span><span class="o">.</span><span class="n">text</span>  
+  <span class="n">indexHtml</span><span class="o">=</span><span class="n">etree</span><span class="o">.</span><span class="n">HTML</span><span class="p">(</span><span class="n">indexPage</span><span class="p">)</span>  
+  <span class="n">nextPageUrl</span><span class="o">=</span><span class="n">indexHtml</span><span class="o">.</span><span class="n">xpath</span><span class="p">(</span><span class="s2">&#34;//div[@id=&#39;posts&#39;]/div[@class=&#39;post grid&#39;]/h3/a/@href&#34;</span><span class="p">)</span>  
+  <span class="n">picurls</span><span class="o">=</span><span class="n">indexHtml</span><span class="o">.</span><span class="n">xpath</span><span class="p">(</span><span class="s2">&#34;//div[@class=&#39;img&#39;]/a/img/@data-src&#34;</span><span class="p">)</span>  
+  <span class="n">Set</span> <span class="o">=</span> <span class="p">[]</span>  
+  <span class="n">Set</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">nextPageUrl</span><span class="p">)</span>  
+  <span class="n">Set</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">picurls</span><span class="p">)</span>  
+  <span class="k">return</span> <span class="n">Set</span>  
+ <span class="err">​</span>  
+ <span class="k">def</span> <span class="nf">ownSource</span><span class="p">(</span><span class="n">realUrl</span><span class="p">):</span>  
+  <span class="n">webPagess</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>  
+  <span class="n">url</span><span class="o">=</span><span class="n">realUrl</span><span class="p">,</span>  
+  <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s2">&#34;User-Agent&#34;</span><span class="p">:</span> <span class="s2">&#34;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36&#34;</span><span class="p">}</span>  
+  <span class="p">)</span>  
+  <span class="n">indexPagess</span><span class="o">=</span><span class="n">webPagess</span><span class="o">.</span><span class="n">text</span>  
+  <span class="n">indexHtmlss</span><span class="o">=</span><span class="n">etree</span><span class="o">.</span><span class="n">HTML</span><span class="p">(</span><span class="n">indexPagess</span><span class="p">)</span>  
+  <span class="n">title</span><span class="o">=</span><span class="n">indexHtmlss</span><span class="o">.</span><span class="n">xpath</span><span class="p">(</span><span class="s2">&#34;//header/h1/text()&#34;</span><span class="p">)</span>  
+  <span class="n">source</span><span class="o">=</span><span class="n">indexHtmlss</span><span class="o">.</span><span class="n">xpath</span><span class="p">(</span><span class="s2">&#34;//div[@class=&#39;article-content&#39;]/div/@data-item&#34;</span><span class="p">)</span>  
+  <span class="n">finalUrl</span> <span class="o">=</span> <span class="p">[]</span>  
+  <span class="n">finalUrl</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">title</span><span class="p">)</span>  
+  <span class="n">finalUrl</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">source</span><span class="p">)</span>  
+  <span class="k">return</span> <span class="n">finalUrl</span>  
+ <span class="err">​</span>  
+ <span class="n">Derailed</span> <span class="o">=</span> <span class="n">makeUrl</span><span class="p">(</span><span class="mi">110</span><span class="p">)</span>  
+ <span class="k">for</span> <span class="n">iPhoneSE</span> <span class="ow">in</span> <span class="n">Derailed</span><span class="p">:</span>  
      
-  ceo = getRealUrl(iPhoneSE)  
-  qq = ceo[0]  
-  a=0  
-  for SourceUrl in qq:  
-  helloWorld = ownSource(SourceUrl)  
+  <span class="n">ceo</span> <span class="o">=</span> <span class="n">getRealUrl</span><span class="p">(</span><span class="n">iPhoneSE</span><span class="p">)</span>  
+  <span class="n">qq</span> <span class="o">=</span> <span class="n">ceo</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>  
+  <span class="n">a</span><span class="o">=</span><span class="mi">0</span>  
+  <span class="k">for</span> <span class="n">SourceUrl</span> <span class="ow">in</span> <span class="n">qq</span><span class="p">:</span>  
+  <span class="n">helloWorld</span> <span class="o">=</span> <span class="n">ownSource</span><span class="p">(</span><span class="n">SourceUrl</span><span class="p">)</span>  
      
-  MUlink=helloWorld[1][0]  
-  realMULinks=MUlink.split('&quot;')  
-  realMULink=realMULinks[5].replace(&quot;\\&quot;,&quot;&quot;)  
-  title=helloWorld[0][0].replace(&quot; &quot;,&quot;&quot;)  
-  thePicUrl = ceo[1][a]  
- ​  
-  p=re.compile(r&quot;[-,$()#+&amp;*' ]&quot;)  
-  lastTitle=re.sub(p,&quot;&quot;,title)  
+  <span class="n">MUlink</span><span class="o">=</span><span class="n">helloWorld</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>  
+  <span class="n">realMULinks</span><span class="o">=</span><span class="n">MUlink</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;&#34;&#39;</span><span class="p">)</span>  
+  <span class="n">realMULink</span><span class="o">=</span><span class="n">realMULinks</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&#34;</span><span class="se">\\</span><span class="s2">&#34;</span><span class="p">,</span><span class="s2">&#34;&#34;</span><span class="p">)</span>  
+  <span class="n">title</span><span class="o">=</span><span class="n">helloWorld</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&#34; &#34;</span><span class="p">,</span><span class="s2">&#34;&#34;</span><span class="p">)</span>  
+  <span class="n">thePicUrl</span> <span class="o">=</span> <span class="n">ceo</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="n">a</span><span class="p">]</span>  
+ <span class="err">​</span>  
+  <span class="n">p</span><span class="o">=</span><span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s2">&#34;[-,$()#+&amp;*&#39; ]&#34;</span><span class="p">)</span>  
+  <span class="n">lastTitle</span><span class="o">=</span><span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="n">p</span><span class="p">,</span><span class="s2">&#34;&#34;</span><span class="p">,</span><span class="n">title</span><span class="p">)</span>  
      
-  str ='{\n'+'&quot;name&quot;:&quot;'+lastTitle+'&quot;,\n'+'&quot;logo&quot;:&quot;'+thePicUrl+'&quot;,\n'+'&quot;url&quot;:&quot;'+realMULink+'&quot;\n'+'},\n'  
-  with open (&quot;weicha8.json&quot;,&quot;a+&quot;,encoding='utf-8') as f:  
-  f.write(str)  
-  a+=1  
-  print(str)  
-  print(a)  
-  print(datetime.datetime.now())  
-  time.sleep(1)
-</code></pre><p>整体分为三个部分：</p>
+  <span class="nb">str</span> <span class="o">=</span><span class="s1">&#39;{</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">+</span><span class="s1">&#39;&#34;name&#34;:&#34;&#39;</span><span class="o">+</span><span class="n">lastTitle</span><span class="o">+</span><span class="s1">&#39;&#34;,</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">+</span><span class="s1">&#39;&#34;logo&#34;:&#34;&#39;</span><span class="o">+</span><span class="n">thePicUrl</span><span class="o">+</span><span class="s1">&#39;&#34;,</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">+</span><span class="s1">&#39;&#34;url&#34;:&#34;&#39;</span><span class="o">+</span><span class="n">realMULink</span><span class="o">+</span><span class="s1">&#39;&#34;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">+</span><span class="s1">&#39;},</span><span class="se">\n</span><span class="s1">&#39;</span>  
+  <span class="k">with</span> <span class="nb">open</span> <span class="p">(</span><span class="s2">&#34;weicha8.json&#34;</span><span class="p">,</span><span class="s2">&#34;a+&#34;</span><span class="p">,</span><span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>  
+  <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>  
+  <span class="n">a</span><span class="o">+=</span><span class="mi">1</span>  
+  <span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>  
+  <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>  
+  <span class="nb">print</span><span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">())</span>  
+  <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</code></pre></div><p>整体分为三个部分：</p>
 <pre><code> def makeUrl(Num):  
  def getRealUrl(fakeUrl):  
  def ownSource(realUrl):

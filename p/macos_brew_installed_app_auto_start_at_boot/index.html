@@ -138,7 +138,7 @@
 <p>它的官网上有关于 brew 非常详细的文档，大家可以自己去看看。介绍了以后就到了我们的安装环节了！</p>
 <h2 id="2-安装-brew">2. 安装 Brew</h2>
 <p>安装 brew 非常的简单，就需要一条命令就可以了，当然大家 99% 会遇到网络问题，安装过程中建议最好用 v 要不然缓慢的到超时的网络会让你年轻漂亮有活力的 ?！</p>
-<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">/bin/bash -c <span class="s2">&#34;</span><span class="k">$(</span>curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh<span class="k">)</span><span class="s2">&#34;</span>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">/bin/bash -c <span class="s2">&#34;</span><span class="k">$(</span>curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh<span class="k">)</span><span class="s2">&#34;</span>
 </code></pre></div><h2 id="3-brew-换源">3. brew 换源</h2>
 <p>平时我们执行 brew 命令安装软件的时候，跟以下 3 个仓库地址有关：</p>
 <ol>
@@ -148,71 +148,71 @@
 </ol>
 <p>通过以下操作将这 3 个仓库地址全部替换为 Alibaba 提供的地址</p>
 <h3 id="1-替换--还原-brewgit-仓库地址">1. 替换 / 还原 brew.git 仓库地址</h3>
-<pre><code># 替换成阿里巴巴的 brew.git 仓库地址:
-cd &quot;$(brew --repo)&quot;
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh"><span class="c1"># 替换成阿里巴巴的 brew.git 仓库地址:</span>
+<span class="nb">cd</span> <span class="s2">&#34;</span><span class="k">$(</span>brew --repo<span class="k">)</span><span class="s2">&#34;</span>
 git remote set-url origin https://mirrors.aliyun.com/homebrew/brew.git
-#=======================================================
-# 还原为官方提供的 brew.git 仓库地址
-cd &quot;$(brew --repo)&quot;
+<span class="c1">#=======================================================</span>
+<span class="c1"># 还原为官方提供的 brew.git 仓库地址</span>
+<span class="nb">cd</span> <span class="s2">&#34;</span><span class="k">$(</span>brew --repo<span class="k">)</span><span class="s2">&#34;</span>
 git remote set-url origin https://github.com/Homebrew/brew.git
-</code></pre><h3 id="2-替换--还原-homebrew-coregit-仓库地址">2. 替换 / 还原 homebrew-core.git 仓库地址</h3>
-<pre><code># 替换成阿里巴巴的 homebrew-core.git 仓库地址:
-cd &quot;$(brew --repo)/Library/Taps/homebrew/homebrew-core&quot;
+</code></pre></div><h3 id="2-替换--还原-homebrew-coregit-仓库地址">2. 替换 / 还原 homebrew-core.git 仓库地址</h3>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh"><span class="c1"># 替换成阿里巴巴的 homebrew-core.git 仓库地址:</span>
+<span class="nb">cd</span> <span class="s2">&#34;</span><span class="k">$(</span>brew --repo<span class="k">)</span><span class="s2">/Library/Taps/homebrew/homebrew-core&#34;</span>
 git remote set-url origin https://mirrors.aliyun.com/homebrew/homebrew-core.git
-#=======================================================
-# 还原为官方提供的 homebrew-core.git 仓库地址
-cd &quot;$(brew --repo)/Library/Taps/homebrew/homebrew-core&quot;
+<span class="c1">#=======================================================</span>
+<span class="c1"># 还原为官方提供的 homebrew-core.git 仓库地址</span>
+<span class="nb">cd</span> <span class="s2">&#34;</span><span class="k">$(</span>brew --repo<span class="k">)</span><span class="s2">/Library/Taps/homebrew/homebrew-core&#34;</span>
 git remote set-url origin https://github.com/Homebrew/homebrew-core.git
-</code></pre><h3 id="3-替换--还原-homebrew-bottles-访问地址">3. 替换 / 还原 homebrew-bottles 访问地址</h3>
+</code></pre></div><h3 id="3-替换--还原-homebrew-bottles-访问地址">3. 替换 / 还原 homebrew-bottles 访问地址</h3>
 <p>这个步骤跟你的 macOS 系统使用的 shell 版本有关系</p>
 <p>所以，先来查看当前使用的 shell 版本</p>
-<pre><code>echo $SHELL
-# 如果你的输出结果是 /bin/zsh，参考?的 zsh 终端操作方式
-# 如果你的输出结果是 /bin/bash，参考?的 bash 终端操作方式
-</code></pre><h4 id="31-zsh-终端操作方式">3.1 zsh 终端操作方式</h4>
-<pre><code># 替换成阿里巴巴的 homebrew-bottles 访问地址:
-echo 'export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.aliyun.com/homebrew/homebrew-bottles' &gt;&gt; ~/.zshrc
-source ~/.zshrc
-#=======================================================
-# 还原为官方提供的 homebrew-bottles 访问地址
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh"><span class="nb">echo</span> <span class="nv">$SHELL</span>
+<span class="c1"># 如果你的输出结果是 /bin/zsh，参考?的 zsh 终端操作方式</span>
+<span class="c1"># 如果你的输出结果是 /bin/bash，参考?的 bash 终端操作方式</span>
+</code></pre></div><h4 id="31-zsh-终端操作方式">3.1 zsh 终端操作方式</h4>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh"><span class="c1"># 替换成阿里巴巴的 homebrew-bottles 访问地址:</span>
+<span class="nb">echo</span> <span class="s1">&#39;export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.aliyun.com/homebrew/homebrew-bottles&#39;</span> &gt;&gt; ~/.zshrc
+<span class="nb">source</span> ~/.zshrc
+<span class="c1">#=======================================================</span>
+<span class="c1"># 还原为官方提供的 homebrew-bottles 访问地址</span>
 vi ~/.zshrc
-# 然后，删除 HOMEBREW_BOTTLE_DOMAIN 这一行配置
-source ~/.zshrc
-</code></pre><h4 id="32-bash-终端操作方式">3.2 bash 终端操作方式</h4>
-<pre><code># 替换 homebrew-bottles 访问 URL:
-echo 'export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.aliyun.com/homebrew/homebrew-bottles' &gt;&gt; ~/.bash_profile
-source ~/.bash_profile
-#=======================================================
-# 还原为官方提供的 homebrew-bottles 访问地址
+<span class="c1"># 然后，删除 HOMEBREW_BOTTLE_DOMAIN 这一行配置</span>
+<span class="nb">source</span> ~/.zshrc
+</code></pre></div><h4 id="32-bash-终端操作方式">3.2 bash 终端操作方式</h4>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh"><span class="c1"># 替换 homebrew-bottles 访问 URL:</span>
+<span class="nb">echo</span> <span class="s1">&#39;export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.aliyun.com/homebrew/homebrew-bottles&#39;</span> &gt;&gt; ~/.bash_profile
+<span class="nb">source</span> ~/.bash_profile
+<span class="c1">#=======================================================</span>
+<span class="c1"># 还原为官方提供的 homebrew-bottles 访问地址</span>
 vi ~/.bash_profile
-# 然后，删除 HOMEBREW_BOTTLE_DOMAIN 这一行配置
-source ~/.bash_profile
-</code></pre><h2 id="4-安装软件">4. 安装软件</h2>
+<span class="c1"># 然后，删除 HOMEBREW_BOTTLE_DOMAIN 这一行配置</span>
+<span class="nb">source</span> ~/.bash_profile
+</code></pre></div><h2 id="4-安装软件">4. 安装软件</h2>
 <p>当我们已经配置好国内源时，我们就可以正式使用 brew 来安装一些软件了</p>
 <p>eg：</p>
-<pre><code>JokerMBP L-🌵-轩-🍂-X ~ 
-812 ◯ : brew install nginx                                                ⏎ [~]
-==&gt; Downloading https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles/bottles/ng
-==&gt; Downloading from https://d29vzk4ow07wi7.cloudfront.net/9deda8734db308f21e3c8
-######################################################################## 100.0%
-==&gt; Pouring nginx-1.19.5.big_sur.bottle.tar.gz
-==&gt; Caveats
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">JokerMBP L-🌵-轩-🍂-X ~ 
+<span class="m">812</span> ◯ : brew install nginx                                                ⏎ <span class="o">[</span>~<span class="o">]</span>
+<span class="o">==</span>&gt; Downloading https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles/bottles/ng
+<span class="o">==</span>&gt; Downloading from https://d29vzk4ow07wi7.cloudfront.net/9deda8734db308f21e3c8
+<span class="c1">######################################################################## 100.0%</span>
+<span class="o">==</span>&gt; Pouring nginx-1.19.5.big_sur.bottle.tar.gz
+<span class="o">==</span>&gt; Caveats
 Docroot is: /usr/local/var/www
 
-The default port has been set in /usr/local/etc/nginx/nginx.conf to 8080 so that
+The default port has been <span class="nb">set</span> in /usr/local/etc/nginx/nginx.conf to <span class="m">8080</span> so that
 nginx can run without sudo.
 
 nginx will load all files in /usr/local/etc/nginx/servers/.
 
 To have launchd start nginx now and restart at login:
   brew services start nginx
-Or, if you don't want/need a background service you can just run:
-  nginx
-==&gt; Summary
-🍺  /usr/local/Cellar/nginx/1.19.5: 25 files, 2.2MB
-==&gt; `brew cleanup` has not been run in 30 days, running now...
-Pruned 0 symbolic links and 1 directories from /usr/local
-</code></pre><p>可以看到在安装完成后 brew 给了我们很多有用的信息</p>
+Or, <span class="k">if</span> you don<span class="err">&#39;</span>t want/need a background service you can just run:
+  <span class="nv">nginx</span>
+<span class="o">==</span>&gt; Summary
+🍺  /usr/local/Cellar/nginx/1.19.5: <span class="m">25</span> files, 2.2MB
+<span class="o">==</span>&gt; <span class="sb">`</span>brew cleanup<span class="sb">`</span> has not been run in <span class="m">30</span> days, running now...
+Pruned <span class="m">0</span> symbolic links and <span class="m">1</span> directories from /usr/local
+</code></pre></div><p>可以看到在安装完成后 brew 给了我们很多有用的信息</p>
 <p>我先来总结一下：</p>
 <p>1：<strong>Docroot is: /usr/local/var/www</strong></p>
 <p>默认文档位置在 <strong>/usr/local/var/www</strong></p>
@@ -227,7 +227,7 @@ Pruned 0 symbolic links and 1 directories from /usr/local
 <p>既然 brew 可以设置开机自启动那这篇文章还有啥意义？</p>
 <p>其实只是想让大家了解 macOS 开机自启的原理而已</p>
 <p>现在大家应该都知道了 brew 安装软件的具体位置了，没错就是在 <code>/usr/local/Cellar</code> 文件夹下面，比如说我安装的 nginx 就在 <code>/usr/local/Cellar/nginx/</code> 下面。我们不妨看看文件夹里面有啥：</p>
-<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">JokerMBP L-?-轩-?-X /usr/local/Cellar/nginx 
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">JokerMBP L-?-轩-?-X /usr/local/Cellar/nginx 
 <span class="m">978</span> ◯ : ls 1.19.5                                                                                                                                                                                                                       total <span class="m">640</span>
 -rw-r--r--  <span class="m">1</span> frelon  staff   300K <span class="m">11</span> <span class="m">24</span> 23:06 CHANGES
 -rw-r--r--  <span class="m">1</span> frelon  staff   791B  <span class="m">2</span> <span class="m">22</span> 20:09 INSTALL_RECEIPT.json
@@ -237,9 +237,9 @@ drwxr-xr-x  <span class="m">3</span> frelon  staff    96B <span class="m">11</sp
 -rw-r--r--  <span class="m">1</span> frelon  staff   571B  <span class="m">2</span> <span class="m">22</span> 20:09 homebrew.mxcl.nginx.plist
 lrwxr-xr-x  <span class="m">1</span> frelon  staff    16B  <span class="m">2</span> <span class="m">22</span> 20:09 html -&gt; ../../../var/www
 drwxr-xr-x  <span class="m">4</span> frelon  staff   128B <span class="m">11</span> <span class="m">24</span> 23:06 share
-</code></pre></div><p>可以看到啊，哪里有一个显眼的 ==.plist== 结尾的文件，此时此刻我相信大家心里面肯定有答案了，开机自启动肯定和这个文件有着千丝万缕的关系。大家不要急哈，一步一步来！先把这个文件软连接到 <code>/Library/LaunchAgents/</code> 目录下，然后就可以执行</p>
-<pre><code>launchctl load /Library/LaunchAgents/homebrew.mxcl.xxx.plist
-</code></pre><p>此时此刻这个软件就可以开机自启了！要知道有一些小众软件并不能通过 brew 安装，我们只能手动编译安装，这个时候如果我们想要使它开机自启动怎么办？没有了 brew 是不是突然就不知所措了！其实这个 ==.plist== 文件我们自己也是可以手动编写的，我们再通过上面的步骤是不是就可以很容易的就让一个自己编译的软件开机自启动了。</p>
+</code></pre></div><p>可以看到啊，哪里有一个显眼的 <em>.plist</em> 结尾的文件，此时此刻我相信大家心里面肯定有答案了，开机自启动肯定和这个文件有着千丝万缕的关系。大家不要急哈，一步一步来！先把这个文件软连接到 <code>/Library/LaunchAgents/</code> 目录下，然后就可以执行</p>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">launchctl load /Library/LaunchAgents/homebrew.mxcl.xxx.plist
+</code></pre></div><p>此时此刻这个软件就可以开机自启了！要知道有一些小众软件并不能通过 brew 安装，我们只能手动编译安装，这个时候如果我们想要使它开机自启动怎么办？没有了 brew 是不是突然就不知所措了！其实这个 <em>.plist</em> 文件我们自己也是可以手动编写的，我们再通过上面的步骤是不是就可以很容易的就让一个自己编译的软件开机自启动了。</p>
 <p>本文参考博客园用户：<a class="link" href="https://www.cnblogs.com/wuygblog/"  target="_blank" rel="noopener"
     >wygbbb</a> &amp; <a class="link" href="https://www.cnblogs.com/tulintao/"  target="_blank" rel="noopener"
     >tulintao</a> 的文章而写，侵联删。</p>

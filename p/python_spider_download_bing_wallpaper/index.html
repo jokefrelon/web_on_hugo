@@ -154,14 +154,14 @@
 <p>Python 版本： <code>Python3</code></p>
 <p>pip 依赖库： <code>requests,lxml</code></p>
 <p>基本上大部分的 <strong>Linux</strong> 都会预装 <strong>Python3</strong> ,所以就从安装 <strong>pip</strong> 开始了</p>
-<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">sudo apt install python3-pip
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">sudo apt install python3-pip
 pip3 install lxml
 pip3 install requests
 mkdir -p ~/Bing_pic/pic/
 <span class="nb">cd</span> Bing_pic
-nano xxx.py					<span class="c1">#名字就根据你自己的喜好来吧,把下面的代码粘进去就可以啦</span>
-python3 xxx.py				<span class="c1">#如果没有报错,大功告成啦</span>
-ls pic/						<span class="c1">#看一下下载的壁纸</span>
+nano xxx.py	<span class="c1">#名字就根据你自己的喜好来吧,把下面的代码粘进去就可以啦</span>
+python3 xxx.py	<span class="c1">#如果没有报错,大功告成啦</span>
+ls pic/		<span class="c1">#看一下下载的壁纸</span>
 </code></pre></div><div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1">#coding=utf-8</span>
 <span class="kn">import</span> <span class="nn">requests</span>
 <span class="kn">from</span> <span class="nn">lxml</span> <span class="kn">import</span> <span class="n">etree</span>

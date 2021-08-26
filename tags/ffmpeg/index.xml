@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Ffmpeg on JokemeBlog</title>
+    <title>ffmpeg on JokemeBlog</title>
     <link>https://jokeme.top/tags/ffmpeg/</link>
-    <description>Recent content in Ffmpeg on JokemeBlog</description>
+    <description>Recent content in ffmpeg on JokemeBlog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 23 Mar 2021 14:21:09 +0000</lastBuildDate><atom:link href="https://jokeme.top/tags/ffmpeg/index.xml" rel="self" type="application/rss+xml" />
@@ -23,17 +23,17 @@ ffmpeg -user_agent &amp;quot;User-Agent: AppleCoreMedia/1.0.0.18C66 (iPhone; U; 
     </item>
     
     <item>
-      <title>Ubuntu 安装 **FFMPEG** 下载 m3u8 格式的视频</title>
+      <title>Ubuntu安装ffmpeg下载m3u8 格式的视频</title>
       <link>https://jokeme.top/p/ffmpeg_download_m3u8/</link>
       <pubDate>Wed, 15 Apr 2020 23:39:23 +0000</pubDate>
       
       <guid>https://jokeme.top/p/ffmpeg_download_m3u8/</guid>
-      <description>Ubuntu 安装 FFMPEG 下载 m3u8 格式的视频 最近想下载一个某音视频，但是我能看不能下载，这不是扯吗？于是不能忍的我就打算盘盘这个视频
-1 . 准备环境：Ubuntu 18.04 , FFMPEG 本着万物皆可 Linux の初心，我就不想用 Windows 了。
-首先安装 FFMPEG
+      <description>Ubuntu安装ffmpeg下载m3u8格式的视频 最近想下载一个某音视频，但是我能看不能下载，这不是扯吗？于是不能忍的我就打算盘盘这个视频
+1 . 准备环境：Ubuntu 18.04 , ffmpeg 本着万物皆可 Linux の初心，我就不想用 Windows 了。
+首先安装 ffmpeg
 sudo apt -y install ffmpeg 2 . 抓包短视频的 m3u8 地址 iOS 端，我是使用的 Thor 这个 app,比较好用，应用商店搜索就有
 然后得到真实的地址：
-http://XXX.com/xxx/xxx.m3u8 3 . 使用 FFMPEG 进行下载 ffmpeg -i http://XXX.com/xxx/xxx.m3u8 -c copy xxx.mp4 然后就需要慢慢等待下载完成就可以了，真的是特别特别的简单</description>
+http://XXX.com/xxx/xxx.m3u8 3 . 使用ffmpeg进行下载 ffmpeg -i http://XXX.com/xxx/xxx.m3u8 -c copy xxx.mp4 然后就需要慢慢等待下载完成就可以了，真的是特别特别的简单</description>
     </item>
     
   </channel>

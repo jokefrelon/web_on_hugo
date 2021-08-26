@@ -137,7 +137,7 @@
 <div class="highlight"><pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="k">show</span><span class="w"> </span><span class="n">variables</span><span class="w"> </span><span class="k">like</span><span class="w"> </span><span class="s2">&#34;storage_engine&#34;</span><span class="p">;</span><span class="w">	</span><span class="o">//</span><span class="err">查询默认存储引擎</span><span class="n">InnoDB</span><span class="w">
 </span><span class="w"></span><span class="k">show</span><span class="w"> </span><span class="n">variables</span><span class="w"> </span><span class="k">like</span><span class="w"> </span><span class="s2">&#34;have%&#34;</span><span class="p">;</span><span class="w">	</span><span class="o">//</span><span class="err">查询支持的存储引擎</span><span class="w">
 </span></code></pre></div><h2 id="2-keyston">2. Keyston</h2>
-<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell"><span class="nb">source</span> /etc/keystone/admin-openrc.sh
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh"><span class="nb">source</span> /etc/keystone/admin-openrc.sh
 
 openstack user create --domain demo --password password testuser 
 //--domain为所属域 --password为密码 testuser是用户名
@@ -282,107 +282,107 @@ openstack role add  --project PXM --user frelon oiL
 <p><code>Domain</code> 常常表示一个客户/合作伙伴,并且 <code>project</code>,<code>Group</code>,<code>User</code>在同一个<code>Domain</code>里面不可以重复</p>
 </blockquote>
 <h2 id="3-glance">3. glance</h2>
-<pre><code>glance image-create --name &quot;testone&quot; --disk-format &quot;qcow2&quot; --container-format bare --progress &lt; /root/CentOS_6.5_x86_64_XD.qcow2
-//上传镜像 并 用--name 命名为 &quot;testone&quot;
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">glance image-create --name <span class="s2">&#34;testone&#34;</span> --disk-format <span class="s2">&#34;qcow2&#34;</span> --container-format bare --progress &lt; /root/CentOS_6.5_x86_64_XD.qcow2
+//上传镜像 并 用--name 命名为 <span class="s2">&#34;testone&#34;</span>
 
-openstack image set testone --name examimage 
+openstack image <span class="nb">set</span> testone --name examimage 
 //修改已上传的镜像名称
 
 openstack image list 
 //列出已上传的镜像列表
-</code></pre><h2 id="4-nova">4. nova</h2>
-<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">nova usage-list 
+</code></pre></div><h2 id="4-nova">4. nova</h2>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">nova usage-list 
 //查询资源使用情况
 </code></pre></div><h2 id="5-neutron">5. neutron</h2>
-<pre><code> neutron router-list
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh"> neutron router-list
  //列出当前存在的网络/路由器
  
  neutron router-show + id/name
  
- [root@controller ~]#  neutron router-list
+ <span class="o">[</span>root@controller ~<span class="o">]</span><span class="c1">#  neutron router-list</span>
 +--------------------------------------+------+-----------------------+-------------+-------+
-| id                                   | name | external_gateway_info | distributed | ha    |
+<span class="p">|</span> id                                   <span class="p">|</span> name <span class="p">|</span> external_gateway_info <span class="p">|</span> distributed <span class="p">|</span> ha    <span class="p">|</span>
 +--------------------------------------+------+-----------------------+-------------+-------+
-| bb46e65a-ad51-4c13-b1c6-51c845dcfb52 | cvn  | null                  | False       | False |
+<span class="p">|</span> bb46e65a-ad51-4c13-b1c6-51c845dcfb52 <span class="p">|</span> cvn  <span class="p">|</span> null                  <span class="p">|</span> False       <span class="p">|</span> False <span class="p">|</span>
 +--------------------------------------+------+-----------------------+-------------+-------+
-[root@controller ~]#  neutron router-show bb46e65a-ad51-4c13-b1c6-51c845dcfb52
+<span class="o">[</span>root@controller ~<span class="o">]</span><span class="c1">#  neutron router-show bb46e65a-ad51-4c13-b1c6-51c845dcfb52</span>
 +-------------------------+--------------------------------------+
-| Field                   | Value                                |
+<span class="p">|</span> Field                   <span class="p">|</span> Value                                <span class="p">|</span>
 +-------------------------+--------------------------------------+
-| admin_state_up          | True                                 |
-| availability_zone_hints |                                      |
-| availability_zones      | nova                                 |
-| description             |                                      |
-| distributed             | False                                |
-| external_gateway_info   |                                      |
-| ha                      | False                                |
-| id                      | bb46e65a-ad51-4c13-b1c6-51c845dcfb52 |
-| name                    | cvn                                  |
-| routes                  |                                      |
-| status                  | ACTIVE                               |
-| tenant_id               | 869f732ec387457ba9cfdcb424cc8ea2     |
+<span class="p">|</span> admin_state_up          <span class="p">|</span> True                                 <span class="p">|</span>
+<span class="p">|</span> availability_zone_hints <span class="p">|</span>                                      <span class="p">|</span>
+<span class="p">|</span> availability_zones      <span class="p">|</span> nova                                 <span class="p">|</span>
+<span class="p">|</span> description             <span class="p">|</span>                                      <span class="p">|</span>
+<span class="p">|</span> distributed             <span class="p">|</span> False                                <span class="p">|</span>
+<span class="p">|</span> external_gateway_info   <span class="p">|</span>                                      <span class="p">|</span>
+<span class="p">|</span> ha                      <span class="p">|</span> False                                <span class="p">|</span>
+<span class="p">|</span> id                      <span class="p">|</span> bb46e65a-ad51-4c13-b1c6-51c845dcfb52 <span class="p">|</span>
+<span class="p">|</span> name                    <span class="p">|</span> cvn                                  <span class="p">|</span>
+<span class="p">|</span> routes                  <span class="p">|</span>                                      <span class="p">|</span>
+<span class="p">|</span> status                  <span class="p">|</span> ACTIVE                               <span class="p">|</span>
+<span class="p">|</span> tenant_id               <span class="p">|</span> 869f732ec387457ba9cfdcb424cc8ea2     <span class="p">|</span>
 +-------------------------+--------------------------------------+
 
 
-</code></pre><h2 id="6-trove">6. trove</h2>
+</code></pre></div><h2 id="6-trove">6. trove</h2>
 <h2 id="7-openstack命令大全">7. OpenStack命令大全</h2>
-<pre><code>access token create                        project create
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">access token create                        project create
 acl delete                                 project delete
 acl get                                    project list
-acl submit                                 project set
+acl submit                                 project <span class="nb">set</span>
 acl user add                               project show
 acl user remove                            ptr record list
-aggregate add host                         ptr record set
+aggregate add host                         ptr record <span class="nb">set</span>
 aggregate create                           ptr record show
-aggregate delete                           ptr record unset
-aggregate list                             quota set
+aggregate delete                           ptr record <span class="nb">unset</span>
+aggregate list                             quota <span class="nb">set</span>
 aggregate remove host                      quota show
-aggregate set                              recordset create
+aggregate <span class="nb">set</span>                              recordset create
 aggregate show                             recordset delete
 availability zone list                     recordset list
-backup create                              recordset set
+backup create                              recordset <span class="nb">set</span>
 backup delete                              recordset show
 backup list                                region create
 backup restore                             region delete
 backup show                                region list
-ca get                                     region set
+ca get                                     region <span class="nb">set</span>
 ca list                                    region show
 catalog list                               request token authorize
 catalog show                               request token create
-command list                               role add
-complete                                   role assignment list
+<span class="nb">command</span> list                               role add
+<span class="nb">complete</span>                                   role assignment list
 compute agent create                       role create
 compute agent delete                       role delete
 compute agent list                         role list
-compute agent set                          role remove
-compute service delete                     role set
+compute agent <span class="nb">set</span>                          role remove
+compute service delete                     role <span class="nb">set</span>
 compute service list                       role show
-compute service set                        router create
+compute service <span class="nb">set</span>                        router create
 configuration show                         router delete
 console log show                           router list
-console url show                           router set
+console url show                           router <span class="nb">set</span>
 consumer create                            router show
 consumer delete                            secret container create
 consumer list                              secret container delete
-consumer set                               secret container get
+consumer <span class="nb">set</span>                               secret container get
 consumer show                              secret container list
 container create                           secret delete
 container delete                           secret get
 container list                             secret list
 container save                             secret order create
-container set                              secret order delete
+container <span class="nb">set</span>                              secret order delete
 container show                             secret order get
-container unset                            secret order list
+container <span class="nb">unset</span>                            secret order list
 credential create                          secret store
 credential delete                          secret update
 credential list                            security group create
-credential set                             security group delete
+credential <span class="nb">set</span>                             security group delete
 credential show                            security group list
 dataprocessing cluster create              security group rule create
 dataprocessing cluster delete              security group rule delete
 dataprocessing cluster list                security group rule list
 dataprocessing cluster scale               security group rule show
-dataprocessing cluster show                security group set
+dataprocessing cluster show                security group <span class="nb">set</span>
 dataprocessing cluster template create     security group show
 dataprocessing cluster template delete     server add security group
 dataprocessing cluster template list       server add volume
@@ -390,48 +390,48 @@ dataprocessing cluster template show       server create
 dataprocessing cluster template update     server delete
 dataprocessing cluster update              server dump create
 dataprocessing cluster verification        server image create
-dataprocessing data source create          server list
-dataprocessing data source delete          server lock
-dataprocessing data source list            server migrate
-dataprocessing data source show            server pause
-dataprocessing data source update          server reboot
+dataprocessing data <span class="nb">source</span> create          server list
+dataprocessing data <span class="nb">source</span> delete          server lock
+dataprocessing data <span class="nb">source</span> list            server migrate
+dataprocessing data <span class="nb">source</span> show            server pause
+dataprocessing data <span class="nb">source</span> update          server reboot
 dataprocessing image list                  server rebuild
 dataprocessing image register              server remove security group
 dataprocessing image show                  server remove volume
 dataprocessing image tags add              server rescue
 dataprocessing image tags remove           server resize
-dataprocessing image tags set              server resume
-dataprocessing image unregister            server set
+dataprocessing image tags <span class="nb">set</span>              server resume
+dataprocessing image unregister            server <span class="nb">set</span>
 dataprocessing job binary create           server shelve
 dataprocessing job binary delete           server show
 dataprocessing job binary download         server ssh
 dataprocessing job binary list             server start
 dataprocessing job binary show             server stop
-dataprocessing job binary update           server suspend
+dataprocessing job binary update           server <span class="nb">suspend</span>
 dataprocessing job delete                  server unlock
 dataprocessing job execute                 server unpause
 dataprocessing job list                    server unrescue
-dataprocessing job show                    server unset
+dataprocessing job show                    server <span class="nb">unset</span>
 dataprocessing job template create         server unshelve
 dataprocessing job template delete         service create
 dataprocessing job template list           service delete
 dataprocessing job template show           service list
 dataprocessing job template update         service provider create
-dataprocessing job type configs get        service provider delete
-dataprocessing job type list               service provider list
-dataprocessing job update                  service provider set
+dataprocessing job <span class="nb">type</span> configs get        service provider delete
+dataprocessing job <span class="nb">type</span> list               service provider list
+dataprocessing job update                  service provider <span class="nb">set</span>
 dataprocessing node group template create  service provider show
-dataprocessing node group template delete  service set
+dataprocessing node group template delete  service <span class="nb">set</span>
 dataprocessing node group template list    service show
 dataprocessing node group template show    snapshot create
 dataprocessing node group template update  snapshot delete
 dataprocessing plugin configs get          snapshot list
-dataprocessing plugin list                 snapshot set
+dataprocessing plugin list                 snapshot <span class="nb">set</span>
 dataprocessing plugin show                 snapshot show
-domain create                              snapshot unset
+domain create                              snapshot <span class="nb">unset</span>
 domain delete                              software config create
 domain list                                software config delete
-domain set                                 software config list
+domain <span class="nb">set</span>                                 software config list
 domain show                                software config show
 ec2 credentials create                     software deployment create
 ec2 credentials delete                     software deployment delete
@@ -440,7 +440,7 @@ ec2 credentials show                       software deployment metadata show
 endpoint create                            software deployment output show
 endpoint delete                            software deployment show
 endpoint list                              stack abandon
-endpoint set                               stack adopt
+endpoint <span class="nb">set</span>                               stack adopt
 endpoint show                              stack cancel
 extension list                             stack check
 federation domain list                     stack create
@@ -448,23 +448,23 @@ federation project list                    stack delete
 federation protocol create                 stack event list
 federation protocol delete                 stack event show
 federation protocol list                   stack hook clear
-federation protocol set                    stack hook poll
+federation protocol <span class="nb">set</span>                    stack hook poll
 federation protocol show                   stack list
 flavor create                              stack output list
 flavor delete                              stack output show
 flavor list                                stack resource list
-flavor set                                 stack resource mark unhealthy
+flavor <span class="nb">set</span>                                 stack resource mark unhealthy
 flavor show                                stack resource metadata
-flavor unset                               stack resource show
+flavor <span class="nb">unset</span>                               stack resource show
 group add user                             stack resource signal
 group contains user                        stack resume
 group create                               stack show
 group delete                               stack snapshot create
 group list                                 stack snapshot delete
 group remove user                          stack snapshot list
-group set                                  stack snapshot restore
+group <span class="nb">set</span>                                  stack snapshot restore
 group show                                 stack snapshot show
-help                                       stack suspend
+<span class="nb">help</span>                                       stack <span class="nb">suspend</span>
 host list                                  stack template show
 host show                                  stack update
 hypervisor list                            subnet delete
@@ -473,15 +473,15 @@ hypervisor stats show                      subnet pool delete
 identity provider create                   subnet pool list
 identity provider delete                   subnet pool show
 identity provider list                     subnet show
-identity provider set                      tld create
+identity provider <span class="nb">set</span>                      tld create
 identity provider show                     tld delete
 image add project                          tld list
-image create                               tld set
+image create                               tld <span class="nb">set</span>
 image delete                               tld show
 image list                                 token issue
 image remove project                       token revoke
 image save                                 trust create
-image set                                  trust delete
+image <span class="nb">set</span>                                  trust delete
 image show                                 trust list
 ip fixed add                               trust show
 ip fixed remove                            usage list
@@ -489,8 +489,8 @@ ip floating add                            usage show
 ip floating create                         user create
 ip floating delete                         user delete
 ip floating list                           user list
-ip floating pool list                      user password set
-ip floating remove                         user set
+ip floating pool list                      user password <span class="nb">set</span>
+ip floating remove                         user <span class="nb">set</span>
 ip floating show                           user show
 keypair create                             volume create
 keypair delete                             volume delete
@@ -500,38 +500,38 @@ limits show                                volume qos create
 mapping create                             volume qos delete
 mapping delete                             volume qos disassociate
 mapping list                               volume qos list
-mapping set                                volume qos set
+mapping <span class="nb">set</span>                                volume qos <span class="nb">set</span>
 mapping show                               volume qos show
-module list                                volume qos unset
-network create                             volume set
+module list                                volume qos <span class="nb">unset</span>
+network create                             volume <span class="nb">set</span>
 network delete                             volume show
-network list                               volume type create
-network set                                volume type delete
-network show                               volume type list
-object create                              volume type set
-object delete                              volume type show
-object list                                volume type unset
-object save                                volume unset
-object set                                 zone abandon
+network list                               volume <span class="nb">type</span> create
+network <span class="nb">set</span>                                volume <span class="nb">type</span> delete
+network show                               volume <span class="nb">type</span> list
+object create                              volume <span class="nb">type</span> <span class="nb">set</span>
+object delete                              volume <span class="nb">type</span> show
+object list                                volume <span class="nb">type</span> <span class="nb">unset</span>
+object save                                volume <span class="nb">unset</span>
+object <span class="nb">set</span>                                 zone abandon
 object show                                zone axfr
-object store account set                   zone blacklist create
+object store account <span class="nb">set</span>                   zone blacklist create
 object store account show                  zone blacklist delete
-object store account unset                 zone blacklist list
-object unset                               zone blacklist set
+object store account <span class="nb">unset</span>                 zone blacklist list
+object <span class="nb">unset</span>                               zone blacklist <span class="nb">set</span>
 orchestration build info                   zone blacklist show
-orchestration resource type list           zone create
-orchestration resource type show           zone delete
+orchestration resource <span class="nb">type</span> list           zone create
+orchestration resource <span class="nb">type</span> show           zone delete
 orchestration service list                 zone list
-orchestration template function list       zone set
+orchestration template <span class="k">function</span> list       zone <span class="nb">set</span>
 orchestration template version list        zone show
 policy create                              zone transfer accept request
 policy delete                              zone transfer accept show
 policy list                                zone transfer request create
-policy set                                 zone transfer request delete
+policy <span class="nb">set</span>                                 zone transfer request delete
 policy show                                zone transfer request list
-port delete                                zone transfer request set
+port delete                                zone transfer request <span class="nb">set</span>
 port show                                  zone transfer request show
-</code></pre>
+</code></pre></div>
 </section>
 
 

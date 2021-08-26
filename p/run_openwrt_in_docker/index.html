@@ -9,7 +9,7 @@
 <meta property='og:description' content='在Docker中运行OpenWrt,教程可能有问题,但是大概的过程是这样的'>
 <meta property='og:url' content='https://jokeme.top/p/run_openwrt_in_docker/'>
 <meta property='og:site_name' content='JokemeBlog'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Shell' /><meta property='article:published_time' content='2020-03-20T21:33:56&#43;00:00'/><meta property='article:modified_time' content='2020-03-20T21:33:56&#43;00:00'/><meta property='og:image' content='https://cn.bing.com/th?id=OHR.RedRobin_EN-CN8071349218_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4' />
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2020-03-20T21:33:56&#43;00:00'/><meta property='article:modified_time' content='2020-03-20T21:33:56&#43;00:00'/><meta property='og:image' content='https://cn.bing.com/th?id=OHR.RedRobin_EN-CN8071349218_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4' />
 <meta name="twitter:site" content="@FrelonTroung">
     <meta name="twitter:creator" content="@FrelonTroung"><meta name="twitter:title" content="Docker 中运行 OpenWrt">
 <meta name="twitter:description" content="在Docker中运行OpenWrt,教程可能有问题,但是大概的过程是这样的"><meta name="twitter:card" content="summary_large_image">
@@ -137,6 +137,9 @@
 
     <section class="article-content">
     <h1 id="docker--中运行--openwrt">Docker  中运行  OpenWrt</h1>
+<hr>
+<p><em>文章有误，不建议参考了！但是我当时确确实实运行起来了，可能是我写的有问题吧！我也不想重新搞了，就这样吧</em></p>
+<hr>
 <p>前几天解决了小主机 <strong>Ubuntu</strong> 系统的引导问题以后。便开始折腾 <strong>OpenWrt</strong> 了，在 <strong>GitHub</strong> 上找到了 <strong>L 大</strong> 的 <strong><a class="link" href="https://github.com/coolsnowwolf/lede"  target="_blank" rel="noopener"
     >Lede</a></strong> 源码，需要自己编译。</p>
 <p>关于如何编译我也不说了，<strong>L 大</strong> 在 Readme 里面说的清清楚楚的，没有难度，就是需要有耐心和良好的网络环境，编译过程会很慢(建议扶梯子，我没有用梯子，整整编译了两天才完成！? ? ?) 也可以用我编译好的 <strong><a class="link" href="https://github.com/jokefrelon/linux-series/releases"  target="_blank" rel="noopener"
@@ -163,99 +166,101 @@
 <p>我一开始也不知道这些镜像应该选哪一个刻录，然后爬各种论坛终于被我发现了这几个文件的用法了</p>
 <p>好！环境已经没有问题，安装包也有了，那就先在 <strong>Docker</strong> 里面试试看这个 <strong>OpenWrt</strong> 怎么样吧</p>
 <h2 id="1-导入-openwrt-的镜像">1 导入 OpenWrt 的镜像</h2>
-<pre><code>cd ~/lede/bin/targets/x86/64
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh"><span class="nb">cd</span> ~/lede/bin/targets/x86/64
 mkdir -p ~/opt
 mount -o loop openwrt-x86-64-rootfs-squashfs.img ~/opt
 tar -cvzf ~/Openwrt.tar.gz ~/opt/* 
 docker import ~/OpenWrt.tar.gz OpenWrt
-</code></pre><h2 id="2-docker-创建网络">2 Docker 创建网络</h2>
-<pre><code>docker network create -d macvlan --subnet=192.168.100.0/24 --gateway=192.168.100.1 -o parent=enp2s0 fet
-</code></pre><p>这个 IP 地址需要根据你的实际 IP 更改，网卡也一样，不能照抄</p>
+</code></pre></div><h2 id="2-docker-创建网络">2 Docker 创建网络</h2>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">docker network create -d macvlan --subnet<span class="o">=</span>192.168.100.0/24 --gateway<span class="o">=</span>192.168.100.1 -o <span class="nv">parent</span><span class="o">=</span>enp2s0 fet
+</code></pre></div><p>这个 IP 地址需要根据你的实际 IP 更改，网卡也一样，不能照抄</p>
 <h2 id="3-docker-运行容器">3 Docker 运行容器</h2>
-<pre><code>docker run -d --name lede --network fet --privileged OpeenWrt /sbin/init
-</code></pre><p>在这里我一开始参考 <strong><a class="link" href="https://openwrt.org/zh/docs/guide-user/virtualization/docker_openwrt_image"  target="_blank" rel="noopener"
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">docker run -d --name lede --network fet --privileged OpeenWrt /sbin/init
+</code></pre></div><p>在这里我一开始参考 <strong><a class="link" href="https://openwrt.org/zh/docs/guide-user/virtualization/docker_openwrt_image"  target="_blank" rel="noopener"
     >OpenWrt 官方文档</a></strong>,结果一直报错，我一开始以为是他给的例子 ?里面系统太老，我就换成 19.10,依旧报错，然后在网上瞎转悠的时候看到了一篇来自 <a class="link" href="https://mlapp.cn/376.html"  target="_blank" rel="noopener"
     ><strong>美丽应用</strong></a> 的文章，虽然，他是在 <strong>树莓派</strong> 当中安装 <strong>OpenWrt</strong> 但是过程大多一样 (感谢 <strong>美丽应用</strong> ?)</p>
 <p>到这时，我们可以</p>
-<pre><code>docker ps
-[sudo] frelon 的密码：
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">docker ps
+<span class="o">[</span>sudo<span class="o">]</span> frelon 的密码：
 CONTAINER ID	IMAGE		COMMAND		CREATED		STATUS		PORTS		NAMES
-4fe146d86277	OpenWrt		&quot;/sbin/init&quot; 2 hours ago  Up 2 hours			  lede
-</code></pre><p>看一下我们的容器是否在正常运行，如果还在运行，那就说明容器没有问题可以进行下一步了</p>
+4fe146d86277	OpenWrt		<span class="s2">&#34;/sbin/init&#34;</span> <span class="m">2</span> hours ago  Up <span class="m">2</span> hours			  lede
+</code></pre></div><p>看一下我们的容器是否在正常运行，如果还在运行，那就说明容器没有问题可以进行下一步了</p>
 <h2 id="4-进入-openwrt-容器内进一步配置">4 进入 OpenWrt 容器内，进一步配置</h2>
-<pre><code>docker exec -it lede /bin/ash
-</code></pre><p>这里要注意的是 <strong>/bin/ash</strong> 而不是 <strong>/bin/bash</strong></p>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">docker <span class="nb">exec</span> -it lede /bin/ash
+</code></pre></div><p>这里要注意的是 <strong>/bin/ash</strong> 而不是 <strong>/bin/bash</strong></p>
 <h3 id="41-配置网络">4.1 配置网络</h3>
 <h4 id="411-查看一下-ip">4.1.1 查看一下 <strong>IP</strong></h4>
-<pre><code>/ # ip a
-1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">/ <span class="c1"># ip a</span>
+1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu <span class="m">65536</span> qdisc noqueue state UNKNOWN group default qlen <span class="m">1000</span>
     link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
     inet 127.0.0.1/8 scope host lo
        valid_lft forever preferred_lft forever
-25: eth0@if2: &lt;BROADCAST,MULTICAST&gt; mtu 1500 qdisc noqueue state DOWN group default
-    link/ether 02:42:c0:a8:64:02 brd ff:ff:ff:ff:ff:ff link-netnsid 0
-</code></pre><p>稍等片刻</p>
-<pre><code>/ # ip a
-1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+25: eth0@if2: &lt;BROADCAST,MULTICAST&gt; mtu <span class="m">1500</span> qdisc noqueue state DOWN group default
+    link/ether 02:42:c0:a8:64:02 brd ff:ff:ff:ff:ff:ff link-netnsid <span class="m">0</span>
+</code></pre></div><p>稍等片刻</p>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">/ <span class="c1"># ip a</span>
+1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu <span class="m">65536</span> qdisc noqueue state UNKNOWN group default qlen <span class="m">1000</span>
     link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
     inet 127.0.0.1/8 scope host lo
        valid_lft forever preferred_lft forever
     inet6 ::1/128 scope host
        valid_lft forever preferred_lft forever
-4: br-lan: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc noqueue state UP group default qlen 1000
+4: br-lan: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu <span class="m">1500</span> qdisc noqueue state UP group default qlen <span class="m">1000</span>
     link/ether 02:42:c0:a8:64:02 brd ff:ff:ff:ff:ff:ff
     inet 192.168.1.1/24 brd 192.168.1.255 scope global br-lan
        valid_lft forever preferred_lft forever
-25: eth0@if2: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc noqueue master br-lan state UP group default                                                                  link/ether 02:42:c0:a8:64:02 brd ff:ff:ff:ff:ff:ff link-netnsid 0
+25: eth0@if2: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu <span class="m">1500</span> qdisc noqueue master br-lan state UP group default                                                                  link/ether 02:42:c0:a8:64:02 brd ff:ff:ff:ff:ff:ff link-netnsid <span class="m">0</span>
 
-</code></pre><h4 id="412-简易修改防火墙规则">4.1.2 简易修改防火墙规则</h4>
-<pre><code>opkg update
+</code></pre></div><h4 id="412-简易修改防火墙规则">4.1.2 简易修改防火墙规则</h4>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">opkg update
 opkg install nano
 nano /etc/config/firewall
-</code></pre><p>找到 <strong>config zone</strong> 重点是把 <strong>option input/output/forward</strong> の <strong>REJRECT</strong> 改为 <strong>ACCEPT</strong></p>
-<pre><code>config zone
-        opion name 'wan'
-        list network 'wan'
-        list network 'wan6'
-        option input 'ACCEPT'
-        option output 'ACCEPT'
-        option forward 'ACCEPT'
-        option masq '1'
-        option mtu_fix '1'
-</code></pre><p>然后重启一下</p>
-<pre><code>/etc/init.d/firewall restart
-</code></pre><p>正常情况会报一堆错，无视即可</p>
+</code></pre></div><p>找到 <strong>config zone</strong> 重点是把 <strong>option input/output/forward</strong> の <strong>REJRECT</strong> 改为 <strong>ACCEPT</strong></p>
+<div class="highlight"><pre class="chroma"><code class="language-ini" data-lang="ini"><span class="na">config zone</span>
+        <span class="na">opion name &#39;wan&#39;</span>
+        <span class="na">list network &#39;wan&#39;</span>
+        <span class="na">list network &#39;wan6&#39;</span>
+        <span class="na">option input &#39;ACCEPT&#39;</span>
+        <span class="na">option output &#39;ACCEPT&#39;</span>
+        <span class="na">option forward &#39;ACCEPT&#39;</span>
+        <span class="na">option masq &#39;1&#39;</span>
+        <span class="na">option mtu_fix &#39;1&#39;</span>
+</code></pre></div><p>然后重启一下</p>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">/etc/init.d/firewall restart
+</code></pre></div><p>正常情况会报一堆错，无视即可</p>
 <h4 id="413-修改网口">4.1.3 修改网口</h4>
-<pre><code>nano /etc/config/network
-</code></pre><p>可以看到 <strong>interface lan</strong> 使用的是 <strong>eth0</strong></p>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">nano /etc/config/network
+</code></pre></div><p>可以看到 <strong>interface lan</strong> 使用的是 <strong>eth0</strong></p>
 <p>然后又添加了一个网络进该容器，并分配给 <strong>interface wan</strong> 充当 <strong>eth1</strong></p>
-<pre><code>config interface 'lan'
-        option type 'bridge'
-        option ifname 'eth0'
-        option proto 'static'
-        option ipaddr '192.168.1.1'
-        option netmask '255.255.255.0'
-        option ip6assign '60'
-        option gateway '192.168.100.105'
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">config interface <span class="s1">&#39;lan&#39;</span>
+        option <span class="nb">type</span> <span class="s1">&#39;bridge&#39;</span>
+        option ifname <span class="s1">&#39;eth0&#39;</span>
+        option proto <span class="s1">&#39;static&#39;</span>
+        option ipaddr <span class="s1">&#39;192.168.1.1&#39;</span>
+        option netmask <span class="s1">&#39;255.255.255.0&#39;</span>
+        option ip6assign <span class="s1">&#39;60&#39;</span>
+        option gateway <span class="s1">&#39;192.168.100.105&#39;</span>
 
-config interface 'wan'
-        option ifname 'eth1'
-        option proto 'dhcp'
-</code></pre><p>看着修改就可以了</p>
-<pre><code>/etc/init.d/network restart
-</code></pre><h3 id="42-网页登录">4.2 网页登录</h3>
+config interface <span class="s1">&#39;wan&#39;</span>
+        option ifname <span class="s1">&#39;eth1&#39;</span>
+        option proto <span class="s1">&#39;dhcp&#39;</span>
+</code></pre></div><p>看着修改就可以了</p>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">/etc/init.d/network restart
+</code></pre></div><h3 id="42-网页登录">4.2 网页登录</h3>
 <p>查看容器分配的 ip,在网页中打开，正常情况下是可以打开的，</p>
 <p>输入默认密码 ?<strong>password</strong>  就可以看到 <strong>OpenWrt</strong> の 状态信息</p>
 <h3 id="43-再添加一个网口到-openwrt-容器">4.3 再添加一个网口到 OpenWrt 容器</h3>
-<pre><code>docker network connect bridge OpenWrt
-docker exec -it OpenWrt /etc/init.d/network restart
-</code></pre><p>由于前面已经把 <strong>eth1</strong> 写入到配置信息里面，我们现在只需要重启一下网络即可，至此 <strong>OpenWrt</strong> の基本配置已经完成</p>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">docker network connect bridge OpenWrt
+docker <span class="nb">exec</span> -it OpenWrt /etc/init.d/network restart
+</code></pre></div><p>由于前面已经把 <strong>eth1</strong> 写入到配置信息里面，我们现在只需要重启一下网络即可，至此 <strong>OpenWrt</strong> の基本配置已经完成</p>
 <p>如果需要配置 <strong>OpenWrt</strong> 旁路网关，建议参考上文提到的 <a class="link" href="https://mlapp.cn/376.html"  target="_blank" rel="noopener"
     >美丽应用</a></p>
 <h3 id="ps补充一下">ps:补充一下</h3>
 <p>在实际使用中我发现，经常 <strong>opkg update</strong> 失败 但是网络却是没有任何问题，网关也可以  <strong>ping</strong> 通，然后就发现了 <strong>OpenWrt for Docker</strong> 的一个小 Bug</p>
 <p>每一次重启(有时候退出容器)就会重置 <strong>/etc/resolv.conf</strong> ,而这个文件就是我们的 DNS 文件！所以我们在使用域名 の时候就会出现失败</p>
 <p>我也试过在  <strong>/etc/config/network</strong> 里面设置  <strong>DNS</strong>,也同样会被重置，我不知道这是为什么，只能在每次重启以后写个脚本，设置一下<strong>DNS</strong></p>
+<hr>
+<p>文章有误，我也不想更新了，但是当时确实是正常运行了，不建议参考了。</p>
 <p><strong>本文参考资料来源：</strong></p>
 <ol>
 <li>Lean · coolsnowwolf/lede - GitHub : <a href="https://github.com/coolsnowwolf/lede">https://github.com/coolsnowwolf/lede</a></li>
@@ -268,12 +273,6 @@ docker exec -it OpenWrt /etc/init.d/network restart
 
     <footer class="article-footer">
     
-    <section class="article-tags">
-        
-            <a href="/tags/shell/">Shell</a>
-        
-    </section>
-
 
     
     <section class="article-copyright">

@@ -39,7 +39,7 @@ GitHub：IvanSolis1989的固件
       <guid>https://jokeme.top/p/openwrt_install_zsh/</guid>
       <description>众所周知啊，OpenWrt 是一个非常优秀的路由器 OS,但是因为是为路由器优化的，所以我们在使用的时候就会遇到各种各样的问题，就比如安装 ohmyzsh
 因为网络问题，咱可以直接去GitHub看源码，顺便 Ctrl C / V
-1.安装依赖 opkg update opkg install zsh git git-http ca-certificates curl sh -c &amp;quot;$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)&amp;quot; #如果你Timeout了,不要慌!去Github下载源码,手动安装吧 ./install.sh 2.没了 开始造作啦！?
+1.安装依赖 opkg update opkg install zsh git git-http ca-certificates curl sh -c &amp;#34;$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)&amp;#34; #如果你Timeout了,不要慌!去Github下载源码,手动安装吧 ./install.sh 2.没了 开始造作啦！?
 如果你内存空间不够安装 zsh,那你可以看看飞尘@IT草的文章,最小化安装zsh后,仅占用不到的1m空间</description>
     </item>
     
@@ -49,7 +49,8 @@ GitHub：IvanSolis1989的固件
       <pubDate>Fri, 20 Mar 2020 21:33:56 +0000</pubDate>
       
       <guid>https://jokeme.top/p/run_openwrt_in_docker/</guid>
-      <description>Docker 中运行 OpenWrt 前几天解决了小主机 Ubuntu 系统的引导问题以后。便开始折腾 OpenWrt 了，在 GitHub 上找到了 L 大 的 Lede 源码，需要自己编译。
+      <description>Docker 中运行 OpenWrt  文章有误，不建议参考了！但是我当时确确实实运行起来了，可能是我写的有问题吧！我也不想重新搞了，就这样吧
+ 前几天解决了小主机 Ubuntu 系统的引导问题以后。便开始折腾 OpenWrt 了，在 GitHub 上找到了 L 大 的 Lede 源码，需要自己编译。
 关于如何编译我也不说了，L 大 在 Readme 里面说的清清楚楚的，没有难度，就是需要有耐心和良好的网络环境，编译过程会很慢(建议扶梯子，我没有用梯子，整整编译了两天才完成！? ? ?) 也可以用我编译好的 x86_64 的固件(集成有ssr,v2ray,adblock plus,samba,vsftpd等常用插件)
 对于编译出来的文件我来介紹一下：
    openwrt-x86-64-rootfs-squashfs.img OpenWrt for Docker の img     openwrt-x86-64-combined-squashfs.vmdk 虚拟机文件，丢进 VMware 里面使用   openwrt-x86-64-combined-squashfs.img 我们编译的固件，刻录到 u 盘上来安装    我一开始也不知道这些镜像应该选哪一个刻录，然后爬各种论坛终于被我发现了这几个文件的用法了

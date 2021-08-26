@@ -141,9 +141,9 @@
 <h3 id="3-如果不经常使用-linux-の桌面但是又不希望桌面吃内存可以试试看">3 .如果不经常使用 Linux の桌面，但是又不希望桌面吃内存，可以试试看</h3>
 <pre><code>sudo init 3
 </code></pre><h3 id="4-echo-颜色输出">4 .echo 颜色输出</h3>
-<p><strong>echo -e &ldquo;\033[背景颜色；文字颜色 m 字符串\033[0m&rdquo;</strong></p>
-<p>可以选择的编码如下所示(这些颜色是 ANSI 标准颜色)：
-40 　 设置黑色背景
+<p><code>echo -e &quot;\033[背景颜色；文字颜色 m 字符串\033[0m&quot;</code></p>
+<p>可以选择的编码如下所示(这些颜色是 ANSI 标准颜色)：</p>
+<pre><code>40 　 设置黑色背景
 41 　 设置红色背景
 42 　 设置绿色背景
 43 　 设置黄色背景
@@ -151,9 +151,9 @@
 45 　 设置紫色背景
 46 　 设置青色背景
 47 　 设置白色(灰色)背景
-49 　 设置缺省黑色背景</p>
-<p>前景颜色是背景颜色减去 10</p>
-<h3 id="5-zsh-美化">5 .zsh 美化</h3>
+49 　 设置缺省黑色背景
+前景颜色是背景颜色减去 10
+</code></pre><h3 id="5-zsh-美化">5 .zsh 美化</h3>
 <p>在 GitHub 上有一个 <a class="link" href="https://github.com/ohmyzsh/ohmyzsh"  target="_blank" rel="noopener"
     >oh-my-zsh</a> の项目，相信我，用上这个 zsh 以后，你会离不开它的，安装脚本附上</p>
 <div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">sh -c <span class="s2">&#34;</span><span class="k">$(</span>curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh<span class="k">)</span><span class="s2">&#34;</span>

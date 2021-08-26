@@ -20,7 +20,7 @@ GitHub 上的 help_zh.md 给出的使用简介
 这都不是我们需要关注の重点，重点是这款 app 是用来播放 m3u8 流の
 播放视频很简单，可是这 m3u8 文件从哪里来呢？??
  去 Telegram 加入组群 dotPlayer ,群里经常会分享相关的订阅 自己动手丰衣足食  这次用的爬虫和上一次一模一样，只是我优化了一下过程，就随便讲讲吧
- #coding=utf-8 import requests from lxml import etree import time import datetime import re ​ def makeUrl(Num): # Num为html的页数 allinks=[] for link in range(1,Num+1): link=&amp;quot;https://www.xxxx.com/xzy{}&amp;quot;.format(link) allinks.append(link) return allinks ​ def getRealUrl(fakeUrl): webPage = requests.</description>
+#coding=utf-8  import requests from lxml import etree import time import datetime import re ​ def makeUrl(Num): # Num为html的页数  allinks=[] for link in range(1,Num+1): link=&amp;#34;https://www.xxxx.com/xzy{}&amp;#34;.format(link) allinks.</description>
     </item>
     
     <item>

@@ -163,7 +163,7 @@ package top.jokeme.funny.pojo; import org.springframework.stereotype.Component; 
 IFS的默认值为空白字符（换行符、制表符或者空格）。如果你手动的修改它为别的字符，那后续的代码也就会以该字符为定界符。只能说是简单粗暴，贼鸡儿好用！
 2. 解决方案二：修改文件名 一开始我看到这种方案还很疑惑！我尼玛要是有那修改文件名的功夫我还写代码干啥，哈哈哈哈。然后我看了一下思路，嗯！还是有点道理的。原文见脚本之家。
 大概思路我就放在下面的代码里面讲解吧！
-allzip=`ls | grep zip | sed &amp;#39;s/ (/(/g&amp;#39;`	#先用sed把&amp;#39; (&amp;#39;替换成&amp;#39;(&amp;#39;保存到list里面 echo $allzip	#echo一下,让自己放心一店 for zip in $allzip do filen=`echo $zip | sed &amp;#39;s/(/ (/g&amp;#39;`	#把存起来的没有空格的变量还原成真正的有空格的文件名 mv &amp;#34;$filen&amp;#34; $zip	#拿到了真正的文件名,为了后续方便,直接把有空格的文件修改为没有空格的 unzip $zip	#顺带给它解压一下 done 好了就是这么的简单，也不用修改什么IFS。虽然有一丢丢的绕，但是也是非常容易理解的。你们也看出来了我个人是偏向于第二种方案的，因为修改IFS万一你忘记给改回去，那你下面还有字符串类分割的操作就会度过一段非常蛋疼的调试时光。</description>
+allzip=`ls | grep zip | sed &amp;#39;s/ (/(/g&amp;#39;`	#先用sed把&amp;#39; (&amp;#39;替换成&amp;#39;(&amp;#39;保存到list里面 echo $allzip	#echo一下,让自己放心一点 for zip in $allzip do filen=`echo $zip | sed &amp;#39;s/(/ (/g&amp;#39;`	#把存起来的没有空格的变量还原成真正的有空格的文件名 mv &amp;#34;$filen&amp;#34; $zip	#拿到了真正的文件名,为了后续方便,直接把有空格的文件修改为没有空格的 unzip $zip	#顺带给它解压一下 done 好了就是这么的简单，也不用修改什么IFS。虽然有一丢丢的绕，但是也是非常容易理解的。你们也看出来了我个人是偏向于第二种方案的，因为修改IFS万一你忘记给改回去，那你下面还有字符串类分割的操作就会度过一段非常蛋疼的调试时光。</description>
     </item>
     
     <item>
@@ -265,9 +265,9 @@ ffmpeg -user_agent &amp;quot;User-Agent: AppleCoreMedia/1.0.0.18C66 (iPhone; U; 
       <description>记录最近捯饬Linux的收获 虽然最近在准备专升本考试吧，但是也没有认真的复习，最近还是天天玩Linux，在这里记录一下。
 1. Windows Terminal设置 如果你关注IT圈的话，你一定知道微软在Github开源了新的Terminal，并且这是一个颜值高,用着爽的全新版本,支持Unicode。这些都是后话，我要说的是WSL和Terminal相关的设置。因为Terminal打开WSL默认的路径是该用户的在Windows下的家目录，而此时你就需要修改setting.json对应位置添加以下配置：&amp;quot;startingDirectory&amp;quot;: &amp;quot;//wsl$/Ubuntu-18.04/home/frelon&amp;quot;
 如果你还没有用过Windows Terminal那你可以先看看这个Windows Terminal的简介
-2. aria2下载 众所周知，aria2是一款非常好用的一款下载工具，并且它开源，体积小，运行效率高等。什么？你没有听说过？那你总听说过Motrix吧！什么你还没有听说过？那你一定知道PanDown吧？没错这款伟大的软件就是基于aria2。
+2. aria2下载 众所周知，aria2 是一款非常好用的一款下载工具，并且它开源，体积小，运行效率高等。什么？你没有听说过？那你总听说过Motrix吧！什么你还没有听说过？那你一定知道PanDown吧？没错这款伟大的软件就是基于aria2。
 aria2本身只是命令行工具，所以我们可以在命令行里安装它。
-sudo apt install aira2 如果你只是简简单单的下载文件，那curl 和 wget aira2是没有啥大的区别的。额说到这里哈，就不得不说今天是curl的23岁生日，curl是 March 20. 1998 年发布的。没错！确实是23年前的今天！因为时差的原因，那边还是20号，咱们这边已经21号了，不是我记错了。
+sudo apt install aira2 如果你只是简简单单的下载文件，那curl 和 wget 、aira2是没有啥大的区别的。额说到这里哈，就不得不说今天是curl的23岁生日，curl是 March 20. 1998 年发布的。没错！确实是23年前的今天！因为时差的原因，那边还是20号，咱们这边已经21号了，不是我记错了。
 然后我就根据我个人的使用习惯给alias一下了，因为我不喜欢这种字母和数组夹杂的命令，遇到了都会给重命名一下方便以后自己敲命令。
 alias ac=&amp;quot;aria2c&amp;quot; 首先既然是下载工具，那我为什么要用aria2？
 我们先来看看aria2支持啥协议
@@ -308,7 +308,7 @@ sed -i &#39;s/xxx/yyy/g&#39; filename 这个就是把文件内部的xxx替换为
 2. 安装 Brew 安装 brew 非常的简单，就需要一条命令就可以了，当然大家 99% 会遇到网络问题，安装过程中建议最好用 v 要不然缓慢的到超时的网络会让你年轻漂亮有活力的 ?！
 /bin/bash -c &amp;#34;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)&amp;#34; 3. brew 换源 平时我们执行 brew 命令安装软件的时候，跟以下 3 个仓库地址有关：
  brew.git homebrew-core.git homebrew-bottles  通过以下操作将这 3 个仓库地址全部替换为 Alibaba 提供的地址
-1. 替换 / 还原 brew.git 仓库地址 # 替换成阿里巴巴的 brew.git 仓库地址: cd &amp;quot;$(brew --repo)&amp;quot; git remote set-url origin https://mirrors.aliyun.com/homebrew/brew.git #======================================================= # 还原为官方提供的 brew.git 仓库地址 cd &amp;quot;$(brew --repo)&amp;quot; git remote set-url origin https://github.</description>
+1. 替换 / 还原 brew.git 仓库地址 # 替换成阿里巴巴的 brew.git 仓库地址: cd &amp;#34;$(brew --repo)&amp;#34; git remote set-url origin https://mirrors.aliyun.com/homebrew/brew.git #======================================================= # 还原为官方提供的 brew.git 仓库地址 cd &amp;#34;$(brew --repo)&amp;#34; git remote set-url origin https://github.</description>
     </item>
     
     <item>
@@ -350,7 +350,8 @@ $$ f(-x)=ln[(\sqrt{1+x^2}-x)*\frac{\sqrt{x^2+1}+x}{\sqrt{x^2+1}+x}] $$
 $$ 因为后面的\frac{\sqrt{x^2+1}+x}{\sqrt{x^2+1}+x}为一,对整个结果没有影响可得 $$
 $$ f(-x)=ln\frac {(\sqrt{x^2+1}+x)*(\sqrt{1+x^2}-x)} {\sqrt{x^2+1}+x} $$
 $$ f(-x)=ln(\frac{1}{\sqrt{x^2+1}+x})=ln(\sqrt{x^2+1}+x)^{-1}=-ln(\sqrt{x^2+1}+x) $$
-文章持续更新 ing❤️</description>
+文章持续更新 ing❤️
+不更新了，数学太难了，放弃了！！！💔 我是傻X！我不配学数学</description>
     </item>
     
     <item>
@@ -380,7 +381,7 @@ sudo systemctl daemon-reload sudo systemctl restart docker 少侠记得重启加
       <guid>https://jokeme.top/p/openwrt_install_zsh/</guid>
       <description>众所周知啊，OpenWrt 是一个非常优秀的路由器 OS,但是因为是为路由器优化的，所以我们在使用的时候就会遇到各种各样的问题，就比如安装 ohmyzsh
 因为网络问题，咱可以直接去GitHub看源码，顺便 Ctrl C / V
-1.安装依赖 opkg update opkg install zsh git git-http ca-certificates curl sh -c &amp;quot;$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)&amp;quot; #如果你Timeout了,不要慌!去Github下载源码,手动安装吧 ./install.sh 2.没了 开始造作啦！?
+1.安装依赖 opkg update opkg install zsh git git-http ca-certificates curl sh -c &amp;#34;$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)&amp;#34; #如果你Timeout了,不要慌!去Github下载源码,手动安装吧 ./install.sh 2.没了 开始造作啦！?
 如果你内存空间不够安装 zsh,那你可以看看飞尘@IT草的文章,最小化安装zsh后,仅占用不到的1m空间</description>
     </item>
     
@@ -429,9 +430,9 @@ UNIX 操作系统，C 编译器，和几乎所有的 UNIX 应用程序都是用 
       <description>解决一个Ubuntu 18 安装MySQL 5.7不能远程登录的问题 首先编辑 /etc/mysql/mysql.conf.d/mysqld.cnf 配置文件：
 nano /etc/mysql/mysql.conf.d/mysqld.cnf 注释掉
 bind-address = 127.0.0.1 #如果没有就跳过 还有就是要给root 设置一个密码，允许他远程登录
-use mysql; SELECT user,host FROM user; update user set host=&amp;quot;%&amp;quot; where user=&amp;quot;root&amp;quot; update user set authentication_string=PASSWORD(&amp;quot;UrPasswd&amp;quot;)where user=&amp;quot;root&amp;quot;; flush privileges; 如果MySQL5.7 这样还不能远程登录上，咱见面持刀互a，如果你比我猛，当我没有说！
+usemysql;SELECTuser,hostFROMuser;updateusersethost=&amp;#34;%&amp;#34;whereuser=&amp;#34;root&amp;#34;updateusersetauthentication_string=PASSWORD(&amp;#34;UrPasswd&amp;#34;)whereuser=&amp;#34;root&amp;#34;;flushprivileges;如果MySQL5.7 这样还不能远程登录上，咱见面持刀互a，如果你比我猛，当我没有说！
 你以为这就完了吗？？哪有这么简单，你还需要下面这条命令
-update user set plugin=&#39;mysql_native_password&#39;; #放在上面 use mysql； 后面执行 很多人都是忽略了这条命令，导致一直无法远程登录上MySQL* 必要的话可以重启一下MySQL哦！</description>
+updateusersetplugin=&amp;#39;mysql_native_password&amp;#39;;/* 放在上面 use mysql； 后面执行 */很多人都是忽略了这条命令，导致一直无法远程登录上MySQL* 必要的话可以重启一下MySQL哦！</description>
     </item>
     
     <item>
@@ -536,16 +537,6 @@ Ctrl+Shift+\ Jump to matching bracket</description>
     </item>
     
     <item>
-      <title>收集整理一些我不经常使用,但是使用时又找不到的网站链接</title>
-      <link>https://jokeme.top/p/some_links/</link>
-      <pubDate>Fri, 03 Jul 2020 02:16:22 +0000</pubDate>
-      
-      <guid>https://jokeme.top/p/some_links/</guid>
-      <description>所有排名不分先后，我是看到一个收录一个
- Pandorabox 固件官网 Shields.io ascii Windows 10下载 Iconfont 蓝奏云 RM bg 小米路由器 3 刷机 MiUi / Router OS Windows 10 激活 渐变色 css 腾讯软件管家网页版 Electron文档 MSDN 中科大软件源生成 zsh编程指南 MFI查询 新MFI查询 TrafficMonitor Snipaste截图工具 CTF Aliyun Springboot Initialize JDK下载 马可菠萝macos xclientmacos macwk 网页设计导航 SpringBoot文档 octodex  </description>
-    </item>
-    
-    <item>
       <title>Python 爬虫抓取m3u8播放源</title>
       <link>https://jokeme.top/p/python_spider_download_m3u8/</link>
       <pubDate>Wed, 01 Jul 2020 21:33:56 +0000</pubDate>
@@ -558,7 +549,7 @@ GitHub 上的 help_zh.md 给出的使用简介
 这都不是我们需要关注の重点，重点是这款 app 是用来播放 m3u8 流の
 播放视频很简单，可是这 m3u8 文件从哪里来呢？??
  去 Telegram 加入组群 dotPlayer ,群里经常会分享相关的订阅 自己动手丰衣足食  这次用的爬虫和上一次一模一样，只是我优化了一下过程，就随便讲讲吧
- #coding=utf-8 import requests from lxml import etree import time import datetime import re ​ def makeUrl(Num): # Num为html的页数 allinks=[] for link in range(1,Num+1): link=&amp;quot;https://www.xxxx.com/xzy{}&amp;quot;.format(link) allinks.append(link) return allinks ​ def getRealUrl(fakeUrl): webPage = requests.</description>
+#coding=utf-8  import requests from lxml import etree import time import datetime import re ​ def makeUrl(Num): # Num为html的页数  allinks=[] for link in range(1,Num+1): link=&amp;#34;https://www.xxxx.com/xzy{}&amp;#34;.format(link) allinks.</description>
     </item>
     
     <item>
@@ -587,10 +578,9 @@ pip 依赖库： requests,lxml
       <guid>https://jokeme.top/p/linux_skill/</guid>
       <description>Linux 常用的小技巧 1 .apt-get remove vsftpd &amp;ndash;purge 删除所有配置，下次安装的时候会重新生成配置文件
 2 .编辑器 nano 快捷键 ALT+Shift+3	显示行号 CTRL+SHIFT+_	快速跳到某行
-3 .如果不经常使用 Linux の桌面，但是又不希望桌面吃内存，可以试试看 sudo init 3 4 .echo 颜色输出 echo -e &amp;ldquo;\033[背景颜色；文字颜色 m 字符串\033[0m&amp;rdquo;
-可以选择的编码如下所示(这些颜色是 ANSI 标准颜色)： 40 设置黑色背景 41 设置红色背景 42 设置绿色背景 43 设置黄色背景 44 设置蓝色背景 45 设置紫色背景 46 设置青色背景 47 设置白色(灰色)背景 49 设置缺省黑色背景
-前景颜色是背景颜色减去 10
-5 .zsh 美化 在 GitHub 上有一个 oh-my-zsh の项目，相信我，用上这个 zsh 以后，你会离不开它的，安装脚本附上
+3 .如果不经常使用 Linux の桌面，但是又不希望桌面吃内存，可以试试看 sudo init 3 4 .echo 颜色输出 echo -e &amp;quot;\033[背景颜色；文字颜色 m 字符串\033[0m&amp;quot;
+可以选择的编码如下所示(这些颜色是 ANSI 标准颜色)：
+40 设置黑色背景 41 设置红色背景 42 设置绿色背景 43 设置黄色背景 44 设置蓝色背景 45 设置紫色背景 46 设置青色背景 47 设置白色(灰色)背景 49 设置缺省黑色背景 前景颜色是背景颜色减去 10 5 .zsh 美化 在 GitHub 上有一个 oh-my-zsh の项目，相信我，用上这个 zsh 以后，你会离不开它的，安装脚本附上
 sh -c &amp;#34;$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)&amp;#34; sh -c &amp;#34;$(wget -O- https://raw.</description>
     </item>
     
@@ -602,7 +592,7 @@ sh -c &amp;#34;$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/ma
       <guid>https://jokeme.top/p/compile_nano/</guid>
       <description>CentOS编译安装Nano 众所周知,因为 CentOS 非常的稳定,所以导致 CentOS の YUM 源里面的软件非常的老旧 就拿 Nano 来说, 官方已经到了 4.0版本, 而 CentOS 这边还在2.0徘徊,这就非常的难受了.所以咱就手动编译安装!
 1. 安装准备 sudo su cd yum -y install gcc ncurses-devel wget wget https://www.nano-editor.org/dist/v4/nano-4.6.tar.gz tar zxvf nano-4.6.tar.gz cd nano-4.6 2. 准备编译 ./configure make &amp;amp;&amp;amp; make install 3. 复制文件 cp src/nano /usr/bin cp doc/sample.nanorc /root/.nanorc 常用插件也给安排上
-echo &#39;include &amp;quot;/usr/local/share/nano/*.nanorc&amp;quot;&#39; &amp;gt;&amp;gt; /root/.nanorc #用于高亮显示 echo &#39;set nowrap&#39; &amp;gt;&amp;gt; /root/.nanorc #关闭自动换行 echo &#39;set linenumbers&#39; &amp;gt;&amp;gt; /root/.nanorc #打开行号显示 本文参考: Hiwbb.com</description>
+echo &amp;#39;include &amp;#34;/usr/local/share/nano/*.nanorc&amp;#34;&amp;#39; &amp;gt;&amp;gt; /root/.nanorc #用于高亮显示 echo &amp;#39;set nowrap&amp;#39; &amp;gt;&amp;gt; /root/.nanorc #关闭自动换行 echo &amp;#39;set linenumbers&amp;#39; &amp;gt;&amp;gt; /root/.nanorc #打开行号显示 本文参考: Hiwbb.com</description>
     </item>
     
     <item>
@@ -644,17 +634,17 @@ wget https://github.com/fatedier/frp/releases/download/v0.33.0/frp_0.33.0_linux_
     </item>
     
     <item>
-      <title>Ubuntu 安装 **FFMPEG** 下载 m3u8 格式的视频</title>
+      <title>Ubuntu安装ffmpeg下载m3u8 格式的视频</title>
       <link>https://jokeme.top/p/ffmpeg_download_m3u8/</link>
       <pubDate>Wed, 15 Apr 2020 23:39:23 +0000</pubDate>
       
       <guid>https://jokeme.top/p/ffmpeg_download_m3u8/</guid>
-      <description>Ubuntu 安装 FFMPEG 下载 m3u8 格式的视频 最近想下载一个某音视频，但是我能看不能下载，这不是扯吗？于是不能忍的我就打算盘盘这个视频
-1 . 准备环境：Ubuntu 18.04 , FFMPEG 本着万物皆可 Linux の初心，我就不想用 Windows 了。
-首先安装 FFMPEG
+      <description>Ubuntu安装ffmpeg下载m3u8格式的视频 最近想下载一个某音视频，但是我能看不能下载，这不是扯吗？于是不能忍的我就打算盘盘这个视频
+1 . 准备环境：Ubuntu 18.04 , ffmpeg 本着万物皆可 Linux の初心，我就不想用 Windows 了。
+首先安装 ffmpeg
 sudo apt -y install ffmpeg 2 . 抓包短视频的 m3u8 地址 iOS 端，我是使用的 Thor 这个 app,比较好用，应用商店搜索就有
 然后得到真实的地址：
-http://XXX.com/xxx/xxx.m3u8 3 . 使用 FFMPEG 进行下载 ffmpeg -i http://XXX.com/xxx/xxx.m3u8 -c copy xxx.mp4 然后就需要慢慢等待下载完成就可以了，真的是特别特别的简单</description>
+http://XXX.com/xxx/xxx.m3u8 3 . 使用ffmpeg进行下载 ffmpeg -i http://XXX.com/xxx/xxx.m3u8 -c copy xxx.mp4 然后就需要慢慢等待下载完成就可以了，真的是特别特别的简单</description>
     </item>
     
     <item>
@@ -677,7 +667,8 @@ nomodeset 3. 开机卡紫屏问题 这个问题原因可能各不一样，网上
       <pubDate>Fri, 20 Mar 2020 21:33:56 +0000</pubDate>
       
       <guid>https://jokeme.top/p/run_openwrt_in_docker/</guid>
-      <description>Docker 中运行 OpenWrt 前几天解决了小主机 Ubuntu 系统的引导问题以后。便开始折腾 OpenWrt 了，在 GitHub 上找到了 L 大 的 Lede 源码，需要自己编译。
+      <description>Docker 中运行 OpenWrt  文章有误，不建议参考了！但是我当时确确实实运行起来了，可能是我写的有问题吧！我也不想重新搞了，就这样吧
+ 前几天解决了小主机 Ubuntu 系统的引导问题以后。便开始折腾 OpenWrt 了，在 GitHub 上找到了 L 大 的 Lede 源码，需要自己编译。
 关于如何编译我也不说了，L 大 在 Readme 里面说的清清楚楚的，没有难度，就是需要有耐心和良好的网络环境，编译过程会很慢(建议扶梯子，我没有用梯子，整整编译了两天才完成！? ? ?) 也可以用我编译好的 x86_64 的固件(集成有ssr,v2ray,adblock plus,samba,vsftpd等常用插件)
 对于编译出来的文件我来介紹一下：
    openwrt-x86-64-rootfs-squashfs.img OpenWrt for Docker の img     openwrt-x86-64-combined-squashfs.vmdk 虚拟机文件，丢进 VMware 里面使用   openwrt-x86-64-combined-squashfs.img 我们编译的固件，刻录到 u 盘上来安装    我一开始也不知道这些镜像应该选哪一个刻录，然后爬各种论坛终于被我发现了这几个文件的用法了

@@ -9,7 +9,7 @@
 <meta property='og:description' content='CentOS编译安装Nano'>
 <meta property='og:url' content='https://jokeme.top/p/compile_nano/'>
 <meta property='og:site_name' content='JokemeBlog'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Nano' /><meta property='article:published_time' content='2020-06-10T13:58:18&#43;00:00'/><meta property='article:modified_time' content='2020-06-10T13:58:18&#43;00:00'/><meta property='og:image' content='https://cn.bing.com/th?id=OHR.IceWalking_EN-CN6785374690_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4' />
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='nano' /><meta property='article:published_time' content='2020-06-10T13:58:18&#43;00:00'/><meta property='article:modified_time' content='2020-06-10T13:58:18&#43;00:00'/><meta property='og:image' content='https://cn.bing.com/th?id=OHR.IceWalking_EN-CN6785374690_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4' />
 <meta name="twitter:site" content="@FrelonTroung">
     <meta name="twitter:creator" content="@FrelonTroung"><meta name="twitter:title" content="CentOS编译安装Nano">
 <meta name="twitter:description" content="CentOS编译安装Nano"><meta name="twitter:card" content="summary_large_image">
@@ -136,28 +136,28 @@
 <p>众所周知,因为 <strong>CentOS</strong> 非常的稳定,所以导致 <strong>CentOS</strong> の <strong>YUM</strong> 源里面的软件非常的老旧
 就拿 <strong>Nano</strong> 来说, 官方已经到了 4.0版本, 而 <strong>CentOS</strong> 这边还在2.0徘徊,这就非常的难受了.所以咱就手动编译安装!</p>
 <h2 id="1-安装准备">1. 安装准备</h2>
-<pre><code>sudo su
-cd
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">sudo su
+<span class="nb">cd</span>
 yum -y install gcc ncurses-devel wget
 wget https://www.nano-editor.org/dist/v4/nano-4.6.tar.gz
 tar zxvf nano-4.6.tar.gz
-cd nano-4.6
-</code></pre><h2 id="2-准备编译">2. 准备编译</h2>
-<pre><code>./configure
-make &amp;&amp; make install
-</code></pre><h2 id="3-复制文件">3. 复制文件</h2>
-<pre><code>cp src/nano  /usr/bin
+<span class="nb">cd</span> nano-4.6
+</code></pre></div><h2 id="2-准备编译">2. 准备编译</h2>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">./configure
+make <span class="o">&amp;&amp;</span> make install
+</code></pre></div><h2 id="3-复制文件">3. 复制文件</h2>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">cp src/nano  /usr/bin
 cp doc/sample.nanorc  /root/.nanorc
-</code></pre><p>常用插件也给安排上</p>
-<pre><code>echo  'include &quot;/usr/local/share/nano/*.nanorc&quot;'  &gt;&gt;  /root/.nanorc
-#用于高亮显示
+</code></pre></div><p>常用插件也给安排上</p>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh"><span class="nb">echo</span>  <span class="s1">&#39;include &#34;/usr/local/share/nano/*.nanorc&#34;&#39;</span>  &gt;&gt;  /root/.nanorc
+<span class="c1">#用于高亮显示</span>
 
-echo  'set nowrap'  &gt;&gt;  /root/.nanorc
-#关闭自动换行
+<span class="nb">echo</span>  <span class="s1">&#39;set nowrap&#39;</span>  &gt;&gt;  /root/.nanorc
+<span class="c1">#关闭自动换行</span>
 
-echo  'set linenumbers'  &gt;&gt;  /root/.nanorc
-#打开行号显示
-</code></pre><p>本文参考: <a class="link" href="https://hiwbb.com/2019/12/centos-install-nano-46-syntax/"  target="_blank" rel="noopener"
+<span class="nb">echo</span>  <span class="s1">&#39;set linenumbers&#39;</span>  &gt;&gt;  /root/.nanorc
+<span class="c1">#打开行号显示</span>
+</code></pre></div><p>本文参考: <a class="link" href="https://hiwbb.com/2019/12/centos-install-nano-46-syntax/"  target="_blank" rel="noopener"
     >Hiwbb.com</a></p>
 
 </section>
@@ -167,7 +167,7 @@ echo  'set linenumbers'  &gt;&gt;  /root/.nanorc
     
     <section class="article-tags">
         
-            <a href="/tags/nano/">Nano</a>
+            <a href="/tags/nano/">nano</a>
         
     </section>
 

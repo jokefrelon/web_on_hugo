@@ -125,10 +125,10 @@
     <loc>https://jokeme.top/p/linux_reward/</loc>
     <lastmod>2021-03-21T01:25:43+00:00</lastmod>
   </url><url>
-    <loc>https://jokeme.top/p/linux_vsftpd/</loc>
+    <loc>https://jokeme.top/tags/ftp/</loc>
     <lastmod>2021-03-01T22:37:16+00:00</lastmod>
   </url><url>
-    <loc>https://jokeme.top/tags/vsftpd/</loc>
+    <loc>https://jokeme.top/p/linux_vsftpd/</loc>
     <lastmod>2021-03-01T22:37:16+00:00</lastmod>
   </url><url>
     <loc>https://jokeme.top/tags/brew/</loc>
@@ -183,7 +183,7 @@
     <lastmod>2020-07-28T02:19:28+00:00</lastmod>
   </url><url>
     <loc>https://jokeme.top/p/my_laptop_do_not_work/</loc>
-    <lastmod>2020-07-27T02:18:50+00:00</lastmod>
+    <lastmod>2020-09-25T20:52:13+00:00</lastmod>
   </url><url>
     <loc>https://jokeme.top/tags/maven/</loc>
     <lastmod>2020-07-23T03:48:26+00:00</lastmod>
@@ -212,13 +212,10 @@
     <loc>https://jokeme.top/p/download_windows10_iso/</loc>
     <lastmod>2020-07-14T15:42:51+00:00</lastmod>
   </url><url>
-    <loc>https://jokeme.top/tags/links/</loc>
+    <loc>https://jokeme.top/page/</loc>
     <lastmod>2021-08-17T05:03:22+00:00</lastmod>
   </url><url>
-    <loc>https://jokeme.top/categories/links/</loc>
-    <lastmod>2021-08-17T05:03:22+00:00</lastmod>
-  </url><url>
-    <loc>https://jokeme.top/p/some_links/</loc>
+    <loc>https://jokeme.top/links/</loc>
     <lastmod>2021-08-17T05:03:22+00:00</lastmod>
   </url><url>
     <loc>https://jokeme.top/tags/m3u8/</loc>
@@ -335,14 +332,13 @@
     <loc>https://jokeme.top/p/java_equals_and_contains/</loc>
     <lastmod>2019-12-20T21:33:56+00:00</lastmod>
   </url><url>
-    <loc>https://jokeme.top/about/</loc>
-    <lastmod>2020-10-09T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://jokeme.top/page/</loc>
+    <loc>https://jokeme.top/%E5%85%B3%E4%BA%8E/</loc>
     <lastmod>2020-10-09T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://jokeme.top/archives/</loc>
     <lastmod>2019-05-28T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://jokeme.top/categories/links/</loc>
   </url><url>
     <loc>https://jokeme.top/search/</loc>
   </url>

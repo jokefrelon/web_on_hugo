@@ -555,47 +555,46 @@ Written By Frelon O(∩_∩)O
 </code></pre></div><p>指向常量的常量指针就是在指针的基本数据类型前面加上const，让指针解引用的方式修改不了数据。</p>
 <h2 id="clang函数">Clang函数</h2>
 <p>函数的出现其目的就是为了提高代码的复用性，让我们可以用更少的 代码量完成更多的任务。</p>
-<p>~~c
-#include &lt;stdio.h&gt;
-#define FRELON &ldquo;Written By Frelon O(∩_∩)O&rdquo;</p>
-<p>int main()
-{
-int a=12,b=13,c=14,d=13,e=15,f=15,g=17,h=13,i=12,j=10;
-if(a&gt;b){
-printf(&quot;%d\n&quot;,a);
-}else{
-printf(&quot;%d\n&quot;,b);
-}</p>
-<pre><code>if(c&gt;d){
-	printf(&quot;%d\n&quot;,c);
-}else{
-	printf(&quot;%d\n&quot;,d);
-}
+<div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp">
+</span><span class="cp">#define FRELON &#34;Written By Frelon O(∩_∩)O&#34;
+</span><span class="cp"></span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+	<span class="kt">int</span> <span class="n">a</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span><span class="n">b</span><span class="o">=</span><span class="mi">13</span><span class="p">,</span><span class="n">c</span><span class="o">=</span><span class="mi">14</span><span class="p">,</span><span class="n">d</span><span class="o">=</span><span class="mi">13</span><span class="p">,</span><span class="n">e</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span><span class="n">f</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span><span class="n">g</span><span class="o">=</span><span class="mi">17</span><span class="p">,</span><span class="n">h</span><span class="o">=</span><span class="mi">13</span><span class="p">,</span><span class="n">i</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span><span class="n">j</span><span class="o">=</span><span class="mi">10</span><span class="p">;</span>
+	<span class="k">if</span><span class="p">(</span><span class="n">a</span><span class="o">&gt;</span><span class="n">b</span><span class="p">){</span>
+		<span class="n">printf</span><span class="p">(</span><span class="s">&#34;%d</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span><span class="n">a</span><span class="p">);</span>
+	<span class="p">}</span><span class="k">else</span><span class="p">{</span>
+		<span class="n">printf</span><span class="p">(</span><span class="s">&#34;%d</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span><span class="n">b</span><span class="p">);</span>
+	<span class="p">}</span>
 
-if(e&gt;f){
-	printf(&quot;%d\n&quot;,e);
-}else{
-	printf(&quot;%d\n&quot;,f);
-}
+	<span class="k">if</span><span class="p">(</span><span class="n">c</span><span class="o">&gt;</span><span class="n">d</span><span class="p">){</span>
+		<span class="n">printf</span><span class="p">(</span><span class="s">&#34;%d</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span><span class="n">c</span><span class="p">);</span>
+	<span class="p">}</span><span class="k">else</span><span class="p">{</span>
+		<span class="n">printf</span><span class="p">(</span><span class="s">&#34;%d</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span><span class="n">d</span><span class="p">);</span>
+	<span class="p">}</span>
 
-if(g&gt;h){
-	printf(&quot;%d\n&quot;,g);
-}else{
-	printf(&quot;%d\n&quot;,h);
-}
+	<span class="k">if</span><span class="p">(</span><span class="n">e</span><span class="o">&gt;</span><span class="n">f</span><span class="p">){</span>
+		<span class="n">printf</span><span class="p">(</span><span class="s">&#34;%d</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span><span class="n">e</span><span class="p">);</span>
+	<span class="p">}</span><span class="k">else</span><span class="p">{</span>
+		<span class="n">printf</span><span class="p">(</span><span class="s">&#34;%d</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span><span class="n">f</span><span class="p">);</span>
+	<span class="p">}</span>
 
-if(i&gt;j){
-	printf(&quot;%d\n&quot;,i);
-}else{
-	printf(&quot;%d\n&quot;,j);
-}
+	<span class="k">if</span><span class="p">(</span><span class="n">g</span><span class="o">&gt;</span><span class="n">h</span><span class="p">){</span>
+		<span class="n">printf</span><span class="p">(</span><span class="s">&#34;%d</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span><span class="n">g</span><span class="p">);</span>
+	<span class="p">}</span><span class="k">else</span><span class="p">{</span>
+		<span class="n">printf</span><span class="p">(</span><span class="s">&#34;%d</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span><span class="n">h</span><span class="p">);</span>
+	<span class="p">}</span>
 
-printf(&quot;%s\n&quot;, FRELON);
-return 0;
-</code></pre>
-<p>}
-~~</p>
-<p>可以看到，为了一件简单的小事，我们如果不用函数需要多次写重复的代码，降低了代码的复用性，也给我们的后期维护带来了很大的难题，当我们用上函数以后，如下：</p>
+	<span class="k">if</span><span class="p">(</span><span class="n">i</span><span class="o">&gt;</span><span class="n">j</span><span class="p">){</span>
+		<span class="n">printf</span><span class="p">(</span><span class="s">&#34;%d</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span><span class="n">i</span><span class="p">);</span>
+	<span class="p">}</span><span class="k">else</span><span class="p">{</span>
+		<span class="n">printf</span><span class="p">(</span><span class="s">&#34;%d</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span><span class="n">j</span><span class="p">);</span>
+	<span class="p">}</span>
+
+	<span class="n">printf</span><span class="p">(</span><span class="s">&#34;%s</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="n">FRELON</span><span class="p">);</span>
+	<span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div><p>可以看到，为了一件简单的小事，我们如果不用函数需要多次写重复的代码，降低了代码的复用性，也给我们的后期维护带来了很大的难题，当我们用上函数以后，如下：</p>
 <div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp">
 </span><span class="cp">#define FRELON &#34;Written By Frelon O(∩_∩)O&#34;
 </span><span class="cp"></span>

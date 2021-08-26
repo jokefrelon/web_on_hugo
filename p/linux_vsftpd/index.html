@@ -9,7 +9,7 @@
 <meta property='og:description' content='Ubuntu 20.04.2 配置 vsftpd 的脑坑'>
 <meta property='og:url' content='https://jokeme.top/p/linux_vsftpd/'>
 <meta property='og:site_name' content='JokemeBlog'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Vsftpd' /><meta property='article:published_time' content='2021-03-01T22:37:16&#43;00:00'/><meta property='article:modified_time' content='2021-03-01T22:37:16&#43;00:00'/><meta property='og:image' content='https://cn.bing.com/th?id=OHR.VolcanoLlaima_EN-CN5183277848_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4' />
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='ftp' /><meta property='article:published_time' content='2021-03-01T22:37:16&#43;00:00'/><meta property='article:modified_time' content='2021-03-01T22:37:16&#43;00:00'/><meta property='og:image' content='https://cn.bing.com/th?id=OHR.VolcanoLlaima_EN-CN5183277848_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4' />
 <meta name="twitter:site" content="@FrelonTroung">
     <meta name="twitter:creator" content="@FrelonTroung"><meta name="twitter:title" content="Ubuntu 20.04.2 配置 vsftpd 的脑坑">
 <meta name="twitter:description" content="Ubuntu 20.04.2 配置 vsftpd 的脑坑"><meta name="twitter:card" content="summary_large_image">
@@ -138,29 +138,29 @@
 <pre><code>sudo apt install vsftpd
 </code></pre><p>这一步毫无争议，没啥可说。略</p>
 <h2 id="配置文件">配置文件</h2>
-<pre><code>sudo cp /etc/vsftpd.conf /etc/vsftpd.conf.bk
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">sudo cp /etc/vsftpd.conf /etc/vsftpd.conf.bk
 sudo nano /etc/vsftpd.conf
-</code></pre><pre><code>listen=NO
-listen_ipv6=YES
-anonymous_enable=NO
-local_enable=YES
-write_enable=YES
-allow_writeable_chroot=YES
-local_root=/home/frelon
-dirmessage_enable=YES
-use_localtime=YES
-xferlog_enable=YES
-connect_from_port_20=YES
-ascii_upload_enable=YES
-ascii_download_enable=YES
-ls_recurse_enable=YES
-secure_chroot_dir=/var/run/vsftpd/empty
-pam_service_name=vsftpd
-rsa_cert_file=/etc/ssl/certs/ssl-cert-snakeoil.pem
-rsa_private_key_file=/etc/ssl/private/ssl-cert-snakeoil.key
-ssl_enable=NO
-utf8_filesystem=YES
-</code></pre><p>一样是毫无争议，按照自己喜欢的配置来。</p>
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-ini" data-lang="ini"><span class="na">listen</span><span class="o">=</span><span class="s">NO</span>
+<span class="na">listen_ipv6</span><span class="o">=</span><span class="s">YES</span>
+<span class="na">anonymous_enable</span><span class="o">=</span><span class="s">NO</span>
+<span class="na">local_enable</span><span class="o">=</span><span class="s">YES</span>
+<span class="na">write_enable</span><span class="o">=</span><span class="s">YES</span>
+<span class="na">allow_writeable_chroot</span><span class="o">=</span><span class="s">YES</span>
+<span class="na">local_root</span><span class="o">=</span><span class="s">/home/frelon</span>
+<span class="na">dirmessage_enable</span><span class="o">=</span><span class="s">YES</span>
+<span class="na">use_localtime</span><span class="o">=</span><span class="s">YES</span>
+<span class="na">xferlog_enable</span><span class="o">=</span><span class="s">YES</span>
+<span class="na">connect_from_port_20</span><span class="o">=</span><span class="s">YES</span>
+<span class="na">ascii_upload_enable</span><span class="o">=</span><span class="s">YES</span>
+<span class="na">ascii_download_enable</span><span class="o">=</span><span class="s">YES</span>
+<span class="na">ls_recurse_enable</span><span class="o">=</span><span class="s">YES</span>
+<span class="na">secure_chroot_dir</span><span class="o">=</span><span class="s">/var/run/vsftpd/empty</span>
+<span class="na">pam_service_name</span><span class="o">=</span><span class="s">vsftpd</span>
+<span class="na">rsa_cert_file</span><span class="o">=</span><span class="s">/etc/ssl/certs/ssl-cert-snakeoil.pem</span>
+<span class="na">rsa_private_key_file</span><span class="o">=</span><span class="s">/etc/ssl/private/ssl-cert-snakeoil.key</span>
+<span class="na">ssl_enable</span><span class="o">=</span><span class="s">NO</span>
+<span class="na">utf8_filesystem</span><span class="o">=</span><span class="s">YES</span>
+</code></pre></div><p>一样是毫无争议，按照自己喜欢的配置来。</p>
 <h2 id="重启-vsftpd">重启 vsftpd</h2>
 <pre><code>sudo systemctl restart vsftpd
 </code></pre><p>我就特喵的在这一步出现了问题了。因为我平时使用<strong>samba</strong>比较多，在 Windows 下面映射一下就可以把局域网的 samba 当本地硬盘使，所以我就莫名其妙的输入了 <code>sudo systemctl restart smbd</code> ,我就本能的，条件反射的输入了 smbd，然后我就用我的用户名登陆 ftp，一下子给我整的不自信了，咋回事？这 ftp 咋还不能用呢，卧槽？ftp 出问题啦？我就改了半天的配置文件。甚至允许匿名登陆都特喵的不能用，当时就心态炸了。然后又检查了好几遍配置文件，还把防火墙给关了也于事无用</p>
@@ -173,7 +173,7 @@ utf8_filesystem=YES
     
     <section class="article-tags">
         
-            <a href="/tags/vsftpd/">Vsftpd</a>
+            <a href="/tags/ftp/">ftp</a>
         
     </section>
 

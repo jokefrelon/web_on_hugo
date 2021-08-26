@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html lang="en-us">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='Ubuntu 安装 ffmpeg 下载 m3u8流视频并合并为MP4格式'><title>Ubuntu 安装 **FFMPEG** 下载 m3u8 格式的视频</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='Ubuntu 安装 ffmpeg 下载 m3u8流视频并合并为MP4格式'><title>Ubuntu安装ffmpeg下载m3u8 格式的视频</title>
 
 <link rel='canonical' href='https://jokeme.top/p/ffmpeg_download_m3u8/'>
 
-<link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='Ubuntu 安装 **FFMPEG** 下载 m3u8 格式的视频'>
+<link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='Ubuntu安装ffmpeg下载m3u8 格式的视频'>
 <meta property='og:description' content='Ubuntu 安装 ffmpeg 下载 m3u8流视频并合并为MP4格式'>
 <meta property='og:url' content='https://jokeme.top/p/ffmpeg_download_m3u8/'>
 <meta property='og:site_name' content='JokemeBlog'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Ffmpeg' /><meta property='article:tag' content='m3u8' /><meta property='article:published_time' content='2020-04-15T23:39:23&#43;00:00'/><meta property='article:modified_time' content='2020-04-15T23:39:23&#43;00:00'/><meta property='og:image' content='https://cn.bing.com/th?id=OHR.RainbowMarmot_EN-CN8037758700_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4' />
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='ffmpeg' /><meta property='article:published_time' content='2020-04-15T23:39:23&#43;00:00'/><meta property='article:modified_time' content='2020-04-15T23:39:23&#43;00:00'/><meta property='og:image' content='https://cn.bing.com/th?id=OHR.RainbowMarmot_EN-CN8037758700_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4' />
 <meta name="twitter:site" content="@FrelonTroung">
-    <meta name="twitter:creator" content="@FrelonTroung"><meta name="twitter:title" content="Ubuntu 安装 **FFMPEG** 下载 m3u8 格式的视频">
+    <meta name="twitter:creator" content="@FrelonTroung"><meta name="twitter:title" content="Ubuntu安装ffmpeg下载m3u8 格式的视频">
 <meta name="twitter:description" content="Ubuntu 安装 ffmpeg 下载 m3u8流视频并合并为MP4格式"><meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content='https://cn.bing.com/th?id=OHR.RainbowMarmot_EN-CN8037758700_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4' />
     <link rel="shortcut icon" href="/bk3.ico" />
@@ -67,7 +67,7 @@
         <div class="article-image">
             <a href="/p/ffmpeg_download_m3u8/">
                 
-                    <img src="https://cn.bing.com/th?id=OHR.RainbowMarmot_EN-CN8037758700_UHD.jpg&amp;pid=hp&amp;w=1080&amp;h=720&amp;rs=1&amp;c=4" loading="lazy" alt="Featured image of post Ubuntu 安装 **FFMPEG** 下载 m3u8 格式的视频" />
+                    <img src="https://cn.bing.com/th?id=OHR.RainbowMarmot_EN-CN8037758700_UHD.jpg&amp;pid=hp&amp;w=1080&amp;h=720&amp;rs=1&amp;c=4" loading="lazy" alt="Featured image of post Ubuntu安装ffmpeg下载m3u8 格式的视频" />
                 
             </a>
         </div>
@@ -85,7 +85,7 @@
     
 
     <h2 class="article-title">
-        <a href="/p/ffmpeg_download_m3u8/">Ubuntu 安装 **FFMPEG** 下载 m3u8 格式的视频</a>
+        <a href="/p/ffmpeg_download_m3u8/">Ubuntu安装ffmpeg下载m3u8 格式的视频</a>
     </h2>
 
     
@@ -132,17 +132,17 @@
 </header>
 
     <section class="article-content">
-    <h1 id="ubuntu-安装-ffmpeg-下载-m3u8-格式的视频">Ubuntu 安装 <strong>FFMPEG</strong> 下载 m3u8 格式的视频</h1>
+    <h1 id="ubuntu安装ffmpeg下载m3u8格式的视频">Ubuntu安装ffmpeg下载m3u8格式的视频</h1>
 <p>最近想下载一个某音视频，但是我能看不能下载，这不是扯吗？于是不能忍的我就打算盘盘这个视频</p>
-<h2 id="1--准备环境ubuntu-1804--ffmpeg">1 . 准备环境：Ubuntu 18.04 , FFMPEG</h2>
+<h2 id="1--准备环境ubuntu-1804--ffmpeg">1 . 准备环境：<code>Ubuntu 18.04</code> , <code>ffmpeg</code></h2>
 <p>本着万物皆可 <strong>Linux</strong> の初心，我就不想用 Windows 了。</p>
-<p>首先安装 <strong>FFMPEG</strong></p>
+<p>首先安装 <strong>ffmpeg</strong></p>
 <div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">sudo apt -y install ffmpeg
 </code></pre></div><h2 id="2--抓包短视频的-m3u8-地址">2 . 抓包短视频的 m3u8 地址</h2>
 <p>iOS 端，我是使用的 <strong>Thor</strong> 这个 app,比较好用，应用商店搜索就有</p>
 <p>然后得到真实的地址：</p>
 <div class="highlight"><pre class="chroma"><code class="language-http" data-lang="http"><span class="err">http://XXX.com/xxx/xxx.m3u8
-</span></code></pre></div><h2 id="3--使用-ffmpeg-进行下载">3 . 使用 <strong>FFMPEG</strong> 进行下载</h2>
+</span></code></pre></div><h2 id="3--使用ffmpeg进行下载">3 . 使用ffmpeg进行下载</h2>
 <div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">ffmpeg -i http://XXX.com/xxx/xxx.m3u8 -c copy xxx.mp4
 </code></pre></div><p>然后就需要慢慢等待下载完成就可以了，真的是特别特别的简单</p>
 
@@ -153,9 +153,7 @@
     
     <section class="article-tags">
         
-            <a href="/tags/ffmpeg/">Ffmpeg</a>
-        
-            <a href="/tags/m3u8/">m3u8</a>
+            <a href="/tags/ffmpeg/">ffmpeg</a>
         
     </section>
 
@@ -207,24 +205,6 @@
         <h2 class="section-title">相关文章</h2>
         <div class="related-contents">
             <div class="flex article-list--tile">
-                
-                    
-<article class="has-image">
-    <a href="/p/ffmpeg_user_agent/">
-        
-        
-            <div class="article-image">
-                
-                    <img src="https://cn.bing.com/th?id=OHR.Comma_EN-CN6081365526_UHD.jpg&amp;pid=hp&amp;w=1080&amp;h=720&amp;rs=1&amp;c=4" loading="lazy" data-key="ffmpeg_user_agent" data-hash="https://cn.bing.com/th?id=OHR.Comma_EN-CN6081365526_UHD.jpg&amp;pid=hp&amp;w=1080&amp;h=720&amp;rs=1&amp;c=4"/>
-                
-            </div>
-        
-
-        <div class="article-details">
-            <h2 class="article-title">ffmpeg设置请求头</h2>
-        </div>
-    </a>
-</article>
                 
                     
 <article class="has-image">
@@ -294,6 +274,24 @@
 
         <div class="article-details">
             <h2 class="article-title">一个有意思的shell变量问题</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="has-image">
+    <a href="/p/solo_2_hugo/">
+        
+        
+            <div class="article-image">
+                
+                    <img src="https://cn.bing.com/th?id=OHR.Wakodahatchee_EN-CN9780170147_UHD.jpg&amp;pid=hp&amp;w=1080&amp;h=720&amp;rs=1&amp;c=4" loading="lazy" data-key="solo_2_hugo" data-hash="https://cn.bing.com/th?id=OHR.Wakodahatchee_EN-CN9780170147_UHD.jpg&amp;pid=hp&amp;w=1080&amp;h=720&amp;rs=1&amp;c=4"/>
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">从solo迁移到hugo</h2>
         </div>
     </a>
 </article>
@@ -423,9 +421,9 @@
                 <div class="widget--toc">
                     <nav id="TableOfContents">
   <ol>
-    <li><a href="#1--准备环境ubuntu-1804--ffmpeg">1 . 准备环境：Ubuntu 18.04 , FFMPEG</a></li>
+    <li><a href="#1--准备环境ubuntu-1804--ffmpeg">1 . 准备环境：<code>Ubuntu 18.04</code> , <code>ffmpeg</code></a></li>
     <li><a href="#2--抓包短视频的-m3u8-地址">2 . 抓包短视频的 m3u8 地址</a></li>
-    <li><a href="#3--使用-ffmpeg-进行下载">3 . 使用 <strong>FFMPEG</strong> 进行下载</a></li>
+    <li><a href="#3--使用ffmpeg进行下载">3 . 使用ffmpeg进行下载</a></li>
   </ol>
 </nav>
                 </div>

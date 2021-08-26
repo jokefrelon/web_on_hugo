@@ -6,13 +6,23 @@
     <description>Recent content in Pages on JokemeBlog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 20 Dec 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://jokeme.top/page/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 02 Jul 2020 02:16:22 +0000</lastBuildDate><atom:link href="https://jokeme.top/page/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>About</title>
-      <link>https://jokeme.top/about/</link>
+      <title>链接</title>
+      <link>https://jokeme.top/links/</link>
+      <pubDate>Thu, 02 Jul 2020 02:16:22 +0000</pubDate>
+      
+      <guid>https://jokeme.top/links/</guid>
+      <description>所有排名不分先后，我是看到一个收录一个 （可联系我，加友链笔芯❤）
+ Pandorabox 固件官网 Shields.io ascii Windows 10下载 Iconfont 蓝奏云 RM bg 小米路由器 3 刷机 MiUi / Router OS Windows 10 激活 渐变色 css 腾讯软件管家网页版 Electron文档 MSDN 中科大软件源生成 zsh编程指南 MFI查询 新MFI查询 TrafficMonitor Snipaste截图工具 CTF Aliyun Springboot Initialize JDK下载 马可菠萝macos xclientmacos macwk 网页设计导航 SpringBoot文档 octodex  </description>
+    </item>
+    
+    <item>
+      <title>关于</title>
+      <link>https://jokeme.top/%E5%85%B3%E4%BA%8E/</link>
       <pubDate>Fri, 20 Dec 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://jokeme.top/about/</guid>
+      <guid>https://jokeme.top/%E5%85%B3%E4%BA%8E/</guid>
       <description>  👋 Hi, I’m frelon
   🎓 21-year-old college student.
   👀 I’m interested in linux and anything about code.
@@ -25,7 +35,7 @@
     </item>
     
     <item>
-      <title>Archives</title>
+      <title>存档</title>
       <link>https://jokeme.top/archives/</link>
       <pubDate>Tue, 28 May 2019 00:00:00 +0000</pubDate>
       
@@ -34,7 +44,7 @@
     </item>
     
     <item>
-      <title>Search</title>
+      <title>搜索</title>
       <link>https://jokeme.top/search/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       

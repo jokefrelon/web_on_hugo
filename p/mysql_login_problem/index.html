@@ -104,7 +104,7 @@
         
 
         <li >
-            <a href='/about/' >
+            <a href='/%E5%85%B3%E4%BA%8E/' >
                 
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z"/>
@@ -115,7 +115,25 @@
 
 
                 
-                <span>About</span>
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/links/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>链接</span>
             </a>
         </li>
         
@@ -134,7 +152,7 @@
 
 
                 
-                <span>Archives</span>
+                <span>存档</span>
             </a>
         </li>
         
@@ -152,7 +170,7 @@
 
 
                 
-                <span>Search</span>
+                <span>搜索</span>
             </a>
         </li>
         
@@ -254,22 +272,22 @@
 
     <section class="article-content">
     <h1 id="解决一个ubuntu-18-安装mysql-57不能远程登录的问题">解决一个Ubuntu 18 安装MySQL 5.7不能远程登录的问题</h1>
-<p>首先编辑 /etc/mysql/mysql.conf.d/mysqld.cnf 配置文件：</p>
-<pre><code>nano  /etc/mysql/mysql.conf.d/mysqld.cnf
-</code></pre><p>注释掉</p>
-<pre><code>bind-address = 127.0.0.1
-#如果没有就跳过
-</code></pre><p>还有就是要给<code>root</code> 设置一个密码，允许他远程登录</p>
-<pre><code>use mysql;
-SELECT  user,host FROM  user;
-update user set host=&quot;%&quot; where user=&quot;root&quot;
-update user set authentication_string=PASSWORD(&quot;UrPasswd&quot;)where user=&quot;root&quot;;
-flush privileges;
-</code></pre><p>如果<strong>MySQL5.7</strong> 这样还不能远程登录上，咱见面持刀互a，如果你比我猛，当我没有说！</p>
+<p>首先编辑 <code>/etc/mysql/mysql.conf.d/mysqld.cnf</code> 配置文件：</p>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">nano  /etc/mysql/mysql.conf.d/mysqld.cnf
+</code></pre></div><p>注释掉</p>
+<div class="highlight"><pre class="chroma"><code class="language-ini" data-lang="ini"><span class="na">bind-address</span> <span class="o">=</span> <span class="s">127.0.0.1</span>
+<span class="c1">#如果没有就跳过</span>
+</code></pre></div><p>还有就是要给<code>root</code> 设置一个密码，允许他远程登录</p>
+<div class="highlight"><pre class="chroma"><code class="language-sql" data-lang="sql"><span class="n">use</span><span class="w"> </span><span class="n">mysql</span><span class="p">;</span><span class="w">
+</span><span class="w"></span><span class="k">SELECT</span><span class="w">  </span><span class="k">user</span><span class="p">,</span><span class="k">host</span><span class="w"> </span><span class="k">FROM</span><span class="w">  </span><span class="k">user</span><span class="p">;</span><span class="w">
+</span><span class="w"></span><span class="k">update</span><span class="w"> </span><span class="k">user</span><span class="w"> </span><span class="k">set</span><span class="w"> </span><span class="k">host</span><span class="o">=</span><span class="s2">&#34;%&#34;</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="k">user</span><span class="o">=</span><span class="s2">&#34;root&#34;</span><span class="w">
+</span><span class="w"></span><span class="k">update</span><span class="w"> </span><span class="k">user</span><span class="w"> </span><span class="k">set</span><span class="w"> </span><span class="n">authentication_string</span><span class="o">=</span><span class="n">PASSWORD</span><span class="p">(</span><span class="s2">&#34;UrPasswd&#34;</span><span class="p">)</span><span class="k">where</span><span class="w"> </span><span class="k">user</span><span class="o">=</span><span class="s2">&#34;root&#34;</span><span class="p">;</span><span class="w">
+</span><span class="w"></span><span class="n">flush</span><span class="w"> </span><span class="k">privileges</span><span class="p">;</span><span class="w">
+</span></code></pre></div><p>如果<strong>MySQL5.7</strong> 这样还不能远程登录上，咱见面持刀互a，如果你比我猛，当我没有说！</p>
 <p>你以为这就完了吗？？哪有这么简单，你还需要下面这条命令</p>
-<pre><code>update user set plugin='mysql_native_password';
-#放在上面 use mysql； 后面执行
-</code></pre><p>很多人都是忽略了这条命令，导致一直无法远程登录上<strong>MySQL</strong>*
+<div class="highlight"><pre class="chroma"><code class="language-sql" data-lang="sql"><span class="k">update</span><span class="w"> </span><span class="k">user</span><span class="w"> </span><span class="k">set</span><span class="w"> </span><span class="n">plugin</span><span class="o">=</span><span class="s1">&#39;mysql_native_password&#39;</span><span class="p">;</span><span class="w">
+</span><span class="w"></span><span class="cm">/* 放在上面 use mysql； 后面执行 */</span><span class="w">
+</span></code></pre></div><p>很多人都是忽略了这条命令，导致一直无法远程登录上<strong>MySQL</strong>*
 必要的话可以重启一下MySQL哦！</p>
 
 </section>
@@ -279,7 +297,7 @@ flush privileges;
     
     <section class="article-tags">
         
-            <a href="/tags/mysql/">Mysql</a>
+            <a href="/tags/mysql/">mysql</a>
         
     </section>
 
