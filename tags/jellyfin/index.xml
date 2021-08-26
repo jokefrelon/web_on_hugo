@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Jellyfin on JokemeBlog</title>
+    <link>https://jokeme.top/tags/jellyfin/</link>
+    <description>Recent content in Jellyfin on JokemeBlog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 27 Aug 2021 00:37:42 +0800</lastBuildDate><atom:link href="https://jokeme.top/tags/jellyfin/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Jellyfin影音平台搭建</title>
+      <link>https://jokeme.top/p/install_jellyfin/</link>
+      <pubDate>Fri, 27 Aug 2021 00:37:42 +0800</pubDate>
+      
+      <guid>https://jokeme.top/p/install_jellyfin/</guid>
+      <description>最近在用 Infuse 重温仙剑三的的时候发现它的新增文件来源里面有一个 **『添加媒体服务器』**的选项,这是什么鬼？卧槽，世界上还有除了samba、ftp、nfs以外的文件共享服务吗？可能实在是我太孤陋寡闻了吧！一直只会用samba。
+这个Plex Emby Jellyfin又是个啥？然后百度一番。哦哦原来是本地看视频的！等等！啥软件不能看视频呀！还要专门搭建一个服务来看视频？？？这不是脱裤子放屁吗！
+好了回归正题！咱们想要了解一番，只能自己动手搭建一个试试看了，看了一下Plex和Emby都是收费的，或者免费版本有功能限制，我就动手搭建了Jellyfin，这个开源软件，功能多，不要钱😋！
+1. 准备工作 准备工作当然是准备安装环境啦！Ubuntu 20.04 、Jellyfin deb安装包
+当然你也可以参考官网推荐的另一种方式 添加软件源，或者是直接用docker都是可以的。我个人是选择了下载安装包的，因为那个鬼软件源下载速度太慢了，简直慢的离谱。估计服务器在火星上面吧。
+对了，先放一下官网的下载页面链接，这里也有安装教程：https://jellyfin.org/downloads/
+好了不多说，咱们下载以下几个安装包
+ jellyfin-ffmpeg_4.3.2-1-focal_amd64 jellyfin 10.7.6-1_all jellyfin-server_10.7.6-1_amd64 jellyfin-web_10.7.6-1_all  下载时注意后三个版本号是否一样，第一个就选最新版准没错！买新不买旧嘛！然后把他们上传到Ubuntu服务器上面安装一下就可以了。
+dpkg -i jellyfin* jellyfin-* 2. web页面配置 安装完成以后jellyfin就会自动监听8096端口，毕竟是Emby的开源版本，这点没有变的。首次登陆会让你设置一堆的东西，这些无关紧要，随便设置一下就可以了，然后咱们就可以来欣赏一下登录页面了，非常的好看！还是暗黑主题的。
+登录以后，如果你添加了媒体源，它会在后台刮削的，然后慢慢的给你的视频补齐海报、介绍、字幕啥的，当然国内的电视不一定有。
+下面就一起来看看最终的成果吧
+看上去还挺有内味的哈，效果是相当的不错哦！还可以选择集数啥啥啥的。
+然后功能丝毫不逊色于那些视频网站的播放器，可以选择播放质量，不过最高的质量取决于本地视频的最高质量，网络不好，播放卡顿可以向下降低视频质量来保证流畅的播放。
+3. 总结 其实搭建这个jellyfin服务也挺简单的，就安装几个deb格式的安装包，打开网页配置一下就可以，不得不感叹这个软件是真的强大，视频封面啥的根本不用愁。以前下载好了视频用samba看的时候，每一集的封面都一样，因为是抽取指定时间的画面，刚巧，这些画面就在片头里面抽的。还有 Infuse 也老牛逼了，看视频贼流畅，加载视频很快！表扬一下它们两。</description>
+    </item>
+    
+  </channel>
+</rss>
