@@ -6,7 +6,23 @@
     <description>Recent content in Posts on JokemeBlog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 27 Aug 2021 00:37:42 +0800</lastBuildDate><atom:link href="https://jokeme.top/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 09 Sep 2021 01:58:49 +0800</lastBuildDate><atom:link href="https://jokeme.top/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>回首frp搭建</title>
+      <link>https://jokeme.top/p/review_frp_set_up/</link>
+      <pubDate>Thu, 09 Sep 2021 01:58:49 +0800</pubDate>
+      
+      <guid>https://jokeme.top/p/review_frp_set_up/</guid>
+      <description>最近办电信宽带，无意中发现电信给的是公网IP地址，这家伙可给我高兴坏了。在路由器上DDNS解析了一下IP地址到我的域名上，然后就开始捯饬了。
+1. 搭建服务端（frps） 先说一下我的实验环境哈
+ frp v0.37.1 Ubuntu 20.04   这个frp是根据CPU选择版本的，鄙人就选择了amd64版本的压缩包。
+下载完了以后，选一个合适的地方解压文件。
+tar -zxvf frp_0.37.1_linux_amd64.tar.gz 然后直接编辑frp_0.37.1_linux_amd64/frps.ini
+[common] bind_port = 7000 bind_udp_port = 7001 vhost_http_port = 8089	//电信封80 居然丧心病狂的连8080也一起封了。 vhost_https_port = 444	//电信封443端口，https只能改端口了。 dashboard_port = 7500	 dashboard_user = xxx dashboard_pwd = ********** token = ****** 你也看到了配置很简单的，frps端没有啥需要操作的，然后就是 systemd 文件夹里面的 frps.service 文件，需要修改一下
+ExecStart=/usr/bin/frps -c /etc/frp/frps.ini 为你自己的实际文件地址，别的就没有啥问题了，如果你这样还是不行可以把配置文件 [Service] 里面的 User=nobody 改成 User=root
+cp systemd/frps.service /etc/systemd/system/ #复制service文件到systemd里面，这样我们可以直接systemctl调用frps sudo systemctl daemon-reload #重新加载service配置文件 sudo systemctl start frps #开启frps sudo systemctl enable frps	#开机自启动frps 2.</description>
+    </item>
+    
     <item>
       <title>Jellyfin影音平台搭建</title>
       <link>https://jokeme.top/p/install_jellyfin/</link>

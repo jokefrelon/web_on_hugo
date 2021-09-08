@@ -3,24 +3,30 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://jokeme.top/categories/</loc>
-    <lastmod>2021-08-27T00:37:42+08:00</lastmod>
+    <lastmod>2021-09-09T01:58:49+08:00</lastmod>
+  </url><url>
+    <loc>https://jokeme.top/tags/frp/</loc>
+    <lastmod>2021-09-09T01:58:49+08:00</lastmod>
+  </url><url>
+    <loc>https://jokeme.top/</loc>
+    <lastmod>2021-09-09T01:58:49+08:00</lastmod>
+  </url><url>
+    <loc>https://jokeme.top/categories/linux/</loc>
+    <lastmod>2021-09-09T01:58:49+08:00</lastmod>
+  </url><url>
+    <loc>https://jokeme.top/post/</loc>
+    <lastmod>2021-09-09T01:58:49+08:00</lastmod>
+  </url><url>
+    <loc>https://jokeme.top/tags/</loc>
+    <lastmod>2021-09-09T01:58:49+08:00</lastmod>
+  </url><url>
+    <loc>https://jokeme.top/p/review_frp_set_up/</loc>
+    <lastmod>2021-09-09T01:58:49+08:00</lastmod>
   </url><url>
     <loc>https://jokeme.top/tags/jellyfin/</loc>
     <lastmod>2021-08-27T00:37:42+08:00</lastmod>
   </url><url>
     <loc>https://jokeme.top/p/install_jellyfin/</loc>
-    <lastmod>2021-08-27T00:37:42+08:00</lastmod>
-  </url><url>
-    <loc>https://jokeme.top/</loc>
-    <lastmod>2021-08-27T00:37:42+08:00</lastmod>
-  </url><url>
-    <loc>https://jokeme.top/categories/linux/</loc>
-    <lastmod>2021-08-27T00:37:42+08:00</lastmod>
-  </url><url>
-    <loc>https://jokeme.top/post/</loc>
-    <lastmod>2021-08-27T00:37:42+08:00</lastmod>
-  </url><url>
-    <loc>https://jokeme.top/tags/</loc>
     <lastmod>2021-08-27T00:37:42+08:00</lastmod>
   </url><url>
     <loc>https://jokeme.top/tags/picgo-core/</loc>
@@ -246,9 +252,6 @@
     <lastmod>2020-06-10T13:58:18+00:00</lastmod>
   </url><url>
     <loc>https://jokeme.top/p/frp_penetrate/</loc>
-    <lastmod>2020-06-08T19:01:05+00:00</lastmod>
-  </url><url>
-    <loc>https://jokeme.top/tags/frp/</loc>
     <lastmod>2020-06-08T19:01:05+00:00</lastmod>
   </url><url>
     <loc>https://jokeme.top/p/springboot_note_1/</loc>
