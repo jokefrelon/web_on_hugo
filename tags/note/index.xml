@@ -6,7 +6,25 @@
     <description>Recent content in Note on JokemeBlog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 09 Aug 2021 13:12:19 +0800</lastBuildDate><atom:link href="https://jokeme.top/tags/note/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 10 Sep 2021 20:35:28 +0800</lastBuildDate><atom:link href="https://jokeme.top/tags/note/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>B/S分层简介</title>
+      <link>https://jokeme.top/p/bs/</link>
+      <pubDate>Fri, 10 Sep 2021 20:35:28 +0800</pubDate>
+      
+      <guid>https://jokeme.top/p/bs/</guid>
+      <description>B/S分层 ①入门 dto层 大概就是 MVC 中的 model 层,主要是用来写与 数据库相对应的实体类的,并且需要有 get/set 方法
+dao层 dao 层的文件习惯用 Mapper 来表示 dao 层会调用 dto层 ,并且在这一层主要就是 crud 操作
+service层 service层会调用dao层和dto层,service层也会对数据进行一定的处理,比如条件判断和数据筛选等等；
+controller层 最后，是controller层，controller层会调用前面三层，controller层一般会和前台的js文件进行数据的交互， controller层是前台数据的接收器，后台处理好的数据也是通过controller层传递到前台显示的。
+②进阶 SpringBoot 分为四层：controller层、service层、dao层、entity层。
+entity层： 和 model 层一样，存放的是实体类，属性值与数据库值保持一致，实现 setter 和 getter 方法。
+dao层： 即 mapper层，对数据库进行持久化操作，他的方法使针对数据库操作的，基本上用的就是增删改查，他就是个接口，只有方法名，具体实现在mapper.xml中实现。
+service层： 业务层，存放业务逻辑处理，不直接对数据库进行操作，有接口和接口实现类，提供 controller 层调用方法。
+controller层： 控制层，导入 service层，调用你service方法，controller通过接受前端传来的参数进行业务操作，在返回一个制定的路径或数据表。
+③初级 model层  model层即数据库实体层，也被称为entity层，pojo层。 一般数据库一张表对应一个实体类，类属性同表字段一一对应。  dao层  dao层即数据持久层，也被称为mapper层。 dao层的作用为访问数据库，向数据库发送sql语句，完成数据的增删改查任务。  service层  service层即业务逻辑层。 service层的作用为完成功能设计。 service层调用dao层接口，接收dao层返回的数据，完成项目的基本功能设计。  controller层  controller层即控制层。 controller层的功能为请求和响应控制。 controller层负责前后端交互，接受前端请求，调用service层，接收service层返回的数据，最后返回具体的页面和数据到客户端。  ④初级 各模块简介   Java</description>
+    </item>
+    
     <item>
       <title>Aria2 神器的进阶用法</title>
       <link>https://jokeme.top/p/aria2_conf/</link>

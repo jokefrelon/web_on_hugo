@@ -2,22 +2,31 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://jokeme.top/p/bs/</loc>
+    <lastmod>2021-09-10T20:35:28+08:00</lastmod>
+  </url><url>
     <loc>https://jokeme.top/categories/</loc>
-    <lastmod>2021-09-09T01:58:49+08:00</lastmod>
+    <lastmod>2021-09-10T20:35:28+08:00</lastmod>
+  </url><url>
+    <loc>https://jokeme.top/categories/java/</loc>
+    <lastmod>2021-09-10T20:35:28+08:00</lastmod>
+  </url><url>
+    <loc>https://jokeme.top/</loc>
+    <lastmod>2021-09-10T20:35:28+08:00</lastmod>
+  </url><url>
+    <loc>https://jokeme.top/tags/note/</loc>
+    <lastmod>2021-09-10T20:35:28+08:00</lastmod>
+  </url><url>
+    <loc>https://jokeme.top/post/</loc>
+    <lastmod>2021-09-10T20:35:28+08:00</lastmod>
+  </url><url>
+    <loc>https://jokeme.top/tags/</loc>
+    <lastmod>2021-09-10T20:35:28+08:00</lastmod>
   </url><url>
     <loc>https://jokeme.top/tags/frp/</loc>
     <lastmod>2021-09-09T01:58:49+08:00</lastmod>
   </url><url>
-    <loc>https://jokeme.top/</loc>
-    <lastmod>2021-09-09T01:58:49+08:00</lastmod>
-  </url><url>
     <loc>https://jokeme.top/categories/linux/</loc>
-    <lastmod>2021-09-09T01:58:49+08:00</lastmod>
-  </url><url>
-    <loc>https://jokeme.top/post/</loc>
-    <lastmod>2021-09-09T01:58:49+08:00</lastmod>
-  </url><url>
-    <loc>https://jokeme.top/tags/</loc>
     <lastmod>2021-09-09T01:58:49+08:00</lastmod>
   </url><url>
     <loc>https://jokeme.top/p/review_frp_set_up/</loc>
@@ -50,9 +59,6 @@
     <loc>https://jokeme.top/p/aria2_conf/</loc>
     <lastmod>2021-08-09T13:12:19+08:00</lastmod>
   </url><url>
-    <loc>https://jokeme.top/tags/note/</loc>
-    <lastmod>2021-08-09T13:12:19+08:00</lastmod>
-  </url><url>
     <loc>https://jokeme.top/categories/windows/</loc>
     <lastmod>2021-07-19T22:07:17+00:00</lastmod>
   </url><url>
@@ -67,9 +73,6 @@
   </url><url>
     <loc>https://jokeme.top/p/backup_hugo_posts/</loc>
     <lastmod>2021-06-08T23:12:18+00:00</lastmod>
-  </url><url>
-    <loc>https://jokeme.top/categories/java/</loc>
-    <lastmod>2021-06-03T17:27:33+00:00</lastmod>
   </url><url>
     <loc>https://jokeme.top/p/spring_ioc_di/</loc>
     <lastmod>2021-06-03T17:27:33+00:00</lastmod>
