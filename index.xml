@@ -1572,6 +1572,7 @@ $ aria2c --http-proxy=&amp;quot;http://proxy:8080&amp;quot; --http-proxy-user=&a
 &lt;p&gt;&lt;strong&gt;复制字符：&lt;code&gt;win&lt;/code&gt; + &lt;code&gt;c&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;保存：&lt;code&gt;win&lt;/code&gt; + &lt;code&gt;s&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;粘贴字符：&lt;code&gt;win&lt;/code&gt; + &lt;code&gt;v&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;退出登陆：&lt;code&gt;win&lt;/code&gt; + &lt;code&gt;alt&lt;/code&gt; + &lt;code&gt;shift&lt;/code&gt; + &lt;code&gt;q&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;剪切字符：&lt;code&gt;win&lt;/code&gt; + &lt;code&gt;x&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;撤销操作：&lt;code&gt;win&lt;/code&gt; + &lt;code&gt;z&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;中断执行：&lt;code&gt;ctrl&lt;/code&gt; + &lt;code&gt;c&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
