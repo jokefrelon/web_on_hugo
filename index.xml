@@ -1580,6 +1580,7 @@ $ aria2c --http-proxy=&amp;quot;http://proxy:8080&amp;quot; --http-proxy-user=&a
 &lt;p&gt;&lt;strong&gt;页首：&lt;code&gt;win&lt;/code&gt; + &lt;code&gt;▲&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;页尾：&lt;code&gt;win&lt;/code&gt; + &lt;code&gt;▼&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;输入emoji：&lt;code&gt;ctrl&lt;/code&gt; + &lt;code&gt;win&lt;/code&gt; + &lt;code&gt;space&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;删除选中：&lt;code&gt;win&lt;/code&gt; + &lt;code&gt;back&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;h2 id=&#34;3-常见软件快捷键&#34;&gt;3. 常见软件快捷键&lt;/h2&gt;
 &lt;h3 id=&#34;31-typora&#34;&gt;3.1 Typora&lt;/h3&gt;
 &lt;p&gt;一级标题：&lt;code&gt;win&lt;/code&gt; + &lt;code&gt;1&lt;/code&gt;&lt;/p&gt;
