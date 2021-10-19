@@ -2,31 +2,37 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://jokeme.top/categories/</loc>
+    <lastmod>2021-10-19T18:43:58+08:00</lastmod>
+  </url><url>
+    <loc>https://jokeme.top/tags/hadoop/</loc>
+    <lastmod>2021-10-19T18:43:58+08:00</lastmod>
+  </url><url>
+    <loc>https://jokeme.top/</loc>
+    <lastmod>2021-10-19T18:43:58+08:00</lastmod>
+  </url><url>
+    <loc>https://jokeme.top/categories/linux/</loc>
+    <lastmod>2021-10-19T18:43:58+08:00</lastmod>
+  </url><url>
+    <loc>https://jokeme.top/post/</loc>
+    <lastmod>2021-10-19T18:43:58+08:00</lastmod>
+  </url><url>
+    <loc>https://jokeme.top/tags/</loc>
+    <lastmod>2021-10-19T18:43:58+08:00</lastmod>
+  </url><url>
+    <loc>https://jokeme.top/p/hadoop_install/</loc>
+    <lastmod>2021-10-19T18:43:58+08:00</lastmod>
+  </url><url>
     <loc>https://jokeme.top/p/bs/</loc>
     <lastmod>2021-09-10T20:35:28+08:00</lastmod>
-  </url><url>
-    <loc>https://jokeme.top/categories/</loc>
-    <lastmod>2021-09-18T23:33:44+00:00</lastmod>
   </url><url>
     <loc>https://jokeme.top/categories/java/</loc>
     <lastmod>2021-09-10T20:35:28+08:00</lastmod>
   </url><url>
-    <loc>https://jokeme.top/</loc>
-    <lastmod>2021-09-18T23:33:44+00:00</lastmod>
-  </url><url>
     <loc>https://jokeme.top/tags/note/</loc>
     <lastmod>2021-09-10T20:35:28+08:00</lastmod>
   </url><url>
-    <loc>https://jokeme.top/post/</loc>
-    <lastmod>2021-09-18T23:33:44+00:00</lastmod>
-  </url><url>
-    <loc>https://jokeme.top/tags/</loc>
-    <lastmod>2021-09-18T23:33:44+00:00</lastmod>
-  </url><url>
     <loc>https://jokeme.top/tags/frp/</loc>
-    <lastmod>2021-09-09T01:58:49+08:00</lastmod>
-  </url><url>
-    <loc>https://jokeme.top/categories/linux/</loc>
     <lastmod>2021-09-09T01:58:49+08:00</lastmod>
   </url><url>
     <loc>https://jokeme.top/p/review_frp_set_up/</loc>

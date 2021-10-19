@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>hadoop on JokemeBlog</title>
+    <link>https://jokeme.top/tags/hadoop/</link>
+    <description>Recent content in hadoop on JokemeBlog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 19 Oct 2021 18:43:58 +0800</lastBuildDate><atom:link href="https://jokeme.top/tags/hadoop/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>基于CentOS 7安装 Hadoop</title>
+      <link>https://jokeme.top/p/hadoop_install/</link>
+      <pubDate>Tue, 19 Oct 2021 18:43:58 +0800</pubDate>
+      
+      <guid>https://jokeme.top/p/hadoop_install/</guid>
+      <description>今天晚上就突然想搭建一个Hadoop的伪分布式玩一玩,说干就干
+准备:CentOS 7 系统 Hadoop 2.7.7 安装包 Java SE 1.8 安装包
+ Hadoop 2.7.7 下载
+Java SE 1.8 下载
+CentOS 7下载
+VMware 安装系统就不用说了,先安装一个系统就可以,另一个可以直接clone
+我因为已经安装完成了,就在WSL-Ubuntu里面大概敲一下代码
+ 解压Java SE 和 Hadoop的安装包 tar -zxvf hadoop-2.8.5.tar.gz tar -zxvf jdk-8u231-linux-x64.tar.gz 配置环境变量 我是编辑 .bash_profile 让我一个用户可以使用这个环境变量,大家也可以配置 /etc/profile文件,全局使用此配置,作用一样
+export JAVA_HOME=/home/jokeme/jdk1.8.0_231 export HADOOP_HOME=hadoop-2.8.5 export JRE_HOME=/home/jokeme/jdk1.8.0_231/jre export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar:$JRE_HOME/lib export PATH=$PATH:$JAVA_HOME/bin:$JRE_HOME/bin:$HADOOP_HOME/bin:$HADOOP_HOME/sbin 然后:
+source .bash_profile 试一试
+java -version javac -version hadoop -version 如果配置正确就可以弹出正确的版本号
+更改Hostname和Hosts文件 sudo vim /etc/hostname HadoopMaster 保存退出
+sudo vim /etc/hosts 192.</description>
+    </item>
+    
+  </channel>
+</rss>
