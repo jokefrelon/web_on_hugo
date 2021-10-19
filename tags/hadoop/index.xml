@@ -6,11 +6,11 @@
     <description>Recent content in hadoop on JokemeBlog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 19 Oct 2021 18:43:58 +0800</lastBuildDate><atom:link href="https://jokeme.top/tags/hadoop/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 19 Oct 2021 23:43:58 +0800</lastBuildDate><atom:link href="https://jokeme.top/tags/hadoop/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>基于CentOS 7安装 Hadoop</title>
       <link>https://jokeme.top/p/hadoop_install/</link>
-      <pubDate>Tue, 19 Oct 2021 18:43:58 +0800</pubDate>
+      <pubDate>Tue, 19 Oct 2021 23:43:58 +0800</pubDate>
       
       <guid>https://jokeme.top/p/hadoop_install/</guid>
       <description>今天晚上就突然想搭建一个Hadoop的伪分布式玩一玩,说干就干

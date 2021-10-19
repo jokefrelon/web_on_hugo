@@ -6,10 +6,10 @@
         <description>Recent content on JokemeBlog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Tue, 19 Oct 2021 18:43:58 +0800</lastBuildDate><atom:link href="https://jokeme.top/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Tue, 19 Oct 2021 23:43:58 +0800</lastBuildDate><atom:link href="https://jokeme.top/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>基于CentOS 7安装 Hadoop</title>
         <link>https://jokeme.top/p/hadoop_install/</link>
-        <pubDate>Tue, 19 Oct 2021 18:43:58 +0800</pubDate>
+        <pubDate>Tue, 19 Oct 2021 23:43:58 +0800</pubDate>
         
         <guid>https://jokeme.top/p/hadoop_install/</guid>
         <description>&lt;img src="https://cn.bing.com/th?id=OHR.JouxFog_EN-CN2462005370_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post 基于CentOS 7安装 Hadoop" /&gt;&lt;p&gt;今天晚上就突然想搭建一个Hadoop的伪分布式玩一玩,说干就干&lt;/p&gt;
