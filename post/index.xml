@@ -6,7 +6,16 @@
     <description>Recent content in Posts on JokemeBlog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 19 Oct 2021 23:43:58 +0800</lastBuildDate><atom:link href="https://jokeme.top/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 05 Nov 2021 23:31:27 +0800</lastBuildDate><atom:link href="https://jokeme.top/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>kmp算法Java版</title>
+      <link>https://jokeme.top/p/kmp/</link>
+      <pubDate>Fri, 05 Nov 2021 23:31:27 +0800</pubDate>
+      
+      <guid>https://jokeme.top/p/kmp/</guid>
+      <description>KMP查找算法 import java.util.Arrays; public class getstr { public static void main(String[] args) { String txt = &amp;#34;qwertyqwertyuisdgfsdnhjt&amp;#34;; String gol = &amp;#34;sdgfsdn&amp;#34;; int i = kmp(txt,gol); System.out.println(&amp;#34;matchPoint: &amp;#34; + i); } static int kmp(String str1, String str2){ int [] ary =getnext(str2); System.out.println(Arrays.toString(ary)); for(int i =0,j = 0; i &amp;lt; str1.length();i++){ while(j &amp;gt; 0 &amp;amp;&amp;amp; str1.charAt(i) != str2.charAt(j) ){ j = ary[j-1]; } if(str1.charAt(i) == str2.charAt(j)){ j++; } if(j == str2.length()){ // System.</description>
+    </item>
+    
     <item>
       <title>基于CentOS 7安装 Hadoop</title>
       <link>https://jokeme.top/p/hadoop_install/</link>
