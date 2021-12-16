@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='简单几步利用Github开源项目搭建自己的webdav服务'><title>webdav搭建</title>
+
+<link rel='canonical' href='https://jokeme.top/p/configure_webdav/'>
+
+<link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='webdav搭建'>
+<meta property='og:description' content='简单几步利用Github开源项目搭建自己的webdav服务'>
+<meta property='og:url' content='https://jokeme.top/p/configure_webdav/'>
+<meta property='og:site_name' content='JokemeBlog'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Linux' /><meta property='article:published_time' content='2021-12-16T17:28:59&#43;08:00'/><meta property='article:modified_time' content='2021-12-16T17:28:59&#43;08:00'/><meta property='og:image' content='https://cn.bing.com/th?id=OHR.HumpbackMom_EN-CN4611779179_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4' />
+<meta name="twitter:site" content="@FrelonTroung">
+    <meta name="twitter:creator" content="@FrelonTroung"><meta name="twitter:title" content="webdav搭建">
+<meta name="twitter:description" content="简单几步利用Github开源项目搭建自己的webdav服务"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://cn.bing.com/th?id=OHR.HumpbackMom_EN-CN4611779179_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4' />
+    <link rel="shortcut icon" href="/bk3.ico" />
+
+    </head>
+    <body class="
+    article-page has-toc
+">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex 
+    
+        extended
+    
+">
+    
+        <div id="article-toolbar">
+            <a href="https://jokeme.top" class="back-home">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="15 6 9 12 15 18" />
+</svg>
+
+
+
+                <span>返回</span>
+            </a>
+        </div>
+    
+<main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+        <div class="article-image">
+            <a href="/p/configure_webdav/">
+                
+                    <img src="https://cn.bing.com/th?id=OHR.HumpbackMom_EN-CN4611779179_UHD.jpg&amp;pid=hp&amp;w=1080&amp;h=720&amp;rs=1&amp;c=4" loading="lazy" alt="Featured image of post webdav搭建" />
+                
+            </a>
+        </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/webdav/" >
+                Webdav
+            </a>
+        
+    </header>
+    
+
+    <h2 class="article-title">
+        <a href="/p/configure_webdav/">webdav搭建</a>
+    </h2>
+
+    
+    <h3 class="article-subtitle">
+        简单几步利用Github开源项目搭建自己的webdav服务
+    </h3>
+    
+
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">2021-12-16 17:28:59 CST</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    阅读时长: 1 分钟
+                </time>
+            </div>
+        
+    </footer>
+    
+</div>
+</header>
+
+    <section class="article-content">
+    <h1 id="webdav搭建">webdav搭建</h1>
+<p>最近闲来无事,想利用一下自己的公网IP做点别的有意思的事,因为之前搭建的网盘都统统没有用了,可能是用不来吧,还是在用的samba.</p>
+<p>就突然想到了为什么不搭建一个webdav呢！</p>
+<p>因为不打算用apache或者nginx来搭建，就去GitHub找了一下，还真的有一个不错的项目，使用Golang。那就开干吧。</p>
+<h2 id="1-准备工作">1. 准备工作</h2>
+<p>首先需要下载这个<a class="link" href="https://github.com/hacdias/webdav"  target="_blank" rel="noopener"
+    >webdav</a>，我只贴了项目地址，因为可能到时候这个项目又更新了。</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">wget https://github.com/hacdias/webdav/releases/download/v4.1.1/linux-amd64-webdav.tar.gz
+mkdir ~/.ENV/webdav	<span class="c1"># ~/.ENV 是我个人习惯放的地方</span>
+mv linux-amd64-webdav.tar.gz ~/.ENV/webdav
+tar -zxvf linux-amd64-webdav.tar.gz <span class="o">&amp;&amp;</span> rm linux-amd64-webdav.tar.gz
+touch config.yml <span class="c1">#config.{json, toml, yaml, yml} 都可以，而且它会在 ./ &amp; /etc/webdav/下查找文件</span>
+</code></pre></div><h2 id="2-配置文件">2. 配置文件</h2>
+<p>然后就是配置文件的内容了，我的是yaml格式的，大家可以参考一下。</p>
+<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">address</span><span class="p">:</span><span class="w"> </span><span class="m">0.0.0.0</span><span class="w">
+</span><span class="w"></span><span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="m">8090</span><span class="w">
+</span><span class="w"></span><span class="nt">auth</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span><span class="w"></span><span class="nt">tls</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+</span><span class="w"></span><span class="nt">prefix</span><span class="p">:</span><span class="w"> </span><span class="l">/</span><span class="w">
+</span><span class="w"></span><span class="nt">users</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span>- <span class="nt">username</span><span class="p">:</span><span class="w"> </span><span class="l">username</span><span class="w">
+</span><span class="w">    </span><span class="nt">password</span><span class="p">:</span><span class="w"> </span><span class="l">password</span><span class="w">
+</span><span class="w">    </span><span class="nt">scope</span><span class="p">:</span><span class="w"> </span><span class="l">/home/username/xxx</span><span class="w">
+</span></code></pre></div><p>下面的这个是官网给的详细介绍，比较全但是也有很多我用不到的配置。</p>
+<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">scope</span><span class="p">:</span><span class="w"> </span><span class="l">.</span><span class="w">
+</span><span class="w"></span><span class="nt">modify</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span><span class="w"></span><span class="nt">rules</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="c"># CORS configuration</span><span class="w">
+</span><span class="w"></span><span class="nt">cors</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span><span class="w">  </span><span class="nt">credentials</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span><span class="w">  </span><span class="nt">allowed_headers</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span>- <span class="l">Depth</span><span class="w">
+</span><span class="w">  </span><span class="nt">allowed_hosts</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span>- <span class="l">http://localhost:8080</span><span class="w">
+</span><span class="w">  </span><span class="nt">allowed_methods</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span>- <span class="l">GET</span><span class="w">
+</span><span class="w">  </span><span class="nt">exposed_headers</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span>- <span class="l">Content-Length</span><span class="w">
+</span><span class="w">    </span>- <span class="l">Content-Range</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="nt">users</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span>- <span class="nt">username</span><span class="p">:</span><span class="w"> </span><span class="l">admin</span><span class="w">
+</span><span class="w">    </span><span class="nt">password</span><span class="p">:</span><span class="w"> </span><span class="l">admin</span><span class="w">
+</span><span class="w">    </span><span class="nt">scope</span><span class="p">:</span><span class="w"> </span><span class="l">/a/different/path</span><span class="w">
+</span><span class="w">  </span>- <span class="nt">username</span><span class="p">:</span><span class="w"> </span><span class="l">encrypted</span><span class="w">
+</span><span class="w">    </span><span class="nt">password</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;{bcrypt}$2y$10$zEP6oofmXFeHaeMfBNLnP.DO8m.H.Mwhd24/TOX2MWLxAExXi4qgi&#34;</span><span class="w">
+</span><span class="w">  </span>- <span class="nt">username</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;{env}ENV_USERNAME&#34;</span><span class="w">
+</span><span class="w">    </span><span class="nt">password</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;{env}ENV_PASSWORD&#34;</span><span class="w">
+</span><span class="w">  </span>- <span class="nt">username</span><span class="p">:</span><span class="w"> </span><span class="l">basic</span><span class="w">
+</span><span class="w">    </span><span class="nt">password</span><span class="p">:</span><span class="w"> </span><span class="l">basic</span><span class="w">
+</span><span class="w">    </span><span class="nt">modify</span><span class="p">:</span><span class="w">   </span><span class="kc">false</span><span class="w">
+</span><span class="w">    </span><span class="nt">rules</span><span class="p">:</span><span class="w">
+</span><span class="w">      </span>- <span class="nt">regex</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+</span><span class="w">        </span><span class="nt">allow</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+</span><span class="w">        </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l">/some/file</span><span class="w">
+</span><span class="w">      </span>- <span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l">/public/access/</span><span class="w">
+</span><span class="w">        </span><span class="nt">modify</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span></code></pre></div><h2 id="3-开机自启">3. 开机自启</h2>
+<p>这一步需要编写service文件 <a class="link" href="https://github.com/hacdias/webdav/blob/master/webdav.service.example"  target="_blank" rel="noopener"
+    >webdav.service.example</a>，官网给了栗子了，我还是贴一下自己的吧。</p>
+<pre><code>[Unit]
+Description=WebDAV server
+After=network.target
+
+[Service]
+Type=simple
+User=root
+ExecStart=/home/frelon/.ENV/webdav/webdav --config /home/frelon/.ENV/webdav/config.yml
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
+</code></pre><div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">sudo systemctl daemon-reload
+sudo systemctl start webdav
+sudo systemctl <span class="nb">enable</span> webdav
+</code></pre></div><p>然后就可以正常使用了，但是如果你觉得端口不如意，咱可以用nginx代理到80。</p>
+<h2 id="4-nginx代理">4. nginx代理</h2>
+<div class="highlight"><pre class="chroma"><code class="language-ini" data-lang="ini"><span class="na">server {</span>
+<span class="c1">#webdav</span>
+        <span class="na">listen 80;</span>
+        <span class="na">server_name 192.168.31.100 jokeme.top;</span>
+        <span class="na">location / {</span>
+            <span class="na">proxy_pass http://127.0.0.1:8090;</span>
+            <span class="na">proxy_set_header X-Real-IP $remote_addr;</span>
+            <span class="na">proxy_set_header REMOTE-HOST $remote_addr;</span>
+            <span class="na">proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;</span>
+            <span class="na">proxy_set_header Host $http_host;</span>
+            <span class="na">proxy_redirect off;</span>
+         <span class="na">}</span>
+<span class="na">}</span>
+</code></pre></div><p>proxy_pass下面的五个是必须的，要不然容易出事。</p>
+<p>然后重启nginx就大功告成了。</p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/linux/">Linux</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/katex.min.css"integrity="sha384-RZU/ijkSsFbcmivfdRBQDtwuwVqK7GMOw6IMvKyeWL2K5UAlyp6WonmB8m7Jd0Hn"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/katex.min.js"integrity="sha384-pK1WpvzWVBQiP0/GjnvRxV4mOb0oxFuyRxJlk6vVw146n3egcN5C925NCP7a7BY8"crossorigin="anonymous"
+                defer="true"
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/contrib/auto-render.min.js"integrity="sha384-vZTG03m&#43;2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl"crossorigin="anonymous"
+                defer="true"
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+        renderMathInElement(document.querySelector(`.article-content`), {
+            delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "$", right: "$", display: false },
+                { left: "\\(", right: "\\)", display: false },
+                { left: "\\[", right: "\\]", display: true }
+            ]
+        });})
+</script>
+    
+</article>
+
+    <aside class="related-contents--wrapper">
+    
+    
+</aside>
+
+     
+     
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2019 - 
+        
+        2021 JokemeBlog
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.1.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer="true"
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer="true"
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css"integrity="sha256-c0uckgykQ9v5k&#43;IqViZOZKc47Jn7KQil4/MP3ySA3F8="crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css"integrity="sha256-SBLU4vv6CA6lHsZ1XyTdhyjJxCjPif/TRkjnsyGAGnE="crossorigin="anonymous"
+            >
+
+            </main>
+    
+        <aside class="sidebar right-sidebar sticky">
+            <section class="widget archives">
+                <div class="widget-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+                </div>
+                <h2 class="widget-title section-title">目录</h2>
+                
+                <div class="widget--toc">
+                    <nav id="TableOfContents">
+  <ol>
+    <li><a href="#1-准备工作">1. 准备工作</a></li>
+    <li><a href="#2-配置文件">2. 配置文件</a></li>
+    <li><a href="#3-开机自启">3. 开机自启</a></li>
+    <li><a href="#4-nginx代理">4. nginx代理</a></li>
+  </ol>
+</nav>
+                </div>
+            </section>
+        </aside>
+    
+
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js"integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g="crossorigin="anonymous"
+                defer="false"
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>
