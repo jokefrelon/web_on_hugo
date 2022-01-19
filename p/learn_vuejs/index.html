@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='个人的Vue学习记录,是基于[哔哩哔哩-尚硅谷]的Vue课程记录的'><title>学习Vue.js笔记</title>
+
+<link rel='canonical' href='https://jokeme.top/p/learn_vuejs/'>
+
+<link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='学习Vue.js笔记'>
+<meta property='og:description' content='个人的Vue学习记录,是基于[哔哩哔哩-尚硅谷]的Vue课程记录的'>
+<meta property='og:url' content='https://jokeme.top/p/learn_vuejs/'>
+<meta property='og:site_name' content='JokemeBlog'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='js' /><meta property='article:published_time' content='2022-01-19T15:58:02&#43;08:00'/><meta property='article:modified_time' content='2022-01-19T15:58:02&#43;08:00'/><meta property='og:image' content='https://cn.bing.com/th?id=OHR.LakeWinnipeg_EN-CN1852349163_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4' />
+<meta name="twitter:site" content="@FrelonTroung">
+    <meta name="twitter:creator" content="@FrelonTroung"><meta name="twitter:title" content="学习Vue.js笔记">
+<meta name="twitter:description" content="个人的Vue学习记录,是基于[哔哩哔哩-尚硅谷]的Vue课程记录的"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://cn.bing.com/th?id=OHR.LakeWinnipeg_EN-CN1852349163_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4' />
+    <link rel="shortcut icon" href="/bk3.ico" />
+
+    </head>
+    <body class="
+    article-page has-toc
+">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex 
+    
+        extended
+    
+">
+    
+        <div id="article-toolbar">
+            <a href="https://jokeme.top" class="back-home">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="15 6 9 12 15 18" />
+</svg>
+
+
+
+                <span>返回</span>
+            </a>
+        </div>
+    
+<main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+        <div class="article-image">
+            <a href="/p/learn_vuejs/">
+                
+                    <img src="https://cn.bing.com/th?id=OHR.LakeWinnipeg_EN-CN1852349163_UHD.jpg&amp;pid=hp&amp;w=1080&amp;h=720&amp;rs=1&amp;c=4" loading="lazy" alt="Featured image of post 学习Vue.js笔记" />
+                
+            </a>
+        </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/vue/" >
+                vue
+            </a>
+        
+    </header>
+    
+
+    <h2 class="article-title">
+        <a href="/p/learn_vuejs/">学习Vue.js笔记</a>
+    </h2>
+
+    
+    <h3 class="article-subtitle">
+        个人的Vue学习记录,是基于[哔哩哔哩-尚硅谷]的Vue课程记录的
+    </h3>
+    
+
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">2022-01-19 15:58:02 CST</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    阅读时长: 5 分钟
+                </time>
+            </div>
+        
+    </footer>
+    
+</div>
+</header>
+
+    <section class="article-content">
+    <h1 id="vue">Vue</h1>
+<h1 id="1-new-to-vue">1. new to Vue</h1>
+<h2 id="简单常识">简单常识:</h2>
+<h3 id="v-bind单项数据绑定">v-bind:(单项数据绑定)</h3>
+<p>用来绑定数据的,区别于<code>{{}}</code>,v-bind多用于标签元素的attribution,而<code>{{}}</code>多用于标签中间的<em>数字/数值/字符串等</em></p>
+<p>v-bind可以简写为<code>:</code>,而且他是单项数据绑定,数据只能由data里面的变量决定,即使在表单元素里面修改,v-bind绑定的数据也不会有反 应</p>
+<h3 id="v-model双向数据绑定">v-model:(双向数据绑定)</h3>
+<p>虽然都是数据绑定,但是v-model只能用于表单元素,而且表单内数据的更新会带着data内的数据一起更新.</p>
+<div class="highlight"><pre class="chroma"><code class="language-vue" data-lang="vue"><span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;doubt&#34;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;{{</span><span class="nx">eerr</span><span class="p">}}</span> <span class="p">{{</span><span class="nb">Date</span><span class="p">.</span><span class="nx">now</span><span class="p">()}}</span> <span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">a</span> <span class="na">v</span><span class="nt">-bind:href</span><span class="s">=&#34;urls&#34;</span> <span class="na">v</span><span class="nt">-bind:title</span><span class="s">=&#34;span_title&#34;</span> <span class="p">&gt;{{</span><span class="nx">intos</span><span class="p">}}&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">a</span> <span class="nt">:href</span><span class="s">=&#34;urls&#34;</span> <span class="nt">:title</span><span class="s">=&#34;span_title&#34;</span> <span class="p">&gt;{{</span><span class="nx">intos</span><span class="p">}}&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;text&#34;</span> <span class="na">v</span><span class="nt">-model:value</span><span class="s">=&#34;eerr&#34;</span> <span class="na">style</span><span class="o">=</span><span class="s">&#34;width: 100%;margin-top: 30px&#34;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;text&#34;</span> <span class="nt">v-model</span><span class="s">=&#34;intos&#34; style=&#34;width: 100%;margin-top: 30px&#34;&gt;
+</span><span class="s">&lt;/div&gt;
+</span><span class="s">&lt;script type=&#34;text/javascript&#34; src=&#34;vue.js&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="nx">Vue</span><span class="p">.</span><span class="nx">config</span><span class="p">.</span><span class="nx">productionTip</span><span class="o">=</span><span class="kc">false</span>
+<span class="nx">Vue</span><span class="p">.</span><span class="nx">config</span><span class="p">.</span><span class="nx">devtools</span><span class="o">=</span><span class="kc">false</span>
+<span class="kr">const</span> <span class="nx">vapp</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Vue</span><span class="p">({</span>
+        <span class="nx">el</span><span class="o">:</span> <span class="s2">&#34;#doubt&#34;</span><span class="p">,</span>
+        <span class="nx">data</span><span class="o">:</span><span class="p">{</span>
+                <span class="nx">intos</span><span class="o">:</span><span class="s2">&#34;去JokemeBlog&#34;</span><span class="p">,</span>
+                <span class="nx">eerr</span><span class="o">:</span> <span class="s2">&#34;一刀999,是兄弟就来砍我&#34;</span><span class="p">,</span>
+                <span class="nx">urls</span><span class="o">:</span><span class="s2">&#34;https://jokeme.top&#34;</span><span class="p">,</span>
+                <span class="nx">span_title</span><span class="o">:</span><span class="s2">&#34;JOkemeBlog官网&#34;</span>
+        <span class="p">}</span>
+<span class="p">})</span>
+<span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</code></pre></div><h3 id="使用mount挂载">使用mount挂载</h3>
+<p>其实咱可以不用上来就指定好<code>el</code>的值,咱可以已<strong>mount</strong>的形式来挂在上.</p>
+<div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;niubi&#34;</span><span class="p">&gt;</span>
+        {{welcome}}
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">vapp</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Vue</span><span class="p">({</span>
+        <span class="nx">data</span><span class="o">:</span><span class="p">{</span>
+                <span class="nx">welcome</span><span class="o">:</span><span class="s2">&#34;欢迎学习Vue 2.0!&#34;</span>
+        <span class="p">}</span>
+<span class="p">})</span>
+<span class="nx">vapp</span><span class="p">.</span><span class="nx">$mount</span><span class="p">(</span><span class="s2">&#34;#niubi&#34;</span><span class="p">)</span>
+</code></pre></div><p>说完了<code>el</code>咱再来说 <code>data</code></p>
+<h3 id="data函数式">data函数式</h3>
+<p>其实这里的data还可以写为函数式的. json/对象式 &amp; 函数式都可以正常使用,以后使用组件的时候就必须要用函数式</p>
+<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">vapp</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Vue</span><span class="p">({</span>
+        <span class="nx">data</span><span class="p">(){</span>
+                <span class="k">return</span><span class="p">{</span>
+                        <span class="nx">welcome</span><span class="o">:</span><span class="s2">&#34;欢迎学习Vue 2.0!&#34;</span>
+                <span class="p">}</span>
+        <span class="p">}</span>
+<span class="p">})</span>
+</code></pre></div><h3 id="defineproperty">defineProperty</h3>
+<p>Vue的代理模式,其中先大概了解一下defineProperty的用法:<strong>defineProperty(obj,properties,options/functions)</strong></p>
+<p>代码我也懒得整,就截了两张图片,学过高级语言的 应该一眼就看明白了.代理也就是通过<code>set()/get()</code>操作的</p>
+<p><img src="https://pics.jokeme.top/blogimas/image-20211229012235756.png" alt="image-20211229012235756"  /></p>
+<p><img src="https://pics.jokeme.top/blogimas/image-20211229015619753.png" alt="image-20211229015619753"  /></p>
+<h3 id="v-click">v-click</h3>
+<p>就是监听点击事件的,然后执行一个函数,可以加括号,不加括号就不传参</p>
+<div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html">        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;niubi&#34;</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">button</span> <span class="err">@</span><span class="na">click</span><span class="o">=</span><span class="s">&#34;callbaby(&#39;ss&#39;,$event)&#34;</span><span class="p">&gt;</span>点我!!!!<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+                <span class="c">&lt;!-- 传参的时候,这个$event就相当于关键字了,加上$才有事件,不加就是变量 --&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>&gt;
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">vapp</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Vue</span><span class="p">({</span>
+        <span class="nx">methods</span><span class="o">:</span><span class="p">{</span>
+                <span class="nx">callbaby</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span><span class="nx">b</span><span class="p">){</span>
+                        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span><span class="nx">b</span><span class="p">)</span>
+                        <span class="nx">alert</span><span class="p">(</span><span class="s2">&#34;Hello啊!同学!&#34;</span><span class="p">)</span>
+                <span class="p">}</span>
+        <span class="p">}</span>
+<span class="p">})</span>
+<span class="nx">vapp</span><span class="p">.</span><span class="nx">$mount</span><span class="p">(</span><span class="s2">&#34;#niubi&#34;</span><span class="p">)</span>
+</code></pre></div><p>但是! 但是! 现在Vue应该是改了,不传$event 也可以直接输出event了,如下</p>
+<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="s2">&#34;callbaby(&#39;ss&#39;)&#34;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span><span class="nx">event</span><span class="p">)</span>
+</code></pre></div><blockquote>
+<p>**Tips: **methods里面的方法也可以丢data里面哦,但是data会多一个代理,浪费电脑性能!又学到了一个离职埋坑小技巧哦!</p>
+</blockquote>
+<p>click的事件修饰符</p>
+<p><img src="https://pics.jokeme.top/blogimas/image-20211229033005645.png" alt="image-20211229033005645"  /></p>
+<p>反正就这几个常用的,而且还是前三个常用.</p>
+<p>eg:</p>
+<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="o">&lt;</span><span class="nx">button</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&#34;qq&#34;</span> <span class="err">@</span><span class="nx">click</span><span class="p">.</span><span class="nx">once</span><span class="o">=</span><span class="s2">&#34;callbaby(12)&#34;</span><span class="o">&gt;</span><span class="nx">点我</span><span class="o">!!!!&lt;</span><span class="err">/button&gt;&lt;br&gt;</span>
+</code></pre></div><p>下面的这个就是这个<strong>click</strong>只在第一次操作触发,第二次及以后都不在响应事件了</p>
+<p>详细解说见 <a class="link" href="https://www.bilibili.com/video/BV1Zy4y1K7SH?p=15"  target="_blank" rel="noopener"
+    >哔哩哔哩-尚硅谷-事件修饰符</a></p>
+<h3 id="键盘监听">键盘监听</h3>
+<p>@keyup</p>
+<p>键盘回弹触发事件</p>
+<p>@keydown</p>
+<p>键盘按下触发事件</p>
+<p>下面的小代码就可以让你理解了,其中<code>.enter</code>是遇到回车键才执行</p>
+<blockquote>
+<p>为了方便起见,只贴出关键代码,其余部分都没有怎么变得就省略了,上面也有.</p>
+</blockquote>
+<div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;text&#34;</span> <span class="na">placeholder</span><span class="o">=</span><span class="s">&#34;随便写点啥吧!&#34;</span> <span class="err">@</span><span class="na">keydown</span><span class="err">.</span><span class="na">enter</span><span class="o">=</span><span class="s">whichOneUInput</span><span class="p">&gt;</span>
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="nx">whichOneUInput</span><span class="p">(</span><span class="nx">e</span><span class="p">){</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">value</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div><p>像这样的操作,Vue为我们准备了一下几个</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">按键</th>
+<th style="text-align:center">别名</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">回车</td>
+<td style="text-align:center">enter</td>
+</tr>
+<tr>
+<td style="text-align:center">删除(捕获『删除』&amp;『退回』)</td>
+<td style="text-align:center">delete</td>
+</tr>
+<tr>
+<td style="text-align:center">退出</td>
+<td style="text-align:center">esc</td>
+</tr>
+<tr>
+<td style="text-align:center">空格</td>
+<td style="text-align:center">space</td>
+</tr>
+<tr>
+<td style="text-align:center">换行</td>
+<td style="text-align:center">tab</td>
+</tr>
+<tr>
+<td style="text-align:center">上下</td>
+<td style="text-align:center">up/down</td>
+</tr>
+<tr>
+<td style="text-align:center">左右</td>
+<td style="text-align:center">left/right</td>
+</tr>
+</tbody>
+</table>
+<p><code>@keydown.ctrl.y</code>就可以让ctrl + y触发</p>
+<p>更多按键见:<a class="link" href="https://www.bilibili.com/video/BV1Zy4y1K7SH?p=16"  target="_blank" rel="noopener"
+    >哔哩哔哩-尚硅谷-键盘事件</a></p>
+<h3 id="计算属性">计算属性</h3>
+<p><code>computed</code>类似data,el,methods它也是Vue带来的全新属性,可以直接从data里面获取数据进行操作/计算</p>
+<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="nx">data</span><span class="p">(){</span>
+        <span class="k">return</span><span class="p">{</span>
+                <span class="nx">welcome</span><span class="o">:</span><span class="s2">&#34;欢迎学习Vue 2.0!&#34;</span><span class="p">,</span>
+                <span class="nx">dabo</span><span class="o">:</span><span class="s2">&#34;Jack&#34;</span>
+        <span class="p">}</span>
+<span class="p">},</span>
+<span class="nx">computed</span><span class="o">:</span><span class="p">{</span>
+                <span class="nx">fullname</span><span class="o">:</span><span class="p">{</span>
+                        <span class="nx">get</span><span class="p">(){</span>
+                                <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">welcome</span> <span class="o">+</span> <span class="s1">&#39;-&#39;</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">dabo</span>
+                        <span class="p">}</span>
+                <span class="p">}</span>
+        <span class="p">}</span>
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>{{fullname}}<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</code></pre></div><p>计算完成以后就可以直接调用了,有点像Linux里的 <code>alias</code>,给一些列操作定义一个名字,我调用这个名字就执行这个操作</p>
+<h3 id="监视属性">监视属性</h3>
+<p><code>watch</code>是一个用于监听数据变化的属性,他有一个方法<code>handler(new,old)</code>可以在监视的数据发生变化时做出相应的处理.其中new是改变后的数据,old是改变前的数据.</p>
+<p><code>immediate:true</code>可以让数据在初始化的时候就开始监听,就是从无到有的过程也执行一次<strong>handler()</strong></p>
+<p>还有一点需要注意的是,被监视的数据只能是 <code>data</code>和<code>computed</code>里面的.</p>
+<p><img src="https://pics.jokeme.top/blogimas/image-20211230170345170.png" alt="image-20211230170345170"  /></p>
+<p>deep监视不能监视多层数据里面改变前的数据,只能拿到改变后的数据.</p>
+<div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">button</span> <span class="err">@</span><span class="na">click</span><span class="o">=</span><span class="s">&#34;dbqs.tom++&#34;</span><span class="p">&gt;</span>加一<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="nx">watch</span><span class="o">:</span><span class="p">{</span>
+        <span class="nx">temperature</span><span class="o">:</span><span class="p">{</span>
+                <span class="nx">immediate</span><span class="o">:</span><span class="kc">true</span><span class="p">,</span>
+                <span class="nx">handler</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span><span class="nx">b</span><span class="p">){</span>
+                        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="o">+</span><span class="s2">&#34;``&#34;</span><span class="o">+</span><span class="nx">b</span><span class="p">)</span>
+                <span class="p">}</span>
+        <span class="p">}</span>
+<span class="p">},</span>
+</code></pre></div><p>除此之外<strong>watch</strong>还有一种<strong>api</strong>调用方法</p>
+<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="nx">shit</span><span class="p">.</span><span class="nx">$watch</span><span class="p">(</span><span class="s2">&#34;temperature&#34;</span><span class="p">,{</span>
+        <span class="nx">immediate</span><span class="o">:</span><span class="kc">true</span><span class="p">,</span>
+        <span class="nx">handler</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span><span class="nx">b</span><span class="p">){</span>
+                <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="o">+</span><span class="s2">&#34;``&#34;</span><span class="o">+</span><span class="nx">b</span><span class="p">)</span>
+        <span class="p">}</span>
+<span class="p">})</span>
+</code></pre></div><p>deep的用法</p>
+<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="nx">dbqs</span><span class="o">:</span><span class="p">{</span>
+        <span class="nx">deep</span><span class="o">:</span><span class="kc">true</span><span class="p">,</span>
+        <span class="nx">handler</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span><span class="nx">b</span><span class="p">,</span><span class="nx">c</span><span class="p">){</span>
+                <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="p">.</span><span class="nx">tom</span><span class="o">+</span><span class="s2">&#34;----&#34;</span><span class="o">+</span><span class="nx">b</span><span class="p">.</span><span class="nx">tom</span><span class="p">)</span>
+        <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div><p>此外当你在监视的时候,用不到set,你可以用简写</p>
+<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="nx">temperature</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span><span class="nx">b</span><span class="p">){</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="o">+</span><span class="s2">&#34;----&#34;</span><span class="o">+</span><span class="nx">b</span><span class="p">)</span>
+<span class="p">},</span>
+</code></pre></div><p>直接就是你需要监视的数据变成函数名就可以了,handler有啥参数,这个简写就有啥.</p>
+<h3 id="绑定class样式">绑定Class样式</h3>
+<p>多说无益,先上代码</p>
+<div class="highlight"><pre class="chroma"><code class="language-css" data-lang="css"><span class="p">.</span><span class="nc">basic</span><span class="p">{</span>
+        <span class="k">width</span><span class="p">:</span> <span class="mi">400</span><span class="kt">px</span><span class="p">;</span>
+        <span class="k">height</span><span class="p">:</span> <span class="mi">200</span><span class="kt">px</span><span class="p">;</span>
+        <span class="k">border</span><span class="p">:</span> <span class="mi">2</span><span class="kt">px</span> <span class="kc">tomato</span> <span class="kc">solid</span><span class="p">;</span>
+        <span class="k">font-family</span><span class="p">:</span> <span class="s1">&#39;Trebuchet MS&#39;</span><span class="p">,</span> <span class="s1">&#39;Lucida Sans Unicode&#39;</span><span class="p">,</span> <span class="s1">&#39;Lucida Grande&#39;</span><span class="p">,</span> <span class="s1">&#39;Lucida Sans&#39;</span><span class="p">,</span> <span class="n">Arial</span><span class="p">,</span> <span class="kc">sans-serif</span><span class="p">;</span>
+        <span class="k">margin-top</span><span class="p">:</span> <span class="mi">30</span><span class="kt">px</span><span class="p">;</span>
+        <span class="k">text-align</span><span class="p">:</span> <span class="kc">center</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="p">.</span><span class="nc">day</span> <span class="p">{</span>
+        <span class="k">background-color</span><span class="p">:</span> <span class="nb">rgb</span><span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">);</span>
+        <span class="k">color</span><span class="p">:</span> <span class="nb">rgb</span><span class="p">(</span><span class="mi">26</span><span class="p">,</span> <span class="mi">26</span><span class="p">,</span> <span class="mi">26</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="p">.</span><span class="nc">night</span><span class="p">{</span>
+        <span class="k">background-color</span><span class="p">:</span> <span class="nb">rgb</span><span class="p">(</span><span class="mi">49</span><span class="p">,</span> <span class="mi">49</span><span class="p">,</span> <span class="mi">49</span><span class="p">);</span>
+        <span class="k">color</span><span class="p">:</span> <span class="nb">rgb</span><span class="p">(</span><span class="mi">226</span><span class="p">,</span> <span class="mi">226</span><span class="p">,</span> <span class="mi">226</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;bobp&#34;</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;basic&#34;</span> <span class="na">:class</span><span class="o">=</span><span class="s">&#34;color&#34;</span> <span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">P</span><span class="p">&gt;</span>今天是个好日子啊!<span class="p">&lt;/</span><span class="nt">P</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>老Tom今天在干嘛啊<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">hr</span> <span class="na">style</span><span class="o">=</span><span class="s">&#34;width: 80%;margin-left: auto;margin-right: auto;margin-top: 3px;margin-bottom: 3px;&#34;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">button</span> <span class="err">@</span><span class="na">click</span><span class="o">=</span><span class="s">&#34;change&#34;</span><span class="p">&gt;</span>改变<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="nx">data</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">{</span>
+                <span class="nx">color</span><span class="o">:</span><span class="s2">&#34;day&#34;</span><span class="p">,</span>
+<span class="p">},</span>
+<span class="nx">methods</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">change</span><span class="p">(){</span>
+                <span class="k">this</span><span class="p">.</span><span class="nx">color</span> <span class="o">==</span> <span class="s2">&#34;day&#34;</span> <span class="o">?</span>  <span class="k">this</span><span class="p">.</span><span class="nx">color</span> <span class="o">=</span> <span class="s2">&#34;night&#34;</span> <span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">color</span> <span class="o">=</span> <span class="s2">&#34;day&#34;</span>
+        <span class="p">}</span>
+<span class="p">},</span>
+
+</code></pre></div><p><strong>原理:</strong><code>:class</code>绑定一个data里面的变量<strong>color</strong>,当你点击按钮的时候,就会做出判断,给原来的样式<code>basic</code> 后面再加上<code>day</code>/<code>night</code>样式</p>
+<p><img src="https://pics.jokeme.top/blogimas/image-20211230195124370.png" alt="image-20211230195124370"  /></p>
+<p>下面的两种会用就可以,根据实际情况来,数组和对象一般用的不是很多</p>
+<h3 id="v-if">v-if</h3>
+<div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">p</span> <span class="na">v-if</span><span class="o">=</span><span class="s">&#34;codelang[0] == &#39;Java&#39;&#34;</span><span class="p">&gt;</span>{{codelang[0]}}<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">p</span> <span class="na">v-else-if</span><span class="o">=</span><span class="s">&#34;codelang[1] == &#39;Python&#39;&#34;</span><span class="p">&gt;</span>{{codelang[1]}}<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">p</span> <span class="na">v-if</span><span class="o">=</span><span class="s">&#34;codelang[2] == Cpp&#34;</span><span class="p">&gt;</span>{{codelang[2]}}<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">p</span> <span class="na">v-else</span><span class="p">&gt;</span>{{codelang[3]}}<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="nx">codelang</span><span class="o">:</span><span class="p">[</span><span class="s2">&#34;Java&#34;</span><span class="p">,</span><span class="s2">&#34;Python&#34;</span><span class="p">,</span><span class="s2">&#34;Cpp&#34;</span><span class="p">,</span><span class="s2">&#34;Golang&#34;</span><span class="p">]</span>
+</code></pre></div><p>可以看的出来哈，<code>v-if</code>只会只要命中条件以后就会显示后面的内容而没有命中的条件都不不会出现。这里也没有啥难点，和别的语言的<code>if else</code>没有啥差别</p>
+<p><code>&lt;template&gt;</code>标签只能与<code>v-if</code>一块用。其作用是不破坏dom结构。</p>
+<h3 id="v-for">v-for</h3>
+<div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">ul</span> <span class="na">style</span><span class="o">=</span><span class="s">&#34;list-style-type: none;margin:  auto;padding: 0;border: orange 1px solid;width: 80%;&#34;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">li</span> <span class="na">v-for</span><span class="o">=</span><span class="s">&#34;item in codelang&#34;</span> <span class="na">:key</span><span class="o">=</span><span class="s">&#34;index&#34;</span> <span class="na">style</span><span class="o">=</span><span class="s">&#34;margin-top: 5px;margin-bottom: 5px;&#34;</span><span class="p">&gt;</span>{{item}}<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+</code></pre></div><p>下面就来一段具体操作</p>
+<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">shit</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Vue</span><span class="p">({</span>
+                        <span class="nx">data</span><span class="p">()</span> <span class="p">{</span>
+                                <span class="k">return</span> <span class="p">{</span>
+                                        <span class="nx">user</span><span class="o">:</span><span class="p">[</span>
+                                                <span class="p">{</span><span class="nx">uuid</span><span class="o">:</span><span class="mi">123</span><span class="p">,</span><span class="nx">name</span><span class="o">:</span><span class="s2">&#34;lx&#34;</span><span class="p">,</span><span class="nx">sex</span><span class="o">:</span><span class="mi">0</span><span class="p">},</span>
+                                                <span class="p">{</span><span class="nx">uuid</span><span class="o">:</span><span class="mi">124</span><span class="p">,</span><span class="nx">name</span><span class="o">:</span><span class="s2">&#34;by&#34;</span><span class="p">,</span><span class="nx">sex</span><span class="o">:</span><span class="mi">1</span><span class="p">},</span>
+                                                <span class="p">{</span><span class="nx">uuid</span><span class="o">:</span><span class="mi">163</span><span class="p">,</span><span class="nx">name</span><span class="o">:</span><span class="s2">&#34;lj&#34;</span><span class="p">,</span><span class="nx">sex</span><span class="o">:</span><span class="mi">1</span><span class="p">},</span>
+                                        <span class="p">],</span>
+                                <span class="p">}</span>
+                        <span class="p">},</span>
+                        <span class="nx">methods</span><span class="o">:</span> <span class="p">{</span>
+                                <span class="nx">adduser</span><span class="p">(){</span>
+                                        <span class="c1">// 这个函数在调用的 时候需要加上.once，否则会一直加人
+</span><span class="c1"></span>                                        <span class="k">this</span><span class="p">.</span><span class="nx">user</span><span class="p">.</span><span class="nx">unshift</span><span class="p">({</span><span class="nx">uuid</span><span class="o">:</span><span class="mi">156</span><span class="p">,</span><span class="nx">name</span><span class="o">:</span><span class="s2">&#34;lx&#34;</span><span class="p">,</span><span class="nx">sex</span><span class="o">:</span><span class="mi">1</span><span class="p">})</span>
+                                        <span class="c1">// unshift() 直接把数据干到最上面
+</span><span class="c1"></span>                                        <span class="c1">// push() 数据加在最后面
+</span><span class="c1"></span>                                <span class="p">}</span>
+                        <span class="p">},</span>
+<span class="p">})</span>
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">button</span> <span class="err">@</span><span class="na">click</span><span class="err">.</span><span class="na">once</span><span class="o">=</span><span class="s">&#34;adduser&#34;</span><span class="p">&gt;</span>click me!<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">li</span> <span class="na">v-for</span><span class="o">=</span><span class="s">&#34;item in user&#34;</span> <span class="na">:key</span><span class="o">=</span><span class="s">&#34;item.uuid&#34;</span> <span class="p">&gt;</span>{{item.name}} --- {{item.uuid}}
+    <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;text&#34;</span> <span class="na">:placeholder</span><span class="o">=</span><span class="s">&#34;item.name&#34;</span><span class="p">&gt;</span> <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+</code></pre></div><h3 id="箭头函数">箭头函数</h3>
+<p>复习一下！看这里 <a class="link" href="https://www.liaoxuefeng.com/wiki/1022910821149312/1031549578462080"  target="_blank" rel="noopener"
+    >廖雪峰的官方网站</a></p>
+<h3 id="filter">filter</h3>
+<p>同上复习：<a class="link" href="https://www.w3school.com.cn/jsref/jsref_filter.asp"  target="_blank" rel="noopener"
+    >w3school</a></p>
+<h3 id="表单收集">表单收集</h3>
+<p><a class="link" href="https://www.bilibili.com/video/BV1Zy4y1K7SH?p=38"  target="_blank" rel="noopener"
+    >哔哩哔哩-尚硅谷-表单收集</a></p>
+<p><img src="https://pics.jokeme.top/blogimas/image-20220108002203213.png" alt="image-20220108002203213"  /></p>
+<h3 id="自定义vue指令">自定义Vue指令</h3>
+<p><a class="link" href="https://www.bilibili.com/video/BV1Zy4y1K7SH?p=46"  target="_blank" rel="noopener"
+    >哔哩哔哩-尚硅谷-自定义指令</a></p>
+<h3 id="生命周期">生命周期</h3>
+<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="nx">mounted</span><span class="p">()</span> <span class="p">{</span>
+        <span class="nx">setInterval</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+                <span class="k">this</span><span class="p">.</span><span class="nx">opacity</span> <span class="o">-=</span> <span class="mf">0.01</span>
+                <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">opacity</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+                        <span class="nx">a</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+                        <span class="k">this</span><span class="p">.</span><span class="nx">opacity</span> <span class="o">=</span> <span class="nx">a</span>
+                        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="p">)</span>
+                <span class="p">}</span>
+        <span class="p">},</span> <span class="mi">15</span><span class="p">)</span>
+<span class="p">},</span>
+</code></pre></div><p>主要的函数都在这里</p>
+<p><img src="https://pics.jokeme.top/blogimas/image-20220108040257962.png" alt="image-20220108040257962"  /></p>
+<p><a class="link" href="https://www.bilibili.com/video/BV1Zy4y1K7SH?p=48"  target="_blank" rel="noopener"
+    >哔哩哔哩-尚硅谷-生命周期</a></p>
+<h2 id="简单案例">简单案例</h2>
+<h3 id="姓名案例">姓名案例</h3>
+<div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;niubi&#34;</span><span class="p">&gt;</span>
+        {{welcome}}<span class="p">&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;text&#34;</span> <span class="na">placeholder</span><span class="o">=</span><span class="s">&#34;随便写点啥吧!&#34;</span> <span class="na">v-model</span><span class="o">=</span><span class="s">welcome</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;text&#34;</span> <span class="na">placeholder</span><span class="o">=</span><span class="s">&#34;随便写点啥吧!&#34;</span> <span class="na">v-model</span><span class="o">=</span><span class="s">dabo</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">button</span> <span class="err">@</span><span class="na">click</span><span class="o">=</span><span class="s">fullname</span><span class="p">&gt;</span>dianwo<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="o">&lt;</span><span class="nx">script</span><span class="o">&gt;</span>
+<span class="kr">const</span> <span class="nx">vapp</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Vue</span><span class="p">({</span>
+        <span class="nx">data</span><span class="p">(){</span>
+                <span class="k">return</span><span class="p">{</span>
+                        <span class="nx">welcome</span><span class="o">:</span><span class="s2">&#34;欢迎学习Vue 2.0!&#34;</span><span class="p">,</span>
+                        <span class="nx">dabo</span><span class="o">:</span><span class="s2">&#34;Jack&#34;</span>
+                <span class="p">}</span>
+        <span class="p">},</span>
+        <span class="nx">methods</span><span class="o">:</span><span class="p">{</span>
+                <span class="nx">fullname</span><span class="p">(){</span>
+                        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">welcome</span> <span class="o">+</span> <span class="s2">&#34;-&#34;</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">dabo</span><span class="p">)</span>
+                <span class="p">}</span>
+        <span class="p">}</span>
+<span class="p">})</span>
+<span class="nx">vapp</span><span class="p">.</span><span class="nx">$mount</span><span class="p">(</span><span class="s2">&#34;#niubi&#34;</span><span class="p">)</span>
+<span class="o">&lt;</span><span class="err">/script&gt;</span>
+</code></pre></div><h3 id="天气案例">天气案例</h3>
+<p>点击按钮切换今天的天气</p>
+<div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;bobp&#34;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">P</span><span class="p">&gt;</span>今天是个好日子啊!天气{{weatherQ}}<span class="p">&lt;/</span><span class="nt">P</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">button</span> <span class="err">@</span><span class="na">click</span><span class="o">=</span><span class="s">&#34;turnWeather()&#34;</span><span class="p">&gt;</span>点我<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">shit</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Vue</span><span class="p">({</span>
+    <span class="nx">data</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="p">{</span>
+            <span class="nx">temperature</span><span class="o">:</span><span class="kc">true</span>
+        <span class="p">}</span>
+    <span class="p">},</span>
+    <span class="nx">methods</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">turnWeather</span><span class="p">(){</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">temperature</span> <span class="o">==</span> <span class="kc">true</span> <span class="o">?</span> <span class="k">this</span><span class="p">.</span><span class="nx">temperature</span> <span class="o">=</span> <span class="kc">false</span> <span class="o">:</span><span class="k">this</span><span class="p">.</span><span class="nx">temperature</span> <span class="o">=</span> <span class="kc">true</span>
+        <span class="p">}</span>
+    <span class="p">},</span>
+    <span class="nx">computed</span><span class="o">:</span> <span class="p">{</span>
+    <span class="nx">weatherQ</span><span class="o">:</span><span class="p">{</span>
+        <span class="nx">get</span><span class="p">(){</span>
+            <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">temperature</span> <span class="o">?</span> <span class="s2">&#34;很热&#34;</span> <span class="o">:</span> <span class="s2">&#34;凉爽&#34;</span>
+                <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="p">}</span>
+<span class="p">})</span>
+<span class="nx">shit</span><span class="p">.</span><span class="nx">$mount</span><span class="p">(</span><span class="s2">&#34;#bobp&#34;</span><span class="p">)</span>
+</code></pre></div><p>通过计算属性拿到<code>temperature</code>以后在计算返回文字<code>weatherQ</code>,这更加人性化</p>
+<h3 id="名称查找">名称查找</h3>
+<p>在input框内输入，下面的ul显示查询结果</p>
+<h4 id="1-vue-watch实现">1. Vue watch实现</h4>
+<div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&#34;en&#34;</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&#34;UTF-8&#34;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&#34;viewport&#34;</span> <span class="na">content</span><span class="o">=</span><span class="s">&#34;width=device-width, initial-scale=1.0&#34;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Document<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;kendaman&#34;</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;text&#34;</span> <span class="na">placeholder</span><span class="o">=</span><span class="s">&#34;输入以搜索🔍&#34;</span> <span class="na">v-model</span><span class="o">=</span><span class="s">&#34;kw&#34;</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+                        <span class="p">&lt;</span><span class="nt">li</span> <span class="na">v-for</span><span class="o">=</span><span class="s">&#34;it in userT&#34;</span> <span class="na">:key</span><span class="o">=</span><span class="s">&#34;it.uuid&#34;</span><span class="p">&gt;</span> {{it.name}} <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+                <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;vue.js&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+                <span class="nx">Vue</span><span class="p">.</span><span class="nx">config</span><span class="p">.</span><span class="nx">productionTip</span> <span class="o">=</span> <span class="kc">false</span>
+                <span class="nx">Vue</span><span class="p">.</span><span class="nx">config</span><span class="p">.</span><span class="nx">devtools</span> <span class="o">=</span> <span class="kc">false</span>
+                <span class="kr">const</span> <span class="nx">vapp</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Vue</span><span class="p">({</span>
+                        <span class="nx">data</span><span class="p">()</span> <span class="p">{</span>
+                                <span class="k">return</span> <span class="p">{</span>
+                                        <span class="nx">kw</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+                                        <span class="nx">user</span><span class="o">:</span> <span class="p">[</span>
+                                                <span class="p">{</span> <span class="nx">uuid</span><span class="o">:</span> <span class="mi">123</span><span class="p">,</span> <span class="nx">name</span><span class="o">:</span> <span class="s2">&#34;托塔天王&#34;</span><span class="p">,</span> <span class="nx">sex</span><span class="o">:</span> <span class="mi">0</span> <span class="p">},</span>
+                                                <span class="p">{</span> <span class="nx">uuid</span><span class="o">:</span> <span class="mi">124</span><span class="p">,</span> <span class="nx">name</span><span class="o">:</span> <span class="s2">&#34;斗战胜佛&#34;</span><span class="p">,</span> <span class="nx">sex</span><span class="o">:</span> <span class="mi">1</span> <span class="p">},</span>
+                                                <span class="p">{</span> <span class="nx">uuid</span><span class="o">:</span> <span class="mi">163</span><span class="p">,</span> <span class="nx">name</span><span class="o">:</span> <span class="s2">&#34;净坛使者&#34;</span><span class="p">,</span> <span class="nx">sex</span><span class="o">:</span> <span class="mi">1</span> <span class="p">},</span>
+                                                <span class="p">{</span> <span class="nx">uuid</span><span class="o">:</span> <span class="mi">165</span><span class="p">,</span> <span class="nx">name</span><span class="o">:</span> <span class="s2">&#34;祥龙罗汉&#34;</span><span class="p">,</span> <span class="nx">sex</span><span class="o">:</span> <span class="mi">1</span> <span class="p">}</span>
+                                        <span class="p">],</span>
+                                        <span class="nx">userT</span><span class="o">:</span> <span class="p">[],</span>
+                                <span class="p">}</span>
+                        <span class="p">},</span>
+                        <span class="nx">methods</span><span class="o">:</span> <span class="p">{</span>
+
+                        <span class="p">},</span>
+                        <span class="nx">watch</span><span class="o">:</span> <span class="p">{</span>
+                                <span class="nx">kw</span><span class="o">:</span> <span class="p">{</span>
+                                        <span class="nx">immediate</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+                                        <span class="nx">handler</span><span class="p">(</span><span class="nx">newkw</span><span class="p">)</span> <span class="p">{</span>
+                                                <span class="k">this</span><span class="p">.</span><span class="nx">userT</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">user</span><span class="p">.</span><span class="nx">filter</span><span class="p">((</span><span class="nx">u</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+                                                        <span class="k">return</span> <span class="nx">u</span><span class="p">.</span><span class="nx">name</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="nx">newkw</span><span class="p">)</span> <span class="o">!==</span> <span class="o">-</span><span class="mi">1</span>
+                                                <span class="p">})</span>
+                                        <span class="p">}</span>
+                                <span class="p">}</span>
+
+                        <span class="p">},</span>
+                <span class="p">})</span>
+                <span class="nx">vapp</span><span class="p">.</span><span class="nx">$mount</span><span class="p">(</span><span class="s2">&#34;#kendaman&#34;</span><span class="p">)</span>
+        <span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</code></pre></div><p>这里的一个小知识点是：<code>immediate</code>在初始化的时候就会执行一次，而此时，<strong>kw</strong>即我们的输入为空，<strong>newkw</strong>监视变化前的值也为空，<strong>filter</strong>在过滤的时候，匹配到空，是会返回0的而不是-1，匹配成功，因而最终返回<strong>user</strong>数组里面所有的数据给<strong>userT</strong>。众所周知js里面，任何字符串里都包含空字符串的。狗头保命！</p>
+<h4 id="2-vue-计算属性实现">2. Vue 计算属性实现</h4>
+<div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&#34;en&#34;</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span>
+                <span class="p">.</span><span class="nc">bk</span><span class="p">{</span>
+                        <span class="k">background-color</span><span class="p">:</span> <span class="mh">#2b2b2b</span><span class="p">;</span>
+                        <span class="k">color</span><span class="p">:</span> <span class="mh">#dbdbdb</span><span class="p">;</span>
+                <span class="p">}</span>
+                <span class="p">.</span><span class="nc">er</span> <span class="p">{</span>
+                        <span class="k">width</span><span class="p">:</span> <span class="mi">300</span><span class="kt">px</span><span class="p">;</span>
+                        <span class="k">height</span><span class="p">:</span> <span class="mi">200</span><span class="kt">px</span><span class="p">;</span>
+                        <span class="k">margin</span><span class="p">:</span> <span class="mi">100</span><span class="kt">px</span> <span class="kc">auto</span><span class="p">;</span>
+                        <span class="k">border</span><span class="p">:</span> <span class="mi">1</span><span class="kt">px</span> <span class="nb">rgb</span><span class="p">(</span><span class="mi">104</span><span class="p">,</span> <span class="mi">104</span><span class="p">,</span> <span class="mi">104</span><span class="p">)</span> <span class="kc">solid</span><span class="p">;</span>
+                        <span class="k">border-radius</span><span class="p">:</span> <span class="mi">10</span><span class="kt">px</span><span class="p">;</span>
+                        <span class="k">box-shadow</span><span class="p">:</span>  <span class="mi">1</span><span class="kt">px</span> <span class="mi">1</span><span class="kt">px</span> <span class="mi">4</span><span class="kt">px</span> <span class="mi">1</span><span class="kt">px</span> <span class="kc">cornflowerblue</span> <span class="p">;</span>
+                <span class="p">}</span>
+                <span class="p">.</span><span class="nc">ipt</span><span class="p">{</span>
+                        <span class="k">background-color</span><span class="p">:</span> <span class="mh">#3f3f3f</span><span class="p">;</span>
+                <span class="p">}</span>
+                <span class="p">.</span><span class="nc">ert</span><span class="p">{</span>
+                        <span class="k">width</span><span class="p">:</span> <span class="mi">80</span><span class="kt">%</span><span class="p">;</span>
+                        <span class="k">line-height</span><span class="p">:</span> <span class="mi">30</span><span class="kt">px</span><span class="p">;</span>
+                        <span class="k">margin</span><span class="p">:</span><span class="mi">0</span> <span class="kc">auto</span><span class="p">;</span>
+                        <span class="k">margin-top</span><span class="p">:</span> <span class="mi">10</span><span class="kt">px</span><span class="p">;</span>
+                        <span class="k">list-style</span><span class="p">:</span> <span class="kc">none</span><span class="p">;</span>
+                        <span class="k">border-radius</span><span class="p">:</span><span class="mi">5</span><span class="kt">px</span><span class="p">;</span>
+                        <span class="k">text-align</span><span class="p">:</span> <span class="kc">center</span><span class="p">;</span>
+                        <span class="k">padding</span><span class="p">:</span> <span class="mi">0</span><span class="p">;</span>
+                <span class="p">}</span>
+                <span class="nt">li</span><span class="p">{</span>
+                        <span class="k">width</span><span class="p">:</span> <span class="mi">80</span><span class="kt">%</span><span class="p">;</span>
+                        <span class="k">border-radius</span><span class="p">:</span> <span class="mi">3</span><span class="kt">px</span><span class="p">;</span>
+                        <span class="k">margin</span><span class="p">:</span><span class="mi">4</span><span class="kt">px</span> <span class="kc">auto</span><span class="p">;</span>
+                        <span class="k">background-color</span><span class="p">:</span> <span class="mh">#3f3f3f</span><span class="p">;</span>
+                        <span class="k">font-size</span><span class="p">:</span> <span class="mi">14</span><span class="kt">px</span><span class="p">;</span>
+                <span class="p">}</span>
+                <span class="nt">li</span><span class="p">:</span><span class="nd">hover</span><span class="p">{</span>
+                        <span class="k">border</span><span class="p">:</span> <span class="mi">1</span><span class="kt">px</span> <span class="mh">#caa155</span> <span class="kc">solid</span><span class="p">;</span>
+                        <span class="k">margin</span><span class="p">:</span> <span class="mi">-1</span><span class="kt">px</span> <span class="kc">auto</span><span class="p">;</span>
+                        <span class="k">font-size</span><span class="p">:</span> <span class="mi">15</span><span class="kt">px</span><span class="p">;</span>
+                <span class="p">}</span>
+        <span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&#34;UTF-8&#34;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&#34;viewport&#34;</span> <span class="na">content</span><span class="o">=</span><span class="s">&#34;width=device-width, initial-scale=1.0&#34;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Document<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">body</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;bk&#34;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;er&#34;</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;kendaman&#34;</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;ert&#34;</span><span class="p">&gt;</span>
+                        <span class="p">&lt;</span><span class="nt">input</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;ert ipt&#34;</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;text&#34;</span> <span class="na">placeholder</span><span class="o">=</span><span class="s">&#34;输入以搜索🔍&#34;</span> <span class="na">v-model</span><span class="o">=</span><span class="s">&#34;kw&#34;</span><span class="p">&gt;</span>
+                <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">ul</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;ert&#34;</span><span class="p">&gt;</span>
+                        <span class="p">&lt;</span><span class="nt">li</span> <span class="na">v-for</span><span class="o">=</span><span class="s">&#34;it in userT&#34;</span> <span class="na">:key</span><span class="o">=</span><span class="s">&#34;it.uuid&#34;</span><span class="p">&gt;</span> {{it.name}} <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+                <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;vue.js&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+                <span class="nx">Vue</span><span class="p">.</span><span class="nx">config</span><span class="p">.</span><span class="nx">productionTip</span> <span class="o">=</span> <span class="kc">false</span>
+                <span class="nx">Vue</span><span class="p">.</span><span class="nx">config</span><span class="p">.</span><span class="nx">devtools</span> <span class="o">=</span> <span class="kc">false</span>
+                <span class="kr">const</span> <span class="nx">vapp</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Vue</span><span class="p">({</span>
+                        <span class="nx">data</span><span class="p">()</span> <span class="p">{</span>
+                                <span class="k">return</span> <span class="p">{</span>
+                                        <span class="nx">kw</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+                                        <span class="nx">user</span><span class="o">:</span> <span class="p">[</span>
+                                                <span class="p">{</span> <span class="nx">uuid</span><span class="o">:</span> <span class="mi">123</span><span class="p">,</span> <span class="nx">name</span><span class="o">:</span> <span class="s2">&#34;托塔天王&#34;</span><span class="p">,</span> <span class="nx">sex</span><span class="o">:</span> <span class="mi">0</span> <span class="p">},</span>
+                                                <span class="p">{</span> <span class="nx">uuid</span><span class="o">:</span> <span class="mi">124</span><span class="p">,</span> <span class="nx">name</span><span class="o">:</span> <span class="s2">&#34;斗战胜佛&#34;</span><span class="p">,</span> <span class="nx">sex</span><span class="o">:</span> <span class="mi">1</span> <span class="p">},</span>
+                                                <span class="p">{</span> <span class="nx">uuid</span><span class="o">:</span> <span class="mi">163</span><span class="p">,</span> <span class="nx">name</span><span class="o">:</span> <span class="s2">&#34;净坛使者&#34;</span><span class="p">,</span> <span class="nx">sex</span><span class="o">:</span> <span class="mi">1</span> <span class="p">},</span>
+                                                <span class="p">{</span> <span class="nx">uuid</span><span class="o">:</span> <span class="mi">165</span><span class="p">,</span> <span class="nx">name</span><span class="o">:</span> <span class="s2">&#34;祥龙罗汉&#34;</span><span class="p">,</span> <span class="nx">sex</span><span class="o">:</span> <span class="mi">1</span> <span class="p">}</span>
+                                        <span class="p">],</span>
+                                <span class="p">}</span>
+                        <span class="p">},</span>
+                        <span class="nx">methods</span><span class="o">:</span> <span class="p">{</span>
+
+                        <span class="p">},</span>
+                        <span class="nx">computed</span><span class="o">:</span> <span class="p">{</span>
+                                <span class="nx">userT</span><span class="p">()</span> <span class="p">{</span>
+                                        <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">user</span><span class="p">.</span><span class="nx">filter</span><span class="p">((</span><span class="nx">u</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+                                                <span class="k">return</span> <span class="nx">u</span><span class="p">.</span><span class="nx">name</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">kw</span><span class="p">)</span> <span class="o">!==</span> <span class="o">-</span><span class="mi">1</span>
+                                        <span class="p">})</span>
+                                <span class="p">}</span>
+                        <span class="p">}</span>
+                <span class="p">})</span>
+                <span class="nx">vapp</span><span class="p">.</span><span class="nx">$mount</span><span class="p">(</span><span class="s2">&#34;#kendaman&#34;</span><span class="p">)</span>
+        <span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</code></pre></div><p><strong>computed</strong>里面有两个返回值可能比较搞心态，但是你只需要明白，第一个返回值是给<strong>filter</strong>做判断的，第二个返回值是给<strong>userT</strong>的就可以了，主要的原理和上面的一样，也是<strong>filter</strong>和<strong>箭头函数</strong></p>
+<p><img src="https://pics.jokeme.top/typora/image-20211231061310941.png" alt="image"  /></p>
+<p>咱们来欣赏一下成果吧！暗黑模式真好看，我真厉害😜!</p>
+<h3 id="排序案例">排序案例</h3>
+<p>接上面的案例继续,如果咱们有一个排序的要求并且是按照uuid或者是姓名来排序的呢?这活应该怎么整?</p>
+<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="nx">computed</span><span class="o">:</span> <span class="p">{</span>
+<span class="nx">userT</span><span class="p">()</span> <span class="p">{</span>
+                <span class="kd">let</span> <span class="nx">hugo</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">user</span><span class="p">.</span><span class="nx">filter</span><span class="p">((</span><span class="nx">u</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+                        <span class="k">return</span> <span class="nx">u</span><span class="p">.</span><span class="nx">name</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">kw</span><span class="p">)</span> <span class="o">!==</span> <span class="o">-</span><span class="mi">1</span>
+                <span class="p">})</span>
+                <span class="k">if</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">sortby</span><span class="p">){</span>
+                        <span class="nx">hugo</span><span class="p">.</span><span class="nx">sort</span><span class="p">((</span><span class="nx">a</span><span class="p">,</span><span class="nx">b</span><span class="p">)=&gt;{</span>
+                                <span class="k">if</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">sortby</span> <span class="o">==</span> <span class="mi">1</span><span class="p">){</span>
+                                        <span class="k">return</span> <span class="nx">a</span><span class="p">.</span><span class="nx">uuid</span> <span class="o">-</span> <span class="nx">b</span><span class="p">.</span><span class="nx">uuid</span><span class="c1">//升序前减后
+</span><span class="c1"></span>                                <span class="p">}</span>
+                                <span class="k">if</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">sortby</span> <span class="o">==</span> <span class="mi">2</span><span class="p">){</span>
+                                        <span class="k">return</span> <span class="nx">b</span><span class="p">.</span><span class="nx">uuid</span> <span class="o">-</span> <span class="nx">a</span><span class="p">.</span><span class="nx">uuid</span><span class="c1">//降序后减前
+</span><span class="c1"></span>                                <span class="p">}</span>
+                        <span class="p">})</span>
+                <span class="p">}</span>
+                <span class="k">return</span> <span class="nx">hugo</span>
+        <span class="p">},</span>
+<span class="p">}</span>
+</code></pre></div><p>废话也不多说,就这样写,杠杠的! 对搜索后的数据进行排序那是相当的easy了,只需要在查找到的符合条件的数组后面接着写一个排序即 可,写完了把排序后的数组再返回出去就可以了.</p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/js/">js</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/katex.min.css"integrity="sha384-RZU/ijkSsFbcmivfdRBQDtwuwVqK7GMOw6IMvKyeWL2K5UAlyp6WonmB8m7Jd0Hn"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/katex.min.js"integrity="sha384-pK1WpvzWVBQiP0/GjnvRxV4mOb0oxFuyRxJlk6vVw146n3egcN5C925NCP7a7BY8"crossorigin="anonymous"
+                defer="true"
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/contrib/auto-render.min.js"integrity="sha384-vZTG03m&#43;2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl"crossorigin="anonymous"
+                defer="true"
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+        renderMathInElement(document.querySelector(`.article-content`), {
+            delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "$", right: "$", display: false },
+                { left: "\\(", right: "\\)", display: false },
+                { left: "\\[", right: "\\]", display: true }
+            ]
+        });})
+</script>
+    
+</article>
+
+    <aside class="related-contents--wrapper">
+    
+    
+</aside>
+
+     
+     
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2019 - 
+        
+        2022 JokemeBlog
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.1.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer="true"
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer="true"
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css"integrity="sha256-c0uckgykQ9v5k&#43;IqViZOZKc47Jn7KQil4/MP3ySA3F8="crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css"integrity="sha256-SBLU4vv6CA6lHsZ1XyTdhyjJxCjPif/TRkjnsyGAGnE="crossorigin="anonymous"
+            >
+
+            </main>
+    
+        <aside class="sidebar right-sidebar sticky">
+            <section class="widget archives">
+                <div class="widget-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+                </div>
+                <h2 class="widget-title section-title">目录</h2>
+                
+                <div class="widget--toc">
+                    <nav id="TableOfContents">
+  <ol>
+    <li><a href="#简单常识">简单常识:</a>
+      <ol>
+        <li><a href="#v-bind单项数据绑定">v-bind:(单项数据绑定)</a></li>
+        <li><a href="#v-model双向数据绑定">v-model:(双向数据绑定)</a></li>
+        <li><a href="#使用mount挂载">使用mount挂载</a></li>
+        <li><a href="#data函数式">data函数式</a></li>
+        <li><a href="#defineproperty">defineProperty</a></li>
+        <li><a href="#v-click">v-click</a></li>
+        <li><a href="#键盘监听">键盘监听</a></li>
+        <li><a href="#计算属性">计算属性</a></li>
+        <li><a href="#监视属性">监视属性</a></li>
+        <li><a href="#绑定class样式">绑定Class样式</a></li>
+        <li><a href="#v-if">v-if</a></li>
+        <li><a href="#v-for">v-for</a></li>
+        <li><a href="#箭头函数">箭头函数</a></li>
+        <li><a href="#filter">filter</a></li>
+        <li><a href="#表单收集">表单收集</a></li>
+        <li><a href="#自定义vue指令">自定义Vue指令</a></li>
+        <li><a href="#生命周期">生命周期</a></li>
+      </ol>
+    </li>
+    <li><a href="#简单案例">简单案例</a>
+      <ol>
+        <li><a href="#姓名案例">姓名案例</a></li>
+        <li><a href="#天气案例">天气案例</a></li>
+        <li><a href="#名称查找">名称查找</a>
+          <ol>
+            <li><a href="#1-vue-watch实现">1. Vue watch实现</a></li>
+            <li><a href="#2-vue-计算属性实现">2. Vue 计算属性实现</a></li>
+          </ol>
+        </li>
+        <li><a href="#排序案例">排序案例</a></li>
+      </ol>
+    </li>
+  </ol>
+</nav>
+                </div>
+            </section>
+        </aside>
+    
+
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js"integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g="crossorigin="anonymous"
+                defer="false"
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

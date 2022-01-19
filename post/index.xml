@@ -6,7 +6,20 @@
     <description>Recent content in Posts on JokemeBlog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 16 Dec 2021 17:28:59 +0800</lastBuildDate><atom:link href="https://jokeme.top/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 19 Jan 2022 15:58:02 +0800</lastBuildDate><atom:link href="https://jokeme.top/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>学习Vue.js笔记</title>
+      <link>https://jokeme.top/p/learn_vuejs/</link>
+      <pubDate>Wed, 19 Jan 2022 15:58:02 +0800</pubDate>
+      
+      <guid>https://jokeme.top/p/learn_vuejs/</guid>
+      <description>Vue 1. new to Vue 简单常识: v-bind:(单项数据绑定) 用来绑定数据的,区别于{{}},v-bind多用于标签元素的attribution,而{{}}多用于标签中间的数字/数值/字符串等
+v-bind可以简写为:,而且他是单项数据绑定,数据只能由data里面的变量决定,即使在表单元素里面修改,v-bind绑定的数据也不会有反 应
+v-model:(双向数据绑定) 虽然都是数据绑定,但是v-model只能用于表单元素,而且表单内数据的更新会带着data内的数据一起更新.
+&amp;lt;div id=&amp;#34;doubt&amp;#34;&amp;gt; &amp;lt;h3&amp;gt;{{eerr}} {{Date.now()}} &amp;lt;/h3&amp;gt; &amp;lt;a v-bind:href=&amp;#34;urls&amp;#34; v-bind:title=&amp;#34;span_title&amp;#34; &amp;gt;{{intos}}&amp;lt;/a&amp;gt; &amp;lt;a :href=&amp;#34;urls&amp;#34; :title=&amp;#34;span_title&amp;#34; &amp;gt;{{intos}}&amp;lt;/a&amp;gt;&amp;lt;br&amp;gt; &amp;lt;input type=&amp;#34;text&amp;#34; v-model:value=&amp;#34;eerr&amp;#34; style=&amp;#34;width: 100%;margin-top: 30px&amp;#34;&amp;gt; &amp;lt;input type=&amp;#34;text&amp;#34; v-model=&amp;#34;intos&amp;#34; style=&amp;#34;width: 100%;margin-top: 30px&amp;#34;&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;script type=&amp;#34;text/javascript&amp;#34; src=&amp;#34;vue.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script&amp;gt; Vue.config.productionTip=false Vue.config.devtools=false const vapp = new Vue({ el: &amp;#34;#doubt&amp;#34;, data:{ intos:&amp;#34;去JokemeBlog&amp;#34;, eerr: &amp;#34;一刀999,是兄弟就来砍我&amp;#34;, urls:&amp;#34;https://jokeme.top&amp;#34;, span_title:&amp;#34;JOkemeBlog官网&amp;#34; } }) &amp;lt;/script&amp;gt; 使用mount挂载 其实咱可以不用上来就指定好el的值,咱可以已mount的形式来挂在上.
+&amp;lt;div id=&amp;#34;niubi&amp;#34;&amp;gt; {{welcome}} &amp;lt;/div&amp;gt; const vapp = new Vue({ data:{ welcome:&amp;#34;欢迎学习Vue 2.</description>
+    </item>
+    
     <item>
       <title>webdav搭建</title>
       <link>https://jokeme.top/p/configure_webdav/</link>
@@ -852,6 +865,18 @@ overflow:hidden; text-overflow: ellipsis; white-space: nowrap; 但是微信小�
       <description>Python 爬虫 用python写爬虫其实是比较简单的，主要还是靠第三方的库，常用的有 requests &amp;amp; urllib 至于解析 HTML,我目前使用的是 xpath ,了解了基本操作，咱就试试看吧
 代码附上
 # coding:utf-8 import json import requests from lxml import etree def getWebUrl(uri): webPage = requests.get(url = uri, headers={&amp;#34;User-Agent&amp;#34;:&amp;#34;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36&amp;#34;} ) we = webPage.text ssr = etree.HTML(we) Links = ssr.xpath(&amp;#34;//div/table/tbody/tr/td/p/a/@href&amp;#34;) Str = &amp;#34;http://172.17.150.251&amp;#34; Allinks = [] for se in Links: link = Str+se Allinks.append(link) dicName = {} dicName = {uri:Allinks} return dicName def getInfo(uri): webPage = requests.</description>
+    </item>
+    
+    <item>
+      <title>Java collections框架的工具类</title>
+      <link>https://jokeme.top/p/java_collections_utils/</link>
+      <pubDate>Sat, 28 Dec 2019 21:33:56 +0000</pubDate>
+      
+      <guid>https://jokeme.top/p/java_collections_utils/</guid>
+      <description>Collection 框架的工具类 1. Collections 1.1.1 sort 按照自然顺序排序 package sourceCode; import java.util.ArrayList; import java.util.Collections; import java.util.List; public class Collections_utils { public static void main(String[] args) { List&amp;lt;String&amp;gt; se = new ArrayList&amp;lt;String&amp;gt;(); se.add(&amp;#34;fdw&amp;#34;); se.add(&amp;#34;jokeme&amp;#34;); se.add(&amp;#34;dfipo&amp;#34;); se.add(&amp;#34;daase&amp;#34;); Collections.sort(se); System.out.println(se); } } ~~~~~~~~~~~~~~~~~~~~ [daase, dfipo, fdw, jokeme] 用法很简单： Collections.sort(List)
+1.1.2 reverse 倒序排列自然排序的 List Collections.reverse(se); System.out.println(se); ~~~~~~~~~~~~~~~ [jokeme, fdw, dfipo, daase] 用法也很简单： Collections.reverse(List)
+如果单独使用时，其效果和 reverseOrder() 作用一样
+1.1.3 自定义排序方法 Collections.reverseOrder(Comparator&amp;lt;T&amp;gt; cmp()) 自定义排序方法时就需要使用 reverseOrder() 并且需要自定义一个比较方法 ? 传进去</description>
     </item>
     
     <item>

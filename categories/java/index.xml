@@ -105,6 +105,18 @@ Target 指定了注解运用的地方
     </item>
     
     <item>
+      <title>Java collections框架的工具类</title>
+      <link>https://jokeme.top/p/java_collections_utils/</link>
+      <pubDate>Sat, 28 Dec 2019 21:33:56 +0000</pubDate>
+      
+      <guid>https://jokeme.top/p/java_collections_utils/</guid>
+      <description>Collection 框架的工具类 1. Collections 1.1.1 sort 按照自然顺序排序 package sourceCode; import java.util.ArrayList; import java.util.Collections; import java.util.List; public class Collections_utils { public static void main(String[] args) { List&amp;lt;String&amp;gt; se = new ArrayList&amp;lt;String&amp;gt;(); se.add(&amp;#34;fdw&amp;#34;); se.add(&amp;#34;jokeme&amp;#34;); se.add(&amp;#34;dfipo&amp;#34;); se.add(&amp;#34;daase&amp;#34;); Collections.sort(se); System.out.println(se); } } ~~~~~~~~~~~~~~~~~~~~ [daase, dfipo, fdw, jokeme] 用法很简单： Collections.sort(List)
+1.1.2 reverse 倒序排列自然排序的 List Collections.reverse(se); System.out.println(se); ~~~~~~~~~~~~~~~ [jokeme, fdw, dfipo, daase] 用法也很简单： Collections.reverse(List)
+如果单独使用时，其效果和 reverseOrder() 作用一样
+1.1.3 自定义排序方法 Collections.reverseOrder(Comparator&amp;lt;T&amp;gt; cmp()) 自定义排序方法时就需要使用 reverseOrder() 并且需要自定义一个比较方法 ? 传进去</description>
+    </item>
+    
+    <item>
       <title>Java IO简单操作文件</title>
       <link>https://jokeme.top/p/java_io/</link>
       <pubDate>Sat, 28 Dec 2019 21:33:56 +0000</pubDate>
