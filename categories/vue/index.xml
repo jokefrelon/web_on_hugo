@@ -13,11 +13,11 @@
       <pubDate>Wed, 19 Jan 2022 15:58:02 +0800</pubDate>
       
       <guid>https://jokeme.top/p/learn_vuejs/</guid>
-      <description>Vue 1. new to Vue 简单常识: v-bind:(单项数据绑定) 用来绑定数据的,区别于{{}},v-bind多用于标签元素的attribution,而{{}}多用于标签中间的数字/数值/字符串等
-v-bind可以简写为:,而且他是单项数据绑定,数据只能由data里面的变量决定,即使在表单元素里面修改,v-bind绑定的数据也不会有反 应
+      <description>1. Vue简单常识: v-bind:(单项数据绑定) 用来绑定数据的,区别于{{}},v-bind多用于标签元素的attribution,而{{}}多用于标签中间的数字/数值/字符串等
+v-bind可以简写为:,而且他是单项数据绑定,数据只能由data里面的变量决定,即使在表单元素里面修改,v-bind绑定的数据也不会有反应
 v-model:(双向数据绑定) 虽然都是数据绑定,但是v-model只能用于表单元素,而且表单内数据的更新会带着data内的数据一起更新.
 &amp;lt;div id=&amp;#34;doubt&amp;#34;&amp;gt; &amp;lt;h3&amp;gt;{{eerr}} {{Date.now()}} &amp;lt;/h3&amp;gt; &amp;lt;a v-bind:href=&amp;#34;urls&amp;#34; v-bind:title=&amp;#34;span_title&amp;#34; &amp;gt;{{intos}}&amp;lt;/a&amp;gt; &amp;lt;a :href=&amp;#34;urls&amp;#34; :title=&amp;#34;span_title&amp;#34; &amp;gt;{{intos}}&amp;lt;/a&amp;gt;&amp;lt;br&amp;gt; &amp;lt;input type=&amp;#34;text&amp;#34; v-model:value=&amp;#34;eerr&amp;#34; style=&amp;#34;width: 100%;margin-top: 30px&amp;#34;&amp;gt; &amp;lt;input type=&amp;#34;text&amp;#34; v-model=&amp;#34;intos&amp;#34; style=&amp;#34;width: 100%;margin-top: 30px&amp;#34;&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;script type=&amp;#34;text/javascript&amp;#34; src=&amp;#34;vue.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script&amp;gt; Vue.config.productionTip=false Vue.config.devtools=false const vapp = new Vue({ el: &amp;#34;#doubt&amp;#34;, data:{ intos:&amp;#34;去JokemeBlog&amp;#34;, eerr: &amp;#34;一刀999,是兄弟就来砍我&amp;#34;, urls:&amp;#34;https://jokeme.top&amp;#34;, span_title:&amp;#34;JOkemeBlog官网&amp;#34; } }) &amp;lt;/script&amp;gt; 使用mount挂载 其实咱可以不用上来就指定好el的值,咱可以已mount的形式来挂在上.
-&amp;lt;div id=&amp;#34;niubi&amp;#34;&amp;gt; {{welcome}} &amp;lt;/div&amp;gt; const vapp = new Vue({ data:{ welcome:&amp;#34;欢迎学习Vue 2.</description>
+&amp;lt;div id=&amp;#34;niubi&amp;#34;&amp;gt; {{welcome}} &amp;lt;/div&amp;gt; const vapp = new Vue({ data:{ welcome:&amp;#34;欢迎学习Vue 2.0!&amp;#34; } }) vapp.</description>
     </item>
     
   </channel>
