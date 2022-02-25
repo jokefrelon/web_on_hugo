@@ -183,8 +183,8 @@
 </code></pre></div><h3 id="defineproperty">defineProperty</h3>
 <p>Vue的代理模式,其中先大概了解一下defineProperty的用法:<strong>defineProperty(obj,properties,options/functions)</strong></p>
 <p>代码我也懒得整,就截了两张图片,学过高级语言的 应该一眼就看明白了.代理也就是通过<code>set()/get()</code>操作的</p>
-<p><img src="https://pics.jokeme.top/blogimas/image-20211229012235756.png" alt="image-20211229012235756"  /></p>
-<p><img src="https://pics.jokeme.top/blogimas/image-20211229015619753.png" alt="image-20211229015619753"  /></p>
+<p><img src="http://pics.jokeme.top/blogimas/image-20211229012235756.png" alt="image-20211229012235756"  /></p>
+<p><img src="http://pics.jokeme.top/blogimas/image-20211229015619753.png" alt="image-20211229015619753"  /></p>
 <h3 id="v-click">v-click</h3>
 <p>就是监听点击事件的,然后执行一个函数,可以加括号,不加括号就不传参</p>
 <div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html">	<span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;niubi&#34;</span><span class="p">&gt;</span>
@@ -207,7 +207,7 @@
 <p>**Tips: **methods里面的方法也可以丢data里面哦,但是data会多一个代理,浪费电脑性能!又学到了一个离职埋坑小技巧哦!</p>
 </blockquote>
 <p>click的事件修饰符</p>
-<p><img src="https://pics.jokeme.top/blogimas/image-20211229033005645.png" alt="image-20211229033005645"  /></p>
+<p><img src="http://pics.jokeme.top/blogimas/image-20211229033005645.png" alt="image-20211229033005645"  /></p>
 <p>反正就这几个常用的,而且还是前三个常用.</p>
 <p>eg:</p>
 <div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="o">&lt;</span><span class="nx">button</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&#34;qq&#34;</span> <span class="err">@</span><span class="nx">click</span><span class="p">.</span><span class="nx">once</span><span class="o">=</span><span class="s2">&#34;callbaby(12)&#34;</span><span class="o">&gt;</span><span class="nx">点我</span><span class="o">!!!!&lt;</span><span class="err">/button&gt;&lt;br&gt;</span>
@@ -355,7 +355,7 @@
 <span class="p">},</span>
 
 </code></pre></div><p><strong>原理:</strong><code>:class</code>绑定一个data里面的变量<strong>color</strong>,当你点击按钮的时候,就会做出判断,给原来的样式<code>basic</code> 后面再加上<code>day</code>/<code>night</code>样式</p>
-<p><img src="https://pics.jokeme.top/blogimas/image-20211230195124370.png" alt="image-20211230195124370"  /></p>
+<p><img src="http://pics.jokeme.top/blogimas/image-20211230195124370.png" alt="image-20211230195124370"  /></p>
 <p>下面的两种会用就可以,根据实际情况来,数组和对象一般用的不是很多</p>
 <h3 id="v-if">v-if</h3>
 <div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">p</span> <span class="na">v-if</span><span class="o">=</span><span class="s">&#34;codelang[0] == &#39;Java&#39;&#34;</span><span class="p">&gt;</span>{{codelang[0]}}<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
@@ -403,7 +403,7 @@
 <h3 id="表单收集">表单收集</h3>
 <p><a class="link" href="https://www.bilibili.com/video/BV1Zy4y1K7SH?p=38"  target="_blank" rel="noopener"
     >哔哩哔哩-尚硅谷-表单收集</a></p>
-<p><img src="https://pics.jokeme.top/blogimas/image-20220108002203213.png" alt="image-20220108002203213"  /></p>
+<p><img src="http://pics.jokeme.top/blogimas/image-20220108002203213.png" alt="image-20220108002203213"  /></p>
 <h3 id="自定义vue指令">自定义Vue指令</h3>
 <p><a class="link" href="https://www.bilibili.com/video/BV1Zy4y1K7SH?p=46"  target="_blank" rel="noopener"
     >哔哩哔哩-尚硅谷-自定义指令</a></p>
@@ -419,7 +419,7 @@
 	<span class="p">},</span> <span class="mi">15</span><span class="p">)</span>
 <span class="p">},</span>
 </code></pre></div><p>主要的函数都在这里</p>
-<p><img src="https://pics.jokeme.top/blogimas/image-20220108040257962.png" alt="image-20220108040257962"  /></p>
+<p><img src="http://pics.jokeme.top/blogimas/image-20220108040257962.png" alt="image-20220108040257962"  /></p>
 <p><a class="link" href="https://www.bilibili.com/video/BV1Zy4y1K7SH?p=48"  target="_blank" rel="noopener"
     >哔哩哔哩-尚硅谷-生命周期</a></p>
 <h3 id="components组件">components(组件)</h3>
@@ -730,7 +730,7 @@
 
 <span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
 </code></pre></div><p><strong>computed</strong>里面有两个返回值可能比较搞心态，但是你只需要明白，第一个返回值是给<strong>filter</strong>做判断的，第二个返回值是给<strong>userT</strong>的就可以了，主要的原理和上面的一样，也是<strong>filter</strong>和<strong>箭头函数</strong></p>
-<p><img src="https://pics.jokeme.top/typora/image-20211231061310941.png" alt="image"  /></p>
+<p><img src="http://pics.jokeme.top/typora/image-20211231061310941.png" alt="image"  /></p>
 <p>咱们来欣赏一下成果吧！暗黑模式真好看，我真厉害😜!</p>
 <h3 id="排序案例">排序案例</h3>
 <p>接上面的案例继续,如果咱们有一个排序的要求并且是按照uuid或者是姓名来排序的呢?这活应该怎么整?</p>
@@ -932,7 +932,7 @@
 <p>其实这个没有啥好说的，代码里面都是浅显易懂的东西！主要就是统计一共有几个待办事项，已完成几个。还有和父组件的参数传递</p>
 <hr>
 <p>最后来看看一代目的成品吧</p>
-<p><img src="https://pics.jokeme.top/blogimas/image-20220127014027587.png" alt="image-20220127014027587"  /></p>
+<p><img src="http://pics.jokeme.top/blogimas/image-20220127014027587.png" alt="image-20220127014027587"  /></p>
 
 </section>
 

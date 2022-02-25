@@ -63,8 +63,8 @@
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;defineproperty&#34;&gt;defineProperty&lt;/h3&gt;
 &lt;p&gt;Vue的代理模式,其中先大概了解一下defineProperty的用法:&lt;strong&gt;defineProperty(obj,properties,options/functions)&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;代码我也懒得整,就截了两张图片,学过高级语言的 应该一眼就看明白了.代理也就是通过&lt;code&gt;set()/get()&lt;/code&gt;操作的&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://pics.jokeme.top/blogimas/image-20211229012235756.png&#34; alt=&#34;image-20211229012235756&#34;  /&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://pics.jokeme.top/blogimas/image-20211229015619753.png&#34; alt=&#34;image-20211229015619753&#34;  /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://pics.jokeme.top/blogimas/image-20211229012235756.png&#34; alt=&#34;image-20211229012235756&#34;  /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://pics.jokeme.top/blogimas/image-20211229015619753.png&#34; alt=&#34;image-20211229015619753&#34;  /&gt;&lt;/p&gt;
 &lt;h3 id=&#34;v-click&#34;&gt;v-click&lt;/h3&gt;
 &lt;p&gt;就是监听点击事件的,然后执行一个函数,可以加括号,不加括号就不传参&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;	&lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;div&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;id&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;niubi&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
@@ -87,7 +87,7 @@
 &lt;p&gt;**Tips: **methods里面的方法也可以丢data里面哦,但是data会多一个代理,浪费电脑性能!又学到了一个离职埋坑小技巧哦!&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;click的事件修饰符&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://pics.jokeme.top/blogimas/image-20211229033005645.png&#34; alt=&#34;image-20211229033005645&#34;  /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://pics.jokeme.top/blogimas/image-20211229033005645.png&#34; alt=&#34;image-20211229033005645&#34;  /&gt;&lt;/p&gt;
 &lt;p&gt;反正就这几个常用的,而且还是前三个常用.&lt;/p&gt;
 &lt;p&gt;eg:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-js&#34; data-lang=&#34;js&#34;&gt;&lt;span class=&#34;o&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;button&lt;/span&gt; &lt;span class=&#34;kr&#34;&gt;class&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;qq&amp;#34;&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;@&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;click&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;once&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;callbaby(12)&amp;#34;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;点我&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;!!!!&amp;lt;&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;/button&amp;gt;&amp;lt;br&amp;gt;&lt;/span&gt;
@@ -235,7 +235,7 @@
 &lt;span class=&#34;p&#34;&gt;},&lt;/span&gt;
 
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;原理:&lt;/strong&gt;&lt;code&gt;:class&lt;/code&gt;绑定一个data里面的变量&lt;strong&gt;color&lt;/strong&gt;,当你点击按钮的时候,就会做出判断,给原来的样式&lt;code&gt;basic&lt;/code&gt; 后面再加上&lt;code&gt;day&lt;/code&gt;/&lt;code&gt;night&lt;/code&gt;样式&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://pics.jokeme.top/blogimas/image-20211230195124370.png&#34; alt=&#34;image-20211230195124370&#34;  /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://pics.jokeme.top/blogimas/image-20211230195124370.png&#34; alt=&#34;image-20211230195124370&#34;  /&gt;&lt;/p&gt;
 &lt;p&gt;下面的两种会用就可以,根据实际情况来,数组和对象一般用的不是很多&lt;/p&gt;
 &lt;h3 id=&#34;v-if&#34;&gt;v-if&lt;/h3&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;p&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;v-if&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;codelang[0] == &amp;#39;Java&amp;#39;&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;{{codelang[0]}}&lt;span class=&#34;p&#34;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;p&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
@@ -283,7 +283,7 @@
 &lt;h3 id=&#34;表单收集&#34;&gt;表单收集&lt;/h3&gt;
 &lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.bilibili.com/video/BV1Zy4y1K7SH?p=38&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;哔哩哔哩-尚硅谷-表单收集&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://pics.jokeme.top/blogimas/image-20220108002203213.png&#34; alt=&#34;image-20220108002203213&#34;  /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://pics.jokeme.top/blogimas/image-20220108002203213.png&#34; alt=&#34;image-20220108002203213&#34;  /&gt;&lt;/p&gt;
 &lt;h3 id=&#34;自定义vue指令&#34;&gt;自定义Vue指令&lt;/h3&gt;
 &lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.bilibili.com/video/BV1Zy4y1K7SH?p=46&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;哔哩哔哩-尚硅谷-自定义指令&lt;/a&gt;&lt;/p&gt;
@@ -299,7 +299,7 @@
 	&lt;span class=&#34;p&#34;&gt;},&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;15&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
 &lt;span class=&#34;p&#34;&gt;},&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;主要的函数都在这里&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://pics.jokeme.top/blogimas/image-20220108040257962.png&#34; alt=&#34;image-20220108040257962&#34;  /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://pics.jokeme.top/blogimas/image-20220108040257962.png&#34; alt=&#34;image-20220108040257962&#34;  /&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.bilibili.com/video/BV1Zy4y1K7SH?p=48&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;哔哩哔哩-尚硅谷-生命周期&lt;/a&gt;&lt;/p&gt;
 &lt;h3 id=&#34;components组件&#34;&gt;components(组件)&lt;/h3&gt;
@@ -610,7 +610,7 @@
 
 &lt;span class=&#34;p&#34;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;html&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;computed&lt;/strong&gt;里面有两个返回值可能比较搞心态，但是你只需要明白，第一个返回值是给&lt;strong&gt;filter&lt;/strong&gt;做判断的，第二个返回值是给&lt;strong&gt;userT&lt;/strong&gt;的就可以了，主要的原理和上面的一样，也是&lt;strong&gt;filter&lt;/strong&gt;和&lt;strong&gt;箭头函数&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://pics.jokeme.top/typora/image-20211231061310941.png&#34; alt=&#34;image&#34;  /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://pics.jokeme.top/typora/image-20211231061310941.png&#34; alt=&#34;image&#34;  /&gt;&lt;/p&gt;
 &lt;p&gt;咱们来欣赏一下成果吧！暗黑模式真好看，我真厉害😜!&lt;/p&gt;
 &lt;h3 id=&#34;排序案例&#34;&gt;排序案例&lt;/h3&gt;
 &lt;p&gt;接上面的案例继续,如果咱们有一个排序的要求并且是按照uuid或者是姓名来排序的呢?这活应该怎么整?&lt;/p&gt;
@@ -812,7 +812,7 @@
 &lt;p&gt;其实这个没有啥好说的，代码里面都是浅显易懂的东西！主要就是统计一共有几个待办事项，已完成几个。还有和父组件的参数传递&lt;/p&gt;
 &lt;hr&gt;
 &lt;p&gt;最后来看看一代目的成品吧&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://pics.jokeme.top/blogimas/image-20220127014027587.png&#34; alt=&#34;image-20220127014027587&#34;  /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://pics.jokeme.top/blogimas/image-20220127014027587.png&#34; alt=&#34;image-20220127014027587&#34;  /&gt;&lt;/p&gt;
 </description>
         </item>
         <item>
@@ -1502,7 +1502,7 @@ sudo systemctl &lt;span class=&#34;nb&#34;&gt;enable&lt;/span&gt; frps	&lt;span 
         <guid>https://jokeme.top/p/install_jellyfin/</guid>
         <description>&lt;img src="https://www4.bing.com/th?id=OHR.MagneticIsland_EN-CN4779142621_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post Jellyfin影音平台搭建" /&gt;&lt;p&gt;最近在用 &lt;strong&gt;&lt;a class=&#34;link&#34; href=&#34;https://apps.apple.com/cn/app/infuse-5/id1136220934&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;Infuse&lt;/a&gt;&lt;/strong&gt; 重温仙剑三的的时候发现它的&lt;strong&gt;新增文件来源&lt;/strong&gt;里面有一个 **『添加媒体服务器』**的选项,这是什么鬼？卧槽，世界上还有除了samba、ftp、nfs以外的文件共享服务吗？可能实在是我太孤陋寡闻了吧！一直只会用samba。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://pics.jokeme.top/blogimas/IMG_5139.png&#34; alt=&#34;IMG_5139&#34;  /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://pics.jokeme.top/blogimas/IMG_5139.png&#34; alt=&#34;IMG_5139&#34;  /&gt;&lt;/p&gt;
 &lt;p&gt;这个Plex Emby Jellyfin又是个啥？然后百度一番。哦哦原来是本地看视频的！等等！啥软件不能看视频呀！还要专门搭建一个服务来看视频？？？这不是脱裤子放屁吗！&lt;/p&gt;
 &lt;p&gt;好了回归正题！咱们想要了解一番，只能自己动手搭建一个试试看了，看了一下Plex和Emby都是收费的，或者免费版本有功能限制，我就动手搭建了Jellyfin，这个开源软件，功能多，不要钱😋！&lt;/p&gt;
 &lt;h2 id=&#34;1-准备工作&#34;&gt;1. 准备工作&lt;/h2&gt;
@@ -1524,13 +1524,13 @@ sudo systemctl &lt;span class=&#34;nb&#34;&gt;enable&lt;/span&gt; frps	&lt;span 
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;dpkg -i jellyfin* jellyfin-*
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;2-web页面配置&#34;&gt;2. web页面配置&lt;/h2&gt;
 &lt;p&gt;安装完成以后&lt;strong&gt;jellyfin&lt;/strong&gt;就会自动监听8096端口，毕竟是Emby的开源版本，这点没有变的。首次登陆会让你设置一堆的东西，这些无关紧要，随便设置一下就可以了，然后咱们就可以来欣赏一下登录页面了，非常的好看！还是暗黑主题的。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://pics.jokeme.top/blogimas/image-20210826235601949.png&#34; alt=&#34;image-20210826235601949&#34;  /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://pics.jokeme.top/blogimas/image-20210826235601949.png&#34; alt=&#34;image-20210826235601949&#34;  /&gt;&lt;/p&gt;
 &lt;p&gt;登录以后，如果你添加了媒体源，它会在后台刮削的，然后慢慢的给你的视频补齐海报、介绍、字幕啥的，当然国内的电视不一定有。&lt;/p&gt;
 &lt;p&gt;下面就一起来看看最终的成果吧&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://pics.jokeme.top/blogimas/image-20210827001856858.png&#34; alt=&#34;image-20210827001856858&#34;  /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://pics.jokeme.top/blogimas/image-20210827001856858.png&#34; alt=&#34;image-20210827001856858&#34;  /&gt;&lt;/p&gt;
 &lt;p&gt;看上去还挺有内味的哈，效果是相当的不错哦！还可以选择集数啥啥啥的。&lt;/p&gt;
 &lt;p&gt;然后功能丝毫不逊色于那些视频网站的播放器，可以选择播放质量，不过最高的质量取决于本地视频的最高质量，网络不好，播放卡顿可以向下降低视频质量来保证流畅的播放。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://pics.jokeme.top/blogimas/image-20210827002125993.png&#34; alt=&#34;image-20210827002125993&#34;  /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://pics.jokeme.top/blogimas/image-20210827002125993.png&#34; alt=&#34;image-20210827002125993&#34;  /&gt;&lt;/p&gt;
 &lt;h2 id=&#34;3-总结&#34;&gt;3. 总结&lt;/h2&gt;
 &lt;p&gt;其实搭建这个jellyfin服务也挺简单的，就安装几个deb格式的安装包，打开网页配置一下就可以，不得不感叹这个软件是真的强大，视频封面啥的根本不用愁。以前下载好了视频用samba看的时候，每一集的封面都一样，因为是抽取指定时间的画面，刚巧，这些画面就在片头里面抽的。还有 &lt;strong&gt;Infuse&lt;/strong&gt; 也老牛逼了，看视频贼流畅，加载视频很快！表扬一下它们两。&lt;/p&gt;
 </description>
