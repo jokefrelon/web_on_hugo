@@ -6,7 +6,47 @@
         <description>Recent content on JokemeBlog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Wed, 19 Jan 2022 15:58:02 +0800</lastBuildDate><atom:link href="https://jokeme.top/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sat, 26 Feb 2022 16:14:43 +0800</lastBuildDate><atom:link href="https://jokeme.top/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>IOS安装老版本app的方法</title>
+        <link>https://jokeme.top/p/ios_install_old_app/</link>
+        <pubDate>Sat, 26 Feb 2022 16:14:43 +0800</pubDate>
+        
+        <guid>https://jokeme.top/p/ios_install_old_app/</guid>
+        <description>&lt;img src="https://cn.bing.com/th?id=OHR.MTCradle_EN-CN9383528705_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post IOS安装老版本app的方法" /&gt;&lt;h1 id=&#34;ios安装老版本app方法&#34;&gt;IOS安装老版本app方法&lt;/h1&gt;
+&lt;p&gt;众所周知，从AppStore里面只能升级app，但是并不能降级app，这就导致有时候升级了app但是却带来了很多我们不喜欢的功能甚至广告，我们只能被迫接受。以前我甚至为了降级app特地越狱我的设备，但是这种方法的副作用也很大。&lt;/p&gt;
+&lt;p&gt;好了废话不多说，先下载好我分享的两个文件：&lt;code&gt;fiddler&lt;/code&gt; &lt;code&gt;iTunes&lt;/code&gt; 其中fiddler是绿色免安装版，中文汉化过了。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;不用我的这个iTunes也可以，只要保证版本低于12.7即可，苹果在12.7版本之后的iTunes软件中删除了app store功能。就导致我们不能下载ipa了&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;分享链接在这里：&lt;a class=&#34;link&#34; href=&#34;https://www.aliyundrive.com/s/dxDSQjo9une&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;oldipa&lt;/a&gt;	提取码: wk60&lt;/p&gt;
+&lt;p&gt;下载完了安装iTunes即可，然后登陆上你的&lt;strong&gt;apple id&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;然后打开fiddler文件夹里面的&lt;code&gt;fiddler.exe&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;【工具】 &amp;gt; 【选项】 &amp;gt; 【https】&lt;/strong&gt; 把那几个勾都打上&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://pics.jokeme.top/blogimas/image-20220226151010457.png&#34; alt=&#34;image-20220226151010457&#34;  /&gt;&lt;/p&gt;
+&lt;p&gt;如果到时候显示证书到期的话，你就可以【重置所有证书】&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://pics.jokeme.top/blogimas/image-20220226151342822.png&#34; alt=&#34;image-20220226151342822&#34;  /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://pics.jokeme.top/blogimas/image-20220226151620772.png&#34; alt=&#34;image-20220226151620772&#34;  /&gt;&lt;/p&gt;
+&lt;p&gt;然后一路&lt;strong&gt;Yes&lt;/strong&gt;同意就可以了&lt;/p&gt;
+&lt;p&gt;然后按&lt;strong&gt;F12&lt;/strong&gt;，左下角会显示&lt;strong&gt;捕获中&lt;/strong&gt;，这个时候，按下&lt;code&gt;ALT + Q&lt;/code&gt; 输入：&lt;code&gt;bpu MZBuy.woa/wa/buyProduct&lt;/code&gt;然后回车即可&lt;/p&gt;
+&lt;p&gt;然后回到iTunes搜索你想要的app，下载，这个时候fiddler就会拦截到一个 pxx-buy.itunes.apple.com的请求，就比如：&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;https://p30-buy.itunes.apple.com/&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;这个时候咱们就需要知道对应app的老版本的版本号啦&lt;/p&gt;
+&lt;p&gt;推荐这个网站：&lt;a class=&#34;link&#34; href=&#34;https://tools.lancely.tech/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;sunny&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;然后搜索app，找到对应的版本号，就比如我想要下载6版本，那我就会选择6.6.4后面的版本号。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://pics.jokeme.top/blogimas/image-20220226153614125.png&#34; alt=&#34;image-20220226153614125&#34;  /&gt;&lt;/p&gt;
+&lt;p&gt;然后复制版本号，回到fiddler，点击那个pxx-buy，右边就会出现下面的界面，然后咱们选择 &lt;strong&gt;【检查器】&amp;gt; 【textview】&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://pics.jokeme.top/blogimas/image-20220226154903543.png&#34; alt=&#34;image-20220226154903543&#34;  /&gt;&lt;/p&gt;
+&lt;p&gt;然后不出意外的话，你的iTunes就开始下载app了，这个时候你就可以回到fiddler按&lt;strong&gt;F12&lt;/strong&gt;关闭捕获，让它下载的更快。&lt;/p&gt;
+&lt;p&gt;下载完成以后你就可以在：&lt;code&gt;%homepath%\Music\iTunes\iTunes Media\Mobile Applications\ &lt;/code&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;不过有一点需要注意的是！你手机的AppStore登陆的账号要和刚刚下载ipa用的账号一样！&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;然后你就可以用爱思来安装这个ipa到手机里了&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>学习Vue.js笔记</title>
         <link>https://jokeme.top/p/learn_vuejs/</link>
         <pubDate>Wed, 19 Jan 2022 15:58:02 +0800</pubDate>
@@ -821,7 +861,7 @@
         <pubDate>Thu, 16 Dec 2021 17:28:59 +0800</pubDate>
         
         <guid>https://jokeme.top/p/configure_webdav/</guid>
-        <description>&lt;img src="https://www4.bing.com/th?id=OHR.HumpbackMom_EN-CN4611779179_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post webdav搭建" /&gt;&lt;h1 id=&#34;webdav搭建&#34;&gt;webdav搭建&lt;/h1&gt;
+        <description>&lt;img src="https://cn.bing.com/th?id=OHR.HumpbackMom_EN-CN4611779179_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post webdav搭建" /&gt;&lt;h1 id=&#34;webdav搭建&#34;&gt;webdav搭建&lt;/h1&gt;
 &lt;p&gt;最近闲来无事,想利用一下自己的公网IP做点别的有意思的事,因为之前搭建的网盘都统统没有用了,可能是用不来吧,还是在用的samba.&lt;/p&gt;
 &lt;p&gt;就突然想到了为什么不搭建一个webdav呢！&lt;/p&gt;
 &lt;p&gt;因为不打算用apache或者nginx来搭建，就去GitHub找了一下，还真的有一个不错的项目，使用Golang。那就开干吧。&lt;/p&gt;
@@ -923,7 +963,7 @@ sudo systemctl &lt;span class=&#34;nb&#34;&gt;enable&lt;/span&gt; webdav
         <pubDate>Fri, 05 Nov 2021 23:31:27 +0800</pubDate>
         
         <guid>https://jokeme.top/p/kmp/</guid>
-        <description>&lt;img src="https://www4.bing.com/th?id=OHR.LoftedMadagascar_EN-CN4501988190_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post kmp算法Java版" /&gt;&lt;h1 id=&#34;kmp查找算法&#34;&gt;KMP查找算法&lt;/h1&gt;
+        <description>&lt;img src="https://cn.bing.com/th?id=OHR.LoftedMadagascar_EN-CN4501988190_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post kmp算法Java版" /&gt;&lt;h1 id=&#34;kmp查找算法&#34;&gt;KMP查找算法&lt;/h1&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;java.util.Arrays&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;;&lt;/span&gt;
 
 &lt;span class=&#34;kd&#34;&gt;public&lt;/span&gt; &lt;span class=&#34;kd&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;nc&#34;&gt;getstr&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;
@@ -980,7 +1020,7 @@ sudo systemctl &lt;span class=&#34;nb&#34;&gt;enable&lt;/span&gt; webdav
         <pubDate>Tue, 19 Oct 2021 23:43:58 +0800</pubDate>
         
         <guid>https://jokeme.top/p/hadoop_install/</guid>
-        <description>&lt;img src="https://www4.bing.com/th?id=OHR.JouxFog_EN-CN2462005370_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post 基于CentOS 7安装 Hadoop" /&gt;&lt;p&gt;今天晚上就突然想搭建一个Hadoop的伪分布式玩一玩,说干就干&lt;/p&gt;
+        <description>&lt;img src="https://cn.bing.com/th?id=OHR.JouxFog_EN-CN2462005370_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post 基于CentOS 7安装 Hadoop" /&gt;&lt;p&gt;今天晚上就突然想搭建一个Hadoop的伪分布式玩一玩,说干就干&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;准备:CentOS 7 系统 Hadoop 2.7.7 安装包 Java SE 1.8 安装包&lt;/code&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://mirrors.tuna.tsinghua.edu.cn/apache/hadoop/common/hadoop-2.7.7/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
@@ -1272,7 +1312,7 @@ ls命令的递归版本。类似于Unix中的ls -R。&lt;/p&gt;
         <pubDate>Fri, 10 Sep 2021 20:35:28 +0800</pubDate>
         
         <guid>https://jokeme.top/p/bs/</guid>
-        <description>&lt;img src="https://www4.bing.com/th?id=OHR.HallesWood_EN-CN6355536404_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post B/S分层简介" /&gt;&lt;h1 id=&#34;bs分层&#34;&gt;B/S分层&lt;/h1&gt;
+        <description>&lt;img src="https://cn.bing.com/th?id=OHR.HallesWood_EN-CN6355536404_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post B/S分层简介" /&gt;&lt;h1 id=&#34;bs分层&#34;&gt;B/S分层&lt;/h1&gt;
 &lt;h2 id=&#34;入门&#34;&gt;①入门&lt;/h2&gt;
 &lt;h3 id=&#34;dto层&#34;&gt;dto层&lt;/h3&gt;
 &lt;p&gt;大概就是 &lt;strong&gt;MVC&lt;/strong&gt; 中的 &lt;strong&gt;model&lt;/strong&gt; 层,主要是用来写与 数据库相对应的实体类的,并且需要有 &lt;strong&gt;get/set&lt;/strong&gt; 方法&lt;/p&gt;
@@ -1433,7 +1473,7 @@ ls命令的递归版本。类似于Unix中的ls -R。&lt;/p&gt;
         <pubDate>Thu, 09 Sep 2021 01:58:49 +0800</pubDate>
         
         <guid>https://jokeme.top/p/review_frp_set_up/</guid>
-        <description>&lt;img src="https://www4.bing.com/th?id=OHR.ParnidisSundial_EN-CN6070614674_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post 回首frp搭建" /&gt;&lt;p&gt;最近办电信宽带，无意中发现电信给的是公网IP地址，这家伙可给我高兴坏了。在路由器上DDNS解析了一下IP地址到我的域名上，然后就开始捯饬了。&lt;/p&gt;
+        <description>&lt;img src="https://cn.bing.com/th?id=OHR.ParnidisSundial_EN-CN6070614674_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post 回首frp搭建" /&gt;&lt;p&gt;最近办电信宽带，无意中发现电信给的是公网IP地址，这家伙可给我高兴坏了。在路由器上DDNS解析了一下IP地址到我的域名上，然后就开始捯饬了。&lt;/p&gt;
 &lt;h2 id=&#34;1-搭建服务端frps&#34;&gt;1. 搭建服务端（frps）&lt;/h2&gt;
 &lt;p&gt;先说一下我的实验环境哈&lt;/p&gt;
 &lt;ul&gt;
@@ -1500,7 +1540,7 @@ sudo systemctl &lt;span class=&#34;nb&#34;&gt;enable&lt;/span&gt; frps	&lt;span 
         <pubDate>Fri, 27 Aug 2021 00:37:42 +0800</pubDate>
         
         <guid>https://jokeme.top/p/install_jellyfin/</guid>
-        <description>&lt;img src="https://www4.bing.com/th?id=OHR.MagneticIsland_EN-CN4779142621_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post Jellyfin影音平台搭建" /&gt;&lt;p&gt;最近在用 &lt;strong&gt;&lt;a class=&#34;link&#34; href=&#34;https://apps.apple.com/cn/app/infuse-5/id1136220934&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+        <description>&lt;img src="https://cn.bing.com/th?id=OHR.MagneticIsland_EN-CN4779142621_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post Jellyfin影音平台搭建" /&gt;&lt;p&gt;最近在用 &lt;strong&gt;&lt;a class=&#34;link&#34; href=&#34;https://apps.apple.com/cn/app/infuse-5/id1136220934&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;Infuse&lt;/a&gt;&lt;/strong&gt; 重温仙剑三的的时候发现它的&lt;strong&gt;新增文件来源&lt;/strong&gt;里面有一个 **『添加媒体服务器』**的选项,这是什么鬼？卧槽，世界上还有除了samba、ftp、nfs以外的文件共享服务吗？可能实在是我太孤陋寡闻了吧！一直只会用samba。&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;http://pics.jokeme.top/blogimas/IMG_5139.png&#34; alt=&#34;IMG_5139&#34;  /&gt;&lt;/p&gt;
 &lt;p&gt;这个Plex Emby Jellyfin又是个啥？然后百度一番。哦哦原来是本地看视频的！等等！啥软件不能看视频呀！还要专门搭建一个服务来看视频？？？这不是脱裤子放屁吗！&lt;/p&gt;
@@ -1541,7 +1581,7 @@ sudo systemctl &lt;span class=&#34;nb&#34;&gt;enable&lt;/span&gt; frps	&lt;span 
         <pubDate>Thu, 19 Aug 2021 00:08:17 +0000</pubDate>
         
         <guid>https://jokeme.top/p/picgo_with_typora/</guid>
-        <description>&lt;img src="https://www4.bing.com/th?id=OHR.MtEtna_EN-CN8869032750_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post 在Typora里使用PicGo-Core自动上传图片" /&gt;&lt;p&gt;以前写博客呢基本上都没有配过图片，因为没有找到适合的图床和顺手的工具，免费的图床要不然就是广告，要不然就是不能使用。但是现在不一样了，我不傻了，我变机灵了！我学会白嫖七牛云的&lt;a class=&#34;link&#34; href=&#34;https://www.qiniu.com/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+        <description>&lt;img src="https://cn.bing.com/th?id=OHR.MtEtna_EN-CN8869032750_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post 在Typora里使用PicGo-Core自动上传图片" /&gt;&lt;p&gt;以前写博客呢基本上都没有配过图片，因为没有找到适合的图床和顺手的工具，免费的图床要不然就是广告，要不然就是不能使用。但是现在不一样了，我不傻了，我变机灵了！我学会白嫖七牛云的&lt;a class=&#34;link&#34; href=&#34;https://www.qiniu.com/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;Kodo&lt;/a&gt;了。&lt;/p&gt;
 &lt;p&gt;好的首先进入正题，咱们今天的主角是 &lt;a class=&#34;link&#34; href=&#34;https://github.com/PicGo/PicGo-Core&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;PicGo-Core&lt;/a&gt; 你也可以用app，但是我不太喜欢。首先选择 &lt;strong&gt;PicGo-Core&lt;/strong&gt; 下载二进制包，如果你之前用过的话，直接点击下面的 &lt;strong&gt;打开配置文件&lt;/strong&gt;&lt;/p&gt;
@@ -1563,7 +1603,7 @@ sudo systemctl &lt;span class=&#34;nb&#34;&gt;enable&lt;/span&gt; frps	&lt;span 
         <pubDate>Mon, 09 Aug 2021 18:33:21 +0000</pubDate>
         
         <guid>https://jokeme.top/p/ariang_webui/</guid>
-        <description>&lt;img src="https://www4.bing.com/th?id=OHR.Inisheer_EN-CN8412531756_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post Aria2下载器配置WebUI界面" /&gt;&lt;h1 id=&#34;aria2下载器配置webui界面&#34;&gt;Aria2下载器配置WebUI界面&lt;/h1&gt;
+        <description>&lt;img src="https://cn.bing.com/th?id=OHR.Inisheer_EN-CN8412531756_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post Aria2下载器配置WebUI界面" /&gt;&lt;h1 id=&#34;aria2下载器配置webui界面&#34;&gt;Aria2下载器配置WebUI界面&lt;/h1&gt;
 &lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;http://aria2.github.io/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;aria2&lt;/a&gt;是一款非常非常Nice的下载器，之前我也介绍过 &lt;a class=&#34;link&#34; href=&#34;https://jokeme.top/p/linux_reward/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;记录最近捯饬Linux的收获&lt;/a&gt;，上一次大概介绍了一下命令行里面的操作，这一次咱们来说说WebUI上的操作。&lt;/p&gt;
@@ -1647,7 +1687,7 @@ aria2
         <pubDate>Mon, 09 Aug 2021 13:12:19 +0800</pubDate>
         
         <guid>https://jokeme.top/p/aria2_conf/</guid>
-        <description>&lt;img src="https://www4.bing.com/th?id=OHR.BifengxiaPanda_EN-CN7747319780_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post Aria2 神器的进阶用法" /&gt;&lt;h1 id=&#34;aria2-配置&#34;&gt;aria2 配置&lt;/h1&gt;
+        <description>&lt;img src="https://cn.bing.com/th?id=OHR.BifengxiaPanda_EN-CN7747319780_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post Aria2 神器的进阶用法" /&gt;&lt;h1 id=&#34;aria2-配置&#34;&gt;aria2 配置&lt;/h1&gt;
 &lt;p&gt;众所周知哈 &lt;strong&gt;aria2&lt;/strong&gt; 是一款非常强大的下载工具呐，但是我之前一直都只会他的最最最简单的用法一直不会那种进阶玩法，所以我就去官网找了找 &lt;strong&gt;aria2&lt;/strong&gt; 的参数具体怎么用，还有 &lt;strong&gt;RPC&lt;/strong&gt; 用法&lt;/p&gt;
 &lt;h2 id=&#34;基本参数&#34;&gt;基本参数&lt;/h2&gt;
 &lt;pre&gt;&lt;code&gt;-d,--dir = 存储下载文件的目录。
@@ -2599,7 +2639,7 @@ $ aria2c --http-proxy=&amp;quot;http://proxy:8080&amp;quot; --http-proxy-user=&a
         <pubDate>Mon, 19 Jul 2021 22:07:17 +0000</pubDate>
         
         <guid>https://jokeme.top/p/kill_windows_eng/</guid>
-        <description>&lt;img src="https://www4.bing.com/th?id=OHR.MassapequaOwl_EN-CN6825529741_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post Windows 10 输入法多了ENG解决方案" /&gt;&lt;h1 id=&#34;windows-10-输入法多了eng解决方案&#34;&gt;Windows 10 输入法多了ENG解决方案&lt;/h1&gt;
+        <description>&lt;img src="https://cn.bing.com/th?id=OHR.MassapequaOwl_EN-CN6825529741_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post Windows 10 输入法多了ENG解决方案" /&gt;&lt;h1 id=&#34;windows-10-输入法多了eng解决方案&#34;&gt;Windows 10 输入法多了ENG解决方案&lt;/h1&gt;
 &lt;p&gt;​		最近突然发现了一个算是 &lt;strong&gt;Windows10&lt;/strong&gt; 的Bug，就是在远程桌面的时候会莫名其妙的多了一个ENG输入法，让原本用着 &lt;em&gt;巨硬输入法&lt;/em&gt; 的我们不太适应，而且在断开远程连接后，这个ENG会一直留在电脑上，就非常蛋疼。下面就跟着我来操作操作吧！&lt;/p&gt;
 &lt;p&gt;​		首先出了问题，你肯定会在设置里面找输入法啥啥啥设置，但是呢，你很快就会发现，啥也找不到，原来的微软输入法也没有问题，并且也没有多出来的输入法，这就奇了他妈的怪了。我明明啥都是没有问题的，这个多出来的ENG输入法哪里来的呢？&lt;/p&gt;
 &lt;p&gt;​		一开始我也很疑惑，然后百度了大半天，都是广告，不忍直视。这里再来骂一遍百度垃圾。然后只能自己摸索呀！我看了这个ENG输入法属于 &lt;code&gt;Englisg(美国)&lt;/code&gt; ，我直接好家伙，我输入法明明是 &lt;code&gt;中文(简体，中国)&lt;/code&gt; ，这个多出来的ENG输入法居然是一个我没有安装过的语言带来的，这就离谱呀。&lt;/p&gt;
@@ -2612,7 +2652,7 @@ $ aria2c --http-proxy=&amp;quot;http://proxy:8080&amp;quot; --http-proxy-user=&a
         <pubDate>Thu, 17 Jun 2021 22:49:29 +0000</pubDate>
         
         <guid>https://jokeme.top/p/bark_jd_price/</guid>
-        <description>&lt;img src="https://www4.bing.com/th?id=OHR.LyonAstronomical_EN-CN6225991486_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post 监控狗东商品价格并利用bark推送价格到手机上" /&gt;&lt;h1 id=&#34;监控狗东商品价格并利用bark推送价格到手机上&#34;&gt;监控狗东商品价格并利用bark推送价格到手机上&lt;/h1&gt;
+        <description>&lt;img src="https://cn.bing.com/th?id=OHR.LyonAstronomical_EN-CN6225991486_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post 监控狗东商品价格并利用bark推送价格到手机上" /&gt;&lt;h1 id=&#34;监控狗东商品价格并利用bark推送价格到手机上&#34;&gt;监控狗东商品价格并利用bark推送价格到手机上&lt;/h1&gt;
 &lt;p&gt;众所周知啊，狗东上面商品的价格经常在变动，有时候你在最贵的时候买下来了，那你就是冤大头了。除非你急着用。&lt;/p&gt;
 &lt;p&gt;先来说一下我的思路吧！&lt;/p&gt;
 &lt;p&gt;我一开始是想着在我的服务器上监控商品价格，然后每十分钟对比一下价格，再利用邮件来推送给我自己。这个想法是挺好的，奈何我利用&lt;strong&gt;postfix&lt;/strong&gt;来&lt;strong&gt;relay&lt;/strong&gt;邮件时我的outlook账号死活登陆不了，换qq邮箱，发邮件吧，妈的直接吞邮件。&lt;/p&gt;
@@ -2651,7 +2691,7 @@ $ aria2c --http-proxy=&amp;quot;http://proxy:8080&amp;quot; --http-proxy-user=&a
         <pubDate>Tue, 08 Jun 2021 23:12:18 +0000</pubDate>
         
         <guid>https://jokeme.top/p/backup_hugo_posts/</guid>
-        <description>&lt;img src="https://www4.bing.com/th?id=OHR.AztecNewYear_EN-CN5467528764_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post 定时备份hugo帖子" /&gt;&lt;h1 id=&#34;定时备份hugo帖子&#34;&gt;定时备份hugo帖子&lt;/h1&gt;
+        <description>&lt;img src="https://cn.bing.com/th?id=OHR.AztecNewYear_EN-CN5467528764_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post 定时备份hugo帖子" /&gt;&lt;h1 id=&#34;定时备份hugo帖子&#34;&gt;定时备份hugo帖子&lt;/h1&gt;
 &lt;p&gt;今天出差,在高铁上实在是太无聊,信号也不怎么好,我就写了个每天晚上备份&lt;strong&gt;Hugo&lt;/strong&gt;文章的脚本&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;cp&#34;&gt;#!/bin/bash
 &lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;datee&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;sb&#34;&gt;`&lt;/span&gt;date +%Y-%m-%d&lt;span class=&#34;sb&#34;&gt;`&lt;/span&gt;
@@ -2674,7 +2714,7 @@ $ aria2c --http-proxy=&amp;quot;http://proxy:8080&amp;quot; --http-proxy-user=&a
         <pubDate>Thu, 03 Jun 2021 17:27:33 +0000</pubDate>
         
         <guid>https://jokeme.top/p/spring_ioc_di/</guid>
-        <description>&lt;img src="https://www4.bing.com/th?id=OHR.CapePerpetua_EN-CN1657098545_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post Spring IOC DI 学习" /&gt;&lt;h1 id=&#34;spring-ioc-di-学习&#34;&gt;Spring IOC DI 学习&lt;/h1&gt;
+        <description>&lt;img src="https://cn.bing.com/th?id=OHR.CapePerpetua_EN-CN1657098545_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post Spring IOC DI 学习" /&gt;&lt;h1 id=&#34;spring-ioc-di-学习&#34;&gt;Spring IOC DI 学习&lt;/h1&gt;
 &lt;p&gt;最近在海底捞上班搞运维，但是我也没有放下我的&lt;strong&gt;Java&lt;/strong&gt;开发学习，今天下班早点，我就又开始学习&lt;strong&gt;Springboot&lt;/strong&gt;啦&lt;/p&gt;
 &lt;p&gt;因为去年写的wh项目太拉胯啦，有好多东西都是一知半解，只是知道某一个方法应该怎么用，但是为什么要这么使用，其中的道理我还是不太明白，虽然之前我也是写过两篇&lt;strong&gt;Springboot&lt;/strong&gt;开发中的知识，但是现在显而易见，我已经把他们给忘记啦。所以现在再拉出来鞭尸一遍巩固学习的知识。&lt;/p&gt;
 &lt;h2 id=&#34;1-ioc简介&#34;&gt;1. IOC简介&lt;/h2&gt;
@@ -2789,7 +2829,7 @@ $ aria2c --http-proxy=&amp;quot;http://proxy:8080&amp;quot; --http-proxy-user=&a
         <pubDate>Tue, 01 Jun 2021 20:32:07 +0000</pubDate>
         
         <guid>https://jokeme.top/p/hackintosh_laptop_hotkey/</guid>
-        <description>&lt;img src="https://www4.bing.com/th?id=OHR.HinterseeRamsau_EN-CN5297881270_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post Hackintosh Laptop 常见快捷键" /&gt;&lt;h1 id=&#34;hackintosh-laptop-常见快捷键&#34;&gt;Hackintosh Laptop 常见快捷键&lt;/h1&gt;
+        <description>&lt;img src="https://cn.bing.com/th?id=OHR.HinterseeRamsau_EN-CN5297881270_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post Hackintosh Laptop 常见快捷键" /&gt;&lt;h1 id=&#34;hackintosh-laptop-常见快捷键&#34;&gt;Hackintosh Laptop 常见快捷键&lt;/h1&gt;
 &lt;p&gt;一般来说可以&lt;strong&gt;macOS&lt;/strong&gt;和&lt;strong&gt;Windows&lt;/strong&gt;对应键位参考下面的对照表即可&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
@@ -2885,7 +2925,7 @@ $ aria2c --http-proxy=&amp;quot;http://proxy:8080&amp;quot; --http-proxy-user=&a
         <pubDate>Sun, 23 May 2021 02:33:06 +0000</pubDate>
         
         <guid>https://jokeme.top/p/funny_space_in_shell_script/</guid>
-        <description>&lt;img src="https://www4.bing.com/th?id=OHR.RollingHills_EN-CN1321221405_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post 一个有意思的shell变量问题" /&gt;&lt;h1 id=&#34;一个有意思的shell变量问题&#34;&gt;一个有意思的shell变量问题&lt;/h1&gt;
+        <description>&lt;img src="https://cn.bing.com/th?id=OHR.RollingHills_EN-CN1321221405_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post 一个有意思的shell变量问题" /&gt;&lt;h1 id=&#34;一个有意思的shell变量问题&#34;&gt;一个有意思的shell变量问题&lt;/h1&gt;
 &lt;p&gt;今天在上班时遇到了一个批量解压zip的需求，由于几十个压缩包的名称一样，chrome下载下来以后就自动给加了编号。并且解压后的文件名也是一样的，只不过里面的文件不一样。&lt;/p&gt;
 &lt;p&gt;虽然在Windows下有批量解压缩工具，但是我没有安装。我电脑上只有&lt;a class=&#34;link&#34; href=&#34;https://sparanoid.com/lab/7z/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;7zip&lt;/a&gt;。既然是批量处理文件，那我就想到了用shell来做这件事。&lt;/p&gt;
@@ -2915,7 +2955,7 @@ $ aria2c --http-proxy=&amp;quot;http://proxy:8080&amp;quot; --http-proxy-user=&a
         <pubDate>Tue, 18 May 2021 11:26:19 +0000</pubDate>
         
         <guid>https://jokeme.top/p/clang_note2/</guid>
-        <description>&lt;img src="https://www4.bing.com/th?id=OHR.LoganClouds_EN-CN1283366423_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post Clang学习笔记" /&gt;&lt;h1 id=&#34;clanglearn&#34;&gt;ClangLearn&lt;/h1&gt;
+        <description>&lt;img src="https://cn.bing.com/th?id=OHR.LoganClouds_EN-CN1283366423_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post Clang学习笔记" /&gt;&lt;h1 id=&#34;clanglearn&#34;&gt;ClangLearn&lt;/h1&gt;
 &lt;h2 id=&#34;clang-定义符号常量&#34;&gt;Clang 定义符号常量&lt;/h2&gt;
 &lt;p&gt;在宏中定义符号常量非常简单,格式如下&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c&#34; data-lang=&#34;c&#34;&gt;&lt;span class=&#34;cp&#34;&gt;#define KEYWORD &amp;#34;String&amp;#34;
@@ -4057,7 +4097,7 @@ A[结构体\\指针部分]--&amp;gt;B[结构体\\指针部分]--&amp;gt;C[...]--
         <pubDate>Sun, 16 May 2021 23:47:03 +0000</pubDate>
         
         <guid>https://jokeme.top/p/solo_2_hugo/</guid>
-        <description>&lt;img src="https://www4.bing.com/th?id=OHR.Wakodahatchee_EN-CN9780170147_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post 从solo迁移到hugo" /&gt;&lt;h1 id=&#34;博客迁移&#34;&gt;博客迁移&lt;/h1&gt;
+        <description>&lt;img src="https://cn.bing.com/th?id=OHR.Wakodahatchee_EN-CN9780170147_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post 从solo迁移到hugo" /&gt;&lt;h1 id=&#34;博客迁移&#34;&gt;博客迁移&lt;/h1&gt;
 &lt;p&gt;最近我把我的个人博客从&lt;a class=&#34;link&#34; href=&#34;https://github.com/88250/solo&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;solo&lt;/a&gt;迁移到了&lt;a class=&#34;link&#34; href=&#34;https://github.com/gohugoio/hugo&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;hugo&lt;/a&gt;项目上了。&lt;/p&gt;
@@ -4253,7 +4293,7 @@ rm v2.3.0.zip
         <pubDate>Tue, 13 Apr 2021 04:59:44 +0000</pubDate>
         
         <guid>https://jokeme.top/p/dockerfile/</guid>
-        <description>&lt;img src="https://www4.bing.com/th?id=OHR.PadarIsland_EN-CN9304851314_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post Dockerfile编写" /&gt;&lt;p&gt;今天也是摸鱼的一天没怎么看书,一直在玩Linux。并且在无意间看到了我之前下载的 &lt;a class=&#34;link&#34; href=&#34;https://github.com/DirectoryLister/DirectoryLister&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+        <description>&lt;img src="https://cn.bing.com/th?id=OHR.PadarIsland_EN-CN9304851314_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post Dockerfile编写" /&gt;&lt;p&gt;今天也是摸鱼的一天没怎么看书,一直在玩Linux。并且在无意间看到了我之前下载的 &lt;a class=&#34;link&#34; href=&#34;https://github.com/DirectoryLister/DirectoryLister&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;DirectoryLister&lt;/a&gt;，就想着在Docker里面部署玩一下。&lt;/p&gt;
 &lt;p&gt;一开始我是没有想写Dockerfile的，直接在开了一个Ubuntu容器整的，但是想了想，以后想用肯定不方便，这个容器我随时随地都有可以废了它。所以就从网上看了看Dockerfile怎么写，开整！&lt;/p&gt;
 &lt;p&gt;首先我并不想介绍Dockerfile怎么样去写，网上的教程一大把，自己看就可以了 我是参考&lt;a class=&#34;link&#34; href=&#34;https://www.runoob.com/docker/docker-dockerfile.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
@@ -4296,7 +4336,7 @@ Successfully tagged flt:v1.0
         <pubDate>Tue, 23 Mar 2021 21:33:56 +0000</pubDate>
         
         <guid>https://jokeme.top/p/nginx_beautify/</guid>
-        <description>&lt;img src="https://www4.bing.com/th?id=OHR.WWDLions_EN-CN5288663061_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post Nginx目录美化" /&gt;&lt;h1 id=&#34;nginx目录美化&#34;&gt;Nginx目录美化&lt;/h1&gt;
+        <description>&lt;img src="https://cn.bing.com/th?id=OHR.WWDLions_EN-CN5288663061_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post Nginx目录美化" /&gt;&lt;h1 id=&#34;nginx目录美化&#34;&gt;Nginx目录美化&lt;/h1&gt;
 &lt;p&gt;我们大家都知道啊! nginx是一个高性能的Web服务器,用于分享文件也是一个非常不错的选择,但是由于Nginx默认的目录太丑了, 都不好意思拿出手。这就有了本篇文章。&lt;/p&gt;
 &lt;p&gt;先来说一下我的环境: &lt;code&gt;Ubuntu 20.04.1&lt;/code&gt; ，&lt;code&gt;Nginx 1.18&lt;/code&gt;&lt;/p&gt;
 &lt;h2 id=&#34;1-添加indexhtml至主机根目录&#34;&gt;1. 添加Index.html至主机根目录&lt;/h2&gt;
@@ -4637,7 +4677,7 @@ table.table-hover &amp;gt; tbody &amp;gt; tr:hover &amp;gt; th {
         <pubDate>Tue, 23 Mar 2021 14:21:09 +0000</pubDate>
         
         <guid>https://jokeme.top/p/ffmpeg_user_agent/</guid>
-        <description>&lt;img src="https://www4.bing.com/th?id=OHR.Comma_EN-CN6081365526_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post ffmpeg设置请求头" /&gt;&lt;p&gt;ffmpeg是一款非常强大的工具,它可以在命令行下对视频类文件进行多种操作,之前我也介绍过ffmpeg,&lt;a class=&#34;link&#34; href=&#34;https://jokeme.top/articles/2020/04/15/1586944809634.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+        <description>&lt;img src="https://cn.bing.com/th?id=OHR.Comma_EN-CN6081365526_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post ffmpeg设置请求头" /&gt;&lt;p&gt;ffmpeg是一款非常强大的工具,它可以在命令行下对视频类文件进行多种操作,之前我也介绍过ffmpeg,&lt;a class=&#34;link&#34; href=&#34;https://jokeme.top/articles/2020/04/15/1586944809634.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;戳这里&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;在使用过程中我们经常可以遇到使用ffmpeg无法下载文件的情况,那这是为什么呢？&lt;/p&gt;
 &lt;p&gt;其实有时候,服务端会对我们客户端的请求进行检验,其中最简单的就是检查请求头：&lt;strong&gt;User-Agent&lt;/strong&gt; ，如果你连请求头都没,那你肯定就暴露了你不是正常的用户，你既然不是正常的用户，那那服务器那边就会拒绝你的访问请求，所以就导致了你被403。&lt;/p&gt;
@@ -4654,7 +4694,7 @@ table.table-hover &amp;gt; tbody &amp;gt; tr:hover &amp;gt; th {
         <pubDate>Sun, 21 Mar 2021 01:25:43 +0000</pubDate>
         
         <guid>https://jokeme.top/p/linux_reward/</guid>
-        <description>&lt;img src="https://www4.bing.com/th?id=OHR.BlueTitDaffs_EN-CN2615365443_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post 记录最近捯饬Linux的收获" /&gt;&lt;h1 id=&#34;记录最近捯饬linux的收获&#34;&gt;记录最近捯饬Linux的收获&lt;/h1&gt;
+        <description>&lt;img src="https://cn.bing.com/th?id=OHR.BlueTitDaffs_EN-CN2615365443_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post 记录最近捯饬Linux的收获" /&gt;&lt;h1 id=&#34;记录最近捯饬linux的收获&#34;&gt;记录最近捯饬Linux的收获&lt;/h1&gt;
 &lt;p&gt;虽然最近在准备专升本考试吧，但是也没有认真的复习，最近还是天天玩Linux，在这里记录一下。&lt;/p&gt;
 &lt;h2 id=&#34;1-windows-terminal设置&#34;&gt;1. Windows Terminal设置&lt;/h2&gt;
 &lt;p&gt;如果你关注IT圈的话，你一定知道微软在&lt;strong&gt;Github&lt;/strong&gt;开源了新的&lt;strong&gt;Terminal&lt;/strong&gt;，并且这是一个颜值高,用着爽的全新版本,支持&lt;strong&gt;Unicode&lt;/strong&gt;。这些都是后话，我要说的是&lt;strong&gt;WSL&lt;/strong&gt;和&lt;strong&gt;Terminal&lt;/strong&gt;相关的设置。因为&lt;strong&gt;Terminal&lt;/strong&gt;打开&lt;strong&gt;WSL&lt;/strong&gt;默认的路径是该用户的在&lt;strong&gt;Windows&lt;/strong&gt;下的家目录，而此时你就需要修改&lt;code&gt;setting.json&lt;/code&gt;对应位置添加以下配置：&lt;code&gt;&amp;quot;startingDirectory&amp;quot;: &amp;quot;//wsl$/Ubuntu-18.04/home/frelon&amp;quot;&lt;/code&gt;&lt;/p&gt;
@@ -4698,7 +4738,7 @@ table.table-hover &amp;gt; tbody &amp;gt; tr:hover &amp;gt; th {
         <pubDate>Mon, 01 Mar 2021 22:37:16 +0000</pubDate>
         
         <guid>https://jokeme.top/p/linux_vsftpd/</guid>
-        <description>&lt;img src="https://www4.bing.com/th?id=OHR.VolcanoLlaima_EN-CN5183277848_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post Ubuntu 20.04.2 配置 vsftpd 的脑坑" /&gt;&lt;h1 id=&#34;ubuntu-20042-配置-vsftpd-的脑坑&#34;&gt;Ubuntu 20.04.2 配置 vsftpd 的脑坑&lt;/h1&gt;
+        <description>&lt;img src="https://cn.bing.com/th?id=OHR.VolcanoLlaima_EN-CN5183277848_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post Ubuntu 20.04.2 配置 vsftpd 的脑坑" /&gt;&lt;h1 id=&#34;ubuntu-20042-配置-vsftpd-的脑坑&#34;&gt;Ubuntu 20.04.2 配置 vsftpd 的脑坑&lt;/h1&gt;
 &lt;p&gt;今天是 2020-03-01 02:13:13，刚结束了我在我哥饭店帮忙的欢乐时光，刚下班回来的我就准备掏出我的大宝贝好好的爽一爽，毕竟大半个月都没有咋用我的电脑了。因为之前刚换的&lt;strong&gt;Ubuntu20&lt;/strong&gt;还有好多东西没有配置好，我就想着今天晚上把 ftp 整一下，然后就遇到了我特别尴尬的一幕，记录一下。&lt;/p&gt;
 &lt;h2 id=&#34;安装-vsftpd&#34;&gt;安装 VsFtpd&lt;/h2&gt;
 &lt;pre&gt;&lt;code&gt;sudo apt install vsftpd
@@ -4739,7 +4779,7 @@ sudo nano /etc/vsftpd.conf
         <pubDate>Mon, 22 Feb 2021 19:34:20 +0000</pubDate>
         
         <guid>https://jokeme.top/p/macos_brew_installed_app_auto_start_at_boot/</guid>
-        <description>&lt;img src="https://www4.bing.com/th?id=OHR.TurfHouse_EN-CN2756398853_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post macOS设置brew安装的软件自启动" /&gt;&lt;h2 id=&#34;1-home-brew-简介&#34;&gt;1. Home-brew 简介&lt;/h2&gt;
+        <description>&lt;img src="https://cn.bing.com/th?id=OHR.TurfHouse_EN-CN2756398853_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post macOS设置brew安装的软件自启动" /&gt;&lt;h2 id=&#34;1-home-brew-简介&#34;&gt;1. Home-brew 简介&lt;/h2&gt;
 &lt;p&gt;先介绍一下本篇文章的主角：&lt;strong&gt;&lt;a class=&#34;link&#34; href=&#34;https://brew.sh/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;Home-brew&lt;/a&gt;&lt;/strong&gt;，它是一款&lt;strong&gt;macOS&lt;/strong&gt;的软件包管理器，当然也同样适用于&lt;strong&gt;Linux&lt;/strong&gt;（不会真的有人 Linux 服务器用 brew 吧？）。&lt;/p&gt;
 &lt;p&gt;它的官网上有关于 brew 非常详细的文档，大家可以自己去看看。介绍了以后就到了我们的安装环节了！&lt;/p&gt;
@@ -4858,7 +4898,7 @@ drwxr-xr-x  &lt;span class=&#34;m&#34;&gt;4&lt;/span&gt; frelon  staff   128B &l
         <pubDate>Thu, 28 Jan 2021 21:33:56 +0000</pubDate>
         
         <guid>https://jokeme.top/p/phicomm_n1_openwrt/</guid>
-        <description>&lt;img src="https://www4.bing.com/th?id=OHR.TwinsDenning_EN-CN2137499137_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post Phicomm N1 刷 OpenWrt 做旁路由" /&gt;&lt;p&gt;众所周知啊！N1 这个产品呢比较的全能，可以刷&lt;strong&gt;armbian&lt;/strong&gt;、&lt;strong&gt;Openwrt&lt;/strong&gt;、&lt;strong&gt;Android 电视盒子&lt;/strong&gt;甚至&lt;strong&gt;windows&lt;/strong&gt;也都不在话下。&lt;/p&gt;
+        <description>&lt;img src="https://cn.bing.com/th?id=OHR.TwinsDenning_EN-CN2137499137_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post Phicomm N1 刷 OpenWrt 做旁路由" /&gt;&lt;p&gt;众所周知啊！N1 这个产品呢比较的全能，可以刷&lt;strong&gt;armbian&lt;/strong&gt;、&lt;strong&gt;Openwrt&lt;/strong&gt;、&lt;strong&gt;Android 电视盒子&lt;/strong&gt;甚至&lt;strong&gt;windows&lt;/strong&gt;也都不在话下。&lt;/p&gt;
 &lt;p&gt;在去年也是以低价入手了一个盒子，但是一直就没有机会捯饬，因为我个人还有一个 x86 架构的低功耗小主机用于个人服务器使用，并且也是在 Docker 里面部署了一个 Openwrt 做旁路由来方便自己上墙，其实我个人是比较喜欢这种旁路由的方式的。因为连上局域网以后必须要手动指定网关才可以上墙，直接 DHCP 分配的用户没有任何影响，这样就不会对没有需求的用户产生影响。&lt;/p&gt;
 &lt;p&gt;这里说一下我的设备，我的 N1 买回来就是刷好的电视盒子系统，所以就没有降级的步骤了，但是降级工具包都包含在了 N1 工具包里面了可以自行百度如何降级，其实都非常简单，输入一个 IP 地址回车就可以了。&lt;/p&gt;
 &lt;p&gt;我个人是准备把 Openwrt 刷入自带的 emmc 里面的，这样可以省很多事，而且运行速度比在 U 盘里面有天然优势。&lt;/p&gt;
@@ -4899,7 +4939,7 @@ drwxr-xr-x  &lt;span class=&#34;m&#34;&gt;4&lt;/span&gt; frelon  staff   128B &l
         <pubDate>Sun, 06 Dec 2020 17:18:43 +0000</pubDate>
         
         <guid>https://jokeme.top/p/math_thought/</guid>
-        <description>&lt;img src="https://www4.bing.com/th?id=OHR.JinliStreet_EN-CN2006370773_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post 数学思想" /&gt;&lt;h1 id=&#34;数学思想&#34;&gt;数学思想&lt;/h1&gt;
+        <description>&lt;img src="https://cn.bing.com/th?id=OHR.JinliStreet_EN-CN2006370773_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post 数学思想" /&gt;&lt;h1 id=&#34;数学思想&#34;&gt;数学思想&lt;/h1&gt;
 &lt;blockquote&gt;
 &lt;p&gt;先声明一下！我是数学菜鸡！以下内容是我个人总结在学习数学中的一些重要的数学思想，写的不好！望海涵！!!&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -4936,7 +4976,7 @@ $$&lt;/p&gt;
         <pubDate>Sun, 15 Nov 2020 07:02:33 +0000</pubDate>
         
         <guid>https://jokeme.top/p/ubuntu_docker_tips/</guid>
-        <description>&lt;img src="https://www4.bing.com/th?id=OHR.Trevi_EN-CN2352584327_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post Ubuntu &amp;&amp; Docker 使用建议" /&gt;&lt;p&gt;&lt;strong&gt;Ubuntu&lt;/strong&gt;一直是我喜欢用的&lt;strong&gt;Linux&lt;/strong&gt;发行版本,界面简洁,上手简单,用户广泛&lt;/p&gt;
+        <description>&lt;img src="https://cn.bing.com/th?id=OHR.Trevi_EN-CN2352584327_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post Ubuntu &amp;&amp; Docker 使用建议" /&gt;&lt;p&gt;&lt;strong&gt;Ubuntu&lt;/strong&gt;一直是我喜欢用的&lt;strong&gt;Linux&lt;/strong&gt;发行版本,界面简洁,上手简单,用户广泛&lt;/p&gt;
 &lt;p&gt;在&lt;strong&gt;Ubuntu&lt;/strong&gt;中使用&lt;strong&gt;docker&lt;/strong&gt;时,一直就有两个问题困扰着我&lt;/p&gt;
 &lt;h2 id=&#34;1-ubuntu-pull-镜像速度太缓慢&#34;&gt;1. Ubuntu pull 镜像速度太缓慢&lt;/h2&gt;
 &lt;p&gt;这个问题百度一搜一大把,但是作为个人学习 类型的博客,还是记录一下的好?&lt;/p&gt;
@@ -4967,7 +5007,7 @@ sudo systemctl restart docker
         <pubDate>Wed, 07 Oct 2020 21:33:56 +0000</pubDate>
         
         <guid>https://jokeme.top/p/openwrt_install_zsh/</guid>
-        <description>&lt;img src="https://www4.bing.com/th?id=OHR.DalmatianPelicans_EN-CN7342550146_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post 记录一次OpenWrt安装zsh" /&gt;&lt;p&gt;众所周知啊，OpenWrt 是一个非常优秀的路由器 OS,但是因为是为路由器优化的，所以我们在使用的时候就会遇到各种各样的问题，就比如安装 &lt;code&gt;ohmyzsh&lt;/code&gt;&lt;/p&gt;
+        <description>&lt;img src="https://cn.bing.com/th?id=OHR.DalmatianPelicans_EN-CN7342550146_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post 记录一次OpenWrt安装zsh" /&gt;&lt;p&gt;众所周知啊，OpenWrt 是一个非常优秀的路由器 OS,但是因为是为路由器优化的，所以我们在使用的时候就会遇到各种各样的问题，就比如安装 &lt;code&gt;ohmyzsh&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;因为网络问题，咱可以直接去&lt;a class=&#34;link&#34; href=&#34;https://github.com/ohmyzsh/ohmyzsh/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;&lt;strong&gt;GitHub&lt;/strong&gt;&lt;/a&gt;看源码，顺便 Ctrl C / V&lt;/p&gt;
 &lt;h2 id=&#34;1安装依赖&#34;&gt;1.安装依赖&lt;/h2&gt;
@@ -4988,7 +5028,7 @@ sh -c &lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;k
         <pubDate>Fri, 25 Sep 2020 21:33:56 +0000</pubDate>
         
         <guid>https://jokeme.top/p/openstack_command/</guid>
-        <description>&lt;img src="https://www4.bing.com/th?id=OHR.Porto_EN-CN2330328060_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post OpenStack 常用命令" /&gt;&lt;h1 id=&#34;openstack-常用命令&#34;&gt;OpenStack 常用命令&lt;/h1&gt;
+        <description>&lt;img src="https://cn.bing.com/th?id=OHR.Porto_EN-CN2330328060_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post OpenStack 常用命令" /&gt;&lt;h1 id=&#34;openstack-常用命令&#34;&gt;OpenStack 常用命令&lt;/h1&gt;
 &lt;h2 id=&#34;1-mysql&#34;&gt;1. MySQL&lt;/h2&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-mysql&#34; data-lang=&#34;mysql&#34;&gt;&lt;span class=&#34;k&#34;&gt;show&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;variables&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;like&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;storage_engine&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;	&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;//&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;查询默认存储引擎&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;InnoDB&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
 &lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;show&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;variables&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;like&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;have%&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;	&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;//&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;查询支持的存储引擎&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
@@ -5395,7 +5435,7 @@ port show                                  zone transfer request show
         <pubDate>Fri, 25 Sep 2020 16:51:16 +0000</pubDate>
         
         <guid>https://jokeme.top/p/disk_expansion/</guid>
-        <description>&lt;img src="https://www4.bing.com/th?id=OHR.LeMorneBrabant_EN-CN8130983751_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post CentOS 7 磁盘扩容" /&gt;&lt;h1 id=&#34;centos-7-磁盘扩容&#34;&gt;CentOS 7 磁盘扩容&lt;/h1&gt;
+        <description>&lt;img src="https://cn.bing.com/th?id=OHR.LeMorneBrabant_EN-CN8130983751_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post CentOS 7 磁盘扩容" /&gt;&lt;h1 id=&#34;centos-7-磁盘扩容&#34;&gt;CentOS 7 磁盘扩容&lt;/h1&gt;
 &lt;p&gt;假设已经添加了磁盘,到了需要在系统里操作的步骤&lt;/p&gt;
 &lt;h2 id=&#34;对新增加的硬盘进行分区&#34;&gt;对新增加的硬盘进行分区&lt;/h2&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;fidsk -l
@@ -5639,7 +5679,7 @@ tar: Removing leading &lt;span class=&#34;sb&#34;&gt;`&lt;/span&gt;/&lt;span cla
         <pubDate>Mon, 31 Aug 2020 04:21:02 +0000</pubDate>
         
         <guid>https://jokeme.top/p/clang_note/</guid>
-        <description>&lt;img src="https://www4.bing.com/th?id=OHR.AABday_EN-CN1797262692_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post clang 学习笔记" /&gt;&lt;h1 id=&#34;clang-学习笔记&#34;&gt;clang 学习笔记&lt;/h1&gt;
+        <description>&lt;img src="https://cn.bing.com/th?id=OHR.AABday_EN-CN1797262692_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post clang 学习笔记" /&gt;&lt;h1 id=&#34;clang-学习笔记&#34;&gt;clang 学习笔记&lt;/h1&gt;
 &lt;h2 id=&#34;1什么是-c&#34;&gt;1.什么是 c&lt;/h2&gt;
 &lt;p&gt;C 语言是一种通用的高级语言，最初是由丹尼斯·里奇在贝尔实验室为开发 UNIX 操作系统而设计的。C 语言最开始是于 1972 年在 DEC PDP-11 计算机上被首次实现。&lt;/p&gt;
 &lt;p&gt;在 1978 年，布莱恩·柯林汉（Brian Kernighan）和丹尼斯·里奇（Dennis Ritchie）制作了 C 的第一个公开可用的描述，现在被称为 K&amp;amp;R 标准。&lt;/p&gt;
@@ -6442,7 +6482,7 @@ dear&amp;quot;
         <pubDate>Tue, 28 Jul 2020 02:19:28 +0000</pubDate>
         
         <guid>https://jokeme.top/p/mysql_login_problem/</guid>
-        <description>&lt;img src="https://www4.bing.com/th?id=OHR.BluebirdsEastern_EN-CN2662548051_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post 解决一个Ubuntu 18 安装MySQL 5.7不能远程登录的问题" /&gt;&lt;h1 id=&#34;解决一个ubuntu-18-安装mysql-57不能远程登录的问题&#34;&gt;解决一个Ubuntu 18 安装MySQL 5.7不能远程登录的问题&lt;/h1&gt;
+        <description>&lt;img src="https://cn.bing.com/th?id=OHR.BluebirdsEastern_EN-CN2662548051_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post 解决一个Ubuntu 18 安装MySQL 5.7不能远程登录的问题" /&gt;&lt;h1 id=&#34;解决一个ubuntu-18-安装mysql-57不能远程登录的问题&#34;&gt;解决一个Ubuntu 18 安装MySQL 5.7不能远程登录的问题&lt;/h1&gt;
 &lt;p&gt;首先编辑 &lt;code&gt;/etc/mysql/mysql.conf.d/mysqld.cnf&lt;/code&gt; 配置文件：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;nano  /etc/mysql/mysql.conf.d/mysqld.cnf
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;注释掉&lt;/p&gt;
@@ -6468,7 +6508,7 @@ dear&amp;quot;
         <pubDate>Mon, 27 Jul 2020 02:18:50 +0000</pubDate>
         
         <guid>https://jokeme.top/p/my_laptop_do_not_work/</guid>
-        <description>&lt;img src="https://www4.bing.com/th?id=OHR.PeritoMorenoArgentina_EN-CN8965492888_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post 笔记本坏了，这几天不能敲代码了" /&gt;&lt;h1 id=&#34;笔记本坏了这几天不能写代码了&#34;&gt;笔记本坏了，这几天不能写代码了&lt;/h1&gt;
+        <description>&lt;img src="https://cn.bing.com/th?id=OHR.PeritoMorenoArgentina_EN-CN8965492888_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post 笔记本坏了，这几天不能敲代码了" /&gt;&lt;h1 id=&#34;笔记本坏了这几天不能写代码了&#34;&gt;笔记本坏了，这几天不能写代码了&lt;/h1&gt;
 &lt;p&gt;&amp;lt;2020-07-27 14:25&amp;gt;
 今天吃完饭以后，发现笔记本无法唤醒了。我还觉得是电池没有电了，可是插上电源依然不能开机，我慌了，八成是笔记本坏了。&lt;/p&gt;
 &lt;p&gt;笔记本坏了那也不能影响我写bug呀，我就找了个老的台式机装上了&lt;code&gt;Ubuntu 18&lt;/code&gt;。&lt;/p&gt;
@@ -6501,7 +6541,7 @@ dear&amp;quot;
         <pubDate>Thu, 23 Jul 2020 03:48:26 +0000</pubDate>
         
         <guid>https://jokeme.top/p/download_maven_plugin_faster/</guid>
-        <description>&lt;img src="https://www4.bing.com/th?id=OHR.PurpleFlowers_EN-CN8622188560_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post 关于 Maven 下载插件缓慢的问题" /&gt;&lt;h1 id=&#34;关于-maven-下载插件缓慢的问题&#34;&gt;关于 Maven 下载插件缓慢的问题&lt;/h1&gt;
+        <description>&lt;img src="https://cn.bing.com/th?id=OHR.PurpleFlowers_EN-CN8622188560_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post 关于 Maven 下载插件缓慢的问题" /&gt;&lt;h1 id=&#34;关于-maven-下载插件缓慢的问题&#34;&gt;关于 Maven 下载插件缓慢的问题&lt;/h1&gt;
 &lt;p&gt;众所周知,咱们大天朝由于各种原因,只能活在局域网里面.这可能对那些不深度使用网络的人来说不痛不痒,但是你要是搞开发,搞运维,那才是各种烦呢&lt;/p&gt;
 &lt;p&gt;就拿 &lt;code&gt;maven&lt;/code&gt;来说,我™下载一个几kb得依赖都要好几个小时,甚至还要看运气&lt;/p&gt;
 &lt;p&gt;网上也给了各种各样得解决方案&lt;del&gt;特指 CSDN&lt;/del&gt;,但是我去尝试后,他妈的怎么弄都不行!!!我就搞不明白了,有些作者&lt;del&gt;特指那种只会复制粘贴别人文章的&lt;/del&gt;,连别人文章的有效性都不去验证一下,就直接拿过来当作自己的了,太恶心了??&lt;/p&gt;
@@ -6527,7 +6567,7 @@ p.s. 需要先安装 &lt;strong&gt;Tampermonkey&lt;/strong&gt; 再安装 &lt;str
         <pubDate>Fri, 17 Jul 2020 18:18:21 +0000</pubDate>
         
         <guid>https://jokeme.top/p/code_hot_key/</guid>
-        <description>&lt;img src="https://www4.bing.com/th?id=OHR.VerzascaValley_EN-CN0835346354_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post VS code 快捷键大全" /&gt;&lt;h1 id=&#34;vs-code-快捷键大全&#34;&gt;VS code 快捷键大全&lt;/h1&gt;
+        <description>&lt;img src="https://cn.bing.com/th?id=OHR.VerzascaValley_EN-CN0835346354_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post VS code 快捷键大全" /&gt;&lt;h1 id=&#34;vs-code-快捷键大全&#34;&gt;VS code 快捷键大全&lt;/h1&gt;
 &lt;h2 id=&#34;general&#34;&gt;General&lt;/h2&gt;
 &lt;p&gt;Ctrl+Shift+P, F1 Show Command Palette&lt;/p&gt;
 &lt;p&gt;Ctrl+P Quick Open, Go to File…&lt;/p&gt;
@@ -6800,7 +6840,7 @@ p.s. 需要先安装 &lt;strong&gt;Tampermonkey&lt;/strong&gt; 再安装 &lt;str
         <pubDate>Wed, 15 Jul 2020 22:53:18 +0000</pubDate>
         
         <guid>https://jokeme.top/p/learn_nat/</guid>
-        <description>&lt;img src="https://www4.bing.com/th?id=OHR.OceanHeart_EN-CN3106304306_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post 简单解释 NAT" /&gt;&lt;h1 id=&#34;简单解释-nat转自知乎&#34;&gt;简单解释 NAT[转自知乎]&lt;/h1&gt;
+        <description>&lt;img src="https://cn.bing.com/th?id=OHR.OceanHeart_EN-CN3106304306_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post 简单解释 NAT" /&gt;&lt;h1 id=&#34;简单解释-nat转自知乎&#34;&gt;简单解释 NAT[转自知乎]&lt;/h1&gt;
 &lt;p&gt;NAT 大家应该十分熟悉了，它分为几种。一种就叫做 NAT，它只对 IP 地址进行转换；另一种叫做 NAPT（Network Address/Port Translation），它可以对整个会话的端点（由 IP 地址和端口号组成）做转换，这是一种更加常见的 NAT 变种。&lt;/p&gt;
 &lt;p&gt;当然了，NAPT 也分为许多种，我们这里就不深入探讨了，大家如果有兴趣可以查阅相关的文献。&lt;/p&gt;
 &lt;p&gt;下面就简单介绍一下 NAT 的工作原理：&lt;/p&gt;
@@ -6831,7 +6871,7 @@ p.s. 需要先安装 &lt;strong&gt;Tampermonkey&lt;/strong&gt; 再安装 &lt;str
         <pubDate>Tue, 14 Jul 2020 21:04:27 +0000</pubDate>
         
         <guid>https://jokeme.top/p/learn_git/</guid>
-        <description>&lt;img src="https://www4.bing.com/th?id=OHR.YearoftheOx_EN-CN2506406791_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post 两小时 Git 入门" /&gt;&lt;h1 id=&#34;两小时-git-入门&#34;&gt;两小时 Git 入门&lt;/h1&gt;
+        <description>&lt;img src="https://cn.bing.com/th?id=OHR.YearoftheOx_EN-CN2506406791_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post 两小时 Git 入门" /&gt;&lt;h1 id=&#34;两小时-git-入门&#34;&gt;两小时 Git 入门&lt;/h1&gt;
 &lt;h2 id=&#34;1建立-git-仓库&#34;&gt;1.建立 Git 仓库&lt;/h2&gt;
 &lt;pre&gt;&lt;code&gt;$ git init
 &lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;2把文件添加到仓库&#34;&gt;2.把文件添加到仓库&lt;/h2&gt;
@@ -6993,7 +7033,7 @@ $ git push frelon --tags 一次性推送全部尚未推送到远程的本地标�
         <pubDate>Tue, 14 Jul 2020 15:42:51 +0000</pubDate>
         
         <guid>https://jokeme.top/p/download_windows10_iso/</guid>
-        <description>&lt;img src="https://www4.bing.com/th?id=OHR.PenitentSnow_EN-CN4445586340_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post 在微软官网下载 Windows10 ISO 安装包" /&gt;&lt;h1 id=&#34;教大家如何在微软官网下载-windows10-iso-安装包&#34;&gt;教大家如何在微软官网下载 Windows10 ISO 安装包&lt;/h1&gt;
+        <description>&lt;img src="https://cn.bing.com/th?id=OHR.PenitentSnow_EN-CN4445586340_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post 在微软官网下载 Windows10 ISO 安装包" /&gt;&lt;h1 id=&#34;教大家如何在微软官网下载-windows10-iso-安装包&#34;&gt;教大家如何在微软官网下载 Windows10 ISO 安装包&lt;/h1&gt;
 &lt;ol&gt;
 &lt;li&gt;进入 &lt;a class=&#34;link&#34; href=&#34;https://www.microsoft.com/zh-cn/software-download/windows10&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;Windows10&lt;/a&gt; 下载页面&lt;/li&gt;
@@ -7010,7 +7050,7 @@ $ git push frelon --tags 一次性推送全部尚未推送到远程的本地标�
         <pubDate>Wed, 01 Jul 2020 21:33:56 +0000</pubDate>
         
         <guid>https://jokeme.top/p/python_spider_download_m3u8/</guid>
-        <description>&lt;img src="https://www4.bing.com/th?id=OHR.Parrotfish_EN-CN1212515803_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post Python 爬虫抓取m3u8播放源" /&gt;&lt;h1 id=&#34;python-爬虫抓取播放源m3u8&#34;&gt;Python 爬虫抓取播放源(m3u8)&lt;/h1&gt;
+        <description>&lt;img src="https://cn.bing.com/th?id=OHR.Parrotfish_EN-CN1212515803_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post Python 爬虫抓取m3u8播放源" /&gt;&lt;h1 id=&#34;python-爬虫抓取播放源m3u8&#34;&gt;Python 爬虫抓取播放源(m3u8)&lt;/h1&gt;
 &lt;p&gt;今天没有事的时候在捯饬 &lt;a class=&#34;link&#34; href=&#34;https://apps.apple.com/cn/app/id1455092592&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;dotPlayer&lt;/a&gt; [IOS 平台 APP/￥ 收费] 时发现这个东西是个宝贝呀！可以看 m3u8 格式的视频，这都不是重点，重点是使用起来非常舒服，虽然直接复制 m3u8 链接到 Safari 也可以播放，但是 &lt;strong&gt;dotPlayer&lt;/strong&gt; 还可以有封面和标题！这两者体验可谓是天差地别(我没有收钱哈！我是真的觉得好用，希望 dotplayer 的作者看到了打一下广告费！)&lt;/p&gt;
 &lt;p&gt;具体可以看&lt;/p&gt;
@@ -7121,7 +7161,7 @@ $ git push frelon --tags 一次性推送全部尚未推送到远程的本地标�
         <pubDate>Sun, 14 Jun 2020 21:33:56 +0000</pubDate>
         
         <guid>https://jokeme.top/p/python_spider_download_bing_wallpaper/</guid>
-        <description>&lt;img src="https://www4.bing.com/th?id=OHR.TheWave_EN-CN9165010424_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post 利用 Python 爬虫获取 bing.com 每天的高清壁纸" /&gt;&lt;h1 id=&#34;利用-python-爬虫获取-bingcom-每天的高清壁纸&#34;&gt;利用 Python 爬虫获取 bing.com 每天的高清壁纸&lt;/h1&gt;
+        <description>&lt;img src="https://cn.bing.com/th?id=OHR.TheWave_EN-CN9165010424_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post 利用 Python 爬虫获取 bing.com 每天的高清壁纸" /&gt;&lt;h1 id=&#34;利用-python-爬虫获取-bingcom-每天的高清壁纸&#34;&gt;利用 Python 爬虫获取 bing.com 每天的高清壁纸&lt;/h1&gt;
 &lt;p&gt;众所周知，必应是主力做壁纸の搜索引擎！&lt;/p&gt;
 &lt;p&gt;每天都更新搜索页面的背景图片，这些图片也的的确确很好看，那我们要是 ♥心动了，想保存欣赏欣赏怎么办呐？&lt;/p&gt;
 &lt;h2 id=&#34;方法一直接开发者模式拿图片&#34;&gt;方法一：直接开发者模式拿图片&lt;/h2&gt;
@@ -7135,8 +7175,8 @@ $ git push frelon --tags 一次性推送全部尚未推送到远程的本地标�
           &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;div&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;id&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;bgImgProgLoad&amp;#34;&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;data-ultra-definition-src&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;/th?id=OHR.WildflowersBC_EN-CN3359054435_UHD.jpg&amp;amp;rf=LaDigue_UHD.jpg&amp;amp;pid=hp&amp;amp;w=1920&amp;amp;h=1080&amp;amp;rs=1&amp;amp;c=4&amp;#34;&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;data-explicit-bing-load&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;false&amp;#34;&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;data-dynamic-size&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;true&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
             &lt;span class=&#34;p&#34;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;div&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
 ... ...		
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;这个链接 ?就在 &lt;code&gt;&amp;lt;div id=&amp;quot;bgImgProgLoad&amp;quot;&lt;/code&gt; の标签里面，复制 &lt;code&gt;data-ultra-definition-src&lt;/code&gt; 所对应的值，再在前面补上 &lt;code&gt;www4.bing.com&lt;/code&gt; 就可以啦&lt;/p&gt;
-&lt;p&gt;不过这种方法下载的图片是被压缩以后的图片，大小也就几百 kb,而如果我们想要下载原图的话，就需要把链接 ?里面第一个 &lt;code&gt;.jpg&lt;/code&gt; 后面的字符全给干掉，最终的的 &lt;strong&gt;URL&lt;/strong&gt; 应该是： &lt;code&gt;https://www4.bing.com/th?id=OHR.WildflowersBC_EN-CN3359054435_UHD.jpg&lt;/code&gt;&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;这个链接 ?就在 &lt;code&gt;&amp;lt;div id=&amp;quot;bgImgProgLoad&amp;quot;&lt;/code&gt; の标签里面，复制 &lt;code&gt;data-ultra-definition-src&lt;/code&gt; 所对应的值，再在前面补上 &lt;code&gt;cn.bing.com&lt;/code&gt; 就可以啦&lt;/p&gt;
+&lt;p&gt;不过这种方法下载的图片是被压缩以后的图片，大小也就几百 kb,而如果我们想要下载原图的话，就需要把链接 ?里面第一个 &lt;code&gt;.jpg&lt;/code&gt; 后面的字符全给干掉，最终的的 &lt;strong&gt;URL&lt;/strong&gt; 应该是： &lt;code&gt;https://cn.bing.com/th?id=OHR.WildflowersBC_EN-CN3359054435_UHD.jpg&lt;/code&gt;&lt;/p&gt;
 &lt;h2 id=&#34;方法二python-爬虫&#34;&gt;方法二：python 爬虫&lt;/h2&gt;
 &lt;p&gt;没有什么好说の,都是最简单的 python 命令，&lt;/p&gt;
 &lt;p&gt;运行环境： &lt;code&gt;Linux&lt;/code&gt;&lt;/p&gt;
@@ -7155,7 +7195,7 @@ ls pic/		&lt;span class=&#34;c1&#34;&gt;#看一下下载的壁纸&lt;/span&gt;
 &lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;requests&lt;/span&gt;
 &lt;span class=&#34;kn&#34;&gt;from&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;lxml&lt;/span&gt; &lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;etree&lt;/span&gt;
 &lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;os&lt;/span&gt;
-&lt;span class=&#34;n&#34;&gt;webPage&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;requests&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;get&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;url&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;https://www4.bing.com/?FORM=BEHPTB&amp;amp;ensearch=1&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;webPage&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;requests&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;get&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;url&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;https://cn.bing.com/?FORM=BEHPTB&amp;amp;ensearch=1&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
         &lt;span class=&#34;n&#34;&gt;headers&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;User-Agent&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
         &lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
 &lt;span class=&#34;n&#34;&gt;we&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;webPage&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;text&lt;/span&gt;
@@ -7163,7 +7203,7 @@ ls pic/		&lt;span class=&#34;c1&#34;&gt;#看一下下载的壁纸&lt;/span&gt;
 &lt;span class=&#34;n&#34;&gt;Links&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;ssr&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;xpath&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;//div/div[@id=&amp;#39;bgDiv&amp;#39;]/div/@data-ultra-definition-src&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
 &lt;span class=&#34;n&#34;&gt;Desc&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;ssr&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;xpath&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;//a/div/h2/text()&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
 
-&lt;span class=&#34;n&#34;&gt;Str&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;https://www4.bing.com&amp;#34;&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;Str&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;https://cn.bing.com&amp;#34;&lt;/span&gt;
 &lt;span class=&#34;n&#34;&gt;desc&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&amp;#34;&lt;/span&gt;
 &lt;span class=&#34;n&#34;&gt;re&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[]&lt;/span&gt;
 &lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;sein&lt;/span&gt; &lt;span class=&#34;ow&#34;&gt;in&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;Desc&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;
@@ -7196,7 +7236,7 @@ ls pic/		&lt;span class=&#34;c1&#34;&gt;#看一下下载的壁纸&lt;/span&gt;
         <pubDate>Wed, 10 Jun 2020 20:48:55 +0000</pubDate>
         
         <guid>https://jokeme.top/p/linux_skill/</guid>
-        <description>&lt;img src="https://www4.bing.com/th?id=OHR.MountSefton_EN-CN4284831269_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post Linux 常用的小技巧" /&gt;&lt;h1 id=&#34;linux-常用的小技巧&#34;&gt;Linux 常用的小技巧&lt;/h1&gt;
+        <description>&lt;img src="https://cn.bing.com/th?id=OHR.MountSefton_EN-CN4284831269_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post Linux 常用的小技巧" /&gt;&lt;h1 id=&#34;linux-常用的小技巧&#34;&gt;Linux 常用的小技巧&lt;/h1&gt;
 &lt;h3 id=&#34;1-apt-get-remove-vsftpd---purge&#34;&gt;1 .apt-get remove vsftpd &amp;ndash;purge&lt;/h3&gt;
 &lt;p&gt;删除所有配置，下次安装的时候会重新生成配置文件&lt;/p&gt;
 &lt;h3 id=&#34;2-编辑器-nano-快捷键&#34;&gt;2 .编辑器 nano 快捷键&lt;/h3&gt;
@@ -7230,7 +7270,7 @@ sh -c &lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;k
         <pubDate>Wed, 10 Jun 2020 13:58:18 +0000</pubDate>
         
         <guid>https://jokeme.top/p/compile_nano/</guid>
-        <description>&lt;img src="https://www4.bing.com/th?id=OHR.IceWalking_EN-CN6785374690_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post CentOS编译安装Nano" /&gt;&lt;h1 id=&#34;centos编译安装nano&#34;&gt;CentOS编译安装Nano&lt;/h1&gt;
+        <description>&lt;img src="https://cn.bing.com/th?id=OHR.IceWalking_EN-CN6785374690_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post CentOS编译安装Nano" /&gt;&lt;h1 id=&#34;centos编译安装nano&#34;&gt;CentOS编译安装Nano&lt;/h1&gt;
 &lt;p&gt;众所周知,因为 &lt;strong&gt;CentOS&lt;/strong&gt; 非常的稳定,所以导致 &lt;strong&gt;CentOS&lt;/strong&gt; の &lt;strong&gt;YUM&lt;/strong&gt; 源里面的软件非常的老旧
 就拿 &lt;strong&gt;Nano&lt;/strong&gt; 来说, 官方已经到了 4.0版本, 而 &lt;strong&gt;CentOS&lt;/strong&gt; 这边还在2.0徘徊,这就非常的难受了.所以咱就手动编译安装!&lt;/p&gt;
 &lt;h2 id=&#34;1-安装准备&#34;&gt;1. 安装准备&lt;/h2&gt;
@@ -7265,7 +7305,7 @@ cp doc/sample.nanorc  /root/.nanorc
         <pubDate>Mon, 08 Jun 2020 19:01:05 +0000</pubDate>
         
         <guid>https://jokeme.top/p/frp_penetrate/</guid>
-        <description>&lt;img src="https://www4.bing.com/th?id=OHR.SuperbOwl_EN-CN4550239476_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post  Frp 内网穿透" /&gt;&lt;h1 id=&#34;frp-内网穿透&#34;&gt;Frp 内网穿透&lt;/h1&gt;
+        <description>&lt;img src="https://cn.bing.com/th?id=OHR.SuperbOwl_EN-CN4550239476_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post  Frp 内网穿透" /&gt;&lt;h1 id=&#34;frp-内网穿透&#34;&gt;Frp 内网穿透&lt;/h1&gt;
 &lt;p&gt;自打搞一个软路由，我就玩的可带劲了，什么 &lt;strong&gt;Linux , Docker , Java&lt;/strong&gt; 各种技术都被逼提升了很多。 闲话不多说，直接说重点了&lt;/p&gt;
 &lt;h2 id=&#34;1-准备工作&#34;&gt;1. 准备工作：&lt;/h2&gt;
 &lt;ul&gt;
@@ -7361,7 +7401,7 @@ nano frpc.ini
         <pubDate>Fri, 29 May 2020 17:27:33 +0000</pubDate>
         
         <guid>https://jokeme.top/p/springboot_note_1/</guid>
-        <description>&lt;img src="https://www4.bing.com/th?id=OHR.VosgesBioReserve_EN-CN8863541867_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post SpringBoot学习笔记(1)" /&gt;&lt;h1 id=&#34;spring学习&#34;&gt;Spring学习&lt;/h1&gt;
+        <description>&lt;img src="https://cn.bing.com/th?id=OHR.VosgesBioReserve_EN-CN8863541867_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post SpringBoot学习笔记(1)" /&gt;&lt;h1 id=&#34;spring学习&#34;&gt;Spring学习&lt;/h1&gt;
 &lt;p&gt;提醒⏰:在开始之前,我们需要配置以下基本环境(还有文件的编码方式也要注意)&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
@@ -7865,7 +7905,7 @@ server.port=8088
         <pubDate>Wed, 06 May 2020 21:33:56 +0000</pubDate>
         
         <guid>https://jokeme.top/p/netplan_wifi/</guid>
-        <description>&lt;img src="https://www4.bing.com/th?id=OHR.MountNemrut_EN-CN8469644685_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post  Ubuntu 使用 netplan 配置 WIFI" /&gt;&lt;h1 id=&#34;ubuntu-使用-netplan-配置-wifi&#34;&gt;Ubuntu 使用 netplan 配置 WIFI&lt;/h1&gt;
+        <description>&lt;img src="https://cn.bing.com/th?id=OHR.MountNemrut_EN-CN8469644685_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post  Ubuntu 使用 netplan 配置 WIFI" /&gt;&lt;h1 id=&#34;ubuntu-使用-netplan-配置-wifi&#34;&gt;Ubuntu 使用 netplan 配置 WIFI&lt;/h1&gt;
 &lt;p&gt;在折腾 Ubuntu 的时候，我突然发现 Ubuntu 有好几套网络管理方案，但是在安装了图形化界面以后，只有&lt;strong&gt;Network Manager &amp;amp; Systemd-networkd&lt;/strong&gt; 之一生效，&lt;/p&gt;
 &lt;p&gt;那像我这种爱折腾的人，肯定是不满足被束缚啊，为什么不能用命令行来连接 ? WiFi 呢？&lt;/p&gt;
 &lt;h2 id=&#34;1-查看网卡名字&#34;&gt;1 .查看网卡名字&lt;/h2&gt;
@@ -7961,7 +8001,7 @@ $ ~ sudo netplan apply
         <pubDate>Wed, 15 Apr 2020 23:39:23 +0000</pubDate>
         
         <guid>https://jokeme.top/p/ffmpeg_download_m3u8/</guid>
-        <description>&lt;img src="https://www4.bing.com/th?id=OHR.RainbowMarmot_EN-CN8037758700_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post Ubuntu安装ffmpeg下载m3u8 格式的视频" /&gt;&lt;h1 id=&#34;ubuntu安装ffmpeg下载m3u8格式的视频&#34;&gt;Ubuntu安装ffmpeg下载m3u8格式的视频&lt;/h1&gt;
+        <description>&lt;img src="https://cn.bing.com/th?id=OHR.RainbowMarmot_EN-CN8037758700_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post Ubuntu安装ffmpeg下载m3u8 格式的视频" /&gt;&lt;h1 id=&#34;ubuntu安装ffmpeg下载m3u8格式的视频&#34;&gt;Ubuntu安装ffmpeg下载m3u8格式的视频&lt;/h1&gt;
 &lt;p&gt;最近想下载一个某音视频，但是我能看不能下载，这不是扯吗？于是不能忍的我就打算盘盘这个视频&lt;/p&gt;
 &lt;h2 id=&#34;1--准备环境ubuntu-1804--ffmpeg&#34;&gt;1 . 准备环境：&lt;code&gt;Ubuntu 18.04&lt;/code&gt; , &lt;code&gt;ffmpeg&lt;/code&gt;&lt;/h2&gt;
 &lt;p&gt;本着万物皆可 &lt;strong&gt;Linux&lt;/strong&gt; の初心，我就不想用 Windows 了。&lt;/p&gt;
@@ -7982,7 +8022,7 @@ $ ~ sudo netplan apply
         <pubDate>Tue, 31 Mar 2020 17:27:33 +0000</pubDate>
         
         <guid>https://jokeme.top/p/ubuntu_install_faq/</guid>
-        <description>&lt;img src="https://www4.bing.com/th?id=OHR.ToledoIldefonso_EN-CN9964509063_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post 安装 Linux 系统(Ubuntu)经验总结" /&gt;&lt;h1 id=&#34;安装-linux-系统ubuntu经验总结&#34;&gt;安装 Linux 系统(Ubuntu)经验总结&lt;/h1&gt;
+        <description>&lt;img src="https://cn.bing.com/th?id=OHR.ToledoIldefonso_EN-CN9964509063_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post 安装 Linux 系统(Ubuntu)经验总结" /&gt;&lt;h1 id=&#34;安装-linux-系统ubuntu经验总结&#34;&gt;安装 Linux 系统(Ubuntu)经验总结&lt;/h1&gt;
 &lt;p&gt;进来将近两三个星期的装系统经历，让我异常痛苦，先是 &lt;strong&gt;Bay Trail&lt;/strong&gt; 主板的一些坑，然后是显卡驱动，然后又是一堆莫名其妙的问题&amp;hellip;&amp;hellip;&lt;/p&gt;
 &lt;h3 id=&#34;1-bay-trail-主板的先天问题&#34;&gt;1. Bay Trail 主板的先天问题&lt;/h3&gt;
 &lt;p&gt;在 这系列主板上安装 Windows 可能没有什么感觉，但是安装 Linux 异常的难，会造成啥啥啥内核错误，导致卡慢&lt;/p&gt;
@@ -8003,7 +8043,7 @@ $ ~ sudo netplan apply
         <pubDate>Fri, 20 Mar 2020 21:33:56 +0000</pubDate>
         
         <guid>https://jokeme.top/p/run_openwrt_in_docker/</guid>
-        <description>&lt;img src="https://www4.bing.com/th?id=OHR.RedRobin_EN-CN8071349218_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post Docker 中运行 OpenWrt" /&gt;&lt;h1 id=&#34;docker--中运行--openwrt&#34;&gt;Docker  中运行  OpenWrt&lt;/h1&gt;
+        <description>&lt;img src="https://cn.bing.com/th?id=OHR.RedRobin_EN-CN8071349218_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post Docker 中运行 OpenWrt" /&gt;&lt;h1 id=&#34;docker--中运行--openwrt&#34;&gt;Docker  中运行  OpenWrt&lt;/h1&gt;
 &lt;hr&gt;
 &lt;p&gt;&lt;em&gt;文章有误，不建议参考了！但是我当时确确实实运行起来了，可能是我写的有问题吧！我也不想重新搞了，就这样吧&lt;/em&gt;&lt;/p&gt;
 &lt;hr&gt;
@@ -8142,7 +8182,7 @@ docker &lt;span class=&#34;nb&#34;&gt;exec&lt;/span&gt; -it OpenWrt /etc/init.d/
         <pubDate>Mon, 16 Mar 2020 05:01:31 +0000</pubDate>
         
         <guid>https://jokeme.top/p/install_linux_on_bay_trail/</guid>
-        <description>&lt;img src="https://www4.bing.com/th?id=OHR.ArcticWolf_EN-CN8268127090_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post Bay Trail主板安装Linux的坑" /&gt;&lt;h1 id=&#34;bay-trail-主板安装-linux-的坑&#34;&gt;Bay Trail 主板安装 Linux 的坑&lt;/h1&gt;
+        <description>&lt;img src="https://cn.bing.com/th?id=OHR.ArcticWolf_EN-CN8268127090_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post Bay Trail主板安装Linux的坑" /&gt;&lt;h1 id=&#34;bay-trail-主板安装-linux-的坑&#34;&gt;Bay Trail 主板安装 Linux 的坑&lt;/h1&gt;
 &lt;p&gt;最近搞了一个 &lt;strong&gt;N2920&lt;/strong&gt; 的低功耗小主机，本来打算搞软路由，但是家里网速不行，就打算先刷个 &lt;strong&gt;Linux&lt;/strong&gt; 玩玩，于是我就被这个问题烦了将近半个月！&lt;/p&gt;
 &lt;p&gt;一开始我打算安装一个 &lt;strong&gt;CentOS 7&lt;/strong&gt; 玩玩，当我下载完系统刻录完开始安装的时候发现 &lt;strong&gt;CentOS 7&lt;/strong&gt; 的 installer 异常的卡顿，而且耗时也非常的多，差不多需要将近半个小时才可以到图形界面的安装(我这个小主机是有固态的，这个速度肯定有很大的问题),而且好不容易到了图形界面的安装环节，还经常卡死！刚开始 我还以为可能是这个 ISO 镜像有问题，又换了一个 &lt;strong&gt;CentOS 8&lt;/strong&gt; 的镜像。&lt;/p&gt;
 &lt;p&gt;刻录&amp;ndash;安装&amp;ndash;等待&amp;ndash;卡死&lt;/p&gt;
@@ -8224,7 +8264,7 @@ sudo update-grub
         <pubDate>Sat, 15 Feb 2020 21:33:56 +0000</pubDate>
         
         <guid>https://jokeme.top/p/java_annotation/</guid>
-        <description>&lt;img src="https://www4.bing.com/th?id=OHR.HeartAustralia_EN-CN7705551345_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post Java 注解的简单学习" /&gt;&lt;h1 id=&#34;java-注解annotation&#34;&gt;Java 注解（Annotation）&lt;/h1&gt;
+        <description>&lt;img src="https://cn.bing.com/th?id=OHR.HeartAustralia_EN-CN7705551345_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post Java 注解的简单学习" /&gt;&lt;h1 id=&#34;java-注解annotation&#34;&gt;Java 注解（Annotation）&lt;/h1&gt;
 &lt;p&gt;Java 注解其实并不难，从名字上你都知道注解是帮助 Java 代码执行的，它的形式跟接口很类似，不过前面多了一个 @ 符号&lt;/p&gt;
 &lt;h2 id=&#34;1-java-元注解&#34;&gt;1 Java 元注解&lt;/h2&gt;
 &lt;ul&gt;
@@ -8340,7 +8380,7 @@ sudo update-grub
         <pubDate>Sat, 01 Feb 2020 21:33:56 +0000</pubDate>
         
         <guid>https://jokeme.top/p/java_jdbc/</guid>
-        <description>&lt;img src="https://www4.bing.com/th?id=OHR.Taormina_EN-CN8042812380_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post Java通过jdbc操作MySQL数据库" /&gt;&lt;h1 id=&#34;java-jdbc-操作-mysql&#34;&gt;Java JDBC 操作 MySQL&lt;/h1&gt;
+        <description>&lt;img src="https://cn.bing.com/th?id=OHR.Taormina_EN-CN8042812380_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post Java通过jdbc操作MySQL数据库" /&gt;&lt;h1 id=&#34;java-jdbc-操作-mysql&#34;&gt;Java JDBC 操作 MySQL&lt;/h1&gt;
 &lt;h2 id=&#34;1--maven-导包&#34;&gt;1 . Maven 导包&lt;/h2&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-xml&#34; data-lang=&#34;xml&#34;&gt;&lt;span class=&#34;nt&#34;&gt;&amp;lt;dependency&amp;gt;&lt;/span&gt;
 	&lt;span class=&#34;nt&#34;&gt;&amp;lt;groupId&amp;gt;&lt;/span&gt;mysql&lt;span class=&#34;nt&#34;&gt;&amp;lt;/groupId&amp;gt;&lt;/span&gt;
@@ -8493,7 +8533,7 @@ sudo update-grub
         <pubDate>Sat, 01 Feb 2020 17:27:33 +0000</pubDate>
         
         <guid>https://jokeme.top/p/vim_hot_key/</guid>
-        <description>&lt;img src="https://www4.bing.com/th?id=OHR.ChurchRock_EN-CN7171111056_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post vim的常用操作快捷键" /&gt;&lt;p&gt;(1) 按两下 gg，定位光标到第一行。&lt;/p&gt;
+        <description>&lt;img src="https://cn.bing.com/th?id=OHR.ChurchRock_EN-CN7171111056_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post vim的常用操作快捷键" /&gt;&lt;p&gt;(1) 按两下 gg，定位光标到第一行。&lt;/p&gt;
 &lt;p&gt;(2) 按住 Shift+v，进入可视化编辑的列编辑模式。&lt;/p&gt;
 &lt;p&gt;(3) Shift+g，选中整个代码。&lt;/p&gt;
 &lt;p&gt;(4) 按下等号 =，格式化所有代码。&lt;/p&gt;
@@ -8506,7 +8546,7 @@ sudo update-grub
         <pubDate>Sat, 11 Jan 2020 21:33:56 +0000</pubDate>
         
         <guid>https://jokeme.top/p/nginx_proxy/</guid>
-        <description>&lt;img src="https://www4.bing.com/th?id=OHR.Molas_EN-CN3740095364_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post 学习nginx代理相关的笔记" /&gt;&lt;h1 id=&#34;nginx-反向代理&#34;&gt;nginx 反向代理&lt;/h1&gt;
+        <description>&lt;img src="https://cn.bing.com/th?id=OHR.Molas_EN-CN3740095364_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post 学习nginx代理相关的笔记" /&gt;&lt;h1 id=&#34;nginx-反向代理&#34;&gt;nginx 反向代理&lt;/h1&gt;
 &lt;p&gt;nginx 一直都是我们比较常用的工具，它不仅功能强悍，而且性能也非常好 ?,一直深受开发者的喜爱&lt;/p&gt;
 &lt;p&gt;并且我们经常用 &lt;strong&gt;nginx&lt;/strong&gt; 反代来做负载均衡，那么 &lt;strong&gt;nginx&lt;/strong&gt; の反代原理我也就不说了，咱就说咋操作吧&lt;/p&gt;
 &lt;p&gt;我把我的网站的 &lt;strong&gt;nginx&lt;/strong&gt; 配置给拷贝了下来&lt;/p&gt;
@@ -8550,7 +8590,7 @@ sudo update-grub
         <pubDate>Fri, 10 Jan 2020 17:27:33 +0000</pubDate>
         
         <guid>https://jokeme.top/p/wechat_little_program/</guid>
-        <description>&lt;img src="https://www4.bing.com/th?id=OHR.ChuDangYa_EN-CN3555284407_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post 微信小程序遇见的坑" /&gt;&lt;h1 id=&#34;微信小程序遇到的坑&#34;&gt;微信小程序遇到的坑&lt;/h1&gt;
+        <description>&lt;img src="https://cn.bing.com/th?id=OHR.ChuDangYa_EN-CN3555284407_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post 微信小程序遇见的坑" /&gt;&lt;h1 id=&#34;微信小程序遇到的坑&#34;&gt;微信小程序遇到的坑&lt;/h1&gt;
 &lt;p&gt;微信小程序其实很简单，和 &lt;strong&gt;HTML&lt;/strong&gt; 差不多，但是又加入了微信的很多特色，我也是本着写着玩的心态写了几天的小程序，发现有很多坑哦，和 &lt;strong&gt;HTML&lt;/strong&gt;还是有点差距的&lt;/p&gt;
 &lt;h2 id=&#34;1-文本超出隐藏并加&#34;&gt;1 文本超出隐藏并加…&lt;/h2&gt;
 &lt;p&gt;其实在 HTML 里面这段代码很简单，只要在父元素里面定义&lt;/p&gt;
@@ -8680,7 +8720,7 @@ sudo update-grub
         <pubDate>Tue, 31 Dec 2019 21:33:56 +0000</pubDate>
         
         <guid>https://jokeme.top/p/python_spider/</guid>
-        <description>&lt;img src="https://www4.bing.com/th?id=OHR.BolivianSummer_EN-CN6022233005_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post Python_spider" /&gt;&lt;h1 id=&#34;python-爬虫&#34;&gt;Python 爬虫&lt;/h1&gt;
+        <description>&lt;img src="https://cn.bing.com/th?id=OHR.BolivianSummer_EN-CN6022233005_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post Python_spider" /&gt;&lt;h1 id=&#34;python-爬虫&#34;&gt;Python 爬虫&lt;/h1&gt;
 &lt;p&gt;用&lt;strong&gt;python&lt;/strong&gt;写爬虫其实是比较简单的，主要还是靠第三方的库，常用的有 &lt;strong&gt;requests &amp;amp; urllib&lt;/strong&gt; 至于解析 HTML,我目前使用的是 &lt;strong&gt;xpath&lt;/strong&gt; ,了解了基本操作，咱就试试看吧&lt;/p&gt;
 &lt;p&gt;代码附上&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# coding:utf-8&lt;/span&gt;
@@ -8862,7 +8902,7 @@ sudo update-grub
         <pubDate>Sat, 28 Dec 2019 21:33:56 +0000</pubDate>
         
         <guid>https://jokeme.top/p/java_collections_utils/</guid>
-        <description>&lt;img src="https://www4.bing.com/th?id=OHR.RSOakTree_EN-CN8050195880_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post Java collections框架的工具类" /&gt;&lt;h1 id=&#34;collection-框架的工具类&#34;&gt;Collection 框架的工具类&lt;/h1&gt;
+        <description>&lt;img src="https://cn.bing.com/th?id=OHR.RSOakTree_EN-CN8050195880_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post Java collections框架的工具类" /&gt;&lt;h1 id=&#34;collection-框架的工具类&#34;&gt;Collection 框架的工具类&lt;/h1&gt;
 &lt;h2 id=&#34;1-collections&#34;&gt;1. Collections&lt;/h2&gt;
 &lt;h3 id=&#34;111--sort-按照自然顺序排序&#34;&gt;1.1.1  sort 按照自然顺序排序&lt;/h3&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span class=&#34;kn&#34;&gt;package&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;sourceCode&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;;&lt;/span&gt;
@@ -8921,7 +8961,7 @@ sudo update-grub
         <pubDate>Sat, 28 Dec 2019 21:33:56 +0000</pubDate>
         
         <guid>https://jokeme.top/p/java_io/</guid>
-        <description>&lt;img src="https://www4.bing.com/th?id=OHR.FichtelbergWinter_EN-CN7709514197_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post Java IO简单操作文件" /&gt;&lt;h1 id=&#34;java-io&#34;&gt;Java-IO&lt;/h1&gt;
+        <description>&lt;img src="https://cn.bing.com/th?id=OHR.FichtelbergWinter_EN-CN7709514197_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post Java IO简单操作文件" /&gt;&lt;h1 id=&#34;java-io&#34;&gt;Java-IO&lt;/h1&gt;
 &lt;p&gt;Java Input-Output 主要是用于文件的存储和读取，相关操作一般都会放在 Java.io 包中&lt;/p&gt;
 &lt;h2 id=&#34;1-file-类&#34;&gt;1 File 类&lt;/h2&gt;
 &lt;p&gt;file 类的方法是我们操作文件必不可少的，是必须要学习的类&lt;/p&gt;
@@ -9647,7 +9687,7 @@ sudo update-grub
         <pubDate>Sat, 28 Dec 2019 21:33:56 +0000</pubDate>
         
         <guid>https://jokeme.top/p/java_generics/</guid>
-        <description>&lt;img src="https://www4.bing.com/th?id=OHR.ChateauBeynac_EN-CN7541724153_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post 简单的Java泛型学习" /&gt;&lt;h1 id=&#34;泛型&#34;&gt;泛型&lt;/h1&gt;
+        <description>&lt;img src="https://cn.bing.com/th?id=OHR.ChateauBeynac_EN-CN7541724153_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post 简单的Java泛型学习" /&gt;&lt;h1 id=&#34;泛型&#34;&gt;泛型&lt;/h1&gt;
 &lt;h2 id=&#34;1-泛型特性&#34;&gt;1 泛型特性&lt;/h2&gt;
 &lt;p&gt;百度得如下解释：&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-properties&#34; data-lang=&#34;properties&#34;&gt;泛型是程序设计语言的一种特性,允许程序员在强类型程序设计语言中编写代码时定义一些可变部分，那些部分在使用前必须作出指明。各种程序设计语言和其编译器、运行环境对泛型的支持均不一样。将类型参数化以达到代码复用提高软件开发工作效率的一种数据类型。泛型类是引用类型，是堆对象，主要是引入了类型参数这个概念。 
@@ -9744,7 +9784,7 @@ sudo update-grub
         <pubDate>Sat, 28 Dec 2019 21:17:12 +0000</pubDate>
         
         <guid>https://jokeme.top/p/collection_map/</guid>
-        <description>&lt;img src="https://www4.bing.com/th?id=OHR.BloodyBrook_EN-CN9582612899_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post Java中的collections的map" /&gt;&lt;h1 id=&#34;collection-map&#34;&gt;Collection-Map&lt;/h1&gt;
+        <description>&lt;img src="https://cn.bing.com/th?id=OHR.BloodyBrook_EN-CN9582612899_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post Java中的collections的map" /&gt;&lt;h1 id=&#34;collection-map&#34;&gt;Collection-Map&lt;/h1&gt;
 &lt;pre&gt;&lt;code class=&#34;language-properties&#34; data-lang=&#34;properties&#34;&gt;Map--|双列集合,一次存一对键值对,必须保证唯一性
 	 --|HashMap:哈希表,不同步,允许空的Key,Value
 	 --|TreeMap:二叉树,线程不同步,可以对Map集合的键?排序
@@ -9847,7 +9887,7 @@ kEREd
         <pubDate>Sun, 22 Dec 2019 21:33:56 +0000</pubDate>
         
         <guid>https://jokeme.top/p/java_api_of_time/</guid>
-        <description>&lt;img src="https://www4.bing.com/th?id=OHR.BrightonSnow_EN-CN7201070198_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post Java时间类api" /&gt;&lt;h1 id=&#34;时间类-api&#34;&gt;时间类 API&lt;/h1&gt;
+        <description>&lt;img src="https://cn.bing.com/th?id=OHR.BrightonSnow_EN-CN7201070198_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post Java时间类api" /&gt;&lt;h1 id=&#34;时间类-api&#34;&gt;时间类 API&lt;/h1&gt;
 &lt;p&gt;在日常学习生活中，我们经常遇到时间相关的问题，现在虽然 Date 类已经不是主流了，但任然有许多方法要学习&lt;/p&gt;
 &lt;h2 id=&#34;11dateformat&#34;&gt;1.1DateFormat&lt;/h2&gt;
 &lt;h3 id=&#34;111-使用示例&#34;&gt;1.1.1 使用示例&lt;/h3&gt;
@@ -10028,7 +10068,7 @@ MILLISECOND=445]
         <pubDate>Fri, 20 Dec 2019 21:33:56 +0000</pubDate>
         
         <guid>https://jokeme.top/p/java_collection/</guid>
-        <description>&lt;img src="https://www4.bing.com/th?id=OHR.GentooLeap_EN-CN7598340092_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post Java collection " /&gt;&lt;h1 id=&#34;collection集合&#34;&gt;collection集合&lt;/h1&gt;
+        <description>&lt;img src="https://cn.bing.com/th?id=OHR.GentooLeap_EN-CN7598340092_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post Java collection " /&gt;&lt;h1 id=&#34;collection集合&#34;&gt;collection集合&lt;/h1&gt;
 &lt;pre&gt;&lt;code class=&#34;language-properties&#34; data-lang=&#34;properties&#34;&gt;collection--|
 		   |--list:有序,有索引,允许重复元素
 		   |--set:不允许重复元素,元素存取无序
@@ -10444,7 +10484,7 @@ MILLISECOND=445]
         <pubDate>Fri, 20 Dec 2019 21:33:56 +0000</pubDate>
         
         <guid>https://jokeme.top/p/java_equals_and_contains/</guid>
-        <description>&lt;img src="https://www4.bing.com/th?id=OHR.Calakmul_EN-CN9963471796_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post Java的equals和contains的一些区别" /&gt;&lt;h1 id=&#34;equals--contains&#34;&gt;&lt;strong&gt;equals() &amp;amp;&amp;amp; contains()&lt;/strong&gt;&lt;/h1&gt;
+        <description>&lt;img src="https://cn.bing.com/th?id=OHR.Calakmul_EN-CN9963471796_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post Java的equals和contains的一些区别" /&gt;&lt;h1 id=&#34;equals--contains&#34;&gt;&lt;strong&gt;equals() &amp;amp;&amp;amp; contains()&lt;/strong&gt;&lt;/h1&gt;
 &lt;p&gt;Java 中常见的比较有&lt;strong&gt;equals&lt;/strong&gt;和&lt;strong&gt;hashcode&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;今天在学习的时候就遇到了一个头疼的问题(菜鸟级的我有大大疑问)&lt;/p&gt;
 &lt;p&gt;在比较两个对象内的元素时，无论是使用&lt;strong&gt;equals&lt;/strong&gt;还是&lt;strong&gt;hashcode&lt;/strong&gt;都始终得不到我想要的结果。遂百度，记此文&lt;/p&gt;

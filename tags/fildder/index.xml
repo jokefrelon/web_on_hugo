@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Fildder on JokemeBlog</title>
+    <link>https://jokeme.top/tags/fildder/</link>
+    <description>Recent content in Fildder on JokemeBlog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 26 Feb 2022 16:14:43 +0800</lastBuildDate><atom:link href="https://jokeme.top/tags/fildder/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>IOS安装老版本app的方法</title>
+      <link>https://jokeme.top/p/ios_install_old_app/</link>
+      <pubDate>Sat, 26 Feb 2022 16:14:43 +0800</pubDate>
+      
+      <guid>https://jokeme.top/p/ios_install_old_app/</guid>
+      <description>IOS安装老版本app方法 众所周知，从AppStore里面只能升级app，但是并不能降级app，这就导致有时候升级了app但是却带来了很多我们不喜欢的功能甚至广告，我们只能被迫接受。以前我甚至为了降级app特地越狱我的设备，但是这种方法的副作用也很大。
+好了废话不多说，先下载好我分享的两个文件：fiddler iTunes 其中fiddler是绿色免安装版，中文汉化过了。
+ 不用我的这个iTunes也可以，只要保证版本低于12.7即可，苹果在12.7版本之后的iTunes软件中删除了app store功能。就导致我们不能下载ipa了
+ 分享链接在这里：oldipa	提取码: wk60
+下载完了安装iTunes即可，然后登陆上你的apple id
+然后打开fiddler文件夹里面的fiddler.exe
+【工具】 &amp;gt; 【选项】 &amp;gt; 【https】 把那几个勾都打上
+如果到时候显示证书到期的话，你就可以【重置所有证书】
+然后一路Yes同意就可以了
+然后按F12，左下角会显示捕获中，这个时候，按下ALT + Q 输入：bpu MZBuy.woa/wa/buyProduct然后回车即可
+然后回到iTunes搜索你想要的app，下载，这个时候fiddler就会拦截到一个 pxx-buy.itunes.apple.com的请求，就比如：
+https://p30-buy.itunes.apple.com/
+这个时候咱们就需要知道对应app的老版本的版本号啦
+推荐这个网站：sunny
+然后搜索app，找到对应的版本号，就比如我想要下载6版本，那我就会选择6.6.4后面的版本号。
+然后复制版本号，回到fiddler，点击那个pxx-buy，右边就会出现下面的界面，然后咱们选择 【检查器】&amp;gt; 【textview】
+然后不出意外的话，你的iTunes就开始下载app了，这个时候你就可以回到fiddler按F12关闭捕获，让它下载的更快。
+下载完成以后你就可以在：%homepath%\Music\iTunes\iTunes Media\Mobile Applications\ 
+ 不过有一点需要注意的是！你手机的AppStore登陆的账号要和刚刚下载ipa用的账号一样！
+ 然后你就可以用爱思来安装这个ipa到手机里了</description>
+    </item>
+    
+  </channel>
+</rss>
