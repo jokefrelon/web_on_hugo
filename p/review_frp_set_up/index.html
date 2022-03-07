@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en-us">
+<html lang="en-us" dir="ltr">
     <head><meta charset='utf-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='最近获得了公网IP，就想着利用一下frp来搭建几个服务玩玩。'><title>回首frp搭建</title>
 
 <link rel='canonical' href='https://jokeme.top/p/review_frp_set_up/'>
 
-<link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='回首frp搭建'>
+<link rel="stylesheet" href="/scss/style.min.8f838266c1bced5c6bbd71d0405de40d06e788c02de81dc90a51ed740c863169.css"><meta property='og:title' content='回首frp搭建'>
 <meta property='og:description' content='最近获得了公网IP，就想着利用一下frp来搭建几个服务玩玩。'>
 <meta property='og:url' content='https://jokeme.top/p/review_frp_set_up/'>
 <meta property='og:site_name' content='JokemeBlog'>
@@ -18,8 +18,8 @@
 
     </head>
     <body class="
-    article-page has-toc
-">
+    article-page
+    ">
     <script>
         (function() {
             const colorSchemeKey = 'StackColorScheme';
@@ -42,25 +42,219 @@
         }
     })();
 </script>
-<div class="container main-container flex 
-    
-        extended
-    
-">
-    
-        <div id="article-toolbar">
-            <a href="https://jokeme.top" class="back-home">
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <polyline points="15 6 9 12 15 18" />
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/author_hue3a07bfbdd4fc62fd921ca2090947f2f_15076_300x0_resize_q75_box.jpg" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">🥰</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">JokemeBlog</a></h1>
+            <h2 class="site-description">人生没有白走的路,每一步都算数。</h2>
+        </div>
+    </header><ol class="social-menu">
+            
+                <li>
+                    <a 
+                        href='https://github.com/jokefrelon'
+                        target="_blank"
+                        title="GitHub"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
 </svg>
 
 
 
-                <span>返回</span>
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://twitter.com/FrelonTroung'
+                        target="_blank"
+                        title="Twitter"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>Home</span>
             </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/%E5%85%B3%E4%BA%8E/' >
+                
+                
+                    
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/links/' >
+                
+                
+                    
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>链接</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/archives/' >
+                
+                
+                    
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>存档</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/search/' >
+                
+                
+                    
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+
+        <div class="menu-bottom-section">
+            
+            
+                <li id="dark-mode-toggle">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                    <span>暗色模式</span>
+                </li>
+            
         </div>
-    
+    </ol>
+</aside>
 <main class="main full-width">
     <article class="has-image main-article">
     <header class="article-header">
@@ -84,15 +278,17 @@
     </header>
     
 
-    <h2 class="article-title">
-        <a href="/p/review_frp_set_up/">回首frp搭建</a>
-    </h2>
-
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/review_frp_set_up/">回首frp搭建</a>
+        </h2>
     
-    <h3 class="article-subtitle">
-        最近获得了公网IP，就想着利用一下frp来搭建几个服务玩玩。
-    </h3>
-    
+        
+        <h3 class="article-subtitle">
+            最近获得了公网IP，就想着利用一下frp来搭建几个服务玩玩。
+        </h3>
+        
+    </div>
 
     
     <footer class="article-time">
@@ -122,16 +318,20 @@
 
 
                 <time class="article-time--reading">
-                    阅读时长: 1 分钟
+                    阅读时长: 2 分钟
                 </time>
             </div>
         
     </footer>
     
+
+    
 </div>
 </header>
 
     <section class="article-content">
+    
+    
     <p>最近办电信宽带，无意中发现电信给的是公网IP地址，这家伙可给我高兴坏了。在路由器上DDNS解析了一下IP地址到我的域名上，然后就开始捯饬了。</p>
 <h2 id="1-搭建服务端frps">1. 搭建服务端（frps）</h2>
 <p>先说一下我的实验环境哈</p>
@@ -143,43 +343,108 @@
 <hr>
 <p>这个frp是根据CPU选择版本的，鄙人就选择了amd64版本的压缩包。</p>
 <p>下载完了以后，选一个合适的地方解压文件。</p>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">tar -zxvf frp_0.37.1_linux_amd64.tar.gz
-</code></pre></div><p>然后直接编辑<code>frp_0.37.1_linux_amd64/frps.ini</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-ini" data-lang="ini"><span class="k">[common]</span>
-<span class="na">bind_port</span> <span class="o">=</span> <span class="s">7000</span>
-<span class="na">bind_udp_port</span> <span class="o">=</span> <span class="s">7001</span>
-<span class="na">vhost_http_port</span> <span class="o">=</span> <span class="s">8089	//电信封80 居然丧心病狂的连8080也一起封了。</span>
-<span class="na">vhost_https_port</span> <span class="o">=</span> <span class="s">444	//电信封443端口，https只能改端口了。</span>
-<span class="na">dashboard_port</span> <span class="o">=</span> <span class="s">7500	</span>
-<span class="na">dashboard_user</span> <span class="o">=</span> <span class="s">xxx</span>
-<span class="na">dashboard_pwd</span> <span class="o">=</span> <span class="s">**********</span>
-<span class="na">token</span> <span class="o">=</span> <span class="s">******</span>
-</code></pre></div><p>你也看到了配置很简单的，frps端没有啥需要操作的，然后就是 <code>systemd</code> 文件夹里面的 <code>frps.service</code> 文件，需要修改一下</p>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh"><span class="nv">ExecStart</span><span class="o">=</span>/usr/bin/frps -c /etc/frp/frps.ini
-</code></pre></div><p>为你自己的实际文件地址，别的就没有啥问题了，如果你这样还是不行可以把配置文件 <strong>[Service]</strong> 里面的 <code>User=nobody</code> 改成 <code>User=root</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">cp systemd/frps.service  /etc/systemd/system/ <span class="c1">#复制service文件到systemd里面，这样我们可以直接systemctl调用frps</span>
-sudo systemctl daemon-reload <span class="c1">#重新加载service配置文件</span>
-sudo systemctl start frps <span class="c1">#开启frps</span>
-sudo systemctl <span class="nb">enable</span> frps	<span class="c1">#开机自启动frps</span>
-</code></pre></div><h2 id="2-配置客户端frpc">2. 配置客户端（frpc）</h2>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-sh" data-lang="sh">tar -zxvf frp_0.37.1_linux_amd64.tar.gz
+</code></pre></td></tr></table>
+</div>
+</div><p>然后直接编辑<code>frp_0.37.1_linux_amd64/frps.ini</code></p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">9
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-ini" data-lang="ini"><span style="color:#66d9ef">[common]</span>
+<span style="color:#a6e22e">bind_port</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">7000</span>
+<span style="color:#a6e22e">bind_udp_port</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">7001</span>
+<span style="color:#a6e22e">vhost_http_port</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">8089	//电信封80 居然丧心病狂的连8080也一起封了。</span>
+<span style="color:#a6e22e">vhost_https_port</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">444	//电信封443端口，https只能改端口了。</span>
+<span style="color:#a6e22e">dashboard_port</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">7500	</span>
+<span style="color:#a6e22e">dashboard_user</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">xxx</span>
+<span style="color:#a6e22e">dashboard_pwd</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">**********</span>
+<span style="color:#a6e22e">token</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">******</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>你也看到了配置很简单的，frps端没有啥需要操作的，然后就是 <code>systemd</code> 文件夹里面的 <code>frps.service</code> 文件，需要修改一下</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-sh" data-lang="sh">ExecStart<span style="color:#f92672">=</span>/usr/bin/frps -c /etc/frp/frps.ini
+</code></pre></td></tr></table>
+</div>
+</div><p>为你自己的实际文件地址，别的就没有啥问题了，如果你这样还是不行可以把配置文件 <strong>[Service]</strong> 里面的 <code>User=nobody</code> 改成 <code>User=root</code></p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-sh" data-lang="sh">cp systemd/frps.service  /etc/systemd/system/ <span style="color:#75715e">#复制service文件到systemd里面，这样我们可以直接systemctl调用frps</span>
+sudo systemctl daemon-reload <span style="color:#75715e">#重新加载service配置文件</span>
+sudo systemctl start frps <span style="color:#75715e">#开启frps</span>
+sudo systemctl enable frps	<span style="color:#75715e">#开机自启动frps</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="2-配置客户端frpc">2. 配置客户端（frpc）</h2>
 <p>这里也需要下载上面的那个压缩包，因为frp的作者是吧frps和frpc放一起打包的。</p>
 <p>下载解压缩的过程咱们就略过去啦。</p>
 <p>主要是这个： <strong>frpc.ini</strong></p>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">nano frpc.ini
-</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-ini" data-lang="ini"><span class="k">[common]</span>
-<span class="na">server_addr</span> <span class="o">=</span> <span class="s">your.ip.xxx.jokeme.top</span>
-<span class="na">server_port</span> <span class="o">=</span> <span class="s">7000</span>
-<span class="na">user</span> <span class="o">=</span> <span class="s">xxx</span>
-<span class="na">token</span> <span class="o">=</span> <span class="s">******</span>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-sh" data-lang="sh">nano frpc.ini
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-ini" data-lang="ini"><span style="color:#66d9ef">[common]</span>
+<span style="color:#a6e22e">server_addr</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">your.ip.xxx.jokeme.top</span>
+<span style="color:#a6e22e">server_port</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">7000</span>
+<span style="color:#a6e22e">user</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">xxx</span>
+<span style="color:#a6e22e">token</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">******</span>
 
-<span class="k">[web]</span>
-<span class="na">type</span> <span class="o">=</span> <span class="s">https</span>
-<span class="na">local_ip</span> <span class="o">=</span> <span class="s">10.0.0.1</span>
-<span class="na">local_port</span> <span class="o">=</span> <span class="s">443</span>
-<span class="na">custom_domains</span> <span class="o">=</span> <span class="s">xxx.jokeme.top</span>
-<span class="na">use_encryption</span> <span class="o">=</span> <span class="s">true</span>
-<span class="na">use_compression</span> <span class="o">=</span> <span class="s">true</span>
-</code></pre></div><p>这样就可以搭建一个公网可以访问的http服务了，当然必须要通过：<strong>IP:Port</strong> 的形式来访问了，毕竟80、8080、443都不能用得情况下，保证可以用就不错了，这用的舒服就算了吧。</p>
+<span style="color:#66d9ef">[web]</span>
+<span style="color:#a6e22e">type</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">https</span>
+<span style="color:#a6e22e">local_ip</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">10.0.0.1</span>
+<span style="color:#a6e22e">local_port</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">443</span>
+<span style="color:#a6e22e">custom_domains</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">xxx.jokeme.top</span>
+<span style="color:#a6e22e">use_encryption</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">true</span>
+<span style="color:#a6e22e">use_compression</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">true</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>这样就可以搭建一个公网可以访问的http服务了，当然必须要通过：<strong>IP:Port</strong> 的形式来访问了，毕竟80、8080、443都不能用得情况下，保证可以用就不错了，这用的舒服就算了吧。</p>
 <p>同样得，你需要修改 <code>systemd</code> 文件夹里面的 <code>frpc.service</code> 文件，然后把文件复制到systemd里面去 。。。</p>
 <p>然后你还可以利用frp搭建别的服务，RDP、SSH、Mysql等等，官网上有很多示例：<a class="link" href="https://github.com/fatedier/frp/blob/dev/README.md"  target="_blank" rel="noopener"
     >frp_Readme.md</a></p>
@@ -225,11 +490,11 @@ sudo systemctl <span class="nb">enable</span> frps	<span class="c1">#开机自�
                 href="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/katex.min.css"integrity="sha384-RZU/ijkSsFbcmivfdRBQDtwuwVqK7GMOw6IMvKyeWL2K5UAlyp6WonmB8m7Jd0Hn"crossorigin="anonymous"
             ><script 
                 src="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/katex.min.js"integrity="sha384-pK1WpvzWVBQiP0/GjnvRxV4mOb0oxFuyRxJlk6vVw146n3egcN5C925NCP7a7BY8"crossorigin="anonymous"
-                defer="true"
+                defer
                 >
             </script><script 
                 src="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/contrib/auto-render.min.js"integrity="sha384-vZTG03m&#43;2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl"crossorigin="anonymous"
-                defer="true"
+                defer
                 >
             </script><script>
     window.addEventListener("DOMContentLoaded", () => {
@@ -245,14 +510,16 @@ sudo systemctl <span class="nb">enable</span> frps	<span class="c1">#开机自�
     
 </article>
 
-    <aside class="related-contents--wrapper">
     
+
     
-        <h2 class="section-title">相关文章</h2>
-        <div class="related-contents">
-            <div class="flex article-list--tile">
+
+<aside class="related-contents--wrapper">
+    <h2 class="section-title">相关文章</h2>
+    <div class="related-contents">
+        <div class="flex article-list--tile">
+            
                 
-                    
 <article class="has-image">
     <a href="/p/frp_penetrate/">
         
@@ -269,8 +536,8 @@ sudo systemctl <span class="nb">enable</span> frps	<span class="c1">#开机自�
         </div>
     </a>
 </article>
+            
                 
-                    
 <article class="has-image">
     <a href="/p/configure_webdav/">
         
@@ -287,8 +554,8 @@ sudo systemctl <span class="nb">enable</span> frps	<span class="c1">#开机自�
         </div>
     </a>
 </article>
+            
                 
-                    
 <article class="has-image">
     <a href="/p/hadoop_install/">
         
@@ -305,8 +572,8 @@ sudo systemctl <span class="nb">enable</span> frps	<span class="c1">#开机自�
         </div>
     </a>
 </article>
+            
                 
-                    
 <article class="has-image">
     <a href="/p/install_jellyfin/">
         
@@ -323,8 +590,8 @@ sudo systemctl <span class="nb">enable</span> frps	<span class="c1">#开机自�
         </div>
     </a>
 </article>
+            
                 
-                    
 <article class="has-image">
     <a href="/p/bark_jd_price/">
         
@@ -341,15 +608,62 @@ sudo systemctl <span class="nb">enable</span> frps	<span class="c1">#开机自�
         </div>
     </a>
 </article>
-                
-            </div>
+            
         </div>
-    
+    </div>
 </aside>
 
      
-     
+    
         
+    <script
+    src="https://giscus.app/client.js"
+    data-repo="jokefrelon/web_on_hugo"
+    data-repo-id="MDEwOlJlcG9zaXRvcnkzNjc3MTg4NTc="
+    data-category="Announcements"
+    data-category-id="DIC_kwDOFerxyc4CN_Id"
+    data-mapping="pathname"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-theme="light"
+    data-lang="en"
+    crossorigin="anonymous"
+    async
+></script>
+<script>
+    function setGiscusTheme(theme) {
+        let giscus = document.querySelector("iframe.giscus-frame");
+        if (giscus) {
+            giscus.contentWindow.postMessage(
+                {
+                    giscus: {
+                        setConfig: {
+                            theme: theme,
+                        },
+                    },
+                },
+                "https://giscus.app"
+            );
+        }
+    }
+
+    (function () {
+        addEventListener("message", (e) => {
+            if (event.origin !== "https://giscus.app") return;
+            handler();
+        });
+        window.addEventListener("onColorSchemeChange", handler);
+
+        function handler() {
+            if (document.documentElement.dataset.scheme === "light") {
+                setGiscusTheme('light');
+            } else {
+                setGiscusTheme('dark_dimmed');
+            }
+        }
+    })();
+</script>
+
     
 
     <footer class="site-footer">
@@ -363,7 +677,7 @@ sudo systemctl <span class="nb">enable</span> frps	<span class="c1">#开机自�
     
     <section class="powerby">
         Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
-        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.1.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.10.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
     </section>
 </footer>
 
@@ -432,11 +746,11 @@ sudo systemctl <span class="nb">enable</span> frps	<span class="c1">#开机自�
 
 </div><script 
                 src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
-                defer="true"
+                defer
                 >
             </script><script 
                 src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
-                defer="true"
+                defer
                 >
             </script><link 
                 rel="stylesheet" 
@@ -447,11 +761,13 @@ sudo systemctl <span class="nb">enable</span> frps	<span class="c1">#开机自�
             >
 
             </main>
-    
-        <aside class="sidebar right-sidebar sticky">
-            <section class="widget archives">
-                <div class="widget-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z"/>
   <line x1="5" y1="9" x2="19" y2="9" />
   <line x1="5" y1="15" x2="19" y2="15" />
@@ -461,26 +777,29 @@ sudo systemctl <span class="nb">enable</span> frps	<span class="c1">#开机自�
 
 
 
-                </div>
-                <h2 class="widget-title section-title">目录</h2>
-                
-                <div class="widget--toc">
-                    <nav id="TableOfContents">
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
   <ol>
     <li><a href="#1-搭建服务端frps">1. 搭建服务端（frps）</a></li>
     <li><a href="#2-配置客户端frpc">2. 配置客户端（frpc）</a></li>
     <li><a href="#3-声明">3. 声明：</a></li>
   </ol>
 </nav>
-                </div>
-            </section>
-        </aside>
-    
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
 
         </div>
         <script 
                 src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js"integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g="crossorigin="anonymous"
-                defer="false"
+                
                 >
             </script><script type="text/javascript" src="/ts/main.js" defer></script>
 <script>

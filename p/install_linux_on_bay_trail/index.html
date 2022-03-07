@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en-us">
+<html lang="en-us" dir="ltr">
     <head><meta charset='utf-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='记录一次我在Intel Bay Trail板子上安装系统的坑,恕我直言,这块板是真的垃圾'><title>Bay Trail主板安装Linux的坑</title>
 
 <link rel='canonical' href='https://jokeme.top/p/install_linux_on_bay_trail/'>
 
-<link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='Bay Trail主板安装Linux的坑'>
+<link rel="stylesheet" href="/scss/style.min.8f838266c1bced5c6bbd71d0405de40d06e788c02de81dc90a51ed740c863169.css"><meta property='og:title' content='Bay Trail主板安装Linux的坑'>
 <meta property='og:description' content='记录一次我在Intel Bay Trail板子上安装系统的坑,恕我直言,这块板是真的垃圾'>
 <meta property='og:url' content='https://jokeme.top/p/install_linux_on_bay_trail/'>
 <meta property='og:site_name' content='JokemeBlog'>
@@ -18,8 +18,8 @@
 
     </head>
     <body class="
-    article-page 
-">
+    article-page
+    ">
     <script>
         (function() {
             const colorSchemeKey = 'StackColorScheme';
@@ -42,23 +42,18 @@
         }
     })();
 </script>
-<div class="container main-container flex 
-    
-        on-phone--column extended
-    
-">
-    
-        <aside class="sidebar left-sidebar sticky">
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
     <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
         <span class="hamburger-box">
             <span class="hamburger-inner"></span>
         </span>
     </button>
 
-    <header class="site-info">
+    <header>
         
             
             <figure class="site-avatar">
+                <a href="/">
                 
                     
                     
@@ -68,24 +63,67 @@
                             height="300" class="site-logo" loading="lazy" alt="Avatar">
                     
                 
-
+                </a>
                 
                     <span class="emoji">🥰</span>
                 
             </figure>
             
         
-        <h1 class="site-name"><a href="https://jokeme.top">JokemeBlog</a></h1>
-        <h2 class="site-description">人生没有白走的路,每一步都算数。</h2>
-    </header>
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">JokemeBlog</a></h1>
+            <h2 class="site-description">人生没有白走的路,每一步都算数。</h2>
+        </div>
+    </header><ol class="social-menu">
+            
+                <li>
+                    <a 
+                        href='https://github.com/jokefrelon'
+                        target="_blank"
+                        title="GitHub"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
 
-    <ol class="menu" id="main-menu">
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://twitter.com/FrelonTroung'
+                        target="_blank"
+                        title="Twitter"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
         
         
         
 
         <li >
             <a href='/' >
+                
+                
                 
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z"/>
@@ -106,6 +144,10 @@
         <li >
             <a href='/%E5%85%B3%E4%BA%8E/' >
                 
+                
+                    
+                
+                
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z"/>
   <circle cx="12" cy="7" r="4" />
@@ -124,6 +166,10 @@
         <li >
             <a href='/links/' >
                 
+                
+                    
+                
+                
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z"/>
   <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
@@ -141,6 +187,10 @@
 
         <li >
             <a href='/archives/' >
+                
+                
+                    
+                
                 
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z"/>
@@ -161,6 +211,10 @@
         <li >
             <a href='/search/' >
                 
+                
+                    
+                
+                
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z"/>
   <circle cx="10" cy="10" r="7" />
@@ -175,9 +229,11 @@
         </li>
         
 
-        
-            <li id="dark-mode-toggle">
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <div class="menu-bottom-section">
+            
+            
+                <li id="dark-mode-toggle">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z"/>
   <circle cx="8" cy="12" r="2" />
   <rect x="2" y="6" width="20" height="12" rx="6" />
@@ -185,7 +241,7 @@
 
 
 
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z"/>
   <circle cx="16" cy="12" r="2" />
   <rect x="2" y="6" width="20" height="12" rx="6" />
@@ -193,13 +249,12 @@
 
 
 
-                <span>暗色模式</span>
-            </li>
-        
+                    <span>暗色模式</span>
+                </li>
+            
+        </div>
     </ol>
 </aside>
-
-    
 <main class="main full-width">
     <article class="has-image main-article">
     <header class="article-header">
@@ -227,15 +282,17 @@
     </header>
     
 
-    <h2 class="article-title">
-        <a href="/p/install_linux_on_bay_trail/">Bay Trail主板安装Linux的坑</a>
-    </h2>
-
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/install_linux_on_bay_trail/">Bay Trail主板安装Linux的坑</a>
+        </h2>
     
-    <h3 class="article-subtitle">
-        记录一次我在Intel Bay Trail板子上安装系统的坑,恕我直言,这块板是真的垃圾
-    </h3>
-    
+        
+        <h3 class="article-subtitle">
+            记录一次我在Intel Bay Trail板子上安装系统的坑,恕我直言,这块板是真的垃圾
+        </h3>
+        
+    </div>
 
     
     <footer class="article-time">
@@ -271,10 +328,14 @@
         
     </footer>
     
+
+    
 </div>
 </header>
 
     <section class="article-content">
+    
+    
     <h1 id="bay-trail-主板安装-linux-的坑">Bay Trail 主板安装 Linux 的坑</h1>
 <p>最近搞了一个 <strong>N2920</strong> 的低功耗小主机，本来打算搞软路由，但是家里网速不行，就打算先刷个 <strong>Linux</strong> 玩玩，于是我就被这个问题烦了将近半个月！</p>
 <p>一开始我打算安装一个 <strong>CentOS 7</strong> 玩玩，当我下载完系统刻录完开始安装的时候发现 <strong>CentOS 7</strong> 的 installer 异常的卡顿，而且耗时也非常的多，差不多需要将近半个小时才可以到图形界面的安装(我这个小主机是有固态的，这个速度肯定有很大的问题),而且好不容易到了图形界面的安装环节，还经常卡死！刚开始 我还以为可能是这个 ISO 镜像有问题，又换了一个 <strong>CentOS 8</strong> 的镜像。</p>
@@ -294,60 +355,119 @@
     >askubuntu</a></p>
 <p>反正他们大概说的是 <strong>Bay Trail</strong> 主板上安装 Linux 出现的各种异常，刚刚好我的主板也是，出现的问题也和他们的很相似</p>
 <p>在这里截取一些解决方法：</p>
-<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell"><span class="c1">#Your processor is affected by the c-state bug</span>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">50
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">51
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">52
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">53
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-shell" data-lang="shell"><span style="color:#75715e">#Your processor is affected by the c-state bug</span>
 
-<span class="c1">#This causes total freezes when the CPU tries to enter an unsupported sleep state. It&#39;s a problem for many Bay Trail devices especially with newer (4.*) kernels.</span>
+<span style="color:#75715e">#This causes total freezes when the CPU tries to enter an unsupported sleep state. It&#39;s a problem for many Bay Trail devices especially with newer (4.*) kernels.</span>
 
-<span class="c1">#Affected processors AFAIK:</span>
+<span style="color:#75715e">#Affected processors AFAIK:</span>
 
-<span class="c1">#Atom Z3735F (Asus X205TA, Acer Aspire Switch 10, Lenovo MIIX 3 1030)</span>
-<span class="c1">#Atom Z3735G</span>
-<span class="c1">#Celeron J1900 (Asus ET2325IUK, shuttle XS35V4)</span>
-<span class="c1">#Celeron N2940 (Acer Aspire ES1-711, Chromebook)</span>
-<span class="c1">#Celeron N2840 (Acer Aspire ES1-311)</span>
-<span class="c1">#Celeron N2930 (Jetway JBC311U93, Zotac Nano CI320)</span>
-<span class="c1">#Pentium N3520</span>
-<span class="c1">#Pentium N3530 (Acer V3-111P)</span>
-<span class="c1">#Pentium N3540 (Dell Inspiron 15 3000, Lenovo G50, ASUS X550MJ)</span>
-<span class="c1">#(please (suggest an) edit to add your own device if affected)</span>
+<span style="color:#75715e">#Atom Z3735F (Asus X205TA, Acer Aspire Switch 10, Lenovo MIIX 3 1030)</span>
+<span style="color:#75715e">#Atom Z3735G</span>
+<span style="color:#75715e">#Celeron J1900 (Asus ET2325IUK, shuttle XS35V4)</span>
+<span style="color:#75715e">#Celeron N2940 (Acer Aspire ES1-711, Chromebook)</span>
+<span style="color:#75715e">#Celeron N2840 (Acer Aspire ES1-311)</span>
+<span style="color:#75715e">#Celeron N2930 (Jetway JBC311U93, Zotac Nano CI320)</span>
+<span style="color:#75715e">#Pentium N3520</span>
+<span style="color:#75715e">#Pentium N3530 (Acer V3-111P)</span>
+<span style="color:#75715e">#Pentium N3540 (Dell Inspiron 15 3000, Lenovo G50, ASUS X550MJ)</span>
+<span style="color:#75715e">#(please (suggest an) edit to add your own device if affected)</span>
 
-<span class="c1">#Complete list of Bay Trail processors may be found here</span>
+<span style="color:#75715e">#Complete list of Bay Trail processors may be found here</span>
 
-<span class="c1">#There is a simple workaround for this until it gets properly fixed upstream.</span>
+<span style="color:#75715e">#There is a simple workaround for this until it gets properly fixed upstream.</span>
 
-<span class="c1">#You just need to pass a kernel boot parameter and the random freezing stops completely. The parameter may increase battery consumption slightly, but it will give you a usable system.</span>
+<span style="color:#75715e">#You just need to pass a kernel boot parameter and the random freezing stops completely. The parameter may increase battery consumption slightly, but it will give you a usable system.</span>
 
-<span class="c1">#You do this by editing the configuration file for GRUB:</span>
+<span style="color:#75715e">#You do this by editing the configuration file for GRUB:</span>
 
-<span class="c1">#Boot Ubuntu and open a terminal by pressing Ctrl+Alt+T then type</span>
+<span style="color:#75715e">#Boot Ubuntu and open a terminal by pressing Ctrl+Alt+T then type</span>
 
 sudo nano /etc/default/grub
-<span class="c1">#Find the line that starts GRUB_CMDLINE_LINUX_DEFAULT=</span>
+<span style="color:#75715e">#Find the line that starts GRUB_CMDLINE_LINUX_DEFAULT=</span>
 
-<span class="c1">#This needs to be changed to include intel_idle.max_cstate=1</span>
+<span style="color:#75715e">#This needs to be changed to include intel_idle.max_cstate=1</span>
 
-<span class="c1">#So after your edit it reads something like</span>
+<span style="color:#75715e">#So after your edit it reads something like</span>
 
-<span class="nv">GRUB_CMDLINE_LINUX_DEFAULT</span><span class="o">=</span><span class="s2">&#34;quiet splash intel_idle.max_cstate=1&#34;</span>
-<span class="c1">#quiet and splash are default parameters for Ubuntu Desktop - no need to change them, or any other pre-existing parameters</span>
+GRUB_CMDLINE_LINUX_DEFAULT<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;quiet splash intel_idle.max_cstate=1&#34;</span>
+<span style="color:#75715e">#quiet and splash are default parameters for Ubuntu Desktop - no need to change them, or any other pre-existing parameters</span>
 
-<span class="c1">#Now save the file by pressing ctrl+o then enter and exit by pressing ctrl+x</span>
+<span style="color:#75715e">#Now save the file by pressing ctrl+o then enter and exit by pressing ctrl+x</span>
 
-<span class="c1">#Now run</span>
+<span style="color:#75715e">#Now run</span>
 
 sudo update-grub
-<span class="c1">#Then reboot.</span>
+<span style="color:#75715e">#Then reboot.</span>
 
-<span class="c1">#What to do if you don&#39;t have enough time to do this before the system hangs</span>
+<span style="color:#75715e">#What to do if you don&#39;t have enough time to do this before the system hangs</span>
 
-<span class="c1">#No problem. As explained on the help page I linked to earlier, you can add the parameter to GRUB before booting. Note that this only passes the parameter for the current boot, so you still have to edit /etc/default/grub once you have booted to make the change permanent.</span>
+<span style="color:#75715e">#No problem. As explained on the help page I linked to earlier, you can add the parameter to GRUB before booting. Note that this only passes the parameter for the current boot, so you still have to edit /etc/default/grub once you have booted to make the change permanent.</span>
 
-<span class="c1">#You need to get to the GRUB menu. If you are dual booting this will appear anyway, if not you have to press and hold (or tap) shift after pressing the power button to turn on.</span>
+<span style="color:#75715e">#You need to get to the GRUB menu. If you are dual booting this will appear anyway, if not you have to press and hold (or tap) shift after pressing the power button to turn on.</span>
 
-<span class="c1">#When you get to this screen select Advanced Options for Ubuntu. You can move the cursor to a different kernel, or leave it in place to edit options for the default. Instead of pressing enter, press e and you will go into edit mode, looking vaguely like this.</span>
+<span style="color:#75715e">#When you get to this screen select Advanced Options for Ubuntu. You can move the cursor to a different kernel, or leave it in place to edit options for the default. Instead of pressing enter, press e and you will go into edit mode, looking vaguely like this.</span>
 
-<span class="c1">#Move the cursor down to where it says quiet splash, put a space after splash and carefully type intel_idle.max_cstate=1 making sure there is a space after it as well.</span>
-</code></pre></div><p>反正大概意思就是这种主板有残疾，在引导的时候会导致一些问题，需要加上这些参数就可以了</p>
+<span style="color:#75715e">#Move the cursor down to where it says quiet splash, put a space after splash and carefully type intel_idle.max_cstate=1 making sure there is a space after it as well.</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>反正大概意思就是这种主板有残疾，在引导的时候会导致一些问题，需要加上这些参数就可以了</p>
 <p>至此，这个烦了我将近半个月的问题没有了，就在引导的时候加了几个参数，鼠标正常了，键盘也可以用了，也不会卡顿了</p>
 
 </section>
@@ -383,11 +503,11 @@ sudo update-grub
                 href="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/katex.min.css"integrity="sha384-RZU/ijkSsFbcmivfdRBQDtwuwVqK7GMOw6IMvKyeWL2K5UAlyp6WonmB8m7Jd0Hn"crossorigin="anonymous"
             ><script 
                 src="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/katex.min.js"integrity="sha384-pK1WpvzWVBQiP0/GjnvRxV4mOb0oxFuyRxJlk6vVw146n3egcN5C925NCP7a7BY8"crossorigin="anonymous"
-                defer="true"
+                defer
                 >
             </script><script 
                 src="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/contrib/auto-render.min.js"integrity="sha384-vZTG03m&#43;2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl"crossorigin="anonymous"
-                defer="true"
+                defer
                 >
             </script><script>
     window.addEventListener("DOMContentLoaded", () => {
@@ -403,14 +523,16 @@ sudo update-grub
     
 </article>
 
-    <aside class="related-contents--wrapper">
     
+
     
-        <h2 class="section-title">相关文章</h2>
-        <div class="related-contents">
-            <div class="flex article-list--tile">
+
+<aside class="related-contents--wrapper">
+    <h2 class="section-title">相关文章</h2>
+    <div class="related-contents">
+        <div class="flex article-list--tile">
+            
                 
-                    
 <article class="has-image">
     <a href="/p/bark_jd_price/">
         
@@ -427,8 +549,8 @@ sudo update-grub
         </div>
     </a>
 </article>
+            
                 
-                    
 <article class="has-image">
     <a href="/p/backup_hugo_posts/">
         
@@ -445,8 +567,8 @@ sudo update-grub
         </div>
     </a>
 </article>
+            
                 
-                    
 <article class="has-image">
     <a href="/p/funny_space_in_shell_script/">
         
@@ -463,8 +585,8 @@ sudo update-grub
         </div>
     </a>
 </article>
+            
                 
-                    
 <article class="has-image">
     <a href="/p/linux_reward/">
         
@@ -481,8 +603,8 @@ sudo update-grub
         </div>
     </a>
 </article>
+            
                 
-                    
 <article class="has-image">
     <a href="/p/linux_skill/">
         
@@ -499,15 +621,62 @@ sudo update-grub
         </div>
     </a>
 </article>
-                
-            </div>
+            
         </div>
-    
+    </div>
 </aside>
 
      
-     
+    
         
+    <script
+    src="https://giscus.app/client.js"
+    data-repo="jokefrelon/web_on_hugo"
+    data-repo-id="MDEwOlJlcG9zaXRvcnkzNjc3MTg4NTc="
+    data-category="Announcements"
+    data-category-id="DIC_kwDOFerxyc4CN_Id"
+    data-mapping="pathname"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-theme="light"
+    data-lang="en"
+    crossorigin="anonymous"
+    async
+></script>
+<script>
+    function setGiscusTheme(theme) {
+        let giscus = document.querySelector("iframe.giscus-frame");
+        if (giscus) {
+            giscus.contentWindow.postMessage(
+                {
+                    giscus: {
+                        setConfig: {
+                            theme: theme,
+                        },
+                    },
+                },
+                "https://giscus.app"
+            );
+        }
+    }
+
+    (function () {
+        addEventListener("message", (e) => {
+            if (event.origin !== "https://giscus.app") return;
+            handler();
+        });
+        window.addEventListener("onColorSchemeChange", handler);
+
+        function handler() {
+            if (document.documentElement.dataset.scheme === "light") {
+                setGiscusTheme('light');
+            } else {
+                setGiscusTheme('dark_dimmed');
+            }
+        }
+    })();
+</script>
+
     
 
     <footer class="site-footer">
@@ -521,7 +690,7 @@ sudo update-grub
     
     <section class="powerby">
         Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
-        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.1.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.10.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
     </section>
 </footer>
 
@@ -590,11 +759,11 @@ sudo update-grub
 
 </div><script 
                 src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
-                defer="true"
+                defer
                 >
             </script><script 
                 src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
-                defer="true"
+                defer
                 >
             </script><link 
                 rel="stylesheet" 
@@ -610,7 +779,7 @@ sudo update-grub
         </div>
         <script 
                 src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js"integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g="crossorigin="anonymous"
-                defer="false"
+                
                 >
             </script><script type="text/javascript" src="/ts/main.js" defer></script>
 <script>

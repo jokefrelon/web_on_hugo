@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en-us">
+<html lang="en-us" dir="ltr">
     <head><meta charset='utf-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='map集合的通用方法以及各种常用方法'><title>Java中的collections的map</title>
 
 <link rel='canonical' href='https://jokeme.top/p/collection_map/'>
 
-<link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='Java中的collections的map'>
+<link rel="stylesheet" href="/scss/style.min.8f838266c1bced5c6bbd71d0405de40d06e788c02de81dc90a51ed740c863169.css"><meta property='og:title' content='Java中的collections的map'>
 <meta property='og:description' content='map集合的通用方法以及各种常用方法'>
 <meta property='og:url' content='https://jokeme.top/p/collection_map/'>
 <meta property='og:site_name' content='JokemeBlog'>
@@ -18,8 +18,8 @@
 
     </head>
     <body class="
-    article-page has-toc
-">
+    article-page
+    ">
     <script>
         (function() {
             const colorSchemeKey = 'StackColorScheme';
@@ -42,25 +42,219 @@
         }
     })();
 </script>
-<div class="container main-container flex 
-    
-        extended
-    
-">
-    
-        <div id="article-toolbar">
-            <a href="https://jokeme.top" class="back-home">
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <polyline points="15 6 9 12 15 18" />
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/author_hue3a07bfbdd4fc62fd921ca2090947f2f_15076_300x0_resize_q75_box.jpg" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">🥰</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">JokemeBlog</a></h1>
+            <h2 class="site-description">人生没有白走的路,每一步都算数。</h2>
+        </div>
+    </header><ol class="social-menu">
+            
+                <li>
+                    <a 
+                        href='https://github.com/jokefrelon'
+                        target="_blank"
+                        title="GitHub"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
 </svg>
 
 
 
-                <span>返回</span>
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://twitter.com/FrelonTroung'
+                        target="_blank"
+                        title="Twitter"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>Home</span>
             </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/%E5%85%B3%E4%BA%8E/' >
+                
+                
+                    
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/links/' >
+                
+                
+                    
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>链接</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/archives/' >
+                
+                
+                    
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>存档</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/search/' >
+                
+                
+                    
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+
+        <div class="menu-bottom-section">
+            
+            
+                <li id="dark-mode-toggle">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                    <span>暗色模式</span>
+                </li>
+            
         </div>
-    
+    </ol>
+</aside>
 <main class="main full-width">
     <article class="has-image main-article">
     <header class="article-header">
@@ -84,15 +278,17 @@
     </header>
     
 
-    <h2 class="article-title">
-        <a href="/p/collection_map/">Java中的collections的map</a>
-    </h2>
-
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/collection_map/">Java中的collections的map</a>
+        </h2>
     
-    <h3 class="article-subtitle">
-        map集合的通用方法以及各种常用方法
-    </h3>
-    
+        
+        <h3 class="article-subtitle">
+            map集合的通用方法以及各种常用方法
+        </h3>
+        
+    </div>
 
     
     <footer class="article-time">
@@ -122,23 +318,37 @@
 
 
                 <time class="article-time--reading">
-                    阅读时长: 1 分钟
+                    阅读时长: 2 分钟
                 </time>
             </div>
         
     </footer>
     
+
+    
 </div>
 </header>
 
     <section class="article-content">
+    
+    
     <h1 id="collection-map">Collection-Map</h1>
-<pre><code class="language-properties" data-lang="properties">Map--|双列集合,一次存一对键值对,必须保证唯一性
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-fallback" data-lang="fallback">Map--|双列集合,一次存一对键值对,必须保证唯一性
 	 --|HashMap:哈希表,不同步,允许空的Key,Value
 	 --|TreeMap:二叉树,线程不同步,可以对Map集合的键?排序
 	 --|Hashtable:哈希表,线程同步效率低下,不允许空的Key,Value
-</code></pre><h2 id="1-map-集合共性功能">1. Map 集合共性功能</h2>
-<table>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="1-map-集合共性功能">1. Map 集合共性功能</h2>
+<div class="table-wrapper"><table>
 <thead>
 <tr>
 <th style="text-align:center">添加</th>
@@ -159,58 +369,138 @@
 <td style="text-align:center"><strong>V get(K) / int size()</strong></td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <p>注意：如果对同一个键多次存储会出现值被覆盖的现象</p>
 <h2 id="2-map-集合取出键值对方法">2 Map 集合取出键值对方法</h2>
 <h3 id="21-迭代器取出法">2.1 迭代器取出法</h3>
-<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="nn">sourceCode</span><span class="o">;</span>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-java" data-lang="java"><span style="color:#f92672">package</span> sourceCode<span style="color:#f92672">;</span>
 
-<span class="kn">import</span> <span class="nn">java.util.HashMap</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">java.util.Iterator</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">java.util.Map</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">java.util.Set</span><span class="o">;</span>
+<span style="color:#f92672">import</span> java.util.HashMap<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> java.util.Iterator<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> java.util.Map<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> java.util.Set<span style="color:#f92672">;</span>
 
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">collMap</span> <span class="o">{</span>
-	<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
-		<span class="n">Map</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">,</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">se</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashMap</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">,</span><span class="n">String</span><span class="o">&gt;();</span>
-		<span class="n">se</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="n">1</span><span class="o">,</span> <span class="s">&#34;Now&#34;</span><span class="o">);</span>
-		<span class="n">se</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="n">5</span><span class="o">,</span> <span class="s">&#34;aset&#34;</span><span class="o">);</span>
-		<span class="n">se</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="n">6</span><span class="o">,</span> <span class="s">&#34;kEREd&#34;</span><span class="o">);</span>
-<span class="c1">//		System.out.println(se);
-</span><span class="c1"></span>		<span class="n">Set</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">keySet</span> <span class="o">=</span> <span class="n">se</span><span class="o">.</span><span class="na">keySet</span><span class="o">();</span>
-		<span class="k">for</span> <span class="o">(</span><span class="n">Iterator</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">iter</span> <span class="o">=</span> <span class="n">keySet</span><span class="o">.</span><span class="na">iterator</span><span class="o">();</span> <span class="n">iter</span><span class="o">.</span><span class="na">hasNext</span><span class="o">();)</span> <span class="o">{</span>
-			<span class="n">Integer</span> <span class="n">ssr</span> <span class="o">=</span> <span class="o">(</span><span class="n">Integer</span><span class="o">)</span> <span class="n">iter</span><span class="o">.</span><span class="na">next</span><span class="o">();</span>
-			<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">se</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">ssr</span><span class="o">));</span>
-		<span class="o">}</span>
-	<span class="o">}</span>
-<span class="o">}</span>
-</code></pre></div><h3 id="22-mapentry">2.2 Map.Entry</h3>
-<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">		<span class="n">Set</span><span class="o">&lt;</span><span class="n">Map</span><span class="o">.</span><span class="na">Entry</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">,</span> <span class="n">String</span><span class="o">&gt;&gt;</span> <span class="n">Solo</span> <span class="o">=</span> <span class="n">se</span><span class="o">.</span><span class="na">entrySet</span><span class="o">();</span>
-		<span class="k">for</span> <span class="o">(</span><span class="n">Iterator</span><span class="o">&lt;</span><span class="n">Map</span><span class="o">.</span><span class="na">Entry</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">,</span> <span class="n">String</span><span class="o">&gt;&gt;</span> <span class="n">itera</span> <span class="o">=</span> <span class="n">Solo</span><span class="o">.</span><span class="na">iterator</span><span class="o">();</span> <span class="n">itera</span><span class="o">.</span><span class="na">hasNext</span><span class="o">();)</span> <span class="o">{</span>
-			<span class="n">Map</span><span class="o">.</span><span class="na">Entry</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="n">me</span> <span class="o">=</span> <span class="n">itera</span><span class="o">.</span><span class="na">next</span><span class="o">();</span>
-			<span class="n">Integer</span> <span class="n">er</span> <span class="o">=</span><span class="n">me</span><span class="o">.</span><span class="na">getKey</span><span class="o">();</span>
-			<span class="n">String</span>  <span class="n">sun</span> <span class="o">=</span><span class="n">me</span><span class="o">.</span><span class="na">getValue</span><span class="o">();</span>
-			<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">er</span><span class="o">+</span><span class="s">&#34;::::&#34;</span><span class="o">+</span><span class="n">sun</span><span class="o">);</span>			
-		<span class="o">}</span>
-</code></pre></div><p>这里解释以下<strong>Map.Entry</strong> 其实，<strong>Entry</strong>就是<strong>Map</strong>接口内的一个接口</p>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">collMap</span> <span style="color:#f92672">{</span>
+	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+		Map<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">,</span>String<span style="color:#f92672">&gt;</span> se <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> HashMap<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">,</span>String<span style="color:#f92672">&gt;();</span>
+		se<span style="color:#f92672">.</span><span style="color:#a6e22e">put</span><span style="color:#f92672">(</span>1<span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;Now&#34;</span><span style="color:#f92672">);</span>
+		se<span style="color:#f92672">.</span><span style="color:#a6e22e">put</span><span style="color:#f92672">(</span>5<span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;aset&#34;</span><span style="color:#f92672">);</span>
+		se<span style="color:#f92672">.</span><span style="color:#a6e22e">put</span><span style="color:#f92672">(</span>6<span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;kEREd&#34;</span><span style="color:#f92672">);</span>
+<span style="color:#75715e">//		System.out.println(se);
+</span><span style="color:#75715e"></span>		Set<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> keySet <span style="color:#f92672">=</span> se<span style="color:#f92672">.</span><span style="color:#a6e22e">keySet</span><span style="color:#f92672">();</span>
+		<span style="color:#66d9ef">for</span> <span style="color:#f92672">(</span>Iterator<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> iter <span style="color:#f92672">=</span> keySet<span style="color:#f92672">.</span><span style="color:#a6e22e">iterator</span><span style="color:#f92672">();</span> iter<span style="color:#f92672">.</span><span style="color:#a6e22e">hasNext</span><span style="color:#f92672">();)</span> <span style="color:#f92672">{</span>
+			Integer ssr <span style="color:#f92672">=</span> <span style="color:#f92672">(</span>Integer<span style="color:#f92672">)</span> iter<span style="color:#f92672">.</span><span style="color:#a6e22e">next</span><span style="color:#f92672">();</span>
+			System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>se<span style="color:#f92672">.</span><span style="color:#a6e22e">get</span><span style="color:#f92672">(</span>ssr<span style="color:#f92672">));</span>
+		<span style="color:#f92672">}</span>
+	<span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="22-mapentry">2.2 Map.Entry</h3>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-Java" data-lang="Java">		Set<span style="color:#f92672">&lt;</span>Map<span style="color:#f92672">.</span><span style="color:#a6e22e">Entry</span><span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">,</span> String<span style="color:#f92672">&gt;&gt;</span> Solo <span style="color:#f92672">=</span> se<span style="color:#f92672">.</span><span style="color:#a6e22e">entrySet</span><span style="color:#f92672">();</span>
+		<span style="color:#66d9ef">for</span> <span style="color:#f92672">(</span>Iterator<span style="color:#f92672">&lt;</span>Map<span style="color:#f92672">.</span><span style="color:#a6e22e">Entry</span><span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">,</span> String<span style="color:#f92672">&gt;&gt;</span> itera <span style="color:#f92672">=</span> Solo<span style="color:#f92672">.</span><span style="color:#a6e22e">iterator</span><span style="color:#f92672">();</span> itera<span style="color:#f92672">.</span><span style="color:#a6e22e">hasNext</span><span style="color:#f92672">();)</span> <span style="color:#f92672">{</span>
+			Map<span style="color:#f92672">.</span><span style="color:#a6e22e">Entry</span><span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">,</span> String<span style="color:#f92672">&gt;</span> me <span style="color:#f92672">=</span> itera<span style="color:#f92672">.</span><span style="color:#a6e22e">next</span><span style="color:#f92672">();</span>
+			Integer er <span style="color:#f92672">=</span>me<span style="color:#f92672">.</span><span style="color:#a6e22e">getKey</span><span style="color:#f92672">();</span>
+			String  sun <span style="color:#f92672">=</span>me<span style="color:#f92672">.</span><span style="color:#a6e22e">getValue</span><span style="color:#f92672">();</span>
+			System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>er<span style="color:#f92672">+</span><span style="color:#e6db74">&#34;::::&#34;</span><span style="color:#f92672">+</span>sun<span style="color:#f92672">);</span>			
+		<span style="color:#f92672">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>这里解释以下<strong>Map.Entry</strong> 其实，<strong>Entry</strong>就是<strong>Map</strong>接口内的一个接口</p>
 <p>它随着<strong>Map</strong>的加载而加载</p>
-<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">interface</span> <span class="nc">Map</span><span class="o">{</span>
-	<span class="kd">public</span> <span class="kd">static</span> <span class="kd">interface</span> <span class="nc">Entry</span> <span class="o">{</span>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-java" data-lang="java"><span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">Map</span><span style="color:#f92672">{</span>
+	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">Entry</span> <span style="color:#f92672">{</span>
 		
-	<span class="o">}</span>
-<span class="o">}</span>
-<span class="kd">class</span> <span class="nc">xxx</span> <span class="kd">implements</span> <span class="n">Map</span><span class="o">.</span><span class="na">Entry</span><span class="o">{</span>
+	<span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">xxx</span> <span style="color:#66d9ef">implements</span> Map<span style="color:#f92672">.</span><span style="color:#a6e22e">Entry</span><span style="color:#f92672">{</span>
 
-<span class="o">}</span>
-</code></pre></div><h3 id="23-values-方法取出键值对">2.3 Values 方法取出键值对</h3>
-<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="n">Collection</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">value</span> <span class="o">=</span> <span class="n">se</span><span class="o">.</span><span class="na">values</span><span class="o">();</span>
-<span class="k">for</span> <span class="o">(</span><span class="n">Iterator</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">uuid</span> <span class="o">=</span> <span class="n">value</span><span class="o">.</span><span class="na">iterator</span><span class="o">();</span> <span class="n">uuid</span><span class="o">.</span><span class="na">hasNext</span><span class="o">();)</span> <span class="o">{</span>
-	<span class="n">String</span> <span class="n">dock</span> <span class="o">=</span><span class="n">uuid</span><span class="o">.</span><span class="na">next</span><span class="o">();</span>
-	<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">dock</span><span class="o">);</span>
-<span class="o">}</span>
-</code></pre></div><!-- raw HTML omitted -->
+<span style="color:#f92672">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="23-values-方法取出键值对">2.3 Values 方法取出键值对</h3>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-java" data-lang="java">Collection<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> value <span style="color:#f92672">=</span> se<span style="color:#f92672">.</span><span style="color:#a6e22e">values</span><span style="color:#f92672">();</span>
+<span style="color:#66d9ef">for</span> <span style="color:#f92672">(</span>Iterator<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> uuid <span style="color:#f92672">=</span> value<span style="color:#f92672">.</span><span style="color:#a6e22e">iterator</span><span style="color:#f92672">();</span> uuid<span style="color:#f92672">.</span><span style="color:#a6e22e">hasNext</span><span style="color:#f92672">();)</span> <span style="color:#f92672">{</span>
+	String dock <span style="color:#f92672">=</span>uuid<span style="color:#f92672">.</span><span style="color:#a6e22e">next</span><span style="color:#f92672">();</span>
+	System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>dock<span style="color:#f92672">);</span>
+<span style="color:#f92672">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><!-- raw HTML omitted -->
 <h3 id="24-三种方法结果如下">2.4 三种方法结果如下：</h3>
-<pre><code class="language-properties" data-lang="properties">Now
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-fallback" data-lang="fallback">Now
 aset
 kEREd
 ​~~~~~~~~~~~
@@ -221,13 +511,24 @@ kEREd
 Now
 aset
 kEREd
-</code></pre><h3 id="25-关于-mapentry-方法">2.5 关于 Map.Entry 方法</h3>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="25-关于-mapentry-方法">2.5 关于 Map.Entry 方法</h3>
 <p>其实<strong>Map.Entry</strong>可以直接写为<strong>Entry</strong> 方法，因为我在敲代码的时候偶然发现，不敲 <strong>Map.</strong> 程序依然可以正常运行</p>
 <p>百度得：</p>
-<pre><code class="language-properties" data-lang="properties">Entry是Map中的一个静态内部类，用来表示Map中的每个键值对。除非使用了静态导入:import static java.util.Map.*
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-fallback" data-lang="fallback">Entry是Map中的一个静态内部类，用来表示Map中的每个键值对。除非使用了静态导入:import static java.util.Map.*
 除了使用静态导入外，还可以直接导入这个类，因为它是public的。即:import java.util.Map.Entry。
 导入后也可以在当前空间直接使用Entry。
-</code></pre>
+</code></pre></td></tr></table>
+</div>
+</div>
 </section>
 
 
@@ -261,11 +562,11 @@ kEREd
                 href="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/katex.min.css"integrity="sha384-RZU/ijkSsFbcmivfdRBQDtwuwVqK7GMOw6IMvKyeWL2K5UAlyp6WonmB8m7Jd0Hn"crossorigin="anonymous"
             ><script 
                 src="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/katex.min.js"integrity="sha384-pK1WpvzWVBQiP0/GjnvRxV4mOb0oxFuyRxJlk6vVw146n3egcN5C925NCP7a7BY8"crossorigin="anonymous"
-                defer="true"
+                defer
                 >
             </script><script 
                 src="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/contrib/auto-render.min.js"integrity="sha384-vZTG03m&#43;2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl"crossorigin="anonymous"
-                defer="true"
+                defer
                 >
             </script><script>
     window.addEventListener("DOMContentLoaded", () => {
@@ -281,14 +582,16 @@ kEREd
     
 </article>
 
-    <aside class="related-contents--wrapper">
     
+
     
-        <h2 class="section-title">相关文章</h2>
-        <div class="related-contents">
-            <div class="flex article-list--tile">
+
+<aside class="related-contents--wrapper">
+    <h2 class="section-title">相关文章</h2>
+    <div class="related-contents">
+        <div class="flex article-list--tile">
+            
                 
-                    
 <article class="has-image">
     <a href="/p/java_annotation/">
         
@@ -305,8 +608,8 @@ kEREd
         </div>
     </a>
 </article>
+            
                 
-                    
 <article class="has-image">
     <a href="/p/java_io/">
         
@@ -323,8 +626,8 @@ kEREd
         </div>
     </a>
 </article>
+            
                 
-                    
 <article class="has-image">
     <a href="/p/java_collections_utils/">
         
@@ -341,8 +644,8 @@ kEREd
         </div>
     </a>
 </article>
+            
                 
-                    
 <article class="has-image">
     <a href="/p/java_generics/">
         
@@ -359,8 +662,8 @@ kEREd
         </div>
     </a>
 </article>
+            
                 
-                    
 <article class="has-image">
     <a href="/p/java_api_of_time/">
         
@@ -377,15 +680,62 @@ kEREd
         </div>
     </a>
 </article>
-                
-            </div>
+            
         </div>
-    
+    </div>
 </aside>
 
      
-     
+    
         
+    <script
+    src="https://giscus.app/client.js"
+    data-repo="jokefrelon/web_on_hugo"
+    data-repo-id="MDEwOlJlcG9zaXRvcnkzNjc3MTg4NTc="
+    data-category="Announcements"
+    data-category-id="DIC_kwDOFerxyc4CN_Id"
+    data-mapping="pathname"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-theme="light"
+    data-lang="en"
+    crossorigin="anonymous"
+    async
+></script>
+<script>
+    function setGiscusTheme(theme) {
+        let giscus = document.querySelector("iframe.giscus-frame");
+        if (giscus) {
+            giscus.contentWindow.postMessage(
+                {
+                    giscus: {
+                        setConfig: {
+                            theme: theme,
+                        },
+                    },
+                },
+                "https://giscus.app"
+            );
+        }
+    }
+
+    (function () {
+        addEventListener("message", (e) => {
+            if (event.origin !== "https://giscus.app") return;
+            handler();
+        });
+        window.addEventListener("onColorSchemeChange", handler);
+
+        function handler() {
+            if (document.documentElement.dataset.scheme === "light") {
+                setGiscusTheme('light');
+            } else {
+                setGiscusTheme('dark_dimmed');
+            }
+        }
+    })();
+</script>
+
     
 
     <footer class="site-footer">
@@ -399,7 +749,7 @@ kEREd
     
     <section class="powerby">
         Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
-        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.1.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.10.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
     </section>
 </footer>
 
@@ -468,11 +818,11 @@ kEREd
 
 </div><script 
                 src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
-                defer="true"
+                defer
                 >
             </script><script 
                 src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
-                defer="true"
+                defer
                 >
             </script><link 
                 rel="stylesheet" 
@@ -483,11 +833,13 @@ kEREd
             >
 
             </main>
-    
-        <aside class="sidebar right-sidebar sticky">
-            <section class="widget archives">
-                <div class="widget-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z"/>
   <line x1="5" y1="9" x2="19" y2="9" />
   <line x1="5" y1="15" x2="19" y2="15" />
@@ -497,11 +849,11 @@ kEREd
 
 
 
-                </div>
-                <h2 class="widget-title section-title">目录</h2>
-                
-                <div class="widget--toc">
-                    <nav id="TableOfContents">
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
   <ol>
     <li><a href="#1-map-集合共性功能">1. Map 集合共性功能</a></li>
     <li><a href="#2-map-集合取出键值对方法">2 Map 集合取出键值对方法</a>
@@ -515,15 +867,18 @@ kEREd
     </li>
   </ol>
 </nav>
-                </div>
-            </section>
-        </aside>
-    
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
 
         </div>
         <script 
                 src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js"integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g="crossorigin="anonymous"
-                defer="false"
+                
                 >
             </script><script type="text/javascript" src="/ts/main.js" defer></script>
 <script>

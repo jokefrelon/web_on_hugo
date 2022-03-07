@@ -1,43 +1,347 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>macOS on JokemeBlog</title>
-    <link>https://jokeme.top/categories/macos/</link>
-    <description>Recent content in macOS on JokemeBlog</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Tue, 01 Jun 2021 20:32:07 +0000</lastBuildDate><atom:link href="https://jokeme.top/categories/macos/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Hackintosh Laptop 常见快捷键</title>
-      <link>https://jokeme.top/p/hackintosh_laptop_hotkey/</link>
-      <pubDate>Tue, 01 Jun 2021 20:32:07 +0000</pubDate>
-      
-      <guid>https://jokeme.top/p/hackintosh_laptop_hotkey/</guid>
-      <description>Hackintosh Laptop 常见快捷键 一般来说可以macOS和Windows对应键位参考下面的对照表即可
-   macOS Windows     Command / ⌘ win   Option / ⌥ alt   Control / ⌃ ctrl   Shift / ⇧ shift    所有的通用快捷键加粗标记
-1. 系统快捷键: 强制退出：win + alt + esc
- 对标Windows的任务管理器，但是简化到了只有强制退出功能
- 切换桌面：ctrl + ◀︎ / ▶︎
-切换任务：win + tab
-打开finder：win + t
-连接samba：win + k
-2. 常见通用快捷键： 全选：win + a
-复制字符：win + c</description>
-    </item>
-    
-    <item>
-      <title>macOS设置brew安装的软件自启动</title>
-      <link>https://jokeme.top/p/macos_brew_installed_app_auto_start_at_boot/</link>
-      <pubDate>Mon, 22 Feb 2021 19:34:20 +0000</pubDate>
-      
-      <guid>https://jokeme.top/p/macos_brew_installed_app_auto_start_at_boot/</guid>
-      <description>1. Home-brew 简介 先介绍一下本篇文章的主角：Home-brew，它是一款macOS的软件包管理器，当然也同样适用于Linux（不会真的有人 Linux 服务器用 brew 吧？）。
-它的官网上有关于 brew 非常详细的文档，大家可以自己去看看。介绍了以后就到了我们的安装环节了！
-2. 安装 Brew 安装 brew 非常的简单，就需要一条命令就可以了，当然大家 99% 会遇到网络问题，安装过程中建议最好用 v 要不然缓慢的到超时的网络会让你年轻漂亮有活力的 ?！
-/bin/bash -c &amp;#34;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)&amp;#34; 3. brew 换源 平时我们执行 brew 命令安装软件的时候，跟以下 3 个仓库地址有关：
- brew.git homebrew-core.git homebrew-bottles  通过以下操作将这 3 个仓库地址全部替换为 Alibaba 提供的地址
-1. 替换 / 还原 brew.git 仓库地址 # 替换成阿里巴巴的 brew.git 仓库地址: cd &amp;#34;$(brew --repo)&amp;#34; git remote set-url origin https://mirrors.aliyun.com/homebrew/brew.git #======================================================= # 还原为官方提供的 brew.git 仓库地址 cd &amp;#34;$(brew --repo)&amp;#34; git remote set-url origin https://github.</description>
-    </item>
-    
-  </channel>
+    <channel>
+        <title>macOS on JokemeBlog</title>
+        <link>https://jokeme.top/categories/macos/</link>
+        <description>Recent content in macOS on JokemeBlog</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>en-us</language>
+        <lastBuildDate>Tue, 01 Jun 2021 20:32:07 +0000</lastBuildDate><atom:link href="https://jokeme.top/categories/macos/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Hackintosh Laptop 常见快捷键</title>
+        <link>https://jokeme.top/p/hackintosh_laptop_hotkey/</link>
+        <pubDate>Tue, 01 Jun 2021 20:32:07 +0000</pubDate>
+        
+        <guid>https://jokeme.top/p/hackintosh_laptop_hotkey/</guid>
+        <description>&lt;img src="https://cn.bing.com/th?id=OHR.HinterseeRamsau_EN-CN5297881270_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post Hackintosh Laptop 常见快捷键" /&gt;&lt;h1 id=&#34;hackintosh-laptop-常见快捷键&#34;&gt;Hackintosh Laptop 常见快捷键&lt;/h1&gt;
+&lt;p&gt;一般来说可以&lt;strong&gt;macOS&lt;/strong&gt;和&lt;strong&gt;Windows&lt;/strong&gt;对应键位参考下面的对照表即可&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;macOS&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;Windows&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;strong&gt;Command / ⌘&lt;/strong&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;strong&gt;win&lt;/strong&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;strong&gt;Option / ⌥&lt;/strong&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;strong&gt;alt&lt;/strong&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;strong&gt;Control / ⌃&lt;/strong&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;strong&gt;ctrl&lt;/strong&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;strong&gt;Shift / ⇧&lt;/strong&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;strong&gt;shift&lt;/strong&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;所有的通用快捷键加粗标记&lt;/p&gt;
+&lt;h2 id=&#34;1-系统快捷键&#34;&gt;1. 系统快捷键:&lt;/h2&gt;
+&lt;p&gt;强制退出：&lt;code&gt;win&lt;/code&gt; + &lt;code&gt;alt&lt;/code&gt; + &lt;code&gt;esc&lt;/code&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;对标Windows的任务管理器，但是简化到了只有强制退出功能&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;切换桌面：&lt;code&gt;ctrl&lt;/code&gt; +  &lt;code&gt;◀︎&lt;/code&gt; / &lt;code&gt;▶︎&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;切换任务：&lt;code&gt;win&lt;/code&gt; + &lt;code&gt;tab&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;打开finder：&lt;code&gt;win&lt;/code&gt; + &lt;code&gt;t&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;连接samba：&lt;code&gt;win&lt;/code&gt; + &lt;code&gt;k&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id=&#34;2-常见通用快捷键&#34;&gt;2. 常见通用快捷键：&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;全选：&lt;code&gt;win&lt;/code&gt; + &lt;code&gt;a&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;复制字符：&lt;code&gt;win&lt;/code&gt; + &lt;code&gt;c&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;保存：&lt;code&gt;win&lt;/code&gt; + &lt;code&gt;s&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;粘贴字符：&lt;code&gt;win&lt;/code&gt; + &lt;code&gt;v&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;退出登陆：&lt;code&gt;win&lt;/code&gt; + &lt;code&gt;alt&lt;/code&gt; + &lt;code&gt;shift&lt;/code&gt; + &lt;code&gt;q&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;剪切字符：&lt;code&gt;win&lt;/code&gt; + &lt;code&gt;x&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;撤销操作：&lt;code&gt;win&lt;/code&gt; + &lt;code&gt;z&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;中断执行：&lt;code&gt;ctrl&lt;/code&gt; + &lt;code&gt;c&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;行首：&lt;code&gt;win&lt;/code&gt; + &lt;code&gt;◀︎&lt;/code&gt; / &lt;code&gt;ctrl&lt;/code&gt; + &lt;code&gt;a&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;行尾：&lt;code&gt;win&lt;/code&gt; + &lt;code&gt;▶︎&lt;/code&gt;/ &lt;code&gt;ctrl&lt;/code&gt; + &lt;code&gt;e&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;页首：&lt;code&gt;win&lt;/code&gt; + &lt;code&gt;▲&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;页尾：&lt;code&gt;win&lt;/code&gt; + &lt;code&gt;▼&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;输入emoji：&lt;code&gt;ctrl&lt;/code&gt; + &lt;code&gt;win&lt;/code&gt; + &lt;code&gt;space&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;删除选中：&lt;code&gt;win&lt;/code&gt; + &lt;code&gt;back&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&#34;3-常见软件快捷键&#34;&gt;3. 常见软件快捷键&lt;/h2&gt;
+&lt;h3 id=&#34;31-typora&#34;&gt;3.1 Typora&lt;/h3&gt;
+&lt;p&gt;一级标题：&lt;code&gt;win&lt;/code&gt; + &lt;code&gt;1&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;二级标题：&lt;code&gt;win&lt;/code&gt; + &lt;code&gt;2&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;加粗：&lt;code&gt;win&lt;/code&gt; + &lt;code&gt;b&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;表格：&lt;code&gt;win&lt;/code&gt; + &lt;code&gt;t&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;斜体：&lt;code&gt;win&lt;/code&gt; + &lt;code&gt;i&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;代码：&lt;code&gt;ctrl&lt;/code&gt; + &lt;code&gt;`&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;下划线：&lt;code&gt;win&lt;/code&gt; + &lt;code&gt;u&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;超链接：&lt;code&gt;win&lt;/code&gt; + &lt;code&gt;k&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;无需列表：&lt;code&gt;win&lt;/code&gt; + &lt;code&gt;alt&lt;/code&gt; + &lt;code&gt;u&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;有序列表：&lt;code&gt;win&lt;/code&gt; + &lt;code&gt;alt&lt;/code&gt; + &lt;code&gt;o&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;显示大纲：&lt;code&gt;win&lt;/code&gt; +  &lt;code&gt;shift&lt;/code&gt; +  &lt;code&gt;l&lt;/code&gt; / &lt;code&gt;ctrl&lt;/code&gt; + &lt;code&gt;win&lt;/code&gt; + &lt;code&gt;1&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;代码块：&lt;code&gt;win&lt;/code&gt; + &lt;code&gt;alt&lt;/code&gt; + &lt;code&gt;c&lt;/code&gt; / 建议还是直接打 &lt;code&gt;```&lt;/code&gt; 或者 &lt;code&gt;~~~&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;分割线：&lt;code&gt;win&lt;/code&gt; + &lt;code&gt;alt&lt;/code&gt; + &lt;code&gt;-&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;目录生成：&lt;code&gt;[toc]&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id=&#34;32-safari--chrome&#34;&gt;3.2 Safari / Chrome&lt;/h3&gt;
+&lt;p&gt;开发者模式：&lt;code&gt;win&lt;/code&gt; + &lt;code&gt;alt&lt;/code&gt; + &lt;code&gt;i&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;刷新网页：&lt;code&gt;win&lt;/code&gt; + &lt;code&gt;r&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;切换标签页：&lt;code&gt;ctrl&lt;/code&gt; + &lt;code&gt;tab&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;进入/退出 全屏模式：&lt;code&gt;win&lt;/code&gt; + &lt;code&gt;ctrl&lt;/code&gt; + &lt;code&gt;f&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;显示/隐藏 状态栏：&lt;code&gt;win&lt;/code&gt; + &lt;code&gt;shift&lt;/code&gt; + &lt;code&gt;b&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;显示/隐藏 所有历史记录：&lt;code&gt;win&lt;/code&gt; + &lt;code&gt;y&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;打开收藏栏第一个：&lt;code&gt;win&lt;/code&gt; + &lt;code&gt;alt&lt;/code&gt; + &lt;code&gt;1&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;打开收藏栏第二个：&lt;code&gt;win&lt;/code&gt; + &lt;code&gt;alt&lt;/code&gt; + &lt;code&gt;2&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;在侧边栏打开收藏栏：&lt;code&gt;win&lt;/code&gt; + &lt;code&gt;ctrl&lt;/code&gt; + &lt;code&gt;1&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;在侧边栏打开稍后阅读：&lt;code&gt;win&lt;/code&gt; + &lt;code&gt;ctrl&lt;/code&gt; + &lt;code&gt;2&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;新建窗口：&lt;code&gt;win&lt;/code&gt; + &lt;code&gt;alt&lt;/code&gt; + &lt;code&gt;n&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;新建无痕窗口：&lt;code&gt;win&lt;/code&gt; + &lt;code&gt;shift&lt;/code&gt; + &lt;code&gt;n&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;新建标签页：&lt;code&gt;win&lt;/code&gt; + &lt;code&gt;t&lt;/code&gt; / &lt;code&gt;win&lt;/code&gt; + &lt;code&gt;n&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;关闭标签页：&lt;code&gt;win&lt;/code&gt; + &lt;code&gt;w&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;退出当前软件：&lt;code&gt;win&lt;/code&gt; + &lt;code&gt;q&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;打开软件偏好设置：&lt;code&gt;win&lt;/code&gt; + &lt;code&gt;,&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;放大视图：&lt;code&gt;win&lt;/code&gt; + &lt;code&gt;+&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;缩小视图：&lt;code&gt;win&lt;/code&gt; + &lt;code&gt;-&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>macOS设置brew安装的软件自启动</title>
+        <link>https://jokeme.top/p/macos_brew_installed_app_auto_start_at_boot/</link>
+        <pubDate>Mon, 22 Feb 2021 19:34:20 +0000</pubDate>
+        
+        <guid>https://jokeme.top/p/macos_brew_installed_app_auto_start_at_boot/</guid>
+        <description>&lt;img src="https://cn.bing.com/th?id=OHR.TurfHouse_EN-CN2756398853_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post macOS设置brew安装的软件自启动" /&gt;&lt;h2 id=&#34;1-home-brew-简介&#34;&gt;1. Home-brew 简介&lt;/h2&gt;
+&lt;p&gt;先介绍一下本篇文章的主角：&lt;strong&gt;&lt;a class=&#34;link&#34; href=&#34;https://brew.sh/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Home-brew&lt;/a&gt;&lt;/strong&gt;，它是一款&lt;strong&gt;macOS&lt;/strong&gt;的软件包管理器，当然也同样适用于&lt;strong&gt;Linux&lt;/strong&gt;（不会真的有人 Linux 服务器用 brew 吧？）。&lt;/p&gt;
+&lt;p&gt;它的官网上有关于 brew 非常详细的文档，大家可以自己去看看。介绍了以后就到了我们的安装环节了！&lt;/p&gt;
+&lt;h2 id=&#34;2-安装-brew&#34;&gt;2. 安装 Brew&lt;/h2&gt;
+&lt;p&gt;安装 brew 非常的简单，就需要一条命令就可以了，当然大家 99% 会遇到网络问题，安装过程中建议最好用 v 要不然缓慢的到超时的网络会让你年轻漂亮有活力的 ?！&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;
+&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
+&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;&lt;code&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
+&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;/bin/bash -c &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;$(&lt;/span&gt;curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh&lt;span style=&#34;color:#66d9ef&#34;&gt;)&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id=&#34;3-brew-换源&#34;&gt;3. brew 换源&lt;/h2&gt;
+&lt;p&gt;平时我们执行 brew 命令安装软件的时候，跟以下 3 个仓库地址有关：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;brew.git&lt;/li&gt;
+&lt;li&gt;homebrew-core.git&lt;/li&gt;
+&lt;li&gt;homebrew-bottles&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;通过以下操作将这 3 个仓库地址全部替换为 Alibaba 提供的地址&lt;/p&gt;
+&lt;h3 id=&#34;1-替换--还原-brewgit-仓库地址&#34;&gt;1. 替换 / 还原 brew.git 仓库地址&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;
+&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
+&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;&lt;code&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;1
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;2
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;3
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;4
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;5
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;6
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;7
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
+&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# 替换成阿里巴巴的 brew.git 仓库地址:&lt;/span&gt;
+cd &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;$(&lt;/span&gt;brew --repo&lt;span style=&#34;color:#66d9ef&#34;&gt;)&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;
+git remote set-url origin https://mirrors.aliyun.com/homebrew/brew.git
+&lt;span style=&#34;color:#75715e&#34;&gt;#=======================================================&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;# 还原为官方提供的 brew.git 仓库地址&lt;/span&gt;
+cd &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;$(&lt;/span&gt;brew --repo&lt;span style=&#34;color:#66d9ef&#34;&gt;)&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;
+git remote set-url origin https://github.com/Homebrew/brew.git
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id=&#34;2-替换--还原-homebrew-coregit-仓库地址&#34;&gt;2. 替换 / 还原 homebrew-core.git 仓库地址&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;
+&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
+&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;&lt;code&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;1
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;2
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;3
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;4
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;5
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;6
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;7
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
+&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# 替换成阿里巴巴的 homebrew-core.git 仓库地址:&lt;/span&gt;
+cd &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;$(&lt;/span&gt;brew --repo&lt;span style=&#34;color:#66d9ef&#34;&gt;)&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;/Library/Taps/homebrew/homebrew-core&amp;#34;&lt;/span&gt;
+git remote set-url origin https://mirrors.aliyun.com/homebrew/homebrew-core.git
+&lt;span style=&#34;color:#75715e&#34;&gt;#=======================================================&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;# 还原为官方提供的 homebrew-core.git 仓库地址&lt;/span&gt;
+cd &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;$(&lt;/span&gt;brew --repo&lt;span style=&#34;color:#66d9ef&#34;&gt;)&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;/Library/Taps/homebrew/homebrew-core&amp;#34;&lt;/span&gt;
+git remote set-url origin https://github.com/Homebrew/homebrew-core.git
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id=&#34;3-替换--还原-homebrew-bottles-访问地址&#34;&gt;3. 替换 / 还原 homebrew-bottles 访问地址&lt;/h3&gt;
+&lt;p&gt;这个步骤跟你的 macOS 系统使用的 shell 版本有关系&lt;/p&gt;
+&lt;p&gt;所以，先来查看当前使用的 shell 版本&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;
+&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
+&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;&lt;code&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;1
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;2
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
+&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;echo $SHELL
+&lt;span style=&#34;color:#75715e&#34;&gt;# 如果你的输出结果是 /bin/zsh，参考?的 zsh 终端操作方式&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;# 如果你的输出结果是 /bin/bash，参考?的 bash 终端操作方式&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h4 id=&#34;31-zsh-终端操作方式&#34;&gt;3.1 zsh 终端操作方式&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;
+&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
+&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;&lt;code&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;1
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;2
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;3
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;4
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;5
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;6
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;7
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;8
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
+&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# 替换成阿里巴巴的 homebrew-bottles 访问地址:&lt;/span&gt;
+echo &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.aliyun.com/homebrew/homebrew-bottles&amp;#39;&lt;/span&gt; &amp;gt;&amp;gt; ~/.zshrc
+source ~/.zshrc
+&lt;span style=&#34;color:#75715e&#34;&gt;#=======================================================&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;# 还原为官方提供的 homebrew-bottles 访问地址&lt;/span&gt;
+vi ~/.zshrc
+&lt;span style=&#34;color:#75715e&#34;&gt;# 然后，删除 HOMEBREW_BOTTLE_DOMAIN 这一行配置&lt;/span&gt;
+source ~/.zshrc
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h4 id=&#34;32-bash-终端操作方式&#34;&gt;3.2 bash 终端操作方式&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;
+&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
+&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;&lt;code&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;1
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;2
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;3
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;4
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;5
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;6
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;7
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;8
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
+&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# 替换 homebrew-bottles 访问 URL:&lt;/span&gt;
+echo &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.aliyun.com/homebrew/homebrew-bottles&amp;#39;&lt;/span&gt; &amp;gt;&amp;gt; ~/.bash_profile
+source ~/.bash_profile
+&lt;span style=&#34;color:#75715e&#34;&gt;#=======================================================&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;# 还原为官方提供的 homebrew-bottles 访问地址&lt;/span&gt;
+vi ~/.bash_profile
+&lt;span style=&#34;color:#75715e&#34;&gt;# 然后，删除 HOMEBREW_BOTTLE_DOMAIN 这一行配置&lt;/span&gt;
+source ~/.bash_profile
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id=&#34;4-安装软件&#34;&gt;4. 安装软件&lt;/h2&gt;
+&lt;p&gt;当我们已经配置好国内源时，我们就可以正式使用 brew 来安装一些软件了&lt;/p&gt;
+&lt;p&gt;eg：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;
+&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
+&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;&lt;code&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 1
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 2
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 3
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 4
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 5
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 6
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 7
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 8
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 9
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;10
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;11
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;12
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;13
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;14
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;15
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;16
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;17
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;18
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;19
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;20
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;21
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;22
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
+&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;JokerMBP L-🌵-轩-🍂-X ~ 
+&lt;span style=&#34;color:#ae81ff&#34;&gt;812&lt;/span&gt; ◯ : brew install nginx                                                ⏎ &lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;~&lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;
+&lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt;&amp;gt; Downloading https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles/bottles/ng
+&lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt;&amp;gt; Downloading from https://d29vzk4ow07wi7.cloudfront.net/9deda8734db308f21e3c8
+&lt;span style=&#34;color:#75715e&#34;&gt;######################################################################## 100.0%&lt;/span&gt;
+&lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt;&amp;gt; Pouring nginx-1.19.5.big_sur.bottle.tar.gz
+&lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt;&amp;gt; Caveats
+Docroot is: /usr/local/var/www
+
+The default port has been set in /usr/local/etc/nginx/nginx.conf to &lt;span style=&#34;color:#ae81ff&#34;&gt;8080&lt;/span&gt; so that
+nginx can run without sudo.
+
+nginx will load all files in /usr/local/etc/nginx/servers/.
+
+To have launchd start nginx now and restart at login:
+  brew services start nginx
+Or, &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; you don&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;&amp;#39;&lt;/span&gt;t want/need a background service you can just run:
+  nginx
+&lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt;&amp;gt; Summary
+🍺  /usr/local/Cellar/nginx/1.19.5: &lt;span style=&#34;color:#ae81ff&#34;&gt;25&lt;/span&gt; files, 2.2MB
+&lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt;&amp;gt; &lt;span style=&#34;color:#e6db74&#34;&gt;`&lt;/span&gt;brew cleanup&lt;span style=&#34;color:#e6db74&#34;&gt;`&lt;/span&gt; has not been run in &lt;span style=&#34;color:#ae81ff&#34;&gt;30&lt;/span&gt; days, running now...
+Pruned &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt; symbolic links and &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; directories from /usr/local
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;可以看到在安装完成后 brew 给了我们很多有用的信息&lt;/p&gt;
+&lt;p&gt;我先来总结一下：&lt;/p&gt;
+&lt;p&gt;1：&lt;strong&gt;Docroot is: /usr/local/var/www&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;默认文档位置在 &lt;strong&gt;/usr/local/var/www&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;2：&lt;strong&gt;The default port has been set in /usr/local/etc/nginx/nginx.conf to 8080&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;你丫的没有用&lt;strong&gt;sudo&lt;/strong&gt;安装，我只能把默认端口给设置为 8080，你丫要是想改默认端口就要修改 &lt;strong&gt;/usr/local/etc/nginx/nginx.conf&lt;/strong&gt;里的配置&lt;/p&gt;
+&lt;p&gt;3：&lt;strong&gt;To have launchd start nginx now and restart at login: brew services start nginx&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;你小子要想让 nginx 开机自启动就要运行： &lt;code&gt;brew services start nginx&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;4：&lt;strong&gt;if you don&amp;rsquo;t want/need a background service you can just run: nginx&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;你小子 &lt;del&gt;要死&lt;/del&gt; 要是想让 nginx 不开机自启动，直接运行命令： &lt;code&gt;nginx&lt;/code&gt; 就可以了。&lt;/p&gt;
+&lt;p&gt;就这一小段话，如果你没有注意，或者直接忽略了，那你可能在以后的使用过程中就会遇到很多的麻烦事！而且百度还可能找不到问题的答案！所以我就建议大家在安装完软件以后留意一下这个&lt;strong&gt;Tips&lt;/strong&gt;。&lt;/p&gt;
+&lt;h2 id=&#34;5-设置软件开机自启&#34;&gt;5. 设置软件开机自启&lt;/h2&gt;
+&lt;p&gt;既然 brew 可以设置开机自启动那这篇文章还有啥意义？&lt;/p&gt;
+&lt;p&gt;其实只是想让大家了解 macOS 开机自启的原理而已&lt;/p&gt;
+&lt;p&gt;现在大家应该都知道了 brew 安装软件的具体位置了，没错就是在 &lt;code&gt;/usr/local/Cellar&lt;/code&gt; 文件夹下面，比如说我安装的 nginx 就在 &lt;code&gt;/usr/local/Cellar/nginx/&lt;/code&gt; 下面。我们不妨看看文件夹里面有啥：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;
+&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
+&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;&lt;code&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 1
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 2
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 3
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 4
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 5
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 6
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 7
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 8
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 9
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;10
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
+&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;JokerMBP L-?-轩-?-X /usr/local/Cellar/nginx 
+&lt;span style=&#34;color:#ae81ff&#34;&gt;978&lt;/span&gt; ◯ : ls 1.19.5                                                                                                                                                                                                                       total &lt;span style=&#34;color:#ae81ff&#34;&gt;640&lt;/span&gt;
+-rw-r--r--  &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; frelon  staff   300K &lt;span style=&#34;color:#ae81ff&#34;&gt;11&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;24&lt;/span&gt; 23:06 CHANGES
+-rw-r--r--  &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; frelon  staff   791B  &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;22&lt;/span&gt; 20:09 INSTALL_RECEIPT.json
+-rw-r--r--  &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; frelon  staff   1.4K &lt;span style=&#34;color:#ae81ff&#34;&gt;11&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;24&lt;/span&gt; 23:06 LICENSE
+-rw-r--r--  &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; frelon  staff    49B &lt;span style=&#34;color:#ae81ff&#34;&gt;11&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;24&lt;/span&gt; 23:06 README
+drwxr-xr-x  &lt;span style=&#34;color:#ae81ff&#34;&gt;3&lt;/span&gt; frelon  staff    96B &lt;span style=&#34;color:#ae81ff&#34;&gt;11&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;24&lt;/span&gt; 23:06 bin
+-rw-r--r--  &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; frelon  staff   571B  &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;22&lt;/span&gt; 20:09 homebrew.mxcl.nginx.plist
+lrwxr-xr-x  &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; frelon  staff    16B  &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;22&lt;/span&gt; 20:09 html -&amp;gt; ../../../var/www
+drwxr-xr-x  &lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt; frelon  staff   128B &lt;span style=&#34;color:#ae81ff&#34;&gt;11&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;24&lt;/span&gt; 23:06 share
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;可以看到啊，哪里有一个显眼的 &lt;em&gt;.plist&lt;/em&gt; 结尾的文件，此时此刻我相信大家心里面肯定有答案了，开机自启动肯定和这个文件有着千丝万缕的关系。大家不要急哈，一步一步来！先把这个文件软连接到 &lt;code&gt;/Library/LaunchAgents/&lt;/code&gt; 目录下，然后就可以执行&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;
+&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
+&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;&lt;code&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
+&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;launchctl load /Library/LaunchAgents/homebrew.mxcl.xxx.plist
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;此时此刻这个软件就可以开机自启了！要知道有一些小众软件并不能通过 brew 安装，我们只能手动编译安装，这个时候如果我们想要使它开机自启动怎么办？没有了 brew 是不是突然就不知所措了！其实这个 &lt;em&gt;.plist&lt;/em&gt; 文件我们自己也是可以手动编写的，我们再通过上面的步骤是不是就可以很容易的就让一个自己编译的软件开机自启动了。&lt;/p&gt;
+&lt;p&gt;本文参考博客园用户：&lt;a class=&#34;link&#34; href=&#34;https://www.cnblogs.com/wuygblog/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;wygbbb&lt;/a&gt; &amp;amp; &lt;a class=&#34;link&#34; href=&#34;https://www.cnblogs.com/tulintao/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;tulintao&lt;/a&gt; 的文章而写，侵联删。&lt;/p&gt;
+</description>
+        </item>
+        
+    </channel>
 </rss>

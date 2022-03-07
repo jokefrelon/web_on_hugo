@@ -1,26 +1,44 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Maven on JokemeBlog</title>
-    <link>https://jokeme.top/tags/maven/</link>
-    <description>Recent content in Maven on JokemeBlog</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Thu, 23 Jul 2020 03:48:26 +0000</lastBuildDate><atom:link href="https://jokeme.top/tags/maven/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>关于 Maven 下载插件缓慢的问题</title>
-      <link>https://jokeme.top/p/download_maven_plugin_faster/</link>
-      <pubDate>Thu, 23 Jul 2020 03:48:26 +0000</pubDate>
-      
-      <guid>https://jokeme.top/p/download_maven_plugin_faster/</guid>
-      <description>关于 Maven 下载插件缓慢的问题 众所周知,咱们大天朝由于各种原因,只能活在局域网里面.这可能对那些不深度使用网络的人来说不痛不痒,但是你要是搞开发,搞运维,那才是各种烦呢
-就拿 maven来说,我™下载一个几kb得依赖都要好几个小时,甚至还要看运气
-网上也给了各种各样得解决方案特指 CSDN,但是我去尝试后,他妈的怎么弄都不行!!!我就搞不明白了,有些作者特指那种只会复制粘贴别人文章的,连别人文章的有效性都不去验证一下,就直接拿过来当作自己的了,太恶心了??
-好嘞废话不多说了,还是说 maven 吧 以前阿里源还是 http ,所以用网上的方法还是有效的,但是当阿里把 http 升级为https 后,原来的方法就失效了
- idea编辑器:忽略ssl的配置,Maven -&amp;gt; Runner -&amp;gt; VM Options添加  -Dmaven.wagon.http.ssl.insecure=true -Dmaven.wagon.http.ssl.allowall=true -Dmaven.wagon.http.ssl.ignore.validity.dates=true Eclipse操作大致同上,忽略 ssl即可
-另外想屏蔽CSDN得话可以用 Tampermonkey 脚本来屏蔽一下 p.s. 需要先安装 Tampermonkey 再安装 百度搜索结果屏蔽csdn博客
-文章转自博客园作者:lisongyu 原文链接:关于maven使用阿里源无法生效问题</description>
-    </item>
-    
-  </channel>
+    <channel>
+        <title>Maven on JokemeBlog</title>
+        <link>https://jokeme.top/tags/maven/</link>
+        <description>Recent content in Maven on JokemeBlog</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>en-us</language>
+        <lastBuildDate>Thu, 23 Jul 2020 03:48:26 +0000</lastBuildDate><atom:link href="https://jokeme.top/tags/maven/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>关于 Maven 下载插件缓慢的问题</title>
+        <link>https://jokeme.top/p/download_maven_plugin_faster/</link>
+        <pubDate>Thu, 23 Jul 2020 03:48:26 +0000</pubDate>
+        
+        <guid>https://jokeme.top/p/download_maven_plugin_faster/</guid>
+        <description>&lt;img src="https://cn.bing.com/th?id=OHR.PurpleFlowers_EN-CN8622188560_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post 关于 Maven 下载插件缓慢的问题" /&gt;&lt;h1 id=&#34;关于-maven-下载插件缓慢的问题&#34;&gt;关于 Maven 下载插件缓慢的问题&lt;/h1&gt;
+&lt;p&gt;众所周知,咱们大天朝由于各种原因,只能活在局域网里面.这可能对那些不深度使用网络的人来说不痛不痒,但是你要是搞开发,搞运维,那才是各种烦呢&lt;/p&gt;
+&lt;p&gt;就拿 &lt;code&gt;maven&lt;/code&gt;来说,我™下载一个几kb得依赖都要好几个小时,甚至还要看运气&lt;/p&gt;
+&lt;p&gt;网上也给了各种各样得解决方案&lt;del&gt;特指 CSDN&lt;/del&gt;,但是我去尝试后,他妈的怎么弄都不行!!!我就搞不明白了,有些作者&lt;del&gt;特指那种只会复制粘贴别人文章的&lt;/del&gt;,连别人文章的有效性都不去验证一下,就直接拿过来当作自己的了,太恶心了??&lt;/p&gt;
+&lt;p&gt;好嘞废话不多说了,还是说 &lt;code&gt;maven&lt;/code&gt; 吧
+以前阿里源还是 &lt;strong&gt;http&lt;/strong&gt; ,所以用网上的方法还是有效的,但是当阿里把 &lt;strong&gt;http&lt;/strong&gt; 升级为&lt;strong&gt;https&lt;/strong&gt; 后,原来的方法就失效了&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;idea编辑器:忽略&lt;code&gt;ssl&lt;/code&gt;的配置,Maven -&amp;gt; Runner -&amp;gt; VM Options添加&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;
+&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
+&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;&lt;code&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
+&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;-Dmaven.wagon.http.ssl.insecure=true -Dmaven.wagon.http.ssl.allowall=true -Dmaven.wagon.http.ssl.ignore.validity.dates=true
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;Eclipse操作大致同上,忽略 &lt;code&gt;ssl&lt;/code&gt;即可&lt;/p&gt;
+&lt;p&gt;另外想屏蔽CSDN得话可以用 &lt;strong&gt;Tampermonkey&lt;/strong&gt; 脚本来屏蔽一下
+p.s. 需要先安装 &lt;strong&gt;Tampermonkey&lt;/strong&gt; 再安装 &lt;strong&gt;&lt;a class=&#34;link&#34; href=&#34;https://greasyfork.org/zh-CN/scripts/395382-%E7%99%BE%E5%BA%A6%E6%90%9C%E7%B4%A2%E7%BB%93%E6%9E%9C%E5%B1%8F%E8%94%BDcsdn%E5%8D%9A%E5%AE%A2&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;百度搜索结果屏蔽csdn博客&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;文章转自博客园作者:&lt;strong&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.cnblogs.com/lisongyu/p/12600952.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;lisongyu&lt;/a&gt;&lt;/strong&gt;
+原文链接:&lt;strong&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.cnblogs.com/lisongyu/p/12600952.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;关于maven使用阿里源无法生效问题&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+</description>
+        </item>
+        
+    </channel>
 </rss>

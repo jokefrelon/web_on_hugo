@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en-us">
+<html lang="en-us" dir="ltr">
     <head><meta charset='utf-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='OpenStack 常用命令'><title>OpenStack 常用命令</title>
 
 <link rel='canonical' href='https://jokeme.top/p/openstack_command/'>
 
-<link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='OpenStack 常用命令'>
+<link rel="stylesheet" href="/scss/style.min.8f838266c1bced5c6bbd71d0405de40d06e788c02de81dc90a51ed740c863169.css"><meta property='og:title' content='OpenStack 常用命令'>
 <meta property='og:description' content='OpenStack 常用命令'>
 <meta property='og:url' content='https://jokeme.top/p/openstack_command/'>
 <meta property='og:site_name' content='JokemeBlog'>
@@ -18,8 +18,8 @@
 
     </head>
     <body class="
-    article-page has-toc
-">
+    article-page
+    ">
     <script>
         (function() {
             const colorSchemeKey = 'StackColorScheme';
@@ -42,25 +42,219 @@
         }
     })();
 </script>
-<div class="container main-container flex 
-    
-        extended
-    
-">
-    
-        <div id="article-toolbar">
-            <a href="https://jokeme.top" class="back-home">
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <polyline points="15 6 9 12 15 18" />
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/author_hue3a07bfbdd4fc62fd921ca2090947f2f_15076_300x0_resize_q75_box.jpg" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">🥰</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">JokemeBlog</a></h1>
+            <h2 class="site-description">人生没有白走的路,每一步都算数。</h2>
+        </div>
+    </header><ol class="social-menu">
+            
+                <li>
+                    <a 
+                        href='https://github.com/jokefrelon'
+                        target="_blank"
+                        title="GitHub"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
 </svg>
 
 
 
-                <span>返回</span>
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://twitter.com/FrelonTroung'
+                        target="_blank"
+                        title="Twitter"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>Home</span>
             </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/%E5%85%B3%E4%BA%8E/' >
+                
+                
+                    
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/links/' >
+                
+                
+                    
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>链接</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/archives/' >
+                
+                
+                    
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>存档</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/search/' >
+                
+                
+                    
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+
+        <div class="menu-bottom-section">
+            
+            
+                <li id="dark-mode-toggle">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                    <span>暗色模式</span>
+                </li>
+            
         </div>
-    
+    </ol>
+</aside>
 <main class="main full-width">
     <article class="has-image main-article">
     <header class="article-header">
@@ -84,15 +278,17 @@
     </header>
     
 
-    <h2 class="article-title">
-        <a href="/p/openstack_command/">OpenStack 常用命令</a>
-    </h2>
-
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/openstack_command/">OpenStack 常用命令</a>
+        </h2>
     
-    <h3 class="article-subtitle">
-        OpenStack 常用命令
-    </h3>
-    
+        
+        <h3 class="article-subtitle">
+            OpenStack 常用命令
+        </h3>
+        
+    </div>
 
     
     <footer class="article-time">
@@ -122,154 +318,304 @@
 
 
                 <time class="article-time--reading">
-                    阅读时长: 9 分钟
+                    阅读时长: 6 分钟
                 </time>
             </div>
         
     </footer>
     
+
+    
 </div>
 </header>
 
     <section class="article-content">
+    
+    
     <h1 id="openstack-常用命令">OpenStack 常用命令</h1>
 <h2 id="1-mysql">1. MySQL</h2>
-<div class="highlight"><pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="k">show</span><span class="w"> </span><span class="n">variables</span><span class="w"> </span><span class="k">like</span><span class="w"> </span><span class="s2">&#34;storage_engine&#34;</span><span class="p">;</span><span class="w">	</span><span class="o">//</span><span class="err">查询默认存储引擎</span><span class="n">InnoDB</span><span class="w">
-</span><span class="w"></span><span class="k">show</span><span class="w"> </span><span class="n">variables</span><span class="w"> </span><span class="k">like</span><span class="w"> </span><span class="s2">&#34;have%&#34;</span><span class="p">;</span><span class="w">	</span><span class="o">//</span><span class="err">查询支持的存储引擎</span><span class="w">
-</span></code></pre></div><h2 id="2-keyston">2. Keyston</h2>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh"><span class="nb">source</span> /etc/keystone/admin-openrc.sh
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-mysql" data-lang="mysql"><span style="color:#66d9ef">show</span> variables <span style="color:#66d9ef">like</span> <span style="color:#e6db74">&#34;storage_engine&#34;</span>;	<span style="color:#f92672">//</span><span style="color:#960050;background-color:#1e0010">查询默认存储引擎</span>InnoDB
+<span style="color:#66d9ef">show</span> variables <span style="color:#66d9ef">like</span> <span style="color:#e6db74">&#34;have%&#34;</span>;	<span style="color:#f92672">//</span><span style="color:#960050;background-color:#1e0010">查询支持的存储引擎</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="2-keyston">2. Keyston</h2>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 36
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 37
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 38
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 39
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 40
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 41
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 42
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 43
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 44
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 45
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 46
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 47
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 48
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 49
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 50
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 51
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 52
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 53
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 54
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 55
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 56
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 57
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 58
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 59
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 60
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 61
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 62
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 63
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 64
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 65
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 66
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 67
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 68
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 69
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 70
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 71
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 72
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 73
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 74
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 75
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 76
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 77
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 78
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 79
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 80
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 81
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 82
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 83
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 84
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 85
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 86
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 87
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 88
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 89
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 90
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 91
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 92
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 93
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 94
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 95
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 96
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 97
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 98
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 99
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">100
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">101
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">102
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">103
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">104
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">105
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">106
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">107
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">108
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">109
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">110
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">111
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">112
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">113
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">114
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">115
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">116
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">117
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">118
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">119
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">120
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">121
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">122
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">123
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">124
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">125
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">126
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">127
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">128
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">129
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">130
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">131
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">132
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-sh" data-lang="sh">source /etc/keystone/admin-openrc.sh
 
 openstack user create --domain demo --password password testuser 
 //--domain为所属域 --password为密码 testuser是用户名
 
-<span class="o">[</span>root@controller ~<span class="o">]</span><span class="c1"># openstack user list</span>
+<span style="color:#f92672">[</span>root@controller ~<span style="color:#f92672">]</span><span style="color:#75715e"># openstack user list</span>
 //查看用户列表
 +----------------------------------+----------+
-<span class="p">|</span> ID                               <span class="p">|</span> Name     <span class="p">|</span>
+| ID                               | Name     |
 +----------------------------------+----------+
-<span class="p">|</span> 1877ca2b73b04380af77a5cd3d057734 <span class="p">|</span> demo     <span class="p">|</span>
-<span class="p">|</span> 21a0b28505a140b9b54ca5a20542746c <span class="p">|</span> glance   <span class="p">|</span>
-<span class="p">|</span> 65e4fa15c643474d99f0b7950b5328bb <span class="p">|</span> neutron  <span class="p">|</span>
-<span class="p">|</span> 710f538564124ecd9fdcfaef40792e84 <span class="p">|</span> admin    <span class="p">|</span>
-<span class="p">|</span> 7caa95a15cb54d789d69e511c8214cb8 <span class="p">|</span> nova     <span class="p">|</span>
-<span class="p">|</span> cce5f695864940a0a32eab0d2015528c <span class="p">|</span> testuser <span class="p">|</span>
+| 1877ca2b73b04380af77a5cd3d057734 | demo     |
+| 21a0b28505a140b9b54ca5a20542746c | glance   |
+| 65e4fa15c643474d99f0b7950b5328bb | neutron  |
+| 710f538564124ecd9fdcfaef40792e84 | admin    |
+| 7caa95a15cb54d789d69e511c8214cb8 | nova     |
+| cce5f695864940a0a32eab0d2015528c | testuser |
 +----------------------------------+----------+
 
-<span class="o">[</span>root@controller ~<span class="o">]</span><span class="c1"># openstack endpoint list</span>
+<span style="color:#f92672">[</span>root@controller ~<span style="color:#f92672">]</span><span style="color:#75715e"># openstack endpoint list</span>
 //endpoint列表
 +---------------+-----------+--------------+--------------+---------+-----------+------------------+
-<span class="p">|</span> ID            <span class="p">|</span> Region    <span class="p">|</span> Service Name <span class="p">|</span> Service Type <span class="p">|</span> Enabled <span class="p">|</span> Interface <span class="p">|</span> URL              <span class="p">|</span>
+| ID            | Region    | Service Name | Service Type | Enabled | Interface | URL              |
 +---------------+-----------+--------------+--------------+---------+-----------+------------------+
-<span class="p">|</span> 1f7824e81d9f4 <span class="p">|</span> RegionOne <span class="p">|</span> neutron      <span class="p">|</span> network      <span class="p">|</span> True    <span class="p">|</span> internal  <span class="p">|</span> http://controlle <span class="p">|</span>
-<span class="p">|</span> f04b595b97a0a <span class="p">|</span>           <span class="p">|</span>              <span class="p">|</span>              <span class="p">|</span>         <span class="p">|</span>           <span class="p">|</span> r:9696           <span class="p">|</span>
-<span class="p">|</span> e78f46        <span class="p">|</span>           <span class="p">|</span>              <span class="p">|</span>              <span class="p">|</span>         <span class="p">|</span>           <span class="p">|</span>                  <span class="p">|</span>
-<span class="p">|</span> 399280c404a54 <span class="p">|</span> RegionOne <span class="p">|</span> glance       <span class="p">|</span> image        <span class="p">|</span> True    <span class="p">|</span> public    <span class="p">|</span> http://controlle <span class="p">|</span>
-<span class="p">|</span> a1bb314531c2b <span class="p">|</span>           <span class="p">|</span>              <span class="p">|</span>              <span class="p">|</span>         <span class="p">|</span>           <span class="p">|</span> r:9292           <span class="p">|</span>
-<span class="p">|</span> 880ca1        <span class="p">|</span>           <span class="p">|</span>              <span class="p">|</span>              <span class="p">|</span>         <span class="p">|</span>           <span class="p">|</span>                  <span class="p">|</span>
-<span class="p">|</span>   . ... ... ... ... ... ... ... ... ... ... ... 略 ... ... ... ... ... ... ... ... ... ... ... . <span class="p">|</span>
-<span class="p">|</span> fcb27923a6674 <span class="p">|</span> RegionOne <span class="p">|</span> neutron      <span class="p">|</span> network      <span class="p">|</span> True    <span class="p">|</span> public    <span class="p">|</span> http://controlle <span class="p">|</span>
-<span class="p">|</span> 064a5f6d6ddd6 <span class="p">|</span>           <span class="p">|</span>              <span class="p">|</span>              <span class="p">|</span>         <span class="p">|</span>           <span class="p">|</span> r:9696           <span class="p">|</span>
-<span class="p">|</span> 90fa54        <span class="p">|</span>           <span class="p">|</span>              <span class="p">|</span>              <span class="p">|</span>         <span class="p">|</span>           <span class="p">|</span>                  <span class="p">|</span>
+| 1f7824e81d9f4 | RegionOne | neutron      | network      | True    | internal  | http://controlle |
+| f04b595b97a0a |           |              |              |         |           | r:9696           |
+| e78f46        |           |              |              |         |           |                  |
+| 399280c404a54 | RegionOne | glance       | image        | True    | public    | http://controlle |
+| a1bb314531c2b |           |              |              |         |           | r:9292           |
+| 880ca1        |           |              |              |         |           |                  |
+|   . ... ... ... ... ... ... ... ... ... ... ... 略 ... ... ... ... ... ... ... ... ... ... ... . |
+| fcb27923a6674 | RegionOne | neutron      | network      | True    | public    | http://controlle |
+| 064a5f6d6ddd6 |           |              |              |         |           | r:9696           |
+| 90fa54        |           |              |              |         |           |                  |
 +---------------+-----------+--------------+--------------+---------+-----------+------------------+
 
-<span class="o">[</span>root@controller ~<span class="o">]</span><span class="c1"># openstack role list</span>
+<span style="color:#f92672">[</span>root@controller ~<span style="color:#f92672">]</span><span style="color:#75715e"># openstack role list</span>
 //查询OpenStack的角色列表
 +----------------------------------+-------+
-<span class="p">|</span> ID                               <span class="p">|</span> Name  <span class="p">|</span>
+| ID                               | Name  |
 +----------------------------------+-------+
-<span class="p">|</span> 2a818016714e4f828d96e05475a67208 <span class="p">|</span> user  <span class="p">|</span>
-<span class="p">|</span> a38871259df34ea39884b9019cea926b <span class="p">|</span> admin <span class="p">|</span>
+| 2a818016714e4f828d96e05475a67208 | user  |
+| a38871259df34ea39884b9019cea926b | admin |
 +----------------------------------+-------+
 
-<span class="o">[</span>root@controller ~<span class="o">]</span><span class="c1"># openstack service list</span>
+<span style="color:#f92672">[</span>root@controller ~<span style="color:#f92672">]</span><span style="color:#75715e"># openstack service list</span>
 //查看keystone 服务
 +----------------------------------+----------+----------+
-<span class="p">|</span> ID                               <span class="p">|</span> Name     <span class="p">|</span> Type     <span class="p">|</span>
+| ID                               | Name     | Type     |
 +----------------------------------+----------+----------+
-<span class="p">|</span> 40d9e5252f5f4967bc336542e6faab23 <span class="p">|</span> glance   <span class="p">|</span> image    <span class="p">|</span>
-<span class="p">|</span> 442e7454d7244037b7fdd05a96440dec <span class="p">|</span> keystone <span class="p">|</span> identity <span class="p">|</span>
-<span class="p">|</span> 6a95c79cc01147029bf79b5dfa3304f5 <span class="p">|</span> neutron  <span class="p">|</span> network  <span class="p">|</span>
-<span class="p">|</span> 8a78c7d6a9af432f89ae9a4d185b29d5 <span class="p">|</span> nova     <span class="p">|</span> compute  <span class="p">|</span>
-<span class="p">|</span> d821457f69fa4838ba42074652649548 <span class="p">|</span> neutron  <span class="p">|</span> network  <span class="p">|</span>
+| 40d9e5252f5f4967bc336542e6faab23 | glance   | image    |
+| 442e7454d7244037b7fdd05a96440dec | keystone | identity |
+| 6a95c79cc01147029bf79b5dfa3304f5 | neutron  | network  |
+| 8a78c7d6a9af432f89ae9a4d185b29d5 | nova     | compute  |
+| d821457f69fa4838ba42074652649548 | neutron  | network  |
 +----------------------------------+----------+----------+
 
-<span class="o">[</span>root@controller ~<span class="o">]</span><span class="c1"># openstack project list</span>
+<span style="color:#f92672">[</span>root@controller ~<span style="color:#f92672">]</span><span style="color:#75715e"># openstack project list</span>
 //查看keystone租户
 +----------------------------------+---------+
-<span class="p">|</span> ID                               <span class="p">|</span> Name    <span class="p">|</span>
+| ID                               | Name    |
 +----------------------------------+---------+
-<span class="p">|</span> 00fa84b7a654447886421978253a2829 <span class="p">|</span> demo    <span class="p">|</span>
-<span class="p">|</span> 869f732ec387457ba9cfdcb424cc8ea2 <span class="p">|</span> admin   <span class="p">|</span>
-<span class="p">|</span> b421cbca4234472a94de962c634b5bb9 <span class="p">|</span> service <span class="p">|</span>
+| 00fa84b7a654447886421978253a2829 | demo    |
+| 869f732ec387457ba9cfdcb424cc8ea2 | admin   |
+| b421cbca4234472a94de962c634b5bb9 | service |
 +----------------------------------+---------+
 
-<span class="o">[</span>root@controller ~<span class="o">]</span><span class="c1"># openstack project show demo</span>
+<span style="color:#f92672">[</span>root@controller ~<span style="color:#f92672">]</span><span style="color:#75715e"># openstack project show demo</span>
 //查看租户情况,show 后面加上上面查询到的用户 name
 +-------------+----------------------------------+
-<span class="p">|</span> Field       <span class="p">|</span> Value                            <span class="p">|</span>
+| Field       | Value                            |
 +-------------+----------------------------------+
-<span class="p">|</span> description <span class="p">|</span> Demo Project                     <span class="p">|</span>
-<span class="p">|</span> domain_id   <span class="p">|</span> ad5088bf450145819f9338635ebfb7a6 <span class="p">|</span>
-<span class="p">|</span> enabled     <span class="p">|</span> True                             <span class="p">|</span>
-<span class="p">|</span> id          <span class="p">|</span> 00fa84b7a654447886421978253a2829 <span class="p">|</span>
-<span class="p">|</span> is_domain   <span class="p">|</span> False                            <span class="p">|</span>
-<span class="p">|</span> name        <span class="p">|</span> demo                             <span class="p">|</span>
-<span class="p">|</span> parent_id   <span class="p">|</span> ad5088bf450145819f9338635ebfb7a6 <span class="p">|</span>
+| description | Demo Project                     |
+| domain_id   | ad5088bf450145819f9338635ebfb7a6 |
+| enabled     | True                             |
+| id          | 00fa84b7a654447886421978253a2829 |
+| is_domain   | False                            |
+| name        | demo                             |
+| parent_id   | ad5088bf450145819f9338635ebfb7a6 |
 +-------------+----------------------------------+
 
-<span class="o">[</span>root@controller ~<span class="o">]</span><span class="c1"># openstack domain create --description &#34;PPX_PiXiaoMei_Only&#34; NeiHanDuanZi_TV</span>
+<span style="color:#f92672">[</span>root@controller ~<span style="color:#f92672">]</span><span style="color:#75715e"># openstack domain create --description &#34;PPX_PiXiaoMei_Only&#34; NeiHanDuanZi_TV</span>
 //创建域
-//--description <span class="s2">&#34;PPX_PiXiaoMei_Only&#34;</span> 不是必须的, 下同
+//--description <span style="color:#e6db74">&#34;PPX_PiXiaoMei_Only&#34;</span> 不是必须的, 下同
 +-------------+----------------------------------+
-<span class="p">|</span> Field       <span class="p">|</span> Value                            <span class="p">|</span>
+| Field       | Value                            |
 +-------------+----------------------------------+
-<span class="p">|</span> description <span class="p">|</span> PPX_PiXiaoMei_Only               <span class="p">|</span>
-<span class="p">|</span> enabled     <span class="p">|</span> True                             <span class="p">|</span>
-<span class="p">|</span> id          <span class="p">|</span> 57581f0aa311416c88c9fdb36688a46e <span class="p">|</span>
-<span class="p">|</span> name        <span class="p">|</span> NeiHanDuanZi_TV                  <span class="p">|</span>
+| description | PPX_PiXiaoMei_Only               |
+| enabled     | True                             |
+| id          | 57581f0aa311416c88c9fdb36688a46e |
+| name        | NeiHanDuanZi_TV                  |
 +-------------+----------------------------------+
 
-<span class="o">[</span>root@controller ~<span class="o">]</span><span class="c1"># openstack project create --domain NeiHanDuanZi_TV --description &#34;PDL&#34; PXM</span>
+<span style="color:#f92672">[</span>root@controller ~<span style="color:#f92672">]</span><span style="color:#75715e"># openstack project create --domain NeiHanDuanZi_TV --description &#34;PDL&#34; PXM</span>
 //创建项目（租户）
 +-------------+----------------------------------+
-<span class="p">|</span> Field       <span class="p">|</span> Value                            <span class="p">|</span>
+| Field       | Value                            |
 +-------------+----------------------------------+
-<span class="p">|</span> description <span class="p">|</span> PDL                              <span class="p">|</span>
-<span class="p">|</span> domain_id   <span class="p">|</span> 57581f0aa311416c88c9fdb36688a46e <span class="p">|</span>
-<span class="p">|</span> enabled     <span class="p">|</span> True                             <span class="p">|</span>
-<span class="p">|</span> id          <span class="p">|</span> 4b6c52f02496465ebc70447b740a043c <span class="p">|</span>
-<span class="p">|</span> is_domain   <span class="p">|</span> False                            <span class="p">|</span>
-<span class="p">|</span> name        <span class="p">|</span> PXM                              <span class="p">|</span>
-<span class="p">|</span> parent_id   <span class="p">|</span> 57581f0aa311416c88c9fdb36688a46e <span class="p">|</span>
+| description | PDL                              |
+| domain_id   | 57581f0aa311416c88c9fdb36688a46e |
+| enabled     | True                             |
+| id          | 4b6c52f02496465ebc70447b740a043c |
+| is_domain   | False                            |
+| name        | PXM                              |
+| parent_id   | 57581f0aa311416c88c9fdb36688a46e |
 +-------------+----------------------------------+
 
-<span class="o">[</span>root@controller ~<span class="o">]</span><span class="c1"># openstack user create --domain NeiHanDuanZi_TV --password-prompt frelon</span>
+<span style="color:#f92672">[</span>root@controller ~<span style="color:#f92672">]</span><span style="color:#75715e"># openstack user create --domain NeiHanDuanZi_TV --password-prompt frelon</span>
 //创建用户
 User Password:
 Repeat User Password:
 +-----------+----------------------------------+
-<span class="p">|</span> Field     <span class="p">|</span> Value                            <span class="p">|</span>
+| Field     | Value                            |
 +-----------+----------------------------------+
-<span class="p">|</span> domain_id <span class="p">|</span> 57581f0aa311416c88c9fdb36688a46e <span class="p">|</span>
-<span class="p">|</span> enabled   <span class="p">|</span> True                             <span class="p">|</span>
-<span class="p">|</span> id        <span class="p">|</span> 5ac456db906a43e8a8427ae7f3a5334a <span class="p">|</span>
-<span class="p">|</span> name      <span class="p">|</span> frelon                           <span class="p">|</span>
+| domain_id | 57581f0aa311416c88c9fdb36688a46e |
+| enabled   | True                             |
+| id        | 5ac456db906a43e8a8427ae7f3a5334a |
+| name      | frelon                           |
 +-----------+----------------------------------+
 
 
-<span class="o">[</span>root@controller ~<span class="o">]</span><span class="c1"># openstack role create oiL</span>
+<span style="color:#f92672">[</span>root@controller ~<span style="color:#f92672">]</span><span style="color:#75715e"># openstack role create oiL</span>
 //创建角色
 +-----------+----------------------------------+
-<span class="p">|</span> Field     <span class="p">|</span> Value                            <span class="p">|</span>
+| Field     | Value                            |
 +-----------+----------------------------------+
-<span class="p">|</span> domain_id <span class="p">|</span> None                             <span class="p">|</span>
-<span class="p">|</span> id        <span class="p">|</span> 893a47b1b1ce4f558858418da04c86e4 <span class="p">|</span>
-<span class="p">|</span> name      <span class="p">|</span> oiL                              <span class="p">|</span>
+| domain_id | None                             |
+| id        | 893a47b1b1ce4f558858418da04c86e4 |
+| name      | oiL                              |
 +-----------+----------------------------------+
 
 openstack role add  --project PXM --user frelon oiL
 //为某项目中的某用户指定角色
-</code></pre></div><blockquote>
+</code></pre></td></tr></table>
+</div>
+</div><blockquote>
 <p><code>Tenant</code>也叫<code>project</code>,译为<code>租户</code> , 所有的资源(包括但不限于<code>CPU</code>,<code>Memory</code>,<code>Disk</code>等)都属于<code>Tenant</code> , <code>User</code> 本生并没有任何调度资源的权力,只有把 <code>User</code>加入<code>Tenant</code>后,用户才有资源的调度权限,<code>Tenant</code>就相当于一个 <strong>用户组</strong>,只不过在<code>OpenStack</code>这里被强化了,用户必须加入一个或多个<strong>用户组</strong>才可以调度资源</p>
 </blockquote>
 <blockquote>
@@ -282,107 +628,374 @@ openstack role add  --project PXM --user frelon oiL
 <p><code>Domain</code> 常常表示一个客户/合作伙伴,并且 <code>project</code>,<code>Group</code>,<code>User</code>在同一个<code>Domain</code>里面不可以重复</p>
 </blockquote>
 <h2 id="3-glance">3. glance</h2>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">glance image-create --name <span class="s2">&#34;testone&#34;</span> --disk-format <span class="s2">&#34;qcow2&#34;</span> --container-format bare --progress &lt; /root/CentOS_6.5_x86_64_XD.qcow2
-//上传镜像 并 用--name 命名为 <span class="s2">&#34;testone&#34;</span>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-sh" data-lang="sh">glance image-create --name <span style="color:#e6db74">&#34;testone&#34;</span> --disk-format <span style="color:#e6db74">&#34;qcow2&#34;</span> --container-format bare --progress &lt; /root/CentOS_6.5_x86_64_XD.qcow2
+//上传镜像 并 用--name 命名为 <span style="color:#e6db74">&#34;testone&#34;</span>
 
-openstack image <span class="nb">set</span> testone --name examimage 
+openstack image set testone --name examimage 
 //修改已上传的镜像名称
 
 openstack image list 
 //列出已上传的镜像列表
-</code></pre></div><h2 id="4-nova">4. nova</h2>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">nova usage-list 
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="4-nova">4. nova</h2>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-sh" data-lang="sh">nova usage-list 
 //查询资源使用情况
-</code></pre></div><h2 id="5-neutron">5. neutron</h2>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh"> neutron router-list
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="5-neutron">5. neutron</h2>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-sh" data-lang="sh"> neutron router-list
  //列出当前存在的网络/路由器
  
  neutron router-show + id/name
  
- <span class="o">[</span>root@controller ~<span class="o">]</span><span class="c1">#  neutron router-list</span>
+ <span style="color:#f92672">[</span>root@controller ~<span style="color:#f92672">]</span><span style="color:#75715e">#  neutron router-list</span>
 +--------------------------------------+------+-----------------------+-------------+-------+
-<span class="p">|</span> id                                   <span class="p">|</span> name <span class="p">|</span> external_gateway_info <span class="p">|</span> distributed <span class="p">|</span> ha    <span class="p">|</span>
+| id                                   | name | external_gateway_info | distributed | ha    |
 +--------------------------------------+------+-----------------------+-------------+-------+
-<span class="p">|</span> bb46e65a-ad51-4c13-b1c6-51c845dcfb52 <span class="p">|</span> cvn  <span class="p">|</span> null                  <span class="p">|</span> False       <span class="p">|</span> False <span class="p">|</span>
+| bb46e65a-ad51-4c13-b1c6-51c845dcfb52 | cvn  | null                  | False       | False |
 +--------------------------------------+------+-----------------------+-------------+-------+
-<span class="o">[</span>root@controller ~<span class="o">]</span><span class="c1">#  neutron router-show bb46e65a-ad51-4c13-b1c6-51c845dcfb52</span>
+<span style="color:#f92672">[</span>root@controller ~<span style="color:#f92672">]</span><span style="color:#75715e">#  neutron router-show bb46e65a-ad51-4c13-b1c6-51c845dcfb52</span>
 +-------------------------+--------------------------------------+
-<span class="p">|</span> Field                   <span class="p">|</span> Value                                <span class="p">|</span>
+| Field                   | Value                                |
 +-------------------------+--------------------------------------+
-<span class="p">|</span> admin_state_up          <span class="p">|</span> True                                 <span class="p">|</span>
-<span class="p">|</span> availability_zone_hints <span class="p">|</span>                                      <span class="p">|</span>
-<span class="p">|</span> availability_zones      <span class="p">|</span> nova                                 <span class="p">|</span>
-<span class="p">|</span> description             <span class="p">|</span>                                      <span class="p">|</span>
-<span class="p">|</span> distributed             <span class="p">|</span> False                                <span class="p">|</span>
-<span class="p">|</span> external_gateway_info   <span class="p">|</span>                                      <span class="p">|</span>
-<span class="p">|</span> ha                      <span class="p">|</span> False                                <span class="p">|</span>
-<span class="p">|</span> id                      <span class="p">|</span> bb46e65a-ad51-4c13-b1c6-51c845dcfb52 <span class="p">|</span>
-<span class="p">|</span> name                    <span class="p">|</span> cvn                                  <span class="p">|</span>
-<span class="p">|</span> routes                  <span class="p">|</span>                                      <span class="p">|</span>
-<span class="p">|</span> status                  <span class="p">|</span> ACTIVE                               <span class="p">|</span>
-<span class="p">|</span> tenant_id               <span class="p">|</span> 869f732ec387457ba9cfdcb424cc8ea2     <span class="p">|</span>
+| admin_state_up          | True                                 |
+| availability_zone_hints |                                      |
+| availability_zones      | nova                                 |
+| description             |                                      |
+| distributed             | False                                |
+| external_gateway_info   |                                      |
+| ha                      | False                                |
+| id                      | bb46e65a-ad51-4c13-b1c6-51c845dcfb52 |
+| name                    | cvn                                  |
+| routes                  |                                      |
+| status                  | ACTIVE                               |
+| tenant_id               | 869f732ec387457ba9cfdcb424cc8ea2     |
 +-------------------------+--------------------------------------+
 
 
-</code></pre></div><h2 id="6-trove">6. trove</h2>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="6-trove">6. trove</h2>
 <h2 id="7-openstack命令大全">7. OpenStack命令大全</h2>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">access token create                        project create
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 36
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 37
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 38
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 39
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 40
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 41
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 42
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 43
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 44
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 45
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 46
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 47
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 48
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 49
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 50
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 51
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 52
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 53
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 54
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 55
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 56
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 57
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 58
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 59
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 60
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 61
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 62
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 63
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 64
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 65
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 66
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 67
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 68
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 69
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 70
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 71
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 72
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 73
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 74
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 75
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 76
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 77
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 78
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 79
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 80
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 81
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 82
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 83
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 84
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 85
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 86
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 87
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 88
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 89
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 90
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 91
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 92
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 93
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 94
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 95
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 96
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 97
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 98
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 99
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">100
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">101
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">102
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">103
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">104
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">105
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">106
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">107
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">108
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">109
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">110
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">111
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">112
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">113
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">114
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">115
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">116
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">117
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">118
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">119
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">120
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">121
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">122
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">123
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">124
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">125
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">126
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">127
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">128
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">129
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">130
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">131
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">132
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">133
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">134
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">135
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">136
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">137
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">138
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">139
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">140
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">141
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">142
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">143
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">144
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">145
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">146
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">147
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">148
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">149
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">150
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">151
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">152
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">153
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">154
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">155
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">156
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">157
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">158
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">159
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">160
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">161
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">162
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">163
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">164
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">165
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">166
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">167
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">168
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">169
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">170
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">171
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">172
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">173
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">174
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">175
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">176
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">177
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">178
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">179
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">180
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">181
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">182
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">183
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">184
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">185
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">186
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">187
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">188
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">189
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">190
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">191
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">192
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">193
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">194
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">195
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">196
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">197
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">198
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">199
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">200
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">201
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">202
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">203
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">204
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">205
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-sh" data-lang="sh">access token create                        project create
 acl delete                                 project delete
 acl get                                    project list
-acl submit                                 project <span class="nb">set</span>
+acl submit                                 project set
 acl user add                               project show
 acl user remove                            ptr record list
-aggregate add host                         ptr record <span class="nb">set</span>
+aggregate add host                         ptr record set
 aggregate create                           ptr record show
-aggregate delete                           ptr record <span class="nb">unset</span>
-aggregate list                             quota <span class="nb">set</span>
+aggregate delete                           ptr record unset
+aggregate list                             quota set
 aggregate remove host                      quota show
-aggregate <span class="nb">set</span>                              recordset create
+aggregate set                              recordset create
 aggregate show                             recordset delete
 availability zone list                     recordset list
-backup create                              recordset <span class="nb">set</span>
+backup create                              recordset set
 backup delete                              recordset show
 backup list                                region create
 backup restore                             region delete
 backup show                                region list
-ca get                                     region <span class="nb">set</span>
+ca get                                     region set
 ca list                                    region show
 catalog list                               request token authorize
 catalog show                               request token create
-<span class="nb">command</span> list                               role add
-<span class="nb">complete</span>                                   role assignment list
+command list                               role add
+complete                                   role assignment list
 compute agent create                       role create
 compute agent delete                       role delete
 compute agent list                         role list
-compute agent <span class="nb">set</span>                          role remove
-compute service delete                     role <span class="nb">set</span>
+compute agent set                          role remove
+compute service delete                     role set
 compute service list                       role show
-compute service <span class="nb">set</span>                        router create
+compute service set                        router create
 configuration show                         router delete
 console log show                           router list
-console url show                           router <span class="nb">set</span>
+console url show                           router set
 consumer create                            router show
 consumer delete                            secret container create
 consumer list                              secret container delete
-consumer <span class="nb">set</span>                               secret container get
+consumer set                               secret container get
 consumer show                              secret container list
 container create                           secret delete
 container delete                           secret get
 container list                             secret list
 container save                             secret order create
-container <span class="nb">set</span>                              secret order delete
+container set                              secret order delete
 container show                             secret order get
-container <span class="nb">unset</span>                            secret order list
+container unset                            secret order list
 credential create                          secret store
 credential delete                          secret update
 credential list                            security group create
-credential <span class="nb">set</span>                             security group delete
+credential set                             security group delete
 credential show                            security group list
 dataprocessing cluster create              security group rule create
 dataprocessing cluster delete              security group rule delete
 dataprocessing cluster list                security group rule list
 dataprocessing cluster scale               security group rule show
-dataprocessing cluster show                security group <span class="nb">set</span>
+dataprocessing cluster show                security group set
 dataprocessing cluster template create     security group show
 dataprocessing cluster template delete     server add security group
 dataprocessing cluster template list       server add volume
@@ -390,48 +1003,48 @@ dataprocessing cluster template show       server create
 dataprocessing cluster template update     server delete
 dataprocessing cluster update              server dump create
 dataprocessing cluster verification        server image create
-dataprocessing data <span class="nb">source</span> create          server list
-dataprocessing data <span class="nb">source</span> delete          server lock
-dataprocessing data <span class="nb">source</span> list            server migrate
-dataprocessing data <span class="nb">source</span> show            server pause
-dataprocessing data <span class="nb">source</span> update          server reboot
+dataprocessing data source create          server list
+dataprocessing data source delete          server lock
+dataprocessing data source list            server migrate
+dataprocessing data source show            server pause
+dataprocessing data source update          server reboot
 dataprocessing image list                  server rebuild
 dataprocessing image register              server remove security group
 dataprocessing image show                  server remove volume
 dataprocessing image tags add              server rescue
 dataprocessing image tags remove           server resize
-dataprocessing image tags <span class="nb">set</span>              server resume
-dataprocessing image unregister            server <span class="nb">set</span>
+dataprocessing image tags set              server resume
+dataprocessing image unregister            server set
 dataprocessing job binary create           server shelve
 dataprocessing job binary delete           server show
 dataprocessing job binary download         server ssh
 dataprocessing job binary list             server start
 dataprocessing job binary show             server stop
-dataprocessing job binary update           server <span class="nb">suspend</span>
+dataprocessing job binary update           server suspend
 dataprocessing job delete                  server unlock
 dataprocessing job execute                 server unpause
 dataprocessing job list                    server unrescue
-dataprocessing job show                    server <span class="nb">unset</span>
+dataprocessing job show                    server unset
 dataprocessing job template create         server unshelve
 dataprocessing job template delete         service create
 dataprocessing job template list           service delete
 dataprocessing job template show           service list
 dataprocessing job template update         service provider create
-dataprocessing job <span class="nb">type</span> configs get        service provider delete
-dataprocessing job <span class="nb">type</span> list               service provider list
-dataprocessing job update                  service provider <span class="nb">set</span>
+dataprocessing job type configs get        service provider delete
+dataprocessing job type list               service provider list
+dataprocessing job update                  service provider set
 dataprocessing node group template create  service provider show
-dataprocessing node group template delete  service <span class="nb">set</span>
+dataprocessing node group template delete  service set
 dataprocessing node group template list    service show
 dataprocessing node group template show    snapshot create
 dataprocessing node group template update  snapshot delete
 dataprocessing plugin configs get          snapshot list
-dataprocessing plugin list                 snapshot <span class="nb">set</span>
+dataprocessing plugin list                 snapshot set
 dataprocessing plugin show                 snapshot show
-domain create                              snapshot <span class="nb">unset</span>
+domain create                              snapshot unset
 domain delete                              software config create
 domain list                                software config delete
-domain <span class="nb">set</span>                                 software config list
+domain set                                 software config list
 domain show                                software config show
 ec2 credentials create                     software deployment create
 ec2 credentials delete                     software deployment delete
@@ -440,7 +1053,7 @@ ec2 credentials show                       software deployment metadata show
 endpoint create                            software deployment output show
 endpoint delete                            software deployment show
 endpoint list                              stack abandon
-endpoint <span class="nb">set</span>                               stack adopt
+endpoint set                               stack adopt
 endpoint show                              stack cancel
 extension list                             stack check
 federation domain list                     stack create
@@ -448,23 +1061,23 @@ federation project list                    stack delete
 federation protocol create                 stack event list
 federation protocol delete                 stack event show
 federation protocol list                   stack hook clear
-federation protocol <span class="nb">set</span>                    stack hook poll
+federation protocol set                    stack hook poll
 federation protocol show                   stack list
 flavor create                              stack output list
 flavor delete                              stack output show
 flavor list                                stack resource list
-flavor <span class="nb">set</span>                                 stack resource mark unhealthy
+flavor set                                 stack resource mark unhealthy
 flavor show                                stack resource metadata
-flavor <span class="nb">unset</span>                               stack resource show
+flavor unset                               stack resource show
 group add user                             stack resource signal
 group contains user                        stack resume
 group create                               stack show
 group delete                               stack snapshot create
 group list                                 stack snapshot delete
 group remove user                          stack snapshot list
-group <span class="nb">set</span>                                  stack snapshot restore
+group set                                  stack snapshot restore
 group show                                 stack snapshot show
-<span class="nb">help</span>                                       stack <span class="nb">suspend</span>
+help                                       stack suspend
 host list                                  stack template show
 host show                                  stack update
 hypervisor list                            subnet delete
@@ -473,15 +1086,15 @@ hypervisor stats show                      subnet pool delete
 identity provider create                   subnet pool list
 identity provider delete                   subnet pool show
 identity provider list                     subnet show
-identity provider <span class="nb">set</span>                      tld create
+identity provider set                      tld create
 identity provider show                     tld delete
 image add project                          tld list
-image create                               tld <span class="nb">set</span>
+image create                               tld set
 image delete                               tld show
 image list                                 token issue
 image remove project                       token revoke
 image save                                 trust create
-image <span class="nb">set</span>                                  trust delete
+image set                                  trust delete
 image show                                 trust list
 ip fixed add                               trust show
 ip fixed remove                            usage list
@@ -489,8 +1102,8 @@ ip floating add                            usage show
 ip floating create                         user create
 ip floating delete                         user delete
 ip floating list                           user list
-ip floating pool list                      user password <span class="nb">set</span>
-ip floating remove                         user <span class="nb">set</span>
+ip floating pool list                      user password set
+ip floating remove                         user set
 ip floating show                           user show
 keypair create                             volume create
 keypair delete                             volume delete
@@ -500,38 +1113,40 @@ limits show                                volume qos create
 mapping create                             volume qos delete
 mapping delete                             volume qos disassociate
 mapping list                               volume qos list
-mapping <span class="nb">set</span>                                volume qos <span class="nb">set</span>
+mapping set                                volume qos set
 mapping show                               volume qos show
-module list                                volume qos <span class="nb">unset</span>
-network create                             volume <span class="nb">set</span>
+module list                                volume qos unset
+network create                             volume set
 network delete                             volume show
-network list                               volume <span class="nb">type</span> create
-network <span class="nb">set</span>                                volume <span class="nb">type</span> delete
-network show                               volume <span class="nb">type</span> list
-object create                              volume <span class="nb">type</span> <span class="nb">set</span>
-object delete                              volume <span class="nb">type</span> show
-object list                                volume <span class="nb">type</span> <span class="nb">unset</span>
-object save                                volume <span class="nb">unset</span>
-object <span class="nb">set</span>                                 zone abandon
+network list                               volume type create
+network set                                volume type delete
+network show                               volume type list
+object create                              volume type set
+object delete                              volume type show
+object list                                volume type unset
+object save                                volume unset
+object set                                 zone abandon
 object show                                zone axfr
-object store account <span class="nb">set</span>                   zone blacklist create
+object store account set                   zone blacklist create
 object store account show                  zone blacklist delete
-object store account <span class="nb">unset</span>                 zone blacklist list
-object <span class="nb">unset</span>                               zone blacklist <span class="nb">set</span>
+object store account unset                 zone blacklist list
+object unset                               zone blacklist set
 orchestration build info                   zone blacklist show
-orchestration resource <span class="nb">type</span> list           zone create
-orchestration resource <span class="nb">type</span> show           zone delete
+orchestration resource type list           zone create
+orchestration resource type show           zone delete
 orchestration service list                 zone list
-orchestration template <span class="k">function</span> list       zone <span class="nb">set</span>
+orchestration template <span style="color:#66d9ef">function</span> list       zone set
 orchestration template version list        zone show
 policy create                              zone transfer accept request
 policy delete                              zone transfer accept show
 policy list                                zone transfer request create
-policy <span class="nb">set</span>                                 zone transfer request delete
+policy set                                 zone transfer request delete
 policy show                                zone transfer request list
-port delete                                zone transfer request <span class="nb">set</span>
+port delete                                zone transfer request set
 port show                                  zone transfer request show
-</code></pre></div>
+</code></pre></td></tr></table>
+</div>
+</div>
 </section>
 
 
@@ -565,11 +1180,11 @@ port show                                  zone transfer request show
                 href="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/katex.min.css"integrity="sha384-RZU/ijkSsFbcmivfdRBQDtwuwVqK7GMOw6IMvKyeWL2K5UAlyp6WonmB8m7Jd0Hn"crossorigin="anonymous"
             ><script 
                 src="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/katex.min.js"integrity="sha384-pK1WpvzWVBQiP0/GjnvRxV4mOb0oxFuyRxJlk6vVw146n3egcN5C925NCP7a7BY8"crossorigin="anonymous"
-                defer="true"
+                defer
                 >
             </script><script 
                 src="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/contrib/auto-render.min.js"integrity="sha384-vZTG03m&#43;2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl"crossorigin="anonymous"
-                defer="true"
+                defer
                 >
             </script><script>
     window.addEventListener("DOMContentLoaded", () => {
@@ -585,14 +1200,16 @@ port show                                  zone transfer request show
     
 </article>
 
-    <aside class="related-contents--wrapper">
     
+
     
-        <h2 class="section-title">相关文章</h2>
-        <div class="related-contents">
-            <div class="flex article-list--tile">
+
+<aside class="related-contents--wrapper">
+    <h2 class="section-title">相关文章</h2>
+    <div class="related-contents">
+        <div class="flex article-list--tile">
+            
                 
-                    
 <article class="has-image">
     <a href="/p/configure_webdav/">
         
@@ -609,8 +1226,8 @@ port show                                  zone transfer request show
         </div>
     </a>
 </article>
+            
                 
-                    
 <article class="has-image">
     <a href="/p/hadoop_install/">
         
@@ -627,8 +1244,8 @@ port show                                  zone transfer request show
         </div>
     </a>
 </article>
+            
                 
-                    
 <article class="has-image">
     <a href="/p/review_frp_set_up/">
         
@@ -645,8 +1262,8 @@ port show                                  zone transfer request show
         </div>
     </a>
 </article>
+            
                 
-                    
 <article class="has-image">
     <a href="/p/install_jellyfin/">
         
@@ -663,8 +1280,8 @@ port show                                  zone transfer request show
         </div>
     </a>
 </article>
+            
                 
-                    
 <article class="has-image">
     <a href="/p/bark_jd_price/">
         
@@ -681,15 +1298,62 @@ port show                                  zone transfer request show
         </div>
     </a>
 </article>
-                
-            </div>
+            
         </div>
-    
+    </div>
 </aside>
 
      
-     
+    
         
+    <script
+    src="https://giscus.app/client.js"
+    data-repo="jokefrelon/web_on_hugo"
+    data-repo-id="MDEwOlJlcG9zaXRvcnkzNjc3MTg4NTc="
+    data-category="Announcements"
+    data-category-id="DIC_kwDOFerxyc4CN_Id"
+    data-mapping="pathname"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-theme="light"
+    data-lang="en"
+    crossorigin="anonymous"
+    async
+></script>
+<script>
+    function setGiscusTheme(theme) {
+        let giscus = document.querySelector("iframe.giscus-frame");
+        if (giscus) {
+            giscus.contentWindow.postMessage(
+                {
+                    giscus: {
+                        setConfig: {
+                            theme: theme,
+                        },
+                    },
+                },
+                "https://giscus.app"
+            );
+        }
+    }
+
+    (function () {
+        addEventListener("message", (e) => {
+            if (event.origin !== "https://giscus.app") return;
+            handler();
+        });
+        window.addEventListener("onColorSchemeChange", handler);
+
+        function handler() {
+            if (document.documentElement.dataset.scheme === "light") {
+                setGiscusTheme('light');
+            } else {
+                setGiscusTheme('dark_dimmed');
+            }
+        }
+    })();
+</script>
+
     
 
     <footer class="site-footer">
@@ -703,7 +1367,7 @@ port show                                  zone transfer request show
     
     <section class="powerby">
         Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
-        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.1.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.10.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
     </section>
 </footer>
 
@@ -772,11 +1436,11 @@ port show                                  zone transfer request show
 
 </div><script 
                 src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
-                defer="true"
+                defer
                 >
             </script><script 
                 src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
-                defer="true"
+                defer
                 >
             </script><link 
                 rel="stylesheet" 
@@ -787,11 +1451,13 @@ port show                                  zone transfer request show
             >
 
             </main>
-    
-        <aside class="sidebar right-sidebar sticky">
-            <section class="widget archives">
-                <div class="widget-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z"/>
   <line x1="5" y1="9" x2="19" y2="9" />
   <line x1="5" y1="15" x2="19" y2="15" />
@@ -801,11 +1467,11 @@ port show                                  zone transfer request show
 
 
 
-                </div>
-                <h2 class="widget-title section-title">目录</h2>
-                
-                <div class="widget--toc">
-                    <nav id="TableOfContents">
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
   <ol>
     <li><a href="#1-mysql">1. MySQL</a></li>
     <li><a href="#2-keyston">2. Keyston</a></li>
@@ -816,15 +1482,18 @@ port show                                  zone transfer request show
     <li><a href="#7-openstack命令大全">7. OpenStack命令大全</a></li>
   </ol>
 </nav>
-                </div>
-            </section>
-        </aside>
-    
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
 
         </div>
         <script 
                 src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js"integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g="crossorigin="anonymous"
-                defer="false"
+                
                 >
             </script><script type="text/javascript" src="/ts/main.js" defer></script>
 <script>

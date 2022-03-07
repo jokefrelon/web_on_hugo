@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en-us">
+<html lang="en-us" dir="ltr">
     <head><meta charset='utf-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='使用jdbc操作MySQL数据库实现数据库的CRUD'><title>Java通过jdbc操作MySQL数据库</title>
 
 <link rel='canonical' href='https://jokeme.top/p/java_jdbc/'>
 
-<link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='Java通过jdbc操作MySQL数据库'>
+<link rel="stylesheet" href="/scss/style.min.8f838266c1bced5c6bbd71d0405de40d06e788c02de81dc90a51ed740c863169.css"><meta property='og:title' content='Java通过jdbc操作MySQL数据库'>
 <meta property='og:description' content='使用jdbc操作MySQL数据库实现数据库的CRUD'>
 <meta property='og:url' content='https://jokeme.top/p/java_jdbc/'>
 <meta property='og:site_name' content='JokemeBlog'>
@@ -18,8 +18,8 @@
 
     </head>
     <body class="
-    article-page has-toc
-">
+    article-page
+    ">
     <script>
         (function() {
             const colorSchemeKey = 'StackColorScheme';
@@ -42,25 +42,219 @@
         }
     })();
 </script>
-<div class="container main-container flex 
-    
-        extended
-    
-">
-    
-        <div id="article-toolbar">
-            <a href="https://jokeme.top" class="back-home">
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <polyline points="15 6 9 12 15 18" />
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/author_hue3a07bfbdd4fc62fd921ca2090947f2f_15076_300x0_resize_q75_box.jpg" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">🥰</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">JokemeBlog</a></h1>
+            <h2 class="site-description">人生没有白走的路,每一步都算数。</h2>
+        </div>
+    </header><ol class="social-menu">
+            
+                <li>
+                    <a 
+                        href='https://github.com/jokefrelon'
+                        target="_blank"
+                        title="GitHub"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
 </svg>
 
 
 
-                <span>返回</span>
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://twitter.com/FrelonTroung'
+                        target="_blank"
+                        title="Twitter"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>Home</span>
             </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/%E5%85%B3%E4%BA%8E/' >
+                
+                
+                    
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/links/' >
+                
+                
+                    
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>链接</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/archives/' >
+                
+                
+                    
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>存档</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/search/' >
+                
+                
+                    
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+
+        <div class="menu-bottom-section">
+            
+            
+                <li id="dark-mode-toggle">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                    <span>暗色模式</span>
+                </li>
+            
         </div>
-    
+    </ol>
+</aside>
 <main class="main full-width">
     <article class="has-image main-article">
     <header class="article-header">
@@ -84,15 +278,17 @@
     </header>
     
 
-    <h2 class="article-title">
-        <a href="/p/java_jdbc/">Java通过jdbc操作MySQL数据库</a>
-    </h2>
-
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/java_jdbc/">Java通过jdbc操作MySQL数据库</a>
+        </h2>
     
-    <h3 class="article-subtitle">
-        使用jdbc操作MySQL数据库实现数据库的CRUD
-    </h3>
-    
+        
+        <h3 class="article-subtitle">
+            使用jdbc操作MySQL数据库实现数据库的CRUD
+        </h3>
+        
+    </div>
 
     
     <footer class="article-time">
@@ -128,155 +324,331 @@
         
     </footer>
     
+
+    
 </div>
 </header>
 
     <section class="article-content">
+    
+    
     <h1 id="java-jdbc-操作-mysql">Java JDBC 操作 MySQL</h1>
 <h2 id="1--maven-导包">1 . Maven 导包</h2>
-<div class="highlight"><pre class="chroma"><code class="language-xml" data-lang="xml"><span class="nt">&lt;dependency&gt;</span>
-	<span class="nt">&lt;groupId&gt;</span>mysql<span class="nt">&lt;/groupId&gt;</span>
-	<span class="nt">&lt;artifactId&gt;</span>mysql-connector-java<span class="nt">&lt;/artifactId&gt;</span>
-	<span class="nt">&lt;version&gt;</span>5.1.48<span class="nt">&lt;/version&gt;</span>
-<span class="nt">&lt;/dependency&gt;</span>
-	<span class="nt">&lt;groupId&gt;</span>org.junit.jupiter<span class="nt">&lt;/groupId&gt;</span>
-	<span class="nt">&lt;artifactId&gt;</span>junit-jupiter<span class="nt">&lt;/artifactId&gt;</span>
-	<span class="nt">&lt;version&gt;</span>RELEASE<span class="nt">&lt;/version&gt;</span>
-    <span class="nt">&lt;scope&gt;</span>compile<span class="nt">&lt;/scope&gt;</span>
-<span class="nt">&lt;/dependency&gt;</span>
-</code></pre></div><p>填在 pom 文件里面即可，无难度</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;dependency&gt;</span>
+	<span style="color:#f92672">&lt;groupId&gt;</span>mysql<span style="color:#f92672">&lt;/groupId&gt;</span>
+	<span style="color:#f92672">&lt;artifactId&gt;</span>mysql-connector-java<span style="color:#f92672">&lt;/artifactId&gt;</span>
+	<span style="color:#f92672">&lt;version&gt;</span>5.1.48<span style="color:#f92672">&lt;/version&gt;</span>
+<span style="color:#f92672">&lt;/dependency&gt;</span>
+	<span style="color:#f92672">&lt;groupId&gt;</span>org.junit.jupiter<span style="color:#f92672">&lt;/groupId&gt;</span>
+	<span style="color:#f92672">&lt;artifactId&gt;</span>junit-jupiter<span style="color:#f92672">&lt;/artifactId&gt;</span>
+	<span style="color:#f92672">&lt;version&gt;</span>RELEASE<span style="color:#f92672">&lt;/version&gt;</span>
+    <span style="color:#f92672">&lt;scope&gt;</span>compile<span style="color:#f92672">&lt;/scope&gt;</span>
+<span style="color:#f92672">&lt;/dependency&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>填在 pom 文件里面即可，无难度</p>
 <h2 id="2--用代码连接数据库">2 . 用代码连接数据库</h2>
-<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kn">import</span> <span class="nn">java.io.*</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">java.sql.*</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">java.util.ArrayList</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">java.util.HashMap</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">java.util.List</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">java.util.Map</span><span class="o">;</span>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">50
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">51
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">52
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">53
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">54
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">55
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">56
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">57
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">58
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">59
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">60
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">61
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">62
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">63
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">64
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">65
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">66
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-java" data-lang="java"><span style="color:#f92672">import</span> java.io.*<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> java.sql.*<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> java.util.ArrayList<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> java.util.HashMap<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> java.util.List<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> java.util.Map<span style="color:#f92672">;</span>
 
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Fre</span><span class="o">{</span>
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">driver</span> <span class="o">=</span> <span class="s">&#34;com.mysql.jdbc.Driver&#34;</span><span class="o">;</span>
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">uri</span> <span class="o">=</span> <span class="s">&#34;jdbc:mysql://127.0.0.1:3306/solo&#34;</span><span class="o">;</span>
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">user</span> <span class="o">=</span> <span class="s">&#34;root&#34;</span><span class="o">;</span>
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">passcode</span> <span class="o">=</span> <span class="s">&#34;123456&#34;</span><span class="o">;</span>
-    <span class="kd">final</span> <span class="n">String</span> <span class="n">sqlScript</span> <span class="o">=</span> <span class="s">&#34;select * from b3_solo_article&#34;</span><span class="o">;</span>
-    <span class="n">Connection</span> <span class="n">connection</span><span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Fre</span><span style="color:#f92672">{</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">final</span> String driver <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;com.mysql.jdbc.Driver&#34;</span><span style="color:#f92672">;</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">final</span> String uri <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;jdbc:mysql://127.0.0.1:3306/solo&#34;</span><span style="color:#f92672">;</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">final</span> String user <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;root&#34;</span><span style="color:#f92672">;</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">final</span> String passcode <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;123456&#34;</span><span style="color:#f92672">;</span>
+    <span style="color:#66d9ef">final</span> String sqlScript <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;select * from b3_solo_article&#34;</span><span style="color:#f92672">;</span>
+    Connection connection<span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">;</span>
 
-    <span class="kd">public</span> <span class="n">ResultSet</span> <span class="nf">StartCollection</span><span class="o">()</span> <span class="kd">throws</span> <span class="n">SQLException</span> <span class="o">{</span>
-        <span class="k">try</span><span class="o">{</span>
-            <span class="n">Class</span><span class="o">.</span><span class="na">forName</span><span class="o">(</span><span class="n">driver</span><span class="o">);</span>
-            <span class="n">connection</span> <span class="o">=</span> <span class="n">DriverManager</span><span class="o">.</span><span class="na">getConnection</span><span class="o">(</span><span class="n">uri</span><span class="o">,</span><span class="n">user</span><span class="o">,</span><span class="n">passcode</span><span class="o">);</span>
-            <span class="k">if</span><span class="o">(!</span><span class="n">connection</span><span class="o">.</span><span class="na">isClosed</span><span class="o">())</span>
-                <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;connection successfully&#34;</span><span class="o">);</span>
-            <span class="n">Statement</span> <span class="n">statement</span> <span class="o">=</span> <span class="n">connection</span><span class="o">.</span><span class="na">createStatement</span><span class="o">();</span>
-            <span class="n">ResultSet</span> <span class="n">replyString</span> <span class="o">=</span> <span class="n">statement</span><span class="o">.</span><span class="na">executeQuery</span><span class="o">(</span><span class="n">sqlScript</span><span class="o">);</span>
-            <span class="k">return</span> <span class="n">replyString</span><span class="o">;</span>
-        <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">ClassNotFoundException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
-            <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
-            <span class="k">return</span> <span class="kc">null</span><span class="o">;</span>
-        <span class="o">}</span>
-    <span class="o">}</span>
+    <span style="color:#66d9ef">public</span> ResultSet <span style="color:#a6e22e">StartCollection</span><span style="color:#f92672">()</span> <span style="color:#66d9ef">throws</span> SQLException <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">try</span><span style="color:#f92672">{</span>
+            Class<span style="color:#f92672">.</span><span style="color:#a6e22e">forName</span><span style="color:#f92672">(</span>driver<span style="color:#f92672">);</span>
+            connection <span style="color:#f92672">=</span> DriverManager<span style="color:#f92672">.</span><span style="color:#a6e22e">getConnection</span><span style="color:#f92672">(</span>uri<span style="color:#f92672">,</span>user<span style="color:#f92672">,</span>passcode<span style="color:#f92672">);</span>
+            <span style="color:#66d9ef">if</span><span style="color:#f92672">(!</span>connection<span style="color:#f92672">.</span><span style="color:#a6e22e">isClosed</span><span style="color:#f92672">())</span>
+                System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;connection successfully&#34;</span><span style="color:#f92672">);</span>
+            Statement statement <span style="color:#f92672">=</span> connection<span style="color:#f92672">.</span><span style="color:#a6e22e">createStatement</span><span style="color:#f92672">();</span>
+            ResultSet replyString <span style="color:#f92672">=</span> statement<span style="color:#f92672">.</span><span style="color:#a6e22e">executeQuery</span><span style="color:#f92672">(</span>sqlScript<span style="color:#f92672">);</span>
+            <span style="color:#66d9ef">return</span> replyString<span style="color:#f92672">;</span>
+        <span style="color:#f92672">}</span> <span style="color:#66d9ef">catch</span> <span style="color:#f92672">(</span>ClassNotFoundException e<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+            e<span style="color:#f92672">.</span><span style="color:#a6e22e">printStackTrace</span><span style="color:#f92672">();</span>
+            <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">;</span>
+        <span style="color:#f92672">}</span>
+    <span style="color:#f92672">}</span>
 
-    <span class="kd">public</span> <span class="kd">static</span> <span class="n">String</span> <span class="nf">toTheJson</span><span class="o">(</span><span class="n">List</span><span class="o">&lt;</span><span class="n">Map</span><span class="o">&gt;</span> <span class="n">list</span><span class="o">){</span>
-        <span class="k">return</span> <span class="n">list</span><span class="o">.</span><span class="na">toString</span><span class="o">().</span><span class="na">replace</span><span class="o">(</span><span class="s">&#34;{&#34;</span><span class="o">,</span> <span class="s">&#34;{\&#34;&#34;</span><span class="o">).</span><span class="na">replace</span><span class="o">(</span><span class="s">&#34;}&#34;</span><span class="o">,</span> <span class="s">&#34;\&#34;}&#34;</span><span class="o">).</span><span class="na">replace</span><span class="o">(</span><span class="s">&#34;=&#34;</span><span class="o">,</span><span class="s">&#34;\&#34;:\&#34;&#34;</span><span class="o">).</span><span class="na">replace</span><span class="o">(</span><span class="s">&#34;, &#34;</span><span class="o">,</span> <span class="s">&#34;\&#34;,\&#34;&#34;</span><span class="o">).</span><span class="na">replace</span><span class="o">(</span><span class="s">&#34;}\&#34;,\&#34;{&#34;</span><span class="o">,</span> <span class="s">&#34;},{&#34;</span><span class="o">).</span><span class="na">replace</span><span class="o">(</span><span class="s">&#34;{&#34;</span><span class="o">,</span> <span class="s">&#34;{\&#34;&#34;</span><span class="o">).</span><span class="na">replace</span><span class="o">(</span><span class="s">&#34;}&#34;</span><span class="o">,</span> <span class="s">&#34;\&#34;}&#34;</span><span class="o">).</span><span class="na">replace</span><span class="o">(</span><span class="s">&#34;=&#34;</span><span class="o">,</span><span class="s">&#34;\&#34;:\&#34;&#34;</span><span class="o">).</span><span class="na">replace</span><span class="o">(</span><span class="s">&#34;, &#34;</span><span class="o">,</span> <span class="s">&#34;\&#34;,\&#34;&#34;</span><span class="o">).</span><span class="na">replace</span><span class="o">(</span><span class="s">&#34;}\&#34;,\&#34;{&#34;</span><span class="o">,</span> <span class="s">&#34;},{&#34;</span><span class="o">).</span><span class="na">replace</span><span class="o">(</span><span class="s">&#34;\&#34;\&#34;&#34;</span><span class="o">,</span><span class="s">&#34;\&#34;&#34;</span><span class="o">);</span>
-    <span class="o">}</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> String <span style="color:#a6e22e">toTheJson</span><span style="color:#f92672">(</span>List<span style="color:#f92672">&lt;</span>Map<span style="color:#f92672">&gt;</span> list<span style="color:#f92672">){</span>
+        <span style="color:#66d9ef">return</span> list<span style="color:#f92672">.</span><span style="color:#a6e22e">toString</span><span style="color:#f92672">().</span><span style="color:#a6e22e">replace</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;{&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;{\&#34;&#34;</span><span style="color:#f92672">).</span><span style="color:#a6e22e">replace</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;}&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;\&#34;}&#34;</span><span style="color:#f92672">).</span><span style="color:#a6e22e">replace</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;=&#34;</span><span style="color:#f92672">,</span><span style="color:#e6db74">&#34;\&#34;:\&#34;&#34;</span><span style="color:#f92672">).</span><span style="color:#a6e22e">replace</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;, &#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;\&#34;,\&#34;&#34;</span><span style="color:#f92672">).</span><span style="color:#a6e22e">replace</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;}\&#34;,\&#34;{&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;},{&#34;</span><span style="color:#f92672">).</span><span style="color:#a6e22e">replace</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;{&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;{\&#34;&#34;</span><span style="color:#f92672">).</span><span style="color:#a6e22e">replace</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;}&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;\&#34;}&#34;</span><span style="color:#f92672">).</span><span style="color:#a6e22e">replace</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;=&#34;</span><span style="color:#f92672">,</span><span style="color:#e6db74">&#34;\&#34;:\&#34;&#34;</span><span style="color:#f92672">).</span><span style="color:#a6e22e">replace</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;, &#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;\&#34;,\&#34;&#34;</span><span style="color:#f92672">).</span><span style="color:#a6e22e">replace</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;}\&#34;,\&#34;{&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;},{&#34;</span><span style="color:#f92672">).</span><span style="color:#a6e22e">replace</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;\&#34;\&#34;&#34;</span><span style="color:#f92672">,</span><span style="color:#e6db74">&#34;\&#34;&#34;</span><span style="color:#f92672">);</span>
+    <span style="color:#f92672">}</span>
 
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">close</span><span class="o">(){</span>
-        <span class="k">try</span><span class="o">{</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">close</span><span style="color:#f92672">(){</span>
+        <span style="color:#66d9ef">try</span><span style="color:#f92672">{</span>
 
-            <span class="k">this</span><span class="o">.</span><span class="na">connection</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
-        <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">SQLException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
-            <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
-        <span class="o">}</span>
-    <span class="o">}</span>
-   <span class="nd">@Test</span>
-   <span class="kd">public</span> <span class="kt">void</span> <span class="nf">Solomon</span><span class="o">()</span> <span class="kd">throws</span> <span class="n">SQLException</span><span class="o">,</span> <span class="n">IOException</span> <span class="o">{</span>
-       <span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span><span class="n">Object</span><span class="o">&gt;</span> <span class="n">outer</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashMap</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Object</span><span class="o">&gt;();</span>
-       <span class="n">List</span><span class="o">&lt;</span><span class="n">Map</span><span class="o">&gt;</span> <span class="n">list</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Map</span><span class="o">&gt;();</span>
-       <span class="n">Fre</span> <span class="n">solo</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Fre</span><span class="o">();</span>
-       <span class="n">ResultSet</span> <span class="n">so</span>  <span class="o">=</span> <span class="n">solo</span><span class="o">.</span><span class="na">StartCollection</span><span class="o">();</span>
-       <span class="k">while</span><span class="o">(</span><span class="n">so</span><span class="o">.</span><span class="na">next</span><span class="o">()){</span>
-           <span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span><span class="n">Object</span><span class="o">&gt;</span>  <span class="n">map</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashMap</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Object</span><span class="o">&gt;();</span>
-           <span class="n">map</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&#34;User_ID&#34;</span><span class="o">,</span><span class="n">so</span><span class="o">.</span><span class="na">getString</span><span class="o">(</span><span class="n">1</span><span class="o">));</span>
-           <span class="n">map</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&#34;User_Name&#34;</span><span class="o">,</span><span class="n">so</span><span class="o">.</span><span class="na">getString</span><span class="o">(</span><span class="n">2</span><span class="o">));</span>
-           <span class="n">map</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&#34;User_Mod&#34;</span><span class="o">,</span><span class="n">so</span><span class="o">.</span><span class="na">getString</span><span class="o">(</span><span class="n">3</span><span class="o">));</span>
-           <span class="n">map</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&#34;User_IDE&#34;</span><span class="o">,</span><span class="n">so</span><span class="o">.</span><span class="na">getString</span><span class="o">(</span><span class="n">4</span><span class="o">));</span>
-           <span class="n">list</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">map</span><span class="o">);</span>
-       <span class="o">}</span>
-       <span class="n">String</span> <span class="n">Solo</span> <span class="o">=</span> <span class="n">toJson</span><span class="o">(</span><span class="n">list</span><span class="o">);</span>
-       <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">Solo</span><span class="o">);</span>
-       <span class="n">FileOutputStream</span> <span class="n">fos</span> <span class="o">=</span> <span class="k">new</span> <span class="n">FileOutputStream</span><span class="o">(</span><span class="s">&#34;solo.json&#34;</span><span class="o">,</span><span class="kc">true</span><span class="o">);</span>
-       <span class="n">OutputStreamWriter</span> <span class="n">osw</span> <span class="o">=</span> <span class="k">new</span> <span class="n">OutputStreamWriter</span><span class="o">(</span><span class="n">fos</span><span class="o">,</span><span class="s">&#34;utf-8&#34;</span><span class="o">);</span>
-       <span class="n">osw</span><span class="o">.</span><span class="na">write</span><span class="o">(</span><span class="n">Solo</span><span class="o">);</span>
-       <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Write Over&#34;</span><span class="o">);</span>
-       <span class="n">osw</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
-   		<span class="o">}</span>
-    <span class="o">}</span>
-<span class="o">}</span>
-</code></pre></div><h2 id="3--代码详解">3 . 代码详解</h2>
-<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java"><span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">driver</span> <span class="o">=</span> <span class="s">&#34;com.mysql.jdbc.Driver&#34;</span><span class="o">;</span>
-<span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">uri</span> <span class="o">=</span> <span class="s">&#34;jdbc:mysql://127.0.0.1:3306/solo&#34;</span><span class="o">;</span>
-<span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">user</span> <span class="o">=</span> <span class="s">&#34;root&#34;</span><span class="o">;</span>
-<span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">passcode</span> <span class="o">=</span> <span class="s">&#34;123456&#34;</span><span class="o">;</span>
-<span class="kd">final</span> <span class="n">String</span> <span class="n">sqlScript</span> <span class="o">=</span> <span class="s">&#34;select * from b3_solo_article&#34;</span><span class="o">;</span>
-<span class="n">Connection</span> <span class="n">connection</span><span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
-</code></pre></div><p>在定义这些常量的时候，最好不要直接定义 <strong>String</strong> ,而是 <strong>public static final String</strong> ,怎么安全，怎么来</p>
+            <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">connection</span><span style="color:#f92672">.</span><span style="color:#a6e22e">close</span><span style="color:#f92672">();</span>
+        <span style="color:#f92672">}</span> <span style="color:#66d9ef">catch</span> <span style="color:#f92672">(</span>SQLException e<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+            e<span style="color:#f92672">.</span><span style="color:#a6e22e">printStackTrace</span><span style="color:#f92672">();</span>
+        <span style="color:#f92672">}</span>
+    <span style="color:#f92672">}</span>
+   <span style="color:#a6e22e">@Test</span>
+   <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">Solomon</span><span style="color:#f92672">()</span> <span style="color:#66d9ef">throws</span> SQLException<span style="color:#f92672">,</span> IOException <span style="color:#f92672">{</span>
+       Map<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">,</span>Object<span style="color:#f92672">&gt;</span> outer <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> HashMap<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">,</span> Object<span style="color:#f92672">&gt;();</span>
+       List<span style="color:#f92672">&lt;</span>Map<span style="color:#f92672">&gt;</span> list <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ArrayList<span style="color:#f92672">&lt;</span>Map<span style="color:#f92672">&gt;();</span>
+       Fre solo <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Fre<span style="color:#f92672">();</span>
+       ResultSet so  <span style="color:#f92672">=</span> solo<span style="color:#f92672">.</span><span style="color:#a6e22e">StartCollection</span><span style="color:#f92672">();</span>
+       <span style="color:#66d9ef">while</span><span style="color:#f92672">(</span>so<span style="color:#f92672">.</span><span style="color:#a6e22e">next</span><span style="color:#f92672">()){</span>
+           Map<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">,</span>Object<span style="color:#f92672">&gt;</span>  map <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> HashMap<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">,</span> Object<span style="color:#f92672">&gt;();</span>
+           map<span style="color:#f92672">.</span><span style="color:#a6e22e">put</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;User_ID&#34;</span><span style="color:#f92672">,</span>so<span style="color:#f92672">.</span><span style="color:#a6e22e">getString</span><span style="color:#f92672">(</span>1<span style="color:#f92672">));</span>
+           map<span style="color:#f92672">.</span><span style="color:#a6e22e">put</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;User_Name&#34;</span><span style="color:#f92672">,</span>so<span style="color:#f92672">.</span><span style="color:#a6e22e">getString</span><span style="color:#f92672">(</span>2<span style="color:#f92672">));</span>
+           map<span style="color:#f92672">.</span><span style="color:#a6e22e">put</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;User_Mod&#34;</span><span style="color:#f92672">,</span>so<span style="color:#f92672">.</span><span style="color:#a6e22e">getString</span><span style="color:#f92672">(</span>3<span style="color:#f92672">));</span>
+           map<span style="color:#f92672">.</span><span style="color:#a6e22e">put</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;User_IDE&#34;</span><span style="color:#f92672">,</span>so<span style="color:#f92672">.</span><span style="color:#a6e22e">getString</span><span style="color:#f92672">(</span>4<span style="color:#f92672">));</span>
+           list<span style="color:#f92672">.</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span>map<span style="color:#f92672">);</span>
+       <span style="color:#f92672">}</span>
+       String Solo <span style="color:#f92672">=</span> toJson<span style="color:#f92672">(</span>list<span style="color:#f92672">);</span>
+       System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>Solo<span style="color:#f92672">);</span>
+       FileOutputStream fos <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> FileOutputStream<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;solo.json&#34;</span><span style="color:#f92672">,</span><span style="color:#66d9ef">true</span><span style="color:#f92672">);</span>
+       OutputStreamWriter osw <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> OutputStreamWriter<span style="color:#f92672">(</span>fos<span style="color:#f92672">,</span><span style="color:#e6db74">&#34;utf-8&#34;</span><span style="color:#f92672">);</span>
+       osw<span style="color:#f92672">.</span><span style="color:#a6e22e">write</span><span style="color:#f92672">(</span>Solo<span style="color:#f92672">);</span>
+       System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Write Over&#34;</span><span style="color:#f92672">);</span>
+       osw<span style="color:#f92672">.</span><span style="color:#a6e22e">close</span><span style="color:#f92672">();</span>
+   		<span style="color:#f92672">}</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="3--代码详解">3 . 代码详解</h2>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-Java" data-lang="Java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">final</span> String driver <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;com.mysql.jdbc.Driver&#34;</span><span style="color:#f92672">;</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">final</span> String uri <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;jdbc:mysql://127.0.0.1:3306/solo&#34;</span><span style="color:#f92672">;</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">final</span> String user <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;root&#34;</span><span style="color:#f92672">;</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">final</span> String passcode <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;123456&#34;</span><span style="color:#f92672">;</span>
+<span style="color:#66d9ef">final</span> String sqlScript <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;select * from b3_solo_article&#34;</span><span style="color:#f92672">;</span>
+Connection connection<span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>在定义这些常量的时候，最好不要直接定义 <strong>String</strong> ,而是 <strong>public static final String</strong> ,怎么安全，怎么来</p>
 <p>而且对象尽量不要在方法里面 <strong>new</strong> ,如果发生异常就不能释放系统资源了</p>
 <hr>
-<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="n">ResultSet</span> <span class="nf">StartCollection</span><span class="o">()</span> <span class="kd">throws</span> <span class="n">SQLException</span> <span class="o">{</span>
-        <span class="k">try</span><span class="o">{</span>
-            <span class="n">Class</span><span class="o">.</span><span class="na">forName</span><span class="o">(</span><span class="n">driver</span><span class="o">);</span>
-            <span class="n">connection</span> <span class="o">=</span> <span class="n">DriverManager</span><span class="o">.</span><span class="na">getConnection</span><span class="o">(</span><span class="n">uri</span><span class="o">,</span><span class="n">user</span><span class="o">,</span><span class="n">passcode</span><span class="o">);</span>
-            <span class="k">if</span><span class="o">(!</span><span class="n">connection</span><span class="o">.</span><span class="na">isClosed</span><span class="o">())</span>
-                <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;connection successfully&#34;</span><span class="o">);</span>
-            <span class="n">Statement</span> <span class="n">statement</span> <span class="o">=</span> <span class="n">connection</span><span class="o">.</span><span class="na">createStatement</span><span class="o">();</span>
-            <span class="n">ResultSet</span> <span class="n">replyString</span> <span class="o">=</span> <span class="n">statement</span><span class="o">.</span><span class="na">executeQuery</span><span class="o">(</span><span class="n">sqlScript</span><span class="o">);</span>
-            <span class="k">return</span> <span class="n">replyString</span><span class="o">;</span>
-        <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">ClassNotFoundException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
-            <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
-            <span class="k">return</span> <span class="kc">null</span><span class="o">;</span>
-        <span class="o">}</span>
-<span class="o">}</span>
-</code></pre></div><p>如果从安全角度来考虑的话，那么我们不应该用 <strong>Statement</strong> 而是用 <strong>PreparedStatement</strong> ,我在自己电脑上也不怕什么 <strong>SQL</strong>注入，所以没有用</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> ResultSet <span style="color:#a6e22e">StartCollection</span><span style="color:#f92672">()</span> <span style="color:#66d9ef">throws</span> SQLException <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">try</span><span style="color:#f92672">{</span>
+            Class<span style="color:#f92672">.</span><span style="color:#a6e22e">forName</span><span style="color:#f92672">(</span>driver<span style="color:#f92672">);</span>
+            connection <span style="color:#f92672">=</span> DriverManager<span style="color:#f92672">.</span><span style="color:#a6e22e">getConnection</span><span style="color:#f92672">(</span>uri<span style="color:#f92672">,</span>user<span style="color:#f92672">,</span>passcode<span style="color:#f92672">);</span>
+            <span style="color:#66d9ef">if</span><span style="color:#f92672">(!</span>connection<span style="color:#f92672">.</span><span style="color:#a6e22e">isClosed</span><span style="color:#f92672">())</span>
+                System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;connection successfully&#34;</span><span style="color:#f92672">);</span>
+            Statement statement <span style="color:#f92672">=</span> connection<span style="color:#f92672">.</span><span style="color:#a6e22e">createStatement</span><span style="color:#f92672">();</span>
+            ResultSet replyString <span style="color:#f92672">=</span> statement<span style="color:#f92672">.</span><span style="color:#a6e22e">executeQuery</span><span style="color:#f92672">(</span>sqlScript<span style="color:#f92672">);</span>
+            <span style="color:#66d9ef">return</span> replyString<span style="color:#f92672">;</span>
+        <span style="color:#f92672">}</span> <span style="color:#66d9ef">catch</span> <span style="color:#f92672">(</span>ClassNotFoundException e<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+            e<span style="color:#f92672">.</span><span style="color:#a6e22e">printStackTrace</span><span style="color:#f92672">();</span>
+            <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">;</span>
+        <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>如果从安全角度来考虑的话，那么我们不应该用 <strong>Statement</strong> 而是用 <strong>PreparedStatement</strong> ,我在自己电脑上也不怕什么 <strong>SQL</strong>注入，所以没有用</p>
 <hr>
-<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">static</span> <span class="n">String</span> <span class="nf">toTheJson</span><span class="o">(</span><span class="n">List</span><span class="o">&lt;</span><span class="n">Map</span><span class="o">&gt;</span> <span class="n">list</span><span class="o">){</span>
-        <span class="k">return</span> <span class="n">list</span><span class="o">.</span><span class="na">toString</span><span class="o">().</span><span class="na">replace</span><span class="o">(</span><span class="s">&#34;{&#34;</span><span class="o">,</span> <span class="s">&#34;{\&#34;&#34;</span><span class="o">).</span><span class="na">replace</span><span class="o">(</span><span class="s">&#34;}&#34;</span><span class="o">,</span> <span class="s">&#34;\&#34;}&#34;</span><span class="o">).</span><span class="na">replace</span><span class="o">(</span><span class="s">&#34;=&#34;</span><span class="o">,</span><span class="s">&#34;\&#34;:\&#34;&#34;</span><span class="o">).</span><span class="na">replace</span><span class="o">(</span><span class="s">&#34;, &#34;</span><span class="o">,</span> <span class="s">&#34;\&#34;,\&#34;&#34;</span><span class="o">).</span><span class="na">replace</span><span class="o">(</span><span class="s">&#34;}\&#34;,\&#34;{&#34;</span><span class="o">,</span> <span class="s">&#34;},{&#34;</span><span class="o">).</span><span class="na">replace</span><span class="o">(</span><span class="s">&#34;{&#34;</span><span class="o">,</span> <span class="s">&#34;{\&#34;&#34;</span><span class="o">).</span><span class="na">replace</span><span class="o">(</span><span class="s">&#34;}&#34;</span><span class="o">,</span> <span class="s">&#34;\&#34;}&#34;</span><span class="o">).</span><span class="na">replace</span><span class="o">(</span><span class="s">&#34;=&#34;</span><span class="o">,</span><span class="s">&#34;\&#34;:\&#34;&#34;</span><span class="o">).</span><span class="na">replace</span><span class="o">(</span><span class="s">&#34;, &#34;</span><span class="o">,</span> <span class="s">&#34;\&#34;,\&#34;&#34;</span><span class="o">).</span><span class="na">replace</span><span class="o">(</span><span class="s">&#34;}\&#34;,\&#34;{&#34;</span><span class="o">,</span> <span class="s">&#34;},{&#34;</span><span class="o">).</span><span class="na">replace</span><span class="o">(</span><span class="s">&#34;\&#34;\&#34;&#34;</span><span class="o">,</span><span class="s">&#34;\&#34;&#34;</span><span class="o">);</span>
-    <span class="o">}</span>
-</code></pre></div><p>主要是我没有导 <strong>JSON</strong> 相关的库，就这样简化 <strong>List&lt;Map&lt;String,String&raquo;</strong>   &raquo;&gt;   <strong>JSON</strong> 主要就是字符串的替换，还有转义可能有点懵 ?,小心即可</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> String <span style="color:#a6e22e">toTheJson</span><span style="color:#f92672">(</span>List<span style="color:#f92672">&lt;</span>Map<span style="color:#f92672">&gt;</span> list<span style="color:#f92672">){</span>
+        <span style="color:#66d9ef">return</span> list<span style="color:#f92672">.</span><span style="color:#a6e22e">toString</span><span style="color:#f92672">().</span><span style="color:#a6e22e">replace</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;{&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;{\&#34;&#34;</span><span style="color:#f92672">).</span><span style="color:#a6e22e">replace</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;}&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;\&#34;}&#34;</span><span style="color:#f92672">).</span><span style="color:#a6e22e">replace</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;=&#34;</span><span style="color:#f92672">,</span><span style="color:#e6db74">&#34;\&#34;:\&#34;&#34;</span><span style="color:#f92672">).</span><span style="color:#a6e22e">replace</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;, &#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;\&#34;,\&#34;&#34;</span><span style="color:#f92672">).</span><span style="color:#a6e22e">replace</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;}\&#34;,\&#34;{&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;},{&#34;</span><span style="color:#f92672">).</span><span style="color:#a6e22e">replace</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;{&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;{\&#34;&#34;</span><span style="color:#f92672">).</span><span style="color:#a6e22e">replace</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;}&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;\&#34;}&#34;</span><span style="color:#f92672">).</span><span style="color:#a6e22e">replace</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;=&#34;</span><span style="color:#f92672">,</span><span style="color:#e6db74">&#34;\&#34;:\&#34;&#34;</span><span style="color:#f92672">).</span><span style="color:#a6e22e">replace</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;, &#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;\&#34;,\&#34;&#34;</span><span style="color:#f92672">).</span><span style="color:#a6e22e">replace</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;}\&#34;,\&#34;{&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;},{&#34;</span><span style="color:#f92672">).</span><span style="color:#a6e22e">replace</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;\&#34;\&#34;&#34;</span><span style="color:#f92672">,</span><span style="color:#e6db74">&#34;\&#34;&#34;</span><span style="color:#f92672">);</span>
+    <span style="color:#f92672">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>主要是我没有导 <strong>JSON</strong> 相关的库，就这样简化 <strong>List&lt;Map&lt;String,String&raquo;</strong>   &raquo;&gt;   <strong>JSON</strong> 主要就是字符串的替换，还有转义可能有点懵 ?,小心即可</p>
 <hr>
-<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kt">void</span> <span class="nf">close</span><span class="o">(){</span>
-        <span class="k">try</span><span class="o">{</span>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">close</span><span style="color:#f92672">(){</span>
+        <span style="color:#66d9ef">try</span><span style="color:#f92672">{</span>
 
-            <span class="k">this</span><span class="o">.</span><span class="na">connection</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
-        <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">SQLException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
-            <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
-        <span class="o">}</span>
-    <span class="o">}</span>
-</code></pre></div><p>使用完资源以后肯定也要释放的，没有什么好说的</p>
+            <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">connection</span><span style="color:#f92672">.</span><span style="color:#a6e22e">close</span><span style="color:#f92672">();</span>
+        <span style="color:#f92672">}</span> <span style="color:#66d9ef">catch</span> <span style="color:#f92672">(</span>SQLException e<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+            e<span style="color:#f92672">.</span><span style="color:#a6e22e">printStackTrace</span><span style="color:#f92672">();</span>
+        <span style="color:#f92672">}</span>
+    <span style="color:#f92672">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>使用完资源以后肯定也要释放的，没有什么好说的</p>
 <hr>
-<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="nd">@Test</span>
-<span class="kd">public</span> <span class="kt">void</span> <span class="nf">Solomon</span><span class="o">()</span> <span class="kd">throws</span> <span class="n">SQLException</span><span class="o">,</span> <span class="n">IOException</span> <span class="o">{</span>
-       <span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span><span class="n">Object</span><span class="o">&gt;</span> <span class="n">outer</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashMap</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Object</span><span class="o">&gt;();</span>
-       <span class="n">List</span><span class="o">&lt;</span><span class="n">Map</span><span class="o">&gt;</span> <span class="n">list</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Map</span><span class="o">&gt;();</span>
-       <span class="n">Fre</span> <span class="n">solo</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Fre</span><span class="o">();</span>
-       <span class="n">ResultSet</span> <span class="n">so</span>  <span class="o">=</span> <span class="n">solo</span><span class="o">.</span><span class="na">StartCollection</span><span class="o">();</span>
-       <span class="k">while</span><span class="o">(</span><span class="n">so</span><span class="o">.</span><span class="na">next</span><span class="o">()){</span>
-           <span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span><span class="n">Object</span><span class="o">&gt;</span>  <span class="n">map</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashMap</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Object</span><span class="o">&gt;();</span>
-           <span class="n">map</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&#34;User_ID&#34;</span><span class="o">,</span><span class="n">so</span><span class="o">.</span><span class="na">getString</span><span class="o">(</span><span class="n">1</span><span class="o">));</span>
-           <span class="n">map</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&#34;User_Name&#34;</span><span class="o">,</span><span class="n">so</span><span class="o">.</span><span class="na">getString</span><span class="o">(</span><span class="n">2</span><span class="o">));</span>
-           <span class="n">map</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&#34;User_Mod&#34;</span><span class="o">,</span><span class="n">so</span><span class="o">.</span><span class="na">getString</span><span class="o">(</span><span class="n">3</span><span class="o">));</span>
-           <span class="n">map</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&#34;User_IDE&#34;</span><span class="o">,</span><span class="n">so</span><span class="o">.</span><span class="na">getString</span><span class="o">(</span><span class="n">4</span><span class="o">));</span>
-           <span class="n">list</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">map</span><span class="o">);</span>
-       <span class="o">}</span>
-       <span class="n">String</span> <span class="n">Solo</span> <span class="o">=</span> <span class="n">toTheJson</span><span class="o">(</span><span class="n">list</span><span class="o">);</span>
-       <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">Solo</span><span class="o">);</span>
-       <span class="n">FileOutputStream</span> <span class="n">fos</span> <span class="o">=</span> <span class="k">new</span> <span class="n">FileOutputStream</span><span class="o">(</span><span class="s">&#34;solo.json&#34;</span><span class="o">,</span><span class="kc">true</span><span class="o">);</span>
-       <span class="n">OutputStreamWriter</span> <span class="n">osw</span> <span class="o">=</span> <span class="k">new</span> <span class="n">OutputStreamWriter</span><span class="o">(</span><span class="n">fos</span><span class="o">,</span><span class="s">&#34;utf-8&#34;</span><span class="o">);</span>
-       <span class="n">osw</span><span class="o">.</span><span class="na">write</span><span class="o">(</span><span class="n">Solo</span><span class="o">);</span>
-       <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Write Over&#34;</span><span class="o">);</span>
-       <span class="n">osw</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
-   		<span class="o">}</span>
-<span class="o">}</span>
-</code></pre></div><p>写完先测试一下</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-java" data-lang="java"><span style="color:#a6e22e">@Test</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">Solomon</span><span style="color:#f92672">()</span> <span style="color:#66d9ef">throws</span> SQLException<span style="color:#f92672">,</span> IOException <span style="color:#f92672">{</span>
+       Map<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">,</span>Object<span style="color:#f92672">&gt;</span> outer <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> HashMap<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">,</span> Object<span style="color:#f92672">&gt;();</span>
+       List<span style="color:#f92672">&lt;</span>Map<span style="color:#f92672">&gt;</span> list <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ArrayList<span style="color:#f92672">&lt;</span>Map<span style="color:#f92672">&gt;();</span>
+       Fre solo <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Fre<span style="color:#f92672">();</span>
+       ResultSet so  <span style="color:#f92672">=</span> solo<span style="color:#f92672">.</span><span style="color:#a6e22e">StartCollection</span><span style="color:#f92672">();</span>
+       <span style="color:#66d9ef">while</span><span style="color:#f92672">(</span>so<span style="color:#f92672">.</span><span style="color:#a6e22e">next</span><span style="color:#f92672">()){</span>
+           Map<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">,</span>Object<span style="color:#f92672">&gt;</span>  map <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> HashMap<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">,</span> Object<span style="color:#f92672">&gt;();</span>
+           map<span style="color:#f92672">.</span><span style="color:#a6e22e">put</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;User_ID&#34;</span><span style="color:#f92672">,</span>so<span style="color:#f92672">.</span><span style="color:#a6e22e">getString</span><span style="color:#f92672">(</span>1<span style="color:#f92672">));</span>
+           map<span style="color:#f92672">.</span><span style="color:#a6e22e">put</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;User_Name&#34;</span><span style="color:#f92672">,</span>so<span style="color:#f92672">.</span><span style="color:#a6e22e">getString</span><span style="color:#f92672">(</span>2<span style="color:#f92672">));</span>
+           map<span style="color:#f92672">.</span><span style="color:#a6e22e">put</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;User_Mod&#34;</span><span style="color:#f92672">,</span>so<span style="color:#f92672">.</span><span style="color:#a6e22e">getString</span><span style="color:#f92672">(</span>3<span style="color:#f92672">));</span>
+           map<span style="color:#f92672">.</span><span style="color:#a6e22e">put</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;User_IDE&#34;</span><span style="color:#f92672">,</span>so<span style="color:#f92672">.</span><span style="color:#a6e22e">getString</span><span style="color:#f92672">(</span>4<span style="color:#f92672">));</span>
+           list<span style="color:#f92672">.</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span>map<span style="color:#f92672">);</span>
+       <span style="color:#f92672">}</span>
+       String Solo <span style="color:#f92672">=</span> toTheJson<span style="color:#f92672">(</span>list<span style="color:#f92672">);</span>
+       System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>Solo<span style="color:#f92672">);</span>
+       FileOutputStream fos <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> FileOutputStream<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;solo.json&#34;</span><span style="color:#f92672">,</span><span style="color:#66d9ef">true</span><span style="color:#f92672">);</span>
+       OutputStreamWriter osw <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> OutputStreamWriter<span style="color:#f92672">(</span>fos<span style="color:#f92672">,</span><span style="color:#e6db74">&#34;utf-8&#34;</span><span style="color:#f92672">);</span>
+       osw<span style="color:#f92672">.</span><span style="color:#a6e22e">write</span><span style="color:#f92672">(</span>Solo<span style="color:#f92672">);</span>
+       System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Write Over&#34;</span><span style="color:#f92672">);</span>
+       osw<span style="color:#f92672">.</span><span style="color:#a6e22e">close</span><span style="color:#f92672">();</span>
+   		<span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>写完先测试一下</p>
 
 </section>
 
@@ -313,11 +685,11 @@
                 href="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/katex.min.css"integrity="sha384-RZU/ijkSsFbcmivfdRBQDtwuwVqK7GMOw6IMvKyeWL2K5UAlyp6WonmB8m7Jd0Hn"crossorigin="anonymous"
             ><script 
                 src="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/katex.min.js"integrity="sha384-pK1WpvzWVBQiP0/GjnvRxV4mOb0oxFuyRxJlk6vVw146n3egcN5C925NCP7a7BY8"crossorigin="anonymous"
-                defer="true"
+                defer
                 >
             </script><script 
                 src="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/contrib/auto-render.min.js"integrity="sha384-vZTG03m&#43;2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl"crossorigin="anonymous"
-                defer="true"
+                defer
                 >
             </script><script>
     window.addEventListener("DOMContentLoaded", () => {
@@ -333,14 +705,16 @@
     
 </article>
 
-    <aside class="related-contents--wrapper">
     
+
     
-        <h2 class="section-title">相关文章</h2>
-        <div class="related-contents">
-            <div class="flex article-list--tile">
+
+<aside class="related-contents--wrapper">
+    <h2 class="section-title">相关文章</h2>
+    <div class="related-contents">
+        <div class="flex article-list--tile">
+            
                 
-                    
 <article class="has-image">
     <a href="/p/kmp/">
         
@@ -357,8 +731,8 @@
         </div>
     </a>
 </article>
+            
                 
-                    
 <article class="has-image">
     <a href="/p/bs/">
         
@@ -375,8 +749,8 @@
         </div>
     </a>
 </article>
+            
                 
-                    
 <article class="has-image">
     <a href="/p/spring_ioc_di/">
         
@@ -393,8 +767,8 @@
         </div>
     </a>
 </article>
+            
                 
-                    
 <article class="has-image">
     <a href="/p/download_maven_plugin_faster/">
         
@@ -411,8 +785,8 @@
         </div>
     </a>
 </article>
+            
                 
-                    
 <article class="has-image">
     <a href="/p/springboot_note_1/">
         
@@ -429,15 +803,62 @@
         </div>
     </a>
 </article>
-                
-            </div>
+            
         </div>
-    
+    </div>
 </aside>
 
      
-     
+    
         
+    <script
+    src="https://giscus.app/client.js"
+    data-repo="jokefrelon/web_on_hugo"
+    data-repo-id="MDEwOlJlcG9zaXRvcnkzNjc3MTg4NTc="
+    data-category="Announcements"
+    data-category-id="DIC_kwDOFerxyc4CN_Id"
+    data-mapping="pathname"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-theme="light"
+    data-lang="en"
+    crossorigin="anonymous"
+    async
+></script>
+<script>
+    function setGiscusTheme(theme) {
+        let giscus = document.querySelector("iframe.giscus-frame");
+        if (giscus) {
+            giscus.contentWindow.postMessage(
+                {
+                    giscus: {
+                        setConfig: {
+                            theme: theme,
+                        },
+                    },
+                },
+                "https://giscus.app"
+            );
+        }
+    }
+
+    (function () {
+        addEventListener("message", (e) => {
+            if (event.origin !== "https://giscus.app") return;
+            handler();
+        });
+        window.addEventListener("onColorSchemeChange", handler);
+
+        function handler() {
+            if (document.documentElement.dataset.scheme === "light") {
+                setGiscusTheme('light');
+            } else {
+                setGiscusTheme('dark_dimmed');
+            }
+        }
+    })();
+</script>
+
     
 
     <footer class="site-footer">
@@ -451,7 +872,7 @@
     
     <section class="powerby">
         Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
-        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.1.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.10.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
     </section>
 </footer>
 
@@ -520,11 +941,11 @@
 
 </div><script 
                 src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
-                defer="true"
+                defer
                 >
             </script><script 
                 src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
-                defer="true"
+                defer
                 >
             </script><link 
                 rel="stylesheet" 
@@ -535,11 +956,13 @@
             >
 
             </main>
-    
-        <aside class="sidebar right-sidebar sticky">
-            <section class="widget archives">
-                <div class="widget-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z"/>
   <line x1="5" y1="9" x2="19" y2="9" />
   <line x1="5" y1="15" x2="19" y2="15" />
@@ -549,26 +972,29 @@
 
 
 
-                </div>
-                <h2 class="widget-title section-title">目录</h2>
-                
-                <div class="widget--toc">
-                    <nav id="TableOfContents">
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
   <ol>
     <li><a href="#1--maven-导包">1 . Maven 导包</a></li>
     <li><a href="#2--用代码连接数据库">2 . 用代码连接数据库</a></li>
     <li><a href="#3--代码详解">3 . 代码详解</a></li>
   </ol>
 </nav>
-                </div>
-            </section>
-        </aside>
-    
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
 
         </div>
         <script 
                 src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js"integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g="crossorigin="anonymous"
-                defer="false"
+                
                 >
             </script><script type="text/javascript" src="/ts/main.js" defer></script>
 <script>

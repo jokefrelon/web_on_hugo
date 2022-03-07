@@ -1,24 +1,100 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>ftp on JokemeBlog</title>
-    <link>https://jokeme.top/tags/ftp/</link>
-    <description>Recent content in ftp on JokemeBlog</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Mon, 01 Mar 2021 22:37:16 +0000</lastBuildDate><atom:link href="https://jokeme.top/tags/ftp/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Ubuntu 20.04.2 配置 vsftpd 的脑坑</title>
-      <link>https://jokeme.top/p/linux_vsftpd/</link>
-      <pubDate>Mon, 01 Mar 2021 22:37:16 +0000</pubDate>
-      
-      <guid>https://jokeme.top/p/linux_vsftpd/</guid>
-      <description>Ubuntu 20.04.2 配置 vsftpd 的脑坑 今天是 2020-03-01 02:13:13，刚结束了我在我哥饭店帮忙的欢乐时光，刚下班回来的我就准备掏出我的大宝贝好好的爽一爽，毕竟大半个月都没有咋用我的电脑了。因为之前刚换的Ubuntu20还有好多东西没有配置好，我就想着今天晚上把 ftp 整一下，然后就遇到了我特别尴尬的一幕，记录一下。
-安装 VsFtpd sudo apt install vsftpd 这一步毫无争议，没啥可说。略
-配置文件 sudo cp /etc/vsftpd.conf /etc/vsftpd.conf.bk sudo nano /etc/vsftpd.conf listen=NO listen_ipv6=YES anonymous_enable=NO local_enable=YES write_enable=YES allow_writeable_chroot=YES local_root=/home/frelon dirmessage_enable=YES use_localtime=YES xferlog_enable=YES connect_from_port_20=YES ascii_upload_enable=YES ascii_download_enable=YES ls_recurse_enable=YES secure_chroot_dir=/var/run/vsftpd/empty pam_service_name=vsftpd rsa_cert_file=/etc/ssl/certs/ssl-cert-snakeoil.pem rsa_private_key_file=/etc/ssl/private/ssl-cert-snakeoil.key ssl_enable=NO utf8_filesystem=YES 一样是毫无争议，按照自己喜欢的配置来。
-重启 vsftpd sudo systemctl restart vsftpd 我就特喵的在这一步出现了问题了。因为我平时使用samba比较多，在 Windows 下面映射一下就可以把局域网的 samba 当本地硬盘使，所以我就莫名其妙的输入了 sudo systemctl restart smbd ,我就本能的，条件反射的输入了 smbd，然后我就用我的用户名登陆 ftp，一下子给我整的不自信了，咋回事？这 ftp 咋还不能用呢，卧槽？ftp 出问题啦？我就改了半天的配置文件。甚至允许匿名登陆都特喵的不能用，当时就心态炸了。然后又检查了好几遍配置文件，还把防火墙给关了也于事无用
-我当时甚至怀疑系统出问题啦，还把服务器给重启了一遍（重启的时候我偏偏手贱，把配置文件还原了）,还不能登陆，我就接着改配置文件 ，接着重启 smbd，然后我打算放弃了，觉得这 ftp 是不是出现了 bug。我本来打算去洗澡的，但是心里面又有一点不甘，用手机接着来，当我又一次打算重启 smbd 的时候我突然发现了问题，我特喵的用的是 ftp，我老在这重启 samba 干啥？？？这就像你抓鲁迅关我周树人什么事一样的感觉。我就突然觉得挺对不起我的 samba 的，逮着它就是一顿重启，阿哈哈哈。</description>
-    </item>
-    
-  </channel>
+    <channel>
+        <title>ftp on JokemeBlog</title>
+        <link>https://jokeme.top/tags/ftp/</link>
+        <description>Recent content in ftp on JokemeBlog</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>en-us</language>
+        <lastBuildDate>Mon, 01 Mar 2021 22:37:16 +0000</lastBuildDate><atom:link href="https://jokeme.top/tags/ftp/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Ubuntu 20.04.2 配置 vsftpd 的脑坑</title>
+        <link>https://jokeme.top/p/linux_vsftpd/</link>
+        <pubDate>Mon, 01 Mar 2021 22:37:16 +0000</pubDate>
+        
+        <guid>https://jokeme.top/p/linux_vsftpd/</guid>
+        <description>&lt;img src="https://cn.bing.com/th?id=OHR.VolcanoLlaima_EN-CN5183277848_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post Ubuntu 20.04.2 配置 vsftpd 的脑坑" /&gt;&lt;h1 id=&#34;ubuntu-20042-配置-vsftpd-的脑坑&#34;&gt;Ubuntu 20.04.2 配置 vsftpd 的脑坑&lt;/h1&gt;
+&lt;p&gt;今天是 2020-03-01 02:13:13，刚结束了我在我哥饭店帮忙的欢乐时光，刚下班回来的我就准备掏出我的大宝贝好好的爽一爽，毕竟大半个月都没有咋用我的电脑了。因为之前刚换的&lt;strong&gt;Ubuntu20&lt;/strong&gt;还有好多东西没有配置好，我就想着今天晚上把 ftp 整一下，然后就遇到了我特别尴尬的一幕，记录一下。&lt;/p&gt;
+&lt;h2 id=&#34;安装-vsftpd&#34;&gt;安装 VsFtpd&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;
+&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
+&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;&lt;code&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
+&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;sudo apt install vsftpd
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;这一步毫无争议，没啥可说。略&lt;/p&gt;
+&lt;h2 id=&#34;配置文件&#34;&gt;配置文件&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;
+&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
+&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;&lt;code&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;1
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
+&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;sudo cp /etc/vsftpd.conf /etc/vsftpd.conf.bk
+sudo nano /etc/vsftpd.conf
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;
+&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
+&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;&lt;code&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 1
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 2
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 3
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 4
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 5
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 6
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 7
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 8
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 9
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;10
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;11
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;12
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;13
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;14
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;15
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;16
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;17
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;18
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;19
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;20
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
+&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;&lt;code class=&#34;language-ini&#34; data-lang=&#34;ini&#34;&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;listen&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;NO&lt;/span&gt;
+&lt;span style=&#34;color:#a6e22e&#34;&gt;listen_ipv6&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;YES&lt;/span&gt;
+&lt;span style=&#34;color:#a6e22e&#34;&gt;anonymous_enable&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;NO&lt;/span&gt;
+&lt;span style=&#34;color:#a6e22e&#34;&gt;local_enable&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;YES&lt;/span&gt;
+&lt;span style=&#34;color:#a6e22e&#34;&gt;write_enable&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;YES&lt;/span&gt;
+&lt;span style=&#34;color:#a6e22e&#34;&gt;allow_writeable_chroot&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;YES&lt;/span&gt;
+&lt;span style=&#34;color:#a6e22e&#34;&gt;local_root&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;/home/frelon&lt;/span&gt;
+&lt;span style=&#34;color:#a6e22e&#34;&gt;dirmessage_enable&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;YES&lt;/span&gt;
+&lt;span style=&#34;color:#a6e22e&#34;&gt;use_localtime&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;YES&lt;/span&gt;
+&lt;span style=&#34;color:#a6e22e&#34;&gt;xferlog_enable&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;YES&lt;/span&gt;
+&lt;span style=&#34;color:#a6e22e&#34;&gt;connect_from_port_20&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;YES&lt;/span&gt;
+&lt;span style=&#34;color:#a6e22e&#34;&gt;ascii_upload_enable&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;YES&lt;/span&gt;
+&lt;span style=&#34;color:#a6e22e&#34;&gt;ascii_download_enable&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;YES&lt;/span&gt;
+&lt;span style=&#34;color:#a6e22e&#34;&gt;ls_recurse_enable&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;YES&lt;/span&gt;
+&lt;span style=&#34;color:#a6e22e&#34;&gt;secure_chroot_dir&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;/var/run/vsftpd/empty&lt;/span&gt;
+&lt;span style=&#34;color:#a6e22e&#34;&gt;pam_service_name&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;vsftpd&lt;/span&gt;
+&lt;span style=&#34;color:#a6e22e&#34;&gt;rsa_cert_file&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;/etc/ssl/certs/ssl-cert-snakeoil.pem&lt;/span&gt;
+&lt;span style=&#34;color:#a6e22e&#34;&gt;rsa_private_key_file&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;/etc/ssl/private/ssl-cert-snakeoil.key&lt;/span&gt;
+&lt;span style=&#34;color:#a6e22e&#34;&gt;ssl_enable&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;NO&lt;/span&gt;
+&lt;span style=&#34;color:#a6e22e&#34;&gt;utf8_filesystem&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;YES&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;一样是毫无争议，按照自己喜欢的配置来。&lt;/p&gt;
+&lt;h2 id=&#34;重启-vsftpd&#34;&gt;重启 vsftpd&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;
+&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
+&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;&lt;code&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
+&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;sudo systemctl restart vsftpd
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;我就特喵的在这一步出现了问题了。因为我平时使用&lt;strong&gt;samba&lt;/strong&gt;比较多，在 Windows 下面映射一下就可以把局域网的 samba 当本地硬盘使，所以我就莫名其妙的输入了 &lt;code&gt;sudo systemctl restart smbd&lt;/code&gt; ,我就本能的，条件反射的输入了 smbd，然后我就用我的用户名登陆 ftp，一下子给我整的不自信了，咋回事？这 ftp 咋还不能用呢，卧槽？ftp 出问题啦？我就改了半天的配置文件。甚至允许匿名登陆都特喵的不能用，当时就心态炸了。然后又检查了好几遍配置文件，还把防火墙给关了也于事无用&lt;/p&gt;
+&lt;p&gt;我当时甚至怀疑系统出问题啦，还把服务器给重启了一遍（重启的时候我偏偏手贱，把配置文件还原了）,还不能登陆，我就接着改配置文件 ，接着重启 smbd，然后我打算放弃了，觉得这 ftp 是不是出现了 bug。我本来打算去洗澡的，但是心里面又有一点不甘，用手机接着来，当我又一次打算重启 smbd 的时候我突然发现了问题，我特喵的用的是 ftp，我老在这重启 samba 干啥？？？这就像你抓鲁迅关我周树人什么事一样的感觉。我就突然觉得挺对不起我的 samba 的，逮着它就是一顿重启，阿哈哈哈。&lt;/p&gt;
+</description>
+        </item>
+        
+    </channel>
 </rss>

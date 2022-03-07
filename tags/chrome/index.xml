@@ -1,21 +1,28 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Chrome on JokemeBlog</title>
-    <link>https://jokeme.top/tags/chrome/</link>
-    <description>Recent content in Chrome on JokemeBlog</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Tue, 14 Jul 2020 15:42:51 +0000</lastBuildDate><atom:link href="https://jokeme.top/tags/chrome/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>在微软官网下载 Windows10 ISO 安装包</title>
-      <link>https://jokeme.top/p/download_windows10_iso/</link>
-      <pubDate>Tue, 14 Jul 2020 15:42:51 +0000</pubDate>
-      
-      <guid>https://jokeme.top/p/download_windows10_iso/</guid>
-      <description>教大家如何在微软官网下载 Windows10 ISO 安装包  进入 Windows10 下载页面 CTRL+SHIFT+I 后再 CTRL+SHIFT+M再接一个 CTRL+R  你就可以看到让你选择 Windows 版本,个人建议不要选家庭中文版 然后一路下来也没有啥难点了,他就会为你创建一个24H内有效的链接,记得尽快下载系统哦
-就这了</description>
-    </item>
-    
-  </channel>
+    <channel>
+        <title>Chrome on JokemeBlog</title>
+        <link>https://jokeme.top/tags/chrome/</link>
+        <description>Recent content in Chrome on JokemeBlog</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>en-us</language>
+        <lastBuildDate>Tue, 14 Jul 2020 15:42:51 +0000</lastBuildDate><atom:link href="https://jokeme.top/tags/chrome/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>在微软官网下载 Windows10 ISO 安装包</title>
+        <link>https://jokeme.top/p/download_windows10_iso/</link>
+        <pubDate>Tue, 14 Jul 2020 15:42:51 +0000</pubDate>
+        
+        <guid>https://jokeme.top/p/download_windows10_iso/</guid>
+        <description>&lt;img src="https://cn.bing.com/th?id=OHR.PenitentSnow_EN-CN4445586340_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post 在微软官网下载 Windows10 ISO 安装包" /&gt;&lt;h1 id=&#34;教大家如何在微软官网下载-windows10-iso-安装包&#34;&gt;教大家如何在微软官网下载 Windows10 ISO 安装包&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;进入 &lt;a class=&#34;link&#34; href=&#34;https://www.microsoft.com/zh-cn/software-download/windows10&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Windows10&lt;/a&gt; 下载页面&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;CTRL+SHIFT+I&lt;/code&gt; 后再 &lt;code&gt;CTRL+SHIFT+M&lt;/code&gt;再接一个 &lt;code&gt;CTRL+R&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;你就可以看到让你选择 Windows 版本,个人建议不要选家庭中文版
+然后一路下来也没有啥难点了,他就会为你创建一个24H内有效的链接,记得尽快下载系统哦&lt;/p&gt;
+&lt;p&gt;就这了&lt;/p&gt;
+</description>
+        </item>
+        
+    </channel>
 </rss>

@@ -1,30 +1,48 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Math on JokemeBlog</title>
-    <link>https://jokeme.top/categories/math/</link>
-    <description>Recent content in Math on JokemeBlog</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Sun, 06 Dec 2020 17:18:43 +0000</lastBuildDate><atom:link href="https://jokeme.top/categories/math/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>数学思想</title>
-      <link>https://jokeme.top/p/math_thought/</link>
-      <pubDate>Sun, 06 Dec 2020 17:18:43 +0000</pubDate>
-      
-      <guid>https://jokeme.top/p/math_thought/</guid>
-      <description>数学思想  先声明一下！我是数学菜鸡！以下内容是我个人总结在学习数学中的一些重要的数学思想，写的不好！望海涵！!!
- 1. 无中生一 这个是我最先总结出来的了， 所谓无中生一就是我们在做题目时常常会遇到一些写着写着就没办法写下去的题目，也不是写错了，但就是卡在了这里想了半天也没有想出来可以用什么公式来解决问题！ 这个时候我们就需要重新审视一下题目了， 我们真的应该这样写吗？看例题
-$$ 求 f(x)=ln( \sqrt{1+x^2} +x) 的奇偶性 $$
-$$ f(-x) = ln(\sqrt{1+(-x)^2}-x) $$
-$$ f(-x) = ln(\sqrt{1+x^2}-x) $$
-$$ f(-x)=ln[(\sqrt{1+x^2}-x)*\frac{\sqrt{x^2+1}+x}{\sqrt{x^2+1}+x}] $$
-$$ 因为后面的\frac{\sqrt{x^2+1}+x}{\sqrt{x^2+1}+x}为一,对整个结果没有影响可得 $$
-$$ f(-x)=ln\frac {(\sqrt{x^2+1}+x)*(\sqrt{1+x^2}-x)} {\sqrt{x^2+1}+x} $$
-$$ f(-x)=ln(\frac{1}{\sqrt{x^2+1}+x})=ln(\sqrt{x^2+1}+x)^{-1}=-ln(\sqrt{x^2+1}+x) $$
-文章持续更新 ing❤️
-不更新了，数学太难了，放弃了！！！💔 我是傻X！我不配学数学</description>
-    </item>
-    
-  </channel>
+    <channel>
+        <title>Math on JokemeBlog</title>
+        <link>https://jokeme.top/categories/math/</link>
+        <description>Recent content in Math on JokemeBlog</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>en-us</language>
+        <lastBuildDate>Sun, 06 Dec 2020 17:18:43 +0000</lastBuildDate><atom:link href="https://jokeme.top/categories/math/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>数学思想</title>
+        <link>https://jokeme.top/p/math_thought/</link>
+        <pubDate>Sun, 06 Dec 2020 17:18:43 +0000</pubDate>
+        
+        <guid>https://jokeme.top/p/math_thought/</guid>
+        <description>&lt;img src="https://cn.bing.com/th?id=OHR.JinliStreet_EN-CN2006370773_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post 数学思想" /&gt;&lt;h1 id=&#34;数学思想&#34;&gt;数学思想&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;先声明一下！我是数学菜鸡！以下内容是我个人总结在学习数学中的一些重要的数学思想，写的不好！望海涵！!!&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;1-无中生一&#34;&gt;1. 无中生一&lt;/h2&gt;
+&lt;p&gt;这个是我最先总结出来的了， 所谓&lt;strong&gt;无中生一&lt;/strong&gt;就是我们在做题目时常常会遇到一些写着写着就没办法写下去的题目，也不是写错了，但就是卡在了这里想了半天也没有想出来可以用什么公式来解决问题！ 这个时候我们就需要重新审视一下题目了， 我们真的应该这样写吗？看例题&lt;/p&gt;
+&lt;p&gt;$$
+求 f(x)=ln( \sqrt{1+x^2} +x) 的奇偶性
+$$&lt;/p&gt;
+&lt;p&gt;$$
+f(-x) = ln(\sqrt{1+(-x)^2}-x)
+$$&lt;/p&gt;
+&lt;p&gt;$$
+f(-x) = ln(\sqrt{1+x^2}-x)
+$$&lt;/p&gt;
+&lt;p&gt;$$
+f(-x)=ln[(\sqrt{1+x^2}-x)*\frac{\sqrt{x^2+1}+x}{\sqrt{x^2+1}+x}]
+$$&lt;/p&gt;
+&lt;p&gt;$$
+因为后面的\frac{\sqrt{x^2+1}+x}{\sqrt{x^2+1}+x}为一,对整个结果没有影响可得
+$$&lt;/p&gt;
+&lt;p&gt;$$
+f(-x)=ln\frac {(\sqrt{x^2+1}+x)*(\sqrt{1+x^2}-x)} {\sqrt{x^2+1}+x}
+$$&lt;/p&gt;
+&lt;p&gt;$$
+f(-x)=ln(\frac{1}{\sqrt{x^2+1}+x})=ln(\sqrt{x^2+1}+x)^{-1}=-ln(\sqrt{x^2+1}+x)
+$$&lt;/p&gt;
+&lt;p&gt;&lt;del&gt;文章持续更新 ing❤️&lt;/del&gt;&lt;/p&gt;
+&lt;p&gt;不更新了，数学太难了，放弃了！！！💔 我是傻X！我不配学数学&lt;/p&gt;
+</description>
+        </item>
+        
+    </channel>
 </rss>

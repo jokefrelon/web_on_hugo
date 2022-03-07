@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en-us">
+<html lang="en-us" dir="ltr">
     <head><meta charset='utf-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='Java 集合方面的学习,包括了list和set'><title>Java collection </title>
 
 <link rel='canonical' href='https://jokeme.top/p/java_collection/'>
 
-<link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='Java collection '>
+<link rel="stylesheet" href="/scss/style.min.8f838266c1bced5c6bbd71d0405de40d06e788c02de81dc90a51ed740c863169.css"><meta property='og:title' content='Java collection '>
 <meta property='og:description' content='Java 集合方面的学习,包括了list和set'>
 <meta property='og:url' content='https://jokeme.top/p/java_collection/'>
 <meta property='og:site_name' content='JokemeBlog'>
@@ -18,8 +18,8 @@
 
     </head>
     <body class="
-    article-page has-toc
-">
+    article-page
+    ">
     <script>
         (function() {
             const colorSchemeKey = 'StackColorScheme';
@@ -42,25 +42,219 @@
         }
     })();
 </script>
-<div class="container main-container flex 
-    
-        extended
-    
-">
-    
-        <div id="article-toolbar">
-            <a href="https://jokeme.top" class="back-home">
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <polyline points="15 6 9 12 15 18" />
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/author_hue3a07bfbdd4fc62fd921ca2090947f2f_15076_300x0_resize_q75_box.jpg" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">🥰</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">JokemeBlog</a></h1>
+            <h2 class="site-description">人生没有白走的路,每一步都算数。</h2>
+        </div>
+    </header><ol class="social-menu">
+            
+                <li>
+                    <a 
+                        href='https://github.com/jokefrelon'
+                        target="_blank"
+                        title="GitHub"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
 </svg>
 
 
 
-                <span>返回</span>
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://twitter.com/FrelonTroung'
+                        target="_blank"
+                        title="Twitter"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>Home</span>
             </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/%E5%85%B3%E4%BA%8E/' >
+                
+                
+                    
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/links/' >
+                
+                
+                    
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>链接</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/archives/' >
+                
+                
+                    
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>存档</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/search/' >
+                
+                
+                    
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+
+        <div class="menu-bottom-section">
+            
+            
+                <li id="dark-mode-toggle">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                    <span>暗色模式</span>
+                </li>
+            
         </div>
-    
+    </ol>
+</aside>
 <main class="main full-width">
     <article class="has-image main-article">
     <header class="article-header">
@@ -84,15 +278,17 @@
     </header>
     
 
-    <h2 class="article-title">
-        <a href="/p/java_collection/">Java collection </a>
-    </h2>
-
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/java_collection/">Java collection </a>
+        </h2>
     
-    <h3 class="article-subtitle">
-        Java 集合方面的学习,包括了list和set
-    </h3>
-    
+        
+        <h3 class="article-subtitle">
+            Java 集合方面的学习,包括了list和set
+        </h3>
+        
+    </div>
 
     
     <footer class="article-time">
@@ -122,157 +318,356 @@
 
 
                 <time class="article-time--reading">
-                    阅读时长: 4 分钟
+                    阅读时长: 6 分钟
                 </time>
             </div>
         
     </footer>
     
+
+    
 </div>
 </header>
 
     <section class="article-content">
+    
+    
     <h1 id="collection集合">collection集合</h1>
-<pre><code class="language-properties" data-lang="properties">collection--|
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-fallback" data-lang="fallback">collection--|
 		   |--list:有序,有索引,允许重复元素
 		   |--set:不允许重复元素,元素存取无序
-</code></pre><h2 id="1共性功能">1.共性功能</h2>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="1共性功能">1.共性功能</h2>
 <p>a.添加</p>
-<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="n">Boolean</span> <span class="nf">add</span> <span class="o">(</span><span class="n">Obj</span> <span class="n">obj</span><span class="o">);</span><span class="c1">//添加单个对象
-</span><span class="c1"></span><span class="n">Boolean</span> <span class="nf">addAll</span> <span class="o">(</span><span class="n">Collection</span> <span class="n">c</span><span class="o">);</span><span class="c1">//添加一组的collection的对象
-</span></code></pre></div><p>b.删除</p>
-<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java"><span class="kt">void</span> <span class="nf">clear</span><span class="o">();</span><span class="c1">//清空collection内所有对象/元素
-</span><span class="c1"></span><span class="n">Boolean</span> <span class="nf">remove</span> <span class="o">(</span><span class="n">Object</span> <span class="n">o</span><span class="o">);</span><span class="c1">//删除collection里面某个对象
-</span><span class="c1"></span><span class="n">Boolean</span> <span class="nf">removeAll</span> <span class="o">(</span><span class="n">Collection</span> <span class="n">c</span><span class="o">);</span><span class="c1">//删除一组的collection
-</span></code></pre></div><p>c.获取长度</p>
-<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kt">int</span> <span class="nf">size</span><span class="o">();</span>
-</code></pre></div><p>d.判断</p>
-<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="n">Boolean</span> <span class="nf">isEmpty</span><span class="o">();</span>
-<span class="n">Boolean</span> <span class="nf">contains</span><span class="o">(</span><span class="n">Object</span> <span class="n">o</span><span class="o">);</span>
-<span class="n">Boolean</span> <span class="nf">containsAll</span><span class="o">(</span><span class="n">Collection</span> <span class="n">c</span><span class="o">)</span>
-</code></pre></div><p>e.集合转数组</p>
-<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="n">toArray</span><span class="o">();</span>
-<span class="n">toArray</span><span class="o">([]);</span>
-</code></pre></div><p>f.迭代器</p>
-<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="n">Iterator</span> <span class="nf">iterator</span><span class="o">();</span>
-</code></pre></div><h2 id="2-list集合">2. <strong>List</strong>集合</h2>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-java" data-lang="java">Boolean <span style="color:#a6e22e">add</span> <span style="color:#f92672">(</span>Obj obj<span style="color:#f92672">);</span><span style="color:#75715e">//添加单个对象
+</span><span style="color:#75715e"></span>Boolean <span style="color:#a6e22e">addAll</span> <span style="color:#f92672">(</span>Collection c<span style="color:#f92672">);</span><span style="color:#75715e">//添加一组的collection的对象
+</span></code></pre></td></tr></table>
+</div>
+</div><p>b.删除</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-Java" data-lang="Java"><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">clear</span><span style="color:#f92672">();</span><span style="color:#75715e">//清空collection内所有对象/元素
+</span><span style="color:#75715e"></span>Boolean <span style="color:#a6e22e">remove</span> <span style="color:#f92672">(</span>Object o<span style="color:#f92672">);</span><span style="color:#75715e">//删除collection里面某个对象
+</span><span style="color:#75715e"></span>Boolean <span style="color:#a6e22e">removeAll</span> <span style="color:#f92672">(</span>Collection c<span style="color:#f92672">);</span><span style="color:#75715e">//删除一组的collection
+</span></code></pre></td></tr></table>
+</div>
+</div><p>c.获取长度</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-java" data-lang="java"><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">size</span><span style="color:#f92672">();</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>d.判断</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-java" data-lang="java">Boolean <span style="color:#a6e22e">isEmpty</span><span style="color:#f92672">();</span>
+Boolean <span style="color:#a6e22e">contains</span><span style="color:#f92672">(</span>Object o<span style="color:#f92672">);</span>
+Boolean <span style="color:#a6e22e">containsAll</span><span style="color:#f92672">(</span>Collection c<span style="color:#f92672">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>e.集合转数组</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-java" data-lang="java">toArray<span style="color:#f92672">();</span>
+toArray<span style="color:#f92672">([]);</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>f.迭代器</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-java" data-lang="java">Iterator <span style="color:#a6e22e">iterator</span><span style="color:#f92672">();</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="2-list集合">2. <strong>List</strong>集合</h2>
 <h3 id="21-list集合的具体子类">2.1 <strong>list</strong>集合的具体子类</h3>
-<pre><code class="language-properties" data-lang="properties">List----
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-fallback" data-lang="fallback">List----
 	|-- Vector:数组数据结构,长度可变,线程同步&lt;多线程安全&gt;,但是速度比较慢(现在已经不常用-被ArrayList替代),长度按数组长度的100%延长
 	|-- ArrayList:数组结构,长度可变,线程不同步&lt;多线程不安全&gt;.查,速度快,增 删 改速度慢,长度按数组长度的50%延长
 	|-- LinkedList:链表结构,线程不同步&lt;多线程不安全&gt;,增,删,改,速度快,查 速度慢
-</code></pre><h3 id="22--迭代器使用注意">2.2  迭代器使用注意</h3>
-<pre><code class="language-properties" data-lang="properties">Exception in thread &quot;main&quot; java.util.ConcurrentModificationException
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="22--迭代器使用注意">2.2  迭代器使用注意</h3>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-fallback" data-lang="fallback">Exception in thread &#34;main&#34; java.util.ConcurrentModificationException
 	at java.util.ArrayList$Itr.checkForComodification(Unknown Source)
 	at java.util.ArrayList$Itr.next(Unknown Source)
-</code></pre><p>遇到这种在使用迭代器时还修改迭代器内元素的时候，<strong>JVM</strong>会报错，这时候就需要用<strong>ListIterator</strong></p>
+</code></pre></td></tr></table>
+</div>
+</div><p>遇到这种在使用迭代器时还修改迭代器内元素的时候，<strong>JVM</strong>会报错，这时候就需要用<strong>ListIterator</strong></p>
 <h3 id="23-犯错实记-">2.3 犯错实记 ?:</h3>
-<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="nn">sourceCode</span><span class="o">;</span>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-java" data-lang="java"><span style="color:#f92672">package</span> sourceCode<span style="color:#f92672">;</span>
 
-<span class="kn">import</span> <span class="nn">java.util.ArrayList</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">java.util.List</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">java.util.ListIterator</span><span class="o">;</span>
+<span style="color:#f92672">import</span> java.util.ArrayList<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> java.util.List<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> java.util.ListIterator<span style="color:#f92672">;</span>
 
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">listTest</span> <span class="o">{</span>
-	<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">clean</span><span class="o">(</span><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">person</span><span class="o">&gt;</span> <span class="n">jsr</span><span class="o">)</span> <span class="o">{</span>
-		<span class="n">List</span><span class="o">&lt;</span><span class="n">person</span><span class="o">&gt;</span> <span class="n">dot</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">person</span><span class="o">&gt;();</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">listTest</span> <span style="color:#f92672">{</span>
+	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">clean</span><span style="color:#f92672">(</span>ArrayList<span style="color:#f92672">&lt;</span>person<span style="color:#f92672">&gt;</span> jsr<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+		List<span style="color:#f92672">&lt;</span>person<span style="color:#f92672">&gt;</span> dot <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ArrayList<span style="color:#f92672">&lt;</span>person<span style="color:#f92672">&gt;();</span>
 
-		<span class="k">for</span> <span class="o">(</span><span class="n">ListIterator</span><span class="o">&lt;</span><span class="n">person</span><span class="o">&gt;</span> <span class="n">lis</span> <span class="o">=</span> <span class="n">jsr</span><span class="o">.</span><span class="na">listIterator</span><span class="o">();</span> <span class="n">lis</span><span class="o">.</span><span class="na">hasNext</span><span class="o">();)</span> <span class="o">{</span>
-			<span class="n">person</span> <span class="n">pop</span> <span class="o">=</span> <span class="n">lis</span><span class="o">.</span><span class="na">next</span><span class="o">();</span>
-			<span class="k">if</span> <span class="o">(!</span><span class="n">dot</span><span class="o">.</span><span class="na">contains</span><span class="o">(</span><span class="n">pop</span><span class="o">))</span> <span class="o">{</span>
-				<span class="n">dot</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">pop</span><span class="o">);</span>
-			<span class="o">}</span>
-		<span class="o">}</span>
-		<span class="n">jsr</span><span class="o">.</span><span class="na">clear</span><span class="o">();</span>
-		<span class="n">jsr</span><span class="o">.</span><span class="na">addAll</span><span class="o">(</span><span class="n">dot</span><span class="o">);</span>
-	<span class="o">}</span>
+		<span style="color:#66d9ef">for</span> <span style="color:#f92672">(</span>ListIterator<span style="color:#f92672">&lt;</span>person<span style="color:#f92672">&gt;</span> lis <span style="color:#f92672">=</span> jsr<span style="color:#f92672">.</span><span style="color:#a6e22e">listIterator</span><span style="color:#f92672">();</span> lis<span style="color:#f92672">.</span><span style="color:#a6e22e">hasNext</span><span style="color:#f92672">();)</span> <span style="color:#f92672">{</span>
+			person pop <span style="color:#f92672">=</span> lis<span style="color:#f92672">.</span><span style="color:#a6e22e">next</span><span style="color:#f92672">();</span>
+			<span style="color:#66d9ef">if</span> <span style="color:#f92672">(!</span>dot<span style="color:#f92672">.</span><span style="color:#a6e22e">contains</span><span style="color:#f92672">(</span>pop<span style="color:#f92672">))</span> <span style="color:#f92672">{</span>
+				dot<span style="color:#f92672">.</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span>pop<span style="color:#f92672">);</span>
+			<span style="color:#f92672">}</span>
+		<span style="color:#f92672">}</span>
+		jsr<span style="color:#f92672">.</span><span style="color:#a6e22e">clear</span><span style="color:#f92672">();</span>
+		jsr<span style="color:#f92672">.</span><span style="color:#a6e22e">addAll</span><span style="color:#f92672">(</span>dot<span style="color:#f92672">);</span>
+	<span style="color:#f92672">}</span>
 
-	<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
-		<span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">person</span><span class="o">&gt;</span> <span class="n">jsr</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">person</span><span class="o">&gt;();</span>
-		<span class="n">jsr</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">person</span><span class="o">(</span><span class="n">20</span><span class="o">,</span> <span class="s">&#34;frelon&#34;</span><span class="o">));</span>
-		<span class="n">jsr</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">person</span><span class="o">(</span><span class="n">21</span><span class="o">,</span> <span class="s">&#34;frelon&#34;</span><span class="o">));</span>
-		<span class="n">jsr</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">person</span><span class="o">(</span><span class="n">23</span><span class="o">,</span> <span class="s">&#34;frelon&#34;</span><span class="o">));</span>
-		<span class="n">jsr</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">person</span><span class="o">(</span><span class="n">21</span><span class="o">,</span> <span class="s">&#34;frelon&#34;</span><span class="o">));</span>
-		<span class="n">clean</span><span class="o">(</span><span class="n">jsr</span><span class="o">);</span>
-		<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">jsr</span><span class="o">);</span>
-	<span class="o">}</span>
+	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+		ArrayList<span style="color:#f92672">&lt;</span>person<span style="color:#f92672">&gt;</span> jsr <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ArrayList<span style="color:#f92672">&lt;</span>person<span style="color:#f92672">&gt;();</span>
+		jsr<span style="color:#f92672">.</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> person<span style="color:#f92672">(</span>20<span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;frelon&#34;</span><span style="color:#f92672">));</span>
+		jsr<span style="color:#f92672">.</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> person<span style="color:#f92672">(</span>21<span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;frelon&#34;</span><span style="color:#f92672">));</span>
+		jsr<span style="color:#f92672">.</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> person<span style="color:#f92672">(</span>23<span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;frelon&#34;</span><span style="color:#f92672">));</span>
+		jsr<span style="color:#f92672">.</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> person<span style="color:#f92672">(</span>21<span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;frelon&#34;</span><span style="color:#f92672">));</span>
+		clean<span style="color:#f92672">(</span>jsr<span style="color:#f92672">);</span>
+		System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>jsr<span style="color:#f92672">);</span>
+	<span style="color:#f92672">}</span>
 
-<span class="o">}</span>
-</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="nn">sourceCode</span><span class="o">;</span>
+<span style="color:#f92672">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">50
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">51
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">52
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">53
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">54
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">55
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">56
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">57
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">58
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">59
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">60
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">61
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">62
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-java" data-lang="java"><span style="color:#f92672">package</span> sourceCode<span style="color:#f92672">;</span>
 
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">person</span> <span class="o">{</span>
-	<span class="kd">private</span> <span class="kt">int</span> <span class="n">age</span><span class="o">;</span>
-	<span class="kd">private</span> <span class="n">String</span> <span class="n">name</span><span class="o">;</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">person</span> <span style="color:#f92672">{</span>
+	<span style="color:#66d9ef">private</span> <span style="color:#66d9ef">int</span> age<span style="color:#f92672">;</span>
+	<span style="color:#66d9ef">private</span> String name<span style="color:#f92672">;</span>
 
-	<span class="kd">public</span> <span class="nf">person</span><span class="o">(</span><span class="kt">int</span> <span class="n">age</span><span class="o">,</span> <span class="n">String</span> <span class="n">name</span><span class="o">)</span> <span class="o">{</span>
-		<span class="kd">super</span><span class="o">();</span>
-		<span class="k">this</span><span class="o">.</span><span class="na">age</span> <span class="o">=</span> <span class="n">age</span><span class="o">;</span>
-		<span class="k">this</span><span class="o">.</span><span class="na">name</span> <span class="o">=</span> <span class="n">name</span><span class="o">;</span>
-	<span class="o">}</span>
+	<span style="color:#66d9ef">public</span> <span style="color:#a6e22e">person</span><span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> age<span style="color:#f92672">,</span> String name<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+		<span style="color:#66d9ef">super</span><span style="color:#f92672">();</span>
+		<span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">age</span> <span style="color:#f92672">=</span> age<span style="color:#f92672">;</span>
+		<span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> name<span style="color:#f92672">;</span>
+	<span style="color:#f92672">}</span>
 
-	<span class="kd">public</span> <span class="kt">int</span> <span class="nf">getAge</span><span class="o">()</span> <span class="o">{</span>
-		<span class="k">return</span> <span class="n">age</span><span class="o">;</span>
-	<span class="o">}</span>
+	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">getAge</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+		<span style="color:#66d9ef">return</span> age<span style="color:#f92672">;</span>
+	<span style="color:#f92672">}</span>
 
-	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">setAge</span><span class="o">(</span><span class="kt">int</span> <span class="n">age</span><span class="o">)</span> <span class="o">{</span>
-		<span class="k">this</span><span class="o">.</span><span class="na">age</span> <span class="o">=</span> <span class="n">age</span><span class="o">;</span>
-	<span class="o">}</span>
+	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">setAge</span><span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> age<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+		<span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">age</span> <span style="color:#f92672">=</span> age<span style="color:#f92672">;</span>
+	<span style="color:#f92672">}</span>
 
-	<span class="kd">public</span> <span class="n">String</span> <span class="nf">getName</span><span class="o">()</span> <span class="o">{</span>
-		<span class="k">return</span> <span class="n">name</span><span class="o">;</span>
-	<span class="o">}</span>
+	<span style="color:#66d9ef">public</span> String <span style="color:#a6e22e">getName</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+		<span style="color:#66d9ef">return</span> name<span style="color:#f92672">;</span>
+	<span style="color:#f92672">}</span>
 
-	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">setName</span><span class="o">(</span><span class="n">String</span> <span class="n">name</span><span class="o">)</span> <span class="o">{</span>
-		<span class="k">this</span><span class="o">.</span><span class="na">name</span> <span class="o">=</span> <span class="n">name</span><span class="o">;</span>
-	<span class="o">}</span>
+	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">setName</span><span style="color:#f92672">(</span>String name<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+		<span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> name<span style="color:#f92672">;</span>
+	<span style="color:#f92672">}</span>
 
-	<span class="nd">@Override</span>
-	<span class="kd">public</span> <span class="n">String</span> <span class="nf">toString</span><span class="o">()</span> <span class="o">{</span>
-		<span class="k">return</span> <span class="s">&#34;person [age=&#34;</span> <span class="o">+</span> <span class="n">age</span> <span class="o">+</span> <span class="s">&#34;, name=&#34;</span> <span class="o">+</span> <span class="n">name</span> <span class="o">+</span> <span class="s">&#34;]&#34;</span><span class="o">;</span>
-	<span class="o">}</span>
+	<span style="color:#a6e22e">@Override</span>
+	<span style="color:#66d9ef">public</span> String <span style="color:#a6e22e">toString</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+		<span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;person [age=&#34;</span> <span style="color:#f92672">+</span> age <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;, name=&#34;</span> <span style="color:#f92672">+</span> name <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;]&#34;</span><span style="color:#f92672">;</span>
+	<span style="color:#f92672">}</span>
 	
 
 
-	<span class="nd">@Override</span>
-	<span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">equals</span><span class="o">(</span><span class="n">Object</span> <span class="n">obj</span><span class="o">)</span> <span class="o">{</span>
-		<span class="k">if</span> <span class="o">(</span><span class="k">this</span> <span class="o">==</span> <span class="n">obj</span><span class="o">)</span>
-			<span class="k">return</span> <span class="kc">true</span><span class="o">;</span>
-		<span class="k">if</span> <span class="o">(</span><span class="n">obj</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span>
-			<span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
-		<span class="k">if</span> <span class="o">(</span><span class="n">getClass</span><span class="o">()</span> <span class="o">!=</span> <span class="n">obj</span><span class="o">.</span><span class="na">getClass</span><span class="o">())</span>
-			<span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
-		<span class="n">person</span> <span class="n">other</span> <span class="o">=</span> <span class="o">(</span><span class="n">person</span><span class="o">)</span> <span class="n">obj</span><span class="o">;</span>
-		<span class="k">if</span> <span class="o">(</span><span class="n">age</span> <span class="o">!=</span> <span class="n">other</span><span class="o">.</span><span class="na">age</span><span class="o">)</span>
-			<span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
-		<span class="k">if</span> <span class="o">(</span><span class="n">name</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
-			<span class="k">if</span> <span class="o">(</span><span class="n">other</span><span class="o">.</span><span class="na">name</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span>
-				<span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
-		<span class="o">}</span> <span class="k">else</span> <span class="k">if</span> <span class="o">(!</span><span class="n">name</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="n">other</span><span class="o">.</span><span class="na">name</span><span class="o">))</span>
-			<span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
-		<span class="k">return</span> <span class="kc">true</span><span class="o">;</span>
-	<span class="o">}</span>
+	<span style="color:#a6e22e">@Override</span>
+	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">equals</span><span style="color:#f92672">(</span>Object obj<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+		<span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span><span style="color:#66d9ef">this</span> <span style="color:#f92672">==</span> obj<span style="color:#f92672">)</span>
+			<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span><span style="color:#f92672">;</span>
+		<span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>obj <span style="color:#f92672">==</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">)</span>
+			<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span><span style="color:#f92672">;</span>
+		<span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>getClass<span style="color:#f92672">()</span> <span style="color:#f92672">!=</span> obj<span style="color:#f92672">.</span><span style="color:#a6e22e">getClass</span><span style="color:#f92672">())</span>
+			<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span><span style="color:#f92672">;</span>
+		person other <span style="color:#f92672">=</span> <span style="color:#f92672">(</span>person<span style="color:#f92672">)</span> obj<span style="color:#f92672">;</span>
+		<span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>age <span style="color:#f92672">!=</span> other<span style="color:#f92672">.</span><span style="color:#a6e22e">age</span><span style="color:#f92672">)</span>
+			<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span><span style="color:#f92672">;</span>
+		<span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>name <span style="color:#f92672">==</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+			<span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>other<span style="color:#f92672">.</span><span style="color:#a6e22e">name</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">)</span>
+				<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span><span style="color:#f92672">;</span>
+		<span style="color:#f92672">}</span> <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> <span style="color:#f92672">(!</span>name<span style="color:#f92672">.</span><span style="color:#a6e22e">equals</span><span style="color:#f92672">(</span>other<span style="color:#f92672">.</span><span style="color:#a6e22e">name</span><span style="color:#f92672">))</span>
+			<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span><span style="color:#f92672">;</span>
+		<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span><span style="color:#f92672">;</span>
+	<span style="color:#f92672">}</span>
 
-	<span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">equals</span><span class="o">(</span><span class="n">person</span> <span class="n">obj</span><span class="o">)</span> <span class="o">{</span>
-		<span class="k">if</span> <span class="o">(</span><span class="k">this</span><span class="o">==</span><span class="n">obj</span><span class="o">)</span> <span class="o">{</span>
-			<span class="k">return</span> <span class="kc">true</span><span class="o">;</span>
-		<span class="o">}</span>
-			<span class="k">return</span> <span class="k">this</span><span class="o">.</span><span class="na">name</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="n">obj</span><span class="o">.</span><span class="na">name</span><span class="o">)&amp;&amp;</span><span class="k">this</span><span class="o">.</span><span class="na">age</span><span class="o">==</span><span class="n">obj</span><span class="o">.</span><span class="na">age</span><span class="o">;</span>
-	<span class="o">}</span>
-<span class="o">}</span>
+	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">equals</span><span style="color:#f92672">(</span>person obj<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+		<span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span><span style="color:#66d9ef">this</span><span style="color:#f92672">==</span>obj<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+			<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span><span style="color:#f92672">;</span>
+		<span style="color:#f92672">}</span>
+			<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">name</span><span style="color:#f92672">.</span><span style="color:#a6e22e">equals</span><span style="color:#f92672">(</span>obj<span style="color:#f92672">.</span><span style="color:#a6e22e">name</span><span style="color:#f92672">)&amp;&amp;</span><span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">age</span><span style="color:#f92672">==</span>obj<span style="color:#f92672">.</span><span style="color:#a6e22e">age</span><span style="color:#f92672">;</span>
+	<span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
 
-</code></pre></div><p>上面这个例子，是我用了两天时间得出<strong>Java</strong>面向接口编程的一个实例</p>
+</code></pre></td></tr></table>
+</div>
+</div><p>上面这个例子，是我用了两天时间得出<strong>Java</strong>面向接口编程的一个实例</p>
 <p>为什么说用了两天时间呢？</p>
 <p>因为我一直都不太明白 Java 面向对象编程的具体表现，所以在写代码的时候也比较呆板，再者就是我还没有搞明白接口里面的类有没有被子类所实现</p>
-<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java"><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">person</span><span class="o">&gt;</span> <span class="n">dot</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">person</span><span class="o">&gt;();</span>
-</code></pre></div><p>这就是我犯错的一段代码，我总是用<strong>List</strong>的子类 <strong>ArrayList</strong>来<strong>new</strong>新对象，而我<strong>Overwrite</strong>的方法已经被<strong>ArrayList</strong>实现，使用无论我怎么调用都还是无法调用到我自己 <strong>Overwrite</strong>后的代码</p>
-<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="n">List</span><span class="o">&lt;</span><span class="n">person</span><span class="o">&gt;</span> <span class="n">dot</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">person</span><span class="o">&gt;();</span>
-</code></pre></div><p>这就是导致我卡了两天的细节，我用<strong>List</strong> <strong>new</strong>对象以后代码完美执行了</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-Java" data-lang="Java">ArrayList<span style="color:#f92672">&lt;</span>person<span style="color:#f92672">&gt;</span> dot <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ArrayList<span style="color:#f92672">&lt;</span>person<span style="color:#f92672">&gt;();</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>这就是我犯错的一段代码，我总是用<strong>List</strong>的子类 <strong>ArrayList</strong>来<strong>new</strong>新对象，而我<strong>Overwrite</strong>的方法已经被<strong>ArrayList</strong>实现，使用无论我怎么调用都还是无法调用到我自己 <strong>Overwrite</strong>后的代码</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-java" data-lang="java">List<span style="color:#f92672">&lt;</span>person<span style="color:#f92672">&gt;</span> dot <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ArrayList<span style="color:#f92672">&lt;</span>person<span style="color:#f92672">&gt;();</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>这就是导致我卡了两天的细节，我用<strong>List</strong> <strong>new</strong>对象以后代码完美执行了</p>
 <p>这就是因为没有掌握面向对象编程的思想，犯下的一个低级错误</p>
 <h4 id="重写-equals和hashcodehttpwwwjokemetoparticles201912201576774367244html"><a class="link" href="http://www.jokeme.top/articles/2019/12/20/1576774367244.html"  target="_blank" rel="noopener"
     >重写 equals和hashcode</a></h4>
 <h3 id="24-linkedlist">2.4 LinkedList</h3>
 <h4 id="a特有方法">a.特有方法</h4>
-<table>
+<div class="table-wrapper"><table>
 <thead>
 <tr>
 <th style="text-align:center">addFirst()</th>
@@ -297,9 +692,9 @@
 <td style="text-align:center">#获取最后一个</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <p><strong>JDK1.6</strong>以后推荐使用下列方法替代，这样在遇到空值时就不会报错而是返回<strong>null</strong></p>
-<table>
+<div class="table-wrapper"><table>
 <thead>
 <tr>
 <th style="text-align:center">offerFirst()</th>
@@ -324,220 +719,476 @@
 <td style="text-align:center">#获取最后一个</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <h4 id="b实战演练">b.实战演练</h4>
 <p>实现  先进后出</p>
-<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="nn">sourceCode</span><span class="o">;</span>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-java" data-lang="java"><span style="color:#f92672">package</span> sourceCode<span style="color:#f92672">;</span>
 
-<span class="kn">import</span> <span class="nn">java.util.LinkedList</span><span class="o">;</span>
+<span style="color:#f92672">import</span> java.util.LinkedList<span style="color:#f92672">;</span>
 
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">linkedlist_test</span> <span class="o">{</span>
-	<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
-		<span class="n">test</span> <span class="n">loser</span> <span class="o">=</span> <span class="k">new</span> <span class="n">test</span><span class="o">();</span>
-		<span class="n">loser</span><span class="o">.</span><span class="na">setKail</span><span class="o">(</span><span class="s">&#34;hello&#34;</span><span class="o">);</span>
-		<span class="n">loser</span><span class="o">.</span><span class="na">setKail</span><span class="o">(</span><span class="s">&#34;CNN&#34;</span><span class="o">);</span>
-		<span class="n">loser</span><span class="o">.</span><span class="na">setKail</span><span class="o">(</span><span class="s">&#34;Love China&#34;</span><span class="o">);</span>
-		<span class="k">while</span> <span class="o">(</span><span class="n">loser</span><span class="o">.</span><span class="na">Kailisempty</span><span class="o">())</span> <span class="o">{</span>
-			<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">loser</span><span class="o">.</span><span class="na">getKail</span><span class="o">());</span>
-		<span class="o">}</span>
-	<span class="o">}</span>
-<span class="o">}</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">linkedlist_test</span> <span style="color:#f92672">{</span>
+	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+		test loser <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> test<span style="color:#f92672">();</span>
+		loser<span style="color:#f92672">.</span><span style="color:#a6e22e">setKail</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;hello&#34;</span><span style="color:#f92672">);</span>
+		loser<span style="color:#f92672">.</span><span style="color:#a6e22e">setKail</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;CNN&#34;</span><span style="color:#f92672">);</span>
+		loser<span style="color:#f92672">.</span><span style="color:#a6e22e">setKail</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Love China&#34;</span><span style="color:#f92672">);</span>
+		<span style="color:#66d9ef">while</span> <span style="color:#f92672">(</span>loser<span style="color:#f92672">.</span><span style="color:#a6e22e">Kailisempty</span><span style="color:#f92672">())</span> <span style="color:#f92672">{</span>
+			System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>loser<span style="color:#f92672">.</span><span style="color:#a6e22e">getKail</span><span style="color:#f92672">());</span>
+		<span style="color:#f92672">}</span>
+	<span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
 
-<span class="kd">class</span> <span class="nc">test</span> <span class="o">{</span>
-	<span class="kd">private</span> <span class="n">LinkedList</span><span class="o">&lt;</span><span class="n">Object</span><span class="o">&gt;</span> <span class="n">kail</span><span class="o">;</span>
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">test</span> <span style="color:#f92672">{</span>
+	<span style="color:#66d9ef">private</span> LinkedList<span style="color:#f92672">&lt;</span>Object<span style="color:#f92672">&gt;</span> kail<span style="color:#f92672">;</span>
 
-	<span class="kd">public</span> <span class="n">Object</span> <span class="nf">getKail</span><span class="o">()</span> <span class="o">{</span>
-		<span class="k">return</span> <span class="n">kail</span><span class="o">.</span><span class="na">pollLast</span><span class="o">();</span>
-	<span class="o">}</span>
+	<span style="color:#66d9ef">public</span> Object <span style="color:#a6e22e">getKail</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+		<span style="color:#66d9ef">return</span> kail<span style="color:#f92672">.</span><span style="color:#a6e22e">pollLast</span><span style="color:#f92672">();</span>
+	<span style="color:#f92672">}</span>
 
-	<span class="kd">public</span> <span class="n">Boolean</span> <span class="nf">Kailisempty</span><span class="o">()</span> <span class="o">{</span>
-		<span class="k">if</span> <span class="o">(</span><span class="n">kail</span><span class="o">.</span><span class="na">isEmpty</span><span class="o">())</span> <span class="o">{</span>
-			<span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
-		<span class="o">}</span> <span class="k">else</span> <span class="k">if</span> <span class="o">(!</span><span class="n">kail</span><span class="o">.</span><span class="na">isEmpty</span><span class="o">())</span> <span class="o">{</span>
-			<span class="k">return</span> <span class="kc">true</span><span class="o">;</span>
-		<span class="o">}</span>
-		<span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
-	<span class="o">}</span>
+	<span style="color:#66d9ef">public</span> Boolean <span style="color:#a6e22e">Kailisempty</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+		<span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>kail<span style="color:#f92672">.</span><span style="color:#a6e22e">isEmpty</span><span style="color:#f92672">())</span> <span style="color:#f92672">{</span>
+			<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span><span style="color:#f92672">;</span>
+		<span style="color:#f92672">}</span> <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> <span style="color:#f92672">(!</span>kail<span style="color:#f92672">.</span><span style="color:#a6e22e">isEmpty</span><span style="color:#f92672">())</span> <span style="color:#f92672">{</span>
+			<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span><span style="color:#f92672">;</span>
+		<span style="color:#f92672">}</span>
+		<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span><span style="color:#f92672">;</span>
+	<span style="color:#f92672">}</span>
 
-	<span class="nd">@Override</span>
-	<span class="kd">public</span> <span class="n">String</span> <span class="nf">toString</span><span class="o">()</span> <span class="o">{</span>
-		<span class="k">return</span> <span class="s">&#34;test [kail=&#34;</span> <span class="o">+</span> <span class="n">kail</span> <span class="o">+</span> <span class="s">&#34;]&#34;</span><span class="o">;</span>
-	<span class="o">}</span>
+	<span style="color:#a6e22e">@Override</span>
+	<span style="color:#66d9ef">public</span> String <span style="color:#a6e22e">toString</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+		<span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;test [kail=&#34;</span> <span style="color:#f92672">+</span> kail <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;]&#34;</span><span style="color:#f92672">;</span>
+	<span style="color:#f92672">}</span>
 
-	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">setKail</span><span class="o">(</span><span class="n">Object</span> <span class="n">obj</span><span class="o">)</span> <span class="o">{</span>
-		<span class="k">this</span><span class="o">.</span><span class="na">kail</span><span class="o">.</span><span class="na">addLast</span><span class="o">(</span><span class="n">obj</span><span class="o">);</span>
-	<span class="o">}</span>
+	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">setKail</span><span style="color:#f92672">(</span>Object obj<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+		<span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">kail</span><span style="color:#f92672">.</span><span style="color:#a6e22e">addLast</span><span style="color:#f92672">(</span>obj<span style="color:#f92672">);</span>
+	<span style="color:#f92672">}</span>
 
-	<span class="kd">public</span> <span class="nf">test</span><span class="o">()</span> <span class="o">{</span>
-		<span class="n">kail</span> <span class="o">=</span> <span class="k">new</span> <span class="n">LinkedList</span><span class="o">&lt;</span><span class="n">Object</span><span class="o">&gt;();</span>
-	<span class="o">}</span>
-<span class="o">}</span>
-</code></pre></div><h2 id="3-set-集合">3. Set 集合</h2>
-<pre><code class="language-properties" data-lang="properties">Set--:不允许重复元素,方法和collection相同.set集合只能用Iterator取出元素
+	<span style="color:#66d9ef">public</span> <span style="color:#a6e22e">test</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+		kail <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> LinkedList<span style="color:#f92672">&lt;</span>Object<span style="color:#f92672">&gt;();</span>
+	<span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="3-set-集合">3. Set 集合</h2>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-fallback" data-lang="fallback">Set--:不允许重复元素,方法和collection相同.set集合只能用Iterator取出元素
 	|--Hashset:不保证存入和取出的顺序一致,不允许重复,效率高 
 			 |--LinkedHashSet:有序的HashSet表,不允许重复	
 	|--Treeset:可以对元素进行排序,其排序方式需要元素具备比较功能,且实现CompareTo()方法,且不允许存储相同元素的方法是依据compareto()返回值是否为0,其数据结构为二叉树结构,
-</code></pre><h3 id="31hashset">3.1HashSet</h3>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="31hashset">3.1HashSet</h3>
 <p><strong>HashSet</strong>主要就是靠<strong>hashcode()<strong>表来确定元素排列的，在使用时必须要重写</strong>hashCode()<strong>方法，而</strong>hashCode()<strong>方法内部又调用到了</strong>equals()<strong>方法来解决</strong>Hash 冲突</strong>,所以在使用时必须要<strong>Overwrite</strong>这两个方法</p>
 <h4 id="311-hashset-使用示例">3.1.1 HashSet 使用示例</h4>
-<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java"><span class="kn">package</span> <span class="nn">sourceCode</span><span class="o">;</span>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-Java" data-lang="Java"><span style="color:#f92672">package</span> sourceCode<span style="color:#f92672">;</span>
 
-<span class="kn">import</span> <span class="nn">java.util.HashSet</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">java.util.Set</span><span class="o">;</span>
+<span style="color:#f92672">import</span> java.util.HashSet<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> java.util.Set<span style="color:#f92672">;</span>
 
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">hashset</span> <span class="o">{</span>
-	<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
-		<span class="n">Set</span> <span class="n">doThat</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashSet</span><span class="o">();</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">hashset</span> <span style="color:#f92672">{</span>
+	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+		Set doThat <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> HashSet<span style="color:#f92672">();</span>
 		
-		<span class="n">doThat</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">person</span><span class="o">(</span><span class="n">13</span><span class="o">,</span><span class="s">&#34;coco&#34;</span><span class="o">));</span>
-		<span class="n">doThat</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">person</span><span class="o">(</span><span class="n">22</span><span class="o">,</span><span class="s">&#34;peon&#34;</span><span class="o">));</span>
-		<span class="n">doThat</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">person</span><span class="o">(</span><span class="n">23</span><span class="o">,</span><span class="s">&#34;frelon&#34;</span><span class="o">));</span>
-		<span class="n">doThat</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">person</span><span class="o">(</span><span class="n">23</span><span class="o">,</span><span class="s">&#34;frelon&#34;</span><span class="o">));</span>
+		doThat<span style="color:#f92672">.</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> person<span style="color:#f92672">(</span>13<span style="color:#f92672">,</span><span style="color:#e6db74">&#34;coco&#34;</span><span style="color:#f92672">));</span>
+		doThat<span style="color:#f92672">.</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> person<span style="color:#f92672">(</span>22<span style="color:#f92672">,</span><span style="color:#e6db74">&#34;peon&#34;</span><span style="color:#f92672">));</span>
+		doThat<span style="color:#f92672">.</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> person<span style="color:#f92672">(</span>23<span style="color:#f92672">,</span><span style="color:#e6db74">&#34;frelon&#34;</span><span style="color:#f92672">));</span>
+		doThat<span style="color:#f92672">.</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> person<span style="color:#f92672">(</span>23<span style="color:#f92672">,</span><span style="color:#e6db74">&#34;frelon&#34;</span><span style="color:#f92672">));</span>
 		
-		<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">doThat</span><span class="o">);</span>
-	<span class="o">}</span>
-<span class="o">}</span>
+		System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>doThat<span style="color:#f92672">);</span>
+	<span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
 
-<span class="n">person类同上</span><span class="o">,</span><span class="n">这里仅写出</span> <span class="n">Overwrite</span> <span class="n">部分</span>
-	<span class="nd">@Override</span>
-	<span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">equals</span><span class="o">(</span><span class="n">Object</span> <span class="n">obj</span><span class="o">)</span> <span class="o">{</span>
-		<span class="k">if</span> <span class="o">(</span><span class="k">this</span><span class="o">==</span><span class="n">obj</span><span class="o">)</span> <span class="o">{</span>
-			<span class="k">return</span> <span class="kc">true</span><span class="o">;</span>
-		<span class="o">}</span>	
-			<span class="n">person</span> <span class="n">se</span> <span class="o">=</span> <span class="o">(</span><span class="n">person</span><span class="o">)</span> <span class="n">obj</span><span class="o">;</span>
-			<span class="k">return</span> <span class="k">this</span><span class="o">.</span><span class="na">name</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="n">se</span><span class="o">.</span><span class="na">name</span><span class="o">)&amp;&amp;</span><span class="k">this</span><span class="o">.</span><span class="na">age</span><span class="o">==</span><span class="n">se</span><span class="o">.</span><span class="na">age</span><span class="o">;</span>
-	<span class="o">}</span>
-	<span class="nd">@Override</span>
-	<span class="kd">public</span> <span class="kt">int</span> <span class="nf">hashCode</span><span class="o">()</span> <span class="o">{</span>
-		<span class="kd">final</span> <span class="kt">int</span> <span class="n">prime</span> <span class="o">=</span> <span class="n">31</span><span class="o">;</span>
-		<span class="kt">int</span> <span class="n">result</span> <span class="o">=</span> <span class="n">1</span><span class="o">;</span>
-		<span class="n">result</span> <span class="o">=</span> <span class="n">prime</span> <span class="o">*</span> <span class="n">result</span> <span class="o">+</span> <span class="n">age</span><span class="o">;</span>
-		<span class="n">result</span> <span class="o">=</span> <span class="n">prime</span> <span class="o">*</span> <span class="n">result</span> <span class="o">+</span> <span class="o">((</span><span class="n">name</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">?</span> <span class="n">0</span> <span class="o">:</span> <span class="n">name</span><span class="o">.</span><span class="na">hashCode</span><span class="o">());</span>
-		<span class="k">return</span> <span class="n">result</span><span class="o">;</span>
-	<span class="o">}</span>
-</code></pre></div><h3 id="32-treeset">3.2 TreeSet</h3>
+person类同上<span style="color:#f92672">,</span>这里仅写出 Overwrite 部分
+	<span style="color:#a6e22e">@Override</span>
+	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">equals</span><span style="color:#f92672">(</span>Object obj<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+		<span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span><span style="color:#66d9ef">this</span><span style="color:#f92672">==</span>obj<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+			<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span><span style="color:#f92672">;</span>
+		<span style="color:#f92672">}</span>	
+			person se <span style="color:#f92672">=</span> <span style="color:#f92672">(</span>person<span style="color:#f92672">)</span> obj<span style="color:#f92672">;</span>
+			<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">name</span><span style="color:#f92672">.</span><span style="color:#a6e22e">equals</span><span style="color:#f92672">(</span>se<span style="color:#f92672">.</span><span style="color:#a6e22e">name</span><span style="color:#f92672">)&amp;&amp;</span><span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">age</span><span style="color:#f92672">==</span>se<span style="color:#f92672">.</span><span style="color:#a6e22e">age</span><span style="color:#f92672">;</span>
+	<span style="color:#f92672">}</span>
+	<span style="color:#a6e22e">@Override</span>
+	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">hashCode</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+		<span style="color:#66d9ef">final</span> <span style="color:#66d9ef">int</span> prime <span style="color:#f92672">=</span> 31<span style="color:#f92672">;</span>
+		<span style="color:#66d9ef">int</span> result <span style="color:#f92672">=</span> 1<span style="color:#f92672">;</span>
+		result <span style="color:#f92672">=</span> prime <span style="color:#f92672">*</span> result <span style="color:#f92672">+</span> age<span style="color:#f92672">;</span>
+		result <span style="color:#f92672">=</span> prime <span style="color:#f92672">*</span> result <span style="color:#f92672">+</span> <span style="color:#f92672">((</span>name <span style="color:#f92672">==</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">)</span> <span style="color:#f92672">?</span> 0 <span style="color:#f92672">:</span> name<span style="color:#f92672">.</span><span style="color:#a6e22e">hashCode</span><span style="color:#f92672">());</span>
+		<span style="color:#66d9ef">return</span> result<span style="color:#f92672">;</span>
+	<span style="color:#f92672">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="32-treeset">3.2 TreeSet</h3>
 <h4 id="321-comparable-接口的学习">3.2.1 Comparable 接口的学习</h4>
-<pre><code class="language-properties" data-lang="properties">Exception in thread &quot;main&quot; java.lang.ClassCastException: sourceCode.person cannot be cast to java.lang.Comparable
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-fallback" data-lang="fallback">Exception in thread &#34;main&#34; java.lang.ClassCastException: sourceCode.person cannot be cast to java.lang.Comparable
 	at java.util.TreeMap.compare(Unknown Source)
 	at java.util.TreeMap.put(Unknown Source)
 	at java.util.TreeSet.add(Unknown Source)
-</code></pre><p>这个异常对于学习 TreeSet 的我是一脸懵逼啊 ?,啥啥啥啊，就报了个异常，再看看我这代码没有错啊，编辑器也没有报错啊！</p>
-<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="nn">sourceCode</span><span class="o">;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>这个异常对于学习 TreeSet 的我是一脸懵逼啊 ?,啥啥啥啊，就报了个异常，再看看我这代码没有错啊，编辑器也没有报错啊！</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-java" data-lang="java"><span style="color:#f92672">package</span> sourceCode<span style="color:#f92672">;</span>
 
-<span class="kn">import</span> <span class="nn">java.util.Set</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">java.util.TreeSet</span><span class="o">;</span>
+<span style="color:#f92672">import</span> java.util.Set<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> java.util.TreeSet<span style="color:#f92672">;</span>
 
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">treeSetLearn</span> <span class="o">{</span>
-	<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
-		<span class="n">Set</span> <span class="n">ssf</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TreeSet</span><span class="o">();</span>
-		<span class="n">ssf</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">person</span><span class="o">(</span><span class="n">12</span><span class="o">,</span> <span class="s">&#34;hfh&#34;</span><span class="o">));</span>
-		<span class="n">ssf</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">person</span><span class="o">(</span><span class="n">19</span><span class="o">,</span> <span class="s">&#34;frelon&#34;</span><span class="o">));</span>
-		<span class="n">ssf</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">person</span><span class="o">(</span><span class="n">13</span><span class="o">,</span> <span class="s">&#34;jokoe&#34;</span><span class="o">));</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">treeSetLearn</span> <span style="color:#f92672">{</span>
+	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+		Set ssf <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> TreeSet<span style="color:#f92672">();</span>
+		ssf<span style="color:#f92672">.</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> person<span style="color:#f92672">(</span>12<span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;hfh&#34;</span><span style="color:#f92672">));</span>
+		ssf<span style="color:#f92672">.</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> person<span style="color:#f92672">(</span>19<span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;frelon&#34;</span><span style="color:#f92672">));</span>
+		ssf<span style="color:#f92672">.</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> person<span style="color:#f92672">(</span>13<span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;jokoe&#34;</span><span style="color:#f92672">));</span>
 
-	<span class="o">}</span>
-<span class="o">}</span>
-</code></pre></div><p>遂百度，知，需要<strong>person</strong> 类 <strong>implements</strong> <strong>comparable</strong> 接口并 <strong>Overwrite</strong> 该接口的 <strong>CompareTo()</strong> 方法</p>
-<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="nn">sourceCode</span><span class="o">;</span>
+	<span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>遂百度，知，需要<strong>person</strong> 类 <strong>implements</strong> <strong>comparable</strong> 接口并 <strong>Overwrite</strong> 该接口的 <strong>CompareTo()</strong> 方法</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-java" data-lang="java"><span style="color:#f92672">package</span> sourceCode<span style="color:#f92672">;</span>
 
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">person</span> <span class="kd">implements</span> <span class="n">Comparable</span> <span class="o">{</span>
-<span class="err">​</span><span class="o">~~~</span>
-    <span class="n">略</span>
-<span class="err">​</span><span class="o">~~~</span>
-    <span class="n">方法一</span><span class="o">:</span><span class="n">只能按年龄排序</span><span class="o">,</span><span class="n">忽略了姓名</span>
-	<span class="kd">public</span> <span class="kt">int</span> <span class="nf">compareTo</span><span class="o">(</span><span class="n">Object</span> <span class="n">osi</span><span class="o">)</span> <span class="o">{</span>
-		<span class="n">person</span> <span class="n">seao</span> <span class="o">=</span> <span class="o">(</span><span class="n">person</span><span class="o">)</span> <span class="n">osi</span><span class="o">;</span>
-		<span class="k">if</span><span class="o">(</span><span class="k">this</span><span class="o">.</span><span class="na">age</span><span class="o">&gt;</span><span class="n">seao</span><span class="o">.</span><span class="na">age</span><span class="o">)</span> <span class="o">{</span>
-			<span class="k">return</span> <span class="n">1</span><span class="o">;</span>
-		<span class="o">}</span>
-		<span class="k">if</span><span class="o">(</span><span class="k">this</span><span class="o">.</span><span class="na">age</span><span class="o">&lt;</span><span class="n">seao</span><span class="o">.</span><span class="na">age</span><span class="o">)</span>
-			<span class="k">return</span> <span class="o">-</span><span class="n">1</span><span class="o">;</span>
-		<span class="k">return</span> <span class="n">0</span><span class="o">;</span>
-	<span class="o">}</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">person</span> <span style="color:#66d9ef">implements</span> Comparable <span style="color:#f92672">{</span>
+<span style="color:#960050;background-color:#1e0010">​</span><span style="color:#f92672">~~~</span>
+    略
+<span style="color:#960050;background-color:#1e0010">​</span><span style="color:#f92672">~~~</span>
+    方法一<span style="color:#f92672">:</span>只能按年龄排序<span style="color:#f92672">,</span>忽略了姓名
+	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">compareTo</span><span style="color:#f92672">(</span>Object osi<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+		person seao <span style="color:#f92672">=</span> <span style="color:#f92672">(</span>person<span style="color:#f92672">)</span> osi<span style="color:#f92672">;</span>
+		<span style="color:#66d9ef">if</span><span style="color:#f92672">(</span><span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">age</span><span style="color:#f92672">&gt;</span>seao<span style="color:#f92672">.</span><span style="color:#a6e22e">age</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+			<span style="color:#66d9ef">return</span> 1<span style="color:#f92672">;</span>
+		<span style="color:#f92672">}</span>
+		<span style="color:#66d9ef">if</span><span style="color:#f92672">(</span><span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">age</span><span style="color:#f92672">&lt;</span>seao<span style="color:#f92672">.</span><span style="color:#a6e22e">age</span><span style="color:#f92672">)</span>
+			<span style="color:#66d9ef">return</span> <span style="color:#f92672">-</span>1<span style="color:#f92672">;</span>
+		<span style="color:#66d9ef">return</span> 0<span style="color:#f92672">;</span>
+	<span style="color:#f92672">}</span>
     
-<span class="err">​</span><span class="o">~~~</span>
-    <span class="n">方法二</span><span class="o">:</span><span class="n">完美方案</span><span class="o">?</span>
-    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">compareTo</span><span class="o">(</span><span class="n">Object</span> <span class="n">osi</span><span class="o">){</span>
-        <span class="kt">int</span> <span class="n">temp</span> <span class="o">=</span> <span class="k">this</span><span class="o">.</span><span class="na">age</span><span class="o">-</span><span class="n">seao</span><span class="o">.</span><span class="na">age</span><span class="o">;</span>
-        <span class="k">return</span> <span class="n">temp</span><span class="o">==</span><span class="n">0</span><span class="o">?</span><span class="k">this</span><span class="o">.</span><span class="na">name</span><span class="o">.</span><span class="na">compareTo</span><span class="o">(</span><span class="n">osi</span><span class="o">.</span><span class="na">name</span><span class="o">):</span><span class="n">temp</span><span class="o">;</span>
-    <span class="o">}</span>
-</code></pre></div><p>按照方法二改完以后，成功按照年龄(从小到大)排序，并且同姓名，同年龄算一个人，不存进去</p>
+<span style="color:#960050;background-color:#1e0010">​</span><span style="color:#f92672">~~~</span>
+    方法二<span style="color:#f92672">:</span>完美方案<span style="color:#f92672">?</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">compareTo</span><span style="color:#f92672">(</span>Object osi<span style="color:#f92672">){</span>
+        <span style="color:#66d9ef">int</span> temp <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">age</span><span style="color:#f92672">-</span>seao<span style="color:#f92672">.</span><span style="color:#a6e22e">age</span><span style="color:#f92672">;</span>
+        <span style="color:#66d9ef">return</span> temp<span style="color:#f92672">==</span>0<span style="color:#f92672">?</span><span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">name</span><span style="color:#f92672">.</span><span style="color:#a6e22e">compareTo</span><span style="color:#f92672">(</span>osi<span style="color:#f92672">.</span><span style="color:#a6e22e">name</span><span style="color:#f92672">):</span>temp<span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>按照方法二改完以后，成功按照年龄(从小到大)排序，并且同姓名，同年龄算一个人，不存进去</p>
 <h4 id="322-实现comparator接口示例">3.2.2 实现<strong>Comparator</strong>接口示例</h4>
 <p>当我们需要需要 对没有比较功能的元素进行排序时<strong>or</strong> 自定义元素排序方式时，我们就不能再依赖通过实现<strong>Comparable</strong>接口的**CompareTo()**方法，而是要自定义一个新的比较器</p>
 <h5 id="3221-使用自定义的比较器对treeset排序">3.2.2.1 使用自定义的比较器对<strong>TreeSet</strong>排序</h5>
-<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="nn">sourceCode</span><span class="o">;</span>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-java" data-lang="java"><span style="color:#f92672">package</span> sourceCode<span style="color:#f92672">;</span>
 
-<span class="kn">import</span> <span class="nn">java.util.Set</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">java.util.TreeSet</span><span class="o">;</span>
+<span style="color:#f92672">import</span> java.util.Set<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> java.util.TreeSet<span style="color:#f92672">;</span>
 
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">diySavePerson</span> <span class="o">{</span>
-	<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
-		<span class="n">Set</span> <span class="n">t1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TreeSet</span><span class="o">(</span><span class="k">new</span> <span class="n">diyCompare</span><span class="o">());</span>
-		<span class="n">t1</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">person</span><span class="o">(</span><span class="n">12</span><span class="o">,</span><span class="s">&#34;frelon&#34;</span><span class="o">));</span>
-		<span class="n">t1</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">person</span><span class="o">(</span><span class="n">29</span><span class="o">,</span><span class="s">&#34;lion&#34;</span><span class="o">));</span>
-		<span class="n">t1</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">person</span><span class="o">(</span><span class="n">29</span><span class="o">,</span><span class="s">&#34;aion&#34;</span><span class="o">));</span>
-		<span class="n">t1</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">person</span><span class="o">(</span><span class="n">19</span><span class="o">,</span><span class="s">&#34;zoco&#34;</span><span class="o">));</span>
-		<span class="k">for</span><span class="o">(</span><span class="n">Object</span> <span class="n">se</span> <span class="o">:</span> <span class="n">t1</span><span class="o">)</span> <span class="o">{</span>
-			<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">se</span><span class="o">);</span>
-		<span class="o">}</span>
-	<span class="o">}</span>
-<span class="o">}</span>
-</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="nn">sourceCode</span><span class="o">;</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">diySavePerson</span> <span style="color:#f92672">{</span>
+	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+		Set t1 <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> TreeSet<span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> diyCompare<span style="color:#f92672">());</span>
+		t1<span style="color:#f92672">.</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> person<span style="color:#f92672">(</span>12<span style="color:#f92672">,</span><span style="color:#e6db74">&#34;frelon&#34;</span><span style="color:#f92672">));</span>
+		t1<span style="color:#f92672">.</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> person<span style="color:#f92672">(</span>29<span style="color:#f92672">,</span><span style="color:#e6db74">&#34;lion&#34;</span><span style="color:#f92672">));</span>
+		t1<span style="color:#f92672">.</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> person<span style="color:#f92672">(</span>29<span style="color:#f92672">,</span><span style="color:#e6db74">&#34;aion&#34;</span><span style="color:#f92672">));</span>
+		t1<span style="color:#f92672">.</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> person<span style="color:#f92672">(</span>19<span style="color:#f92672">,</span><span style="color:#e6db74">&#34;zoco&#34;</span><span style="color:#f92672">));</span>
+		<span style="color:#66d9ef">for</span><span style="color:#f92672">(</span>Object se <span style="color:#f92672">:</span> t1<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+			System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>se<span style="color:#f92672">);</span>
+		<span style="color:#f92672">}</span>
+	<span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-java" data-lang="java"><span style="color:#f92672">package</span> sourceCode<span style="color:#f92672">;</span>
 
-<span class="kn">import</span> <span class="nn">java.util.Comparator</span><span class="o">;</span>
+<span style="color:#f92672">import</span> java.util.Comparator<span style="color:#f92672">;</span>
 
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">diyCompare</span> <span class="kd">implements</span> <span class="n">Comparator</span><span class="o">&lt;</span><span class="n">Object</span><span class="o">&gt;</span> <span class="o">{</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">diyCompare</span> <span style="color:#66d9ef">implements</span> Comparator<span style="color:#f92672">&lt;</span>Object<span style="color:#f92672">&gt;</span> <span style="color:#f92672">{</span>
 
-	<span class="nd">@Override</span>
-	<span class="kd">public</span> <span class="kt">int</span> <span class="nf">compare</span><span class="o">(</span><span class="n">Object</span> <span class="n">arg0</span><span class="o">,</span> <span class="n">Object</span> <span class="n">arg1</span><span class="o">)</span> <span class="o">{</span>
+	<span style="color:#a6e22e">@Override</span>
+	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">compare</span><span style="color:#f92672">(</span>Object arg0<span style="color:#f92672">,</span> Object arg1<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
 
-		<span class="n">person</span> <span class="n">p1</span> <span class="o">=</span> <span class="o">(</span><span class="n">person</span><span class="o">)</span> <span class="n">arg0</span><span class="o">;</span>
-		<span class="n">person</span> <span class="n">p2</span> <span class="o">=</span> <span class="o">(</span><span class="n">person</span><span class="o">)</span> <span class="n">arg1</span><span class="o">;</span>
+		person p1 <span style="color:#f92672">=</span> <span style="color:#f92672">(</span>person<span style="color:#f92672">)</span> arg0<span style="color:#f92672">;</span>
+		person p2 <span style="color:#f92672">=</span> <span style="color:#f92672">(</span>person<span style="color:#f92672">)</span> arg1<span style="color:#f92672">;</span>
 
-		<span class="kt">int</span> <span class="n">temp</span> <span class="o">=</span> <span class="n">p1</span><span class="o">.</span><span class="na">getName</span><span class="o">().</span><span class="na">compareTo</span><span class="o">(</span><span class="n">p2</span><span class="o">.</span><span class="na">getName</span><span class="o">());</span>
-		<span class="kt">int</span> <span class="n">temp2</span> <span class="o">=</span> <span class="n">p1</span><span class="o">.</span><span class="na">getAge</span><span class="o">()</span> <span class="o">-</span> <span class="n">p2</span><span class="o">.</span><span class="na">getAge</span><span class="o">();</span>
+		<span style="color:#66d9ef">int</span> temp <span style="color:#f92672">=</span> p1<span style="color:#f92672">.</span><span style="color:#a6e22e">getName</span><span style="color:#f92672">().</span><span style="color:#a6e22e">compareTo</span><span style="color:#f92672">(</span>p2<span style="color:#f92672">.</span><span style="color:#a6e22e">getName</span><span style="color:#f92672">());</span>
+		<span style="color:#66d9ef">int</span> temp2 <span style="color:#f92672">=</span> p1<span style="color:#f92672">.</span><span style="color:#a6e22e">getAge</span><span style="color:#f92672">()</span> <span style="color:#f92672">-</span> p2<span style="color:#f92672">.</span><span style="color:#a6e22e">getAge</span><span style="color:#f92672">();</span>
 
-		<span class="k">return</span> <span class="n">temp</span> <span class="o">==</span> <span class="n">0</span> <span class="o">?</span> <span class="n">temp2</span> <span class="o">:</span> <span class="n">temp</span><span class="o">;</span>
-	<span class="o">}</span>
+		<span style="color:#66d9ef">return</span> temp <span style="color:#f92672">==</span> 0 <span style="color:#f92672">?</span> temp2 <span style="color:#f92672">:</span> temp<span style="color:#f92672">;</span>
+	<span style="color:#f92672">}</span>
 
-<span class="o">}</span>
-</code></pre></div><h5 id="3222-对根据字符长短排序">3.2.2.2 对根据字符长短排序</h5>
+<span style="color:#f92672">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h5 id="3222-对根据字符长短排序">3.2.2.2 对根据字符长短排序</h5>
 <p>下面的方案主要是根据名字的长短来排序的，如长短相同则根据名字的<strong>hashCode</strong>决定谁在前面</p>
-<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="nn">sourceCode</span><span class="o">;</span>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-java" data-lang="java"><span style="color:#f92672">package</span> sourceCode<span style="color:#f92672">;</span>
 
-<span class="kn">import</span> <span class="nn">java.util.Set</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">java.util.TreeSet</span><span class="o">;</span>
+<span style="color:#f92672">import</span> java.util.Set<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> java.util.TreeSet<span style="color:#f92672">;</span>
 
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">diySavePerson</span> <span class="o">{</span>
-	<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
-		<span class="n">Set</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">set1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TreeSet</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;(</span> <span class="k">new</span> <span class="n">diyCompare</span><span class="o">());</span> 
-		<span class="n">set1</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="s">&#34;jeAreF&#34;</span><span class="o">);</span>
-		<span class="n">set1</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="s">&#34;jpwdth&#34;</span><span class="o">);</span>
-		<span class="n">set1</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="s">&#34;jogeth&#34;</span><span class="o">);</span>
-		<span class="n">set1</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="s">&#34;jokeme&#34;</span><span class="o">);</span>
-		<span class="n">set1</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="s">&#34;jsrdds&#34;</span><span class="o">);</span>
-		<span class="k">for</span> <span class="o">(</span><span class="n">Object</span> <span class="n">se</span><span class="o">:</span> <span class="n">set1</span><span class="o">)</span> <span class="o">{</span>
-			<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">se</span><span class="o">);</span>
-		<span class="o">}</span>
-	<span class="o">}</span>
-<span class="o">}</span>
-</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="nn">sourceCode</span><span class="o">;</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">diySavePerson</span> <span style="color:#f92672">{</span>
+	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+		Set<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> set1 <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> TreeSet<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;(</span> <span style="color:#66d9ef">new</span> diyCompare<span style="color:#f92672">());</span> 
+		set1<span style="color:#f92672">.</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;jeAreF&#34;</span><span style="color:#f92672">);</span>
+		set1<span style="color:#f92672">.</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;jpwdth&#34;</span><span style="color:#f92672">);</span>
+		set1<span style="color:#f92672">.</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;jogeth&#34;</span><span style="color:#f92672">);</span>
+		set1<span style="color:#f92672">.</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;jokeme&#34;</span><span style="color:#f92672">);</span>
+		set1<span style="color:#f92672">.</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;jsrdds&#34;</span><span style="color:#f92672">);</span>
+		<span style="color:#66d9ef">for</span> <span style="color:#f92672">(</span>Object se<span style="color:#f92672">:</span> set1<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+			System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>se<span style="color:#f92672">);</span>
+		<span style="color:#f92672">}</span>
+	<span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-java" data-lang="java"><span style="color:#f92672">package</span> sourceCode<span style="color:#f92672">;</span>
 
-<span class="kn">import</span> <span class="nn">java.util.Comparator</span><span class="o">;</span>
+<span style="color:#f92672">import</span> java.util.Comparator<span style="color:#f92672">;</span>
 
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">diyCompare</span> <span class="kd">implements</span> <span class="n">Comparator</span><span class="o">&lt;</span><span class="n">Object</span><span class="o">&gt;</span> <span class="o">{</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">diyCompare</span> <span style="color:#66d9ef">implements</span> Comparator<span style="color:#f92672">&lt;</span>Object<span style="color:#f92672">&gt;</span> <span style="color:#f92672">{</span>
 
-	<span class="nd">@Override</span>
-	<span class="kd">public</span> <span class="kt">int</span> <span class="nf">compare</span><span class="o">(</span><span class="n">Object</span> <span class="n">arg0</span><span class="o">,</span> <span class="n">Object</span> <span class="n">arg1</span><span class="o">)</span> <span class="o">{</span>
-		<span class="n">String</span> <span class="n">str1</span> <span class="o">=</span> <span class="o">(</span><span class="n">String</span><span class="o">)</span><span class="n">arg0</span><span class="o">;</span>
-		<span class="n">String</span> <span class="n">str2</span> <span class="o">=</span> <span class="o">(</span><span class="n">String</span><span class="o">)</span><span class="n">arg1</span><span class="o">;</span>
-		<span class="kt">int</span> <span class="n">temp1</span><span class="o">=</span><span class="n">str1</span><span class="o">.</span><span class="na">length</span><span class="o">()-</span><span class="n">str2</span><span class="o">.</span><span class="na">length</span><span class="o">();</span>
-		<span class="kt">int</span> <span class="n">sss</span> <span class="o">=</span> <span class="n">str1</span><span class="o">.</span><span class="na">hashCode</span><span class="o">();</span>
-		<span class="kt">int</span> <span class="n">ssd</span> <span class="o">=</span> <span class="n">str2</span><span class="o">.</span><span class="na">hashCode</span><span class="o">();</span>
-		<span class="k">return</span> <span class="n">temp1</span><span class="o">==</span><span class="n">0</span><span class="o">?</span><span class="n">sss</span><span class="o">-</span><span class="n">ssd</span><span class="o">:</span><span class="n">temp1</span><span class="o">;</span>
-	<span class="o">}</span>
+	<span style="color:#a6e22e">@Override</span>
+	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">compare</span><span style="color:#f92672">(</span>Object arg0<span style="color:#f92672">,</span> Object arg1<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+		String str1 <span style="color:#f92672">=</span> <span style="color:#f92672">(</span>String<span style="color:#f92672">)</span>arg0<span style="color:#f92672">;</span>
+		String str2 <span style="color:#f92672">=</span> <span style="color:#f92672">(</span>String<span style="color:#f92672">)</span>arg1<span style="color:#f92672">;</span>
+		<span style="color:#66d9ef">int</span> temp1<span style="color:#f92672">=</span>str1<span style="color:#f92672">.</span><span style="color:#a6e22e">length</span><span style="color:#f92672">()-</span>str2<span style="color:#f92672">.</span><span style="color:#a6e22e">length</span><span style="color:#f92672">();</span>
+		<span style="color:#66d9ef">int</span> sss <span style="color:#f92672">=</span> str1<span style="color:#f92672">.</span><span style="color:#a6e22e">hashCode</span><span style="color:#f92672">();</span>
+		<span style="color:#66d9ef">int</span> ssd <span style="color:#f92672">=</span> str2<span style="color:#f92672">.</span><span style="color:#a6e22e">hashCode</span><span style="color:#f92672">();</span>
+		<span style="color:#66d9ef">return</span> temp1<span style="color:#f92672">==</span>0<span style="color:#f92672">?</span>sss<span style="color:#f92672">-</span>ssd<span style="color:#f92672">:</span>temp1<span style="color:#f92672">;</span>
+	<span style="color:#f92672">}</span>
 
-<span class="o">}</span>
-</code></pre></div><h5 id="323-三元运算符">3.2.3 三元运算符</h5>
+<span style="color:#f92672">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h5 id="323-三元运算符">3.2.3 三元运算符</h5>
 <p>语法为：<strong>条件表达式？表达式 1：表达式 2</strong>。</p>
 <p>说明：问号前面的位置是判断的条件，判断结果为 boolean 型，为 true 时调用表达式 1，为 false 时调用表达式 2。</p>
 
@@ -574,11 +1225,11 @@
                 href="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/katex.min.css"integrity="sha384-RZU/ijkSsFbcmivfdRBQDtwuwVqK7GMOw6IMvKyeWL2K5UAlyp6WonmB8m7Jd0Hn"crossorigin="anonymous"
             ><script 
                 src="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/katex.min.js"integrity="sha384-pK1WpvzWVBQiP0/GjnvRxV4mOb0oxFuyRxJlk6vVw146n3egcN5C925NCP7a7BY8"crossorigin="anonymous"
-                defer="true"
+                defer
                 >
             </script><script 
                 src="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/contrib/auto-render.min.js"integrity="sha384-vZTG03m&#43;2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl"crossorigin="anonymous"
-                defer="true"
+                defer
                 >
             </script><script>
     window.addEventListener("DOMContentLoaded", () => {
@@ -594,14 +1245,16 @@
     
 </article>
 
-    <aside class="related-contents--wrapper">
     
+
     
-        <h2 class="section-title">相关文章</h2>
-        <div class="related-contents">
-            <div class="flex article-list--tile">
+
+<aside class="related-contents--wrapper">
+    <h2 class="section-title">相关文章</h2>
+    <div class="related-contents">
+        <div class="flex article-list--tile">
+            
                 
-                    
 <article class="has-image">
     <a href="/p/java_annotation/">
         
@@ -618,8 +1271,8 @@
         </div>
     </a>
 </article>
+            
                 
-                    
 <article class="has-image">
     <a href="/p/java_io/">
         
@@ -636,8 +1289,8 @@
         </div>
     </a>
 </article>
+            
                 
-                    
 <article class="has-image">
     <a href="/p/java_collections_utils/">
         
@@ -654,8 +1307,8 @@
         </div>
     </a>
 </article>
+            
                 
-                    
 <article class="has-image">
     <a href="/p/java_generics/">
         
@@ -672,8 +1325,8 @@
         </div>
     </a>
 </article>
+            
                 
-                    
 <article class="has-image">
     <a href="/p/collection_map/">
         
@@ -690,15 +1343,62 @@
         </div>
     </a>
 </article>
-                
-            </div>
+            
         </div>
-    
+    </div>
 </aside>
 
      
-     
+    
         
+    <script
+    src="https://giscus.app/client.js"
+    data-repo="jokefrelon/web_on_hugo"
+    data-repo-id="MDEwOlJlcG9zaXRvcnkzNjc3MTg4NTc="
+    data-category="Announcements"
+    data-category-id="DIC_kwDOFerxyc4CN_Id"
+    data-mapping="pathname"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-theme="light"
+    data-lang="en"
+    crossorigin="anonymous"
+    async
+></script>
+<script>
+    function setGiscusTheme(theme) {
+        let giscus = document.querySelector("iframe.giscus-frame");
+        if (giscus) {
+            giscus.contentWindow.postMessage(
+                {
+                    giscus: {
+                        setConfig: {
+                            theme: theme,
+                        },
+                    },
+                },
+                "https://giscus.app"
+            );
+        }
+    }
+
+    (function () {
+        addEventListener("message", (e) => {
+            if (event.origin !== "https://giscus.app") return;
+            handler();
+        });
+        window.addEventListener("onColorSchemeChange", handler);
+
+        function handler() {
+            if (document.documentElement.dataset.scheme === "light") {
+                setGiscusTheme('light');
+            } else {
+                setGiscusTheme('dark_dimmed');
+            }
+        }
+    })();
+</script>
+
     
 
     <footer class="site-footer">
@@ -712,7 +1412,7 @@
     
     <section class="powerby">
         Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
-        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.1.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.10.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
     </section>
 </footer>
 
@@ -781,11 +1481,11 @@
 
 </div><script 
                 src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
-                defer="true"
+                defer
                 >
             </script><script 
                 src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
-                defer="true"
+                defer
                 >
             </script><link 
                 rel="stylesheet" 
@@ -796,11 +1496,13 @@
             >
 
             </main>
-    
-        <aside class="sidebar right-sidebar sticky">
-            <section class="widget archives">
-                <div class="widget-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z"/>
   <line x1="5" y1="9" x2="19" y2="9" />
   <line x1="5" y1="15" x2="19" y2="15" />
@@ -810,11 +1512,11 @@
 
 
 
-                </div>
-                <h2 class="widget-title section-title">目录</h2>
-                
-                <div class="widget--toc">
-                    <nav id="TableOfContents">
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
   <ol>
     <li><a href="#1共性功能">1.共性功能</a></li>
     <li><a href="#2-list集合">2. <strong>List</strong>集合</a>
@@ -851,15 +1553,18 @@
     </li>
   </ol>
 </nav>
-                </div>
-            </section>
-        </aside>
-    
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
 
         </div>
         <script 
                 src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js"integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g="crossorigin="anonymous"
-                defer="false"
+                
                 >
             </script><script type="text/javascript" src="/ts/main.js" defer></script>
 <script>

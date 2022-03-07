@@ -1,26 +1,67 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Typora on JokemeBlog</title>
-    <link>https://jokeme.top/categories/typora/</link>
-    <description>Recent content in Typora on JokemeBlog</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Thu, 19 Aug 2021 00:08:17 +0000</lastBuildDate><atom:link href="https://jokeme.top/categories/typora/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>在Typora里使用PicGo-Core自动上传图片</title>
-      <link>https://jokeme.top/p/picgo_with_typora/</link>
-      <pubDate>Thu, 19 Aug 2021 00:08:17 +0000</pubDate>
-      
-      <guid>https://jokeme.top/p/picgo_with_typora/</guid>
-      <description>以前写博客呢基本上都没有配过图片，因为没有找到适合的图床和顺手的工具，免费的图床要不然就是广告，要不然就是不能使用。但是现在不一样了，我不傻了，我变机灵了！我学会白嫖七牛云的Kodo了。
-好的首先进入正题，咱们今天的主角是 PicGo-Core 你也可以用app，但是我不太喜欢。首先选择 PicGo-Core 下载二进制包，如果你之前用过的话，直接点击下面的 打开配置文件
-这个时候你的配置文件里面应该啥都没有，就需要咱们用命令来自动生成一下配置文件了
-picgo use uploader 输入完命令以后因该是下面的样子，然后选择对应的选项，填入正确的数据即可。
-然后如果你不懂的话看一看大佬的文档就可以明白了 PicGo-Core
-然后AK和SK就是七牛云那边的密钥，bucket就是你的Kode名字，area就选择对应的地方即可，完整配置如下。整个过程下来没有啥难得地方，就是激活七牛云的账号比较麻烦。
-然后咱就可以试试看Typora在复制图片的时候会不会自动上传图片并把图片的本地链接替换成Kode外链。不出意外的话咱们就可以直接起飞了。祝好运吧。</description>
-    </item>
-    
-  </channel>
+    <channel>
+        <title>Typora on JokemeBlog</title>
+        <link>https://jokeme.top/categories/typora/</link>
+        <description>Recent content in Typora on JokemeBlog</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>en-us</language>
+        <lastBuildDate>Thu, 19 Aug 2021 00:08:17 +0000</lastBuildDate><atom:link href="https://jokeme.top/categories/typora/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>在Typora里使用PicGo-Core自动上传图片</title>
+        <link>https://jokeme.top/p/picgo_with_typora/</link>
+        <pubDate>Thu, 19 Aug 2021 00:08:17 +0000</pubDate>
+        
+        <guid>https://jokeme.top/p/picgo_with_typora/</guid>
+        <description>&lt;img src="https://cn.bing.com/th?id=OHR.MtEtna_EN-CN8869032750_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post 在Typora里使用PicGo-Core自动上传图片" /&gt;&lt;p&gt;以前写博客呢基本上都没有配过图片，因为没有找到适合的图床和顺手的工具，免费的图床要不然就是广告，要不然就是不能使用。但是现在不一样了，我不傻了，我变机灵了！我学会白嫖七牛云的&lt;a class=&#34;link&#34; href=&#34;https://www.qiniu.com/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Kodo&lt;/a&gt;了。&lt;/p&gt;
+&lt;p&gt;好的首先进入正题，咱们今天的主角是 &lt;a class=&#34;link&#34; href=&#34;https://github.com/PicGo/PicGo-Core&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;PicGo-Core&lt;/a&gt; 你也可以用app，但是我不太喜欢。首先选择 &lt;strong&gt;PicGo-Core&lt;/strong&gt; 下载二进制包，如果你之前用过的话，直接点击下面的 &lt;strong&gt;打开配置文件&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://pics.jokeme.top/blogimas/image-20210820001826603.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20210820001826603&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;这个时候你的配置文件里面应该啥都没有，就需要咱们用命令来自动生成一下配置文件了&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;
+&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
+&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;&lt;code&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
+&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;picgo use uploader
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;输入完命令以后因该是下面的样子，然后选择对应的选项，填入正确的数据即可。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://pics.jokeme.top/blogimas/image-20210820002515625.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20210820002515625&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;然后如果你不懂的话看一看大佬的文档就可以明白了 &lt;a class=&#34;link&#34; href=&#34;https://picgo.github.io/PicGo-Core-Doc/zh/guide/config.html#%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;PicGo-Core&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;然后AK和SK就是七牛云那边的密钥，bucket就是你的Kode名字，area就选择对应的地方即可，完整配置如下。整个过程下来没有啥难得地方，就是激活七牛云的账号比较麻烦。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://pics.jokeme.top/blogimas/image-20210820002716936.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20210820002716936&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;然后咱就可以试试看Typora在复制图片的时候会不会自动上传图片并把图片的本地链接替换成Kode外链。不出意外的话咱们就可以直接起飞了。祝好运吧。&lt;/p&gt;
+</description>
+        </item>
+        
+    </channel>
 </rss>

@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Vim on JokemeBlog</title>
-    <link>https://jokeme.top/tags/vim/</link>
-    <description>Recent content in Vim on JokemeBlog</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Sat, 01 Feb 2020 17:27:33 +0000</lastBuildDate><atom:link href="https://jokeme.top/tags/vim/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>vim的常用操作快捷键</title>
-      <link>https://jokeme.top/p/vim_hot_key/</link>
-      <pubDate>Sat, 01 Feb 2020 17:27:33 +0000</pubDate>
-      
-      <guid>https://jokeme.top/p/vim_hot_key/</guid>
-      <description>(1) 按两下 gg，定位光标到第一行。
-(2) 按住 Shift+v，进入可视化编辑的列编辑模式。
-(3) Shift+g，选中整个代码。
-(4) 按下等号 =，格式化所有代码。
-(5) 新年快乐🎉</description>
-    </item>
-    
-  </channel>
+    <channel>
+        <title>Vim on JokemeBlog</title>
+        <link>https://jokeme.top/tags/vim/</link>
+        <description>Recent content in Vim on JokemeBlog</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>en-us</language>
+        <lastBuildDate>Sat, 01 Feb 2020 17:27:33 +0000</lastBuildDate><atom:link href="https://jokeme.top/tags/vim/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>vim的常用操作快捷键</title>
+        <link>https://jokeme.top/p/vim_hot_key/</link>
+        <pubDate>Sat, 01 Feb 2020 17:27:33 +0000</pubDate>
+        
+        <guid>https://jokeme.top/p/vim_hot_key/</guid>
+        <description>&lt;img src="https://cn.bing.com/th?id=OHR.ChurchRock_EN-CN7171111056_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post vim的常用操作快捷键" /&gt;&lt;p&gt;(1) 按两下 gg，定位光标到第一行。&lt;/p&gt;
+&lt;p&gt;(2) 按住 Shift+v，进入可视化编辑的列编辑模式。&lt;/p&gt;
+&lt;p&gt;(3) Shift+g，选中整个代码。&lt;/p&gt;
+&lt;p&gt;(4) 按下等号 =，格式化所有代码。&lt;/p&gt;
+&lt;p&gt;(5) 新年快乐🎉&lt;/p&gt;
+</description>
+        </item>
+        
+    </channel>
 </rss>

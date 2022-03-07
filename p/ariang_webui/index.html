@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en-us">
+<html lang="en-us" dir="ltr">
     <head><meta charset='utf-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='配置AriNG实现WebUI下载文件'><title>Aria2下载器配置WebUI界面</title>
 
 <link rel='canonical' href='https://jokeme.top/p/ariang_webui/'>
 
-<link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='Aria2下载器配置WebUI界面'>
+<link rel="stylesheet" href="/scss/style.min.8f838266c1bced5c6bbd71d0405de40d06e788c02de81dc90a51ed740c863169.css"><meta property='og:title' content='Aria2下载器配置WebUI界面'>
 <meta property='og:description' content='配置AriNG实现WebUI下载文件'>
 <meta property='og:url' content='https://jokeme.top/p/ariang_webui/'>
 <meta property='og:site_name' content='JokemeBlog'>
@@ -18,8 +18,8 @@
 
     </head>
     <body class="
-    article-page has-toc
-">
+    article-page
+    ">
     <script>
         (function() {
             const colorSchemeKey = 'StackColorScheme';
@@ -42,25 +42,219 @@
         }
     })();
 </script>
-<div class="container main-container flex 
-    
-        extended
-    
-">
-    
-        <div id="article-toolbar">
-            <a href="https://jokeme.top" class="back-home">
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <polyline points="15 6 9 12 15 18" />
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/author_hue3a07bfbdd4fc62fd921ca2090947f2f_15076_300x0_resize_q75_box.jpg" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">🥰</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">JokemeBlog</a></h1>
+            <h2 class="site-description">人生没有白走的路,每一步都算数。</h2>
+        </div>
+    </header><ol class="social-menu">
+            
+                <li>
+                    <a 
+                        href='https://github.com/jokefrelon'
+                        target="_blank"
+                        title="GitHub"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
 </svg>
 
 
 
-                <span>返回</span>
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://twitter.com/FrelonTroung'
+                        target="_blank"
+                        title="Twitter"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>Home</span>
             </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/%E5%85%B3%E4%BA%8E/' >
+                
+                
+                    
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/links/' >
+                
+                
+                    
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>链接</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/archives/' >
+                
+                
+                    
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>存档</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/search/' >
+                
+                
+                    
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+
+        <div class="menu-bottom-section">
+            
+            
+                <li id="dark-mode-toggle">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                    <span>暗色模式</span>
+                </li>
+            
         </div>
-    
+    </ol>
+</aside>
 <main class="main full-width">
     <article class="has-image main-article">
     <header class="article-header">
@@ -84,15 +278,17 @@
     </header>
     
 
-    <h2 class="article-title">
-        <a href="/p/ariang_webui/">Aria2下载器配置WebUI界面</a>
-    </h2>
-
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/ariang_webui/">Aria2下载器配置WebUI界面</a>
+        </h2>
     
-    <h3 class="article-subtitle">
-        配置AriNG实现WebUI下载文件
-    </h3>
-    
+        
+        <h3 class="article-subtitle">
+            配置AriNG实现WebUI下载文件
+        </h3>
+        
+    </div>
 
     
     <footer class="article-time">
@@ -122,16 +318,20 @@
 
 
                 <time class="article-time--reading">
-                    阅读时长: 1 分钟
+                    阅读时长: 3 分钟
                 </time>
             </div>
         
     </footer>
     
+
+    
 </div>
 </header>
 
     <section class="article-content">
+    
+    
     <h1 id="aria2下载器配置webui界面">Aria2下载器配置WebUI界面</h1>
 <p><a class="link" href="http://aria2.github.io/"  target="_blank" rel="noopener"
     >aria2</a>是一款非常非常Nice的下载器，之前我也介绍过 <a class="link" href="https://jokeme.top/p/linux_reward/"  target="_blank" rel="noopener"
@@ -139,73 +339,183 @@
 <h2 id="1-准备环境">1. 准备环境</h2>
 <p>首先去Github下载一下<a class="link" href="https://github.com/mayswind/AriaNg/releases/tag/1.2.2"  target="_blank" rel="noopener"
     >AriaNG</a> 当然你可以选择别的WebUI其实大概步骤都差不多。</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">wget https://github.com/mayswind/AriaNg/releases/download/1.2.2/AriaNg-1.2.2.zip 
-</code></pre></div><p>下载完成以后咱们去、<code>/var/www/html</code>里面创建一个文件夹</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">sudo mkdir /var/www/html/ariaweb 
-</code></pre></div><p>接着咱们把下载下来的文件移动到创建的文件夹里面顺便解压一下</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">mv AriaNg-1.2.2.zip /var/www/html/ariaweb
-<span class="nb">cd</span> /var/www/html/ariaweb
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash">wget https://github.com/mayswind/AriaNg/releases/download/1.2.2/AriaNg-1.2.2.zip 
+</code></pre></td></tr></table>
+</div>
+</div><p>下载完成以后咱们去、<code>/var/www/html</code>里面创建一个文件夹</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash">sudo mkdir /var/www/html/ariaweb 
+</code></pre></td></tr></table>
+</div>
+</div><p>接着咱们把下载下来的文件移动到创建的文件夹里面顺便解压一下</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash">mv AriaNg-1.2.2.zip /var/www/html/ariaweb
+cd /var/www/html/ariaweb
 unzip AriaNg-1.2.2.zip
-</code></pre></div><p>不知道你们哪里有没有安装 <strong>Nginx</strong>，如果没有安装的话，安装一下，会用到nginx，如果你愿意也可以用apache2，tomcat等，这里我就以nginx演示了。</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">sudo apt-get install nginx
-</code></pre></div><p>接着是需要安装一下我们今天的主角：<strong>aria2</strong></p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">sudo apt-get install aria2
-<span class="c1">#aria2 is already the newest version (1.35.0-1build1).</span>
-</code></pre></div><p>目前 Ubuntu20.04最新的是1.35.0，GitHub最新版本也是1.35.0</p>
+</code></pre></td></tr></table>
+</div>
+</div><p>不知道你们哪里有没有安装 <strong>Nginx</strong>，如果没有安装的话，安装一下，会用到nginx，如果你愿意也可以用apache2，tomcat等，这里我就以nginx演示了。</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash">sudo apt-get install nginx
+</code></pre></td></tr></table>
+</div>
+</div><p>接着是需要安装一下我们今天的主角：<strong>aria2</strong></p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash">sudo apt-get install aria2
+<span style="color:#75715e">#aria2 is already the newest version (1.35.0-1build1).</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>目前 Ubuntu20.04最新的是1.35.0，GitHub最新版本也是1.35.0</p>
 <h2 id="2-修改配置文件">2. 修改配置文件</h2>
 <h3 id="21-aria2conf">2.1 aria2.conf</h3>
 <p>首先就是aria2的配置文件，默认是读取：<code>~/.aria2/aria2.conf</code>，当然我们需要手动创建一下文件的</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">mkdir ~/.aria2
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash">mkdir ~/.aria2
 touch ~/.aria2/aria2.conf
 touch ~/.aria2/aria2.session
-</code></pre></div><p>然后我们就需要把自己的配置文件加上去了</p>
-<div class="highlight"><pre class="chroma"><code class="language-ini" data-lang="ini"><span class="c1">#http download</span>
-<span class="na">continue</span><span class="o">=</span><span class="s">true</span>
-<span class="na">max-connection-per-server</span><span class="o">=</span><span class="s">5</span>
-<span class="na">max-tries</span><span class="o">=</span><span class="s">10</span>
-<span class="na">retry-wait</span><span class="o">=</span><span class="s">600</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>然后我们就需要把自己的配置文件加上去了</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-ini" data-lang="ini"><span style="color:#75715e">#http download</span>
+<span style="color:#a6e22e">continue</span><span style="color:#f92672">=</span><span style="color:#e6db74">true</span>
+<span style="color:#a6e22e">max-connection-per-server</span><span style="color:#f92672">=</span><span style="color:#e6db74">5</span>
+<span style="color:#a6e22e">max-tries</span><span style="color:#f92672">=</span><span style="color:#e6db74">10</span>
+<span style="color:#a6e22e">retry-wait</span><span style="color:#f92672">=</span><span style="color:#e6db74">600</span>
 
-<span class="c1">#bt download</span>
-<span class="na">bt-max-open-files</span><span class="o">=</span><span class="s">1000</span>
-<span class="na">bt-request-peer-speed-limit</span><span class="o">=</span><span class="s">40K</span>
-<span class="na">bt-tracker</span><span class="o">=</span><span class="s">[udp://93.158.213.92:1337/announce,http://93.158.213.92:1337/announce,udp://207.241.226.111:6969/announce]</span>
-<span class="na">enable-dht</span><span class="o">=</span><span class="s">true</span>
-<span class="na">enable-peer-exchange</span><span class="o">=</span><span class="s">true</span>
-<span class="na">dht-file-path</span><span class="o">=</span><span class="s">/home/user/.cache/aria2/dht.dat</span>
-<span class="na">max-upload-limit</span><span class="o">=</span><span class="s">300K</span>
+<span style="color:#75715e">#bt download</span>
+<span style="color:#a6e22e">bt-max-open-files</span><span style="color:#f92672">=</span><span style="color:#e6db74">1000</span>
+<span style="color:#a6e22e">bt-request-peer-speed-limit</span><span style="color:#f92672">=</span><span style="color:#e6db74">40K</span>
+<span style="color:#a6e22e">bt-tracker</span><span style="color:#f92672">=</span><span style="color:#e6db74">[udp://93.158.213.92:1337/announce,http://93.158.213.92:1337/announce,udp://207.241.226.111:6969/announce]</span>
+<span style="color:#a6e22e">enable-dht</span><span style="color:#f92672">=</span><span style="color:#e6db74">true</span>
+<span style="color:#a6e22e">enable-peer-exchange</span><span style="color:#f92672">=</span><span style="color:#e6db74">true</span>
+<span style="color:#a6e22e">dht-file-path</span><span style="color:#f92672">=</span><span style="color:#e6db74">/home/user/.cache/aria2/dht.dat</span>
+<span style="color:#a6e22e">max-upload-limit</span><span style="color:#f92672">=</span><span style="color:#e6db74">300K</span>
 
-<span class="c1">#RPC setting</span>
-<span class="na">enable-rpc</span><span class="o">=</span><span class="s">true</span>
-<span class="na">rpc-allow-origin-all</span><span class="o">=</span><span class="s">true</span>
-<span class="na">rpc-listen-all</span><span class="o">=</span><span class="s">true</span>
-<span class="na">rpc-secret</span><span class="o">=</span><span class="s">llll</span>
+<span style="color:#75715e">#RPC setting</span>
+<span style="color:#a6e22e">enable-rpc</span><span style="color:#f92672">=</span><span style="color:#e6db74">true</span>
+<span style="color:#a6e22e">rpc-allow-origin-all</span><span style="color:#f92672">=</span><span style="color:#e6db74">true</span>
+<span style="color:#a6e22e">rpc-listen-all</span><span style="color:#f92672">=</span><span style="color:#e6db74">true</span>
+<span style="color:#a6e22e">rpc-secret</span><span style="color:#f92672">=</span><span style="color:#e6db74">llll</span>
 
-<span class="c1">#Other setting</span>
-<span class="na">disable-ipv6</span><span class="o">=</span><span class="s">true</span>
-<span class="na">file-allocation</span><span class="o">=</span><span class="s">falloc</span>
-<span class="na">save-session</span><span class="o">=</span><span class="s">/home/user/.aria2/aria2.session</span>
-<span class="na">save-session-interval</span><span class="o">=</span><span class="s">90</span>
-<span class="na">dir</span><span class="o">=</span><span class="s">udisk/tor</span>
-<span class="na">input-file</span><span class="o">=</span><span class="s">/home/user/.aria2/aria2.session</span>
-</code></pre></div><p>这些都是简单的配置，从字面意思就可以看出设置了啥，根据自己的具体情况修改即可，就像我这里，IPv6异常的烂，我直接禁用了v6。</p>
+<span style="color:#75715e">#Other setting</span>
+<span style="color:#a6e22e">disable-ipv6</span><span style="color:#f92672">=</span><span style="color:#e6db74">true</span>
+<span style="color:#a6e22e">file-allocation</span><span style="color:#f92672">=</span><span style="color:#e6db74">falloc</span>
+<span style="color:#a6e22e">save-session</span><span style="color:#f92672">=</span><span style="color:#e6db74">/home/user/.aria2/aria2.session</span>
+<span style="color:#a6e22e">save-session-interval</span><span style="color:#f92672">=</span><span style="color:#e6db74">90</span>
+<span style="color:#a6e22e">dir</span><span style="color:#f92672">=</span><span style="color:#e6db74">udisk/tor</span>
+<span style="color:#a6e22e">input-file</span><span style="color:#f92672">=</span><span style="color:#e6db74">/home/user/.aria2/aria2.session</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>这些都是简单的配置，从字面意思就可以看出设置了啥，根据自己的具体情况修改即可，就像我这里，IPv6异常的烂，我直接禁用了v6。</p>
 <h3 id="22-nginxconf">2.2 nginx.conf</h3>
 <p>nginx咱们只需要添加一个站点就可以了</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">sudo nano /etc/nginx/sites-available/xxx
-</code></pre></div><p>内容如下:</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">server <span class="o">{</span>
-<span class="c1"># AriaNG</span>
-    listen 80<span class="p">;</span>
-    charset utf-8<span class="p">;</span>
-    root /var/www/html/ariaweb<span class="p">;</span><span class="c1">#填上面创建的文件夹地址</span>
-    index index.html index.htm index.nginx-debian.html<span class="p">;</span>
-    server_name 10.0.0.2<span class="p">;</span><span class="c1">#填你的IP地址</span>
-<span class="o">}</span>
-</code></pre></div><p>还有一点,你需要确保你的<code>sites-available/xxx</code>是启用的，检查一下<code>include /etc/nginx/sites-enabled/*;</code>有没有启用还有就是这个<code>sites-available/xxx</code>有没有被软连接到<code>sites-enabled/</code>下面，注意这些细节不要出现问题。</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash">sudo nano /etc/nginx/sites-available/xxx
+</code></pre></td></tr></table>
+</div>
+</div><p>内容如下:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash">server <span style="color:#f92672">{</span>
+<span style="color:#75715e"># AriaNG</span>
+    listen 80;
+    charset utf-8;
+    root /var/www/html/ariaweb;<span style="color:#75715e">#填上面创建的文件夹地址</span>
+    index index.html index.htm index.nginx-debian.html;
+    server_name 10.0.0.2;<span style="color:#75715e">#填你的IP地址</span>
+<span style="color:#f92672">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>还有一点,你需要确保你的<code>sites-available/xxx</code>是启用的，检查一下<code>include /etc/nginx/sites-enabled/*;</code>有没有启用还有就是这个<code>sites-available/xxx</code>有没有被软连接到<code>sites-enabled/</code>下面，注意这些细节不要出现问题。</p>
 <h2 id="3-运行ariang">3. 运行AriaNG</h2>
 <p>其实也非常简单，只需要打开<strong>aria2</strong>和<strong>nginx</strong>就可以了</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">sudo systemctl start nginx
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash">sudo systemctl start nginx
 aria2 
-</code></pre></div><p>接着上面，我们去浏览器输入<strong>10.0.0.2</strong>进一步配置AriaNG</p>
+</code></pre></td></tr></table>
+</div>
+</div><p>接着上面，我们去浏览器输入<strong>10.0.0.2</strong>进一步配置AriaNG</p>
 <p><code>AriaNg 设置 -&gt; RPC (10.0.0.2:6800) -&gt; Aria2 RPC 密钥</code></p>
 <p>在这里输入aria2.conf里面配置的密码即可，AriaNG会提示你重新加载。此时只要你Terminal里面的aria2没有停止运行，你就可以在WebUI里面下载了，而不是晦涩难懂的命令界面。</p>
 
@@ -242,11 +552,11 @@ aria2
                 href="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/katex.min.css"integrity="sha384-RZU/ijkSsFbcmivfdRBQDtwuwVqK7GMOw6IMvKyeWL2K5UAlyp6WonmB8m7Jd0Hn"crossorigin="anonymous"
             ><script 
                 src="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/katex.min.js"integrity="sha384-pK1WpvzWVBQiP0/GjnvRxV4mOb0oxFuyRxJlk6vVw146n3egcN5C925NCP7a7BY8"crossorigin="anonymous"
-                defer="true"
+                defer
                 >
             </script><script 
                 src="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/contrib/auto-render.min.js"integrity="sha384-vZTG03m&#43;2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl"crossorigin="anonymous"
-                defer="true"
+                defer
                 >
             </script><script>
     window.addEventListener("DOMContentLoaded", () => {
@@ -262,14 +572,16 @@ aria2
     
 </article>
 
-    <aside class="related-contents--wrapper">
     
+
     
-        <h2 class="section-title">相关文章</h2>
-        <div class="related-contents">
-            <div class="flex article-list--tile">
+
+<aside class="related-contents--wrapper">
+    <h2 class="section-title">相关文章</h2>
+    <div class="related-contents">
+        <div class="flex article-list--tile">
+            
                 
-                    
 <article class="has-image">
     <a href="/p/aria2_conf/">
         
@@ -286,15 +598,62 @@ aria2
         </div>
     </a>
 </article>
-                
-            </div>
+            
         </div>
-    
+    </div>
 </aside>
 
      
-     
+    
         
+    <script
+    src="https://giscus.app/client.js"
+    data-repo="jokefrelon/web_on_hugo"
+    data-repo-id="MDEwOlJlcG9zaXRvcnkzNjc3MTg4NTc="
+    data-category="Announcements"
+    data-category-id="DIC_kwDOFerxyc4CN_Id"
+    data-mapping="pathname"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-theme="light"
+    data-lang="en"
+    crossorigin="anonymous"
+    async
+></script>
+<script>
+    function setGiscusTheme(theme) {
+        let giscus = document.querySelector("iframe.giscus-frame");
+        if (giscus) {
+            giscus.contentWindow.postMessage(
+                {
+                    giscus: {
+                        setConfig: {
+                            theme: theme,
+                        },
+                    },
+                },
+                "https://giscus.app"
+            );
+        }
+    }
+
+    (function () {
+        addEventListener("message", (e) => {
+            if (event.origin !== "https://giscus.app") return;
+            handler();
+        });
+        window.addEventListener("onColorSchemeChange", handler);
+
+        function handler() {
+            if (document.documentElement.dataset.scheme === "light") {
+                setGiscusTheme('light');
+            } else {
+                setGiscusTheme('dark_dimmed');
+            }
+        }
+    })();
+</script>
+
     
 
     <footer class="site-footer">
@@ -308,7 +667,7 @@ aria2
     
     <section class="powerby">
         Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
-        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.1.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.10.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
     </section>
 </footer>
 
@@ -377,11 +736,11 @@ aria2
 
 </div><script 
                 src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
-                defer="true"
+                defer
                 >
             </script><script 
                 src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
-                defer="true"
+                defer
                 >
             </script><link 
                 rel="stylesheet" 
@@ -392,11 +751,13 @@ aria2
             >
 
             </main>
-    
-        <aside class="sidebar right-sidebar sticky">
-            <section class="widget archives">
-                <div class="widget-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z"/>
   <line x1="5" y1="9" x2="19" y2="9" />
   <line x1="5" y1="15" x2="19" y2="15" />
@@ -406,11 +767,11 @@ aria2
 
 
 
-                </div>
-                <h2 class="widget-title section-title">目录</h2>
-                
-                <div class="widget--toc">
-                    <nav id="TableOfContents">
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
   <ol>
     <li><a href="#1-准备环境">1. 准备环境</a></li>
     <li><a href="#2-修改配置文件">2. 修改配置文件</a>
@@ -422,15 +783,18 @@ aria2
     <li><a href="#3-运行ariang">3. 运行AriaNG</a></li>
   </ol>
 </nav>
-                </div>
-            </section>
-        </aside>
-    
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
 
         </div>
         <script 
                 src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js"integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g="crossorigin="anonymous"
-                defer="false"
+                
                 >
             </script><script type="text/javascript" src="/ts/main.js" defer></script>
 <script>

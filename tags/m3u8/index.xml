@@ -1,27 +1,206 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>m3u8 on JokemeBlog</title>
-    <link>https://jokeme.top/tags/m3u8/</link>
-    <description>Recent content in m3u8 on JokemeBlog</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Wed, 01 Jul 2020 21:33:56 +0000</lastBuildDate><atom:link href="https://jokeme.top/tags/m3u8/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Python 爬虫抓取m3u8播放源</title>
-      <link>https://jokeme.top/p/python_spider_download_m3u8/</link>
-      <pubDate>Wed, 01 Jul 2020 21:33:56 +0000</pubDate>
-      
-      <guid>https://jokeme.top/p/python_spider_download_m3u8/</guid>
-      <description>Python 爬虫抓取播放源(m3u8) 今天没有事的时候在捯饬 dotPlayer [IOS 平台 APP/￥ 收费] 时发现这个东西是个宝贝呀！可以看 m3u8 格式的视频，这都不是重点，重点是使用起来非常舒服，虽然直接复制 m3u8 链接到 Safari 也可以播放，但是 dotPlayer 还可以有封面和标题！这两者体验可谓是天差地别(我没有收钱哈！我是真的觉得好用，希望 dotplayer 的作者看到了打一下广告费！)
-具体可以看
-简书作者： NickXXXXXXXX 给出的图片简介
-GitHub 上的 help_zh.md 给出的使用简介
-这都不是我们需要关注の重点，重点是这款 app 是用来播放 m3u8 流の
-播放视频很简单，可是这 m3u8 文件从哪里来呢？??
- 去 Telegram 加入组群 dotPlayer ,群里经常会分享相关的订阅 自己动手丰衣足食  这次用的爬虫和上一次一模一样，只是我优化了一下过程，就随便讲讲吧
-#coding=utf-8  import requests from lxml import etree import time import datetime import re ​ def makeUrl(Num): # Num为html的页数  allinks=[] for link in range(1,Num+1): link=&amp;#34;https://www.xxxx.com/xzy{}&amp;#34;.format(link) allinks.</description>
-    </item>
-    
-  </channel>
+    <channel>
+        <title>m3u8 on JokemeBlog</title>
+        <link>https://jokeme.top/tags/m3u8/</link>
+        <description>Recent content in m3u8 on JokemeBlog</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>en-us</language>
+        <lastBuildDate>Wed, 01 Jul 2020 21:33:56 +0000</lastBuildDate><atom:link href="https://jokeme.top/tags/m3u8/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Python 爬虫抓取m3u8播放源</title>
+        <link>https://jokeme.top/p/python_spider_download_m3u8/</link>
+        <pubDate>Wed, 01 Jul 2020 21:33:56 +0000</pubDate>
+        
+        <guid>https://jokeme.top/p/python_spider_download_m3u8/</guid>
+        <description>&lt;img src="https://cn.bing.com/th?id=OHR.Parrotfish_EN-CN1212515803_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post Python 爬虫抓取m3u8播放源" /&gt;&lt;h1 id=&#34;python-爬虫抓取播放源m3u8&#34;&gt;Python 爬虫抓取播放源(m3u8)&lt;/h1&gt;
+&lt;p&gt;今天没有事的时候在捯饬 &lt;a class=&#34;link&#34; href=&#34;https://apps.apple.com/cn/app/id1455092592&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;dotPlayer&lt;/a&gt; [IOS 平台 APP/￥ 收费] 时发现这个东西是个宝贝呀！可以看 m3u8 格式的视频，这都不是重点，重点是使用起来非常舒服，虽然直接复制 m3u8 链接到 Safari 也可以播放，但是 &lt;strong&gt;dotPlayer&lt;/strong&gt; 还可以有封面和标题！这两者体验可谓是天差地别(我没有收钱哈！我是真的觉得好用，希望 dotplayer 的作者看到了打一下广告费！)&lt;/p&gt;
+&lt;p&gt;具体可以看&lt;/p&gt;
+&lt;p&gt;简书作者： &lt;a class=&#34;link&#34; href=&#34;https://www.jianshu.com/u/cac586f07bd4&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;NickXXXXXXXX&lt;/a&gt; 给出的图片简介&lt;/p&gt;
+&lt;p&gt;GitHub 上的 &lt;a class=&#34;link&#34; href=&#34;https://github.com/frozenthrone/dotplayer/blob/master/help_zh.md&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;help_zh.md&lt;/a&gt; 给出的使用简介&lt;/p&gt;
+&lt;p&gt;这都不是我们需要关注の重点，重点是&lt;strong&gt;这款 app 是用来播放 m3u8 流の&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;播放视频很简单，可是这 &lt;strong&gt;m3u8&lt;/strong&gt; 文件从哪里来呢？??&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;去 &lt;code&gt;Telegram&lt;/code&gt; 加入组群 &lt;a class=&#34;link&#34; href=&#34;https://t.me/dotplayer&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;dotPlayer&lt;/a&gt; ,群里经常会分享相关的订阅&lt;/li&gt;
+&lt;li&gt;自己动手丰衣足食&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;这次用的爬虫和上一次一模一样，只是我优化了一下过程，就随便讲讲吧&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;
+&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
+&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;&lt;code&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 1
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 2
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 3
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 4
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 5
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 6
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 7
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 8
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 9
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;10
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;11
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;12
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;13
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;14
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;15
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;16
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;17
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;18
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;19
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;20
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;21
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;22
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;23
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;24
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;25
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;26
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;27
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;28
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;29
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;30
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;31
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;32
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;33
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;34
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;35
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;36
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;37
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;38
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;39
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;40
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;41
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;42
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;43
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;44
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;45
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;46
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;47
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;48
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;49
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;50
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;51
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;52
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;53
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;54
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;55
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;56
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;57
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;58
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;59
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;60
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;61
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;62
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;63
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;64
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;65
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;66
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;67
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;68
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;69
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
+&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;&lt;code class=&#34;language-python3&#34; data-lang=&#34;python3&#34;&gt; &lt;span style=&#34;color:#75715e&#34;&gt;#coding=utf-8  &lt;/span&gt;
+ &lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; requests  
+ &lt;span style=&#34;color:#f92672&#34;&gt;from&lt;/span&gt; lxml &lt;span style=&#34;color:#66d9ef&#34;&gt;import&lt;/span&gt; etree  
+ &lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; time  
+ &lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; datetime  
+ &lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; re  
+ &lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;​&lt;/span&gt;  
+ &lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;makeUrl&lt;/span&gt;(Num):  
+  &lt;span style=&#34;color:#75715e&#34;&gt;# Num为html的页数  &lt;/span&gt;
+  allinks&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;[]  
+  &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; link &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; range(&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;,Num&lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;):  
+  link&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;https://www.xxxx.com/xzy&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;{}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;format(link)  
+  allinks&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;append(link)  
+  &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; allinks  
+ &lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;​&lt;/span&gt;  
+ &lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;getRealUrl&lt;/span&gt;(fakeUrl):  
+  webPage &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; requests&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;get(  
+  url&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;fakeUrl,  
+  headers&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;{&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;User-Agent&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36&amp;#34;&lt;/span&gt;}  
+  )  
+  indexPage&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;webPage&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;text  
+  indexHtml&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;etree&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;HTML(indexPage)  
+  nextPageUrl&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;indexHtml&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;xpath(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;//div[@id=&amp;#39;posts&amp;#39;]/div[@class=&amp;#39;post grid&amp;#39;]/h3/a/@href&amp;#34;&lt;/span&gt;)  
+  picurls&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;indexHtml&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;xpath(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;//div[@class=&amp;#39;img&amp;#39;]/a/img/@data-src&amp;#34;&lt;/span&gt;)  
+  Set &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; []  
+  Set&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;append(nextPageUrl)  
+  Set&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;append(picurls)  
+  &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; Set  
+ &lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;​&lt;/span&gt;  
+ &lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;ownSource&lt;/span&gt;(realUrl):  
+  webPagess &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; requests&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;get(  
+  url&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;realUrl,  
+  headers&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;{&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;User-Agent&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36&amp;#34;&lt;/span&gt;}  
+  )  
+  indexPagess&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;webPagess&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;text  
+  indexHtmlss&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;etree&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;HTML(indexPagess)  
+  title&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;indexHtmlss&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;xpath(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;//header/h1/text()&amp;#34;&lt;/span&gt;)  
+  source&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;indexHtmlss&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;xpath(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;//div[@class=&amp;#39;article-content&amp;#39;]/div/@data-item&amp;#34;&lt;/span&gt;)  
+  finalUrl &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; []  
+  finalUrl&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;append(title)  
+  finalUrl&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;append(source)  
+  &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; finalUrl  
+ &lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;​&lt;/span&gt;  
+ Derailed &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; makeUrl(&lt;span style=&#34;color:#ae81ff&#34;&gt;110&lt;/span&gt;)  
+ &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; iPhoneSE &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; Derailed:  
+     
+  ceo &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; getRealUrl(iPhoneSE)  
+  qq &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; ceo[&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;]  
+  a&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;  
+  &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; SourceUrl &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; qq:  
+  helloWorld &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; ownSource(SourceUrl)  
+     
+  MUlink&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;helloWorld[&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;][&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;]  
+  realMULinks&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;MUlink&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;split(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;&amp;#34;&amp;#39;&lt;/span&gt;)  
+  realMULink&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;realMULinks[&lt;span style=&#34;color:#ae81ff&#34;&gt;5&lt;/span&gt;]&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;replace(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\\&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;,&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&amp;#34;&lt;/span&gt;)  
+  title&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;helloWorld[&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;][&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;]&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;replace(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34; &amp;#34;&lt;/span&gt;,&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&amp;#34;&lt;/span&gt;)  
+  thePicUrl &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; ceo[&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;][a]  
+ &lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;​&lt;/span&gt;  
+  p&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;re&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;compile(&lt;span style=&#34;color:#e6db74&#34;&gt;r&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;[-,$()#+&amp;amp;*&amp;#39; ]&amp;#34;&lt;/span&gt;)  
+  lastTitle&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;re&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;sub(p,&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&amp;#34;&lt;/span&gt;,title)  
+     
+  str &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;{&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\n&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;&amp;#34;name&amp;#34;:&amp;#34;&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt;lastTitle&lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;&amp;#34;,&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\n&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;&amp;#34;logo&amp;#34;:&amp;#34;&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt;thePicUrl&lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;&amp;#34;,&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\n&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;&amp;#34;url&amp;#34;:&amp;#34;&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt;realMULink&lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\n&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;},&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\n&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;&lt;/span&gt;  
+  &lt;span style=&#34;color:#66d9ef&#34;&gt;with&lt;/span&gt; open (&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;weicha8.json&amp;#34;&lt;/span&gt;,&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;a+&amp;#34;&lt;/span&gt;,encoding&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;utf-8&amp;#39;&lt;/span&gt;) &lt;span style=&#34;color:#66d9ef&#34;&gt;as&lt;/span&gt; f:  
+  f&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;write(str)  
+  a&lt;span style=&#34;color:#f92672&#34;&gt;+=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;  
+  print(str)  
+  print(a)  
+  print(datetime&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;datetime&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;now())  
+  time&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;sleep(&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;)
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;整体分为三个部分：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;
+&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
+&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;&lt;code&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;1
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;2
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
+&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt; def makeUrl(Num):  
+ def getRealUrl(fakeUrl):  
+ def ownSource(realUrl):
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id=&#34;1-def-makeurlnum&#34;&gt;1. def makeUrl(Num):&lt;/h3&gt;
+&lt;p&gt;该函数，接收一个 &lt;code&gt;int&lt;/code&gt; 类型的参数， &lt;strong&gt;return&lt;/strong&gt; 一个 &lt;code&gt;字符串列表&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;这部分就是分析页面链接？的规则，在本地生成 &lt;strong&gt;URL&lt;/strong&gt; ,并返回给下一个函数处理， 爬虫能在本地干的就经量在本地完成，不过度占用服务器的资源，不给站长添堵！ 这也是为了自己好？?? 俗话说的好：爬虫学的好！ &amp;hellip; &amp;hellip;&lt;/p&gt;
+&lt;h3 id=&#34;2-def-getrealurlfakeurl&#34;&gt;2. def getRealUrl(fakeUrl):&lt;/h3&gt;
+&lt;p&gt;该函数，接收一个 &lt;code&gt;字符串列表&lt;/code&gt;  &lt;strong&gt;return&lt;/strong&gt; 一个 &lt;code&gt;嵌套列表&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;这部分就是接收到上面生成の &lt;strong&gt;URL&lt;/strong&gt; ,访问并分析网页结构。拿到视频的 &lt;strong&gt;封面&lt;/strong&gt;  &lt;strong&gt;真实播放页&lt;/strong&gt; の URL,并且返回给下一个函数来执行&lt;/p&gt;
+&lt;h3 id=&#34;3-def-ownsourcerealurl&#34;&gt;3. def ownSource(realUrl):&lt;/h3&gt;
+&lt;p&gt;该函数，接收一个 &lt;code&gt;嵌套列表&lt;/code&gt;  &lt;strong&gt;return&lt;/strong&gt; 一个 &lt;code&gt;嵌套列表&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;这部分也很简单，接收上面来的链接，一个一个的访问，拿到 &lt;strong&gt;标题&lt;/strong&gt;  &lt;strong&gt;播放 URL&lt;/strong&gt; ,然后返回一个 &lt;code&gt;嵌套列表&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id=&#34;4-编写代码&#34;&gt;4. 编写代码&lt;/h3&gt;
+&lt;p&gt;函数已经写好了，我们自己调用即可，需要注意循环嵌套的时候不能犯迷糊就可以，最后处理一下所得到の数据，写入本地 JSON 文件就可以了&lt;/p&gt;
+&lt;p&gt;虽然我爬虫很菜，但是我在一点点的学习！一起加油吧！!!&lt;/p&gt;
+&lt;p&gt;最新代码在 &lt;a class=&#34;link&#34; href=&#34;https://github.com/jokefrelon/python/blob/master/getM3u8.py&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Github&lt;/a&gt; 上，这篇文章，以后就不更新了&lt;/p&gt;
+</description>
+        </item>
+        
+    </channel>
 </rss>

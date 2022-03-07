@@ -1,35 +1,152 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Intel on JokemeBlog</title>
-    <link>https://jokeme.top/categories/intel/</link>
-    <description>Recent content in Intel on JokemeBlog</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Mon, 16 Mar 2020 05:01:31 +0000</lastBuildDate><atom:link href="https://jokeme.top/categories/intel/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Bay Trail主板安装Linux的坑</title>
-      <link>https://jokeme.top/p/install_linux_on_bay_trail/</link>
-      <pubDate>Mon, 16 Mar 2020 05:01:31 +0000</pubDate>
-      
-      <guid>https://jokeme.top/p/install_linux_on_bay_trail/</guid>
-      <description>Bay Trail 主板安装 Linux 的坑 最近搞了一个 N2920 的低功耗小主机，本来打算搞软路由，但是家里网速不行，就打算先刷个 Linux 玩玩，于是我就被这个问题烦了将近半个月！
-一开始我打算安装一个 CentOS 7 玩玩，当我下载完系统刻录完开始安装的时候发现 CentOS 7 的 installer 异常的卡顿，而且耗时也非常的多，差不多需要将近半个小时才可以到图形界面的安装(我这个小主机是有固态的，这个速度肯定有很大的问题),而且好不容易到了图形界面的安装环节，还经常卡死！刚开始 我还以为可能是这个 ISO 镜像有问题，又换了一个 CentOS 8 的镜像。
-刻录&amp;ndash;安装&amp;ndash;等待&amp;ndash;卡死
-Again
-开机&amp;ndash;安装&amp;ndash;等待&amp;ndash;卡死
-? ? ?我真的是&amp;hellip;&amp;hellip;一点办法都没有
-这结果属实有点意外呀，怎么 CentOS 8 也是这个鸟样？
-我不甘，又换了一个 Ubuntu 18
-刻录&amp;ndash;安装&amp;ndash;等待&amp;ndash;卡死
-卧槽，这是什么问题换系统 都不行，应该就不是软件的问题了吧，我就从主板开始动刀，会不会是因为主板的 BIOS 太老了，本来打算去更新一下 BIOS 结果，这是一个不知名的小板，不知道从哪里搞到 BIOS 文件，就放弃了！
-然后去百度 为什么电脑安装 Linux 卡顿
-众所周知，百度相当垃圾，大部分都是答非所问，要不然就是 CSDN,简书 的水贴，都没有用 :(
-然后我又找隔壁 二狗子 意念扶梯子，用 Google 搜一下
-然后我就在国外某个被大陆 404 的的技术论坛上找到了一点线索 ? ? ?
-贴子网址： askubuntu
-反正他们大概说的是 Bay Trail 主板上安装 Linux 出现的各种异常，刚刚好我的主板也是，出现的问题也和他们的很相似</description>
-    </item>
-    
-  </channel>
+    <channel>
+        <title>Intel on JokemeBlog</title>
+        <link>https://jokeme.top/categories/intel/</link>
+        <description>Recent content in Intel on JokemeBlog</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>en-us</language>
+        <lastBuildDate>Mon, 16 Mar 2020 05:01:31 +0000</lastBuildDate><atom:link href="https://jokeme.top/categories/intel/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Bay Trail主板安装Linux的坑</title>
+        <link>https://jokeme.top/p/install_linux_on_bay_trail/</link>
+        <pubDate>Mon, 16 Mar 2020 05:01:31 +0000</pubDate>
+        
+        <guid>https://jokeme.top/p/install_linux_on_bay_trail/</guid>
+        <description>&lt;img src="https://cn.bing.com/th?id=OHR.ArcticWolf_EN-CN8268127090_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post Bay Trail主板安装Linux的坑" /&gt;&lt;h1 id=&#34;bay-trail-主板安装-linux-的坑&#34;&gt;Bay Trail 主板安装 Linux 的坑&lt;/h1&gt;
+&lt;p&gt;最近搞了一个 &lt;strong&gt;N2920&lt;/strong&gt; 的低功耗小主机，本来打算搞软路由，但是家里网速不行，就打算先刷个 &lt;strong&gt;Linux&lt;/strong&gt; 玩玩，于是我就被这个问题烦了将近半个月！&lt;/p&gt;
+&lt;p&gt;一开始我打算安装一个 &lt;strong&gt;CentOS 7&lt;/strong&gt; 玩玩，当我下载完系统刻录完开始安装的时候发现 &lt;strong&gt;CentOS 7&lt;/strong&gt; 的 installer 异常的卡顿，而且耗时也非常的多，差不多需要将近半个小时才可以到图形界面的安装(我这个小主机是有固态的，这个速度肯定有很大的问题),而且好不容易到了图形界面的安装环节，还经常卡死！刚开始 我还以为可能是这个 ISO 镜像有问题，又换了一个 &lt;strong&gt;CentOS 8&lt;/strong&gt; 的镜像。&lt;/p&gt;
+&lt;p&gt;刻录&amp;ndash;安装&amp;ndash;等待&amp;ndash;卡死&lt;/p&gt;
+&lt;p&gt;Again&lt;/p&gt;
+&lt;p&gt;开机&amp;ndash;安装&amp;ndash;等待&amp;ndash;卡死&lt;/p&gt;
+&lt;p&gt;? ? ?我真的是&amp;hellip;&amp;hellip;一点办法都没有&lt;/p&gt;
+&lt;p&gt;这结果属实有点意外呀，怎么 &lt;strong&gt;CentOS 8&lt;/strong&gt; 也是这个鸟样？&lt;/p&gt;
+&lt;p&gt;我不甘，又换了一个 &lt;strong&gt;Ubuntu 18&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;刻录&amp;ndash;安装&amp;ndash;等待&amp;ndash;卡死&lt;/p&gt;
+&lt;p&gt;卧槽，这是什么问题换系统 都不行，应该就不是软件的问题了吧，我就从主板开始动刀，会不会是因为主板的 &lt;strong&gt;BIOS&lt;/strong&gt; 太老了，本来打算去更新一下 &lt;strong&gt;BIOS&lt;/strong&gt; 结果，这是一个不知名的小板，不知道从哪里搞到 &lt;strong&gt;BIOS&lt;/strong&gt; 文件，就放弃了！&lt;/p&gt;
+&lt;p&gt;然后去百度 &lt;em&gt;为什么电脑安装 Linux 卡顿&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;众所周知，百度相当垃圾，大部分都是答非所问，要不然就是 &lt;del&gt;CSDN,简书&lt;/del&gt; 的水贴，都没有用 &lt;strong&gt;:(&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;然后我又找隔壁 二狗子 意念扶梯子，用 Google 搜一下&lt;/p&gt;
+&lt;p&gt;然后我就在国外某个被大陆 404 的的技术论坛上找到了一点线索 ? ? ?&lt;/p&gt;
+&lt;p&gt;贴子网址： &lt;a class=&#34;link&#34; href=&#34;https://askubuntu.com/questions/803640/system-freezes-completely-with-intel-bay-trail&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;askubuntu&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;反正他们大概说的是 &lt;strong&gt;Bay Trail&lt;/strong&gt; 主板上安装 Linux 出现的各种异常，刚刚好我的主板也是，出现的问题也和他们的很相似&lt;/p&gt;
+&lt;p&gt;在这里截取一些解决方法：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;
+&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
+&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;&lt;code&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 1
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 2
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 3
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 4
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 5
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 6
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 7
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 8
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 9
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;10
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;11
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;12
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;13
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;14
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;15
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;16
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;17
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;18
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;19
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;20
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;21
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;22
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;23
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;24
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;25
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;26
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;27
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;28
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;29
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;30
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;31
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;32
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;33
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;34
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;35
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;36
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;37
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;38
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;39
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;40
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;41
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;42
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;43
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;44
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;45
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;46
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;47
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;48
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;49
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;50
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;51
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;52
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;53
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
+&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#Your processor is affected by the c-state bug&lt;/span&gt;
+
+&lt;span style=&#34;color:#75715e&#34;&gt;#This causes total freezes when the CPU tries to enter an unsupported sleep state. It&amp;#39;s a problem for many Bay Trail devices especially with newer (4.*) kernels.&lt;/span&gt;
+
+&lt;span style=&#34;color:#75715e&#34;&gt;#Affected processors AFAIK:&lt;/span&gt;
+
+&lt;span style=&#34;color:#75715e&#34;&gt;#Atom Z3735F (Asus X205TA, Acer Aspire Switch 10, Lenovo MIIX 3 1030)&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;#Atom Z3735G&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;#Celeron J1900 (Asus ET2325IUK, shuttle XS35V4)&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;#Celeron N2940 (Acer Aspire ES1-711, Chromebook)&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;#Celeron N2840 (Acer Aspire ES1-311)&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;#Celeron N2930 (Jetway JBC311U93, Zotac Nano CI320)&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;#Pentium N3520&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;#Pentium N3530 (Acer V3-111P)&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;#Pentium N3540 (Dell Inspiron 15 3000, Lenovo G50, ASUS X550MJ)&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;#(please (suggest an) edit to add your own device if affected)&lt;/span&gt;
+
+&lt;span style=&#34;color:#75715e&#34;&gt;#Complete list of Bay Trail processors may be found here&lt;/span&gt;
+
+&lt;span style=&#34;color:#75715e&#34;&gt;#There is a simple workaround for this until it gets properly fixed upstream.&lt;/span&gt;
+
+&lt;span style=&#34;color:#75715e&#34;&gt;#You just need to pass a kernel boot parameter and the random freezing stops completely. The parameter may increase battery consumption slightly, but it will give you a usable system.&lt;/span&gt;
+
+&lt;span style=&#34;color:#75715e&#34;&gt;#You do this by editing the configuration file for GRUB:&lt;/span&gt;
+
+&lt;span style=&#34;color:#75715e&#34;&gt;#Boot Ubuntu and open a terminal by pressing Ctrl+Alt+T then type&lt;/span&gt;
+
+sudo nano /etc/default/grub
+&lt;span style=&#34;color:#75715e&#34;&gt;#Find the line that starts GRUB_CMDLINE_LINUX_DEFAULT=&lt;/span&gt;
+
+&lt;span style=&#34;color:#75715e&#34;&gt;#This needs to be changed to include intel_idle.max_cstate=1&lt;/span&gt;
+
+&lt;span style=&#34;color:#75715e&#34;&gt;#So after your edit it reads something like&lt;/span&gt;
+
+GRUB_CMDLINE_LINUX_DEFAULT&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;quiet splash intel_idle.max_cstate=1&amp;#34;&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;#quiet and splash are default parameters for Ubuntu Desktop - no need to change them, or any other pre-existing parameters&lt;/span&gt;
+
+&lt;span style=&#34;color:#75715e&#34;&gt;#Now save the file by pressing ctrl+o then enter and exit by pressing ctrl+x&lt;/span&gt;
+
+&lt;span style=&#34;color:#75715e&#34;&gt;#Now run&lt;/span&gt;
+
+sudo update-grub
+&lt;span style=&#34;color:#75715e&#34;&gt;#Then reboot.&lt;/span&gt;
+
+&lt;span style=&#34;color:#75715e&#34;&gt;#What to do if you don&amp;#39;t have enough time to do this before the system hangs&lt;/span&gt;
+
+&lt;span style=&#34;color:#75715e&#34;&gt;#No problem. As explained on the help page I linked to earlier, you can add the parameter to GRUB before booting. Note that this only passes the parameter for the current boot, so you still have to edit /etc/default/grub once you have booted to make the change permanent.&lt;/span&gt;
+
+&lt;span style=&#34;color:#75715e&#34;&gt;#You need to get to the GRUB menu. If you are dual booting this will appear anyway, if not you have to press and hold (or tap) shift after pressing the power button to turn on.&lt;/span&gt;
+
+&lt;span style=&#34;color:#75715e&#34;&gt;#When you get to this screen select Advanced Options for Ubuntu. You can move the cursor to a different kernel, or leave it in place to edit options for the default. Instead of pressing enter, press e and you will go into edit mode, looking vaguely like this.&lt;/span&gt;
+
+&lt;span style=&#34;color:#75715e&#34;&gt;#Move the cursor down to where it says quiet splash, put a space after splash and carefully type intel_idle.max_cstate=1 making sure there is a space after it as well.&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;反正大概意思就是这种主板有残疾，在引导的时候会导致一些问题，需要加上这些参数就可以了&lt;/p&gt;
+&lt;p&gt;至此，这个烦了我将近半个月的问题没有了，就在引导的时候加了几个参数，鼠标正常了，键盘也可以用了，也不会卡顿了&lt;/p&gt;
+</description>
+        </item>
+        
+    </channel>
 </rss>

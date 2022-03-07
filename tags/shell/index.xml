@@ -1,146 +1,1215 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Shell on JokemeBlog</title>
-    <link>https://jokeme.top/tags/shell/</link>
-    <description>Recent content in Shell on JokemeBlog</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Thu, 17 Jun 2021 22:49:29 +0000</lastBuildDate><atom:link href="https://jokeme.top/tags/shell/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>监控狗东商品价格并利用bark推送价格到手机上</title>
-      <link>https://jokeme.top/p/bark_jd_price/</link>
-      <pubDate>Thu, 17 Jun 2021 22:49:29 +0000</pubDate>
-      
-      <guid>https://jokeme.top/p/bark_jd_price/</guid>
-      <description>监控狗东商品价格并利用bark推送价格到手机上 众所周知啊，狗东上面商品的价格经常在变动，有时候你在最贵的时候买下来了，那你就是冤大头了。除非你急着用。
-先来说一下我的思路吧！
-我一开始是想着在我的服务器上监控商品价格，然后每十分钟对比一下价格，再利用邮件来推送给我自己。这个想法是挺好的，奈何我利用postfix来relay邮件时我的outlook账号死活登陆不了，换qq邮箱，发邮件吧，妈的直接吞邮件。
-既然邮件都不可以，我就想着用公众号吧，直接推送到我的微信，然后登陆我尘封好几年的公众号，嗯！用不了。
-然后我就直接放弃了！好了文章结束！
-哈哈哈哈，开玩笑的，然后我又想到了 bark ，开源免费的推送，还可以自己搭建自己的推送服务端！兄弟们！把安全好用打在公屏上！！！
-好了！不废话了！
-1. 监控狗东商品价格 其实这一部分很简单，调用API就可以了，别问我什么API，自己找吧！下面就是我找到的获取价格的API
-https://pe.3.cn/prices/mgets?skuids=商品ID 2. 编写shell脚本查询价格 写shell脚本那不就是右手就行了嘛！都用不到左手！😄
-#!/bin/bash price=`curl https://pe.3.cn/prices/mgets\?skuids\=2066790 2&amp;gt;/dev/null | awk -F\&amp;#34; &amp;#39;{print $4}&amp;#39; | awk -F\. &amp;#39;{print $1}&amp;#39;` dates=`date +&amp;#34;%Y-%m-%d_%H:%M:%S&amp;#34;` nslo=`tail -n 1 ~/price.log | awk &amp;#39;{print $2}&amp;#39;` printf &amp;#34;%s %s\n&amp;#34; $dates $price &amp;gt;&amp;gt; ~/price.log if [[ $price -eq $nslo ]] then echo &amp;#34;$dates狗东居然还不降价！&amp;#34; curl -k &amp;#34;https://api.jokeme.top/xyzxyzxyzxyzxyzxyz/当前价格$price/狗东居然还不降价?group=bark&amp;#34; elif [[ $price -gt $nslo ]] then echo &amp;#34;狗东居然涨价？&amp;#34; curl -k &amp;#34;https://api.</description>
-    </item>
-    
-    <item>
-      <title>定时备份hugo帖子</title>
-      <link>https://jokeme.top/p/backup_hugo_posts/</link>
-      <pubDate>Tue, 08 Jun 2021 23:12:18 +0000</pubDate>
-      
-      <guid>https://jokeme.top/p/backup_hugo_posts/</guid>
-      <description>定时备份hugo帖子 今天出差,在高铁上实在是太无聊,信号也不怎么好,我就写了个每天晚上备份Hugo文章的脚本
-#!/bin/bash datee=`date +%Y-%m-%d` bn=`docker ps | egrep hugo` if [[ -n $bn ]] then mkdir ~/udisk/bkhugo/$datee docker cp hugo:/root/pblog/content ~/udisk/bkhugo/$datee/ #记得换成你自己的路径 echo -e &amp;#34;\033[49;32mBackup posts successfully\033[0m&amp;#34; else echo -e &amp;#34;\033[49;31mService hugo is not running\033[0m&amp;#34; fi 也没有啥好说的,都是一些简单的命令组合而成,然后再利用crontab每天00:00执行</description>
-    </item>
-    
-    <item>
-      <title>一个有意思的shell变量问题</title>
-      <link>https://jokeme.top/p/funny_space_in_shell_script/</link>
-      <pubDate>Sun, 23 May 2021 02:33:06 +0000</pubDate>
-      
-      <guid>https://jokeme.top/p/funny_space_in_shell_script/</guid>
-      <description>一个有意思的shell变量问题 今天在上班时遇到了一个批量解压zip的需求，由于几十个压缩包的名称一样，chrome下载下来以后就自动给加了编号。并且解压后的文件名也是一样的，只不过里面的文件不一样。
-虽然在Windows下有批量解压缩工具，但是我没有安装。我电脑上只有7zip。既然是批量处理文件，那我就想到了用shell来做这件事。
-首先！我遇到的问题就是！文件名里面有空格，类似**&amp;ldquo;abc xyz.zip&amp;rdquo;**一个文件名被shell捕获成变量以后，在for循环里面会被错误的解析成两个不同的变量，这就导致了代码逻辑上没有问题。你不亲自调试一下，就不知道为什么会报错。
-为此我百度了良久，找到了以下两种解决方案
-1. 解决方案一：修改IFS 我百思不得其解，为什么这么多一毛一样的文章都推荐使用IFS，而且只修改了IFS，而且用完还没有给修改回来。这不是给自己挖坑吗
-IFS的默认值为空白字符（换行符、制表符或者空格）。如果你手动的修改它为别的字符，那后续的代码也就会以该字符为定界符。只能说是简单粗暴，贼鸡儿好用！
-2. 解决方案二：修改文件名 一开始我看到这种方案还很疑惑！我尼玛要是有那修改文件名的功夫我还写代码干啥，哈哈哈哈。然后我看了一下思路，嗯！还是有点道理的。原文见脚本之家。
-大概思路我就放在下面的代码里面讲解吧！
-allzip=`ls | grep zip | sed &amp;#39;s/ (/(/g&amp;#39;`	#先用sed把&amp;#39; (&amp;#39;替换成&amp;#39;(&amp;#39;保存到list里面 echo $allzip	#echo一下,让自己放心一点 for zip in $allzip do filen=`echo $zip | sed &amp;#39;s/(/ (/g&amp;#39;`	#把存起来的没有空格的变量还原成真正的有空格的文件名 mv &amp;#34;$filen&amp;#34; $zip	#拿到了真正的文件名,为了后续方便,直接把有空格的文件修改为没有空格的 unzip $zip	#顺带给它解压一下 done 好了就是这么的简单，也不用修改什么IFS。虽然有一丢丢的绕，但是也是非常容易理解的。你们也看出来了我个人是偏向于第二种方案的，因为修改IFS万一你忘记给改回去，那你下面还有字符串类分割的操作就会度过一段非常蛋疼的调试时光。</description>
-    </item>
-    
-    <item>
-      <title>Nginx目录美化</title>
-      <link>https://jokeme.top/p/nginx_beautify/</link>
-      <pubDate>Tue, 23 Mar 2021 21:33:56 +0000</pubDate>
-      
-      <guid>https://jokeme.top/p/nginx_beautify/</guid>
-      <description>Nginx目录美化 我们大家都知道啊! nginx是一个高性能的Web服务器,用于分享文件也是一个非常不错的选择,但是由于Nginx默认的目录太丑了, 都不好意思拿出手。这就有了本篇文章。
-先来说一下我的环境: Ubuntu 20.04.1 ，Nginx 1.18
-1. 添加Index.html至主机根目录 nano index.html 内容如下
-&amp;lt;!-- autoindex.html 21.02, see https://phus.lu --&amp;gt; &amp;lt;script&amp;gt; !function(){ var website_title = &#39;&#39; var datetime_format = &#39;%Y-%b-%d %H:%M&#39; var show_readme_md = true var enable_footer_js = true var max_name_length = 20 var dom = { element: null, get: function (o) { var obj = Object.create(this) obj.element = (typeof o == &amp;quot;object&amp;quot;) ? o : document.createElement(o) return obj }, add: function (o) { var obj = dom.</description>
-    </item>
-    
-    <item>
-      <title>记录最近捯饬Linux的收获</title>
-      <link>https://jokeme.top/p/linux_reward/</link>
-      <pubDate>Sun, 21 Mar 2021 01:25:43 +0000</pubDate>
-      
-      <guid>https://jokeme.top/p/linux_reward/</guid>
-      <description>记录最近捯饬Linux的收获 虽然最近在准备专升本考试吧，但是也没有认真的复习，最近还是天天玩Linux，在这里记录一下。
-1. Windows Terminal设置 如果你关注IT圈的话，你一定知道微软在Github开源了新的Terminal，并且这是一个颜值高,用着爽的全新版本,支持Unicode。这些都是后话，我要说的是WSL和Terminal相关的设置。因为Terminal打开WSL默认的路径是该用户的在Windows下的家目录，而此时你就需要修改setting.json对应位置添加以下配置：&amp;quot;startingDirectory&amp;quot;: &amp;quot;//wsl$/Ubuntu-18.04/home/frelon&amp;quot;
-如果你还没有用过Windows Terminal那你可以先看看这个Windows Terminal的简介
-2. aria2下载 众所周知，aria2 是一款非常好用的一款下载工具，并且它开源，体积小，运行效率高等。什么？你没有听说过？那你总听说过Motrix吧！什么你还没有听说过？那你一定知道PanDown吧？没错这款伟大的软件就是基于aria2。
-aria2本身只是命令行工具，所以我们可以在命令行里安装它。
-sudo apt install aira2 如果你只是简简单单的下载文件，那curl 和 wget 、aira2是没有啥大的区别的。额说到这里哈，就不得不说今天是curl的23岁生日，curl是 March 20. 1998 年发布的。没错！确实是23年前的今天！因为时差的原因，那边还是20号，咱们这边已经21号了，不是我记错了。
-然后我就根据我个人的使用习惯给alias一下了，因为我不喜欢这种字母和数组夹杂的命令，遇到了都会给重命名一下方便以后自己敲命令。
-alias ac=&amp;quot;aria2c&amp;quot; 首先既然是下载工具，那我为什么要用aria2？
-我们先来看看aria2支持啥协议
-URI, MAGNET, TORRENT_FILE, METALINK_FILE
-传统的http，https，ftp，磁力。bt种子，metalink。你就说它强大不强大吧，可以在这么小体量的情况下，做这么多事情。现在你知道为什么这么多人夸赞它了吧。
-现在我们来说说看Windows这边的下载巨头：迅雷。
-为什么我们都瞧不起迅雷？
-因为迅雷是白眼狼，喝BT的血起家，把自己养肥了。到最后迅雷却不反哺BT下载的生态圈。就这一点就足够可耻的了。
-3. 获取CPU温度 echo `echo &amp;quot;scale=2; $(cat /sys/class/thermal/thermal_zone2/temp)/1000&amp;quot; | bc` °C 用Ubuntu 20的小伙伴可以直接用这条命令查看cpu温度，Ubuntu18我还没有试过，别的系统我就不得而知了。
-4. awk 、sed awk 是一个文本处理命令，常用的就是查找文本内部的字符。
-默认情况下awk是用空格来分割，
-awk &#39;{print $1}&#39; 如果你想用特定的字符串分割,可以用 -F来指定。
-awk -F/ &#39;{print $1}&#39;  sed它同样也是文本处理，用来替换文本的，最常用到的可能就是在刚安装完系统后换软件源的时候。用国内的url来替换国外的url
-sed -i &#39;s/xxx/yyy/g&#39; filename 这个就是把文件内部的xxx替换为yyy。如果需要在文件行首添加字符，就可以sed -i &#39;s/^/yyy/g&#39; filename，有行首肯定是有行尾，那行尾把 ^换成$就可以了。</description>
-    </item>
-    
-    <item>
-      <title>Linux 常用的小技巧</title>
-      <link>https://jokeme.top/p/linux_skill/</link>
-      <pubDate>Wed, 10 Jun 2020 20:48:55 +0000</pubDate>
-      
-      <guid>https://jokeme.top/p/linux_skill/</guid>
-      <description>Linux 常用的小技巧 1 .apt-get remove vsftpd &amp;ndash;purge 删除所有配置，下次安装的时候会重新生成配置文件
-2 .编辑器 nano 快捷键 ALT+Shift+3	显示行号 CTRL+SHIFT+_	快速跳到某行
-3 .如果不经常使用 Linux の桌面，但是又不希望桌面吃内存，可以试试看 sudo init 3 4 .echo 颜色输出 echo -e &amp;quot;\033[背景颜色；文字颜色 m 字符串\033[0m&amp;quot;
-可以选择的编码如下所示(这些颜色是 ANSI 标准颜色)：
-40 设置黑色背景 41 设置红色背景 42 设置绿色背景 43 设置黄色背景 44 设置蓝色背景 45 设置紫色背景 46 设置青色背景 47 设置白色(灰色)背景 49 设置缺省黑色背景 前景颜色是背景颜色减去 10 5 .zsh 美化 在 GitHub 上有一个 oh-my-zsh の项目，相信我，用上这个 zsh 以后，你会离不开它的，安装脚本附上
-sh -c &amp;#34;$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)&amp;#34; sh -c &amp;#34;$(wget -O- https://raw.</description>
-    </item>
-    
-    <item>
-      <title>Bay Trail主板安装Linux的坑</title>
-      <link>https://jokeme.top/p/install_linux_on_bay_trail/</link>
-      <pubDate>Mon, 16 Mar 2020 05:01:31 +0000</pubDate>
-      
-      <guid>https://jokeme.top/p/install_linux_on_bay_trail/</guid>
-      <description>Bay Trail 主板安装 Linux 的坑 最近搞了一个 N2920 的低功耗小主机，本来打算搞软路由，但是家里网速不行，就打算先刷个 Linux 玩玩，于是我就被这个问题烦了将近半个月！
-一开始我打算安装一个 CentOS 7 玩玩，当我下载完系统刻录完开始安装的时候发现 CentOS 7 的 installer 异常的卡顿，而且耗时也非常的多，差不多需要将近半个小时才可以到图形界面的安装(我这个小主机是有固态的，这个速度肯定有很大的问题),而且好不容易到了图形界面的安装环节，还经常卡死！刚开始 我还以为可能是这个 ISO 镜像有问题，又换了一个 CentOS 8 的镜像。
-刻录&amp;ndash;安装&amp;ndash;等待&amp;ndash;卡死
-Again
-开机&amp;ndash;安装&amp;ndash;等待&amp;ndash;卡死
-? ? ?我真的是&amp;hellip;&amp;hellip;一点办法都没有
-这结果属实有点意外呀，怎么 CentOS 8 也是这个鸟样？
-我不甘，又换了一个 Ubuntu 18
-刻录&amp;ndash;安装&amp;ndash;等待&amp;ndash;卡死
-卧槽，这是什么问题换系统 都不行，应该就不是软件的问题了吧，我就从主板开始动刀，会不会是因为主板的 BIOS 太老了，本来打算去更新一下 BIOS 结果，这是一个不知名的小板，不知道从哪里搞到 BIOS 文件，就放弃了！
-然后去百度 为什么电脑安装 Linux 卡顿
-众所周知，百度相当垃圾，大部分都是答非所问，要不然就是 CSDN,简书 的水贴，都没有用 :(
-然后我又找隔壁 二狗子 意念扶梯子，用 Google 搜一下
-然后我就在国外某个被大陆 404 的的技术论坛上找到了一点线索 ? ? ?
-贴子网址： askubuntu
-反正他们大概说的是 Bay Trail 主板上安装 Linux 出现的各种异常，刚刚好我的主板也是，出现的问题也和他们的很相似</description>
-    </item>
-    
-    <item>
-      <title>学习nginx代理相关的笔记</title>
-      <link>https://jokeme.top/p/nginx_proxy/</link>
-      <pubDate>Sat, 11 Jan 2020 21:33:56 +0000</pubDate>
-      
-      <guid>https://jokeme.top/p/nginx_proxy/</guid>
-      <description>nginx 反向代理 nginx 一直都是我们比较常用的工具，它不仅功能强悍，而且性能也非常好 ?,一直深受开发者的喜爱
-并且我们经常用 nginx 反代来做负载均衡，那么 nginx の反代原理我也就不说了，咱就说咋操作吧
-我把我的网站的 nginx 配置给拷贝了下来
-server { listen 443 ssl; server_name www.jokeme.top; add_header Strict-Transport-Security &amp;#34;max-age=31536000; includeSubDomains;preload&amp;#34; always; ssl_certificate /ssl/3355633_www.jokeme.top.pem; ssl_certificate_key /ssl/3355633_www.jokeme.top.key; ssl_session_timeout 5m; ssl_protocols TLSv1 TLSv1.1 TLSv1.2; ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:HIGH:!aNULL:!MD5:!RC4:!DHE; ssl_prefer_server_ciphers on; location / { root /usr/share/nginx/html; index index.html index.htm; proxy_pass http://www.jokeme.top:8080; } error_page 500 502 503 504 /50x.html; location = /50x.html { root /usr/share/nginx/html; } } server{ listen 80; server_name localhost; rewrite ^(.</description>
-    </item>
-    
-  </channel>
+    <channel>
+        <title>Shell on JokemeBlog</title>
+        <link>https://jokeme.top/tags/shell/</link>
+        <description>Recent content in Shell on JokemeBlog</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>en-us</language>
+        <lastBuildDate>Thu, 17 Jun 2021 22:49:29 +0000</lastBuildDate><atom:link href="https://jokeme.top/tags/shell/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>监控狗东商品价格并利用bark推送价格到手机上</title>
+        <link>https://jokeme.top/p/bark_jd_price/</link>
+        <pubDate>Thu, 17 Jun 2021 22:49:29 +0000</pubDate>
+        
+        <guid>https://jokeme.top/p/bark_jd_price/</guid>
+        <description>&lt;img src="https://cn.bing.com/th?id=OHR.LyonAstronomical_EN-CN6225991486_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post 监控狗东商品价格并利用bark推送价格到手机上" /&gt;&lt;h1 id=&#34;监控狗东商品价格并利用bark推送价格到手机上&#34;&gt;监控狗东商品价格并利用bark推送价格到手机上&lt;/h1&gt;
+&lt;p&gt;众所周知啊，狗东上面商品的价格经常在变动，有时候你在最贵的时候买下来了，那你就是冤大头了。除非你急着用。&lt;/p&gt;
+&lt;p&gt;先来说一下我的思路吧！&lt;/p&gt;
+&lt;p&gt;我一开始是想着在我的服务器上监控商品价格，然后每十分钟对比一下价格，再利用邮件来推送给我自己。这个想法是挺好的，奈何我利用&lt;strong&gt;postfix&lt;/strong&gt;来&lt;strong&gt;relay&lt;/strong&gt;邮件时我的outlook账号死活登陆不了，换qq邮箱，发邮件吧，妈的直接吞邮件。&lt;/p&gt;
+&lt;p&gt;既然邮件都不可以，我就想着用公众号吧，直接推送到我的微信，然后登陆我尘封好几年的公众号，嗯！用不了。&lt;/p&gt;
+&lt;p&gt;然后我就直接放弃了！好了文章结束！&lt;/p&gt;
+&lt;p&gt;哈哈哈哈，开玩笑的，然后我又想到了 &lt;strong&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/Finb/Bark&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;bark&lt;/a&gt;&lt;/strong&gt; ，开源免费的推送，还可以自己搭建自己的推送服务端！兄弟们！把安全好用打在公屏上！！！&lt;/p&gt;
+&lt;p&gt;好了！不废话了！&lt;/p&gt;
+&lt;h2 id=&#34;1-监控狗东商品价格&#34;&gt;1. 监控狗东商品价格&lt;/h2&gt;
+&lt;p&gt;其实这一部分很简单，调用API就可以了，别问我什么API，自己找吧！下面就是我找到的获取价格的API&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;
+&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
+&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;&lt;code&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
+&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;https://pe.3.cn/prices/mgets?skuids=商品ID
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id=&#34;2-编写shell脚本查询价格&#34;&gt;2. 编写shell脚本查询价格&lt;/h2&gt;
+&lt;p&gt;写shell脚本那不就是右手就行了嘛！都用不到左手！😄&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;
+&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
+&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;&lt;code&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 1
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 2
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 3
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 4
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 5
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 6
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 7
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 8
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 9
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;10
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;11
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;12
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;13
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;14
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;15
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;16
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
+&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#!/bin/bash
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;price&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;`&lt;/span&gt;curl https://pe.3.cn/prices/mgets&lt;span style=&#34;color:#ae81ff&#34;&gt;\?&lt;/span&gt;skuids&lt;span style=&#34;color:#ae81ff&#34;&gt;\=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;2066790&lt;/span&gt; 2&amp;gt;/dev/null | awk -F&lt;span style=&#34;color:#ae81ff&#34;&gt;\&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;{print $4}&amp;#39;&lt;/span&gt; | awk -F&lt;span style=&#34;color:#ae81ff&#34;&gt;\.&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;{print $1}&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;`&lt;/span&gt;
+dates&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;`&lt;/span&gt;date +&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;%Y-%m-%d_%H:%M:%S&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;`&lt;/span&gt;
+nslo&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;`&lt;/span&gt;tail -n &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; ~/price.log | awk &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;{print $2}&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;`&lt;/span&gt;
+printf &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;%s %s\n&amp;#34;&lt;/span&gt; $dates $price &amp;gt;&amp;gt; ~/price.log
+&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;[[&lt;/span&gt; $price -eq $nslo &lt;span style=&#34;color:#f92672&#34;&gt;]]&lt;/span&gt;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;then&lt;/span&gt;
+	echo &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;$dates&lt;span style=&#34;color:#e6db74&#34;&gt; 狗东居然还不降价！&amp;#34;&lt;/span&gt;
+	curl -k &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;https://api.jokeme.top/xyzxyzxyzxyzxyzxyz/当前价格&lt;/span&gt;$price&lt;span style=&#34;color:#e6db74&#34;&gt;/狗东居然还不降价?group=bark&amp;#34;&lt;/span&gt;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;elif&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;[[&lt;/span&gt; $price -gt $nslo &lt;span style=&#34;color:#f92672&#34;&gt;]]&lt;/span&gt;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;then&lt;/span&gt;
+	echo &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;狗东居然涨价？&amp;#34;&lt;/span&gt;
+	curl -k &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;https://api.jokeme.top/xyzxyzxyzxyzxyzxyz/当前价格&lt;/span&gt;$price&lt;span style=&#34;color:#e6db74&#34;&gt;/狗东居然涨价/?group=bark&amp;#34;&lt;/span&gt;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;else&lt;/span&gt;
+	curl -k &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;https://api.jokeme.top/xyzxyzxyzxyzxyzxyz/当前价格&lt;/span&gt;$price&lt;span style=&#34;color:#e6db74&#34;&gt;/狗东降价啦?group=bark&amp;#34;&lt;/span&gt;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;fi&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;接着为了定时执，只需要把这个脚步加入&lt;strong&gt;crontab&lt;/strong&gt;就可以了&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>定时备份hugo帖子</title>
+        <link>https://jokeme.top/p/backup_hugo_posts/</link>
+        <pubDate>Tue, 08 Jun 2021 23:12:18 +0000</pubDate>
+        
+        <guid>https://jokeme.top/p/backup_hugo_posts/</guid>
+        <description>&lt;img src="https://cn.bing.com/th?id=OHR.AztecNewYear_EN-CN5467528764_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post 定时备份hugo帖子" /&gt;&lt;h1 id=&#34;定时备份hugo帖子&#34;&gt;定时备份hugo帖子&lt;/h1&gt;
+&lt;p&gt;今天出差,在高铁上实在是太无聊,信号也不怎么好,我就写了个每天晚上备份&lt;strong&gt;Hugo&lt;/strong&gt;文章的脚本&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;
+&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
+&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;&lt;code&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 1
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 2
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 3
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 4
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 5
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 6
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 7
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 8
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 9
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;10
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;11
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;12
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
+&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#!/bin/bash
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;datee&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;`&lt;/span&gt;date +%Y-%m-%d&lt;span style=&#34;color:#e6db74&#34;&gt;`&lt;/span&gt;
+bn&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;`&lt;/span&gt;docker ps | egrep hugo&lt;span style=&#34;color:#e6db74&#34;&gt;`&lt;/span&gt;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;[[&lt;/span&gt; -n $bn &lt;span style=&#34;color:#f92672&#34;&gt;]]&lt;/span&gt;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;then&lt;/span&gt;
+        mkdir ~/udisk/bkhugo/$datee
+        docker cp hugo:/root/pblog/content ~/udisk/bkhugo/$datee/
+        &lt;span style=&#34;color:#75715e&#34;&gt;#记得换成你自己的路径&lt;/span&gt;
+        echo -e &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;\033[49;32mBackup posts successfully\033[0m&amp;#34;&lt;/span&gt;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;else&lt;/span&gt;
+        echo -e &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;\033[49;31mService hugo is not running\033[0m&amp;#34;&lt;/span&gt;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;fi&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;也没有啥好说的,都是一些简单的命令组合而成,然后再利用&lt;strong&gt;crontab&lt;/strong&gt;每天00:00执行&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>一个有意思的shell变量问题</title>
+        <link>https://jokeme.top/p/funny_space_in_shell_script/</link>
+        <pubDate>Sun, 23 May 2021 02:33:06 +0000</pubDate>
+        
+        <guid>https://jokeme.top/p/funny_space_in_shell_script/</guid>
+        <description>&lt;img src="https://cn.bing.com/th?id=OHR.RollingHills_EN-CN1321221405_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post 一个有意思的shell变量问题" /&gt;&lt;h1 id=&#34;一个有意思的shell变量问题&#34;&gt;一个有意思的shell变量问题&lt;/h1&gt;
+&lt;p&gt;今天在上班时遇到了一个批量解压zip的需求，由于几十个压缩包的名称一样，chrome下载下来以后就自动给加了编号。并且解压后的文件名也是一样的，只不过里面的文件不一样。&lt;/p&gt;
+&lt;p&gt;虽然在Windows下有批量解压缩工具，但是我没有安装。我电脑上只有&lt;a class=&#34;link&#34; href=&#34;https://sparanoid.com/lab/7z/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;7zip&lt;/a&gt;。既然是批量处理文件，那我就想到了用shell来做这件事。&lt;/p&gt;
+&lt;p&gt;首先！我遇到的问题就是！文件名里面有空格，类似**&amp;ldquo;abc xyz.zip&amp;rdquo;**一个文件名被shell捕获成变量以后，在for循环里面会被错误的解析成两个不同的变量，这就导致了代码逻辑上没有问题。你不亲自调试一下，就不知道为什么会报错。&lt;/p&gt;
+&lt;p&gt;为此我百度了良久，找到了以下两种解决方案&lt;/p&gt;
+&lt;h3 id=&#34;1-解决方案一修改ifs&#34;&gt;1. 解决方案一：修改IFS&lt;/h3&gt;
+&lt;p&gt;我百思不得其解，为什么这么多一毛一样的文章都推荐使用IFS，而且只修改了IFS，而且用完还没有给修改回来。这不是给自己挖坑吗&lt;/p&gt;
+&lt;p&gt;IFS的默认值为空白字符（换行符、制表符或者空格）。如果你手动的修改它为别的字符，那后续的代码也就会以该字符为定界符。只能说是简单粗暴，贼鸡儿好用！&lt;/p&gt;
+&lt;h3 id=&#34;2-解决方案二修改文件名&#34;&gt;2. 解决方案二：修改文件名&lt;/h3&gt;
+&lt;p&gt;一开始我看到这种方案还很疑惑！我尼玛要是有那修改文件名的功夫我还写代码干啥，哈哈哈哈。然后我看了一下思路，嗯！还是有点道理的。原文见&lt;a class=&#34;link&#34; href=&#34;https://www.jb51.net/article/50640.htm&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;脚本之家&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;大概思路我就放在下面的代码里面讲解吧！&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;
+&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
+&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;&lt;code&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;1
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;2
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;3
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;4
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;5
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;6
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;7
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;8
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
+&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;allzip&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;`&lt;/span&gt;ls | grep zip | sed &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;s/ (/(/g&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;`&lt;/span&gt;	&lt;span style=&#34;color:#75715e&#34;&gt;#先用sed把&amp;#39; (&amp;#39;替换成&amp;#39;(&amp;#39;保存到list里面&lt;/span&gt;
+echo $allzip	&lt;span style=&#34;color:#75715e&#34;&gt;#echo一下,让自己放心一点&lt;/span&gt;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; zip in $allzip
+&lt;span style=&#34;color:#66d9ef&#34;&gt;do&lt;/span&gt;
+     filen&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;`&lt;/span&gt;echo $zip | sed &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;s/(/ (/g&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;`&lt;/span&gt;	&lt;span style=&#34;color:#75715e&#34;&gt;#把存起来的没有空格的变量还原成真正的有空格的文件名&lt;/span&gt;
+     mv &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;$filen&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt; $zip	&lt;span style=&#34;color:#75715e&#34;&gt;#拿到了真正的文件名,为了后续方便,直接把有空格的文件修改为没有空格的&lt;/span&gt;
+     unzip $zip	&lt;span style=&#34;color:#75715e&#34;&gt;#顺带给它解压一下&lt;/span&gt;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;done&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;好了就是这么的简单，也不用修改什么IFS。虽然有一丢丢的绕，但是也是非常容易理解的。你们也看出来了我个人是偏向于第二种方案的，因为修改IFS万一你忘记给改回去，那你下面还有字符串类分割的操作就会度过一段非常蛋疼的调试时光。&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>Nginx目录美化</title>
+        <link>https://jokeme.top/p/nginx_beautify/</link>
+        <pubDate>Tue, 23 Mar 2021 21:33:56 +0000</pubDate>
+        
+        <guid>https://jokeme.top/p/nginx_beautify/</guid>
+        <description>&lt;img src="https://cn.bing.com/th?id=OHR.WWDLions_EN-CN5288663061_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post Nginx目录美化" /&gt;&lt;h1 id=&#34;nginx目录美化&#34;&gt;Nginx目录美化&lt;/h1&gt;
+&lt;p&gt;我们大家都知道啊! nginx是一个高性能的Web服务器,用于分享文件也是一个非常不错的选择,但是由于Nginx默认的目录太丑了, 都不好意思拿出手。这就有了本篇文章。&lt;/p&gt;
+&lt;p&gt;先来说一下我的环境: &lt;code&gt;Ubuntu 20.04.1&lt;/code&gt; ，&lt;code&gt;Nginx 1.18&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id=&#34;1-添加indexhtml至主机根目录&#34;&gt;1. 添加Index.html至主机根目录&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;
+&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
+&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;&lt;code&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
+&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;nano index.html
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;内容如下&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;
+&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
+&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;&lt;code&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;  1
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;  2
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;  3
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;  4
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;  5
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;  6
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;  7
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;  8
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;  9
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 10
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 11
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 12
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 13
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 14
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 15
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 16
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 17
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 18
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 19
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 20
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 21
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 22
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 23
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 24
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 25
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 26
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 27
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 28
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 29
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 30
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 31
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 32
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 33
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 34
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 35
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 36
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 37
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 38
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 39
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 40
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 41
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 42
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 43
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 44
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 45
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 46
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 47
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 48
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 49
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 50
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 51
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 52
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 53
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 54
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 55
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 56
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 57
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 58
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 59
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 60
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 61
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 62
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 63
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 64
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 65
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 66
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 67
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 68
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 69
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 70
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 71
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 72
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 73
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 74
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 75
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 76
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 77
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 78
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 79
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 80
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 81
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 82
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 83
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 84
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 85
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 86
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 87
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 88
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 89
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 90
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 91
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 92
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 93
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 94
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 95
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 96
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 97
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 98
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 99
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;100
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;101
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;102
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;103
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;104
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;105
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;106
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;107
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;108
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;109
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;110
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;111
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;112
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;113
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;114
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;115
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;116
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;117
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;118
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;119
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;120
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;121
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;122
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;123
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;124
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;125
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;126
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;127
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;128
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;129
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;130
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;131
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;132
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;133
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;134
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;135
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;136
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;137
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;138
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;139
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;140
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;141
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;142
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;143
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;144
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;145
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;146
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;147
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;148
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;149
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;150
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;151
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;152
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;153
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;154
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;155
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;156
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;157
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;158
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;159
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;160
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;161
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;162
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;163
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;164
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;165
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;166
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;167
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;168
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;169
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;170
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;171
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;172
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;173
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;174
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;175
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;176
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;177
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;178
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;179
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;180
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;181
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;182
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;183
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;184
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;185
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;186
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;187
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;188
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;189
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;190
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;191
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;192
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;193
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;194
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;195
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;196
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;197
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;198
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;199
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;200
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;201
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;202
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;203
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;204
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;205
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;206
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;207
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;208
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;209
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;210
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;211
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;212
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;213
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;214
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;215
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;216
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;217
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;218
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;219
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;220
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;221
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;222
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;223
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;224
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;225
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;226
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;227
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;228
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;229
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;230
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;231
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;232
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;233
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;234
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;235
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;236
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;237
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;238
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;239
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;240
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;241
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;242
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;243
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;244
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;245
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;246
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;247
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;248
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;249
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;250
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;251
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;252
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;253
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;254
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;255
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;256
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;257
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;258
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;259
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;260
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;261
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;262
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;263
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;264
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;265
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;266
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;267
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;268
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;269
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;270
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;271
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;272
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;273
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;274
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;275
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;276
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;277
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;278
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;279
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;280
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;281
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;282
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;283
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;284
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;285
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;286
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;287
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;288
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;289
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;290
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;291
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;292
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;293
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;294
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;295
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;296
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;297
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;298
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;299
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;300
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;301
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;302
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;303
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;304
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;305
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;306
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;307
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;308
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;309
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;310
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;311
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;312
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;313
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;314
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
+&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&amp;lt;!-- autoindex.html 21.02, see https://phus.lu --&amp;gt;
+&amp;lt;script&amp;gt;
+!function(){
+	var website_title = &amp;#39;&amp;#39;
+	var datetime_format = &amp;#39;%Y-%b-%d %H:%M&amp;#39;
+	var show_readme_md = true
+	var enable_footer_js = true
+	var max_name_length = 20
+
+	var dom = {
+		element: null,
+		get: function (o) {
+			var obj = Object.create(this)
+			obj.element = (typeof o == &amp;#34;object&amp;#34;) ? o : document.createElement(o)
+			return obj
+		},
+		add: function (o) {
+			var obj = dom.get(o)
+			this.element.appendChild(obj.element)
+			return obj
+		},
+		text: function (t) {
+			this.element.appendChild(document.createTextNode(t))
+			return this
+		},
+		html: function (s) {
+			this.element.innerHTML = s
+			return this
+		},
+		attr: function (k, v) {
+			this.element.setAttribute(k, v)
+			return this
+		}
+	}
+
+	head = dom.get(document.head)
+	head.add(&amp;#39;meta&amp;#39;).attr(&amp;#39;charset&amp;#39;, &amp;#39;utf-8&amp;#39;)
+	head.add(&amp;#39;meta&amp;#39;).attr(&amp;#39;name&amp;#39;, &amp;#39;viewport&amp;#39;).attr(&amp;#39;content&amp;#39;, &amp;#39;width=device-width,initial-scale=1&amp;#39;)
+
+	if (!document.title) {
+		document.write([&amp;#34;&amp;lt;div class=\&amp;#34;container\&amp;#34;&amp;gt;&amp;#34;,
+		&amp;#34;&amp;lt;h3&amp;gt;nginx.conf&amp;lt;/h3&amp;gt;&amp;#34;,
+		&amp;#34;&amp;lt;textarea rows=8 cols=50&amp;gt;&amp;#34;,
+		&amp;#34;# download autoindex.html to /wwwroot/&amp;#34;,
+		&amp;#34;location ~ ^(.*)/$ {&amp;#34;,
+		&amp;#34;    charset utf-8;&amp;#34;,
+		&amp;#34;    autoindex on;&amp;#34;,
+		&amp;#34;    autoindex_localtime on;&amp;#34;,
+		&amp;#34;    autoindex_exact_size off;&amp;#34;,
+		&amp;#34;    add_after_body /autoindex.html;&amp;#34;,
+		&amp;#34;}&amp;#34;,
+		&amp;#34;&amp;lt;/textarea&amp;gt;&amp;#34;,
+		&amp;#34;&amp;lt;/div&amp;gt;&amp;#34;].join(&amp;#34;\n&amp;#34;))
+		return
+	}
+
+	var bodylines = document.body.innerHTML.split(&amp;#39;\n&amp;#39;)
+	document.body.innerHTML = &amp;#39;&amp;#39;
+
+	var titlehtml = document.title.replace(/\/$/, &amp;#39;&amp;#39;).split(&amp;#39;/&amp;#39;).slice(1).reduce(function(acc, v, i, a) {
+		return acc + &amp;#39;&amp;lt;a href=&amp;#34;/&amp;#39; + a.slice(0, i+1).join(&amp;#39;/&amp;#39;) + &amp;#39;/&amp;#34;&amp;gt;&amp;#39; + v + &amp;#39;&amp;lt;/a&amp;gt;/&amp;#39;
+	}, &amp;#39;&amp;lt;a href=&amp;#34;/&amp;#34;&amp;gt;Index&amp;lt;/a&amp;gt; of /&amp;#39;)
+	if (website_title) {
+		document.title = website_title + &amp;#39; - &amp;#39; + document.title
+	}
+	head.add(&amp;#39;meta&amp;#39;).attr(&amp;#39;name&amp;#39;, &amp;#39;description&amp;#39;).attr(&amp;#39;content&amp;#39;, document.title)
+
+	div = dom.get(&amp;#39;div&amp;#39;).attr(&amp;#39;class&amp;#39;, &amp;#39;container&amp;#39;)
+	div.add(&amp;#39;table&amp;#39;).add(&amp;#39;tbody&amp;#39;).add(&amp;#39;tr&amp;#39;).add(&amp;#39;th&amp;#39;).html(titlehtml)
+	tbody = div.add(&amp;#39;table&amp;#39;).attr(&amp;#39;class&amp;#39;, &amp;#39;table-hover&amp;#39;).add(&amp;#39;tbody&amp;#39;)
+
+	names = [&amp;#39;Name&amp;#39;, &amp;#39;Date&amp;#39;, &amp;#39;Size&amp;#39;]
+	thead = tbody.add(&amp;#39;tr&amp;#39;)
+	for (i = 0; i &amp;lt; names.length; i++)
+		thead.add(&amp;#39;td&amp;#39;).add(&amp;#39;a&amp;#39;).attr(&amp;#39;href&amp;#39;, &amp;#39;javascript:sortby(&amp;#39;+i+&amp;#39;)&amp;#39;).attr(&amp;#39;class&amp;#39;, &amp;#39;octicon arrow-up&amp;#39;).text(names[i]);
+
+	var insert = function(filename, datetime, size) {
+		if (/\/$/.test(filename)) {
+			css = &amp;#39;file-directory&amp;#39;
+			size = &amp;#39;&amp;#39;
+		} else if (/\.(zip|7z|bz2|gz|tar|tgz|tbz2|xz|cab)$/.test(filename)) {
+			css = &amp;#39;file-zip&amp;#39;
+		} else if (/\.(py|js|php|pl|rb|sh|bash|lua|sql|go|rs|java|c|h|cpp|cxx|hpp|css|html|)$/.test(filename)) {
+			css = &amp;#39;file-code&amp;#39;
+		} else if (/\.(jpg|png|bmp|gif|ico|webp)$/.test(filename)) {
+			css = &amp;#39;file-media&amp;#39;
+		} else if (/\.(flv|mp4|mkv|avi|mkv|vp9|m3u8)$/.test(filename)) {
+			css = &amp;#39;device-camera-video&amp;#39;
+		} else {
+			css = &amp;#39;file&amp;#39;
+		}
+
+		displayname = decodeURIComponent(filename.replace(/\/$/, &amp;#39;&amp;#39;))
+		if (displayname.length &amp;gt; max_name_length)
+			displayname = displayname.substring(0, max_name_length-3) + &amp;#39;..&amp;gt;&amp;#39;;
+
+		if (!isNaN(Date.parse(datetime))) {
+			d = new Date(datetime)
+			pad = function (s) {return s &amp;lt; 10 ? &amp;#39;0&amp;#39; + s : s}
+			mon = function (m) {return [&amp;#39;01&amp;#39;,&amp;#39;02&amp;#39;,&amp;#39;03&amp;#39;,&amp;#39;04&amp;#39;,&amp;#39;05&amp;#39;,&amp;#39;06&amp;#39;,&amp;#39;07&amp;#39;,&amp;#39;08&amp;#39;,&amp;#39;09&amp;#39;,&amp;#39;10&amp;#39;,&amp;#39;11&amp;#39;,&amp;#39;12&amp;#39;][m]}
+			datetime = datetime_format
+					.replace(&amp;#39;%Y&amp;#39;, d.getFullYear())
+					.replace(&amp;#39;%m&amp;#39;, pad(d.getMonth()+1))
+					.replace(&amp;#39;%d&amp;#39;, pad(d.getDate()))
+					.replace(&amp;#39;%H&amp;#39;, pad(d.getHours()))
+					.replace(&amp;#39;%M&amp;#39;, pad(d.getMinutes()))
+					.replace(&amp;#39;%S&amp;#39;, pad(d.getSeconds()))
+					.replace(&amp;#39;%b&amp;#39;, mon(d.getMonth()))
+		}
+
+		tr = tbody.add(&amp;#39;tr&amp;#39;)
+		tr.add(&amp;#39;td&amp;#39;).add(&amp;#39;a&amp;#39;).attr(&amp;#39;class&amp;#39;, &amp;#39;octicon &amp;#39; + css).attr(&amp;#39;href&amp;#39;, filename).text(displayname)
+		tr.add(&amp;#39;td&amp;#39;).text(datetime)
+		tr.add(&amp;#39;td&amp;#39;).text(size)
+	}
+
+	var readme = &amp;#39;&amp;#39;, footer = &amp;#39;&amp;#39;
+	insert(&amp;#39;../&amp;#39;, &amp;#39;&amp;#39;, &amp;#39;-&amp;#39;)
+	for (var i in bodylines) {
+		if (m = /\s*&amp;lt;a href=&amp;#34;(.+?)&amp;#34;&amp;gt;(.+?)&amp;lt;\/a&amp;gt;\s+(\S+)\s+(\S+)\s+(\S+)\s*/.exec(bodylines[i])) {
+			filename = m[1]
+			datetime = m[3] + &amp;#39; &amp;#39; + m[4]
+			size = m[5]
+			insert(filename, datetime, size)
+			switch (filename.toLowerCase()) {
+			case &amp;#39;readme.md&amp;#39;:
+				readme = filename
+				break
+			case &amp;#39;footer.js&amp;#39;:
+				footer = filename
+				break
+			}
+		}
+	}
+
+	document.body.appendChild(div.element)
+
+	if (show_readme_md &amp;amp;&amp;amp; readme !== &amp;#39;&amp;#39;) {
+		tbody = div.add(&amp;#39;table&amp;#39;).add(&amp;#39;tbody&amp;#39;);
+		tbody.add(&amp;#39;tr&amp;#39;).add(&amp;#39;th&amp;#39;).attr(&amp;#39;class&amp;#39;, &amp;#39;octicon octicon-book&amp;#39;).text(readme)
+		tbody.add(&amp;#39;tr&amp;#39;).add(&amp;#39;td&amp;#39;).add(&amp;#39;div&amp;#39;).attr(&amp;#39;id&amp;#39;, &amp;#39;readme&amp;#39;).attr(&amp;#39;class&amp;#39;, &amp;#39;markdown-body&amp;#39;)
+		xhr = new XMLHttpRequest()
+		xhr.open(&amp;#39;GET&amp;#39;, location.pathname.replace(/[^/]+$/, &amp;#39;&amp;#39;)+readme, true)
+		xhr.onload = function() {
+			if (xhr.status &amp;lt; 200 &amp;amp;&amp;amp; xhr.status &amp;gt;= 400)
+				return
+			wait = function (name, callback) {
+				var interval = 10; // ms
+				window.setTimeout(function() {
+					if (window[name]) {
+						callback(window[name])
+					} else {
+						window.setTimeout(arguments.callee, interval)
+					}
+				}, interval)
+			}
+			wait(&amp;#39;marked&amp;#39;, function() {
+				document.getElementById(&amp;#34;readme&amp;#34;).innerHTML = marked(xhr.responseText)
+			})
+		}
+		xhr.send()
+
+		div.add(&amp;#39;script&amp;#39;).attr(&amp;#39;src&amp;#39;, &amp;#39;https://cdn.staticfile.org/marked/0.7.0/marked.min.js&amp;#39;)
+		div.add(&amp;#39;link&amp;#39;).attr(&amp;#39;rel&amp;#39;, &amp;#39;stylesheet&amp;#39;).attr(&amp;#39;href&amp;#39;, &amp;#39;https://cdn.staticfile.org/github-markdown-css/3.0.1/github-markdown.min.css&amp;#39;)
+	}
+
+	if (enable_footer_js &amp;amp;&amp;amp; footer !== &amp;#39;&amp;#39;) {
+		div.add(&amp;#39;script&amp;#39;).attr(&amp;#39;src&amp;#39;, footer)
+	}
+}()
+
+function sortby(index) {
+	rows = document.getElementsByClassName(&amp;#39;table-hover&amp;#39;)[0].rows
+	link = rows[0].getElementsByTagName(&amp;#39;a&amp;#39;)[index]
+	arrow = link.className == &amp;#39;octicon arrow-down&amp;#39; ? 1 : -1
+	link.className = &amp;#39;octicon arrow-&amp;#39; + (arrow == 1 ? &amp;#39;up&amp;#39; : &amp;#39;down&amp;#39;);
+	[].slice.call(rows).slice(2).map(function (e, i) {
+		type = e.getElementsByTagName(&amp;#39;a&amp;#39;)[0].className == &amp;#39;octicon file-directory&amp;#39; ? 0 : 1
+		text = e.getElementsByTagName(&amp;#39;td&amp;#39;)[index].innerText
+		if (index === 0) {
+			value = text
+		} else if (index === 1) {
+			value = new Date(text).getTime()
+		} else if (index === 2) {
+			m = {&amp;#39;G&amp;#39;:1024*1024*1024, &amp;#39;M&amp;#39;:1024*1024, &amp;#39;K&amp;#39;:1024}
+			value = parseInt(text || 0) * (m[text[text.search(/[KMG]B?$/)]] || 1)
+		}
+		return {type: type, value: value, index: i, html: e.innerHTML}
+	}).sort(function (a, b) {
+		if (a.type != b.type)
+			return a.type - b.type
+		if (a.value != b.value)
+			return a.value &amp;lt; b.value ? -arrow : arrow
+		return a.index &amp;lt; b.index ? -arrow : arrow
+	}).forEach(function (e, i) {
+		rows[2+i].innerHTML = e.html
+	})
+}
+&amp;lt;/script&amp;gt;
+
+&amp;lt;style&amp;gt;
+body {
+	margin: 0;
+	font-family: &amp;#34;ubuntu&amp;#34;, &amp;#34;Tahoma&amp;#34;, &amp;#34;Microsoft YaHei&amp;#34;, Arial, Serif;
+}
+.container {
+	padding-right: 15px;
+	padding-left: 15px;
+	margin-right: auto;
+	margin-left: auto;
+}
+@media (min-width: 768px) {
+	.container {
+		max-width: 750px;
+	}
+}
+@media (min-width: 992px) {
+	.container {
+		max-width: 970px;
+	}
+}
+@media (min-width: 1200px) {
+	.container {
+		max-width: 1170px;
+	}
+}
+table {
+	width: 100%;
+	margin-bottom: 20px;
+	border: 1px solid #ddd;
+	border-collapse: collapse;
+}
+table th {
+	font-size: 14px;
+}
+table tr {
+	border: 1px solid #ddd;
+}
+table tr:nth-child(odd) {
+	background: #dfdfdf
+}
+table th, table td {
+	border: 1px solid #ddd;
+	line-height: 25px;
+    width:auto;
+	text-align: left;
+}
+a {
+	color: #369;
+	text-decoration: none;
+}
+a:hover, a:focus {
+	color: #2a6496;
+	text-decoration: underline;
+}
+table.table-hover &amp;gt; tbody &amp;gt; tr:hover &amp;gt; td,
+table.table-hover &amp;gt; tbody &amp;gt; tr:hover &amp;gt; th {
+	background-color: #f5f5f5;
+}
+.markdown-body {
+	float: left;
+	font-family: &amp;#34;ubuntu&amp;#34;, &amp;#34;Tahoma&amp;#34;, &amp;#34;Microsoft YaHei&amp;#34;, Arial, Serif;
+}
+/* octicons */
+.octicon {
+	background-position: center left;
+	background-repeat: no-repeat;
+	padding-left: 25px;
+}
+.file {
+	background-image: url(&amp;#34;data:image/png;base64,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&amp;#34;);
+	background-repeat: no-repeat;
+	background-size: 20px 20px;
+}
+.file-directory {
+	background-image: url(&amp;#34;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAYAAADDPmHLAAAFWklEQVR4Xu2ZS2icZRiFzztJ01yMpFYTTU0Fo9GQaVIxShW84i1Jc1Ek4Mp0VxDdKbpSwUVFBLt0VQpu6qK2XqDaagVF0aJIOlWqCKVFoa02wbTNkHHmF4Wu1PzTzvtl5sx3up3O+c/7nIc/pTHoT9QELOrrdTwkQOQSSAAJEDmByM/XG0ACRE4g8vP1BpAAkROI/Hy9ASRA5AQiP19vAAkQOYHIz9cbQAJETiDy8/UGkACRE4j8fL0BJEDkBCI/X28ACRA5gcjPv6g3QLJ3cAKl4vWAddQktwzOIbEjmFv4xLYcy9dkxxorVZYAye6hPmSKbwK4t8b6/1+dBSR42R7NvU7St2o1yxNgb3YRCZqr1vJSH5zBuE3k3r/Ur8fwvVQBkneyL8HwIimM92wqN0HafUVqpwuwZ2AHYDMr0ibEQxoyt9r47LchoushswwBsgeJfvb/exPDczaZe60exgpxQwQC2D6bPDwSAl49ZNa/AEABQK9N5U7Uw2DeN8QgAGDJjE0e2ekNrx7y4hBgTf9J9D/5Qz0MtuwNCU4jwT50nd9pNl0s5944BGi6HLjlWSCzqhwm/H/HMI9SstWuHt+Vdky6AO8OH0IpP5wWVPOf928BOm6q+ZqOBRMsNV5pPY+cWS4zXYAP7/8Fi6e6HYtVJ6r7LuC6seo8u1pPNXvBOse2VSbAgdHzOHu8pVo3uD23rRsYfMYtjiRov3VtfqgyAT4eXcTCcb7fA/zX1RueAi7rIdnOoabhU+vcfJ8EuEBg/Qiw7h4HsiQRrgI0JUBrAjSXgAwJgNhqNrQDrUNA+53Aqk7ATQAca0Z7KTac3PeunQbab3f4EXDwwTzaTqzmphFp+55XPrNrHr+7sn8DfL6pgKb5xkgRcp/d8fBP1re9rzIBvhwsoWEp9f8LuEnVafuW3t9swwdXVSbAV9kS7E8JwOhI07XztvHAGgnAOJ5HZwngQZE4QwIQj+dRXQJ4UCTOkADE43lUlwAeFIkzJADxeB7VJYAHReIMFwG+3lgE8vr9H6MHLgJ8s6mAon4XwLg/JADlbH6lJYAfS8okCUA5m19pCeDHkjJJAlDO5ldaAvixpEySAJSz+ZWWAH4sKZMkAOVsfqUlgB9LyiQJQDmbX2kJ4MeSMkkCUM7mV1oC+LGkTJIAlLP5lZYAfiwpkyQA5Wx+pSWAH0vKJAlAOZtfaQngx5IySQJQzuZXWgL4saRMkgCUs/mVlgB+LCmTJADlbH6lJYAfS8okCUA5m19pCeDHkjJJAlDO5ldaAvixpEySAJSz+ZWWAH4sKZMkAOVsfqUlgB9LyiQJQDmbX2kJ4MeSMkkCUM7mV1oC+LGkTJIAlLP5lZYAfiwpkyQA5Wx+pSWAH0vKJAlAOZtfaQngx5IySQJQzuZXWgL4saRMkgCUs/mVlgB+LCmTJADlbH6lJYAfS8okCUA5m19pCeDHkjLJR4A7CijONVICiL306vVzNvTRFcthsDRGyeHHfsfi98uGpGXo8yoRaBs+agNv3VyZAD8+vQPz+2eqdIIeWwmBtVPPW++2VysS4O8vJ7NjZ5H/ua2SLvruChNoHfrVsrvWpT019UfAPwKcevsGnN69B+e+G0gL1Oc1QKD9ti/Q+MSI3Tj6R1qbsgS4EJKcfKMLZ2a3olToSQvW51Ug0NByFMUHttvA9FK5T78oAcoN1d/jISABeLYK0lQCBMHKEyoBeLYK0lQCBMHKEyoBeLYK0lQCBMHKEyoBeLYK0lQCBMHKEyoBeLYK0lQCBMHKEyoBeLYK0lQCBMHKEyoBeLYK0lQCBMHKEyoBeLYK0lQCBMHKE/oXjq52n+wTU1kAAAAASUVORK5CYII=&amp;#34;);
+	background-repeat: no-repeat;
+	background-size: 20px 20px;
+}
+.file-zip {
+	background-image: url(&amp;#34;data:image/png;base64,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&amp;#34;);
+	background-repeat: no-repeat;
+	background-size: 20px 20px;
+}
+.file-code {
+	background-image: url(&amp;#34;data:image/png;base64,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&amp;#34;);
+	background-repeat: no-repeat;
+	background-size: 20px 20px;
+}
+.file-media {
+	background-image: url(&amp;#34;data:image/png;base64,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&amp;#34;);
+	background-repeat: no-repeat;
+	background-size: 20px 20px;
+}
+.device-camera-video {
+	background: url(&amp;#34;data:image/png;base64,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&amp;#34;);
+	background-repeat: no-repeat;
+	background-size: 20px 20px;
+}
+.octicon-book {
+	padding-left: 20px;
+	background-image: url(&amp;#34;data:image/svg+xml;charset=utf8,%3Csvg xmlns=&amp;#39;http://www.w3.org/2000/svg&amp;#39; width=&amp;#39;16&amp;#39; height=&amp;#39;16&amp;#39; viewBox=&amp;#39;0 0 16 16&amp;#39;%3E%3Cpath d=&amp;#39;M3,5 L7,5 L7,6 L3,6 L3,5 L3,5 Z M3,8 L7,8 L7,7 L3,7 L3,8 L3,8 Z M3,10 L7,10 L7,9 L3,9 L3,10 L3,10 Z M14,5 L10,5 L10,6 L14,6 L14,5 L14,5 Z M14,7 L10,7 L10,8 L14,8 L14,7 L14,7 Z M14,9 L10,9 L10,10 L14,10 L14,9 L14,9 Z M16,3 L16,12 C16,12.55 15.55,13 15,13 L9.5,13 L8.5,14 L7.5,13 L2,13 C1.45,13 1,12.55 1,12 L1,3 C1,2.45 1.45,2 2,2 L7.5,2 L8.5,3 L9.5,2 L15,2 C15.55,2 16,2.45 16,3 L16,3 Z M8,3.5 L7.5,3 L2,3 L2,12 L8,12 L8,3.5 L8,3.5 Z M15,3 L9.5,3 L9,3.5 L9,12 L15,12 L15,3 L15,3 Z&amp;#39; /%3E%3C/svg%3E&amp;#34;);
+}
+.arrow-down {
+	font-weight: bold;
+	text-decoration: none !important;
+	background-image: url(&amp;#34;data:image/svg+xml;charset=utf8,%3Csvg xmlns=&amp;#39;http://www.w3.org/2000/svg&amp;#39; width=&amp;#39;10&amp;#39; height=&amp;#39;16&amp;#39; viewBox=&amp;#39;0 0 10 16&amp;#39;%3E%3Cpolygon id=&amp;#39;Shape&amp;#39; points=&amp;#39;7 7 7 3 3 3 3 7 0 7 5 13 10 7&amp;#39;%3E%3C/polygon%3E%3C/svg%3E&amp;#34;);
+}
+.arrow-up {
+	font-weight: bold;
+	text-decoration: none !important;
+	background-image: url(&amp;#34;data:image/svg+xml;charset=utf8,%3Csvg xmlns=&amp;#39;http://www.w3.org/2000/svg&amp;#39; width=&amp;#39;10&amp;#39; height=&amp;#39;16&amp;#39; viewBox=&amp;#39;0 0 10 16&amp;#39;%3E%3Cpolygon id=&amp;#39;Shape&amp;#39; points=&amp;#39;5 3 0 9 3 9 3 13 7 13 7 9 10 9&amp;#39;%3E%3C/polygon%3E%3C/svg%3E&amp;#34;);
+}
+&amp;lt;/style&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id=&#34;2-编辑nginx里的主机配置&#34;&gt;2. 编辑Nginx里的主机配置&lt;/h2&gt;
+&lt;p&gt;nginx 配置如下&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;
+&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
+&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;&lt;code&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;1
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;2
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;3
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;4
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;5
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;6
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;7
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
+&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;location ~ ^(.*)/$ {
+    charset utf-8;
+    autoindex on;
+    autoindex_localtime on;
+    autoindex_exact_size off;
+    add_after_body /autoindex.html;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id=&#34;3-重启nginx&#34;&gt;3. 重启Nginx&lt;/h2&gt;
+&lt;p&gt;这个时候你就会发现默认的目录已经变好看了一丢丢，当然你可以基于这些代码继续更改。直到你满意为止。&lt;/p&gt;
+&lt;p&gt;本文参考 ：&lt;a class=&#34;link&#34; href=&#34;https://www.91yunbbs.com/discussion/441/autoindex-html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt; &lt;strong&gt;91yun论坛&lt;/strong&gt;&lt;/a&gt; 	侵联删&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>记录最近捯饬Linux的收获</title>
+        <link>https://jokeme.top/p/linux_reward/</link>
+        <pubDate>Sun, 21 Mar 2021 01:25:43 +0000</pubDate>
+        
+        <guid>https://jokeme.top/p/linux_reward/</guid>
+        <description>&lt;img src="https://cn.bing.com/th?id=OHR.BlueTitDaffs_EN-CN2615365443_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post 记录最近捯饬Linux的收获" /&gt;&lt;h1 id=&#34;记录最近捯饬linux的收获&#34;&gt;记录最近捯饬Linux的收获&lt;/h1&gt;
+&lt;p&gt;虽然最近在准备专升本考试吧，但是也没有认真的复习，最近还是天天玩Linux，在这里记录一下。&lt;/p&gt;
+&lt;h2 id=&#34;1-windows-terminal设置&#34;&gt;1. Windows Terminal设置&lt;/h2&gt;
+&lt;p&gt;如果你关注IT圈的话，你一定知道微软在&lt;strong&gt;Github&lt;/strong&gt;开源了新的&lt;strong&gt;Terminal&lt;/strong&gt;，并且这是一个颜值高,用着爽的全新版本,支持&lt;strong&gt;Unicode&lt;/strong&gt;。这些都是后话，我要说的是&lt;strong&gt;WSL&lt;/strong&gt;和&lt;strong&gt;Terminal&lt;/strong&gt;相关的设置。因为&lt;strong&gt;Terminal&lt;/strong&gt;打开&lt;strong&gt;WSL&lt;/strong&gt;默认的路径是该用户的在&lt;strong&gt;Windows&lt;/strong&gt;下的家目录，而此时你就需要修改&lt;code&gt;setting.json&lt;/code&gt;对应位置添加以下配置：&lt;code&gt;&amp;quot;startingDirectory&amp;quot;: &amp;quot;//wsl$/Ubuntu-18.04/home/frelon&amp;quot;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;如果你还没有用过&lt;a class=&#34;link&#34; href=&#34;https://github.com/microsoft/terminal/releases&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;&lt;strong&gt;Windows Terminal&lt;/strong&gt;&lt;/a&gt;那你可以先看看这个&lt;a class=&#34;link&#34; href=&#34;https://docs.microsoft.com/zh-cn/windows/terminal/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Windows Terminal的简介&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;2-aria2下载&#34;&gt;2. aria2下载&lt;/h2&gt;
+&lt;p&gt;众所周知，&lt;strong&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/aria2/aria2/releases/tag/release-1.35.0&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;aria2&lt;/a&gt;&lt;/strong&gt; 是一款非常好用的一款下载工具，并且它开源，体积小，运行效率高等。什么？你没有听说过？那你总听说过&lt;strong&gt;Motrix&lt;/strong&gt;吧！什么你还没有听说过？那你一定知道&lt;strong&gt;PanDown&lt;/strong&gt;吧？没错这款伟大的软件就是基于&lt;strong&gt;aria2&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;aria2本身只是命令行工具，所以我们可以在命令行里安装它。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;
+&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
+&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;&lt;code&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
+&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;sudo apt install aira2
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;如果你只是简简单单的下载文件，那&lt;strong&gt;curl&lt;/strong&gt; 和 &lt;strong&gt;wget&lt;/strong&gt; 、&lt;strong&gt;aira2&lt;/strong&gt;是没有啥大的区别的。额说到这里哈，就不得不说今天是curl的23岁生日，curl是 &lt;a class=&#34;link&#34; href=&#34;https://curl.se/docs/history.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;&lt;em&gt;March 20. 1998&lt;/em&gt;&lt;/a&gt; 年发布的。没错！确实是23年前的今天！因为时差的原因，那边还是20号，咱们这边已经21号了，不是我记错了。&lt;/p&gt;
+&lt;p&gt;然后我就根据我个人的使用习惯给&lt;strong&gt;alias&lt;/strong&gt;一下了，因为我不喜欢这种字母和数组夹杂的命令，遇到了都会给重命名一下方便以后自己敲命令。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;
+&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
+&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;&lt;code&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
+&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;alias ac=&amp;#34;aria2c&amp;#34;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;首先既然是下载工具，那我为什么要用&lt;strong&gt;aria2&lt;/strong&gt;？&lt;/p&gt;
+&lt;p&gt;我们先来看看aria2支持啥协议&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;URI, MAGNET, TORRENT_FILE, METALINK_FILE&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;传统的http，https，ftp，磁力。bt种子，metalink。你就说它强大不强大吧，可以在这么小体量的情况下，做这么多事情。现在你知道为什么这么多人夸赞它了吧。&lt;/p&gt;
+&lt;p&gt;现在我们来说说看Windows这边的下载巨头：迅雷。&lt;/p&gt;
+&lt;p&gt;为什么我们都瞧不起迅雷？&lt;/p&gt;
+&lt;p&gt;因为迅雷是白眼狼，喝BT的血起家，把自己养肥了。到最后迅雷却不反哺BT下载的生态圈。就这一点就足够可耻的了。&lt;/p&gt;
+&lt;h2 id=&#34;3-获取cpu温度&#34;&gt;3. 获取CPU温度&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;
+&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
+&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;&lt;code&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
+&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;echo `echo &amp;#34;scale=2; $(cat /sys/class/thermal/thermal_zone2/temp)/1000&amp;#34; | bc` °C
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;用&lt;strong&gt;Ubuntu 20&lt;/strong&gt;的小伙伴可以直接用这条命令查看cpu温度，Ubuntu18我还没有试过，别的系统我就不得而知了。&lt;/p&gt;
+&lt;h2 id=&#34;4-awk-sed&#34;&gt;4. awk 、sed&lt;/h2&gt;
+&lt;p&gt;awk 是一个文本处理命令，常用的就是查找文本内部的字符。&lt;/p&gt;
+&lt;p&gt;默认情况下awk是用空格来分割，&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;
+&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
+&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;&lt;code&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
+&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;awk &amp;#39;{print $1}&amp;#39;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;如果你想用特定的字符串分割,可以用 &lt;code&gt;-F&lt;/code&gt;来指定。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;
+&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
+&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;&lt;code&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
+&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;awk -F/ &amp;#39;{print $1}&amp;#39;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;hr&gt;
+&lt;p&gt;sed它同样也是文本处理，用来替换文本的，最常用到的可能就是在刚安装完系统后换软件源的时候。用国内的&lt;strong&gt;url&lt;/strong&gt;来替换国外的&lt;strong&gt;url&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;
+&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
+&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;&lt;code&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
+&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;sed -i &amp;#39;s/xxx/yyy/g&amp;#39; filename
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;这个就是把文件内部的xxx替换为yyy。如果需要在文件行首添加字符，就可以&lt;code&gt;sed -i &#39;s/^/yyy/g&#39; filename&lt;/code&gt;，有行首肯定是有行尾，那行尾把 &lt;code&gt;^&lt;/code&gt;换成&lt;code&gt;$&lt;/code&gt;就可以了。&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>Linux 常用的小技巧</title>
+        <link>https://jokeme.top/p/linux_skill/</link>
+        <pubDate>Wed, 10 Jun 2020 20:48:55 +0000</pubDate>
+        
+        <guid>https://jokeme.top/p/linux_skill/</guid>
+        <description>&lt;img src="https://cn.bing.com/th?id=OHR.MountSefton_EN-CN4284831269_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post Linux 常用的小技巧" /&gt;&lt;h1 id=&#34;linux-常用的小技巧&#34;&gt;Linux 常用的小技巧&lt;/h1&gt;
+&lt;h3 id=&#34;1-apt-get-remove-vsftpd---purge&#34;&gt;1 .apt-get remove vsftpd &amp;ndash;purge&lt;/h3&gt;
+&lt;p&gt;删除所有配置，下次安装的时候会重新生成配置文件&lt;/p&gt;
+&lt;h3 id=&#34;2-编辑器-nano-快捷键&#34;&gt;2 .编辑器 nano 快捷键&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;ALT+Shift+3&lt;/code&gt;	显示行号
+&lt;code&gt;CTRL+SHIFT+_&lt;/code&gt;	快速跳到某行&lt;/p&gt;
+&lt;h3 id=&#34;3-如果不经常使用-linux-の桌面但是又不希望桌面吃内存可以试试看&#34;&gt;3 .如果不经常使用 Linux の桌面，但是又不希望桌面吃内存，可以试试看&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;
+&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
+&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;&lt;code&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
+&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;sudo init 3
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id=&#34;4-echo-颜色输出&#34;&gt;4 .echo 颜色输出&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;echo -e &amp;quot;\033[背景颜色；文字颜色 m 字符串\033[0m&amp;quot;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;可以选择的编码如下所示(这些颜色是 ANSI 标准颜色)：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;
+&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
+&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;&lt;code&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 1
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 2
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 3
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 4
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 5
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 6
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 7
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 8
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 9
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;10
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
+&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;40 　 设置黑色背景
+41 　 设置红色背景
+42 　 设置绿色背景
+43 　 设置黄色背景
+44 　 设置蓝色背景
+45 　 设置紫色背景
+46 　 设置青色背景
+47 　 设置白色(灰色)背景
+49 　 设置缺省黑色背景
+前景颜色是背景颜色减去 10
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id=&#34;5-zsh-美化&#34;&gt;5 .zsh 美化&lt;/h3&gt;
+&lt;p&gt;在 GitHub 上有一个 &lt;a class=&#34;link&#34; href=&#34;https://github.com/ohmyzsh/ohmyzsh&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;oh-my-zsh&lt;/a&gt; の项目，相信我，用上这个 zsh 以后，你会离不开它的，安装脚本附上&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;
+&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
+&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;&lt;code&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;1
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
+&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;sh -c &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;$(&lt;/span&gt;curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh&lt;span style=&#34;color:#66d9ef&#34;&gt;)&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;
+sh -c &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;$(&lt;/span&gt;wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh&lt;span style=&#34;color:#66d9ef&#34;&gt;)&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description>
+        </item>
+        <item>
+        <title>Bay Trail主板安装Linux的坑</title>
+        <link>https://jokeme.top/p/install_linux_on_bay_trail/</link>
+        <pubDate>Mon, 16 Mar 2020 05:01:31 +0000</pubDate>
+        
+        <guid>https://jokeme.top/p/install_linux_on_bay_trail/</guid>
+        <description>&lt;img src="https://cn.bing.com/th?id=OHR.ArcticWolf_EN-CN8268127090_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post Bay Trail主板安装Linux的坑" /&gt;&lt;h1 id=&#34;bay-trail-主板安装-linux-的坑&#34;&gt;Bay Trail 主板安装 Linux 的坑&lt;/h1&gt;
+&lt;p&gt;最近搞了一个 &lt;strong&gt;N2920&lt;/strong&gt; 的低功耗小主机，本来打算搞软路由，但是家里网速不行，就打算先刷个 &lt;strong&gt;Linux&lt;/strong&gt; 玩玩，于是我就被这个问题烦了将近半个月！&lt;/p&gt;
+&lt;p&gt;一开始我打算安装一个 &lt;strong&gt;CentOS 7&lt;/strong&gt; 玩玩，当我下载完系统刻录完开始安装的时候发现 &lt;strong&gt;CentOS 7&lt;/strong&gt; 的 installer 异常的卡顿，而且耗时也非常的多，差不多需要将近半个小时才可以到图形界面的安装(我这个小主机是有固态的，这个速度肯定有很大的问题),而且好不容易到了图形界面的安装环节，还经常卡死！刚开始 我还以为可能是这个 ISO 镜像有问题，又换了一个 &lt;strong&gt;CentOS 8&lt;/strong&gt; 的镜像。&lt;/p&gt;
+&lt;p&gt;刻录&amp;ndash;安装&amp;ndash;等待&amp;ndash;卡死&lt;/p&gt;
+&lt;p&gt;Again&lt;/p&gt;
+&lt;p&gt;开机&amp;ndash;安装&amp;ndash;等待&amp;ndash;卡死&lt;/p&gt;
+&lt;p&gt;? ? ?我真的是&amp;hellip;&amp;hellip;一点办法都没有&lt;/p&gt;
+&lt;p&gt;这结果属实有点意外呀，怎么 &lt;strong&gt;CentOS 8&lt;/strong&gt; 也是这个鸟样？&lt;/p&gt;
+&lt;p&gt;我不甘，又换了一个 &lt;strong&gt;Ubuntu 18&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;刻录&amp;ndash;安装&amp;ndash;等待&amp;ndash;卡死&lt;/p&gt;
+&lt;p&gt;卧槽，这是什么问题换系统 都不行，应该就不是软件的问题了吧，我就从主板开始动刀，会不会是因为主板的 &lt;strong&gt;BIOS&lt;/strong&gt; 太老了，本来打算去更新一下 &lt;strong&gt;BIOS&lt;/strong&gt; 结果，这是一个不知名的小板，不知道从哪里搞到 &lt;strong&gt;BIOS&lt;/strong&gt; 文件，就放弃了！&lt;/p&gt;
+&lt;p&gt;然后去百度 &lt;em&gt;为什么电脑安装 Linux 卡顿&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;众所周知，百度相当垃圾，大部分都是答非所问，要不然就是 &lt;del&gt;CSDN,简书&lt;/del&gt; 的水贴，都没有用 &lt;strong&gt;:(&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;然后我又找隔壁 二狗子 意念扶梯子，用 Google 搜一下&lt;/p&gt;
+&lt;p&gt;然后我就在国外某个被大陆 404 的的技术论坛上找到了一点线索 ? ? ?&lt;/p&gt;
+&lt;p&gt;贴子网址： &lt;a class=&#34;link&#34; href=&#34;https://askubuntu.com/questions/803640/system-freezes-completely-with-intel-bay-trail&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;askubuntu&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;反正他们大概说的是 &lt;strong&gt;Bay Trail&lt;/strong&gt; 主板上安装 Linux 出现的各种异常，刚刚好我的主板也是，出现的问题也和他们的很相似&lt;/p&gt;
+&lt;p&gt;在这里截取一些解决方法：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;
+&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
+&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;&lt;code&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 1
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 2
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 3
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 4
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 5
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 6
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 7
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 8
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 9
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;10
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;11
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;12
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;13
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;14
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;15
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;16
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;17
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;18
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;19
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;20
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;21
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;22
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;23
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;24
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;25
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;26
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;27
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;28
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;29
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;30
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;31
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;32
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;33
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;34
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;35
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;36
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;37
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;38
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;39
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;40
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;41
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;42
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;43
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;44
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;45
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;46
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;47
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;48
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;49
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;50
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;51
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;52
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;53
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
+&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#Your processor is affected by the c-state bug&lt;/span&gt;
+
+&lt;span style=&#34;color:#75715e&#34;&gt;#This causes total freezes when the CPU tries to enter an unsupported sleep state. It&amp;#39;s a problem for many Bay Trail devices especially with newer (4.*) kernels.&lt;/span&gt;
+
+&lt;span style=&#34;color:#75715e&#34;&gt;#Affected processors AFAIK:&lt;/span&gt;
+
+&lt;span style=&#34;color:#75715e&#34;&gt;#Atom Z3735F (Asus X205TA, Acer Aspire Switch 10, Lenovo MIIX 3 1030)&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;#Atom Z3735G&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;#Celeron J1900 (Asus ET2325IUK, shuttle XS35V4)&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;#Celeron N2940 (Acer Aspire ES1-711, Chromebook)&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;#Celeron N2840 (Acer Aspire ES1-311)&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;#Celeron N2930 (Jetway JBC311U93, Zotac Nano CI320)&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;#Pentium N3520&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;#Pentium N3530 (Acer V3-111P)&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;#Pentium N3540 (Dell Inspiron 15 3000, Lenovo G50, ASUS X550MJ)&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;#(please (suggest an) edit to add your own device if affected)&lt;/span&gt;
+
+&lt;span style=&#34;color:#75715e&#34;&gt;#Complete list of Bay Trail processors may be found here&lt;/span&gt;
+
+&lt;span style=&#34;color:#75715e&#34;&gt;#There is a simple workaround for this until it gets properly fixed upstream.&lt;/span&gt;
+
+&lt;span style=&#34;color:#75715e&#34;&gt;#You just need to pass a kernel boot parameter and the random freezing stops completely. The parameter may increase battery consumption slightly, but it will give you a usable system.&lt;/span&gt;
+
+&lt;span style=&#34;color:#75715e&#34;&gt;#You do this by editing the configuration file for GRUB:&lt;/span&gt;
+
+&lt;span style=&#34;color:#75715e&#34;&gt;#Boot Ubuntu and open a terminal by pressing Ctrl+Alt+T then type&lt;/span&gt;
+
+sudo nano /etc/default/grub
+&lt;span style=&#34;color:#75715e&#34;&gt;#Find the line that starts GRUB_CMDLINE_LINUX_DEFAULT=&lt;/span&gt;
+
+&lt;span style=&#34;color:#75715e&#34;&gt;#This needs to be changed to include intel_idle.max_cstate=1&lt;/span&gt;
+
+&lt;span style=&#34;color:#75715e&#34;&gt;#So after your edit it reads something like&lt;/span&gt;
+
+GRUB_CMDLINE_LINUX_DEFAULT&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;quiet splash intel_idle.max_cstate=1&amp;#34;&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;#quiet and splash are default parameters for Ubuntu Desktop - no need to change them, or any other pre-existing parameters&lt;/span&gt;
+
+&lt;span style=&#34;color:#75715e&#34;&gt;#Now save the file by pressing ctrl+o then enter and exit by pressing ctrl+x&lt;/span&gt;
+
+&lt;span style=&#34;color:#75715e&#34;&gt;#Now run&lt;/span&gt;
+
+sudo update-grub
+&lt;span style=&#34;color:#75715e&#34;&gt;#Then reboot.&lt;/span&gt;
+
+&lt;span style=&#34;color:#75715e&#34;&gt;#What to do if you don&amp;#39;t have enough time to do this before the system hangs&lt;/span&gt;
+
+&lt;span style=&#34;color:#75715e&#34;&gt;#No problem. As explained on the help page I linked to earlier, you can add the parameter to GRUB before booting. Note that this only passes the parameter for the current boot, so you still have to edit /etc/default/grub once you have booted to make the change permanent.&lt;/span&gt;
+
+&lt;span style=&#34;color:#75715e&#34;&gt;#You need to get to the GRUB menu. If you are dual booting this will appear anyway, if not you have to press and hold (or tap) shift after pressing the power button to turn on.&lt;/span&gt;
+
+&lt;span style=&#34;color:#75715e&#34;&gt;#When you get to this screen select Advanced Options for Ubuntu. You can move the cursor to a different kernel, or leave it in place to edit options for the default. Instead of pressing enter, press e and you will go into edit mode, looking vaguely like this.&lt;/span&gt;
+
+&lt;span style=&#34;color:#75715e&#34;&gt;#Move the cursor down to where it says quiet splash, put a space after splash and carefully type intel_idle.max_cstate=1 making sure there is a space after it as well.&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;反正大概意思就是这种主板有残疾，在引导的时候会导致一些问题，需要加上这些参数就可以了&lt;/p&gt;
+&lt;p&gt;至此，这个烦了我将近半个月的问题没有了，就在引导的时候加了几个参数，鼠标正常了，键盘也可以用了，也不会卡顿了&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>学习nginx代理相关的笔记</title>
+        <link>https://jokeme.top/p/nginx_proxy/</link>
+        <pubDate>Sat, 11 Jan 2020 21:33:56 +0000</pubDate>
+        
+        <guid>https://jokeme.top/p/nginx_proxy/</guid>
+        <description>&lt;img src="https://cn.bing.com/th?id=OHR.Molas_EN-CN3740095364_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post 学习nginx代理相关的笔记" /&gt;&lt;h1 id=&#34;nginx-反向代理&#34;&gt;nginx 反向代理&lt;/h1&gt;
+&lt;p&gt;nginx 一直都是我们比较常用的工具，它不仅功能强悍，而且性能也非常好 ?,一直深受开发者的喜爱&lt;/p&gt;
+&lt;p&gt;并且我们经常用 &lt;strong&gt;nginx&lt;/strong&gt; 反代来做负载均衡，那么 &lt;strong&gt;nginx&lt;/strong&gt; の反代原理我也就不说了，咱就说咋操作吧&lt;/p&gt;
+&lt;p&gt;我把我的网站的 &lt;strong&gt;nginx&lt;/strong&gt; 配置给拷贝了下来&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;
+&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
+&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;&lt;code&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 1
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 2
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 3
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 4
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 5
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 6
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 7
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 8
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 9
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;10
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;11
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;12
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;13
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;14
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;15
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;16
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;17
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;18
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;19
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;20
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;21
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;22
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;23
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;24
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;25
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;26
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;27
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;28
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
+&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;&lt;code class=&#34;language-nginx&#34; data-lang=&#34;nginx&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;server&lt;/span&gt; {
+    &lt;span style=&#34;color:#f92672&#34;&gt;listen&lt;/span&gt;    &lt;span style=&#34;color:#ae81ff&#34;&gt;443&lt;/span&gt;  &lt;span style=&#34;color:#e6db74&#34;&gt;ssl&lt;/span&gt;;
+    &lt;span style=&#34;color:#f92672&#34;&gt;server_name&lt;/span&gt;   &lt;span style=&#34;color:#e6db74&#34;&gt;www.jokeme.top&lt;/span&gt;;
+
+    &lt;span style=&#34;color:#f92672&#34;&gt;add_header&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;Strict-Transport-Security&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;max-age=31536000&lt;/span&gt;; &lt;span style=&#34;color:#f92672&#34;&gt;includeSubDomains&lt;/span&gt;;&lt;span style=&#34;color:#f92672&#34;&gt;preload&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;always&lt;/span&gt;;    
+    &lt;span style=&#34;color:#f92672&#34;&gt;ssl_certificate&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;/ssl/3355633_www.jokeme.top.pem&lt;/span&gt;;
+    &lt;span style=&#34;color:#f92672&#34;&gt;ssl_certificate_key&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;/ssl/3355633_www.jokeme.top.key&lt;/span&gt;;
+    &lt;span style=&#34;color:#f92672&#34;&gt;ssl_session_timeout&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;5m&lt;/span&gt;;
+    &lt;span style=&#34;color:#f92672&#34;&gt;ssl_protocols&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;TLSv1&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;TLSv1.1&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;TLSv1.2&lt;/span&gt;;
+    &lt;span style=&#34;color:#f92672&#34;&gt;ssl_ciphers&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;ECDHE-RSA-AES128-GCM-SHA256:HIGH:!aNULL:!MD5:!RC4:!DHE&lt;/span&gt;;
+    &lt;span style=&#34;color:#f92672&#34;&gt;ssl_prefer_server_ciphers&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;on&lt;/span&gt;;
+
+    &lt;span style=&#34;color:#f92672&#34;&gt;location&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;/&lt;/span&gt; {
+        &lt;span style=&#34;color:#f92672&#34;&gt;root&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;/usr/share/nginx/html&lt;/span&gt;;
+        &lt;span style=&#34;color:#f92672&#34;&gt;index&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;index.html&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;index.htm&lt;/span&gt;;
+        &lt;span style=&#34;color:#f92672&#34;&gt;proxy_pass&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;http://www.jokeme.top:8080&lt;/span&gt;;
+}
+    &lt;span style=&#34;color:#f92672&#34;&gt;error_page&lt;/span&gt;   &lt;span style=&#34;color:#ae81ff&#34;&gt;500&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;502&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;503&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;504&lt;/span&gt;  &lt;span style=&#34;color:#e6db74&#34;&gt;/50x.html&lt;/span&gt;;
+    &lt;span style=&#34;color:#f92672&#34;&gt;location&lt;/span&gt; = &lt;span style=&#34;color:#e6db74&#34;&gt;/50x.html&lt;/span&gt; {
+        &lt;span style=&#34;color:#f92672&#34;&gt;root&lt;/span&gt;   &lt;span style=&#34;color:#e6db74&#34;&gt;/usr/share/nginx/html&lt;/span&gt;;
+    }
+}
+
+&lt;span style=&#34;color:#66d9ef&#34;&gt;server{&lt;/span&gt;
+  &lt;span style=&#34;color:#e6db74&#34;&gt;listen&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;80&lt;/span&gt;;
+  &lt;span style=&#34;color:#66d9ef&#34;&gt;server_name&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;localhost&lt;/span&gt;;
+  &lt;span style=&#34;color:#66d9ef&#34;&gt;rewrite&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;^(.*)&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;https://&lt;/span&gt;$host$1 &lt;span style=&#34;color:#e6db74&#34;&gt;permanent&lt;/span&gt;;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;我的网站呢，是通过 &lt;strong&gt;docker&lt;/strong&gt; 跑在 8080 端口的 &lt;strong&gt;https&lt;/strong&gt; ,如果日常需要访问的话是不太方便の,还需要敲端口号&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;nginx&lt;/strong&gt; 通过把 8080 端口的数据代理到 443 端口，来实现我们直接通过域名来访问，也就是 &lt;strong&gt;location&lt;/strong&gt; 里面の &lt;strong&gt;proxy_pass&lt;/strong&gt;实现了反向代理的功能&lt;/p&gt;
+&lt;p&gt;而且当用户通过 80 端口访问 &lt;strong&gt;http&lt;/strong&gt; 的时候还会自动转到 443 端口的 &lt;strong&gt;https&lt;/strong&gt; 这个就是下面的那个 &lt;strong&gt;server&lt;/strong&gt; &lt;strong&gt;rewrite&lt;/strong&gt;实现的&lt;/p&gt;
+&lt;p&gt;还有一个就是大家反代的时候一定要确认你那个端口是允许访问的，要不然你的配置没有问题，但就是拒接连接，或者连接超时，昨天晚上我就出现了这种情况，配置没有问题，但是网站就是不能访问，然后倒腾了一圈，才想起来是我防火墙没有开放端口 ?&lt;/p&gt;
+</description>
+        </item>
+        
+    </channel>
 </rss>

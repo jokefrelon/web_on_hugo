@@ -1,39 +1,340 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>frp on JokemeBlog</title>
-    <link>https://jokeme.top/tags/frp/</link>
-    <description>Recent content in frp on JokemeBlog</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Thu, 09 Sep 2021 01:58:49 +0800</lastBuildDate><atom:link href="https://jokeme.top/tags/frp/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>回首frp搭建</title>
-      <link>https://jokeme.top/p/review_frp_set_up/</link>
-      <pubDate>Thu, 09 Sep 2021 01:58:49 +0800</pubDate>
-      
-      <guid>https://jokeme.top/p/review_frp_set_up/</guid>
-      <description>最近办电信宽带，无意中发现电信给的是公网IP地址，这家伙可给我高兴坏了。在路由器上DDNS解析了一下IP地址到我的域名上，然后就开始捯饬了。
-1. 搭建服务端（frps） 先说一下我的实验环境哈
- frp v0.37.1 Ubuntu 20.04   这个frp是根据CPU选择版本的，鄙人就选择了amd64版本的压缩包。
-下载完了以后，选一个合适的地方解压文件。
-tar -zxvf frp_0.37.1_linux_amd64.tar.gz 然后直接编辑frp_0.37.1_linux_amd64/frps.ini
-[common] bind_port = 7000 bind_udp_port = 7001 vhost_http_port = 8089	//电信封80 居然丧心病狂的连8080也一起封了。 vhost_https_port = 444	//电信封443端口，https只能改端口了。 dashboard_port = 7500	 dashboard_user = xxx dashboard_pwd = ********** token = ****** 你也看到了配置很简单的，frps端没有啥需要操作的，然后就是 systemd 文件夹里面的 frps.service 文件，需要修改一下
-ExecStart=/usr/bin/frps -c /etc/frp/frps.ini 为你自己的实际文件地址，别的就没有啥问题了，如果你这样还是不行可以把配置文件 [Service] 里面的 User=nobody 改成 User=root
-cp systemd/frps.service /etc/systemd/system/ #复制service文件到systemd里面，这样我们可以直接systemctl调用frps sudo systemctl daemon-reload #重新加载service配置文件 sudo systemctl start frps #开启frps sudo systemctl enable frps	#开机自启动frps 2.</description>
-    </item>
-    
-    <item>
-      <title> Frp 内网穿透</title>
-      <link>https://jokeme.top/p/frp_penetrate/</link>
-      <pubDate>Mon, 08 Jun 2020 19:01:05 +0000</pubDate>
-      
-      <guid>https://jokeme.top/p/frp_penetrate/</guid>
-      <description>Frp 内网穿透 自打搞一个软路由，我就玩的可带劲了，什么 Linux , Docker , Java 各种技术都被逼提升了很多。 闲话不多说，直接说重点了
-1. 准备工作：  frp-server &amp;amp; frp-client 可以在 GitHub 里下载 域名(需要备案) 有公网 IP の服务器一台  2. 配置 server 端 我是用的是 amd64 架构的，如果和我一样的话可以按我的命令来
-wget https://github.com/fatedier/frp/releases/download/v0.33.0/frp_0.33.0_linux_amd64.tar.gz tar -zxvf frp_0.33.0_linux_amd64.tar.gz mv frp_0.33.0_linux_amd64.tar.gz frp #为了接下来方便一点 cd frp rm frpc* #删除不必要的配置,也可以不删 nano frps.ini [common] bind_port = 7000  #对外提供服务的端口 dashboard_port = 7500 #访问控制板的端口 token = 123456 #token,相对于一个简单的验证 vhost_http_port = 80 #http服务在服务器的代理端口 可以根据自己的喜好设定这些配置
-3. 配置 client 端 wget https://github.</description>
-    </item>
-    
-  </channel>
+    <channel>
+        <title>frp on JokemeBlog</title>
+        <link>https://jokeme.top/tags/frp/</link>
+        <description>Recent content in frp on JokemeBlog</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>en-us</language>
+        <lastBuildDate>Thu, 09 Sep 2021 01:58:49 +0800</lastBuildDate><atom:link href="https://jokeme.top/tags/frp/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>回首frp搭建</title>
+        <link>https://jokeme.top/p/review_frp_set_up/</link>
+        <pubDate>Thu, 09 Sep 2021 01:58:49 +0800</pubDate>
+        
+        <guid>https://jokeme.top/p/review_frp_set_up/</guid>
+        <description>&lt;img src="https://cn.bing.com/th?id=OHR.ParnidisSundial_EN-CN6070614674_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post 回首frp搭建" /&gt;&lt;p&gt;最近办电信宽带，无意中发现电信给的是公网IP地址，这家伙可给我高兴坏了。在路由器上DDNS解析了一下IP地址到我的域名上，然后就开始捯饬了。&lt;/p&gt;
+&lt;h2 id=&#34;1-搭建服务端frps&#34;&gt;1. 搭建服务端（frps）&lt;/h2&gt;
+&lt;p&gt;先说一下我的实验环境哈&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/fatedier/frp/releases/tag/v0.37.1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;frp v0.37.1&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Ubuntu 20.04&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;p&gt;这个frp是根据CPU选择版本的，鄙人就选择了amd64版本的压缩包。&lt;/p&gt;
+&lt;p&gt;下载完了以后，选一个合适的地方解压文件。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;
+&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
+&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;&lt;code&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
+&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;tar -zxvf frp_0.37.1_linux_amd64.tar.gz
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;然后直接编辑&lt;code&gt;frp_0.37.1_linux_amd64/frps.ini&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;
+&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
+&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;&lt;code&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;1
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;2
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;3
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;4
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;5
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;6
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;7
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;8
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;9
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
+&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;&lt;code class=&#34;language-ini&#34; data-lang=&#34;ini&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;[common]&lt;/span&gt;
+&lt;span style=&#34;color:#a6e22e&#34;&gt;bind_port&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;7000&lt;/span&gt;
+&lt;span style=&#34;color:#a6e22e&#34;&gt;bind_udp_port&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;7001&lt;/span&gt;
+&lt;span style=&#34;color:#a6e22e&#34;&gt;vhost_http_port&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;8089	//电信封80 居然丧心病狂的连8080也一起封了。&lt;/span&gt;
+&lt;span style=&#34;color:#a6e22e&#34;&gt;vhost_https_port&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;444	//电信封443端口，https只能改端口了。&lt;/span&gt;
+&lt;span style=&#34;color:#a6e22e&#34;&gt;dashboard_port&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;7500	&lt;/span&gt;
+&lt;span style=&#34;color:#a6e22e&#34;&gt;dashboard_user&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;xxx&lt;/span&gt;
+&lt;span style=&#34;color:#a6e22e&#34;&gt;dashboard_pwd&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;**********&lt;/span&gt;
+&lt;span style=&#34;color:#a6e22e&#34;&gt;token&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;******&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;你也看到了配置很简单的，frps端没有啥需要操作的，然后就是 &lt;code&gt;systemd&lt;/code&gt; 文件夹里面的 &lt;code&gt;frps.service&lt;/code&gt; 文件，需要修改一下&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;
+&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
+&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;&lt;code&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
+&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;ExecStart&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;/usr/bin/frps -c /etc/frp/frps.ini
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;为你自己的实际文件地址，别的就没有啥问题了，如果你这样还是不行可以把配置文件 &lt;strong&gt;[Service]&lt;/strong&gt; 里面的 &lt;code&gt;User=nobody&lt;/code&gt; 改成 &lt;code&gt;User=root&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;
+&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
+&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;&lt;code&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;1
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;2
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;3
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;4
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
+&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;cp systemd/frps.service  /etc/systemd/system/ &lt;span style=&#34;color:#75715e&#34;&gt;#复制service文件到systemd里面，这样我们可以直接systemctl调用frps&lt;/span&gt;
+sudo systemctl daemon-reload &lt;span style=&#34;color:#75715e&#34;&gt;#重新加载service配置文件&lt;/span&gt;
+sudo systemctl start frps &lt;span style=&#34;color:#75715e&#34;&gt;#开启frps&lt;/span&gt;
+sudo systemctl enable frps	&lt;span style=&#34;color:#75715e&#34;&gt;#开机自启动frps&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id=&#34;2-配置客户端frpc&#34;&gt;2. 配置客户端（frpc）&lt;/h2&gt;
+&lt;p&gt;这里也需要下载上面的那个压缩包，因为frp的作者是吧frps和frpc放一起打包的。&lt;/p&gt;
+&lt;p&gt;下载解压缩的过程咱们就略过去啦。&lt;/p&gt;
+&lt;p&gt;主要是这个： &lt;strong&gt;frpc.ini&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;
+&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
+&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;&lt;code&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
+&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;nano frpc.ini
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;
+&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
+&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;&lt;code&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 1
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 2
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 3
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 4
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 5
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 6
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 7
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 8
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 9
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;10
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;11
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;12
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;13
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
+&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;&lt;code class=&#34;language-ini&#34; data-lang=&#34;ini&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;[common]&lt;/span&gt;
+&lt;span style=&#34;color:#a6e22e&#34;&gt;server_addr&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;your.ip.xxx.jokeme.top&lt;/span&gt;
+&lt;span style=&#34;color:#a6e22e&#34;&gt;server_port&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;7000&lt;/span&gt;
+&lt;span style=&#34;color:#a6e22e&#34;&gt;user&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;xxx&lt;/span&gt;
+&lt;span style=&#34;color:#a6e22e&#34;&gt;token&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;******&lt;/span&gt;
+
+&lt;span style=&#34;color:#66d9ef&#34;&gt;[web]&lt;/span&gt;
+&lt;span style=&#34;color:#a6e22e&#34;&gt;type&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;https&lt;/span&gt;
+&lt;span style=&#34;color:#a6e22e&#34;&gt;local_ip&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;10.0.0.1&lt;/span&gt;
+&lt;span style=&#34;color:#a6e22e&#34;&gt;local_port&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;443&lt;/span&gt;
+&lt;span style=&#34;color:#a6e22e&#34;&gt;custom_domains&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;xxx.jokeme.top&lt;/span&gt;
+&lt;span style=&#34;color:#a6e22e&#34;&gt;use_encryption&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;true&lt;/span&gt;
+&lt;span style=&#34;color:#a6e22e&#34;&gt;use_compression&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;true&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;这样就可以搭建一个公网可以访问的http服务了，当然必须要通过：&lt;strong&gt;IP:Port&lt;/strong&gt; 的形式来访问了，毕竟80、8080、443都不能用得情况下，保证可以用就不错了，这用的舒服就算了吧。&lt;/p&gt;
+&lt;p&gt;同样得，你需要修改 &lt;code&gt;systemd&lt;/code&gt; 文件夹里面的 &lt;code&gt;frpc.service&lt;/code&gt; 文件，然后把文件复制到systemd里面去 。。。&lt;/p&gt;
+&lt;p&gt;然后你还可以利用frp搭建别的服务，RDP、SSH、Mysql等等，官网上有很多示例：&lt;a class=&#34;link&#34; href=&#34;https://github.com/fatedier/frp/blob/dev/README.md&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;frp_Readme.md&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;作者还有一个中文文档，但是网站经常抽风打不开： &lt;a class=&#34;link&#34; href=&#34;https://gofrp.org/docs&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://gofrp.org&lt;/a&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;3-声明&#34;&gt;3. 声明：&lt;/h2&gt;
+&lt;p&gt;本文没有参考任何互联网文章，文中所提到的软件：&lt;a class=&#34;link&#34; href=&#34;https://github.com/fatedier/frp&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;frp&lt;/a&gt;来自Github用户：&lt;a class=&#34;link&#34; href=&#34;https://github.com/fatedier/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;fatedier&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;请勿滥用此软件搭建非法服务，本人只对本人所写文章负责，任何由个人造成的问题本人概不负责，请悉知。&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title> Frp 内网穿透</title>
+        <link>https://jokeme.top/p/frp_penetrate/</link>
+        <pubDate>Mon, 08 Jun 2020 19:01:05 +0000</pubDate>
+        
+        <guid>https://jokeme.top/p/frp_penetrate/</guid>
+        <description>&lt;img src="https://cn.bing.com/th?id=OHR.SuperbOwl_EN-CN4550239476_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post  Frp 内网穿透" /&gt;&lt;h1 id=&#34;frp-内网穿透&#34;&gt;Frp 内网穿透&lt;/h1&gt;
+&lt;p&gt;自打搞一个软路由，我就玩的可带劲了，什么 &lt;strong&gt;Linux , Docker , Java&lt;/strong&gt; 各种技术都被逼提升了很多。 闲话不多说，直接说重点了&lt;/p&gt;
+&lt;h2 id=&#34;1-准备工作&#34;&gt;1. 准备工作：&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;frp-server &amp;amp; frp-client 可以在 &lt;a class=&#34;link&#34; href=&#34;https://github.com/fatedier/frp/releases&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;GitHub&lt;/a&gt; 里下载&lt;/li&gt;
+&lt;li&gt;域名(需要备案)&lt;/li&gt;
+&lt;li&gt;有公网 IP の服务器一台&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;2-配置-server-端&#34;&gt;2. 配置 server 端&lt;/h2&gt;
+&lt;p&gt;我是用的是 amd64 架构的，如果和我一样的话可以按我的命令来&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;
+&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
+&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;&lt;code&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;1
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;2
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;3
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;4
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;5
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;6
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
+&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;wget https://github.com/fatedier/frp/releases/download/v0.33.0/frp_0.33.0_linux_amd64.tar.gz
+tar -zxvf frp_0.33.0_linux_amd64.tar.gz
+mv frp_0.33.0_linux_amd64.tar.gz frp &lt;span style=&#34;color:#75715e&#34;&gt;#为了接下来方便一点&lt;/span&gt;
+cd frp
+rm frpc* &lt;span style=&#34;color:#75715e&#34;&gt;#删除不必要的配置,也可以不删&lt;/span&gt;
+nano frps.ini
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;
+&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
+&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;&lt;code&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 1
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 2
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 3
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 4
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 5
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 6
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 7
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 8
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 9
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;10
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;11
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;12
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
+&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;&lt;code class=&#34;language-ini&#34; data-lang=&#34;ini&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;[common]&lt;/span&gt;
+&lt;span style=&#34;color:#a6e22e&#34;&gt;bind_port&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;7000 &lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;#对外提供服务的端口&lt;/span&gt;
+
+&lt;span style=&#34;color:#a6e22e&#34;&gt;dashboard_port&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;7500&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;#访问控制板的端口&lt;/span&gt;
+
+&lt;span style=&#34;color:#a6e22e&#34;&gt;token&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;123456&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;#token,相对于一个简单的验证&lt;/span&gt;
+
+&lt;span style=&#34;color:#a6e22e&#34;&gt;vhost_http_port&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;80&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;#http服务在服务器的代理端口&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;可以根据自己的喜好设定这些配置&lt;/p&gt;
+&lt;h2 id=&#34;3-配置-client-端&#34;&gt;3. 配置 client 端&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;
+&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
+&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;&lt;code&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;1
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;2
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;3
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;4
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;5
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;6
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
+&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;wget https://github.com/fatedier/frp/releases/download/v0.33.0/frp_0.33.0_linux_amd64.tar.gz
+tar -zxvf frp_0.33.0_linux_amd64.tar.gz
+mv frp_0.33.0_linux_amd64.tar.gz frp &lt;span style=&#34;color:#75715e&#34;&gt;#为了接下来方便一点&lt;/span&gt;
+cd frp
+rm frps* &lt;span style=&#34;color:#75715e&#34;&gt;#删除不必要的配置,也可以不删&lt;/span&gt;
+nano frpc.ini
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id=&#34;31-单网站配置非必选&#34;&gt;3.1 单网站配置(非必选)&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;
+&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
+&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;&lt;code&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 1
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 2
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 3
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 4
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 5
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 6
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 7
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 8
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 9
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;10
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;11
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;12
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;13
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;14
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
+&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;&lt;code class=&#34;language-ini&#34; data-lang=&#34;ini&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;[common]&lt;/span&gt;
+&lt;span style=&#34;color:#a6e22e&#34;&gt;server_addr&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;yourdomain.com&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;#你的域名/填写IP地址也可以 &amp;lt;记得把你的域名解析到服务器的IP地址上&amp;gt;&lt;/span&gt;
+
+&lt;span style=&#34;color:#a6e22e&#34;&gt;server_port&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;7000&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;#需要和上面的server配置相同&lt;/span&gt;
+
+&lt;span style=&#34;color:#a6e22e&#34;&gt;token&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;123456&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;#需要和上面的server配置相同&lt;/span&gt;
+
+&lt;span style=&#34;color:#66d9ef&#34;&gt;[http]&lt;/span&gt;
+&lt;span style=&#34;color:#a6e22e&#34;&gt;type&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;http&lt;/span&gt;
+&lt;span style=&#34;color:#a6e22e&#34;&gt;local_port&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;80&lt;/span&gt;
+&lt;span style=&#34;color:#a6e22e&#34;&gt;custom_domains&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;yourdomain.com&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id=&#34;32-多网站配置非必选&#34;&gt;3.2 多网站配置(非必选)&lt;/h3&gt;
+&lt;p&gt;如果你有多个 Web 项目的话，哪就建议你用二级域名&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;
+&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
+&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;&lt;code&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 1
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 2
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 3
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 4
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 5
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 6
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 7
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 8
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 9
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;10
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;11
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;12
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;13
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;14
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;15
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;16
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;17
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;18
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;19
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
+&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;&lt;code class=&#34;language-ini&#34; data-lang=&#34;ini&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;[common]&lt;/span&gt;
+&lt;span style=&#34;color:#a6e22e&#34;&gt;server_addr&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;yourdomain.com&lt;/span&gt;
+&lt;span style=&#34;color:#a6e22e&#34;&gt;server_port&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;7000&lt;/span&gt;
+&lt;span style=&#34;color:#a6e22e&#34;&gt;token&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;123456&lt;/span&gt;
+
+&lt;span style=&#34;color:#66d9ef&#34;&gt;[web1]&lt;/span&gt;
+&lt;span style=&#34;color:#a6e22e&#34;&gt;type&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;http&lt;/span&gt;
+&lt;span style=&#34;color:#a6e22e&#34;&gt;local_port&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;80&lt;/span&gt;
+&lt;span style=&#34;color:#a6e22e&#34;&gt;custom_domains&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;a.yourdomain.com&lt;/span&gt;
+
+&lt;span style=&#34;color:#66d9ef&#34;&gt;[web2]&lt;/span&gt;
+&lt;span style=&#34;color:#a6e22e&#34;&gt;type&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;http&lt;/span&gt;
+&lt;span style=&#34;color:#a6e22e&#34;&gt;local_port&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;8080&lt;/span&gt;
+&lt;span style=&#34;color:#a6e22e&#34;&gt;custom_domains&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;b.yourdomain.com&lt;/span&gt;
+
+&lt;span style=&#34;color:#66d9ef&#34;&gt;[web3]&lt;/span&gt;
+&lt;span style=&#34;color:#a6e22e&#34;&gt;type&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;http&lt;/span&gt;
+&lt;span style=&#34;color:#a6e22e&#34;&gt;local_port&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;8088&lt;/span&gt;
+&lt;span style=&#34;color:#a6e22e&#34;&gt;custom_domains&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;c.yourdomain.com&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id=&#34;33-ssh-配置非必选&#34;&gt;3.3 SSH 配置(非必选)&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;
+&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
+&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;&lt;code&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;1
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;2
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;3
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;4
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;5
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;6
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;7
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;8
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
+&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;&lt;code class=&#34;language-ini&#34; data-lang=&#34;ini&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;[ssh]&lt;/span&gt;
+&lt;span style=&#34;color:#a6e22e&#34;&gt;type&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;tcp&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;#ssh服务请使用tcp连接&lt;/span&gt;
+
+&lt;span style=&#34;color:#a6e22e&#34;&gt;local_ip&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;127.0.0.1&lt;/span&gt;
+&lt;span style=&#34;color:#a6e22e&#34;&gt;local_port&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;22&lt;/span&gt;
+&lt;span style=&#34;color:#a6e22e&#34;&gt;remote_port&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;11484&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;#需要打开服务器端的该端口の防火墙&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id=&#34;4-浏览器验证&#34;&gt;4. 浏览器验证&lt;/h2&gt;
+&lt;p&gt;浏览器输入 &lt;code&gt; http://yourdomain.com&lt;/code&gt; 理论上就可以打开你在 client 上的 Web 项目了&lt;/p&gt;
+&lt;p&gt;如果你遇到了&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Chrome 浏览器打不开网页！&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;IE 浏览器也打不开网页&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;别急！ ! 换&lt;strong&gt;Firefox&lt;/strong&gt;浏览器试一下  / |&amp;amp;&amp;amp;| \ 使用&lt;strong&gt;Chrome&lt;/strong&gt;的无痕模式打开试一下&lt;/p&gt;
+</description>
+        </item>
+        
+    </channel>
 </rss>

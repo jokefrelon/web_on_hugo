@@ -1,30 +1,68 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Tips on JokemeBlog</title>
-    <link>https://jokeme.top/tags/tips/</link>
-    <description>Recent content in Tips on JokemeBlog</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Sun, 15 Nov 2020 07:02:33 +0000</lastBuildDate><atom:link href="https://jokeme.top/tags/tips/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Ubuntu &amp;&amp; Docker 使用建议</title>
-      <link>https://jokeme.top/p/ubuntu_docker_tips/</link>
-      <pubDate>Sun, 15 Nov 2020 07:02:33 +0000</pubDate>
-      
-      <guid>https://jokeme.top/p/ubuntu_docker_tips/</guid>
-      <description>Ubuntu一直是我喜欢用的Linux发行版本,界面简洁,上手简单,用户广泛
-在Ubuntu中使用docker时,一直就有两个问题困扰着我
-1. Ubuntu pull 镜像速度太缓慢 这个问题百度一搜一大把,但是作为个人学习 类型的博客,还是记录一下的好?
-1.1 Aliyun 镜像加速大法 打开aliyun的docker加速登陆页面,虽然操作略微繁琐,但是我个人觉得这是速度最快的也是最稳定的
-然后找到 容器镜像服务 &amp;gt; 镜像加速器 根据提升来操作就可以啦
-其中Docker 1.10.0版本以上的直接就可以在  /etc/docker/daemon.json文件里加上你的专属加速链接
-sudo systemctl daemon-reload sudo systemctl restart docker 少侠记得重启加载一下配置文件
-2. Docker 网桥IP和实际物理IP冲突 虽然这个问题大家不一定会遇到,因为我们使用的大部分的路由器都是192开头的,docker的网桥IP则是选择172开头的,但是在学校,公司等场所就很容易出现冲突,而且一旦出现冲突你还不一定会想到问题出现在Docker网桥IP的问题上,所以当我遇到了这个问题我也是半天才反应过来要修改docker网桥IP,下面看操作 !
-一样 ! 编辑上面的/etc/docker/daemon.json文件,
-{ &amp;#34;registry-mirrors&amp;#34;: [&amp;#34;https://xxxxxxxxxxxx.mirror.aliyuncs.com&amp;#34;], &amp;#34;bip&amp;#34;:&amp;#34;192.168.66.1/24&amp;#34; #换成你想要修改的ip网段 } 需要注意的是这个文件是json,保存的时候检查一下是否是json格式的
-sudo systemctl daemon-reload sudo systemctl restart docker 少侠记得重启加载一下配置文件</description>
-    </item>
-    
-  </channel>
+    <channel>
+        <title>Tips on JokemeBlog</title>
+        <link>https://jokeme.top/tags/tips/</link>
+        <description>Recent content in Tips on JokemeBlog</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>en-us</language>
+        <lastBuildDate>Sun, 15 Nov 2020 07:02:33 +0000</lastBuildDate><atom:link href="https://jokeme.top/tags/tips/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Ubuntu &amp;&amp; Docker 使用建议</title>
+        <link>https://jokeme.top/p/ubuntu_docker_tips/</link>
+        <pubDate>Sun, 15 Nov 2020 07:02:33 +0000</pubDate>
+        
+        <guid>https://jokeme.top/p/ubuntu_docker_tips/</guid>
+        <description>&lt;img src="https://cn.bing.com/th?id=OHR.Trevi_EN-CN2352584327_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post Ubuntu &amp;&amp; Docker 使用建议" /&gt;&lt;p&gt;&lt;strong&gt;Ubuntu&lt;/strong&gt;一直是我喜欢用的&lt;strong&gt;Linux&lt;/strong&gt;发行版本,界面简洁,上手简单,用户广泛&lt;/p&gt;
+&lt;p&gt;在&lt;strong&gt;Ubuntu&lt;/strong&gt;中使用&lt;strong&gt;docker&lt;/strong&gt;时,一直就有两个问题困扰着我&lt;/p&gt;
+&lt;h2 id=&#34;1-ubuntu-pull-镜像速度太缓慢&#34;&gt;1. Ubuntu pull 镜像速度太缓慢&lt;/h2&gt;
+&lt;p&gt;这个问题百度一搜一大把,但是作为个人学习 类型的博客,还是记录一下的好?&lt;/p&gt;
+&lt;h3 id=&#34;11-aliyun-镜像加速大法&#34;&gt;1.1 Aliyun 镜像加速大法&lt;/h3&gt;
+&lt;p&gt;打开&lt;strong&gt;aliyun&lt;/strong&gt;的&lt;strong&gt;docker&lt;/strong&gt;加速&lt;a class=&#34;link&#34; href=&#34;https://cr.console.aliyun.com/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;登陆页面&lt;/a&gt;,虽然操作略微繁琐,但是我个人觉得这是速度最快的也是最稳定的&lt;/p&gt;
+&lt;p&gt;然后找到 &lt;strong&gt;容器镜像服务&lt;/strong&gt; &amp;gt; &lt;strong&gt;镜像加速器&lt;/strong&gt; 根据提升来操作就可以啦&lt;/p&gt;
+&lt;p&gt;其中&lt;strong&gt;Docker&lt;/strong&gt; &lt;code&gt;1.10.0&lt;/code&gt;版本以上的直接就可以在 &lt;code&gt; /etc/docker/daemon.json&lt;/code&gt;文件里加上你的专属加速链接&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;
+&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
+&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;&lt;code&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;1
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
+&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;sudo systemctl daemon-reload
+sudo systemctl restart docker
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;少侠记得重启加载一下配置文件&lt;/p&gt;
+&lt;h2 id=&#34;2-docker-网桥ip和实际物理ip冲突&#34;&gt;2. Docker 网桥IP和实际物理IP冲突&lt;/h2&gt;
+&lt;p&gt;虽然这个问题大家不一定会遇到,因为我们使用的大部分的路由器都是&lt;code&gt;192&lt;/code&gt;开头的,&lt;strong&gt;docker&lt;/strong&gt;的网桥&lt;strong&gt;IP&lt;/strong&gt;则是选择&lt;code&gt;172&lt;/code&gt;开头的,但是在学校,公司等场所就很容易出现冲突,而且一旦出现冲突你还不一定会想到问题出现在&lt;strong&gt;Docker&lt;/strong&gt;网桥&lt;strong&gt;IP&lt;/strong&gt;的问题上,所以当我遇到了这个问题我也是半天才反应过来要修改&lt;strong&gt;docker&lt;/strong&gt;网桥&lt;strong&gt;IP&lt;/strong&gt;,下面看操作 !&lt;/p&gt;
+&lt;p&gt;一样 ! 编辑上面的&lt;code&gt;/etc/docker/daemon.json&lt;/code&gt;文件,&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;
+&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
+&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;&lt;code&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;1
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;2
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;3
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;4
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
+&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;{
+  &lt;span style=&#34;color:#f92672&#34;&gt;&amp;#34;registry-mirrors&amp;#34;&lt;/span&gt;: [&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;https://xxxxxxxxxxxx.mirror.aliyuncs.com&amp;#34;&lt;/span&gt;],
+  &lt;span style=&#34;color:#f92672&#34;&gt;&amp;#34;bip&amp;#34;&lt;/span&gt;:&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;192.168.66.1/24&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;#换成你想要修改的ip网段&lt;/span&gt;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;需要注意的是这个文件是&lt;strong&gt;json&lt;/strong&gt;,保存的时候检查一下是否是json格式的&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;
+&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
+&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;&lt;code&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;1
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
+&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;sudo systemctl daemon-reload
+sudo systemctl restart docker
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;少侠记得重启加载一下配置文件&lt;/p&gt;
+</description>
+        </item>
+        
+    </channel>
 </rss>

@@ -1,31 +1,84 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>dockerfile on JokemeBlog</title>
-    <link>https://jokeme.top/tags/dockerfile/</link>
-    <description>Recent content in dockerfile on JokemeBlog</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Tue, 13 Apr 2021 04:59:44 +0000</lastBuildDate><atom:link href="https://jokeme.top/tags/dockerfile/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Dockerfile编写</title>
-      <link>https://jokeme.top/p/dockerfile/</link>
-      <pubDate>Tue, 13 Apr 2021 04:59:44 +0000</pubDate>
-      
-      <guid>https://jokeme.top/p/dockerfile/</guid>
-      <description>今天也是摸鱼的一天没怎么看书,一直在玩Linux。并且在无意间看到了我之前下载的 DirectoryLister，就想着在Docker里面部署玩一下。
-一开始我是没有想写Dockerfile的，直接在开了一个Ubuntu容器整的，但是想了想，以后想用肯定不方便，这个容器我随时随地都有可以废了它。所以就从网上看了看Dockerfile怎么写，开整！
-首先我并不想介绍Dockerfile怎么样去写，网上的教程一大把，自己看就可以了 我是参考菜鸟教程的教程。
-Dockerfile无非就是一个自动化的过程，至少在我看来就是这样的，可能我刚接触了解不深吧。但是按照这个思路是绝对可以写出来Dockerfile的，因为我自己就是例子🌰。
-来看看我的build
-7168 ◯ : docker build -t flt:v1.0 . ... ... Removing intermediate container 8fe78ec98a65 ---&amp;gt; da56585b17c1 Step 4/4 : CMD [&amp;quot;/root/np.sh&amp;quot;] ---&amp;gt; Running in 23bd36103ddd Removing intermediate container 23bd36103ddd ---&amp;gt; 114c7dec7e2f Successfully built 114c7dec7e2f Successfully tagged flt:v1.0 1. 选择基础镜像 因为Dockerfile是基于一些底层的镜像制作的，所以在这里我选择的是 ubuntu:20.04
-因为我平时就是在Ubuntu环境使用的比较多,你要是使用CentOS更顺手你也可以选择使用Redhat系的基础镜像。
-这里无可争议，过。
-FROM ubuntu:20.04 2. 配置环境变量 其实我这里也没有啥环境变量，我也不知道啥东西要设置为环境变量，就把DirectoryLister的版本号设置为环境变量了，方便以后升级。哈哈哈哈，比较菜只能想到这东西了。
-ENV DL_VERSION 3.7.7 3. 自动化运行命令 这里也没有啥好说的，有点Linux基础就可以，就是这个写法很操蛋！要不停的 &amp;amp;&amp;amp; &amp;hellip; &amp;hellip; \，至于为什么要这样呢，我查了一下，说是一个RUN就是一层，你要是写太多RUN就会套太多层，非常的臃肿。这些暂时也不是我需要考虑的，别人怎么写，我就怎么写。
-这里我遇到了一个自动化安装软件时，需要用户手动输入参数的问题，平时咱手动输入参数可以，但是这自动化的时候可不能这样呀，废了老大劲网上找到了解决办法，就是利用 debconf 提前配置好参数，详细解决办法见Ubuntu问答 。
-这里我特喵的还是要喷一喷CSDN，妈的一篇帖子万人抄，也不管对不对，往自己的的账号里面薅就对了。妈的好几页都是垃圾文章，浪费我的时间。</description>
-    </item>
-    
-  </channel>
+    <channel>
+        <title>dockerfile on JokemeBlog</title>
+        <link>https://jokeme.top/tags/dockerfile/</link>
+        <description>Recent content in dockerfile on JokemeBlog</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>en-us</language>
+        <lastBuildDate>Tue, 13 Apr 2021 04:59:44 +0000</lastBuildDate><atom:link href="https://jokeme.top/tags/dockerfile/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Dockerfile编写</title>
+        <link>https://jokeme.top/p/dockerfile/</link>
+        <pubDate>Tue, 13 Apr 2021 04:59:44 +0000</pubDate>
+        
+        <guid>https://jokeme.top/p/dockerfile/</guid>
+        <description>&lt;img src="https://cn.bing.com/th?id=OHR.PadarIsland_EN-CN9304851314_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post Dockerfile编写" /&gt;&lt;p&gt;今天也是摸鱼的一天没怎么看书,一直在玩Linux。并且在无意间看到了我之前下载的 &lt;a class=&#34;link&#34; href=&#34;https://github.com/DirectoryLister/DirectoryLister&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;DirectoryLister&lt;/a&gt;，就想着在Docker里面部署玩一下。&lt;/p&gt;
+&lt;p&gt;一开始我是没有想写Dockerfile的，直接在开了一个Ubuntu容器整的，但是想了想，以后想用肯定不方便，这个容器我随时随地都有可以废了它。所以就从网上看了看Dockerfile怎么写，开整！&lt;/p&gt;
+&lt;p&gt;首先我并不想介绍Dockerfile怎么样去写，网上的教程一大把，自己看就可以了 我是参考&lt;a class=&#34;link&#34; href=&#34;https://www.runoob.com/docker/docker-dockerfile.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;菜鸟教程&lt;/a&gt;的教程。&lt;/p&gt;
+&lt;p&gt;Dockerfile无非就是一个自动化的过程，至少在我看来就是这样的，可能我刚接触了解不深吧。但是按照这个思路是绝对可以写出来Dockerfile的，因为我自己就是例子🌰。&lt;/p&gt;
+&lt;p&gt;来看看我的build&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;
+&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
+&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;&lt;code&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 1
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 2
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 3
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 4
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 5
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 6
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 7
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 8
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 9
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;10
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
+&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;7168 ◯ : docker build -t flt:v1.0 .
+... ...
+Removing intermediate container 8fe78ec98a65
+ ---&amp;gt; da56585b17c1
+Step 4/4 : CMD [&amp;#34;/root/np.sh&amp;#34;]
+ ---&amp;gt; Running in 23bd36103ddd
+Removing intermediate container 23bd36103ddd
+ ---&amp;gt; 114c7dec7e2f
+Successfully built 114c7dec7e2f
+Successfully tagged flt:v1.0
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id=&#34;1-选择基础镜像&#34;&gt;1. 选择基础镜像&lt;/h2&gt;
+&lt;p&gt;因为Dockerfile是基于一些底层的镜像制作的，所以在这里我选择的是 &lt;code&gt;ubuntu:20.04&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;因为我平时就是在Ubuntu环境使用的比较多,你要是使用CentOS更顺手你也可以选择使用Redhat系的基础镜像。&lt;/p&gt;
+&lt;p&gt;这里无可争议，过。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;
+&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
+&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;&lt;code&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
+&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;FROM ubuntu:20.04
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id=&#34;2-配置环境变量&#34;&gt;2. 配置环境变量&lt;/h2&gt;
+&lt;p&gt;其实我这里也没有啥环境变量，我也不知道啥东西要设置为环境变量，就把&lt;strong&gt;DirectoryLister&lt;/strong&gt;的版本号设置为环境变量了，方便以后升级。哈哈哈哈，比较菜只能想到这东西了。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;
+&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
+&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;&lt;code&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
+&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;ENV DL_VERSION 3.7.7
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id=&#34;3-自动化运行命令&#34;&gt;3. 自动化运行命令&lt;/h2&gt;
+&lt;p&gt;这里也没有啥好说的，有点Linux基础就可以，就是这个写法很操蛋！要不停的 &amp;amp;&amp;amp; &amp;hellip; &amp;hellip; \，至于为什么要这样呢，我查了一下，说是一个RUN就是一层，你要是写太多RUN就会套太多层，非常的臃肿。这些暂时也不是我需要考虑的，别人怎么写，我就怎么写。&lt;/p&gt;
+&lt;p&gt;这里我遇到了一个自动化安装软件时，需要用户手动输入参数的问题，平时咱手动输入参数可以，但是这自动化的时候可不能这样呀，废了老大劲网上找到了解决办法，就是利用 debconf 提前配置好参数，详细解决办法见&lt;a class=&#34;link&#34; href=&#34;https://ubuntuqa.com/zh-tw/article/7684.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Ubuntu问答&lt;/a&gt; 。&lt;/p&gt;
+&lt;p&gt;这里我特喵的还是要喷一喷CSDN，妈的一篇帖子万人抄，也不管对不对，往自己的的账号里面薅就对了。妈的好几页都是垃圾文章，浪费我的时间。&lt;/p&gt;
+&lt;p&gt;自动化里面基本上就是安装软件修改配置等等，强化了一下我的awk和sed。这俩命令太重要了！一定要学好！&lt;/p&gt;
+&lt;h2 id=&#34;4-cmd命令&#34;&gt;4. CMD命令&lt;/h2&gt;
+&lt;p&gt;没错我直接跳到了CMD命令，啥&lt;strong&gt;COPY&lt;/strong&gt;、&lt;strong&gt;ADD&lt;/strong&gt;、&lt;strong&gt;ENTRYPOINT&lt;/strong&gt;、&lt;strong&gt;ARG&lt;/strong&gt;、&lt;strong&gt;VOLUME&lt;/strong&gt;、&lt;strong&gt;EXPOSE&lt;/strong&gt;、&lt;strong&gt;WORKDIR&lt;/strong&gt;、&lt;strong&gt;USER&lt;/strong&gt;、&lt;strong&gt;HEALTHCHECK&lt;/strong&gt;、&lt;strong&gt;ONBUILD&lt;/strong&gt; 我都没有用上，真的是不知道在哪里用，也用不好，索性就不用了，直接一个CMD就打完收工。&lt;/p&gt;
+&lt;p&gt;CMD里面的脚本也是我倒腾半天网上学来的，这样写虽然不太优雅，但是总比一开始的时候，一运行就结束了好。说到这我就觉得这里还是有点坑的，因为Docker容器里面必须有一个前台的进程，要是没有进程就会整个容器停止运行，我一开始还傻傻的看网上的教程写nohup，写了半天也不行。然鹅nohup并不是真正的前台进程，因为你再按一次回车就直接退出来了，nohup并没有在前台继续运行，只是nohup的那个命令或者脚本没死在后台活着，但是前台没有进程就会直接退出。正是这种命令或者脚本还活着的幻觉让我们觉得这他妈的Docker是不是有病呀？我这居然还不行！&lt;/p&gt;
+&lt;p&gt;所以有些东西还是要靠自己慢慢的积累，网上很多东西也都是错误的，不知道我上面的观点对不对，欢迎指正。&lt;/p&gt;
+</description>
+        </item>
+        
+    </channel>
 </rss>

@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en-us">
+<html lang="en-us" dir="ltr">
     <head><meta charset='utf-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='磁盘扩容，非lvm扩容，而是传统方式'><title>CentOS 7 磁盘扩容</title>
 
 <link rel='canonical' href='https://jokeme.top/p/disk_expansion/'>
 
-<link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='CentOS 7 磁盘扩容'>
+<link rel="stylesheet" href="/scss/style.min.8f838266c1bced5c6bbd71d0405de40d06e788c02de81dc90a51ed740c863169.css"><meta property='og:title' content='CentOS 7 磁盘扩容'>
 <meta property='og:description' content='磁盘扩容，非lvm扩容，而是传统方式'>
 <meta property='og:url' content='https://jokeme.top/p/disk_expansion/'>
 <meta property='og:site_name' content='JokemeBlog'>
@@ -18,8 +18,8 @@
 
     </head>
     <body class="
-    article-page has-toc
-">
+    article-page
+    ">
     <script>
         (function() {
             const colorSchemeKey = 'StackColorScheme';
@@ -42,25 +42,219 @@
         }
     })();
 </script>
-<div class="container main-container flex 
-    
-        extended
-    
-">
-    
-        <div id="article-toolbar">
-            <a href="https://jokeme.top" class="back-home">
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <polyline points="15 6 9 12 15 18" />
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/author_hue3a07bfbdd4fc62fd921ca2090947f2f_15076_300x0_resize_q75_box.jpg" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">🥰</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">JokemeBlog</a></h1>
+            <h2 class="site-description">人生没有白走的路,每一步都算数。</h2>
+        </div>
+    </header><ol class="social-menu">
+            
+                <li>
+                    <a 
+                        href='https://github.com/jokefrelon'
+                        target="_blank"
+                        title="GitHub"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
 </svg>
 
 
 
-                <span>返回</span>
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://twitter.com/FrelonTroung'
+                        target="_blank"
+                        title="Twitter"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>Home</span>
             </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/%E5%85%B3%E4%BA%8E/' >
+                
+                
+                    
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/links/' >
+                
+                
+                    
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>链接</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/archives/' >
+                
+                
+                    
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>存档</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/search/' >
+                
+                
+                    
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+
+        <div class="menu-bottom-section">
+            
+            
+                <li id="dark-mode-toggle">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                    <span>暗色模式</span>
+                </li>
+            
         </div>
-    
+    </ol>
+</aside>
 <main class="main full-width">
     <article class="has-image main-article">
     <header class="article-header">
@@ -84,15 +278,17 @@
     </header>
     
 
-    <h2 class="article-title">
-        <a href="/p/disk_expansion/">CentOS 7 磁盘扩容</a>
-    </h2>
-
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/disk_expansion/">CentOS 7 磁盘扩容</a>
+        </h2>
     
-    <h3 class="article-subtitle">
-        磁盘扩容，非lvm扩容，而是传统方式
-    </h3>
-    
+        
+        <h3 class="article-subtitle">
+            磁盘扩容，非lvm扩容，而是传统方式
+        </h3>
+        
+    </div>
 
     
     <footer class="article-time">
@@ -122,24 +318,44 @@
 
 
                 <time class="article-time--reading">
-                    阅读时长: 5 分钟
+                    阅读时长: 4 分钟
                 </time>
             </div>
         
     </footer>
     
+
+    
 </div>
 </header>
 
     <section class="article-content">
+    
+    
     <h1 id="centos-7-磁盘扩容">CentOS 7 磁盘扩容</h1>
 <p>假设已经添加了磁盘,到了需要在系统里操作的步骤</p>
 <h2 id="对新增加的硬盘进行分区">对新增加的硬盘进行分区</h2>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">fidsk -l
-fdisk /dev/sda <span class="o">(</span>根据实际情况选择<span class="o">)</span>
-n	<span class="o">(</span>新增加一个分区<span class="o">)</span>
-p	<span class="o">(</span>区类型选择为主分区<span class="o">)</span>
-回车	<span class="o">(</span>分区号<span class="o">)</span>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-sh" data-lang="sh">fidsk -l
+fdisk /dev/sda <span style="color:#f92672">(</span>根据实际情况选择<span style="color:#f92672">)</span>
+n	<span style="color:#f92672">(</span>新增加一个分区<span style="color:#f92672">)</span>
+p	<span style="color:#f92672">(</span>区类型选择为主分区<span style="color:#f92672">)</span>
+回车	<span style="color:#f92672">(</span>分区号<span style="color:#f92672">)</span>
 回车　（起始扇区）
 回车　（结束扇区）
 t
@@ -147,225 +363,528 @@ t
 8e 将分区“Linux”的类型更改为“Linux LVM”
 w 保存
 reboot
-</code></pre></div><h2 id="对新增加的硬盘格式化">对新增加的硬盘格式化</h2>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">mkfs.ext4 /dev/sda3
-</code></pre></div><h2 id="添加新lvm到已有的lvm组实现扩容">添加新LVM到已有的LVM组，实现扩容</h2>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">lvm　　　　　　　　　　　　 进入lvm管理
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="对新增加的硬盘格式化">对新增加的硬盘格式化</h2>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-sh" data-lang="sh">mkfs.ext4 /dev/sda3
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="添加新lvm到已有的lvm组实现扩容">添加新LVM到已有的LVM组，实现扩容</h2>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-sh" data-lang="sh">lvm　　　　　　　　　　　　 进入lvm管理
 lvm&gt; pvcreate /dev/sda3 这是初始化刚才的分区，必须的
 lvm&gt;vgextend centos /dev/sda3 将初始化过的分区加入到虚拟卷组vg_dc01
 lvm&gt;lvextend -L +100G /dev/mapper/centos-root　　扩展已有卷的容量（注意容量大小）
 lvm&gt;pvdisplay　　　　　　　　　　　　　　 查看卷容量，这时你会看到一个很大的卷了
 lvm&gt;quit　
-</code></pre></div><p>以上只是卷扩容了，下面是文件系统的真正扩容，输入以下命令：</p>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">resize2fs /dev/mapper/centos-root
-</code></pre></div><p>resize2fs: Bad magic number in super-block 当尝试打开 /dev/mapper/centos-root 时</p>
+</code></pre></td></tr></table>
+</div>
+</div><p>以上只是卷扩容了，下面是文件系统的真正扩容，输入以下命令：</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-sh" data-lang="sh">resize2fs /dev/mapper/centos-root
+</code></pre></td></tr></table>
+</div>
+</div><p>resize2fs: Bad magic number in super-block 当尝试打开 /dev/mapper/centos-root 时</p>
 <p>报错：当尝试打开 /dev/mapper/centos-root 时 找不到有效的文件系统超级块</p>
 <p>因为我的centos7的某些分区用的是xfs的文件系统（使用df -T查看即可知道）</p>
 <p>将<code>resize2fs</code>替换为<code>xfs_growfs</code>，重新执行一遍即可，如下：</p>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh"> xfs_growfs /dev/mapper/centos-root
-</code></pre></div><h3 id="步骤记录">步骤记录</h3>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh"><span class="o">[</span>root@last ~<span class="o">]</span><span class="c1"># fdisk /dev/sda</span>
-Welcome to fdisk <span class="o">(</span>util-linux 2.23.2<span class="o">)</span>.
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-sh" data-lang="sh"> xfs_growfs /dev/mapper/centos-root
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="步骤记录">步骤记录</h3>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 36
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 37
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 38
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 39
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 40
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 41
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 42
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 43
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 44
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 45
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 46
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 47
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 48
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 49
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 50
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 51
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 52
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 53
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 54
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 55
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 56
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 57
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 58
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 59
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 60
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 61
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 62
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 63
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 64
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 65
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 66
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 67
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 68
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 69
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 70
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 71
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 72
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 73
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 74
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 75
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 76
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 77
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 78
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 79
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 80
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 81
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 82
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 83
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 84
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 85
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 86
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 87
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 88
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 89
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 90
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 91
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 92
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 93
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 94
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 95
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 96
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 97
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 98
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 99
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">100
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">101
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">102
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">103
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">104
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">105
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">106
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">107
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">108
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">109
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">110
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">111
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">112
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">113
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">114
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">115
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">116
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">117
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">118
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">119
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">120
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">121
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">122
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">123
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">124
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">125
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">126
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">127
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">128
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">129
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">130
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">131
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">132
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">133
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">134
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">135
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">136
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">137
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">138
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">139
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">140
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">141
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">142
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">143
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">144
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">145
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">146
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">147
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">148
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">149
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">150
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">151
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">152
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">153
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">154
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-sh" data-lang="sh"><span style="color:#f92672">[</span>root@last ~<span style="color:#f92672">]</span><span style="color:#75715e"># fdisk /dev/sda</span>
+Welcome to fdisk <span style="color:#f92672">(</span>util-linux 2.23.2<span style="color:#f92672">)</span>.
 
-Changes will remain in memory only, <span class="k">until</span> you decide to write them.
+Changes will remain in memory only, <span style="color:#66d9ef">until</span> you decide to write them.
 Be careful before using the write command.
 
 
-Command <span class="o">(</span>m <span class="k">for</span> <span class="nb">help</span><span class="o">)</span>: p
+Command <span style="color:#f92672">(</span>m <span style="color:#66d9ef">for</span> help<span style="color:#f92672">)</span>: p
 
-Disk /dev/sda: 107.4 GB, <span class="m">107374182400</span> bytes, <span class="m">209715200</span> sectors
-<span class="nv">Units</span> <span class="o">=</span> sectors of <span class="m">1</span> * <span class="nv">512</span> <span class="o">=</span> <span class="m">512</span> bytes
-Sector size <span class="o">(</span>logical/physical<span class="o">)</span>: <span class="m">512</span> bytes / <span class="m">512</span> bytes
-I/O size <span class="o">(</span>minimum/optimal<span class="o">)</span>: <span class="m">512</span> bytes / <span class="m">512</span> bytes
+Disk /dev/sda: 107.4 GB, <span style="color:#ae81ff">107374182400</span> bytes, <span style="color:#ae81ff">209715200</span> sectors
+Units <span style="color:#f92672">=</span> sectors of <span style="color:#ae81ff">1</span> * 512 <span style="color:#f92672">=</span> <span style="color:#ae81ff">512</span> bytes
+Sector size <span style="color:#f92672">(</span>logical/physical<span style="color:#f92672">)</span>: <span style="color:#ae81ff">512</span> bytes / <span style="color:#ae81ff">512</span> bytes
+I/O size <span style="color:#f92672">(</span>minimum/optimal<span style="color:#f92672">)</span>: <span style="color:#ae81ff">512</span> bytes / <span style="color:#ae81ff">512</span> bytes
 Disk label type: dos
 Disk identifier: 0x000ae200
 
    Device Boot      Start         End      Blocks   Id  System
-/dev/sda1   *        <span class="m">2048</span>     <span class="m">2099199</span>     <span class="m">1048576</span>   <span class="m">83</span>  Linux
-/dev/sda2         <span class="m">2099200</span>    <span class="m">41943039</span>    <span class="m">19921920</span>   8e  Linux LVM
+/dev/sda1   *        <span style="color:#ae81ff">2048</span>     <span style="color:#ae81ff">2099199</span>     <span style="color:#ae81ff">1048576</span>   <span style="color:#ae81ff">83</span>  Linux
+/dev/sda2         <span style="color:#ae81ff">2099200</span>    <span style="color:#ae81ff">41943039</span>    <span style="color:#ae81ff">19921920</span>   8e  Linux LVM
 
-Command <span class="o">(</span>m <span class="k">for</span> <span class="nb">help</span><span class="o">)</span>: n
+Command <span style="color:#f92672">(</span>m <span style="color:#66d9ef">for</span> help<span style="color:#f92672">)</span>: n
 Partition type:
-   p   primary <span class="o">(</span><span class="m">2</span> primary, <span class="m">0</span> extended, <span class="m">2</span> free<span class="o">)</span>
+   p   primary <span style="color:#f92672">(</span><span style="color:#ae81ff">2</span> primary, <span style="color:#ae81ff">0</span> extended, <span style="color:#ae81ff">2</span> free<span style="color:#f92672">)</span>
    e   extended
-Select <span class="o">(</span>default p<span class="o">)</span>:
+Select <span style="color:#f92672">(</span>default p<span style="color:#f92672">)</span>:
 Using default response p
-Partition number <span class="o">(</span>3,4, default 3<span class="o">)</span>:
-First sector <span class="o">(</span>41943040-209715199, default 41943040<span class="o">)</span>:
-Using default value <span class="m">41943040</span>
-Last sector, +sectors or +size<span class="o">{</span>K,M,G<span class="o">}</span> <span class="o">(</span>41943040-209715199, default 209715199<span class="o">)</span>:
-Using default value <span class="m">209715199</span>
-Partition <span class="m">3</span> of <span class="nb">type</span> Linux and of size <span class="m">80</span> GiB is <span class="nb">set</span>
+Partition number <span style="color:#f92672">(</span>3,4, default 3<span style="color:#f92672">)</span>:
+First sector <span style="color:#f92672">(</span>41943040-209715199, default 41943040<span style="color:#f92672">)</span>:
+Using default value <span style="color:#ae81ff">41943040</span>
+Last sector, +sectors or +size<span style="color:#f92672">{</span>K,M,G<span style="color:#f92672">}</span> <span style="color:#f92672">(</span>41943040-209715199, default 209715199<span style="color:#f92672">)</span>:
+Using default value <span style="color:#ae81ff">209715199</span>
+Partition <span style="color:#ae81ff">3</span> of type Linux and of size <span style="color:#ae81ff">80</span> GiB is set
 
-Command <span class="o">(</span>m <span class="k">for</span> <span class="nb">help</span><span class="o">)</span>: p
+Command <span style="color:#f92672">(</span>m <span style="color:#66d9ef">for</span> help<span style="color:#f92672">)</span>: p
 
-Disk /dev/sda: 107.4 GB, <span class="m">107374182400</span> bytes, <span class="m">209715200</span> sectors
-<span class="nv">Units</span> <span class="o">=</span> sectors of <span class="m">1</span> * <span class="nv">512</span> <span class="o">=</span> <span class="m">512</span> bytes
-Sector size <span class="o">(</span>logical/physical<span class="o">)</span>: <span class="m">512</span> bytes / <span class="m">512</span> bytes
-I/O size <span class="o">(</span>minimum/optimal<span class="o">)</span>: <span class="m">512</span> bytes / <span class="m">512</span> bytes
+Disk /dev/sda: 107.4 GB, <span style="color:#ae81ff">107374182400</span> bytes, <span style="color:#ae81ff">209715200</span> sectors
+Units <span style="color:#f92672">=</span> sectors of <span style="color:#ae81ff">1</span> * 512 <span style="color:#f92672">=</span> <span style="color:#ae81ff">512</span> bytes
+Sector size <span style="color:#f92672">(</span>logical/physical<span style="color:#f92672">)</span>: <span style="color:#ae81ff">512</span> bytes / <span style="color:#ae81ff">512</span> bytes
+I/O size <span style="color:#f92672">(</span>minimum/optimal<span style="color:#f92672">)</span>: <span style="color:#ae81ff">512</span> bytes / <span style="color:#ae81ff">512</span> bytes
 Disk label type: dos
 Disk identifier: 0x000ae200
 
    Device Boot      Start         End      Blocks   Id  System
-/dev/sda1   *        <span class="m">2048</span>     <span class="m">2099199</span>     <span class="m">1048576</span>   <span class="m">83</span>  Linux
-/dev/sda2         <span class="m">2099200</span>    <span class="m">41943039</span>    <span class="m">19921920</span>   8e  Linux LVM
-/dev/sda3        <span class="m">41943040</span>   <span class="m">209715199</span>    <span class="m">83886080</span>   <span class="m">83</span>  Linux
+/dev/sda1   *        <span style="color:#ae81ff">2048</span>     <span style="color:#ae81ff">2099199</span>     <span style="color:#ae81ff">1048576</span>   <span style="color:#ae81ff">83</span>  Linux
+/dev/sda2         <span style="color:#ae81ff">2099200</span>    <span style="color:#ae81ff">41943039</span>    <span style="color:#ae81ff">19921920</span>   8e  Linux LVM
+/dev/sda3        <span style="color:#ae81ff">41943040</span>   <span style="color:#ae81ff">209715199</span>    <span style="color:#ae81ff">83886080</span>   <span style="color:#ae81ff">83</span>  Linux
 
-Command <span class="o">(</span>m <span class="k">for</span> <span class="nb">help</span><span class="o">)</span>: t
-Partition number <span class="o">(</span>1-3, default 3<span class="o">)</span>: 8e
-Partition number <span class="o">(</span>1-3, default 3<span class="o">)</span>:
-Hex code <span class="o">(</span><span class="nb">type</span> L to list all codes<span class="o">)</span>: 8e
-Changed <span class="nb">type</span> of partition <span class="s1">&#39;Linux&#39;</span> to <span class="s1">&#39;Linux LVM&#39;</span>
+Command <span style="color:#f92672">(</span>m <span style="color:#66d9ef">for</span> help<span style="color:#f92672">)</span>: t
+Partition number <span style="color:#f92672">(</span>1-3, default 3<span style="color:#f92672">)</span>: 8e
+Partition number <span style="color:#f92672">(</span>1-3, default 3<span style="color:#f92672">)</span>:
+Hex code <span style="color:#f92672">(</span>type L to list all codes<span style="color:#f92672">)</span>: 8e
+Changed type of partition <span style="color:#e6db74">&#39;Linux&#39;</span> to <span style="color:#e6db74">&#39;Linux LVM&#39;</span>
 
-Command <span class="o">(</span>m <span class="k">for</span> <span class="nb">help</span><span class="o">)</span>: p
+Command <span style="color:#f92672">(</span>m <span style="color:#66d9ef">for</span> help<span style="color:#f92672">)</span>: p
 
-Disk /dev/sda: 107.4 GB, <span class="m">107374182400</span> bytes, <span class="m">209715200</span> sectors
-<span class="nv">Units</span> <span class="o">=</span> sectors of <span class="m">1</span> * <span class="nv">512</span> <span class="o">=</span> <span class="m">512</span> bytes
-Sector size <span class="o">(</span>logical/physical<span class="o">)</span>: <span class="m">512</span> bytes / <span class="m">512</span> bytes
-I/O size <span class="o">(</span>minimum/optimal<span class="o">)</span>: <span class="m">512</span> bytes / <span class="m">512</span> bytes
+Disk /dev/sda: 107.4 GB, <span style="color:#ae81ff">107374182400</span> bytes, <span style="color:#ae81ff">209715200</span> sectors
+Units <span style="color:#f92672">=</span> sectors of <span style="color:#ae81ff">1</span> * 512 <span style="color:#f92672">=</span> <span style="color:#ae81ff">512</span> bytes
+Sector size <span style="color:#f92672">(</span>logical/physical<span style="color:#f92672">)</span>: <span style="color:#ae81ff">512</span> bytes / <span style="color:#ae81ff">512</span> bytes
+I/O size <span style="color:#f92672">(</span>minimum/optimal<span style="color:#f92672">)</span>: <span style="color:#ae81ff">512</span> bytes / <span style="color:#ae81ff">512</span> bytes
 Disk label type: dos
 Disk identifier: 0x000ae200
 
    Device Boot      Start         End      Blocks   Id  System
-/dev/sda1   *        <span class="m">2048</span>     <span class="m">2099199</span>     <span class="m">1048576</span>   <span class="m">83</span>  Linux
-/dev/sda2         <span class="m">2099200</span>    <span class="m">41943039</span>    <span class="m">19921920</span>   8e  Linux LVM
-/dev/sda3        <span class="m">41943040</span>   <span class="m">209715199</span>    <span class="m">83886080</span>   8e  Linux LVM
+/dev/sda1   *        <span style="color:#ae81ff">2048</span>     <span style="color:#ae81ff">2099199</span>     <span style="color:#ae81ff">1048576</span>   <span style="color:#ae81ff">83</span>  Linux
+/dev/sda2         <span style="color:#ae81ff">2099200</span>    <span style="color:#ae81ff">41943039</span>    <span style="color:#ae81ff">19921920</span>   8e  Linux LVM
+/dev/sda3        <span style="color:#ae81ff">41943040</span>   <span style="color:#ae81ff">209715199</span>    <span style="color:#ae81ff">83886080</span>   8e  Linux LVM
 
-Command <span class="o">(</span>m <span class="k">for</span> <span class="nb">help</span><span class="o">)</span>: w
+Command <span style="color:#f92672">(</span>m <span style="color:#66d9ef">for</span> help<span style="color:#f92672">)</span>: w
 The partition table has been altered!
 
-Calling ioctl<span class="o">()</span> to re-read partition table.
+Calling ioctl<span style="color:#f92672">()</span> to re-read partition table.
 
 WARNING: Re-reading the partition table failed with error 16: Device or resource busy.
 The kernel still uses the old table. The new table will be used at
-the next reboot or after you run partprobe<span class="o">(</span>8<span class="o">)</span> or kpartx<span class="o">(</span>8<span class="o">)</span>
+the next reboot or after you run partprobe<span style="color:#f92672">(</span>8<span style="color:#f92672">)</span> or kpartx<span style="color:#f92672">(</span>8<span style="color:#f92672">)</span>
 Syncing disks.
-<span class="o">[</span>root@last ~<span class="o">]</span><span class="c1">#</span>
-<span class="o">[</span>root@last ~<span class="o">]</span><span class="c1"># reboot</span>
+<span style="color:#f92672">[</span>root@last ~<span style="color:#f92672">]</span><span style="color:#75715e">#</span>
+<span style="color:#f92672">[</span>root@last ~<span style="color:#f92672">]</span><span style="color:#75715e"># reboot</span>
 Connection to 192.168.50.130 closed by remote host.
 Connection to 192.168.50.130 closed.
 ➜  frelon
 ➜  frelon
 ➜  frelon ssh root@192.168.50.130
-Last login: Sat Sep <span class="m">19</span> 04:08:59 <span class="m">2020</span> from 192.168.50.1
-<span class="o">[</span>root@last ~<span class="o">]</span><span class="c1"># mkfs.ext4 /dev/sda3</span>
-mke2fs 1.42.9 <span class="o">(</span>28-Dec-2013<span class="o">)</span>
-Filesystem <span class="nv">label</span><span class="o">=</span>
+Last login: Sat Sep <span style="color:#ae81ff">19</span> 04:08:59 <span style="color:#ae81ff">2020</span> from 192.168.50.1
+<span style="color:#f92672">[</span>root@last ~<span style="color:#f92672">]</span><span style="color:#75715e"># mkfs.ext4 /dev/sda3</span>
+mke2fs 1.42.9 <span style="color:#f92672">(</span>28-Dec-2013<span style="color:#f92672">)</span>
+Filesystem label<span style="color:#f92672">=</span>
 OS type: Linux
-Block <span class="nv">size</span><span class="o">=</span><span class="m">4096</span> <span class="o">(</span><span class="nv">log</span><span class="o">=</span>2<span class="o">)</span>
-Fragment <span class="nv">size</span><span class="o">=</span><span class="m">4096</span> <span class="o">(</span><span class="nv">log</span><span class="o">=</span>2<span class="o">)</span>
-<span class="nv">Stride</span><span class="o">=</span><span class="m">0</span> blocks, Stripe <span class="nv">width</span><span class="o">=</span><span class="m">0</span> blocks
-<span class="m">5242880</span> inodes, <span class="m">20971520</span> blocks
-<span class="m">1048576</span> blocks <span class="o">(</span>5.00%<span class="o">)</span> reserved <span class="k">for</span> the super user
-First data <span class="nv">block</span><span class="o">=</span><span class="m">0</span>
-Maximum filesystem <span class="nv">blocks</span><span class="o">=</span><span class="m">2168455168</span>
-<span class="m">640</span> block groups
-<span class="m">32768</span> blocks per group, <span class="m">32768</span> fragments per group
-<span class="m">8192</span> inodes per group
+Block size<span style="color:#f92672">=</span><span style="color:#ae81ff">4096</span> <span style="color:#f92672">(</span>log<span style="color:#f92672">=</span>2<span style="color:#f92672">)</span>
+Fragment size<span style="color:#f92672">=</span><span style="color:#ae81ff">4096</span> <span style="color:#f92672">(</span>log<span style="color:#f92672">=</span>2<span style="color:#f92672">)</span>
+Stride<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span> blocks, Stripe width<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span> blocks
+<span style="color:#ae81ff">5242880</span> inodes, <span style="color:#ae81ff">20971520</span> blocks
+<span style="color:#ae81ff">1048576</span> blocks <span style="color:#f92672">(</span>5.00%<span style="color:#f92672">)</span> reserved <span style="color:#66d9ef">for</span> the super user
+First data block<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>
+Maximum filesystem blocks<span style="color:#f92672">=</span><span style="color:#ae81ff">2168455168</span>
+<span style="color:#ae81ff">640</span> block groups
+<span style="color:#ae81ff">32768</span> blocks per group, <span style="color:#ae81ff">32768</span> fragments per group
+<span style="color:#ae81ff">8192</span> inodes per group
 Superblock backups stored on blocks:
         32768, 98304, 163840, 229376, 294912, 819200, 884736, 1605632, 2654208,
-        4096000, 7962624, 11239424, <span class="m">20480000</span>
+        4096000, 7962624, 11239424, <span style="color:#ae81ff">20480000</span>
 
-Allocating group tables: <span class="k">done</span>
-Writing inode tables: <span class="k">done</span>
-Creating journal <span class="o">(</span><span class="m">32768</span> blocks<span class="o">)</span>: <span class="k">done</span>
-Writing superblocks and filesystem accounting information: <span class="k">done</span>
+Allocating group tables: <span style="color:#66d9ef">done</span>
+Writing inode tables: <span style="color:#66d9ef">done</span>
+Creating journal <span style="color:#f92672">(</span><span style="color:#ae81ff">32768</span> blocks<span style="color:#f92672">)</span>: <span style="color:#66d9ef">done</span>
+Writing superblocks and filesystem accounting information: <span style="color:#66d9ef">done</span>
 
-<span class="o">[</span>root@last ~<span class="o">]</span><span class="c1">#</span>
-<span class="o">[</span>root@last ~<span class="o">]</span><span class="c1">#</span>
-<span class="o">[</span>root@last ~<span class="o">]</span><span class="c1"># lvm</span>
+<span style="color:#f92672">[</span>root@last ~<span style="color:#f92672">]</span><span style="color:#75715e">#</span>
+<span style="color:#f92672">[</span>root@last ~<span style="color:#f92672">]</span><span style="color:#75715e">#</span>
+<span style="color:#f92672">[</span>root@last ~<span style="color:#f92672">]</span><span style="color:#75715e"># lvm</span>
 lvm&gt; pvcreate /dev/sda3
-WARNING: ext4 signature detected on /dev/sda3 at offset 1080. Wipe it? <span class="o">[</span>y/n<span class="o">]</span>: y
+WARNING: ext4 signature detected on /dev/sda3 at offset 1080. Wipe it? <span style="color:#f92672">[</span>y/n<span style="color:#f92672">]</span>: y
   Wiping ext4 signature on /dev/sda3.
-  Physical volume <span class="s2">&#34;/dev/sda3&#34;</span> successfully created.
+  Physical volume <span style="color:#e6db74">&#34;/dev/sda3&#34;</span> successfully created.
 lvm&gt;
 lvm&gt; vgextend centos /dev/sda3
-  Volume group <span class="s2">&#34;centos&#34;</span> successfully extended
+  Volume group <span style="color:#e6db74">&#34;centos&#34;</span> successfully extended
 lvm&gt; lvextend -L +79G /dev/mapper/centos-root
-  Size of logical volume centos/root changed from &lt;17.00 GiB <span class="o">(</span><span class="m">4351</span> extents<span class="o">)</span> to &lt;96.00 GiB <span class="o">(</span><span class="m">24575</span> extents<span class="o">)</span>.
+  Size of logical volume centos/root changed from &lt;17.00 GiB <span style="color:#f92672">(</span><span style="color:#ae81ff">4351</span> extents<span style="color:#f92672">)</span> to &lt;96.00 GiB <span style="color:#f92672">(</span><span style="color:#ae81ff">24575</span> extents<span style="color:#f92672">)</span>.
   Logical volume centos/root successfully resized.
 lvm&gt; quit
   Exiting.
-<span class="o">[</span>root@last ~<span class="o">]</span><span class="c1"># xfs_</span>
+<span style="color:#f92672">[</span>root@last ~<span style="color:#f92672">]</span><span style="color:#75715e"># xfs_</span>
 xfs_admin      xfs_db         xfs_fsr        xfs_io         xfs_metadump   xfs_quota
 xfs_bmap       xfs_estimate   xfs_growfs     xfs_logprint   xfs_mkfile     xfs_repair
 xfs_copy       xfs_freeze     xfs_info       xfs_mdrestore  xfs_ncheck     xfs_rtcp
-<span class="o">[</span>root@last ~<span class="o">]</span><span class="c1"># xfs_</span>
+<span style="color:#f92672">[</span>root@last ~<span style="color:#f92672">]</span><span style="color:#75715e"># xfs_</span>
 xfs_admin      xfs_db         xfs_fsr        xfs_io         xfs_metadump   xfs_quota
 xfs_bmap       xfs_estimate   xfs_growfs     xfs_logprint   xfs_mkfile     xfs_repair
 xfs_copy       xfs_freeze     xfs_info       xfs_mdrestore  xfs_ncheck     xfs_rtcp
-<span class="o">[</span>root@last ~<span class="o">]</span><span class="c1"># xfs_growfs /dev/mapper/c</span>
+<span style="color:#f92672">[</span>root@last ~<span style="color:#f92672">]</span><span style="color:#75715e"># xfs_growfs /dev/mapper/c</span>
 centos-root  centos-swap  control
-<span class="o">[</span>root@last ~<span class="o">]</span><span class="c1"># xfs_growfs /dev/mapper/centos-root</span>
-meta-data<span class="o">=</span>/dev/mapper/centos-root <span class="nv">isize</span><span class="o">=</span><span class="m">512</span>    <span class="nv">agcount</span><span class="o">=</span>4, <span class="nv">agsize</span><span class="o">=</span><span class="m">1113856</span> <span class="nv">blks</span>
-         <span class="o">=</span>                       <span class="nv">sectsz</span><span class="o">=</span><span class="m">512</span>   <span class="nv">attr</span><span class="o">=</span>2, <span class="nv">projid32bit</span><span class="o">=</span><span class="nv">1</span>
-         <span class="o">=</span>                       <span class="nv">crc</span><span class="o">=</span><span class="m">1</span>        <span class="nv">finobt</span><span class="o">=</span><span class="m">0</span> <span class="nv">spinodes</span><span class="o">=</span><span class="m">0</span>
-<span class="nv">data</span>     <span class="o">=</span>                       <span class="nv">bsize</span><span class="o">=</span><span class="m">4096</span>   <span class="nv">blocks</span><span class="o">=</span>4455424, <span class="nv">imaxpct</span><span class="o">=</span><span class="nv">25</span>
-         <span class="o">=</span>                       <span class="nv">sunit</span><span class="o">=</span><span class="m">0</span>      <span class="nv">swidth</span><span class="o">=</span><span class="m">0</span> blks
-<span class="nv">naming</span>   <span class="o">=</span>version <span class="m">2</span>              <span class="nv">bsize</span><span class="o">=</span><span class="m">4096</span>   ascii-ci<span class="o">=</span><span class="m">0</span> <span class="nv">ftype</span><span class="o">=</span><span class="m">1</span>
-<span class="nv">log</span>      <span class="o">=</span>internal               <span class="nv">bsize</span><span class="o">=</span><span class="m">4096</span>   <span class="nv">blocks</span><span class="o">=</span>2560, <span class="nv">version</span><span class="o">=</span><span class="nv">2</span>
-         <span class="o">=</span>                       <span class="nv">sectsz</span><span class="o">=</span><span class="m">512</span>   <span class="nv">sunit</span><span class="o">=</span><span class="m">0</span> blks, lazy-count<span class="o">=</span><span class="m">1</span>
-<span class="nv">realtime</span> <span class="o">=</span>none                   <span class="nv">extsz</span><span class="o">=</span><span class="m">4096</span>   <span class="nv">blocks</span><span class="o">=</span>0, <span class="nv">rtextents</span><span class="o">=</span><span class="m">0</span>
-data blocks changed from <span class="m">4455424</span> to <span class="m">25164800</span>
-<span class="o">[</span>root@last ~<span class="o">]</span><span class="c1">#</span>
-<span class="o">[</span>root@last ~<span class="o">]</span><span class="c1">#</span>
-<span class="o">[</span>root@last ~<span class="o">]</span><span class="c1"># df -h</span>
+<span style="color:#f92672">[</span>root@last ~<span style="color:#f92672">]</span><span style="color:#75715e"># xfs_growfs /dev/mapper/centos-root</span>
+meta-data<span style="color:#f92672">=</span>/dev/mapper/centos-root isize<span style="color:#f92672">=</span><span style="color:#ae81ff">512</span>    agcount<span style="color:#f92672">=</span>4, agsize<span style="color:#f92672">=</span><span style="color:#ae81ff">1113856</span> blks
+         <span style="color:#f92672">=</span>                       sectsz<span style="color:#f92672">=</span><span style="color:#ae81ff">512</span>   attr<span style="color:#f92672">=</span>2, projid32bit<span style="color:#f92672">=</span>1
+         <span style="color:#f92672">=</span>                       crc<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>        finobt<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span> spinodes<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>
+data     <span style="color:#f92672">=</span>                       bsize<span style="color:#f92672">=</span><span style="color:#ae81ff">4096</span>   blocks<span style="color:#f92672">=</span>4455424, imaxpct<span style="color:#f92672">=</span>25
+         <span style="color:#f92672">=</span>                       sunit<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>      swidth<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span> blks
+naming   <span style="color:#f92672">=</span>version <span style="color:#ae81ff">2</span>              bsize<span style="color:#f92672">=</span><span style="color:#ae81ff">4096</span>   ascii-ci<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span> ftype<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>
+log      <span style="color:#f92672">=</span>internal               bsize<span style="color:#f92672">=</span><span style="color:#ae81ff">4096</span>   blocks<span style="color:#f92672">=</span>2560, version<span style="color:#f92672">=</span>2
+         <span style="color:#f92672">=</span>                       sectsz<span style="color:#f92672">=</span><span style="color:#ae81ff">512</span>   sunit<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span> blks, lazy-count<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>
+realtime <span style="color:#f92672">=</span>none                   extsz<span style="color:#f92672">=</span><span style="color:#ae81ff">4096</span>   blocks<span style="color:#f92672">=</span>0, rtextents<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>
+data blocks changed from <span style="color:#ae81ff">4455424</span> to <span style="color:#ae81ff">25164800</span>
+<span style="color:#f92672">[</span>root@last ~<span style="color:#f92672">]</span><span style="color:#75715e">#</span>
+<span style="color:#f92672">[</span>root@last ~<span style="color:#f92672">]</span><span style="color:#75715e">#</span>
+<span style="color:#f92672">[</span>root@last ~<span style="color:#f92672">]</span><span style="color:#75715e"># df -h</span>
 Filesystem               Size  Used Avail Use% Mounted on
-devtmpfs                 898M     <span class="m">0</span>  898M   0% /dev
-tmpfs                    910M     <span class="m">0</span>  910M   0% /dev/shm
+devtmpfs                 898M     <span style="color:#ae81ff">0</span>  898M   0% /dev
+tmpfs                    910M     <span style="color:#ae81ff">0</span>  910M   0% /dev/shm
 tmpfs                    910M  9.5M  901M   2% /run
-tmpfs                    910M     <span class="m">0</span>  910M   0% /sys/fs/cgroup
+tmpfs                    910M     <span style="color:#ae81ff">0</span>  910M   0% /sys/fs/cgroup
 /dev/mapper/centos-root   96G  1.4G   95G   2% /
 /dev/sda1               1014M  150M  865M  15% /boot
-tmpfs                    182M     <span class="m">0</span>  182M   0% /run/user/0
-</code></pre></div><hr>
+tmpfs                    182M     <span style="color:#ae81ff">0</span>  182M   0% /run/user/0
+</code></pre></td></tr></table>
+</div>
+</div><hr>
 <p>　由于在安装centos系统的时候，如果在安装时没有分配磁盘空间，选择的是默认分配的，在安装完成后，可以发现大容量磁盘往往分配在了home下面。</p>
 <p>如果要把home下面的磁盘空间分配到root磁盘下面。可以进行如下操作。</p>
 <h2 id="1查看centos的系统版本">1.查看CentOS的系统版本</h2>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh"><span class="o">[</span>root@controller ~<span class="o">]</span><span class="c1"># cat /etc/redhat-release</span>
-CentOS Linux release 7.2.1511 <span class="o">(</span>Core<span class="o">)</span>
-</code></pre></div><h2 id="2查看分区">2.查看分区</h2>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-sh" data-lang="sh"><span style="color:#f92672">[</span>root@controller ~<span style="color:#f92672">]</span><span style="color:#75715e"># cat /etc/redhat-release</span>
+CentOS Linux release 7.2.1511 <span style="color:#f92672">(</span>Core<span style="color:#f92672">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="2查看分区">2.查看分区</h2>
 <p><code>df -h</code> (centos-home和centos-root每人的名字可能不一样)</p>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh"><span class="o">[</span>root@controller ~<span class="o">]</span><span class="c1"># df -h</span>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-sh" data-lang="sh"><span style="color:#f92672">[</span>root@controller ~<span style="color:#f92672">]</span><span style="color:#75715e"># df -h</span>
 Filesystem      Size  Used Avail Use% Mounted on
 /dev/sda3        50G  8.5G   42G  17% /
-devtmpfs        1.9G     <span class="m">0</span>  1.9G   0% /dev
-tmpfs           1.9G     <span class="m">0</span>  1.9G   0% /dev/shm
+devtmpfs        1.9G     <span style="color:#ae81ff">0</span>  1.9G   0% /dev
+tmpfs           1.9G     <span style="color:#ae81ff">0</span>  1.9G   0% /dev/shm
 tmpfs           1.9G  8.7M  1.9G   1% /run
-tmpfs           1.9G     <span class="m">0</span>  1.9G   0% /sys/fs/cgroup
+tmpfs           1.9G     <span style="color:#ae81ff">0</span>  1.9G   0% /sys/fs/cgroup
 /dev/sda6        20G   33M   20G   1% /home
 /dev/sda5        26G  804M   26G   4% /var
 /dev/sda2       2.0G  125M  1.9G   7% /boot
-/dev/loop0      4.1G  4.1G     <span class="m">0</span> 100% /mnt/centos
-/dev/loop1      2.7G  2.7G     <span class="m">0</span> 100% /mnt/xiandi
-tmpfs           378M     <span class="m">0</span>  378M   0% /run/user/0
-</code></pre></div><h2 id="3备份home分区文件">3.备份home分区文件</h2>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh"><span class="o">[</span>root@controller ~<span class="o">]</span><span class="c1"># tar cvzf /mnt/home.tar /home/</span>
-tar: Removing leading <span class="sb">`</span>/<span class="err">&#39;</span> from member names
+/dev/loop0      4.1G  4.1G     <span style="color:#ae81ff">0</span> 100% /mnt/centos
+/dev/loop1      2.7G  2.7G     <span style="color:#ae81ff">0</span> 100% /mnt/xiandi
+tmpfs           378M     <span style="color:#ae81ff">0</span>  378M   0% /run/user/0
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="3备份home分区文件">3.备份home分区文件</h2>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-sh" data-lang="sh"><span style="color:#f92672">[</span>root@controller ~<span style="color:#f92672">]</span><span style="color:#75715e"># tar cvzf /mnt/home.tar /home/</span>
+tar: Removing leading <span style="color:#e6db74">`</span>/<span style="color:#960050;background-color:#1e0010">&#39;</span> from member names
 /home/
 /home/frelon/
-</code></pre></div><h2 id="4卸载home如果无法卸载先终止使用home文件系统的进程">4.卸载/home，如果无法卸载，先终止使用/home文件系统的进程</h2>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh"><span class="o">[</span>root@controller ~<span class="o">]</span><span class="c1"># umount /home （卸载）</span>
-</code></pre></div><p>如果卸载时，发现/home在使用中，所以先终止。</p>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh"><span class="o">[</span>root@controller ~<span class="o">]</span><span class="c1"># fuser -km /home/（终止）</span>
-</code></pre></div><p>再次卸载，没有报错，表示成功。</p>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh"><span class="o">[</span>root@controller ~<span class="o">]</span><span class="c1"># umount /home （卸载）</span>
-</code></pre></div><h2 id="5删除home所在的lv">5.删除/home所在的lv</h2>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">lvremove /dev/mapper/centos-home
-</code></pre></div><h2 id="6扩展root所在的lv">6.扩展/root所在的lv</h2>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">lvextend -L +100G /dev/mapper/centos-root
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="4卸载home如果无法卸载先终止使用home文件系统的进程">4.卸载/home，如果无法卸载，先终止使用/home文件系统的进程</h2>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-sh" data-lang="sh"><span style="color:#f92672">[</span>root@controller ~<span style="color:#f92672">]</span><span style="color:#75715e"># umount /home （卸载）</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>如果卸载时，发现/home在使用中，所以先终止。</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-sh" data-lang="sh"><span style="color:#f92672">[</span>root@controller ~<span style="color:#f92672">]</span><span style="color:#75715e"># fuser -km /home/（终止）</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>再次卸载，没有报错，表示成功。</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-sh" data-lang="sh"><span style="color:#f92672">[</span>root@controller ~<span style="color:#f92672">]</span><span style="color:#75715e"># umount /home （卸载）</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="5删除home所在的lv">5.删除/home所在的lv</h2>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-sh" data-lang="sh">lvremove /dev/mapper/centos-home
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="6扩展root所在的lv">6.扩展/root所在的lv</h2>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-sh" data-lang="sh">lvextend -L +100G /dev/mapper/centos-root
 
-</code></pre></div><h2 id="7扩展root文件系统">7.扩展/root文件系统</h2>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">xfs_growfs /dev/mapper/centos-root
-</code></pre></div><h2 id="8重新创建home-lv-创建时计算好剩余的磁盘容量建议比剩余小1g左右">8.重新创建home lv （创建时计算好剩余的磁盘容量，建议比剩余小1G左右）</h2>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">lvcreate -L 41G -n /dev/mapper/centos-home 
-</code></pre></div><h2 id="9创建文件系统">9.创建文件系统</h2>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">mkfs.xfs /dev/mapper/centos-home
-</code></pre></div><h2 id="10挂载home">10.挂载home</h2>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">mount /dev/mapper/centos-home
-</code></pre></div><h2 id="11home文件恢复">11.home文件恢复</h2>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">tar xvf /tmp/home.tar -C /home/
-</code></pre></div><h2 id="12再次使用df--h查看系统磁盘大小">12.再次使用df -h查看系统磁盘大小</h2>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="7扩展root文件系统">7.扩展/root文件系统</h2>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-sh" data-lang="sh">xfs_growfs /dev/mapper/centos-root
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="8重新创建home-lv-创建时计算好剩余的磁盘容量建议比剩余小1g左右">8.重新创建home lv （创建时计算好剩余的磁盘容量，建议比剩余小1G左右）</h2>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-sh" data-lang="sh">lvcreate -L 41G -n /dev/mapper/centos-home 
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="9创建文件系统">9.创建文件系统</h2>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-sh" data-lang="sh">mkfs.xfs /dev/mapper/centos-home
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="10挂载home">10.挂载home</h2>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-sh" data-lang="sh">mount /dev/mapper/centos-home
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="11home文件恢复">11.home文件恢复</h2>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-sh" data-lang="sh">tar xvf /tmp/home.tar -C /home/
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="12再次使用df--h查看系统磁盘大小">12.再次使用df -h查看系统磁盘大小</h2>
 <p>可以看到home下面100G的磁盘容量已经转移到root下面了，至此，转移任务结束。此为在CentOS7.2系统下测试使用的，在CentOS6版本下还没测试过。</p>
 <p>声明 : 文章来自互联网(实在是找不到原作者链接出处了),<strong>侵联删</strong></p>
 
@@ -402,11 +921,11 @@ tar: Removing leading <span class="sb">`</span>/<span class="err">&#39;</span> f
                 href="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/katex.min.css"integrity="sha384-RZU/ijkSsFbcmivfdRBQDtwuwVqK7GMOw6IMvKyeWL2K5UAlyp6WonmB8m7Jd0Hn"crossorigin="anonymous"
             ><script 
                 src="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/katex.min.js"integrity="sha384-pK1WpvzWVBQiP0/GjnvRxV4mOb0oxFuyRxJlk6vVw146n3egcN5C925NCP7a7BY8"crossorigin="anonymous"
-                defer="true"
+                defer
                 >
             </script><script 
                 src="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/contrib/auto-render.min.js"integrity="sha384-vZTG03m&#43;2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl"crossorigin="anonymous"
-                defer="true"
+                defer
                 >
             </script><script>
     window.addEventListener("DOMContentLoaded", () => {
@@ -422,14 +941,16 @@ tar: Removing leading <span class="sb">`</span>/<span class="err">&#39;</span> f
     
 </article>
 
-    <aside class="related-contents--wrapper">
     
+
     
-        <h2 class="section-title">相关文章</h2>
-        <div class="related-contents">
-            <div class="flex article-list--tile">
+
+<aside class="related-contents--wrapper">
+    <h2 class="section-title">相关文章</h2>
+    <div class="related-contents">
+        <div class="flex article-list--tile">
+            
                 
-                    
 <article class="has-image">
     <a href="/p/linux_reward/">
         
@@ -446,8 +967,8 @@ tar: Removing leading <span class="sb">`</span>/<span class="err">&#39;</span> f
         </div>
     </a>
 </article>
+            
                 
-                    
 <article class="has-image">
     <a href="/p/ubuntu_install_faq/">
         
@@ -464,8 +985,8 @@ tar: Removing leading <span class="sb">`</span>/<span class="err">&#39;</span> f
         </div>
     </a>
 </article>
+            
                 
-                    
 <article class="has-image">
     <a href="/p/configure_webdav/">
         
@@ -482,8 +1003,8 @@ tar: Removing leading <span class="sb">`</span>/<span class="err">&#39;</span> f
         </div>
     </a>
 </article>
+            
                 
-                    
 <article class="has-image">
     <a href="/p/hadoop_install/">
         
@@ -500,8 +1021,8 @@ tar: Removing leading <span class="sb">`</span>/<span class="err">&#39;</span> f
         </div>
     </a>
 </article>
+            
                 
-                    
 <article class="has-image">
     <a href="/p/review_frp_set_up/">
         
@@ -518,15 +1039,62 @@ tar: Removing leading <span class="sb">`</span>/<span class="err">&#39;</span> f
         </div>
     </a>
 </article>
-                
-            </div>
+            
         </div>
-    
+    </div>
 </aside>
 
      
-     
+    
         
+    <script
+    src="https://giscus.app/client.js"
+    data-repo="jokefrelon/web_on_hugo"
+    data-repo-id="MDEwOlJlcG9zaXRvcnkzNjc3MTg4NTc="
+    data-category="Announcements"
+    data-category-id="DIC_kwDOFerxyc4CN_Id"
+    data-mapping="pathname"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-theme="light"
+    data-lang="en"
+    crossorigin="anonymous"
+    async
+></script>
+<script>
+    function setGiscusTheme(theme) {
+        let giscus = document.querySelector("iframe.giscus-frame");
+        if (giscus) {
+            giscus.contentWindow.postMessage(
+                {
+                    giscus: {
+                        setConfig: {
+                            theme: theme,
+                        },
+                    },
+                },
+                "https://giscus.app"
+            );
+        }
+    }
+
+    (function () {
+        addEventListener("message", (e) => {
+            if (event.origin !== "https://giscus.app") return;
+            handler();
+        });
+        window.addEventListener("onColorSchemeChange", handler);
+
+        function handler() {
+            if (document.documentElement.dataset.scheme === "light") {
+                setGiscusTheme('light');
+            } else {
+                setGiscusTheme('dark_dimmed');
+            }
+        }
+    })();
+</script>
+
     
 
     <footer class="site-footer">
@@ -540,7 +1108,7 @@ tar: Removing leading <span class="sb">`</span>/<span class="err">&#39;</span> f
     
     <section class="powerby">
         Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
-        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.1.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.10.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
     </section>
 </footer>
 
@@ -609,11 +1177,11 @@ tar: Removing leading <span class="sb">`</span>/<span class="err">&#39;</span> f
 
 </div><script 
                 src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
-                defer="true"
+                defer
                 >
             </script><script 
                 src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
-                defer="true"
+                defer
                 >
             </script><link 
                 rel="stylesheet" 
@@ -624,11 +1192,13 @@ tar: Removing leading <span class="sb">`</span>/<span class="err">&#39;</span> f
             >
 
             </main>
-    
-        <aside class="sidebar right-sidebar sticky">
-            <section class="widget archives">
-                <div class="widget-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z"/>
   <line x1="5" y1="9" x2="19" y2="9" />
   <line x1="5" y1="15" x2="19" y2="15" />
@@ -638,11 +1208,11 @@ tar: Removing leading <span class="sb">`</span>/<span class="err">&#39;</span> f
 
 
 
-                </div>
-                <h2 class="widget-title section-title">目录</h2>
-                
-                <div class="widget--toc">
-                    <nav id="TableOfContents">
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
   <ol>
     <li><a href="#对新增加的硬盘进行分区">对新增加的硬盘进行分区</a></li>
     <li><a href="#对新增加的硬盘格式化">对新增加的硬盘格式化</a></li>
@@ -665,15 +1235,18 @@ tar: Removing leading <span class="sb">`</span>/<span class="err">&#39;</span> f
     <li><a href="#12再次使用df--h查看系统磁盘大小">12.再次使用df -h查看系统磁盘大小</a></li>
   </ol>
 </nav>
-                </div>
-            </section>
-        </aside>
-    
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
 
         </div>
         <script 
                 src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js"integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g="crossorigin="anonymous"
-                defer="false"
+                
                 >
             </script><script type="text/javascript" src="/ts/main.js" defer></script>
 <script>

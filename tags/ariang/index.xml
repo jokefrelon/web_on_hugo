@@ -1,29 +1,205 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>AriaNG on JokemeBlog</title>
-    <link>https://jokeme.top/tags/ariang/</link>
-    <description>Recent content in AriaNG on JokemeBlog</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Mon, 09 Aug 2021 18:33:21 +0000</lastBuildDate><atom:link href="https://jokeme.top/tags/ariang/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Aria2下载器配置WebUI界面</title>
-      <link>https://jokeme.top/p/ariang_webui/</link>
-      <pubDate>Mon, 09 Aug 2021 18:33:21 +0000</pubDate>
-      
-      <guid>https://jokeme.top/p/ariang_webui/</guid>
-      <description>Aria2下载器配置WebUI界面 aria2是一款非常非常Nice的下载器，之前我也介绍过 记录最近捯饬Linux的收获，上一次大概介绍了一下命令行里面的操作，这一次咱们来说说WebUI上的操作。
-1. 准备环境 首先去Github下载一下AriaNG 当然你可以选择别的WebUI其实大概步骤都差不多。
-wget https://github.com/mayswind/AriaNg/releases/download/1.2.2/AriaNg-1.2.2.zip 下载完成以后咱们去、/var/www/html里面创建一个文件夹
-sudo mkdir /var/www/html/ariaweb 接着咱们把下载下来的文件移动到创建的文件夹里面顺便解压一下
-mv AriaNg-1.2.2.zip /var/www/html/ariaweb cd /var/www/html/ariaweb unzip AriaNg-1.2.2.zip 不知道你们哪里有没有安装 Nginx，如果没有安装的话，安装一下，会用到nginx，如果你愿意也可以用apache2，tomcat等，这里我就以nginx演示了。
-sudo apt-get install nginx 接着是需要安装一下我们今天的主角：aria2
-sudo apt-get install aria2 #aria2 is already the newest version (1.35.0-1build1). 目前 Ubuntu20.04最新的是1.35.0，GitHub最新版本也是1.35.0
-2. 修改配置文件 2.1 aria2.conf 首先就是aria2的配置文件，默认是读取：~/.aria2/aria2.conf，当然我们需要手动创建一下文件的
-mkdir ~/.aria2 touch ~/.aria2/aria2.conf touch ~/.aria2/aria2.session 然后我们就需要把自己的配置文件加上去了
-#http download continue=true max-connection-per-server=5 max-tries=10 retry-wait=600 #bt download bt-max-open-files=1000 bt-request-peer-speed-limit=40K bt-tracker=[udp://93.158.213.92:1337/announce,http://93.158.213.92:1337/announce,udp://207.241.226.111:6969/announce] enable-dht=true enable-peer-exchange=true dht-file-path=/home/user/.cache/aria2/dht.dat max-upload-limit=300K #RPC setting enable-rpc=true rpc-allow-origin-all=true rpc-listen-all=true rpc-secret=llll #Other setting disable-ipv6=true file-allocation=falloc save-session=/home/user/.</description>
-    </item>
-    
-  </channel>
+    <channel>
+        <title>AriaNG on JokemeBlog</title>
+        <link>https://jokeme.top/tags/ariang/</link>
+        <description>Recent content in AriaNG on JokemeBlog</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>en-us</language>
+        <lastBuildDate>Mon, 09 Aug 2021 18:33:21 +0000</lastBuildDate><atom:link href="https://jokeme.top/tags/ariang/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Aria2下载器配置WebUI界面</title>
+        <link>https://jokeme.top/p/ariang_webui/</link>
+        <pubDate>Mon, 09 Aug 2021 18:33:21 +0000</pubDate>
+        
+        <guid>https://jokeme.top/p/ariang_webui/</guid>
+        <description>&lt;img src="https://cn.bing.com/th?id=OHR.Inisheer_EN-CN8412531756_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post Aria2下载器配置WebUI界面" /&gt;&lt;h1 id=&#34;aria2下载器配置webui界面&#34;&gt;Aria2下载器配置WebUI界面&lt;/h1&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;http://aria2.github.io/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;aria2&lt;/a&gt;是一款非常非常Nice的下载器，之前我也介绍过 &lt;a class=&#34;link&#34; href=&#34;https://jokeme.top/p/linux_reward/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;记录最近捯饬Linux的收获&lt;/a&gt;，上一次大概介绍了一下命令行里面的操作，这一次咱们来说说WebUI上的操作。&lt;/p&gt;
+&lt;h2 id=&#34;1-准备环境&#34;&gt;1. 准备环境&lt;/h2&gt;
+&lt;p&gt;首先去Github下载一下&lt;a class=&#34;link&#34; href=&#34;https://github.com/mayswind/AriaNg/releases/tag/1.2.2&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;AriaNG&lt;/a&gt; 当然你可以选择别的WebUI其实大概步骤都差不多。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;
+&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
+&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;&lt;code&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
+&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;wget https://github.com/mayswind/AriaNg/releases/download/1.2.2/AriaNg-1.2.2.zip 
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;下载完成以后咱们去、&lt;code&gt;/var/www/html&lt;/code&gt;里面创建一个文件夹&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;
+&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
+&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;&lt;code&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
+&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;sudo mkdir /var/www/html/ariaweb 
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;接着咱们把下载下来的文件移动到创建的文件夹里面顺便解压一下&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;
+&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
+&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;&lt;code&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;1
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;2
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
+&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;mv AriaNg-1.2.2.zip /var/www/html/ariaweb
+cd /var/www/html/ariaweb
+unzip AriaNg-1.2.2.zip
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;不知道你们哪里有没有安装 &lt;strong&gt;Nginx&lt;/strong&gt;，如果没有安装的话，安装一下，会用到nginx，如果你愿意也可以用apache2，tomcat等，这里我就以nginx演示了。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;
+&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
+&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;&lt;code&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
+&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;sudo apt-get install nginx
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;接着是需要安装一下我们今天的主角：&lt;strong&gt;aria2&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;
+&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
+&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;&lt;code&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;1
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
+&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;sudo apt-get install aria2
+&lt;span style=&#34;color:#75715e&#34;&gt;#aria2 is already the newest version (1.35.0-1build1).&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;目前 Ubuntu20.04最新的是1.35.0，GitHub最新版本也是1.35.0&lt;/p&gt;
+&lt;h2 id=&#34;2-修改配置文件&#34;&gt;2. 修改配置文件&lt;/h2&gt;
+&lt;h3 id=&#34;21-aria2conf&#34;&gt;2.1 aria2.conf&lt;/h3&gt;
+&lt;p&gt;首先就是aria2的配置文件，默认是读取：&lt;code&gt;~/.aria2/aria2.conf&lt;/code&gt;，当然我们需要手动创建一下文件的&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;
+&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
+&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;&lt;code&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;1
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;2
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
+&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;mkdir ~/.aria2
+touch ~/.aria2/aria2.conf
+touch ~/.aria2/aria2.session
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;然后我们就需要把自己的配置文件加上去了&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;
+&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
+&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;&lt;code&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 1
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 2
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 3
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 4
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 5
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 6
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 7
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 8
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 9
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;10
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;11
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;12
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;13
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;14
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;15
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;16
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;17
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;18
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;19
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;20
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;21
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;22
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;23
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;24
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;25
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;26
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;27
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;28
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
+&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;&lt;code class=&#34;language-ini&#34; data-lang=&#34;ini&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#http download&lt;/span&gt;
+&lt;span style=&#34;color:#a6e22e&#34;&gt;continue&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;true&lt;/span&gt;
+&lt;span style=&#34;color:#a6e22e&#34;&gt;max-connection-per-server&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;5&lt;/span&gt;
+&lt;span style=&#34;color:#a6e22e&#34;&gt;max-tries&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;10&lt;/span&gt;
+&lt;span style=&#34;color:#a6e22e&#34;&gt;retry-wait&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;600&lt;/span&gt;
+
+&lt;span style=&#34;color:#75715e&#34;&gt;#bt download&lt;/span&gt;
+&lt;span style=&#34;color:#a6e22e&#34;&gt;bt-max-open-files&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;1000&lt;/span&gt;
+&lt;span style=&#34;color:#a6e22e&#34;&gt;bt-request-peer-speed-limit&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;40K&lt;/span&gt;
+&lt;span style=&#34;color:#a6e22e&#34;&gt;bt-tracker&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;[udp://93.158.213.92:1337/announce,http://93.158.213.92:1337/announce,udp://207.241.226.111:6969/announce]&lt;/span&gt;
+&lt;span style=&#34;color:#a6e22e&#34;&gt;enable-dht&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;true&lt;/span&gt;
+&lt;span style=&#34;color:#a6e22e&#34;&gt;enable-peer-exchange&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;true&lt;/span&gt;
+&lt;span style=&#34;color:#a6e22e&#34;&gt;dht-file-path&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;/home/user/.cache/aria2/dht.dat&lt;/span&gt;
+&lt;span style=&#34;color:#a6e22e&#34;&gt;max-upload-limit&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;300K&lt;/span&gt;
+
+&lt;span style=&#34;color:#75715e&#34;&gt;#RPC setting&lt;/span&gt;
+&lt;span style=&#34;color:#a6e22e&#34;&gt;enable-rpc&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;true&lt;/span&gt;
+&lt;span style=&#34;color:#a6e22e&#34;&gt;rpc-allow-origin-all&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;true&lt;/span&gt;
+&lt;span style=&#34;color:#a6e22e&#34;&gt;rpc-listen-all&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;true&lt;/span&gt;
+&lt;span style=&#34;color:#a6e22e&#34;&gt;rpc-secret&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;llll&lt;/span&gt;
+
+&lt;span style=&#34;color:#75715e&#34;&gt;#Other setting&lt;/span&gt;
+&lt;span style=&#34;color:#a6e22e&#34;&gt;disable-ipv6&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;true&lt;/span&gt;
+&lt;span style=&#34;color:#a6e22e&#34;&gt;file-allocation&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;falloc&lt;/span&gt;
+&lt;span style=&#34;color:#a6e22e&#34;&gt;save-session&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;/home/user/.aria2/aria2.session&lt;/span&gt;
+&lt;span style=&#34;color:#a6e22e&#34;&gt;save-session-interval&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;90&lt;/span&gt;
+&lt;span style=&#34;color:#a6e22e&#34;&gt;dir&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;udisk/tor&lt;/span&gt;
+&lt;span style=&#34;color:#a6e22e&#34;&gt;input-file&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;/home/user/.aria2/aria2.session&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;这些都是简单的配置，从字面意思就可以看出设置了啥，根据自己的具体情况修改即可，就像我这里，IPv6异常的烂，我直接禁用了v6。&lt;/p&gt;
+&lt;h3 id=&#34;22-nginxconf&#34;&gt;2.2 nginx.conf&lt;/h3&gt;
+&lt;p&gt;nginx咱们只需要添加一个站点就可以了&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;
+&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
+&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;&lt;code&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
+&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;sudo nano /etc/nginx/sites-available/xxx
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;内容如下:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;
+&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
+&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;&lt;code&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;1
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;2
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;3
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;4
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;5
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;6
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;7
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;8
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
+&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;server &lt;span style=&#34;color:#f92672&#34;&gt;{&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;# AriaNG&lt;/span&gt;
+    listen 80;
+    charset utf-8;
+    root /var/www/html/ariaweb;&lt;span style=&#34;color:#75715e&#34;&gt;#填上面创建的文件夹地址&lt;/span&gt;
+    index index.html index.htm index.nginx-debian.html;
+    server_name 10.0.0.2;&lt;span style=&#34;color:#75715e&#34;&gt;#填你的IP地址&lt;/span&gt;
+&lt;span style=&#34;color:#f92672&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;还有一点,你需要确保你的&lt;code&gt;sites-available/xxx&lt;/code&gt;是启用的，检查一下&lt;code&gt;include /etc/nginx/sites-enabled/*;&lt;/code&gt;有没有启用还有就是这个&lt;code&gt;sites-available/xxx&lt;/code&gt;有没有被软连接到&lt;code&gt;sites-enabled/&lt;/code&gt;下面，注意这些细节不要出现问题。&lt;/p&gt;
+&lt;h2 id=&#34;3-运行ariang&#34;&gt;3. 运行AriaNG&lt;/h2&gt;
+&lt;p&gt;其实也非常简单，只需要打开&lt;strong&gt;aria2&lt;/strong&gt;和&lt;strong&gt;nginx&lt;/strong&gt;就可以了&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;
+&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
+&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;&lt;code&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;1
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
+&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;sudo systemctl start nginx
+aria2 
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;接着上面，我们去浏览器输入&lt;strong&gt;10.0.0.2&lt;/strong&gt;进一步配置AriaNG&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;AriaNg 设置 -&amp;gt; RPC (10.0.0.2:6800) -&amp;gt; Aria2 RPC 密钥&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;在这里输入aria2.conf里面配置的密码即可，AriaNG会提示你重新加载。此时只要你Terminal里面的aria2没有停止运行，你就可以在WebUI里面下载了，而不是晦涩难懂的命令界面。&lt;/p&gt;
+</description>
+        </item>
+        
+    </channel>
 </rss>

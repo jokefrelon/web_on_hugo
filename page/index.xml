@@ -1,58 +1,77 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Pages on JokemeBlog</title>
-    <link>https://jokeme.top/page/</link>
-    <description>Recent content in Pages on JokemeBlog</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Fri, 09 Oct 2020 22:08:23 +0800</lastBuildDate><atom:link href="https://jokeme.top/page/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>关于</title>
-      <link>https://jokeme.top/%E5%85%B3%E4%BA%8E/</link>
-      <pubDate>Fri, 09 Oct 2020 22:08:23 +0800</pubDate>
-      
-      <guid>https://jokeme.top/%E5%85%B3%E4%BA%8E/</guid>
-      <description>  👋 你好！我是三号线彭于晏！&amp;ndash;李轩
-  🎓 目前大三在读。
-  👀 我喜欢Linux还有编程（主要是Java）
-  🐙 我的GitHub主页
-  📫 有事邮箱联系 : jokemetoday@outlook.com
-  🐥 实际上我是一个菜鸡,对于code还只处于最最最入门的级别,没有写过啥特别牛皮的代码.
-  🍚 我是一个干饭人!如果贵公司愿意收了我,我一定拼尽全力为贵公司写bug写代码
-  🔨 这个网站最初建于2019年12月20日,第一次上线时是基于 solo 的个人博客,如今博客已经迁移到了 Hugo 平台.
-  🤛 这并不是什么特别专业的bloger,所有的文章也都不一定完全正确,我写文章只是为了记录我个人解决问题的一些思路及方法。
-  💀 如果你和我遇到了一样的问题,但是用我的解决方案没有解决你的问题时,请不要喷我!谢谢!
-  </description>
-    </item>
-    
-    <item>
-      <title>链接</title>
-      <link>https://jokeme.top/links/</link>
-      <pubDate>Thu, 02 Jul 2020 02:16:22 +0000</pubDate>
-      
-      <guid>https://jokeme.top/links/</guid>
-      <description>所有排名不分先后，我是看到一个收录一个 （可联系我，加友链笔芯❤）
-   Logo 简介     Pandorabox 固件官网 Pandorabox 固件官网    Shields.io   ascii ascii    Windows 10下载    Iconfont    蓝奏云    RM bg    小米路由器 3 刷机   MiUi / Router OS MiUi / Router OS   Windows 10 激活 Windows 10 激活    渐变色 css    腾讯软件中心    Electron文档    MSDN    中科大软件源生成    zsh编程指南    MFI查询 新MFI查询    TrafficMonitor    Snipaste截图工具    CTF    Aliyun Springboot Initialize    OpenJDK    马可菠萝macos    xclientmacos    macwk    Coolsite360网页设计导航    SpringBoot文档    octodex    Windwos CVE    CVE Details    </description>
-    </item>
-    
-    <item>
-      <title>存档</title>
-      <link>https://jokeme.top/archives/</link>
-      <pubDate>Tue, 28 May 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://jokeme.top/archives/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>搜索</title>
-      <link>https://jokeme.top/search/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://jokeme.top/search/</guid>
-      <description></description>
-    </item>
-    
-  </channel>
+    <channel>
+        <title>Pages on JokemeBlog</title>
+        <link>https://jokeme.top/page/</link>
+        <description>Recent content in Pages on JokemeBlog</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>en-us</language>
+        <lastBuildDate>Fri, 09 Oct 2020 22:08:23 +0800</lastBuildDate><atom:link href="https://jokeme.top/page/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>关于</title>
+        <link>https://jokeme.top/%E5%85%B3%E4%BA%8E/</link>
+        <pubDate>Fri, 09 Oct 2020 22:08:23 +0800</pubDate>
+        
+        <guid>https://jokeme.top/%E5%85%B3%E4%BA%8E/</guid>
+        <description>&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;👋 你好！我是三号线彭于晏！&amp;ndash;李轩&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;🎓 目前大三在读。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;👀 我喜欢Linux还有编程（主要是Java）&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;🐙 &lt;a class=&#34;link&#34; href=&#34;https://github.com/jokefrelon&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;我的GitHub主页&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;📫 有事邮箱联系 : &lt;a href=&#34;mailto:jokemetoday@outlook.com&#34;&gt;jokemetoday@outlook.com&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;🐥 实际上我是一个菜鸡,对于code还只处于最最最入门的级别,没有写过啥特别牛皮的代码.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;🍚 我是一个干饭人!如果贵公司愿意收了我,我一定拼尽全力为贵公司&lt;del&gt;写bug&lt;/del&gt;写代码&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;🔨 这个网站最初建于2019年12月20日,第一次上线时是基于 &lt;strong&gt;solo&lt;/strong&gt; 的个人博客,如今博客已经迁移到了 &lt;strong&gt;Hugo&lt;/strong&gt; 平台.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;🤛 这并不是什么特别专业的bloger,所有的文章也都不一定完全正确,我写文章只是为了记录我个人解决问题的一些思路及方法。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;💀 如果你和我遇到了一样的问题,但是用我的解决方案没有解决你的问题时,请不要喷我!谢谢!&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        <item>
+        <title>链接</title>
+        <link>https://jokeme.top/links/</link>
+        <pubDate>Thu, 02 Jul 2020 02:16:22 +0000</pubDate>
+        
+        <guid>https://jokeme.top/links/</guid>
+        <description>&lt;p&gt;个人收藏,排序不分先后&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>存档</title>
+        <link>https://jokeme.top/archives/</link>
+        <pubDate>Tue, 28 May 2019 00:00:00 +0000</pubDate>
+        
+        <guid>https://jokeme.top/archives/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>搜索</title>
+        <link>https://jokeme.top/search/</link>
+        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+        
+        <guid>https://jokeme.top/search/</guid>
+        <description></description>
+        </item>
+        
+    </channel>
 </rss>

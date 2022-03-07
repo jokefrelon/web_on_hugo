@@ -1,35 +1,395 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Hugo on JokemeBlog</title>
-    <link>https://jokeme.top/tags/hugo/</link>
-    <description>Recent content in Hugo on JokemeBlog</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Sun, 16 May 2021 23:47:03 +0000</lastBuildDate><atom:link href="https://jokeme.top/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>从solo迁移到hugo</title>
-      <link>https://jokeme.top/p/solo_2_hugo/</link>
-      <pubDate>Sun, 16 May 2021 23:47:03 +0000</pubDate>
-      
-      <guid>https://jokeme.top/p/solo_2_hugo/</guid>
-      <description>博客迁移 最近我把我的个人博客从solo迁移到了hugo项目上了。
-不是solo不够优秀而是solo不符合我的需求了，我总结了以下几点
- 可定制化程度太低，千篇一律，单调枯燥，乏味。 登录需要用社区账号，不确定因素太大。 经常更新导致的版本不兼容。  我也想过给自己偷个懒使用Bolo作为solo的替代品，但是还是不符合我的预期。虽然不需要社区账号登陆，但是他和solo太相似了，以至于我感觉我换了个寂寞。
-1. 初识Hugo 在我有了迁移博客到其他平台的念想时我就一直在物色新的平台，然后我突然间就在GitHub上看到了hugo。
-一款golang写的软件，可以直接用markdown来更新文章，而且主题贼多，数据啥的也都是放自己手里。卧槽，我不就是我想找的吗！
-2. Hugo部署 其实上面扯了些没用的，到这里才是我的技术博客开始记录的地方。
-2.1 下载hugo压缩包 wget https://github.com/gohugoio/hugo/releases/download/v0.83.1/hugo_extended_0.83.1_Linux-64bit.tar.gz -O hugo.tar.gz 首先，Github找到hugo的最新版，并且是extended版本的，否者我们后续是无法自行修改scss的，我一开始就因为这点，整整折腾了一个晚上都无法修改主题为我喜欢的样式。Google了良久才发现这个问题。
-2.2 解压hugo 这一步是很容易的
-tar -zxvf hugo.tar.gz 然后你可以把没有用的LIENCE和README.md删除了。只留一个hugo的二进制可执行文件。
-并且要把这个二进制文件放在环境变量里面。
-mv hugo /usr/local/bin #我个人是推荐放这里的，你要是喜欢放别的地方也是可以的 3. 配置hugo 这里我建议你先看看hugo的quick_start，虽然看了和没有看一样，但是这也是一种学习的过程吧。
-hugo new site site_name 到这里你的网站就建立完成了。是不是很惊愕！你甚至连如何运行网站都不了解。
-没事，咱们慢慢来！
-先下载一个好看的Theme，当然不下载也可以，但是你没有主题的网站是真的丑呀。
-cd site_name wget https://github.com/CaiJimmy/hugo-theme-stack/archive/refs/tags/v2.3.0.zip -O themes/v2.3.0.zip cd themes unzip v2.3.0.zip mv hugo-theme-stack-2.3.0 hugo-theme-stack rm v2.3.0.zip 接下来就是配置文件了
-baseurl:http://example.com#根据你自己改languageCode:en-ustheme:hugo-theme-stackpaginate:20title:Blog#根据你自己改# Change it to your Disqus shortname before using#disqusShortname: hugo-theme-stack# GA Tracking ID#googleAnalytics:# Theme i18n support# Available values: en, fr, id, ja, ko, pt-br, zh-cn, es, deDefaultContentLanguage:zh-cnpermalinks:post:/p/:slug/page:/:slug/params:mainSections:- postfeaturedImageField:imagerssFullContent:truefavicon:/bk3.</description>
-    </item>
-    
-  </channel>
+    <channel>
+        <title>Hugo on JokemeBlog</title>
+        <link>https://jokeme.top/tags/hugo/</link>
+        <description>Recent content in Hugo on JokemeBlog</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>en-us</language>
+        <lastBuildDate>Sun, 16 May 2021 23:47:03 +0000</lastBuildDate><atom:link href="https://jokeme.top/tags/hugo/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>从solo迁移到hugo</title>
+        <link>https://jokeme.top/p/solo_2_hugo/</link>
+        <pubDate>Sun, 16 May 2021 23:47:03 +0000</pubDate>
+        
+        <guid>https://jokeme.top/p/solo_2_hugo/</guid>
+        <description>&lt;img src="https://cn.bing.com/th?id=OHR.Wakodahatchee_EN-CN9780170147_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post 从solo迁移到hugo" /&gt;&lt;h1 id=&#34;博客迁移&#34;&gt;博客迁移&lt;/h1&gt;
+&lt;p&gt;最近我把我的个人博客从&lt;a class=&#34;link&#34; href=&#34;https://github.com/88250/solo&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;solo&lt;/a&gt;迁移到了&lt;a class=&#34;link&#34; href=&#34;https://github.com/gohugoio/hugo&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;hugo&lt;/a&gt;项目上了。&lt;/p&gt;
+&lt;p&gt;不是solo不够优秀而是solo不符合我的需求了，我总结了以下几点&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;可定制化程度太低，千篇一律，单调枯燥，乏味。&lt;/li&gt;
+&lt;li&gt;登录需要用社区账号，不确定因素太大。&lt;/li&gt;
+&lt;li&gt;经常更新导致的版本不兼容。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;我也想过给自己偷个懒使用Bolo作为solo的替代品，但是还是不符合我的预期。虽然不需要社区账号登陆，但是他和solo太相似了，以至于我感觉我换了个寂寞。&lt;/p&gt;
+&lt;h2 id=&#34;1-初识hugo&#34;&gt;1. 初识Hugo&lt;/h2&gt;
+&lt;p&gt;在我有了迁移博客到其他平台的念想时我就一直在物色新的平台，然后我突然间就在GitHub上看到了hugo。&lt;/p&gt;
+&lt;p&gt;一款golang写的软件，可以直接用&lt;strong&gt;markdown&lt;/strong&gt;来更新文章，而且主题贼多，数据啥的也都是放自己手里。卧槽，我不就是我想找的吗！&lt;/p&gt;
+&lt;h2 id=&#34;2-hugo部署&#34;&gt;2. Hugo部署&lt;/h2&gt;
+&lt;p&gt;其实上面扯了些没用的，到这里才是我的技术博客开始记录的地方。&lt;/p&gt;
+&lt;h3 id=&#34;21-下载hugo压缩包&#34;&gt;2.1 下载hugo压缩包&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;
+&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
+&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;&lt;code&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
+&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;wget https://github.com/gohugoio/hugo/releases/download/v0.83.1/hugo_extended_0.83.1_Linux-64bit.tar.gz -O hugo.tar.gz
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;首先，Github找到&lt;a class=&#34;link&#34; href=&#34;https://github.com/gohugoio/hugo/releases/download/v0.83.1/hugo_extended_0.83.1_Linux-64bit.tar.gz&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;hugo&lt;/a&gt;的最新版，并且是&lt;strong&gt;extended&lt;/strong&gt;版本的，否者我们后续是无法自行修改&lt;strong&gt;scss&lt;/strong&gt;的，我一开始就因为这点，整整折腾了一个晚上都无法修改主题为我喜欢的样式。Google了良久才发现这个问题。&lt;/p&gt;
+&lt;h3 id=&#34;22-解压hugo&#34;&gt;2.2 解压hugo&lt;/h3&gt;
+&lt;p&gt;这一步是很容易的&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;
+&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
+&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;&lt;code&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
+&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;tar -zxvf hugo.tar.gz
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;然后你可以把没有用的&lt;strong&gt;LIENCE&lt;/strong&gt;和&lt;strong&gt;README.md&lt;/strong&gt;删除了。只留一个&lt;strong&gt;hugo&lt;/strong&gt;的二进制可执行文件。&lt;/p&gt;
+&lt;p&gt;并且要把这个二进制文件放在环境变量里面。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;
+&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
+&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;&lt;code&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;1
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
+&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;mv hugo /usr/local/bin
+&lt;span style=&#34;color:#75715e&#34;&gt;#我个人是推荐放这里的，你要是喜欢放别的地方也是可以的&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id=&#34;3-配置hugo&#34;&gt;3. 配置hugo&lt;/h2&gt;
+&lt;p&gt;这里我建议你先看看hugo的&lt;a class=&#34;link&#34; href=&#34;https://gohugo.io/getting-started/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;&lt;strong&gt;quick_start&lt;/strong&gt;&lt;/a&gt;，虽然看了和没有看一样，但是这也是一种学习的过程吧。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;
+&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
+&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;&lt;code&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
+&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;hugo new site site_name
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;到这里你的网站就建立完成了。是不是很惊愕！你甚至连如何运行网站都不了解。&lt;/p&gt;
+&lt;p&gt;没事，咱们慢慢来！&lt;/p&gt;
+&lt;p&gt;先下载一个好看的&lt;a class=&#34;link&#34; href=&#34;https://github.com/CaiJimmy/hugo-theme-stack&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Theme&lt;/a&gt;，当然不下载也可以，但是你没有主题的网站是真的丑呀。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;
+&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
+&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;&lt;code&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;1
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;2
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;3
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;4
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;5
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;6
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
+&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;cd site_name
+wget https://github.com/CaiJimmy/hugo-theme-stack/archive/refs/tags/v2.3.0.zip -O themes/v2.3.0.zip
+cd themes
+unzip v2.3.0.zip
+mv hugo-theme-stack-2.3.0 hugo-theme-stack
+rm v2.3.0.zip
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;接下来就是配置文件了&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;
+&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
+&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;&lt;code&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;  1
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;  2
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;  3
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;  4
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;  5
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;  6
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;  7
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;  8
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;  9
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 10
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 11
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 12
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 13
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 14
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 15
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 16
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 17
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 18
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 19
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 20
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 21
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 22
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 23
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 24
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 25
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 26
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 27
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 28
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 29
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 30
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 31
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 32
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 33
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 34
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 35
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 36
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 37
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 38
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 39
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 40
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 41
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 42
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 43
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 44
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 45
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 46
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 47
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 48
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 49
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 50
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 51
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 52
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 53
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 54
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 55
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 56
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 57
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 58
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 59
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 60
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 61
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 62
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 63
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 64
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 65
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 66
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 67
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 68
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 69
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 70
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 71
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 72
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 73
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 74
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 75
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 76
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 77
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 78
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 79
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 80
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 81
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 82
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 83
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 84
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 85
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 86
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 87
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 88
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 89
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 90
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 91
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 92
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 93
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 94
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 95
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 96
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 97
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 98
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 99
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;100
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;101
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;102
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;103
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;104
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;105
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;106
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;107
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;108
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;109
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;110
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;111
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;112
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;113
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;114
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;115
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;116
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;117
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;118
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;119
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;120
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;121
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;122
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;123
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;124
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;125
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;126
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;127
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;128
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;129
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;130
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;131
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;132
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;133
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;134
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
+&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span style=&#34;color:#f92672&#34;&gt;baseurl&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;http://example.com&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;#根据你自己改&lt;/span&gt;
+
+&lt;span style=&#34;color:#f92672&#34;&gt;languageCode&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;en-us&lt;/span&gt;
+&lt;span style=&#34;color:#f92672&#34;&gt;theme&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;hugo-theme-stack&lt;/span&gt;
+&lt;span style=&#34;color:#f92672&#34;&gt;paginate&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;20&lt;/span&gt;
+&lt;span style=&#34;color:#f92672&#34;&gt;title&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;Blog&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;#根据你自己改&lt;/span&gt;
+
+
+&lt;span style=&#34;color:#75715e&#34;&gt;# Change it to your Disqus shortname before using&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;#disqusShortname: hugo-theme-stack&lt;/span&gt;
+
+&lt;span style=&#34;color:#75715e&#34;&gt;# GA Tracking ID&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;#googleAnalytics:&lt;/span&gt;
+
+&lt;span style=&#34;color:#75715e&#34;&gt;# Theme i18n support&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;# Available values: en, fr, id, ja, ko, pt-br, zh-cn, es, de&lt;/span&gt;
+&lt;span style=&#34;color:#f92672&#34;&gt;DefaultContentLanguage&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;zh-cn&lt;/span&gt;
+
+&lt;span style=&#34;color:#f92672&#34;&gt;permalinks&lt;/span&gt;:
+    &lt;span style=&#34;color:#f92672&#34;&gt;post&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;/p/:slug/&lt;/span&gt;
+    &lt;span style=&#34;color:#f92672&#34;&gt;page&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;/:slug/&lt;/span&gt;
+
+&lt;span style=&#34;color:#f92672&#34;&gt;params&lt;/span&gt;:
+    &lt;span style=&#34;color:#f92672&#34;&gt;mainSections&lt;/span&gt;:
+        - &lt;span style=&#34;color:#ae81ff&#34;&gt;post&lt;/span&gt;
+    &lt;span style=&#34;color:#f92672&#34;&gt;featuredImageField&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;image&lt;/span&gt;
+    &lt;span style=&#34;color:#f92672&#34;&gt;rssFullContent&lt;/span&gt;: &lt;span style=&#34;color:#66d9ef&#34;&gt;true&lt;/span&gt;
+    &lt;span style=&#34;color:#f92672&#34;&gt;favicon&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;/bk3.png&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;#根据你自己改&lt;/span&gt;
+
+    &lt;span style=&#34;color:#f92672&#34;&gt;footer&lt;/span&gt;:
+        &lt;span style=&#34;color:#f92672&#34;&gt;since&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;2019&lt;/span&gt;
+        &lt;span style=&#34;color:#f92672&#34;&gt;customText&lt;/span&gt;:
+
+    &lt;span style=&#34;color:#f92672&#34;&gt;dateFormat&lt;/span&gt;:
+        &lt;span style=&#34;color:#f92672&#34;&gt;published&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;Jan 02, 2006&lt;/span&gt;
+        &lt;span style=&#34;color:#f92672&#34;&gt;lastUpdated&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;Jan 02, 2006 15:04 MST&lt;/span&gt;
+
+    &lt;span style=&#34;color:#f92672&#34;&gt;sidebar&lt;/span&gt;:
+        &lt;span style=&#34;color:#f92672&#34;&gt;emoji&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;🥰&lt;/span&gt;
+        &lt;span style=&#34;color:#f92672&#34;&gt;subtitle&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;人生没有白走的路,每一步都算数。&lt;/span&gt;
+        &lt;span style=&#34;color:#f92672&#34;&gt;avatar&lt;/span&gt;:
+            &lt;span style=&#34;color:#f92672&#34;&gt;local&lt;/span&gt;: &lt;span style=&#34;color:#66d9ef&#34;&gt;true&lt;/span&gt;
+            &lt;span style=&#34;color:#f92672&#34;&gt;src&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;author.jpg&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;#根据你自己改&lt;/span&gt;
+
+    &lt;span style=&#34;color:#f92672&#34;&gt;article&lt;/span&gt;:
+        &lt;span style=&#34;color:#f92672&#34;&gt;math&lt;/span&gt;: &lt;span style=&#34;color:#66d9ef&#34;&gt;true&lt;/span&gt;
+        &lt;span style=&#34;color:#f92672&#34;&gt;license&lt;/span&gt;:
+            &lt;span style=&#34;color:#f92672&#34;&gt;enabled&lt;/span&gt;: &lt;span style=&#34;color:#66d9ef&#34;&gt;true&lt;/span&gt;
+            &lt;span style=&#34;color:#f92672&#34;&gt;default&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;Licensed under CC BY-NC-SA 4.0&lt;/span&gt;
+
+    &lt;span style=&#34;color:#f92672&#34;&gt;comments&lt;/span&gt;:
+        &lt;span style=&#34;color:#f92672&#34;&gt;enabled&lt;/span&gt;: &lt;span style=&#34;color:#66d9ef&#34;&gt;false&lt;/span&gt;
+        &lt;span style=&#34;color:#f92672&#34;&gt;provider&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;disqus&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;#根据你自己改&lt;/span&gt;
+
+        &lt;span style=&#34;color:#f92672&#34;&gt;utterances&lt;/span&gt;:
+            &lt;span style=&#34;color:#f92672&#34;&gt;repo&lt;/span&gt;:
+            &lt;span style=&#34;color:#f92672&#34;&gt;issueTerm&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;pathname&lt;/span&gt;
+            &lt;span style=&#34;color:#f92672&#34;&gt;label&lt;/span&gt;:
+
+        &lt;span style=&#34;color:#f92672&#34;&gt;remark42&lt;/span&gt;:
+            &lt;span style=&#34;color:#f92672&#34;&gt;host&lt;/span&gt;:
+            &lt;span style=&#34;color:#f92672&#34;&gt;site&lt;/span&gt;:
+            &lt;span style=&#34;color:#f92672&#34;&gt;locale&lt;/span&gt;:
+
+    &lt;span style=&#34;color:#f92672&#34;&gt;widgets&lt;/span&gt;:
+        &lt;span style=&#34;color:#f92672&#34;&gt;enabled&lt;/span&gt;:
+            - &lt;span style=&#34;color:#ae81ff&#34;&gt;search&lt;/span&gt;
+            - &lt;span style=&#34;color:#ae81ff&#34;&gt;archives&lt;/span&gt;
+            - &lt;span style=&#34;color:#ae81ff&#34;&gt;tag-cloud&lt;/span&gt;
+
+        &lt;span style=&#34;color:#f92672&#34;&gt;archives&lt;/span&gt;:
+            &lt;span style=&#34;color:#f92672&#34;&gt;limit&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;20&lt;/span&gt;
+
+        &lt;span style=&#34;color:#f92672&#34;&gt;tagCloud&lt;/span&gt;:
+            &lt;span style=&#34;color:#f92672&#34;&gt;limit&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;30&lt;/span&gt;
+
+    &lt;span style=&#34;color:#f92672&#34;&gt;opengraph&lt;/span&gt;:
+        &lt;span style=&#34;color:#f92672&#34;&gt;twitter&lt;/span&gt;:
+            &lt;span style=&#34;color:#75715e&#34;&gt;# Your Twitter username&lt;/span&gt;
+            &lt;span style=&#34;color:#f92672&#34;&gt;site&lt;/span&gt;:
+
+            &lt;span style=&#34;color:#75715e&#34;&gt;# Available values: summary, summary_large_image&lt;/span&gt;
+            &lt;span style=&#34;color:#f92672&#34;&gt;card&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;summary_large_image&lt;/span&gt;
+
+    &lt;span style=&#34;color:#f92672&#34;&gt;defaultImage&lt;/span&gt;:
+        &lt;span style=&#34;color:#f92672&#34;&gt;opengraph&lt;/span&gt;:
+            &lt;span style=&#34;color:#f92672&#34;&gt;enabled&lt;/span&gt;: &lt;span style=&#34;color:#66d9ef&#34;&gt;false&lt;/span&gt;
+            &lt;span style=&#34;color:#f92672&#34;&gt;local&lt;/span&gt;: &lt;span style=&#34;color:#66d9ef&#34;&gt;false&lt;/span&gt;
+            &lt;span style=&#34;color:#f92672&#34;&gt;src&lt;/span&gt;:
+
+    &lt;span style=&#34;color:#f92672&#34;&gt;colorScheme&lt;/span&gt;:
+        &lt;span style=&#34;color:#75715e&#34;&gt;# Display toggle&lt;/span&gt;
+        &lt;span style=&#34;color:#f92672&#34;&gt;toggle&lt;/span&gt;: &lt;span style=&#34;color:#66d9ef&#34;&gt;true&lt;/span&gt;
+
+        &lt;span style=&#34;color:#75715e&#34;&gt;# Available values: auto, light, dark&lt;/span&gt;
+        &lt;span style=&#34;color:#f92672&#34;&gt;default&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;auto&lt;/span&gt;
+
+    &lt;span style=&#34;color:#f92672&#34;&gt;imageProcessing&lt;/span&gt;:
+        &lt;span style=&#34;color:#f92672&#34;&gt;cover&lt;/span&gt;:
+            &lt;span style=&#34;color:#f92672&#34;&gt;enabled&lt;/span&gt;: &lt;span style=&#34;color:#66d9ef&#34;&gt;true&lt;/span&gt;
+        &lt;span style=&#34;color:#f92672&#34;&gt;content&lt;/span&gt;:
+            &lt;span style=&#34;color:#f92672&#34;&gt;enabled&lt;/span&gt;: &lt;span style=&#34;color:#66d9ef&#34;&gt;true&lt;/span&gt;
+
+&lt;span style=&#34;color:#75715e&#34;&gt;### Custom menu&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;### See https://docs.stack.jimmycai.com/configuration/custom-menu&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;### To remove about, archive and search page menu item, remove `menu` field from their FrontMatter&lt;/span&gt;
+&lt;span style=&#34;color:#f92672&#34;&gt;menu&lt;/span&gt;:
+    &lt;span style=&#34;color:#f92672&#34;&gt;main&lt;/span&gt;:
+        - &lt;span style=&#34;color:#f92672&#34;&gt;identifier&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;home&lt;/span&gt;
+          &lt;span style=&#34;color:#f92672&#34;&gt;name&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;Home&lt;/span&gt;
+          &lt;span style=&#34;color:#f92672&#34;&gt;url&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;/&lt;/span&gt;
+          &lt;span style=&#34;color:#f92672&#34;&gt;weight&lt;/span&gt;: -&lt;span style=&#34;color:#ae81ff&#34;&gt;100&lt;/span&gt;
+          &lt;span style=&#34;color:#f92672&#34;&gt;pre&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;home&lt;/span&gt;
+
+&lt;span style=&#34;color:#f92672&#34;&gt;related&lt;/span&gt;:
+    &lt;span style=&#34;color:#f92672&#34;&gt;includeNewer&lt;/span&gt;: &lt;span style=&#34;color:#66d9ef&#34;&gt;true&lt;/span&gt;
+    &lt;span style=&#34;color:#f92672&#34;&gt;threshold&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;60&lt;/span&gt;
+    &lt;span style=&#34;color:#f92672&#34;&gt;toLower&lt;/span&gt;: &lt;span style=&#34;color:#66d9ef&#34;&gt;false&lt;/span&gt;
+    &lt;span style=&#34;color:#f92672&#34;&gt;indices&lt;/span&gt;:
+        - &lt;span style=&#34;color:#f92672&#34;&gt;name&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;tags&lt;/span&gt;
+          &lt;span style=&#34;color:#f92672&#34;&gt;weight&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;100&lt;/span&gt;
+
+        - &lt;span style=&#34;color:#f92672&#34;&gt;name&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;categories&lt;/span&gt;
+          &lt;span style=&#34;color:#f92672&#34;&gt;weight&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;200&lt;/span&gt;
+
+&lt;span style=&#34;color:#f92672&#34;&gt;markup&lt;/span&gt;:
+    &lt;span style=&#34;color:#f92672&#34;&gt;highlight&lt;/span&gt;:
+        &lt;span style=&#34;color:#f92672&#34;&gt;noClasses&lt;/span&gt;: &lt;span style=&#34;color:#66d9ef&#34;&gt;false&lt;/span&gt;
+&lt;span style=&#34;color:#f92672&#34;&gt;ignoreErrors&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;error-remote-getjson&amp;#34;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;然后这样还是不能运行滴！&lt;/p&gt;
+&lt;h2 id=&#34;4-调整主题&#34;&gt;4. 调整主题&lt;/h2&gt;
+&lt;p&gt;我们可以先看看这个主题的作者给的&lt;a class=&#34;link&#34; href=&#34;https://docs.stack.jimmycai.com/v/zh-cn/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;文档&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;基本上就是照着来一遍&lt;/p&gt;
+&lt;p&gt;步骤很多，还很麻烦，这里我就直接写了个&lt;a class=&#34;link&#34; href=&#34;https://github.com/jokefrelon/hugo_docker&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Dockerfile&lt;/a&gt;，按照README的教程来，你一定可以用docker快速搭建起一个hugo环境。&lt;/p&gt;
+&lt;p&gt;虽然主题不一定是你想要的类型，但是可以简化你用hugo搭建网站的步骤还能节省时间。如果喜欢的话，希望star、fork、watch。&lt;/p&gt;
+&lt;h2 id=&#34;5-运行hugo&#34;&gt;5. 运行hugo&lt;/h2&gt;
+&lt;p&gt;如果你是使用Dockerfile来构建镜像运行的话，你就不用看下面的教程了&lt;/p&gt;
+&lt;p&gt;如果你还是想自己动手丰衣足食的话，那你就按照我Dockerfile里面的shell一步一步来操作也是可以在你的服务器上成功运行起来基于hugo的网站的，你可以使用以下命令来运行网站，因为hugo默认只监听127.0.0.1，所以需要单独设置以下hugo监听任何网卡。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;
+&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
+&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;&lt;code&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
+&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt; hugo server -p &lt;span style=&#34;color:#ae81ff&#34;&gt;1313&lt;/span&gt; --bind &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;0.0.0.0&amp;#34;&lt;/span&gt; 
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description>
+        </item>
+        
+    </channel>
 </rss>

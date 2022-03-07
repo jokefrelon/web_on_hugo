@@ -1,64 +1,393 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Hotkey on JokemeBlog</title>
-    <link>https://jokeme.top/tags/hotkey/</link>
-    <description>Recent content in Hotkey on JokemeBlog</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Tue, 01 Jun 2021 20:32:07 +0000</lastBuildDate><atom:link href="https://jokeme.top/tags/hotkey/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Hackintosh Laptop 常见快捷键</title>
-      <link>https://jokeme.top/p/hackintosh_laptop_hotkey/</link>
-      <pubDate>Tue, 01 Jun 2021 20:32:07 +0000</pubDate>
-      
-      <guid>https://jokeme.top/p/hackintosh_laptop_hotkey/</guid>
-      <description>Hackintosh Laptop 常见快捷键 一般来说可以macOS和Windows对应键位参考下面的对照表即可
-   macOS Windows     Command / ⌘ win   Option / ⌥ alt   Control / ⌃ ctrl   Shift / ⇧ shift    所有的通用快捷键加粗标记
-1. 系统快捷键: 强制退出：win + alt + esc
- 对标Windows的任务管理器，但是简化到了只有强制退出功能
- 切换桌面：ctrl + ◀︎ / ▶︎
-切换任务：win + tab
-打开finder：win + t
-连接samba：win + k
-2. 常见通用快捷键： 全选：win + a
-复制字符：win + c</description>
-    </item>
-    
-    <item>
-      <title>VS code 快捷键大全</title>
-      <link>https://jokeme.top/p/code_hot_key/</link>
-      <pubDate>Fri, 17 Jul 2020 18:18:21 +0000</pubDate>
-      
-      <guid>https://jokeme.top/p/code_hot_key/</guid>
-      <description>VS code 快捷键大全 General Ctrl+Shift+P, F1 Show Command Palette
-Ctrl+P Quick Open, Go to File…
-Ctrl+Shift+N New window/instance
-Ctrl+Shift+W Close window/instance
-Ctrl+, User Settings
-Ctrl+K Ctrl+S Keyboard Shortcuts
-Basic editing Ctrl+X Cut line (empty selection)
-Ctrl+C Copy line (empty selection)
-Alt+ ↑ / ↓ Move line up/down
-Shift+Alt + ↓ / ↑ Copy line up/down
-Ctrl+Shift+K Delete line
-Ctrl+Enter Insert line below
-Ctrl+Shift+Enter Insert line above
-Ctrl+Shift+\ Jump to matching bracket</description>
-    </item>
-    
-    <item>
-      <title>vim的常用操作快捷键</title>
-      <link>https://jokeme.top/p/vim_hot_key/</link>
-      <pubDate>Sat, 01 Feb 2020 17:27:33 +0000</pubDate>
-      
-      <guid>https://jokeme.top/p/vim_hot_key/</guid>
-      <description>(1) 按两下 gg，定位光标到第一行。
-(2) 按住 Shift+v，进入可视化编辑的列编辑模式。
-(3) Shift+g，选中整个代码。
-(4) 按下等号 =，格式化所有代码。
-(5) 新年快乐🎉</description>
-    </item>
-    
-  </channel>
+    <channel>
+        <title>Hotkey on JokemeBlog</title>
+        <link>https://jokeme.top/tags/hotkey/</link>
+        <description>Recent content in Hotkey on JokemeBlog</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>en-us</language>
+        <lastBuildDate>Tue, 01 Jun 2021 20:32:07 +0000</lastBuildDate><atom:link href="https://jokeme.top/tags/hotkey/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Hackintosh Laptop 常见快捷键</title>
+        <link>https://jokeme.top/p/hackintosh_laptop_hotkey/</link>
+        <pubDate>Tue, 01 Jun 2021 20:32:07 +0000</pubDate>
+        
+        <guid>https://jokeme.top/p/hackintosh_laptop_hotkey/</guid>
+        <description>&lt;img src="https://cn.bing.com/th?id=OHR.HinterseeRamsau_EN-CN5297881270_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post Hackintosh Laptop 常见快捷键" /&gt;&lt;h1 id=&#34;hackintosh-laptop-常见快捷键&#34;&gt;Hackintosh Laptop 常见快捷键&lt;/h1&gt;
+&lt;p&gt;一般来说可以&lt;strong&gt;macOS&lt;/strong&gt;和&lt;strong&gt;Windows&lt;/strong&gt;对应键位参考下面的对照表即可&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;macOS&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;Windows&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;strong&gt;Command / ⌘&lt;/strong&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;strong&gt;win&lt;/strong&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;strong&gt;Option / ⌥&lt;/strong&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;strong&gt;alt&lt;/strong&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;strong&gt;Control / ⌃&lt;/strong&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;strong&gt;ctrl&lt;/strong&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;strong&gt;Shift / ⇧&lt;/strong&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;strong&gt;shift&lt;/strong&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;所有的通用快捷键加粗标记&lt;/p&gt;
+&lt;h2 id=&#34;1-系统快捷键&#34;&gt;1. 系统快捷键:&lt;/h2&gt;
+&lt;p&gt;强制退出：&lt;code&gt;win&lt;/code&gt; + &lt;code&gt;alt&lt;/code&gt; + &lt;code&gt;esc&lt;/code&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;对标Windows的任务管理器，但是简化到了只有强制退出功能&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;切换桌面：&lt;code&gt;ctrl&lt;/code&gt; +  &lt;code&gt;◀︎&lt;/code&gt; / &lt;code&gt;▶︎&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;切换任务：&lt;code&gt;win&lt;/code&gt; + &lt;code&gt;tab&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;打开finder：&lt;code&gt;win&lt;/code&gt; + &lt;code&gt;t&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;连接samba：&lt;code&gt;win&lt;/code&gt; + &lt;code&gt;k&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id=&#34;2-常见通用快捷键&#34;&gt;2. 常见通用快捷键：&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;全选：&lt;code&gt;win&lt;/code&gt; + &lt;code&gt;a&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;复制字符：&lt;code&gt;win&lt;/code&gt; + &lt;code&gt;c&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;保存：&lt;code&gt;win&lt;/code&gt; + &lt;code&gt;s&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;粘贴字符：&lt;code&gt;win&lt;/code&gt; + &lt;code&gt;v&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;退出登陆：&lt;code&gt;win&lt;/code&gt; + &lt;code&gt;alt&lt;/code&gt; + &lt;code&gt;shift&lt;/code&gt; + &lt;code&gt;q&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;剪切字符：&lt;code&gt;win&lt;/code&gt; + &lt;code&gt;x&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;撤销操作：&lt;code&gt;win&lt;/code&gt; + &lt;code&gt;z&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;中断执行：&lt;code&gt;ctrl&lt;/code&gt; + &lt;code&gt;c&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;行首：&lt;code&gt;win&lt;/code&gt; + &lt;code&gt;◀︎&lt;/code&gt; / &lt;code&gt;ctrl&lt;/code&gt; + &lt;code&gt;a&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;行尾：&lt;code&gt;win&lt;/code&gt; + &lt;code&gt;▶︎&lt;/code&gt;/ &lt;code&gt;ctrl&lt;/code&gt; + &lt;code&gt;e&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;页首：&lt;code&gt;win&lt;/code&gt; + &lt;code&gt;▲&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;页尾：&lt;code&gt;win&lt;/code&gt; + &lt;code&gt;▼&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;输入emoji：&lt;code&gt;ctrl&lt;/code&gt; + &lt;code&gt;win&lt;/code&gt; + &lt;code&gt;space&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;删除选中：&lt;code&gt;win&lt;/code&gt; + &lt;code&gt;back&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&#34;3-常见软件快捷键&#34;&gt;3. 常见软件快捷键&lt;/h2&gt;
+&lt;h3 id=&#34;31-typora&#34;&gt;3.1 Typora&lt;/h3&gt;
+&lt;p&gt;一级标题：&lt;code&gt;win&lt;/code&gt; + &lt;code&gt;1&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;二级标题：&lt;code&gt;win&lt;/code&gt; + &lt;code&gt;2&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;加粗：&lt;code&gt;win&lt;/code&gt; + &lt;code&gt;b&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;表格：&lt;code&gt;win&lt;/code&gt; + &lt;code&gt;t&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;斜体：&lt;code&gt;win&lt;/code&gt; + &lt;code&gt;i&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;代码：&lt;code&gt;ctrl&lt;/code&gt; + &lt;code&gt;`&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;下划线：&lt;code&gt;win&lt;/code&gt; + &lt;code&gt;u&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;超链接：&lt;code&gt;win&lt;/code&gt; + &lt;code&gt;k&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;无需列表：&lt;code&gt;win&lt;/code&gt; + &lt;code&gt;alt&lt;/code&gt; + &lt;code&gt;u&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;有序列表：&lt;code&gt;win&lt;/code&gt; + &lt;code&gt;alt&lt;/code&gt; + &lt;code&gt;o&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;显示大纲：&lt;code&gt;win&lt;/code&gt; +  &lt;code&gt;shift&lt;/code&gt; +  &lt;code&gt;l&lt;/code&gt; / &lt;code&gt;ctrl&lt;/code&gt; + &lt;code&gt;win&lt;/code&gt; + &lt;code&gt;1&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;代码块：&lt;code&gt;win&lt;/code&gt; + &lt;code&gt;alt&lt;/code&gt; + &lt;code&gt;c&lt;/code&gt; / 建议还是直接打 &lt;code&gt;```&lt;/code&gt; 或者 &lt;code&gt;~~~&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;分割线：&lt;code&gt;win&lt;/code&gt; + &lt;code&gt;alt&lt;/code&gt; + &lt;code&gt;-&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;目录生成：&lt;code&gt;[toc]&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id=&#34;32-safari--chrome&#34;&gt;3.2 Safari / Chrome&lt;/h3&gt;
+&lt;p&gt;开发者模式：&lt;code&gt;win&lt;/code&gt; + &lt;code&gt;alt&lt;/code&gt; + &lt;code&gt;i&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;刷新网页：&lt;code&gt;win&lt;/code&gt; + &lt;code&gt;r&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;切换标签页：&lt;code&gt;ctrl&lt;/code&gt; + &lt;code&gt;tab&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;进入/退出 全屏模式：&lt;code&gt;win&lt;/code&gt; + &lt;code&gt;ctrl&lt;/code&gt; + &lt;code&gt;f&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;显示/隐藏 状态栏：&lt;code&gt;win&lt;/code&gt; + &lt;code&gt;shift&lt;/code&gt; + &lt;code&gt;b&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;显示/隐藏 所有历史记录：&lt;code&gt;win&lt;/code&gt; + &lt;code&gt;y&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;打开收藏栏第一个：&lt;code&gt;win&lt;/code&gt; + &lt;code&gt;alt&lt;/code&gt; + &lt;code&gt;1&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;打开收藏栏第二个：&lt;code&gt;win&lt;/code&gt; + &lt;code&gt;alt&lt;/code&gt; + &lt;code&gt;2&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;在侧边栏打开收藏栏：&lt;code&gt;win&lt;/code&gt; + &lt;code&gt;ctrl&lt;/code&gt; + &lt;code&gt;1&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;在侧边栏打开稍后阅读：&lt;code&gt;win&lt;/code&gt; + &lt;code&gt;ctrl&lt;/code&gt; + &lt;code&gt;2&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;新建窗口：&lt;code&gt;win&lt;/code&gt; + &lt;code&gt;alt&lt;/code&gt; + &lt;code&gt;n&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;新建无痕窗口：&lt;code&gt;win&lt;/code&gt; + &lt;code&gt;shift&lt;/code&gt; + &lt;code&gt;n&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;新建标签页：&lt;code&gt;win&lt;/code&gt; + &lt;code&gt;t&lt;/code&gt; / &lt;code&gt;win&lt;/code&gt; + &lt;code&gt;n&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;关闭标签页：&lt;code&gt;win&lt;/code&gt; + &lt;code&gt;w&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;退出当前软件：&lt;code&gt;win&lt;/code&gt; + &lt;code&gt;q&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;打开软件偏好设置：&lt;code&gt;win&lt;/code&gt; + &lt;code&gt;,&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;放大视图：&lt;code&gt;win&lt;/code&gt; + &lt;code&gt;+&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;缩小视图：&lt;code&gt;win&lt;/code&gt; + &lt;code&gt;-&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>VS code 快捷键大全</title>
+        <link>https://jokeme.top/p/code_hot_key/</link>
+        <pubDate>Fri, 17 Jul 2020 18:18:21 +0000</pubDate>
+        
+        <guid>https://jokeme.top/p/code_hot_key/</guid>
+        <description>&lt;img src="https://cn.bing.com/th?id=OHR.VerzascaValley_EN-CN0835346354_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post VS code 快捷键大全" /&gt;&lt;h1 id=&#34;vs-code-快捷键大全&#34;&gt;VS code 快捷键大全&lt;/h1&gt;
+&lt;h2 id=&#34;general&#34;&gt;General&lt;/h2&gt;
+&lt;p&gt;Ctrl+Shift+P, F1 Show Command Palette&lt;/p&gt;
+&lt;p&gt;Ctrl+P Quick Open, Go to File…&lt;/p&gt;
+&lt;p&gt;Ctrl+Shift+N New window/instance&lt;/p&gt;
+&lt;p&gt;Ctrl+Shift+W Close window/instance&lt;/p&gt;
+&lt;p&gt;Ctrl+, User Settings&lt;/p&gt;
+&lt;p&gt;Ctrl+K Ctrl+S Keyboard Shortcuts&lt;/p&gt;
+&lt;h2 id=&#34;basic-editing&#34;&gt;Basic editing&lt;/h2&gt;
+&lt;p&gt;Ctrl+X Cut line (empty selection)&lt;/p&gt;
+&lt;p&gt;Ctrl+C Copy line (empty selection)&lt;/p&gt;
+&lt;p&gt;Alt+ ↑ / ↓ Move line up/down&lt;/p&gt;
+&lt;p&gt;Shift+Alt + ↓ / ↑ Copy line up/down&lt;/p&gt;
+&lt;p&gt;Ctrl+Shift+K Delete line&lt;/p&gt;
+&lt;p&gt;Ctrl+Enter Insert line below&lt;/p&gt;
+&lt;p&gt;Ctrl+Shift+Enter Insert line above&lt;/p&gt;
+&lt;p&gt;Ctrl+Shift+\ Jump to matching bracket&lt;/p&gt;
+&lt;p&gt;Ctrl+] / [ Indent/outdent line&lt;/p&gt;
+&lt;p&gt;Home / End Go to beginning/end of line&lt;/p&gt;
+&lt;p&gt;Ctrl+Home Go to beginning of file&lt;/p&gt;
+&lt;p&gt;Ctrl+End Go to end of file&lt;/p&gt;
+&lt;p&gt;Ctrl+↑ / ↓ Scroll line up/down&lt;/p&gt;
+&lt;p&gt;Alt+PgUp / PgDn Scroll page up/down&lt;/p&gt;
+&lt;p&gt;Ctrl+Shift+[ Fold (collapse) region&lt;/p&gt;
+&lt;p&gt;Ctrl+Shift+] Unfold (uncollapse) region&lt;/p&gt;
+&lt;p&gt;Ctrl+K Ctrl+[ Fold (collapse) all subregions&lt;/p&gt;
+&lt;p&gt;Ctrl+K Ctrl+] Unfold (uncollapse) all subregions&lt;/p&gt;
+&lt;p&gt;Ctrl+K Ctrl+0 Fold (collapse) all regions&lt;/p&gt;
+&lt;p&gt;Ctrl+K Ctrl+J Unfold (uncollapse) all regions&lt;/p&gt;
+&lt;p&gt;Ctrl+K Ctrl+C Add line comment&lt;/p&gt;
+&lt;p&gt;Ctrl+K Ctrl+U Remove line comment&lt;/p&gt;
+&lt;p&gt;Ctrl+/ Toggle line comment&lt;/p&gt;
+&lt;p&gt;Shift+Alt+A Toggle block comment&lt;/p&gt;
+&lt;p&gt;Alt+Z Toggle word wrap&lt;/p&gt;
+&lt;h2 id=&#34;navigation&#34;&gt;Navigation&lt;/h2&gt;
+&lt;p&gt;Ctrl+T Show all Symbols&lt;/p&gt;
+&lt;p&gt;Ctrl+G Go to Line&amp;hellip;&lt;/p&gt;
+&lt;p&gt;Ctrl+P Go to File&amp;hellip;&lt;/p&gt;
+&lt;p&gt;Ctrl+Shift+O Go to Symbol&amp;hellip;&lt;/p&gt;
+&lt;p&gt;Ctrl+Shift+M Show Problems panel&lt;/p&gt;
+&lt;p&gt;F8 Go to next error or warning&lt;/p&gt;
+&lt;p&gt;Shift+F8 Go to previous error or warning&lt;/p&gt;
+&lt;p&gt;Ctrl+Shift+Tab Navigate editor group history&lt;/p&gt;
+&lt;p&gt;Alt+ ← / → Go back / forward&lt;/p&gt;
+&lt;p&gt;Ctrl+M Toggle Tab moves focus&lt;/p&gt;
+&lt;h2 id=&#34;search-and-replace&#34;&gt;Search and replace&lt;/h2&gt;
+&lt;p&gt;Ctrl+F Find Ctrl+H Replace&lt;/p&gt;
+&lt;p&gt;F3 / Shift+F3 Find next/previous&lt;/p&gt;
+&lt;p&gt;Alt+Enter Select all occurences of Find match&lt;/p&gt;
+&lt;p&gt;Ctrl+D Add selection to next Find match&lt;/p&gt;
+&lt;p&gt;Ctrl+K Ctrl+D Move last selection to next Find match&lt;/p&gt;
+&lt;p&gt;Alt+C / R / W Toggle case-sensitive / regex / whole word&lt;/p&gt;
+&lt;h2 id=&#34;multi-cursor-and-selection&#34;&gt;Multi-cursor and selection&lt;/h2&gt;
+&lt;p&gt;Alt+Click Insert cursor&lt;/p&gt;
+&lt;p&gt;Ctrl+Alt+ ↑ / ↓ Insert cursor above / below&lt;/p&gt;
+&lt;p&gt;Ctrl+U Undo last cursor operation&lt;/p&gt;
+&lt;p&gt;Shift+Alt+I Insert cursor at end of each line selected&lt;/p&gt;
+&lt;p&gt;Ctrl+L Select current line&lt;/p&gt;
+&lt;p&gt;Ctrl+Shift+L Select all occurrences of current selection&lt;/p&gt;
+&lt;p&gt;Ctrl+F2 Select all occurrences of current word&lt;/p&gt;
+&lt;p&gt;Shift+Alt+→ Expand selection&lt;/p&gt;
+&lt;p&gt;Shift+Alt+← Shrink selection&lt;/p&gt;
+&lt;p&gt;Shift+Alt + (drag mouse) Column (box) selection&lt;/p&gt;
+&lt;p&gt;Ctrl+Shift+Alt + (arrow key) Column (box) selection&lt;/p&gt;
+&lt;p&gt;Ctrl+Shift+Alt +PgUp/PgDn&lt;/p&gt;
+&lt;h2 id=&#34;rich-languages-editing&#34;&gt;Rich languages editing&lt;/h2&gt;
+&lt;p&gt;Ctrl+Space Trigger suggestion&lt;/p&gt;
+&lt;p&gt;Ctrl+Shift+Space Trigger parameter hints&lt;/p&gt;
+&lt;p&gt;Shift+Alt+F Format document&lt;/p&gt;
+&lt;p&gt;Ctrl+K Ctrl+F Format selection&lt;/p&gt;
+&lt;p&gt;F12 Go to Definition&lt;/p&gt;
+&lt;p&gt;Alt+F12 Peek Definition&lt;/p&gt;
+&lt;p&gt;Ctrl+K F12 Open Definition to the side&lt;/p&gt;
+&lt;p&gt;Ctrl+. Quick Fix&lt;/p&gt;
+&lt;p&gt;Shift+F12 Show References&lt;/p&gt;
+&lt;p&gt;F2 Rename Symbol&lt;/p&gt;
+&lt;p&gt;Ctrl+K Ctrl+X Trim trailing whitespace&lt;/p&gt;
+&lt;p&gt;Ctrl+K M Change file language&lt;/p&gt;
+&lt;h2 id=&#34;editor-management&#34;&gt;Editor management&lt;/h2&gt;
+&lt;p&gt;Ctrl+F4, Ctrl+W Close editor&lt;/p&gt;
+&lt;p&gt;Ctrl+K F Close folder&lt;/p&gt;
+&lt;p&gt;Ctrl+\ Split editor&lt;/p&gt;
+&lt;p&gt;Ctrl+ 1 / 2 / 3 Focus into 1 st, 2nd or 3rd editor group&lt;/p&gt;
+&lt;p&gt;Ctrl+K Ctrl+ ←/→ Focus into previous/next editor group&lt;/p&gt;
+&lt;p&gt;Ctrl+Shift+PgUp / PgDn Move editor left/right&lt;/p&gt;
+&lt;p&gt;Ctrl+K ← / → Move active editor group&lt;/p&gt;
+&lt;h2 id=&#34;file-management&#34;&gt;File management&lt;/h2&gt;
+&lt;p&gt;Ctrl+N New File&lt;/p&gt;
+&lt;p&gt;Ctrl+O Open File&amp;hellip;&lt;/p&gt;
+&lt;p&gt;Ctrl+S Save&lt;/p&gt;
+&lt;p&gt;Ctrl+Shift+S Save As&amp;hellip;&lt;/p&gt;
+&lt;p&gt;Ctrl+K S Save All&lt;/p&gt;
+&lt;p&gt;Ctrl+F4 Close&lt;/p&gt;
+&lt;p&gt;Ctrl+K Ctrl+W Close All&lt;/p&gt;
+&lt;p&gt;Ctrl+Shift+T Reopen closed editor&lt;/p&gt;
+&lt;p&gt;Ctrl+K Enter Keep preview mode editor open&lt;/p&gt;
+&lt;p&gt;Ctrl+Tab Open next&lt;/p&gt;
+&lt;p&gt;Ctrl+Shift+Tab Open previous&lt;/p&gt;
+&lt;p&gt;Ctrl+K P Copy path of active file&lt;/p&gt;
+&lt;p&gt;Ctrl+K R Reveal active file in Explorer&lt;/p&gt;
+&lt;p&gt;Ctrl+K O Show active file in new window/instance&lt;/p&gt;
+&lt;h2 id=&#34;display&#34;&gt;Display&lt;/h2&gt;
+&lt;p&gt;F11 Toggle full screen&lt;/p&gt;
+&lt;p&gt;Shift+Alt+0 Toggle editor layout (horizontal/vertical)&lt;/p&gt;
+&lt;p&gt;Ctrl+ = / - Zoom in/out Ctrl+B Toggle Sidebar visibility&lt;/p&gt;
+&lt;p&gt;Ctrl+Shift+E Show Explorer / Toggle focus&lt;/p&gt;
+&lt;p&gt;Ctrl+Shift+F Show Search&lt;/p&gt;
+&lt;p&gt;Ctrl+Shift+G Show Source Control&lt;/p&gt;
+&lt;p&gt;Ctrl+Shift+D Show Debug&lt;/p&gt;
+&lt;p&gt;Ctrl+Shift+X Show Extensions&lt;/p&gt;
+&lt;p&gt;Ctrl+Shift+H Replace in files&lt;/p&gt;
+&lt;p&gt;Ctrl+Shift+J Toggle Search details&lt;/p&gt;
+&lt;p&gt;Ctrl+Shift+U Show Output panel&lt;/p&gt;
+&lt;p&gt;Ctrl+Shift+V Open Markdown preview&lt;/p&gt;
+&lt;p&gt;Ctrl+K V Open Markdown preview to the side&lt;/p&gt;
+&lt;p&gt;Ctrl+K Z Zen Mode (Esc Esc to exit)&lt;/p&gt;
+&lt;h2 id=&#34;debug&#34;&gt;Debug&lt;/h2&gt;
+&lt;p&gt;F9 Toggle breakpoint&lt;/p&gt;
+&lt;p&gt;F5 Start/Continue&lt;/p&gt;
+&lt;p&gt;Shift+F5 Stop&lt;/p&gt;
+&lt;p&gt;F11 / Shift+F11 Step into/out&lt;/p&gt;
+&lt;p&gt;F10 Step over&lt;/p&gt;
+&lt;p&gt;Ctrl+K Ctrl+I Show hover&lt;/p&gt;
+&lt;h2 id=&#34;integrated-terminal&#34;&gt;Integrated terminal&lt;/h2&gt;
+&lt;p&gt;Ctrl+` Show integrated terminal&lt;/p&gt;
+&lt;p&gt;Ctrl+Shift+` Create new terminal&lt;/p&gt;
+&lt;p&gt;Ctrl+C Copy selection&lt;/p&gt;
+&lt;p&gt;Ctrl+V Paste into active terminal&lt;/p&gt;
+&lt;p&gt;Ctrl+↑ / ↓ Scroll up/down&lt;/p&gt;
+&lt;p&gt;Shift+PgUp / PgDn Scroll page up/down&lt;/p&gt;
+&lt;p&gt;Ctrl+Home / End Scroll to top/bottom&lt;/p&gt;
+&lt;p&gt;译文:&lt;/p&gt;
+&lt;h2 id=&#34;一般&#34;&gt;一般&lt;/h2&gt;
+&lt;p&gt;Ctrl + Shift + P，F1显示命令面板&lt;/p&gt;
+&lt;p&gt;Ctrl + P快速打开，转到文件…&lt;/p&gt;
+&lt;p&gt;Ctrl + Shift + N新窗口/实例&lt;/p&gt;
+&lt;p&gt;Ctrl + Shift + W关闭窗口/实例&lt;/p&gt;
+&lt;p&gt;Ctrl +，用户设置&lt;/p&gt;
+&lt;p&gt;Ctrl + K Ctrl + S键盘快捷键&lt;/p&gt;
+&lt;h2 id=&#34;基本编辑&#34;&gt;基本编辑&lt;/h2&gt;
+&lt;p&gt;Ctrl + X剪切线（空选择）&lt;/p&gt;
+&lt;p&gt;Ctrl + C复制行（空选择）&lt;/p&gt;
+&lt;p&gt;Alt +↑/↓上下移动行&lt;/p&gt;
+&lt;p&gt;Shift + Alt +↓/↑复制上/下一行&lt;/p&gt;
+&lt;p&gt;Ctrl + Shift + K删除行&lt;/p&gt;
+&lt;p&gt;Ctrl + Enter在下面插入行&lt;/p&gt;
+&lt;p&gt;Ctrl + Shift + Enter在上方插入行&lt;/p&gt;
+&lt;p&gt;Ctrl + Shift + \跳转到匹配的括号&lt;/p&gt;
+&lt;p&gt;Ctrl +] / [缩进/缩进行&lt;/p&gt;
+&lt;p&gt;Home / End转到行首/行尾&lt;/p&gt;
+&lt;p&gt;Ctrl + Home转到文件开头&lt;/p&gt;
+&lt;p&gt;Ctrl + End转到文件末尾&lt;/p&gt;
+&lt;p&gt;Ctrl +↑/↓上下滚动&lt;/p&gt;
+&lt;p&gt;Alt + PgUp / PgDn向上/​​向下滚动页面&lt;/p&gt;
+&lt;p&gt;Ctrl + Shift + [折叠（折叠）区域&lt;/p&gt;
+&lt;p&gt;Ctrl + Shift +]展开（展开）区域&lt;/p&gt;
+&lt;p&gt;Ctrl + K Ctrl + [折叠（折叠）所有子区域&lt;/p&gt;
+&lt;p&gt;Ctrl + K Ctrl +]展开（展开）所有子区域&lt;/p&gt;
+&lt;p&gt;Ctrl + K Ctrl + 0折叠（折叠）所有区域&lt;/p&gt;
+&lt;p&gt;Ctrl + K Ctrl + J展开（展开）所有区域&lt;/p&gt;
+&lt;p&gt;Ctrl + K Ctrl + C添加行注释&lt;/p&gt;
+&lt;p&gt;Ctrl + K Ctrl + U删除行注释&lt;/p&gt;
+&lt;p&gt;Ctrl + /切换行注释&lt;/p&gt;
+&lt;p&gt;Shift + Alt + A切换块注释&lt;/p&gt;
+&lt;p&gt;Alt + Z切换自动换行&lt;/p&gt;
+&lt;h2 id=&#34;导航&#34;&gt;导航&lt;/h2&gt;
+&lt;p&gt;Ctrl + T显示所有符号&lt;/p&gt;
+&lt;p&gt;Ctrl + G转到行&amp;hellip;&lt;/p&gt;
+&lt;p&gt;Ctrl + P转到文件&amp;hellip;&lt;/p&gt;
+&lt;p&gt;Ctrl + Shift + O转到符号&amp;hellip;&lt;/p&gt;
+&lt;p&gt;Ctrl + Shift + M显示问题面板&lt;/p&gt;
+&lt;p&gt;F8转到下一个错误或警告&lt;/p&gt;
+&lt;p&gt;Shift + F8转到上一个错误或警告&lt;/p&gt;
+&lt;p&gt;Ctrl + Shift + Tab导航编辑器组的历史记录&lt;/p&gt;
+&lt;p&gt;Alt +←/→返回/前进&lt;/p&gt;
+&lt;p&gt;Ctrl + M切换选项卡可移动焦点&lt;/p&gt;
+&lt;h2 id=&#34;搜索并替换&#34;&gt;搜索并替换&lt;/h2&gt;
+&lt;p&gt;Ctrl + F查找Ctrl + H替换&lt;/p&gt;
+&lt;p&gt;F3 / Shift + F3查找下一个/上一个&lt;/p&gt;
+&lt;p&gt;Alt + Enter选择所有出现的“查找匹配项”&lt;/p&gt;
+&lt;p&gt;Ctrl + D将选择添加到下一个查找匹配项&lt;/p&gt;
+&lt;p&gt;Ctrl + K Ctrl + D将最后一个选择移至下一个查找匹配项&lt;/p&gt;
+&lt;p&gt;Alt + C / R / W切换区分大小写/正则表达式/整个单词&lt;/p&gt;
+&lt;h2 id=&#34;多光标和选择&#34;&gt;多光标和选择&lt;/h2&gt;
+&lt;p&gt;Alt +单击插入光标&lt;/p&gt;
+&lt;p&gt;Ctrl + Alt +↑/↓在上方/下方插入光标&lt;/p&gt;
+&lt;p&gt;Ctrl + U撤消上一个光标操作&lt;/p&gt;
+&lt;p&gt;Shift + Alt + I在选定的每行末尾插入光标&lt;/p&gt;
+&lt;p&gt;Ctrl + L选择当前行&lt;/p&gt;
+&lt;p&gt;Ctrl + Shift + L选择所有当前选中项&lt;/p&gt;
+&lt;p&gt;Ctrl + F2选择所有出现的当前单词&lt;/p&gt;
+&lt;p&gt;Shift + Alt +→扩展选择&lt;/p&gt;
+&lt;p&gt;Shift + Alt +←缩小选择&lt;/p&gt;
+&lt;p&gt;Shift + Alt +（拖动鼠标）列（框）选择&lt;/p&gt;
+&lt;p&gt;Ctrl + Shift + Alt +（箭头键）列（框）选择&lt;/p&gt;
+&lt;p&gt;Ctrl + Shift + Alt + PgUp / PgDn&lt;/p&gt;
+&lt;h2 id=&#34;富语言编辑&#34;&gt;富语言编辑&lt;/h2&gt;
+&lt;p&gt;Ctrl +空格触发建议&lt;/p&gt;
+&lt;p&gt;Ctrl + Shift +空格键触发参数提示&lt;/p&gt;
+&lt;p&gt;Shift + Alt + F格式文件&lt;/p&gt;
+&lt;p&gt;Ctrl + K Ctrl + F格式选择&lt;/p&gt;
+&lt;p&gt;F12转到定义&lt;/p&gt;
+&lt;p&gt;Alt + F12偷看定义&lt;/p&gt;
+&lt;p&gt;Ctrl + K F12在侧面打开定义&lt;/p&gt;
+&lt;p&gt;Ctrl +。快速解决&lt;/p&gt;
+&lt;p&gt;Shift + F12显示参考&lt;/p&gt;
+&lt;p&gt;F2重命名符号&lt;/p&gt;
+&lt;p&gt;Ctrl + K Ctrl + X修剪尾随空格&lt;/p&gt;
+&lt;p&gt;Ctrl + K M更改文件语言&lt;/p&gt;
+&lt;h2 id=&#34;编辑器管理&#34;&gt;编辑器管理&lt;/h2&gt;
+&lt;p&gt;Ctrl + F4，Ctrl + W关闭编辑器&lt;/p&gt;
+&lt;p&gt;Ctrl + K F关闭文件夹&lt;/p&gt;
+&lt;p&gt;Ctrl + \分割编辑器&lt;/p&gt;
+&lt;p&gt;Ctrl + 1/2/3聚焦到第1，第2或第3编辑器组&lt;/p&gt;
+&lt;p&gt;Ctrl + K Ctrl +←/→聚焦到上一个/下一个编辑器组&lt;/p&gt;
+&lt;p&gt;Ctrl + Shift + PgUp / PgDn左右移动编辑器&lt;/p&gt;
+&lt;p&gt;Ctrl + K←/→移动活动的编辑器组&lt;/p&gt;
+&lt;h2 id=&#34;文件管理&#34;&gt;文件管理&lt;/h2&gt;
+&lt;p&gt;Ctrl + N新建文件&lt;/p&gt;
+&lt;p&gt;Ctrl + O打开文件&amp;hellip;&lt;/p&gt;
+&lt;p&gt;Ctrl + S保存&lt;/p&gt;
+&lt;p&gt;Ctrl + Shift + S另存为&amp;hellip;&lt;/p&gt;
+&lt;p&gt;Ctrl + K S全部保存&lt;/p&gt;
+&lt;p&gt;Ctrl + F4关闭&lt;/p&gt;
+&lt;p&gt;Ctrl + K Ctrl + W关闭所有&lt;/p&gt;
+&lt;p&gt;Ctrl + Shift + T重新打开关闭的编辑器&lt;/p&gt;
+&lt;p&gt;Ctrl + K输入保持打开预览模式编辑器&lt;/p&gt;
+&lt;p&gt;Ctrl + Tab打开下一步&lt;/p&gt;
+&lt;p&gt;Ctrl + Shift + Tab打开上一个&lt;/p&gt;
+&lt;p&gt;Ctrl + K P复制活动文件的路径&lt;/p&gt;
+&lt;p&gt;Ctrl + K R在资源管理器中显示活动文件&lt;/p&gt;
+&lt;p&gt;Ctrl + K O在新窗口/实例中显示活动文件&lt;/p&gt;
+&lt;h2 id=&#34;显示&#34;&gt;显示&lt;/h2&gt;
+&lt;p&gt;F11切换全屏&lt;/p&gt;
+&lt;p&gt;Shift + Alt + 0切换编辑器布局（水平/垂直）&lt;/p&gt;
+&lt;p&gt;Ctrl + = /-放大/缩小Ctrl + B切换边栏可见性&lt;/p&gt;
+&lt;p&gt;Ctrl + Shift + E显示资源管理器/切换焦点&lt;/p&gt;
+&lt;p&gt;Ctrl + Shift + F显示搜索&lt;/p&gt;
+&lt;p&gt;Ctrl + Shift + G显示源代码控制&lt;/p&gt;
+&lt;p&gt;Ctrl + Shift + D显示调试&lt;/p&gt;
+&lt;p&gt;Ctrl + Shift + X显示扩展&lt;/p&gt;
+&lt;p&gt;Ctrl + Shift + H替换为文件&lt;/p&gt;
+&lt;p&gt;Ctrl + Shift + J切换搜索详细信息&lt;/p&gt;
+&lt;p&gt;Ctrl + Shift + U显示输出面板&lt;/p&gt;
+&lt;p&gt;Ctrl + Shift + V打开Markdown预览&lt;/p&gt;
+&lt;p&gt;Ctrl + K V在侧面打开Markdown预览&lt;/p&gt;
+&lt;p&gt;Ctrl + K Z禅模式（Esc Esc退出）&lt;/p&gt;
+&lt;h2 id=&#34;调试&#34;&gt;调试&lt;/h2&gt;
+&lt;p&gt;F9切换断点&lt;/p&gt;
+&lt;p&gt;F5开始/继续&lt;/p&gt;
+&lt;p&gt;Shift + F5停止&lt;/p&gt;
+&lt;p&gt;F11 / Shift + F11跳入/跳出&lt;/p&gt;
+&lt;p&gt;F10越过&lt;/p&gt;
+&lt;p&gt;Ctrl + K Ctrl + I显示悬停&lt;/p&gt;
+&lt;h2 id=&#34;集成终端&#34;&gt;集成终端&lt;/h2&gt;
+&lt;p&gt;Ctrl +`显示集成终端&lt;/p&gt;
+&lt;p&gt;Ctrl + Shift +`创建新终端&lt;/p&gt;
+&lt;p&gt;Ctrl + C复制选择&lt;/p&gt;
+&lt;p&gt;Ctrl + V粘贴到活动终端&lt;/p&gt;
+&lt;p&gt;Ctrl +↑/↓向上/向下滚动&lt;/p&gt;
+&lt;p&gt;Shift + PgUp / PgDn向上/​​向下滚动页面&lt;/p&gt;
+&lt;p&gt;Ctrl + Home / End滚动到顶部/底部&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;本文在 &lt;a class=&#34;link&#34; href=&#34;https://code.visualstudio.com/shortcuts/keyboard-shortcuts-windows.pdf&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;visualstudiocode&lt;/a&gt; 快捷键的原文基础上进行整理修改&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>vim的常用操作快捷键</title>
+        <link>https://jokeme.top/p/vim_hot_key/</link>
+        <pubDate>Sat, 01 Feb 2020 17:27:33 +0000</pubDate>
+        
+        <guid>https://jokeme.top/p/vim_hot_key/</guid>
+        <description>&lt;img src="https://cn.bing.com/th?id=OHR.ChurchRock_EN-CN7171111056_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post vim的常用操作快捷键" /&gt;&lt;p&gt;(1) 按两下 gg，定位光标到第一行。&lt;/p&gt;
+&lt;p&gt;(2) 按住 Shift+v，进入可视化编辑的列编辑模式。&lt;/p&gt;
+&lt;p&gt;(3) Shift+g，选中整个代码。&lt;/p&gt;
+&lt;p&gt;(4) 按下等号 =，格式化所有代码。&lt;/p&gt;
+&lt;p&gt;(5) 新年快乐🎉&lt;/p&gt;
+</description>
+        </item>
+        
+    </channel>
 </rss>

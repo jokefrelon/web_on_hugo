@@ -1,22 +1,88 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>nano on JokemeBlog</title>
-    <link>https://jokeme.top/tags/nano/</link>
-    <description>Recent content in nano on JokemeBlog</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Wed, 10 Jun 2020 13:58:18 +0000</lastBuildDate><atom:link href="https://jokeme.top/tags/nano/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>CentOS编译安装Nano</title>
-      <link>https://jokeme.top/p/compile_nano/</link>
-      <pubDate>Wed, 10 Jun 2020 13:58:18 +0000</pubDate>
-      
-      <guid>https://jokeme.top/p/compile_nano/</guid>
-      <description>CentOS编译安装Nano 众所周知,因为 CentOS 非常的稳定,所以导致 CentOS の YUM 源里面的软件非常的老旧 就拿 Nano 来说, 官方已经到了 4.0版本, 而 CentOS 这边还在2.0徘徊,这就非常的难受了.所以咱就手动编译安装!
-1. 安装准备 sudo su cd yum -y install gcc ncurses-devel wget wget https://www.nano-editor.org/dist/v4/nano-4.6.tar.gz tar zxvf nano-4.6.tar.gz cd nano-4.6 2. 准备编译 ./configure make &amp;amp;&amp;amp; make install 3. 复制文件 cp src/nano /usr/bin cp doc/sample.nanorc /root/.nanorc 常用插件也给安排上
-echo &amp;#39;include &amp;#34;/usr/local/share/nano/*.nanorc&amp;#34;&amp;#39; &amp;gt;&amp;gt; /root/.nanorc #用于高亮显示 echo &amp;#39;set nowrap&amp;#39; &amp;gt;&amp;gt; /root/.nanorc #关闭自动换行 echo &amp;#39;set linenumbers&amp;#39; &amp;gt;&amp;gt; /root/.nanorc #打开行号显示 本文参考: Hiwbb.com</description>
-    </item>
-    
-  </channel>
+    <channel>
+        <title>nano on JokemeBlog</title>
+        <link>https://jokeme.top/tags/nano/</link>
+        <description>Recent content in nano on JokemeBlog</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>en-us</language>
+        <lastBuildDate>Wed, 10 Jun 2020 13:58:18 +0000</lastBuildDate><atom:link href="https://jokeme.top/tags/nano/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>CentOS编译安装Nano</title>
+        <link>https://jokeme.top/p/compile_nano/</link>
+        <pubDate>Wed, 10 Jun 2020 13:58:18 +0000</pubDate>
+        
+        <guid>https://jokeme.top/p/compile_nano/</guid>
+        <description>&lt;img src="https://cn.bing.com/th?id=OHR.IceWalking_EN-CN6785374690_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post CentOS编译安装Nano" /&gt;&lt;h1 id=&#34;centos编译安装nano&#34;&gt;CentOS编译安装Nano&lt;/h1&gt;
+&lt;p&gt;众所周知,因为 &lt;strong&gt;CentOS&lt;/strong&gt; 非常的稳定,所以导致 &lt;strong&gt;CentOS&lt;/strong&gt; の &lt;strong&gt;YUM&lt;/strong&gt; 源里面的软件非常的老旧
+就拿 &lt;strong&gt;Nano&lt;/strong&gt; 来说, 官方已经到了 4.0版本, 而 &lt;strong&gt;CentOS&lt;/strong&gt; 这边还在2.0徘徊,这就非常的难受了.所以咱就手动编译安装!&lt;/p&gt;
+&lt;h2 id=&#34;1-安装准备&#34;&gt;1. 安装准备&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;
+&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
+&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;&lt;code&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;1
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;2
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;3
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;4
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;5
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;6
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
+&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;sudo su
+cd
+yum -y install gcc ncurses-devel wget
+wget https://www.nano-editor.org/dist/v4/nano-4.6.tar.gz
+tar zxvf nano-4.6.tar.gz
+cd nano-4.6
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id=&#34;2-准备编译&#34;&gt;2. 准备编译&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;
+&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
+&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;&lt;code&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;1
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
+&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;./configure
+make &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; make install
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id=&#34;3-复制文件&#34;&gt;3. 复制文件&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;
+&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
+&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;&lt;code&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;1
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
+&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;cp src/nano  /usr/bin
+cp doc/sample.nanorc  /root/.nanorc
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;常用插件也给安排上&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;
+&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
+&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;&lt;code&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;1
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;2
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;3
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;4
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;5
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;6
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;7
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;8
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
+&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;echo  &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;include &amp;#34;/usr/local/share/nano/*.nanorc&amp;#34;&amp;#39;&lt;/span&gt;  &amp;gt;&amp;gt;  /root/.nanorc
+&lt;span style=&#34;color:#75715e&#34;&gt;#用于高亮显示&lt;/span&gt;
+
+echo  &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;set nowrap&amp;#39;&lt;/span&gt;  &amp;gt;&amp;gt;  /root/.nanorc
+&lt;span style=&#34;color:#75715e&#34;&gt;#关闭自动换行&lt;/span&gt;
+
+echo  &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;set linenumbers&amp;#39;&lt;/span&gt;  &amp;gt;&amp;gt;  /root/.nanorc
+&lt;span style=&#34;color:#75715e&#34;&gt;#打开行号显示&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;本文参考: &lt;a class=&#34;link&#34; href=&#34;https://hiwbb.com/2019/12/centos-install-nano-46-syntax/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Hiwbb.com&lt;/a&gt;&lt;/p&gt;
+</description>
+        </item>
+        
+    </channel>
 </rss>

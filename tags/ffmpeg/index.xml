@@ -1,40 +1,84 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>ffmpeg on JokemeBlog</title>
-    <link>https://jokeme.top/tags/ffmpeg/</link>
-    <description>Recent content in ffmpeg on JokemeBlog</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Tue, 23 Mar 2021 14:21:09 +0000</lastBuildDate><atom:link href="https://jokeme.top/tags/ffmpeg/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>ffmpeg设置请求头</title>
-      <link>https://jokeme.top/p/ffmpeg_user_agent/</link>
-      <pubDate>Tue, 23 Mar 2021 14:21:09 +0000</pubDate>
-      
-      <guid>https://jokeme.top/p/ffmpeg_user_agent/</guid>
-      <description>ffmpeg是一款非常强大的工具,它可以在命令行下对视频类文件进行多种操作,之前我也介绍过ffmpeg,戳这里
-在使用过程中我们经常可以遇到使用ffmpeg无法下载文件的情况,那这是为什么呢？
-其实有时候,服务端会对我们客户端的请求进行检验,其中最简单的就是检查请求头：User-Agent ，如果你连请求头都没,那你肯定就暴露了你不是正常的用户，你既然不是正常的用户，那那服务器那边就会拒绝你的访问请求，所以就导致了你被403。
-既然这样那咱们简单设置一下请求头就可以了：
-ffmpeg -user_agent &amp;quot;User-Agent: AppleCoreMedia/1.0.0.18C66 (iPhone; U; CPU OS 14_3 like Mac OS X; zh_cn)&amp;quot; -i https://www.baidu.com/xxx.mp4\?id\=2399977 -c copy str4.mp4 当你设置了请求头以后你还别高兴太早了！因为服务器那边既然开启了检测，就不会通过这麽简单的方法来拦截非正常用户的访问。一般来说还有各种headers
-这时我们就需要通过抓包来获得具体的请求头里的参数了，下面我就简单的介绍一下具体的参数该如何写。注意 $&#39;\r\n&#39;这是一种换行的写法。
-ffmpeg -user_agent &amp;quot;User-Agent: AppleCoreMedia/1.0.0.18C66 (iPhone; U; CPU OS 14_3 like Mac OS X; zh_cn)&amp;quot; -headers &amp;quot;Authorization: fudkmnso-... ...9-0sdf-0ea&amp;quot;$&#39;\r\n&#39;&amp;quot;Xplay-session-ID:9885998&amp;quot; -i https://www.baidu.com/xxx.mp4\?id\=2399977 -c copy str4.mp4 </description>
-    </item>
-    
-    <item>
-      <title>Ubuntu安装ffmpeg下载m3u8 格式的视频</title>
-      <link>https://jokeme.top/p/ffmpeg_download_m3u8/</link>
-      <pubDate>Wed, 15 Apr 2020 23:39:23 +0000</pubDate>
-      
-      <guid>https://jokeme.top/p/ffmpeg_download_m3u8/</guid>
-      <description>Ubuntu安装ffmpeg下载m3u8格式的视频 最近想下载一个某音视频，但是我能看不能下载，这不是扯吗？于是不能忍的我就打算盘盘这个视频
-1 . 准备环境：Ubuntu 18.04 , ffmpeg 本着万物皆可 Linux の初心，我就不想用 Windows 了。
-首先安装 ffmpeg
-sudo apt -y install ffmpeg 2 . 抓包短视频的 m3u8 地址 iOS 端，我是使用的 Thor 这个 app,比较好用，应用商店搜索就有
-然后得到真实的地址：
-http://XXX.com/xxx/xxx.m3u8 3 . 使用ffmpeg进行下载 ffmpeg -i http://XXX.com/xxx/xxx.m3u8 -c copy xxx.mp4 然后就需要慢慢等待下载完成就可以了，真的是特别特别的简单</description>
-    </item>
-    
-  </channel>
+    <channel>
+        <title>ffmpeg on JokemeBlog</title>
+        <link>https://jokeme.top/tags/ffmpeg/</link>
+        <description>Recent content in ffmpeg on JokemeBlog</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>en-us</language>
+        <lastBuildDate>Tue, 23 Mar 2021 14:21:09 +0000</lastBuildDate><atom:link href="https://jokeme.top/tags/ffmpeg/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>ffmpeg设置请求头</title>
+        <link>https://jokeme.top/p/ffmpeg_user_agent/</link>
+        <pubDate>Tue, 23 Mar 2021 14:21:09 +0000</pubDate>
+        
+        <guid>https://jokeme.top/p/ffmpeg_user_agent/</guid>
+        <description>&lt;img src="https://cn.bing.com/th?id=OHR.Comma_EN-CN6081365526_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post ffmpeg设置请求头" /&gt;&lt;p&gt;ffmpeg是一款非常强大的工具,它可以在命令行下对视频类文件进行多种操作,之前我也介绍过ffmpeg,&lt;a class=&#34;link&#34; href=&#34;https://jokeme.top/articles/2020/04/15/1586944809634.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;戳这里&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;在使用过程中我们经常可以遇到使用ffmpeg无法下载文件的情况,那这是为什么呢？&lt;/p&gt;
+&lt;p&gt;其实有时候,服务端会对我们客户端的请求进行检验,其中最简单的就是检查请求头：&lt;strong&gt;User-Agent&lt;/strong&gt; ，如果你连请求头都没,那你肯定就暴露了你不是正常的用户，你既然不是正常的用户，那那服务器那边就会拒绝你的访问请求，所以就导致了你被403。&lt;/p&gt;
+&lt;p&gt;既然这样那咱们简单设置一下请求头就可以了：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;
+&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
+&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;&lt;code&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
+&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;ffmpeg -user_agent &amp;#34;User-Agent: AppleCoreMedia/1.0.0.18C66 (iPhone; U; CPU OS 14_3 like Mac OS X; zh_cn)&amp;#34; -i https://www.baidu.com/xxx.mp4\?id\=2399977 -c copy str4.mp4
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;当你设置了请求头以后你还别高兴太早了！因为服务器那边既然开启了检测，就不会通过这麽简单的方法来拦截非正常用户的访问。一般来说还有各种&lt;strong&gt;headers&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;这时我们就需要通过抓包来获得具体的请求头里的参数了，下面我就简单的介绍一下具体的参数该如何写。注意 &lt;code&gt;$&#39;\r\n&#39;&lt;/code&gt;这是一种换行的写法。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;
+&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
+&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;&lt;code&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
+&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;ffmpeg -user_agent &amp;#34;User-Agent: AppleCoreMedia/1.0.0.18C66 (iPhone; U; CPU OS 14_3 like Mac OS X; zh_cn)&amp;#34; -headers &amp;#34;Authorization: fudkmnso-... ...9-0sdf-0ea&amp;#34;$&amp;#39;\r\n&amp;#39;&amp;#34;Xplay-session-ID:9885998&amp;#34; -i https://www.baidu.com/xxx.mp4\?id\=2399977 -c copy str4.mp4
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description>
+        </item>
+        <item>
+        <title>Ubuntu安装ffmpeg下载m3u8 格式的视频</title>
+        <link>https://jokeme.top/p/ffmpeg_download_m3u8/</link>
+        <pubDate>Wed, 15 Apr 2020 23:39:23 +0000</pubDate>
+        
+        <guid>https://jokeme.top/p/ffmpeg_download_m3u8/</guid>
+        <description>&lt;img src="https://cn.bing.com/th?id=OHR.RainbowMarmot_EN-CN8037758700_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4" alt="Featured image of post Ubuntu安装ffmpeg下载m3u8 格式的视频" /&gt;&lt;h1 id=&#34;ubuntu安装ffmpeg下载m3u8格式的视频&#34;&gt;Ubuntu安装ffmpeg下载m3u8格式的视频&lt;/h1&gt;
+&lt;p&gt;最近想下载一个某音视频，但是我能看不能下载，这不是扯吗？于是不能忍的我就打算盘盘这个视频&lt;/p&gt;
+&lt;h2 id=&#34;1--准备环境ubuntu-1804--ffmpeg&#34;&gt;1 . 准备环境：&lt;code&gt;Ubuntu 18.04&lt;/code&gt; , &lt;code&gt;ffmpeg&lt;/code&gt;&lt;/h2&gt;
+&lt;p&gt;本着万物皆可 &lt;strong&gt;Linux&lt;/strong&gt; の初心，我就不想用 Windows 了。&lt;/p&gt;
+&lt;p&gt;首先安装 &lt;strong&gt;ffmpeg&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;
+&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
+&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;&lt;code&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
+&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;sudo apt -y install ffmpeg
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id=&#34;2--抓包短视频的-m3u8-地址&#34;&gt;2 . 抓包短视频的 m3u8 地址&lt;/h2&gt;
+&lt;p&gt;iOS 端，我是使用的 &lt;strong&gt;Thor&lt;/strong&gt; 这个 app,比较好用，应用商店搜索就有&lt;/p&gt;
+&lt;p&gt;然后得到真实的地址：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;
+&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
+&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;&lt;code&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
+&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;&lt;code class=&#34;language-http&#34; data-lang=&#34;http&#34;&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;http://XXX.com/xxx/xxx.m3u8
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id=&#34;3--使用ffmpeg进行下载&#34;&gt;3 . 使用ffmpeg进行下载&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;
+&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
+&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;&lt;code&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
+&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;ffmpeg -i http://XXX.com/xxx/xxx.m3u8 -c copy xxx.mp4
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;然后就需要慢慢等待下载完成就可以了，真的是特别特别的简单&lt;/p&gt;
+</description>
+        </item>
+        
+    </channel>
 </rss>
