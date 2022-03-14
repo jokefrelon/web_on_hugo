@@ -9,7 +9,7 @@
 <meta property='og:description' content='解决一个Ubuntu 18 安装MySQL 5.7不能远程登录的问题'>
 <meta property='og:url' content='https://jokeme.top/p/mysql_login_problem/'>
 <meta property='og:site_name' content='JokemeBlog'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Mysql' /><meta property='article:published_time' content='2020-07-28T02:19:28&#43;00:00'/><meta property='article:modified_time' content='2020-07-28T02:19:28&#43;00:00'/><meta property='og:image' content='https://cn.bing.com/th?id=OHR.BluebirdsEastern_EN-CN2662548051_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4' />
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Mysql' /><meta property='article:published_time' content='2020-07-28T02:19:28&#43;00:00'/><meta property='article:modified_time' content='2022-03-15T02:22:23&#43;00:00'/><meta property='og:image' content='https://cn.bing.com/th?id=OHR.BluebirdsEastern_EN-CN2662548051_UHD.jpg&pid=hp&w=1080&h=720&rs=1&c=4' />
 <meta name="twitter:site" content="@FrelonTroung">
     <meta name="twitter:creator" content="@FrelonTroung"><meta name="twitter:title" content="解决一个Ubuntu 18 安装MySQL 5.7不能远程登录的问题">
 <meta name="twitter:description" content="解决一个Ubuntu 18 安装MySQL 5.7不能远程登录的问题"><meta name="twitter:card" content="summary_large_image">
@@ -353,12 +353,18 @@
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-sql" data-lang="sql">use mysql;
-<span style="color:#66d9ef">SELECT</span>  <span style="color:#66d9ef">user</span>,<span style="color:#66d9ef">host</span> <span style="color:#66d9ef">FROM</span>  <span style="color:#66d9ef">user</span>;
-<span style="color:#66d9ef">update</span> <span style="color:#66d9ef">user</span> <span style="color:#66d9ef">set</span> <span style="color:#66d9ef">host</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;%&#34;</span> <span style="color:#66d9ef">where</span> <span style="color:#66d9ef">user</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;root&#34;</span>
-<span style="color:#66d9ef">update</span> <span style="color:#66d9ef">user</span> <span style="color:#66d9ef">set</span> authentication_string<span style="color:#f92672">=</span>PASSWORD(<span style="color:#e6db74">&#34;UrPasswd&#34;</span>)<span style="color:#66d9ef">where</span> <span style="color:#66d9ef">user</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;root&#34;</span>;
+<span style="color:#66d9ef">select</span> <span style="color:#66d9ef">user</span>,<span style="color:#66d9ef">host</span> <span style="color:#66d9ef">from</span> <span style="color:#66d9ef">user</span>;
+<span style="color:#66d9ef">update</span> <span style="color:#66d9ef">user</span> <span style="color:#66d9ef">set</span> <span style="color:#66d9ef">host</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;%&#34;</span> <span style="color:#66d9ef">where</span> <span style="color:#66d9ef">user</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;root&#34;</span>;
+<span style="color:#66d9ef">update</span> <span style="color:#66d9ef">user</span> <span style="color:#66d9ef">set</span> authentication_string<span style="color:#f92672">=</span>PASSWORD(<span style="color:#e6db74">&#34;yourPassword&#34;</span>) <span style="color:#66d9ef">where</span> <span style="color:#66d9ef">user</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;root&#34;</span>; 
+<span style="color:#f92672">#</span> authentication_string在mysql <span style="color:#ae81ff">5</span>.<span style="color:#ae81ff">7</span>.<span style="color:#ae81ff">9</span><span style="color:#960050;background-color:#1e0010">以后废弃了</span>password字段和password()<span style="color:#960050;background-color:#1e0010">函数</span> <span style="color:#ae81ff">5</span>.<span style="color:#ae81ff">7</span>.<span style="color:#ae81ff">9</span><span style="color:#960050;background-color:#1e0010">及后面的版本要使用下面的方法</span>
+<span style="color:#f92672">#</span> <span style="color:#66d9ef">alter</span> <span style="color:#66d9ef">user</span> <span style="color:#e6db74">&#39;root&#39;</span><span style="color:#f92672">@</span><span style="color:#e6db74">&#39;localhost&#39;</span> identified <span style="color:#66d9ef">with</span> mysql_native_password <span style="color:#66d9ef">by</span> <span style="color:#e6db74">&#39;xcsd1234&#39;</span>;
+<span style="color:#f92672">#</span> <span style="color:#66d9ef">alter</span> <span style="color:#66d9ef">user</span> <span style="color:#e6db74">&#39;root&#39;</span><span style="color:#f92672">@</span><span style="color:#e6db74">&#39;localhost&#39;</span> identified <span style="color:#66d9ef">by</span> <span style="color:#e6db74">&#39;yourPassword&#39;</span>; <span style="color:#f92672">#</span><span style="color:#960050;background-color:#1e0010">通用修改密码</span>
 flush <span style="color:#66d9ef">privileges</span>;
 </code></pre></td></tr></table>
 </div>
@@ -371,7 +377,7 @@ flush <span style="color:#66d9ef">privileges</span>;
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">update</span> <span style="color:#66d9ef">user</span> <span style="color:#66d9ef">set</span> plugin<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;mysql_native_password&#39;</span>;
-<span style="color:#75715e">/* 放在上面 use mysql； 后面执行 */</span>
+<span style="color:#75715e">/* 放在上面 use mysql； 后面执行 仅对5.7.9以下有效 */</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>很多人都是忽略了这条命令，导致一直无法远程登录上<strong>MySQL</strong>*
@@ -401,7 +407,19 @@ flush <span style="color:#66d9ef">privileges</span>;
 
         <span>Licensed under CC BY-NC-SA 4.0</span>
     </section>
-    </footer>
+    <section class="article-lastmod">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+        <span>
+            最后更新于 2022-03-15 02:22:23 CST
+        </span>
+    </section></footer>
 
 
     
